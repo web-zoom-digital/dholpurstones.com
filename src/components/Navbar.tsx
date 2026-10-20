@@ -58,6 +58,20 @@ export default function Navbar() {
 
   const navItems: NavItem[] = [
     { label: "Home", href: "/" },
+    { label: "Farm House & Gardens", href: "/#farmhouse-gardens" },
+    {
+      label: "Products",
+      children: [
+        { label: "Front Elevation (300+ Designs)", href: "/#elevation" },
+        { label: "Farm House & Gardens", href: "/#farmhouse-gardens" },
+        { label: "Agra Red", href: "/products#products" },
+        { label: "Dholpur Beige", href: "/products#products" },
+        { label: "Chocolate", href: "/products#products" },
+        { label: "Bansi Pink", href: "/products#products" },
+        { label: "Stone Articles & Sculptures", href: "/articles" },
+      ],
+    },
+    { label: "Projects", href: "/projects" },
     {
       label: "Company",
       children: [
@@ -68,19 +82,6 @@ export default function Navbar() {
         { label: "Our Mines", href: "/about#why-choose" },
       ],
     },
-    {
-      label: "Products",
-      children: [
-        { label: "Front Elevation (300+ Designs)", href: "/#elevation" },
-        { label: "Farm House & Gardens", href: "/landscaping" },
-        { label: "Agra Red", href: "/products#products" },
-        { label: "Dholpur Beige", href: "/products#products" },
-        { label: "Chocolate", href: "/products#products" },
-        { label: "Bansi Pink", href: "/products#products" },
-        { label: "Stone Articles & Sculptures", href: "/articles" },
-      ],
-    },
-    { label: "Projects", href: "/projects" },
     {
       label: "Resources",
       children: [
@@ -265,11 +266,18 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href || "/"}
-                  className={`font-['Plus_Jakarta_Sans',sans-serif] text-[15px] font-bold tracking-tight transition-colors py-2 ${
-                    active ? "text-[#852233]" : "text-[#1E2328] hover:text-[#852233]"
+                  className={`font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-bold tracking-tight transition-all py-1 px-3 rounded-full flex items-center gap-1.5 shrink-0 ${
+                    item.label === "Farm House & Gardens"
+                      ? "bg-[#134e3f]/10 text-[#134e3f] border border-[#134e3f]/30 hover:bg-[#134e3f] hover:text-white"
+                      : active
+                      ? "text-[#852233]"
+                      : "text-[#1E2328] hover:text-[#852233]"
                   }`}
                 >
-                  {item.label}
+                  {item.label === "Farm House & Gardens" && (
+                    <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
+                  )}
+                  <span>{item.label}</span>
                 </Link>
               );
             })}
@@ -383,11 +391,20 @@ export default function Navbar() {
                     key={item.label}
                     href={item.href || "/"}
                     onClick={() => setMobileOpen(false)}
-                    className={`block p-3.5 rounded-xl text-[14.5px] font-bold transition-all bg-white border border-black/6 ${
-                      active ? "text-[#852233] bg-[#852233]/5 border-[#852233]/30" : "text-[#1E2328] hover:text-[#852233]"
+                    className={`flex items-center justify-between p-3.5 rounded-xl text-[14.5px] font-bold transition-all border ${
+                      item.label === "Farm House & Gardens"
+                        ? "bg-[#134e3f]/10 text-[#134e3f] border-[#134e3f]/30"
+                        : active
+                        ? "text-[#852233] bg-[#852233]/5 border-[#852233]/30"
+                        : "text-[#1E2328] bg-white border-black/6 hover:text-[#852233]"
                     }`}
                   >
-                    {item.label}
+                    <span>{item.label}</span>
+                    {item.label === "Farm House & Gardens" && (
+                      <span className="text-[9px] bg-[#134e3f] text-white px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
+                        SPECIALTY
+                      </span>
+                    )}
                   </Link>
                 );
               })}

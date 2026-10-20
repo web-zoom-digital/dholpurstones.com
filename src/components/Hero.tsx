@@ -86,7 +86,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="/landscaping"
+              href="/#farmhouse-gardens"
               className="flex items-center justify-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm font-bold uppercase tracking-wider px-6 py-3.5 rounded-full bg-black/40 hover:bg-black/60 text-white backdrop-blur-md border border-white/25 hover:border-[#C29B38]/60 transition-all duration-300 active:scale-95 shadow-lg"
             >
               <TreePine className="w-3.5 h-3.5 text-[#C29B38] shrink-0" />

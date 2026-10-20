@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import FarmHouseGardenSpecialist from "@/components/FarmHouseGardenSpecialist";
 import LandscapingSolutions from "@/components/LandscapingSolutions";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -56,6 +57,9 @@ export default function LandscapingPage() {
           </p>
         </div>
       </section>
+
+      {/* Dedicated Luxury Farm House & Garden Masonry Specialist (8 Solutions) */}
+      <FarmHouseGardenSpecialist />
 
       {/* Main Landscaping Solutions Component */}
       <LandscapingSolutions />

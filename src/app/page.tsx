@@ -8,6 +8,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import InternationalExcellence from "@/components/InternationalExcellence";
 import SandstoneArticles from "@/components/SandstoneArticles";
 import OurProducts from "@/components/OurProducts";
+import FarmHouseGardenSpecialist from "@/components/FarmHouseGardenSpecialist";
 import LandscapingSolutions from "@/components/LandscapingSolutions";
 import StoneCollection from "@/components/StoneCollection";
 import Applications from "@/components/Applications";
@@ -47,7 +48,10 @@ export default function Home() {
       {/* 6. Our Products (Your Trusted Sandstone Manufacturer, Supplier & Exporter) */}
       <OurProducts />
 
-      {/* 6B. Natural Sand Stone Solutions for Beautiful Landscaping (Architects, Builders & Landscapers) */}
+      {/* 6B. Dedicated Luxury Farm House & Designer Garden Landscaping (8 Custom Masonry Solutions) */}
+      <FarmHouseGardenSpecialist />
+
+      {/* 6C. Natural Sand Stone Solutions for Beautiful Landscaping (Flagstones, Paving & Pool Decks) */}
       <LandscapingSolutions />
 
       {/* 7. Natural Stone Collection (Page 5 of PDF - Botticino, Black Granite, Semi-Precious, Elmali Beige) */}
