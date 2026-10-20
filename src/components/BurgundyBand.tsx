@@ -7,26 +7,29 @@ import WhatsAppIcon from "./WhatsAppIcon";
 
 export default function BurgundyBand() {
   return (
-    <section id="elevation" className="relative w-full bg-gradient-to-r from-[#380814] via-[#520f20] to-[#380814] py-14 sm:py-18 text-white overflow-hidden border-y border-[#c29b38]/50 shadow-[inset_0_0_90px_rgba(0,0,0,0.65)]">
+    <section
+      id="elevation"
+      className="relative w-full bg-gradient-to-r from-[#0A110E] via-[#13352A] to-[#0A110E] py-14 sm:py-18 text-white overflow-hidden border-y border-[#C29B38]/40 shadow-[inset_0_0_90px_rgba(0,0,0,0.7)]"
+    >
       {/* Decorative Gold Filigree & Radial Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full sm:w-3/4 h-full bg-[radial-gradient(ellipse_at_center,rgba(194,155,56,0.18)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full sm:w-3/4 h-full bg-[radial-gradient(ellipse_at_center,rgba(194,155,56,0.14)_0%,transparent_70%)] pointer-events-none" />
 
-      {/* Ambient Gold Particle Effect */}
-      <div className="absolute -top-10 left-10 w-48 h-48 bg-[#c29b38]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-10 right-10 w-48 h-48 bg-[#c29b38]/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Ambient Forest & Gold Glows */}
+      <div className="absolute -top-10 left-10 w-48 h-48 bg-[#C29B38]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-10 right-10 w-64 h-64 bg-[#134e3f]/25 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* National & International Accolades Ribbon Badge */}
-        <div className="inline-flex items-center gap-2 bg-[#c29b38]/20 border border-[#c29b38]/50 px-4 py-1.5 rounded-full text-[#E0BA55] text-[10px] sm:text-xs font-bold tracking-[0.14em] uppercase mb-4 shadow-md backdrop-blur-xs flex-wrap justify-center">
+        <div className="inline-flex items-center gap-2 bg-[#C29B38]/15 border border-[#C29B38]/45 px-4 py-1.5 rounded-full text-[#E0BA55] text-[10px] sm:text-xs font-bold tracking-[0.14em] uppercase mb-4 shadow-md backdrop-blur-xs flex-wrap justify-center">
           <Award className="w-4 h-4 text-[#C29B38] shrink-0" />
           <span>AWARDED BY GOVT. OF INDIA &bull; NOMINATED FOR INTERNATIONAL AWARD FOR BUSINESS EXCELLENCE</span>
           <Sparkles className="w-3.5 h-3.5 text-[#C29B38] shrink-0" />
         </div>
 
         {/* Primary Statement — Exact User Requirement */}
-        <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-[0.04em] uppercase text-white leading-tight max-w-5xl mx-auto drop-shadow-lg">
+        <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-[0.03em] uppercase text-white leading-tight max-w-5xl mx-auto drop-shadow-md">
           We Have Made More Than{" "}
-          <span className="text-[#E0BA55] underline decoration-[#c29b38]/60 decoration-2 underline-offset-8">
+          <span className="text-[#E0BA55] underline decoration-[#C29B38]/60 decoration-2 underline-offset-8">
             300+ Designs
           </span>{" "}
           for Front Elevation in Sandstone — Awarded by Govt. of India
@@ -37,7 +40,7 @@ export default function BurgundyBand() {
           <p className="font-['Cinzel',serif] text-sm sm:text-base md:text-lg font-semibold text-[#F5E6BE] tracking-wide uppercase">
             Nominated for International Award for Business Excellence &bull; Specialized in Luxury Farm Houses &amp; Garden Landscapes
           </p>
-          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/85 mt-2.5 leading-relaxed">
+          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/80 mt-2.5 leading-relaxed">
             From regal farm house entrance gates, poolside bullnose coping, and cobblestone driveways to 
             hand-carved garden water fountains and multi-tiered stone landscaping — we transform vast outdoor 
             properties into timeless heritage retreats using authentic Sarmathura sandstone.
@@ -52,46 +55,46 @@ export default function BurgundyBand() {
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full shadow-lg transition-all active:scale-95"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-[#0D1311] font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full shadow-lg transition-all active:scale-95"
           >
-            <WhatsAppIcon className="w-4 h-4 fill-white" size={16} />
+            <WhatsAppIcon className="w-4 h-4 fill-[#0D1311]" size={16} />
             <span>Explore 300+ Elevation Designs</span>
           </a>
 
           <Link
             href="/#farmhouse-gardens"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/25 text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full transition-all active:scale-95"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#C29B38] hover:bg-[#d4aa3d] text-[#0D1311] font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full transition-all active:scale-95 shadow-md"
           >
-            <TreePine className="w-4 h-4 text-[#C29B38]" />
+            <TreePine className="w-4 h-4 text-[#0D1311]" />
             <span>Farm House &amp; Garden Solutions</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#C29B38]" />
+            <ArrowRight className="w-3.5 h-3.5 text-[#0D1311]" />
           </Link>
         </div>
 
         {/* 4 Trust Points Row */}
-        <div className="mt-10 pt-6 sm:pt-8 border-t border-white/15 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-xs tracking-wider uppercase text-white/90">
-          <div className="flex items-center justify-center gap-2 bg-black/20 p-2.5 rounded-xl border border-white/10">
+        <div className="mt-10 pt-6 sm:pt-8 border-t border-white/10 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 text-xs tracking-wider uppercase text-white/90">
+          <div className="flex items-center justify-center gap-2 bg-[#0D1311]/50 hover:bg-[#0D1311]/80 p-3 rounded-xl border border-white/8 hover:border-[#C29B38]/40 transition-colors">
             <Award className="w-4 h-4 text-[#C29B38] shrink-0" />
             <span className="font-semibold text-center sm:text-left text-[11px] sm:text-xs">
               300+ Elevation Designs
             </span>
           </div>
-          <div className="flex items-center justify-center gap-2 bg-black/20 p-2.5 rounded-xl border border-white/10">
+          <div className="flex items-center justify-center gap-2 bg-[#0D1311]/50 hover:bg-[#0D1311]/80 p-3 rounded-xl border border-white/8 hover:border-[#C29B38]/40 transition-colors">
             <ShieldCheck className="w-4 h-4 text-[#C29B38] shrink-0" />
             <span className="font-semibold text-center sm:text-left text-[11px] sm:text-xs">
               Govt. of India Awarded
             </span>
           </div>
-          <div className="flex items-center justify-center gap-2 bg-black/20 p-2.5 rounded-xl border border-white/10">
+          <div className="flex items-center justify-center gap-2 bg-[#0D1311]/50 hover:bg-[#0D1311]/80 p-3 rounded-xl border border-white/8 hover:border-[#C29B38]/40 transition-colors">
             <Trophy className="w-4 h-4 text-[#C29B38] shrink-0" />
             <span className="font-semibold text-center sm:text-left text-[11px] sm:text-xs">
-              Intl. Award Nominated (Business Excellence)
+              Intl. Award Nominee
             </span>
           </div>
-          <div className="flex items-center justify-center gap-2 bg-black/20 p-2.5 rounded-xl border border-white/10">
+          <div className="flex items-center justify-center gap-2 bg-[#0D1311]/50 hover:bg-[#0D1311]/80 p-3 rounded-xl border border-white/8 hover:border-[#C29B38]/40 transition-colors">
             <TreePine className="w-4 h-4 text-[#C29B38] shrink-0" />
             <span className="font-semibold text-center sm:text-left text-[11px] sm:text-xs">
-              Farm House &amp; Garden Specialist
+              Farm House &amp; Gardens
             </span>
           </div>
         </div>
