@@ -258,13 +258,14 @@ export default function Navbar() {
 
       {/* 2. Main Sticky Navigation Bar (Fixed padding to prevent scroll jitter/bounce) */}
       <header
+        style={{ overflow: "visible" }}
         className={`sticky top-0 w-full z-[100] bg-white/98 backdrop-blur-md border-b transition-shadow duration-300 py-3 sm:py-3.5 overflow-visible ${
           isScrolled
             ? "shadow-[0_4px_24px_rgba(0,0,0,0.08)] border-black/10"
             : "border-black/6 shadow-2xs"
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4 overflow-visible">
+        <div style={{ overflow: "visible" }} className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4 overflow-visible">
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-2.5 shrink-0 group">
             <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#0D1311] border border-[#C29B38]/80 flex items-center justify-center shadow-md transition-transform group-hover:scale-105 shrink-0">
@@ -283,7 +284,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation Links with Bulletproof Hover and Click Support */}
-          <nav ref={navRef} className="hidden lg:flex items-center gap-4 xl:gap-7 overflow-visible">
+          <nav ref={navRef} style={{ overflow: "visible" }} className="hidden lg:flex items-center gap-4 xl:gap-7 overflow-visible">
             {navItems.map((item) => {
               const active = isNavActive(item);
               const isDropdownOpen = openDropdown === item.label;
@@ -292,6 +293,7 @@ export default function Navbar() {
                 return (
                   <div
                     key={item.label}
+                    style={{ overflow: "visible" }}
                     className="relative py-1 overflow-visible"
                     onMouseEnter={() => handleMouseEnter(item.label)}
                     onMouseLeave={handleMouseLeave}

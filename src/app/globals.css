@@ -59,14 +59,14 @@ body {
   touch-action: manipulation;
 }
 
-/* Prevent horizontal overflow from sections, main content and footer */
-section, footer, main {
+/* Prevent horizontal overflow from sections and footer */
+section, footer {
   max-width: 100vw;
   overflow-x: clip;
 }
 
-/* Header and navigation elements must allow absolute dropdown menus to overflow cleanly over hero/sections */
-header, nav {
+/* Header, nav, and main elements must allow absolute dropdown menus to overflow cleanly over hero/sections */
+header, nav, main {
   overflow: visible !important;
 }
 

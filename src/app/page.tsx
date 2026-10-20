@@ -20,7 +20,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#FAF7F2] text-[#141A17] selection:bg-[#C29B38] selection:text-black">
+    <main style={{ overflow: "visible" }} className="min-h-screen bg-[#FAF7F2] text-[#141A17] selection:bg-[#C29B38] selection:text-black">
       {/* 1. Brand Navbar with GCL Logo & Top Bar */}
       <Navbar />
 
