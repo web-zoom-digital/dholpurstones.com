@@ -71,11 +71,12 @@ export default function Navbar() {
     {
       label: "Products",
       children: [
+        { label: "Front Elevation (300+ Designs)", href: "/#elevation" },
+        { label: "Farm House & Gardens", href: "/landscaping" },
         { label: "Agra Red", href: "/products#products" },
         { label: "Dholpur Beige", href: "/products#products" },
         { label: "Chocolate", href: "/products#products" },
         { label: "Bansi Pink", href: "/products#products" },
-        { label: "Landscaping Solutions", href: "/landscaping" },
         { label: "Stone Articles & Sculptures", href: "/articles" },
       ],
     },
@@ -171,7 +172,7 @@ export default function Navbar() {
 
             <span className="hidden lg:inline-flex items-center gap-1 text-[#C29B38] bg-[#C29B38]/10 border border-[#C29B38]/30 px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider text-[10px]">
               <Award className="w-3 h-3 text-[#C29B38]" />
-              Govt. of India Awarded
+              Govt. of India Awarded &bull; 300+ Front Elevations
             </span>
           </div>
         </div>

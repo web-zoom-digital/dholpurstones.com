@@ -38,40 +38,46 @@ function AnimDiv({
 
 const apps = [
   {
+    id: "farmhouse",
+    title: "Luxury Farm Houses & Country Estates",
+    desc: "Grand stone entrance gateways, boundary wall cladding, cobblestone driveways, gazebo plinths, and poolside retreats.",
+    image: "/assets/landscaping/landscape_patio_paving.jpg",
+    badge: "Farm House Specialist",
+  },
+  {
+    id: "gardens",
+    title: "Designer Gardens & Outdoor Landscapes",
+    desc: "Tiered sandstone fountains, lotus stone basins, Japanese stone lanterns, lion sculptures, and anti-slip flagstone pathways.",
+    image: "/assets/landscaping/landscape_water_fountain.jpg",
+    badge: "Garden Landscaping",
+  },
+  {
+    id: "elevation",
+    title: "Sandstone Front Elevation (300+ Designs)",
+    desc: "Awarded by Govt. of India for creating 300+ bespoke front elevation designs — carved jharokhas, fluted pillars, and cornice relief.",
+    image: "/assets/garg/crop_lion.jpg",
+    badge: "Govt. of India Awarded",
+  },
+  {
     id: "temples",
-    title: "Temples & Spiritual Places",
-    desc: "Intricate sandstone pillars, shikhara carvings, and sanctum flooring.",
+    title: "Temples & Spiritual Sanctuaries",
+    desc: "Intricate sandstone pillars, shikhara carvings, and sanctum flooring chiseled by generational master stone artisans.",
     image: "/assets/garg/temple_sanctum_pillars.jpg",
+    badge: "Sacred Masonry",
   },
   {
-    id: "residential",
-    title: "Residential Villas & Estates",
-    desc: "Luxury marble cladding, stone lanterns, fireplaces & ornamental carvings.",
-    image: "/assets/garg/stone_lantern.jpg",
-  },
-  {
-    id: "commercial",
-    title: "Commercial Buildings & Plazas",
-    desc: "High-durability granite facades, monolithic steps and lobby interiors.",
-    image: "/assets/garg/black_granite.jpg",
-  },
-  {
-    id: "landscapes",
-    title: "Landscapes & Royal Gardens",
-    desc: "Sculptural sandstone lions, stone benches, fountains and pathways.",
-    image: "/assets/garg/lion_sculpture.jpg",
-  },
-  {
-    id: "public",
-    title: "Public Spaces & Institutions",
-    desc: "Calibrated architectural stone for universities, hospitals & airports.",
-    image: "/assets/garg/botticino_marble.jpg",
+    id: "villas",
+    title: "Palatial Villas & Private Havelis",
+    desc: "Luxury sandstone wall cladding, ornamental jali lattice screens, fireplace mantels, and classical colonnades.",
+    image: "/assets/garg/crop_lantern.jpg",
+    badge: "Estate Architecture",
   },
   {
     id: "monuments",
-    title: "Monuments & Heritage Restorations",
-    desc: "Authentic quarry extraction & historical preservation stone masonry.",
-    image: "/assets/garg/semi_precious.jpg",
+    title: "Monuments & Landmark Projects",
+    desc: "Direct quarry extraction and turnkey contracting for parliamentary assemblies, 5-star hotel atriums, and embassies.",
+    image: "/assets/projects/signature_atrium_cladding.jpg",
+    badge: "Monumental Contracting",
   },
 ];
 
@@ -84,7 +90,7 @@ export default function Applications() {
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#C29B38]" />
             <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#141A17] uppercase">
-              DHOLPURESTONES.COM
+              DHOLPURESTONES.COM &bull; ARCHITECTURAL TYPOLOGIES
             </span>
           </div>
           <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C29B38] tracking-widest">
@@ -95,14 +101,14 @@ export default function Applications() {
         {/* Section Title */}
         <AnimDiv delay={0} className="mb-8 sm:mb-10">
           <span className="text-[10px] sm:text-xs font-bold text-[#C29B38] uppercase tracking-[0.18em] block mb-2">
-            Versatile Typologies
+            FARM HOUSES &bull; GARDENS &bull; FRONT ELEVATION
           </span>
           <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl lg:text-4xl font-bold text-[#141A17] uppercase tracking-wide mb-3">
-            Applications
+            Architectural Applications
           </h2>
           <div className="w-12 h-1 bg-[#C29B38] rounded-full mb-3" />
           <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#68726E] max-w-2xl">
-            Natural stone brings lasting character, dignity and endurance to architecture, landscapes and landmark spaces across generations.
+            Specialized natural stone execution for luxury farm houses, expansive private gardens, and award-winning front elevations — alongside temples and heritage monuments across India &amp; worldwide.
           </p>
         </AnimDiv>
 
@@ -121,6 +127,13 @@ export default function Applications() {
                     className="object-cover object-center group-hover:scale-106 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  {/* Category Pill */}
+                  <div className="absolute top-3 left-3 bg-[#0D1311]/85 backdrop-blur-xs px-3 py-1 rounded-full border border-white/15">
+                    <span className="text-[9px] font-bold text-[#E0BA55] uppercase tracking-wider">
+                      {a.badge}
+                    </span>
+                  </div>
                 </div>
 
                 {/* Details */}
@@ -133,9 +146,12 @@ export default function Applications() {
                       {a.desc}
                     </p>
                   </div>
-                  <div className="mt-3 pt-2.5 border-t border-black/5 flex items-center gap-1.5 text-[10px] font-bold text-[#C29B38] uppercase tracking-wider">
-                    <Sparkles className="w-3 h-3 text-[#C29B38]" />
-                    <span>Architectural Specification</span>
+                  <div className="mt-3 pt-2.5 border-t border-black/5 flex items-center justify-between text-[10px] font-bold text-[#C29B38] uppercase tracking-wider">
+                    <div className="flex items-center gap-1.5">
+                      <Sparkles className="w-3 h-3 text-[#C29B38]" />
+                      <span>Quarry Direct Supply</span>
+                    </div>
+                    <span className="text-[#134e3f]">Custom CAD</span>
                   </div>
                 </div>
               </div>

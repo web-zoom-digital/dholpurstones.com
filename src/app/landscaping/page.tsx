@@ -8,16 +8,16 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { ChevronRight, Home as HomeIcon, TreePine, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Natural Sand Stone Solutions for Beautiful Landscaping | Dholpurestones",
+  title: "Luxury Farm House & Garden Landscaping Solutions in Sandstone | Dholpurestones",
   description:
-    "High-Quality Natural Stone for Architects, Builders & Landscapers. Patio flagstones, non-slip pool copings, monolithic garden steps, retaining walls, and hand-carved water fountains from Sarmathura quarries.",
+    "High-Quality Natural Stone for Luxury Farm Houses, Private Gardens, Builders & Landscapers. Over 300+ front elevation designs in sandstone awarded by the Govt. of India. Patios, pool coping, steps, retaining walls, and hand-carved water fountains from Sarmathura quarries.",
   alternates: {
     canonical: "https://dholpurestones.com/landscaping",
   },
   openGraph: {
-    title: "Natural Sand Stone Solutions for Beautiful Landscaping | Dholpurestones",
+    title: "Luxury Farm House & Garden Landscaping Solutions | Dholpurestones",
     description:
-      "Direct quarry extraction from Sarmathura and Sikandra. Anti-slip calibrated pavers, bullnose pool coping, dry stone walling, and royal fountains.",
+      "Direct quarry extraction from Sarmathura and Sikandra. Specializing in luxury farm houses, designer gardens, and 300+ front elevation designs awarded by Govt. of India.",
     url: "https://dholpurestones.com/landscaping",
   },
 };
@@ -37,22 +37,22 @@ export default function LandscapingPage() {
               <span>Home</span>
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/40" />
-            <span className="text-[#C29B38] font-semibold">Landscaping Solutions</span>
+            <span className="text-[#C29B38] font-semibold">Farm House &amp; Gardens</span>
           </nav>
 
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#134e3f]/25 border border-[#C29B38]/40 mb-3">
             <TreePine className="w-3 h-3 text-[#C29B38]" />
             <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#E0BA55] tracking-[0.2em] uppercase">
-              ARCHITECTURAL &bull; BUILDERS &bull; LANDSCAPERS
+              LUXURY FARM HOUSES &bull; GARDENS &bull; 300+ ELEVATION DESIGNS
             </span>
           </div>
 
           <h1 className="font-['Cinzel',serif] text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wider text-white">
-            Natural Sand Stone Solutions for Beautiful Landscaping
+            Natural Sand Stone Solutions for Luxury Farm Houses &amp; Garden Landscaping
           </h1>
           <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/70 max-w-2xl mt-3 leading-relaxed">
-            High-Quality Natural Stone for Architects, Builders &amp; Landscapers. Sourced directly from our
-            proprietary quarry strata in Sarmathura, Rajasthan for villas, resorts, and iconic civic parks.
+            High-Quality Natural Stone for Luxury Farm Houses, Private Gardens &amp; Estate Builders. 
+            We have made more than 300+ front elevation designs in sandstone, for which we were awarded by the Government of India.
           </p>
         </div>
       </section>

@@ -10,10 +10,16 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dholpurestones.com"),
-  title: "Dholpurestones.com (Estd. 1953) | Natural Stone, Sandstone Mines, Marble & Global Contractor",
+  title: "Dholpurestones.com (Estd. 1953) | Luxury Farm Houses, Gardens & 300+ Front Elevation Sandstone Designs",
   description:
-    "Dholpurestones.com (Estd. 1953) is a premier natural stone conglomerate, quarry owner, manufacturer, exporter and contractor. Specializing in Dholpur sandstone, marble, granite, semi-precious stone slabs, and hand-carved architectural elements. Projects include Parliament House New Delhi, Akshardham, Adani House, AIIMS Bhopal, and global embassies.",
+    "Dholpurestones.com (Estd. 1953) is a premier natural stone conglomerate and quarry owner. Specialized in luxury Farm Houses, Garden Landscaping, and over 300+ designs for front elevation in sandstone (awarded by the Government of India). Suppliers to Parliament House New Delhi, Akshardham, and global landmarks.",
   keywords: [
+    "Sandstone Front Elevation Designs",
+    "Farm House Sandstone Elevation",
+    "Farm House Stone Landscaping",
+    "Luxury Garden Landscaping Sandstone",
+    "Sandstone Front Elevation Awarded by Govt of India",
+    "300 Front Elevation Designs Sandstone",
     "Dholpurestones.com",
     "Dholpur Stones",
     "Garg Corporation Ltd",

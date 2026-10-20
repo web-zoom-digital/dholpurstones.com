@@ -11,6 +11,7 @@ import {
   Sparkles,
   BadgeCheck,
   Flame,
+  Award,
 } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 
@@ -47,6 +48,18 @@ function AnimDiv({
 }
 
 const reasons = [
+  {
+    id: "elevation-award",
+    icon: Award,
+    badge: "GOVT. OF INDIA AWARDED",
+    title: "300+ Front Elevation Designs (Farm Houses & Estates)",
+    shortDesc:
+      "We have made more than 300+ designs for front elevation in sandstone, for which we were awarded by the Government of India.",
+    fullDetails:
+      "Specialized in luxury farm houses, country estates, and grand villa frontages. From carved jharokhas, majestic entrance gate pillars, fluted columns, and stone cornices to boundary walls and garden courtyards — our award-winning design catalogue transforms properties into royal architectural landmarks.",
+    stat: "300+",
+    statLabel: "Front Elevation Designs",
+  },
   {
     id: "quarry-direct",
     icon: Mountain,

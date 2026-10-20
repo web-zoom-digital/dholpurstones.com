@@ -130,23 +130,32 @@ const faqs: FAQItem[] = [
     categoryLabel: "DIRECT QUOTATION",
     highlights: ["Direct Consultation with Arvind Garg", "Free Architectural Sample Box", "CAD & BOQ Drawing Support"],
   },
+  {
+    id: "farmhouse-elevation",
+    number: "09",
+    q: "Do you specialize in luxury farm houses, designer gardens, and front elevation in sandstone?",
+    a: "Yes, this is our foremost specialty. We have made more than 300+ designs for front elevation in natural sandstone, for which we were awarded by the Government of India. Our dedicated outdoor architectural team executes turnkey stone projects for sprawling luxury farm houses, private country retreats, and designer gardens. This includes grand carved entrance gates, boundary wall copings, heavy-duty cobblestone driveways, natural cleft garden walkways, anti-slip pool decks, and monumental multi-tier stone fountains.",
+    category: "landmarks",
+    categoryLabel: "FARM HOUSE & FRONT ELEVATION",
+    highlights: ["300+ Front Elevation Designs", "Awarded by Govt. of India", "Complete Farm House & Garden Masonry"],
+  },
 ];
 
 const categoryTabs = [
-  { id: "all", label: "All Questions", count: 8 },
+  { id: "all", label: "All Questions", count: 9 },
   { id: "quarries", label: "Quarries & Mining", count: 2 },
   { id: "materials", label: "Materials & Specs", count: 2 },
-  { id: "landmarks", label: "Landmarks & Temples", count: 2 },
+  { id: "landmarks", label: "Landmarks, Farm Houses & Elevation", count: 3 },
   { id: "export", label: "Global Exports", count: 2 },
 ];
 
 const tickerHighlights = [
-  "GOVT. OF INDIA AWARDED DIRECTOR (MR. ARVIND GARG)",
+  "WE HAVE MADE MORE THAN 300+ DESIGNS FOR FRONT ELEVATION IN SANDSTONE (AWARDED BY GOVT. OF INDIA)",
+  "SPECIALIZED IN LUXURY FARM HOUSES & DESIGNER GARDEN LANDSCAPING",
   "100% OWN QUARRY CONCESSIONS IN SARMATHURA & SIKANDRA",
   "HISTORIC DIRECT SUPPLIER TO NEW DELHI PARLIAMENT HOUSE",
   "OVER 50+ ISKCON & MONUMENTAL TEMPLES BUILT WORLDWIDE",
   "IS:3620 LABORATORY TESTED COMPRESSIVE STRENGTH >68 MPA",
-  "CANADIAN OVERSEAS PRESENCE FOR NORTH AMERICAN ARCHITECTS",
   "ISPM-15 CERTIFIED TIMBER PACKAGING FOR 40+ GLOBAL PORTS",
 ];
 

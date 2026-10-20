@@ -60,7 +60,7 @@ export default function ContactSection() {
     name: "",
     phone: "",
     email: "",
-    stoneType: "Sandstone Sculptural Articles (Peacock, Lion)",
+    stoneType: "Luxury Farm House & Garden Landscaping",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -754,7 +754,9 @@ export default function ContactSection() {
                       onChange={(e) => setForm({ ...form, stoneType: e.target.value })}
                       className="w-full bg-[#FAF7F2] border border-black/10 focus:border-[#C29B38] focus:ring-1 focus:ring-[#C29B38] rounded-xl px-4 py-3 text-xs sm:text-sm text-[#141A17] outline-none transition-all"
                     >
-                      <option>Natural Sandstone Landscaping (Patios, Steps, Coping &amp; Fountains)</option>
+                      <option>Luxury Farm House &amp; Garden Landscaping</option>
+                      <option>Sandstone Front Elevation (300+ Designs - Govt. Awarded)</option>
+                      <option>Natural Sandstone Patios, Steps, Coping &amp; Fountains</option>
                       <option>Sandstone Sculptural Articles (Peacock, Lion)</option>
                       <option>Stone Lanterns &amp; Landscape Articles</option>
                       <option>Dholpur Beige &amp; Red Calibrated Tiles &amp; Slabs</option>
