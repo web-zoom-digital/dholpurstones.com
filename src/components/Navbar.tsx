@@ -199,12 +199,15 @@ export default function Navbar() {
   const isNavActive = (item: NavItem): boolean => {
     if (item.href) {
       if (item.href === "/" && pathname === "/") return true;
-      if (item.href !== "/" && pathname.startsWith(item.href)) return true;
+      if (item.href !== "/" && !item.href.startsWith("/#") && pathname === item.href) return true;
+      if (item.href !== "/" && !item.href.startsWith("/#") && pathname.startsWith(item.href)) return true;
     }
     if (item.children) {
-      return item.children.some(
-        (c) => pathname === c.href || (c.href !== "/" && pathname.startsWith(c.href.split("#")[0]))
-      );
+      return item.children.some((c) => {
+        const basePath = c.href.split("#")[0];
+        if (!basePath || basePath === "/") return false;
+        return pathname === basePath || pathname.startsWith(basePath);
+      });
     }
     return false;
   };
@@ -226,9 +229,9 @@ export default function Navbar() {
               href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20inquire%20about%20natural%20stone"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-[#25D366] font-semibold hover:text-white transition-colors"
+              className="flex items-center gap-1.5 text-[#C29B38] font-semibold hover:text-[#FAF7F2] transition-colors"
             >
-              <WhatsAppIcon className="w-4 h-4 shrink-0 fill-[#25D366]" size={16} />
+              <WhatsAppIcon className="w-4 h-4 shrink-0 fill-[#C29B38]" size={16} />
               <span>+91 94149 45457</span>
             </a>
 
@@ -274,7 +277,7 @@ export default function Navbar() {
               </span>
             </div>
             <div className="flex flex-col leading-tight min-w-0">
-              <span className="font-['Cinzel',serif] text-sm sm:text-lg font-bold text-[#141A17] uppercase tracking-[0.06em] group-hover:text-[#852233] transition-colors whitespace-nowrap">
+              <span className="font-['Cinzel',serif] text-sm sm:text-lg font-bold text-[#141A17] uppercase tracking-[0.06em] group-hover:text-[#C29B38] transition-colors whitespace-nowrap">
                 Dholpurestones
               </span>
               <span className="text-[8.5px] sm:text-[9.5px] text-[#68726E] uppercase tracking-[0.14em] font-semibold whitespace-nowrap">
@@ -284,7 +287,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation Links with Bulletproof Hover and Click Support */}
-          <nav ref={navRef} style={{ overflow: "visible" }} className="hidden lg:flex items-center gap-4 xl:gap-7 overflow-visible">
+          <nav ref={navRef} style={{ overflow: "visible" }} className="hidden lg:flex items-center gap-3.5 xl:gap-6 overflow-visible">
             {navItems.map((item) => {
               const active = isNavActive(item);
               const isDropdownOpen = openDropdown === item.label;
@@ -301,10 +304,10 @@ export default function Navbar() {
                     <button
                       type="button"
                       onClick={(e) => handleDropdownClick(e, item.label)}
-                      className={`inline-flex items-center gap-1.5 font-['Plus_Jakarta_Sans',sans-serif] text-[14.5px] font-bold tracking-tight transition-colors cursor-pointer py-1.5 px-2 rounded-lg ${
+                      className={`inline-flex items-center gap-1.5 font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-bold tracking-tight transition-all cursor-pointer py-1.5 px-3 rounded-full ${
                         active || isDropdownOpen
-                          ? "text-[#852233] bg-[#852233]/5"
-                          : "text-[#1E2328] hover:text-[#852233] hover:bg-[#FAF7F2]"
+                          ? "text-[#0D1311] bg-[#C29B38]/20 border border-[#C29B38]/60 shadow-2xs"
+                          : "text-[#141A17] hover:text-[#C29B38] hover:bg-[#FAF7F2]"
                       }`}
                       aria-haspopup="true"
                       aria-expanded={isDropdownOpen}
@@ -312,7 +315,7 @@ export default function Navbar() {
                       <span>{item.label}</span>
                       <ChevronDown
                         className={`w-4 h-4 transition-transform duration-200 ${
-                          isDropdownOpen ? "rotate-180 text-[#852233]" : "text-[#1E2328]/60"
+                          isDropdownOpen ? "rotate-180 text-[#C29B38]" : "text-[#141A17]/60"
                         }`}
                       />
                     </button>
@@ -324,13 +327,13 @@ export default function Navbar() {
                         onMouseEnter={() => handleMouseEnter(item.label)}
                         onMouseLeave={handleMouseLeave}
                       >
-                        <div className="bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.22)] border border-black/10 p-2.5 flex flex-col space-y-0.5">
+                        <div className="bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.18)] border border-[#C29B38]/30 p-2.5 flex flex-col space-y-0.5">
                           {item.children.map((sub) => (
                             <Link
                               key={sub.label}
                               href={sub.href}
                               onClick={(e) => handleNavClick(e, sub.href)}
-                              className="font-['Plus_Jakarta_Sans',sans-serif] text-[13.5px] font-semibold text-[#1E2328] hover:text-[#852233] hover:bg-[#FAF7F2] rounded-xl px-3.5 py-2.5 transition-colors block"
+                              className="font-['Plus_Jakarta_Sans',sans-serif] text-[13.5px] font-semibold text-[#141A17] hover:text-[#0D1311] hover:bg-[#C29B38]/15 hover:translate-x-1 rounded-xl px-3.5 py-2.5 transition-all block"
                             >
                               {sub.label}
                             </Link>
@@ -350,10 +353,10 @@ export default function Navbar() {
                   onClick={(e) => handleNavClick(e, item.href || "/")}
                   className={`font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-bold tracking-tight transition-all py-1.5 px-3 rounded-full flex items-center gap-1.5 shrink-0 ${
                     item.label === "Farm House & Gardens"
-                      ? "bg-[#134e3f]/10 text-[#134e3f] border border-[#134e3f]/30 hover:bg-[#134e3f] hover:text-white"
+                      ? "bg-[#134e3f]/10 text-[#134e3f] border border-[#134e3f]/30 hover:bg-[#134e3f] hover:text-white shadow-2xs"
                       : active
-                      ? "text-[#852233]"
-                      : "text-[#1E2328] hover:text-[#852233]"
+                      ? "text-[#0D1311] bg-[#C29B38]/20 border border-[#C29B38]/60 shadow-2xs"
+                      : "text-[#141A17] hover:text-[#C29B38] hover:bg-[#FAF7F2]"
                   }`}
                 >
                   {item.label === "Farm House & Gardens" && (
@@ -367,14 +370,14 @@ export default function Navbar() {
 
           {/* Right Action Buttons */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-            {/* WhatsApp CTA */}
+            {/* WhatsApp CTA Styled in Website's Royal Gold Theme */}
             <a
               href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20connect%20regarding%20natural%20stone%20projects"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-['Plus_Jakarta_Sans',sans-serif] text-xs font-bold tracking-wider uppercase px-4 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-[#0D1311] transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs font-bold tracking-wider uppercase px-4 sm:px-5 py-2.5 rounded-full bg-[#C29B38] hover:bg-[#dfb54b] text-[#0D1311] transition-all duration-300 shadow-[0_4px_16px_rgba(194,155,56,0.32)] hover:shadow-[0_6px_22px_rgba(194,155,56,0.5)] border border-[#C29B38] active:scale-95 whitespace-nowrap shrink-0 group"
             >
-              <WhatsAppIcon className="w-4 h-4 fill-[#0D1311] shrink-0" size={16} />
+              <WhatsAppIcon className="w-4 h-4 fill-[#0D1311] shrink-0 transition-transform group-hover:scale-110" size={16} />
               <span className="hidden sm:inline">WhatsApp Chat</span>
               <span className="sm:hidden">Chat</span>
             </a>
@@ -382,10 +385,10 @@ export default function Navbar() {
             {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 rounded-xl bg-black/5 hover:bg-black/10 text-[#141A17] transition-colors focus:outline-none focus:ring-2 focus:ring-[#852233]"
+              className="lg:hidden p-2 rounded-xl bg-black/5 hover:bg-black/10 text-[#141A17] transition-colors focus:outline-none focus:ring-2 focus:ring-[#C29B38]"
               aria-label="Toggle Navigation Menu"
             >
-              {mobileOpen ? <X className="w-5 h-5 text-[#852233]" /> : <Menu className="w-5 h-5" />}
+              {mobileOpen ? <X className="w-5 h-5 text-[#C29B38]" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
@@ -439,13 +442,13 @@ export default function Navbar() {
                         type="button"
                         onClick={() => toggleMobileSubmenu(item.label)}
                         className={`w-full flex items-center justify-between p-3.5 text-[14.5px] font-bold text-left transition-colors ${
-                          active ? "text-[#852233]" : "text-[#1E2328]"
+                          active ? "text-[#C29B38] bg-[#0D1311]" : "text-[#141A17]"
                         }`}
                       >
                         <span>{item.label}</span>
                         <ChevronDown
                           className={`w-4 h-4 transition-transform duration-200 ${
-                            isExpanded ? "rotate-180 text-[#852233]" : "text-[#1E2328]/60"
+                            isExpanded ? "rotate-180 text-[#C29B38]" : "text-[#141A17]/60"
                           }`}
                         />
                       </button>
@@ -457,7 +460,7 @@ export default function Navbar() {
                               key={sub.label}
                               href={sub.href}
                               onClick={(e) => handleNavClick(e, sub.href)}
-                              className="block px-3 py-2.5 text-[13.5px] font-semibold text-[#4A5550] hover:text-[#852233] hover:bg-white rounded-lg transition-colors"
+                              className="block px-3 py-2.5 text-[13.5px] font-semibold text-[#4A5550] hover:text-[#C29B38] hover:bg-white rounded-lg transition-colors"
                             >
                               {sub.label}
                             </Link>
@@ -477,8 +480,8 @@ export default function Navbar() {
                       item.label === "Farm House & Gardens"
                         ? "bg-[#134e3f]/10 text-[#134e3f] border-[#134e3f]/30"
                         : active
-                        ? "text-[#852233] bg-[#852233]/5 border-[#852233]/30"
-                        : "text-[#1E2328] bg-white border-black/6 hover:text-[#852233]"
+                        ? "text-[#C29B38] bg-[#0D1311] border-[#C29B38]/40"
+                        : "text-[#141A17] bg-white border-black/6 hover:text-[#C29B38]"
                     }`}
                   >
                     <span>{item.label}</span>
@@ -498,17 +501,17 @@ export default function Navbar() {
                 href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20connect%20regarding%20natural%20stone%20projects"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-full bg-[#25D366] text-[#0D1311] text-xs font-bold uppercase tracking-wider shadow-md hover:bg-[#20ba59] transition-colors"
+                className="flex items-center justify-center gap-2 w-full py-3.5 px-4 rounded-full bg-[#C29B38] hover:bg-[#dfb54b] text-[#0D1311] text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all active:scale-95 border border-[#C29B38]"
               >
                 <WhatsAppIcon className="w-4 h-4 fill-[#0D1311]" size={16} />
                 <span>Chat On WhatsApp</span>
               </a>
               <div className="text-[10px] text-center text-[#68726E] flex items-center justify-center gap-2 pt-1">
-                <a href="tel:+919414945457" className="hover:text-[#852233] font-semibold">
+                <a href="tel:+919414945457" className="hover:text-[#C29B38] font-semibold">
                   WA: +91 94149 45457
                 </a>
                 <span>&bull;</span>
-                <a href="tel:+919057355232" className="hover:text-[#852233] font-semibold">
+                <a href="tel:+919057355232" className="hover:text-[#C29B38] font-semibold">
                   Call: +91 90573 55232
                 </a>
               </div>
