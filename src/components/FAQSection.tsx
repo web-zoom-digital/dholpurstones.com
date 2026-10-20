@@ -1,0 +1,547 @@
+"use client";
+
+import React, { useState, useMemo, useRef, useEffect } from "react";
+import {
+  ChevronDown,
+  Sparkles,
+  HelpCircle,
+  Search,
+  X,
+  Compass,
+  CheckCircle2,
+  ArrowUpRight,
+  ShieldCheck,
+  Flame,
+} from "lucide-react";
+import WhatsAppIcon from "./WhatsAppIcon";
+
+function AnimDiv({
+  children,
+  className = "",
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setTimeout(() => el.classList.add("gcl-visible"), delay);
+          obs.unobserve(el);
+        }
+      },
+      { threshold: 0.08 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [delay]);
+  return (
+    <div ref={ref} className={`gcl-animate ${className}`}>
+      {children}
+    </div>
+  );
+}
+
+export interface FAQItem {
+  id: string;
+  number: string;
+  q: string;
+  a: string;
+  category: "all" | "quarries" | "materials" | "landmarks" | "export";
+  categoryLabel: string;
+  highlights: string[];
+}
+
+const faqs: FAQItem[] = [
+  {
+    id: "legacy",
+    number: "01",
+    q: "What is the historical origin and founding legacy of Dholpurestones.com?",
+    a: "Dholpurestones.com traces its natural stone lineage back to 1953, incorporating Garg Corporation Ltd. and Saroj Stone Industries. Over more than 70 years of continuous family leadership across three generations, we operate as proprietary quarry leaseholders, modern CNC processors, direct global exporters, and turnkey monumental stone contractors.",
+    category: "quarries",
+    categoryLabel: "MINING & HERITAGE",
+    highlights: ["Established 1953", "3 Generations of Leadership", "Awarded by Govt. of India"],
+  },
+  {
+    id: "materials",
+    number: "02",
+    q: "What varieties of natural stone and carved architectural elements do you supply?",
+    a: "We quarry and process authentic Dholpur Sandstone (Beige, Pink, Red, White, and Chocolate Teakwood), premium Italian Botticino and Turkish Elmali Beige marble, high-density Black Granite, rare semi-precious quartz slabs (Blue Agate, Lapis Lazuli), and bespoke hand-carved heritage articles including majestic guardian lions, monumental temple pillars, and perforated stone lanterns.",
+    category: "materials",
+    categoryLabel: "MATERIALS & FINISHES",
+    highlights: ["12+ Sandstone Shades", "Italian Botticino & Marble", "Hand-Carved Sculptures"],
+  },
+  {
+    id: "quarries",
+    number: "03",
+    q: "Where are your quarry leases, manufacturing plants, and overseas offices situated?",
+    a: "Our primary sandstone quarries operate over contiguous strata concessions in Sarmathura (District Dholpur, Rajasthan). We run automated gangsaw and CNC processing facilities in Sikandra and Kishangarh (Rajasthan), and maintain a North American liaison office in Canada to seamlessly coordinate direct container shipments for global architects.",
+    category: "quarries",
+    categoryLabel: "QUARRIES & INFRASTRUCTURE",
+    highlights: ["Sarmathura Quarry Concessions", "Sikandra 8-Axis CNC Hub", "Canadian Corporate Office"],
+  },
+  {
+    id: "landmarks",
+    number: "04",
+    q: "What iconic national landmarks and international diplomatic missions have you executed?",
+    a: "Our credentials include the New Delhi Parliament House, Akshardham Temple (New Delhi), Adani House (Ahmedabad), AIIMS (Bhopal), the Indian Embassy in Berlin (Germany), Indian Embassy in Kathmandu (Nepal), over 50 ISKCON temples worldwide, Kashiram Garden (Lucknow), and luxury private palatial estates across the Lutyens Bungalow Zone and Dubai.",
+    category: "landmarks",
+    categoryLabel: "LANDMARK EXECUTIONS",
+    highlights: ["Indian Parliament House", "Akshardham Temple", "50+ Global ISKCON Temples"],
+  },
+  {
+    id: "standards",
+    number: "05",
+    q: "Do your natural stones comply with IS:3620 and international physical standards?",
+    a: "Yes. All sandstone mined from our Sarmathura strata undergoes physical laboratory testing and exceeds IS:3620 standards. We guarantee compressive strength above 68 MPa (up to 72 MPa for Dholpur Red), ultra-low water absorption under 1.15%, density between 2.42–2.52 g/cm³, and complete frost and thermal shock resistance across centuries.",
+    category: "materials",
+    categoryLabel: "LAB TESTED DENSITY",
+    highlights: ["Compressive Strength >68 MPa", "Water Absorption <1.15%", "Zero Efflorescence Guarantee"],
+  },
+  {
+    id: "custom-carving",
+    number: "06",
+    q: "Do you undertake bespoke architectural stone carving and temple shikhara engineering?",
+    a: "Yes. Our Sikandra and Sarmathura ateliers house hereditary Shilpa Shastra stone sculptors working alongside 8-axis CNC profiling saws. We engineer monolithic fluted columns, ornate floral jali screens, cantilevered Jharokhas, multi-tiered Nagara shikharas, and mortarless dry-joint interlocking stone assemblies.",
+    category: "landmarks",
+    categoryLabel: "SHILPA SHASTRA MASONRY",
+    highlights: ["Hereditary Temple Guild", "±0.5mm Precision Tolerances", "Mortarless Dry-Joint Carving"],
+  },
+  {
+    id: "export-packaging",
+    number: "07",
+    q: "What is your seaworthy crating and international export logistics process?",
+    a: "Every export consignment is packed inside heavy-duty ISPM-15 heat-treated, fumigated timber crates. Slabs and tiles are separated by high-density foam sheets and corner edge protectors, secured with steel strapping and barcoded digital packing lists. We service 40+ international seaports via Mundra and Kandla ports with complete CIF and FOB export documentation.",
+    category: "export",
+    categoryLabel: "GLOBAL ISPM-15 EXPORTS",
+    highlights: ["ISPM-15 Heat-Treated Crating", "Foam Spacing & Corner Guards", "Direct Shipping via Mundra Port"],
+  },
+  {
+    id: "consultation",
+    number: "08",
+    q: "How can architects, developers, or overseas importers request tenders, swatches, and quotes?",
+    a: "You can consult directly with our managing director, Mr. Arvind Garg (Awarded by Govt. of India), via WhatsApp at +91 94149 45457, call at +91 90573 55232, or email CAD drawings and BOQs to gargcorporationltd@gmail.com. We provide complimentary architectural stone sample boxes and expedited quarry-direct factory quotations.",
+    category: "export",
+    categoryLabel: "DIRECT QUOTATION",
+    highlights: ["Direct Consultation with Arvind Garg", "Free Architectural Sample Box", "CAD & BOQ Drawing Support"],
+  },
+];
+
+const categoryTabs = [
+  { id: "all", label: "All Questions", count: 8 },
+  { id: "quarries", label: "Quarries & Mining", count: 2 },
+  { id: "materials", label: "Materials & Specs", count: 2 },
+  { id: "landmarks", label: "Landmarks & Temples", count: 2 },
+  { id: "export", label: "Global Exports", count: 2 },
+];
+
+const tickerHighlights = [
+  "GOVT. OF INDIA AWARDED DIRECTOR (MR. ARVIND GARG)",
+  "100% OWN QUARRY CONCESSIONS IN SARMATHURA & SIKANDRA",
+  "HISTORIC DIRECT SUPPLIER TO NEW DELHI PARLIAMENT HOUSE",
+  "OVER 50+ ISKCON & MONUMENTAL TEMPLES BUILT WORLDWIDE",
+  "IS:3620 LABORATORY TESTED COMPRESSIVE STRENGTH >68 MPA",
+  "CANADIAN OVERSEAS PRESENCE FOR NORTH AMERICAN ARCHITECTS",
+  "ISPM-15 CERTIFIED TIMBER PACKAGING FOR 40+ GLOBAL PORTS",
+];
+
+export default function FAQSection() {
+  const [openId, setOpenId] = useState<string | null>(faqs[0].id);
+  const [activeTab, setActiveTab] = useState<string>("all");
+  const [searchQuery, setSearchQuery] = useState<string>("");
+
+  const toggle = (id: string) => {
+    setOpenId((prev) => (prev === id ? null : id));
+  };
+
+  const filteredFaqs = useMemo(() => {
+    return faqs.filter((faq) => {
+      const matchesTab = activeTab === "all" || faq.category === activeTab;
+      const matchesSearch =
+        searchQuery.trim() === "" ||
+        faq.q.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        faq.a.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        faq.highlights.some((h) => h.toLowerCase().includes(searchQuery.toLowerCase()));
+      return matchesTab && matchesSearch;
+    });
+  }, [activeTab, searchQuery]);
+
+  const leftFaqs = useMemo(
+    () => filteredFaqs.filter((_, idx) => idx % 2 === 0),
+    [filteredFaqs]
+  );
+  const rightFaqs = useMemo(
+    () => filteredFaqs.filter((_, idx) => idx % 2 === 1),
+    [filteredFaqs]
+  );
+
+  const renderCard = (faq: FAQItem, delayIdx: number) => {
+    const isOpen = openId === faq.id;
+    return (
+      <AnimDiv key={faq.id} delay={delayIdx * 40}>
+        <div
+          className={`rounded-3xl border transition-all duration-300 overflow-hidden relative group gcl-card-glow ${
+            isOpen
+              ? "bg-[#FAF7F2] border-[#C29B38] shadow-xl"
+              : "bg-white border-black/8 hover:border-[#C29B38]/50 hover:bg-[#FAF7F2]/40 hover:shadow-md"
+          }`}
+        >
+          {/* Architectural Corner Crosshairs */}
+          <span className="absolute top-2 left-2 text-[10px] text-[#C29B38] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            +
+          </span>
+          <span className="absolute top-2 right-2 text-[10px] text-[#C29B38] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            +
+          </span>
+
+          <button
+            type="button"
+            onClick={() => toggle(faq.id)}
+            className="w-full p-5 sm:p-6 flex items-start justify-between gap-4 text-left focus:outline-none cursor-pointer"
+            aria-expanded={isOpen}
+          >
+            <div className="flex items-start gap-3.5">
+              {/* Number Index */}
+              <div
+                className={`w-9 h-9 rounded-xl flex items-center justify-center font-['Cinzel',serif] text-xs font-bold shrink-0 transition-colors shadow-2xs ${
+                  isOpen
+                    ? "bg-[#134e3f] text-white"
+                    : "bg-[#FAF7F2] text-[#C29B38] group-hover:bg-[#134e3f] group-hover:text-white"
+                }`}
+              >
+                {faq.number}
+              </div>
+
+              <div>
+                <div className="inline-flex items-center gap-1.5 text-[9px] font-bold text-[#C29B38] uppercase tracking-widest bg-white px-2.5 py-0.5 rounded-full border border-black/6 mb-1.5">
+                  <Sparkles className="w-2.5 h-2.5 text-[#C29B38]" />
+                  <span>{faq.categoryLabel}</span>
+                </div>
+                <h4 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-[#141A17] uppercase tracking-wide leading-snug group-hover:text-[#134e3f] transition-colors">
+                  {faq.q}
+                </h4>
+              </div>
+            </div>
+
+            <div
+              className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                isOpen
+                  ? "bg-[#134e3f] text-white rotate-180"
+                  : "bg-[#FAF7F2] text-[#141A17] group-hover:bg-[#C29B38] group-hover:text-black"
+              }`}
+            >
+              <ChevronDown className="w-4 h-4" />
+            </div>
+          </button>
+
+          {/* Expandable Accordion Body */}
+          {isOpen && (
+            <div className="px-5 sm:px-6 pb-6 pt-1 border-t border-black/6 animate-fadeIn">
+              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#4A5550] leading-relaxed mb-4">
+                {faq.a}
+              </p>
+
+              {/* Verified Highlights Pills */}
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                {faq.highlights.map((h, idx) => (
+                  <span
+                    key={idx}
+                    className="inline-flex items-center gap-1.5 bg-white text-[#134e3f] text-[10px] font-bold px-2.5 py-1 rounded-lg border border-black/6 shadow-2xs"
+                  >
+                    <CheckCircle2 className="w-3 h-3 text-[#134e3f]" />
+                    <span>{h}</span>
+                  </span>
+                ))}
+              </div>
+
+              {/* Direct Verification Footer & WhatsApp Trigger */}
+              <div className="pt-3 border-t border-black/6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+                <div className="flex items-center gap-1.5 text-[10px] font-semibold text-[#134e3f]">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#C29B38]" />
+                  <span>Verified from Dholpurestones.com technical archives (1953–Present)</span>
+                </div>
+
+                <a
+                  href={`https://wa.me/919414945457?text=${encodeURIComponent(
+                    `Hello Dholpurestones.com, I have a query regarding: "${faq.q}"`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 font-bold text-[#134e3f] hover:text-[#25D366] transition-colors"
+                >
+                  <WhatsAppIcon className="w-3.5 h-3.5 fill-[#25D366]" size={14} />
+                  <span>Ask on WhatsApp</span>
+                  <ArrowUpRight className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
+          )}
+        </div>
+      </AnimDiv>
+    );
+  };
+
+  return (
+    <section
+      id="faq"
+      className="bg-white py-14 sm:py-24 border-b border-black/6 relative overflow-hidden"
+    >
+      {/* =========================================================================
+          MOTION GRAPHIC BACKGROUND: Geometric Blueprint Grid & Rotating Sacred Yantras
+          ========================================================================= */}
+      {/* Subtle Dotted Architectural Grid */}
+      <div className="absolute inset-0 bg-[radial-gradient(#C29B38_1.2px,transparent_1.2px)] [background-size:32px_32px] opacity-[0.06] pointer-events-none" />
+
+      {/* Floating Animated Ambient Glow Orbs */}
+      <div className="absolute -top-24 right-10 w-[550px] h-[550px] bg-[#C29B38]/6 rounded-full blur-[140px] pointer-events-none animate-ambient-float-1" />
+      <div className="absolute -bottom-24 left-10 w-[500px] h-[500px] bg-[#134e3f]/6 rounded-full blur-[130px] pointer-events-none animate-ambient-float-2" />
+
+      {/* Rotating Sacred Geometry Mandalas / Yantras in Background */}
+      <div className="absolute -top-32 -left-32 w-[460px] h-[460px] opacity-[0.04] pointer-events-none animate-spin-slow">
+        <svg viewBox="0 0 200 200" className="w-full h-full fill-none stroke-[#C29B38]" strokeWidth="0.8">
+          <circle cx="100" cy="100" r="95" strokeDasharray="3 3" />
+          <circle cx="100" cy="100" r="80" />
+          <circle cx="100" cy="100" r="60" strokeDasharray="6 4" />
+          <polygon points="100,10 190,150 10,150" />
+          <polygon points="100,190 10,50 190,50" />
+          <rect x="35" y="35" width="130" height="130" transform="rotate(45 100 100)" />
+        </svg>
+      </div>
+
+      <div className="absolute -bottom-40 -right-40 w-[520px] h-[520px] opacity-[0.035] pointer-events-none animate-spin-reverse">
+        <svg viewBox="0 0 200 200" className="w-full h-full fill-none stroke-[#134e3f]" strokeWidth="0.8">
+          <circle cx="100" cy="100" r="95" />
+          <circle cx="100" cy="100" r="75" strokeDasharray="4 4" />
+          <polygon points="100,5 180,175 20,175" />
+          <polygon points="100,195 20,25 180,25" />
+          <circle cx="100" cy="100" r="45" />
+        </svg>
+      </div>
+
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Header Label */}
+        <AnimDiv className="flex items-center justify-between pb-3 border-b border-black/8 mb-8 sm:mb-10">
+          <div className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#C29B38] animate-pulse" />
+            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.18em] text-[#141A17] uppercase">
+              DHOLPURESTONES.COM &bull; KNOWLEDGE BASE &bull; ESTD. 1953
+            </span>
+          </div>
+          <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C29B38] tracking-widest">
+            AEO / 09
+          </span>
+        </AnimDiv>
+
+        {/* Section Title & Description */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 sm:mb-10">
+          <AnimDiv delay={0} className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C29B38]/10 border border-[#C29B38]/25 text-[#C29B38] text-[10px] font-bold uppercase tracking-[0.2em] mb-3">
+              <Compass className="w-3.5 h-3.5 animate-spin-slow" />
+              <span>Verified Corporate Knowledge &amp; AEO Architecture</span>
+            </div>
+            <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl lg:text-5xl font-bold text-[#141A17] uppercase tracking-wide mb-3">
+              Frequently Asked Questions
+            </h2>
+            <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl lg:text-3xl font-bold text-[#C29B38] uppercase tracking-wider mb-3">
+              Company Knowledge &amp; Inquiries
+            </h3>
+            <div className="w-16 h-1 bg-gradient-to-r from-[#C29B38] via-[#E0BA55] to-transparent rounded-full mb-4" />
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#4A5550] leading-relaxed">
+              Transparent, verified insights into our quarry concessions, geotechnical lab certifications, monumental landmark executions, and turnkey export logistics.
+            </p>
+          </AnimDiv>
+
+          {/* Key Metric Highlights with Gilded Accents */}
+          <AnimDiv delay={100} className="flex flex-wrap gap-3 sm:gap-4 shrink-0">
+            <div className="bg-[#FAF7F2] border border-black/8 rounded-2xl px-5 py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors">
+              <span className="block font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#141A17]">
+                70+ Years
+              </span>
+              <span className="text-[10px] text-[#68726E] font-semibold uppercase tracking-wider">
+                Continuous Legacy
+              </span>
+            </div>
+            <div className="bg-[#FAF7F2] border border-black/8 rounded-2xl px-5 py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors">
+              <span className="block font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#141A17]">
+                100% Direct
+              </span>
+              <span className="text-[10px] text-[#68726E] font-semibold uppercase tracking-wider">
+                Sarmathura Mines
+              </span>
+            </div>
+            <div className="bg-[#FAF7F2] border border-black/8 rounded-2xl px-5 py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors">
+              <span className="block font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#141A17]">
+                50+ Temples
+              </span>
+              <span className="text-[10px] text-[#68726E] font-semibold uppercase tracking-wider">
+                Monumental Masonry
+              </span>
+            </div>
+          </AnimDiv>
+        </div>
+
+        {/* =========================================================================
+            MOTION GRAPHIC INFINITE MARQUEE TICKER (Verified Corporate Ledger)
+            ========================================================================= */}
+        <AnimDiv delay={120} className="mb-8 overflow-hidden rounded-xl bg-gradient-to-r from-[#FAF7F2] via-white to-[#FAF7F2] border border-black/8 py-2.5 shadow-xs">
+          <div className="animate-marquee whitespace-nowrap flex items-center gap-8">
+            {[...tickerHighlights, ...tickerHighlights].map((item, idx) => (
+              <div key={idx} className="inline-flex items-center gap-2 text-[11px] font-bold text-[#141A17] uppercase tracking-wider shrink-0">
+                <span className="text-[#C29B38] text-xs">✦</span>
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </AnimDiv>
+
+        {/* =========================================================================
+            INTERACTIVE CONTROLS BAR: Category Filter Tabs + Search Input
+            ========================================================================= */}
+        <AnimDiv delay={150} className="flex flex-col md:flex-row items-center justify-between gap-4 mb-8 sm:mb-10 pb-4 border-b border-black/8">
+          {/* Category Tabs */}
+          <div className="flex items-center gap-2 sm:gap-2.5 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">
+            {categoryTabs.map((tab) => {
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 shrink-0 cursor-pointer ${
+                    isActive
+                      ? "bg-[#134e3f] text-white shadow-md scale-102"
+                      : "bg-[#FAF7F2] text-[#141A17]/80 hover:text-[#C29B38] hover:bg-white border border-black/8"
+                  }`}
+                >
+                  <span>{tab.label}</span>
+                  <span
+                    className={`text-[10px] px-1.5 py-0.2 rounded-full ${
+                      isActive ? "bg-white/20 text-white" : "bg-black/5 text-[#68726E]"
+                    }`}
+                  >
+                    {tab.count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Real-Time Search Bar */}
+          <div className="relative w-full md:w-72 shrink-0">
+            <Search className="w-4 h-4 text-[#C29B38] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search questions or specs..."
+              className="w-full bg-[#FAF7F2] hover:bg-white focus:bg-white border border-black/10 focus:border-[#C29B38] text-xs font-medium text-[#141A17] pl-10 pr-9 py-2.5 rounded-full transition-all duration-200 outline-none shadow-2xs"
+            />
+            {searchQuery && (
+              <button
+                type="button"
+                onClick={() => setSearchQuery("")}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-[#68726E] hover:text-[#141A17]"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            )}
+          </div>
+        </AnimDiv>
+
+        {/* =========================================================================
+            ADVANCED ACCORDION GRID (2-Column Architecture with Spotlight & Micro-Tabs)
+            ========================================================================= */}
+        {filteredFaqs.length === 0 ? (
+          <div className="text-center py-12 bg-[#FAF7F2] rounded-3xl border border-black/8 p-8 mb-12">
+            <HelpCircle className="w-10 h-10 text-[#C29B38] mx-auto mb-3" />
+            <h4 className="font-['Cinzel',serif] text-base font-bold text-[#141A17] uppercase mb-1">
+              No matching inquiries found
+            </h4>
+            <p className="text-xs text-[#68726E]">
+              Try searching with another keyword or reset the filter tabs.
+            </p>
+            <button
+              onClick={() => {
+                setActiveTab("all");
+                setSearchQuery("");
+              }}
+              className="mt-4 text-xs font-bold text-[#134e3f] underline uppercase tracking-wider"
+            >
+              Reset Filters
+            </button>
+          </div>
+        ) : (
+          <>
+            {/* Desktop 2-Column Masonry: Independent flex columns prevent empty row stretching */}
+            <div className="hidden lg:grid lg:grid-cols-2 gap-6 items-start mb-16">
+              <div className="flex flex-col gap-6">
+                {leftFaqs.map((faq, i) => renderCard(faq, i * 2))}
+              </div>
+              <div className="flex flex-col gap-6">
+                {rightFaqs.map((faq, i) => renderCard(faq, i * 2 + 1))}
+              </div>
+            </div>
+
+            {/* Mobile & Tablet 1-Column Sequential Layout */}
+            <div className="flex flex-col gap-4 lg:hidden mb-12">
+              {filteredFaqs.map((faq, i) => renderCard(faq, i))}
+            </div>
+          </>
+        )}
+
+        {/* =========================================================================
+            ADVANCED MOTION GRAPHIC CALLOUT: Direct Architectural Consultation
+            ========================================================================= */}
+        <AnimDiv delay={250}>
+          <div className="bg-gradient-to-br from-[#134e3f] via-[#0e3b30] to-[#0A261F] rounded-3xl p-6 sm:p-10 border border-[#C29B38]/40 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6 relative overflow-hidden text-white group">
+            {/* Ambient Background Gold Beam Sweep */}
+            <div className="absolute -inset-full bg-gradient-to-r from-transparent via-[#C29B38]/15 to-transparent animate-beam-sweep pointer-events-none" />
+            <div className="absolute -right-10 -bottom-10 w-72 h-72 bg-[#C29B38]/20 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="max-w-2xl text-center lg:text-left relative z-10">
+              <div className="inline-flex items-center gap-2 bg-[#C29B38]/20 border border-[#C29B38]/40 px-3.5 py-1 rounded-full text-[10px] font-bold text-[#FAF7F2] uppercase tracking-widest mb-3 shadow-xs">
+                <Flame className="w-3.5 h-3.5 text-[#C29B38]" />
+                <span>Architectural Tenders &bull; BOQ Engineering</span>
+              </div>
+              <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl lg:text-3xl font-bold text-white uppercase tracking-wider mb-2">
+                Have a Custom Architectural Specification or Tender?
+              </h3>
+              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/80 leading-relaxed">
+                Connect directly with director Arvind Garg (Awarded by Govt. of India). We provide custom CAD drafting, IS:3620 laboratory certificates, and quarry-direct wholesale pricing.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto shrink-0 relative z-10">
+              <a
+                href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20have%20an%20architectural%20tender%20and%20specification%20inquiry%20regarding%20natural%20stone."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-[#0A0F0D] hover:bg-white font-bold text-xs uppercase px-7 py-3.5 rounded-full transition-all duration-300 shadow-xl active:scale-95"
+              >
+                <WhatsAppIcon className="w-4 h-4 fill-[#0A0F0D]" size={16} />
+                <span>Chat Directly on WhatsApp</span>
+              </a>
+
+              <a
+                href="#contact"
+                className="w-full sm:w-auto inline-flex items-center justify-center font-['Plus_Jakarta_Sans',sans-serif] text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all duration-300 active:scale-95 shadow-md"
+              >
+                <span>View Contact Details</span>
+              </a>
+            </div>
+          </div>
+        </AnimDiv>
+
+        {/* Running Bottom Bar */}
+        <div className="mt-8 pt-4 border-t border-black/8 flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] sm:text-[11px] font-semibold text-[#68726E] uppercase tracking-wider text-center sm:text-left">
+          <span>Natural Sandstones &bull; Mines &bull; Manufacturing &bull; Export &bull; Contracting</span>
+          <span className="font-['Cinzel',serif] text-[#141A17]">DHOLPURESTONES.COM</span>
+        </div>
+      </div>
+    </section>
+  );
+}

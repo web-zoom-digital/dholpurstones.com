@@ -1,0 +1,99 @@
+import React from "react";
+import type { Metadata } from "next";
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import SandstoneArticles from "@/components/SandstoneArticles";
+import Footer from "@/components/Footer";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import { ChevronRight, Home as HomeIcon, Sparkles, ShieldCheck } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Hand-Carved Sandstone Sculptures & Architectural Articles | Dholpurestones",
+  description:
+    "Exquisite hand-carved natural sandstone peacock sculptures, regal stone lanterns, lions, jali screens, and temple pillars chiseled by hereditary Shilpa Shastra master artisans in Sikandra & Sarmathura.",
+  alternates: {
+    canonical: "https://dholpurestones.com/articles",
+  },
+  openGraph: {
+    title: "Hand-Carved Sandstone Sculptures & Heritage Articles | Dholpurestones",
+    description:
+      "Handcrafted master stone carvings from authentic Rajasthan quarries. Monolithic peacock sculptures, garden lanterns, and ornamental temple art.",
+    url: "https://dholpurestones.com/articles",
+  },
+};
+
+export default function ArticlesPage() {
+  return (
+    <main className="min-h-screen bg-[#FAF7F2] text-[#141A17] selection:bg-[#C29B38] selection:text-black">
+      <Navbar />
+
+      {/* Breadcrumb Header */}
+      <section className="bg-[#0D1311] text-white py-10 sm:py-14 border-b border-white/10 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C29B38]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <nav className="flex items-center gap-2 text-xs text-white/60 mb-4" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-[#C29B38] flex items-center gap-1 transition-colors">
+              <HomeIcon className="w-3.5 h-3.5" />
+              <span>Home</span>
+            </Link>
+            <ChevronRight className="w-3.5 h-3.5 text-white/40" />
+            <span className="text-[#C29B38] font-semibold">Stone Articles</span>
+          </nav>
+
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C29B38]/15 border border-[#C29B38]/30 mb-3">
+            <Sparkles className="w-3 h-3 text-[#C29B38]" />
+            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C29B38] tracking-[0.2em] uppercase">
+              MASTER ATELIERS &bull; SIKANDRA
+            </span>
+          </div>
+
+          <h1 className="font-['Cinzel',serif] text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wider text-white">
+            Hand-Carved Sculptures &amp; Articles
+          </h1>
+          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/70 max-w-2xl mt-3 leading-relaxed">
+            Preserving classical Indian stone craftsmanship through monolithic hand-carved peacocks,
+            regal stone lanterns, temple shikharas, and intricate lattice jalis.
+          </p>
+        </div>
+      </section>
+
+      {/* Core Component */}
+      <SandstoneArticles />
+
+      {/* Bottom CTA Bar */}
+      <section className="bg-[#141A17] text-white py-12 border-t border-[#C29B38]/20">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <div className="inline-flex items-center gap-2 text-[#C29B38] text-xs font-bold uppercase tracking-wider mb-1">
+              <ShieldCheck className="w-4 h-4" />
+              <span>Bespoke Architectural Commissions</span>
+            </div>
+            <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold">
+              Commission a Custom Sculpture or Temple Pillar?
+            </h3>
+            <p className="text-xs sm:text-sm text-white/70 mt-1 max-w-xl">
+              Our hereditary master artisans carve custom sandstone sculptures according to your exact CAD sketches or references.
+            </p>
+          </div>
+          <div className="flex items-center gap-3 shrink-0">
+            <Link
+              href="/projects"
+              className="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-bold uppercase tracking-wider transition-colors text-white"
+            >
+              View Projects
+            </Link>
+            <Link
+              href="/contact"
+              className="px-6 py-3 rounded-full bg-[#C29B38] hover:bg-[#d4ab44] text-black text-xs font-bold uppercase tracking-wider transition-colors"
+            >
+              Inquire Now
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+      <FloatingWhatsApp />
+    </main>
+  );
+}
