@@ -59,10 +59,15 @@ body {
   touch-action: manipulation;
 }
 
-/* Prevent horizontal overflow from any section */
-section, header, footer, nav, main {
+/* Prevent horizontal overflow from sections, main content and footer */
+section, footer, main {
   max-width: 100vw;
-  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+/* Header and navigation elements must allow absolute dropdown menus to overflow cleanly over hero/sections */
+header, nav {
+  overflow: visible !important;
 }
 
 /* Custom Scrollbar (desktop) */

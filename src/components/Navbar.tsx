@@ -39,6 +39,8 @@ export default function Navbar() {
 
   const navRef = useRef<HTMLElement>(null);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const lastMouseEnterTimeRef = useRef<number>(0);
+  const clickLockedRef = useRef<string | null>(null);
 
   // Scroll listener - only toggles shadow, NEVER changes padding or height to prevent scroll jitter
   useEffect(() => {
@@ -55,6 +57,7 @@ export default function Navbar() {
     const handleClickOutside = (e: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(e.target as Node)) {
         setOpenDropdown(null);
+        clickLockedRef.current = null;
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -135,6 +138,7 @@ export default function Navbar() {
 
   // Mouse hover handlers with delay buffer
   const handleMouseEnter = (label: string) => {
+    lastMouseEnterTimeRef.current = Date.now();
     if (dropdownTimeoutRef.current) {
       clearTimeout(dropdownTimeoutRef.current);
     }
@@ -142,22 +146,33 @@ export default function Navbar() {
   };
 
   const handleMouseLeave = () => {
+    if (clickLockedRef.current) return;
     dropdownTimeoutRef.current = setTimeout(() => {
       setOpenDropdown(null);
-    }, 200);
+    }, 250);
   };
 
-  // Toggle on click
-  const handleDropdownClick = (label: string) => {
+  // Toggle on click — locks dropdown open so clicking never accidentally hides options
+  const handleDropdownClick = (e: React.MouseEvent, label: string) => {
+    e.stopPropagation();
     if (dropdownTimeoutRef.current) {
       clearTimeout(dropdownTimeoutRef.current);
     }
-    setOpenDropdown((prev) => (prev === label ? null : label));
+    const timeSinceEnter = Date.now() - lastMouseEnterTimeRef.current;
+
+    if (openDropdown === label && clickLockedRef.current === label && timeSinceEnter > 450) {
+      setOpenDropdown(null);
+      clickLockedRef.current = null;
+    } else {
+      setOpenDropdown(label);
+      clickLockedRef.current = label;
+    }
   };
 
   // Smooth scroll handler for anchor links
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     setOpenDropdown(null);
+    clickLockedRef.current = null;
     setMobileOpen(false);
 
     if (href.includes("#")) {
@@ -243,13 +258,13 @@ export default function Navbar() {
 
       {/* 2. Main Sticky Navigation Bar (Fixed padding to prevent scroll jitter/bounce) */}
       <header
-        className={`sticky top-0 w-full z-50 bg-white/98 backdrop-blur-md border-b transition-shadow duration-300 py-3 sm:py-3.5 ${
+        className={`sticky top-0 w-full z-[100] bg-white/98 backdrop-blur-md border-b transition-shadow duration-300 py-3 sm:py-3.5 overflow-visible ${
           isScrolled
             ? "shadow-[0_4px_24px_rgba(0,0,0,0.08)] border-black/10"
             : "border-black/6 shadow-2xs"
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4 overflow-visible">
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-2.5 shrink-0 group">
             <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#0D1311] border border-[#C29B38]/80 flex items-center justify-center shadow-md transition-transform group-hover:scale-105 shrink-0">
@@ -268,7 +283,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation Links with Bulletproof Hover and Click Support */}
-          <nav ref={navRef} className="hidden lg:flex items-center gap-4 xl:gap-7">
+          <nav ref={navRef} className="hidden lg:flex items-center gap-4 xl:gap-7 overflow-visible">
             {navItems.map((item) => {
               const active = isNavActive(item);
               const isDropdownOpen = openDropdown === item.label;
@@ -277,13 +292,13 @@ export default function Navbar() {
                 return (
                   <div
                     key={item.label}
-                    className="relative py-1"
+                    className="relative py-1 overflow-visible"
                     onMouseEnter={() => handleMouseEnter(item.label)}
                     onMouseLeave={handleMouseLeave}
                   >
                     <button
                       type="button"
-                      onClick={() => handleDropdownClick(item.label)}
+                      onClick={(e) => handleDropdownClick(e, item.label)}
                       className={`inline-flex items-center gap-1.5 font-['Plus_Jakarta_Sans',sans-serif] text-[14.5px] font-bold tracking-tight transition-colors cursor-pointer py-1.5 px-2 rounded-lg ${
                         active || isDropdownOpen
                           ? "text-[#852233] bg-[#852233]/5"
@@ -303,17 +318,17 @@ export default function Navbar() {
                     {/* Dropdown Menu Box with invisible bridge to prevent losing hover */}
                     {isDropdownOpen && (
                       <div
-                        className="absolute top-full left-0 pt-1.5 z-[100] min-w-[240px] animate-in fade-in slide-in-from-top-1 duration-150"
+                        className="absolute top-full left-0 pt-2 z-[150] min-w-[260px] animate-in fade-in slide-in-from-top-1 duration-150 overflow-visible"
                         onMouseEnter={() => handleMouseEnter(item.label)}
                         onMouseLeave={handleMouseLeave}
                       >
-                        <div className="bg-white rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.14)] border border-black/10 p-2 flex flex-col space-y-0.5">
+                        <div className="bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.22)] border border-black/10 p-2.5 flex flex-col space-y-0.5">
                           {item.children.map((sub) => (
                             <Link
                               key={sub.label}
                               href={sub.href}
                               onClick={(e) => handleNavClick(e, sub.href)}
-                              className="font-['Plus_Jakarta_Sans',sans-serif] text-[13.5px] font-semibold text-[#1E2328] hover:text-[#852233] hover:bg-[#FAF7F2] rounded-xl px-3 py-2.5 transition-colors block"
+                              className="font-['Plus_Jakarta_Sans',sans-serif] text-[13.5px] font-semibold text-[#1E2328] hover:text-[#852233] hover:bg-[#FAF7F2] rounded-xl px-3.5 py-2.5 transition-colors block"
                             >
                               {sub.label}
                             </Link>
@@ -376,7 +391,7 @@ export default function Navbar() {
 
       {/* 3. Mobile Navigation Drawer with Accordion Submenus */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden flex animate-fade-in">
+        <div className="fixed inset-0 z-[200] lg:hidden flex animate-fade-in">
           {/* Backdrop */}
           <div
             className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
