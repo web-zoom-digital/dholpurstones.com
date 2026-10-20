@@ -544,29 +544,29 @@ export default function OurSignatureProjects() {
           </AnimDiv>
 
           {/* Key Metric Highlights with Gilded Accents */}
-          <AnimDiv delay={100} className="flex flex-wrap gap-3 sm:gap-4">
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-2xl px-5 py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors">
-              <span className="block font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#141A17]">
+          <AnimDiv delay={100} className="grid grid-cols-3 gap-2 sm:gap-4 shrink-0 w-full lg:w-auto">
+            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2.5 sm:py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
                 70+ Years
               </span>
-              <span className="text-[10px] text-[#68726E] font-semibold uppercase tracking-wider">
-                Heritage Since 1953
+              <span className="text-[9px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
+                Since 1953
               </span>
             </div>
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-2xl px-5 py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors">
-              <span className="block font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#141A17]">
+            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2.5 sm:py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
                 500+
               </span>
-              <span className="text-[10px] text-[#68726E] font-semibold uppercase tracking-wider">
-                Landmark Executions
+              <span className="text-[9px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
+                Landmarks
               </span>
             </div>
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-2xl px-5 py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors">
-              <span className="block font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#141A17]">
+            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2.5 sm:py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
                 100%
               </span>
-              <span className="text-[10px] text-[#68726E] font-semibold uppercase tracking-wider">
-                Direct Quarry Sourced
+              <span className="text-[9px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
+                Direct Quarry
               </span>
             </div>
           </AnimDiv>

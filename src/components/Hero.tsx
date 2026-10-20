@@ -2,13 +2,13 @@
 
 import React from "react";
 import Image from "next/image";
-import { ArrowRight, MapPin, Globe, Sparkles } from "lucide-react";
+import { ArrowRight, MapPin, Globe } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[92vh] lg:min-h-screen flex flex-col justify-between bg-[#0D1311]">
-      {/* Background Hero Image — 16:9 Widescreen 2K with ample sky, positioned so the peacock sculpture stands clear in center-left */}
+    <section className="relative min-h-[85vh] sm:min-h-[90vh] lg:min-h-screen flex flex-col justify-between bg-[#0D1311]">
+      {/* Background Hero Image */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <Image
           src="/assets/garg/hero_peacock_widescreen_2k.jpg"
@@ -21,15 +21,15 @@ export default function Hero() {
         />
       </div>
 
-      {/* Overlay Gradients — minimal ambient tint at top, soft contrast at bottom for text */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0D1311]/15 via-transparent to-[#0D1311]/65 pointer-events-none" />
+      {/* Overlay Gradients */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0D1311]/15 via-transparent to-[#0D1311]/70 pointer-events-none" />
 
-      {/* Main Content Area — Positioned towards bottom so peacock heads and upper sculpture are fully open */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-end text-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 pb-6 sm:pb-10 lg:pb-14 max-w-4xl mx-auto w-full">
+      {/* Main Content */}
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-end text-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-6 sm:pb-10 lg:pb-14 w-full">
         <div className="w-full flex flex-col items-center text-center max-w-3xl mx-auto">
           {/* Sub-Tagline */}
           <p
-            className="text-[10px] sm:text-xs font-bold text-[#C29B38] uppercase tracking-[0.18em] sm:tracking-[0.24em] mb-2 sm:mb-3 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]"
+            className="text-[10px] sm:text-xs font-bold text-[#C29B38] uppercase tracking-[0.15em] sm:tracking-[0.24em] mb-2 sm:mb-3 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]"
             style={{ animation: "gcl-fadeup 0.7s cubic-bezier(0.16,1,0.3,1) both" }}
           >
             Natural Stone &bull; Timeless Heritage &bull; Global Presence
@@ -37,11 +37,10 @@ export default function Hero() {
 
           {/* Headline */}
           <h1
-            className="font-['Cinzel',serif] font-bold text-white uppercase leading-[1.1] sm:leading-tight text-3xl sm:text-5xl lg:text-6xl drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]"
+            className="font-['Cinzel',serif] font-bold text-white uppercase leading-[1.1] text-3xl sm:text-5xl lg:text-6xl drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]"
             style={{ animation: "gcl-fadeup 0.8s 0.1s cubic-bezier(0.16,1,0.3,1) both" }}
           >
-            A Legacy of <br className="sm:hidden" />
-            Natural Stone
+            A Legacy of Natural Stone
           </h1>
 
           {/* Year Callout */}
@@ -49,7 +48,7 @@ export default function Hero() {
             className="mt-2 sm:mt-3"
             style={{ animation: "gcl-fadeup 0.8s 0.2s cubic-bezier(0.16,1,0.3,1) both" }}
           >
-            <span className="font-['Cinzel',serif] font-extrabold text-[#C29B38] tracking-[0.16em] uppercase text-2xl sm:text-4xl lg:text-5xl drop-shadow-[0_0_25px_rgba(194,155,56,0.7)]">
+            <span className="font-['Cinzel',serif] font-extrabold text-[#C29B38] tracking-[0.12em] sm:tracking-[0.16em] uppercase text-2xl sm:text-4xl lg:text-5xl drop-shadow-[0_0_25px_rgba(194,155,56,0.7)]">
               SINCE 1953
             </span>
           </div>
@@ -62,32 +61,32 @@ export default function Hero() {
             Mines Owner &bull; Manufacturer &bull; Exporter &bull; Contractor
           </p>
 
-          {/* CTAs */}
+          {/* CTAs — stacked on mobile, row on sm+ */}
           <div
-            className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-[340px] sm:max-w-none mx-auto"
+            className="mt-5 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 w-full max-w-[300px] sm:max-w-none mx-auto"
             style={{ animation: "gcl-fadeup 0.8s 0.4s cubic-bezier(0.16,1,0.3,1) both" }}
           >
             <a
               href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20inquire%20about%20natural%20stone%20and%20architectural%20articles"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto flex items-center justify-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm font-bold uppercase tracking-wider px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white shadow-xl hover:shadow-[0_8px_30px_rgba(37,211,102,0.4)] transition-all duration-300 active:scale-95"
+              className="flex items-center justify-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm font-bold uppercase tracking-wider px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white shadow-xl hover:shadow-[0_8px_30px_rgba(37,211,102,0.4)] transition-all duration-300 active:scale-95"
             >
               <WhatsAppIcon className="w-5 h-5 fill-white shrink-0" size={20} />
               <span>Connect on WhatsApp</span>
             </a>
 
             <a
-              href="#articles"
-              className="w-full sm:w-auto flex items-center justify-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm font-bold uppercase tracking-wider px-6 py-3.5 rounded-full bg-black/40 hover:bg-black/60 text-white backdrop-blur-md border border-white/25 hover:border-[#C29B38]/60 transition-all duration-300 active:scale-95 shadow-lg"
+              href="/articles"
+              className="flex items-center justify-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm font-bold uppercase tracking-wider px-6 py-3.5 rounded-full bg-black/40 hover:bg-black/60 text-white backdrop-blur-md border border-white/25 hover:border-[#C29B38]/60 transition-all duration-300 active:scale-95 shadow-lg"
             >
               <span>Sandstone Articles</span>
               <ArrowRight className="w-3.5 h-3.5 text-[#C29B38] shrink-0" />
             </a>
 
             <a
-              href="#projects"
-              className="w-full sm:w-auto flex items-center justify-center font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm font-bold uppercase tracking-wider px-5 py-3.5 rounded-full bg-black/30 hover:bg-black/50 text-white/95 backdrop-blur-md border border-white/15 transition-all duration-300 active:scale-95 shadow-lg"
+              href="/projects"
+              className="flex items-center justify-center font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm font-bold uppercase tracking-wider px-5 py-3.5 rounded-full bg-black/30 hover:bg-black/50 text-white/95 backdrop-blur-md border border-white/15 transition-all duration-300 active:scale-95 shadow-lg"
             >
               Major Projects
             </a>
@@ -95,7 +94,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Location / Mining Hubs Ticker */}
+      {/* Location Ticker */}
       <div className="relative z-10 bg-[#0D1311]/95 backdrop-blur-md border-t border-white/10 py-2.5 sm:py-3 px-4">
         <div className="max-w-[1280px] mx-auto flex flex-wrap items-center justify-center gap-x-3 sm:gap-x-6 gap-y-1 text-[10px] sm:text-xs text-white/75 font-medium tracking-wider">
           <span className="flex items-center gap-1.5 text-[#C29B38] font-semibold">

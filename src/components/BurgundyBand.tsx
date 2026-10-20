@@ -29,22 +29,22 @@ export default function BurgundyBand() {
         </p>
 
         {/* Trust Points Row */}
-        <div className="mt-10 pt-8 border-t border-white/15 flex flex-wrap items-center justify-center gap-8 sm:gap-14 text-xs tracking-wider uppercase text-white/80">
+        <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-white/15 grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-14 text-xs tracking-wider uppercase text-white/80">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-[#c29b38]" />
+            <ShieldCheck className="w-4 h-4 text-[#c29b38] shrink-0" />
             <span>100% Captive Leasehold Quarries</span>
           </div>
           <div className="flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-[#c29b38]" />
+            <ShieldCheck className="w-4 h-4 text-[#c29b38] shrink-0" />
             <span>Zero Color Variation Guarantee</span>
           </div>
           <div className="flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-[#c29b38]" />
-            <span>ISPM-15 Fumigated Seaworthy Packaging</span>
+            <ShieldCheck className="w-4 h-4 text-[#c29b38] shrink-0" />
+            <span>ISPM-15 Fumigated Packaging</span>
           </div>
           <div className="flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-[#c29b38]" />
-            <span>ISO 9001:2015 & CE Certified Quality</span>
+            <ShieldCheck className="w-4 h-4 text-[#c29b38] shrink-0" />
+            <span>ISO 9001:2015 &amp; CE Certified</span>
           </div>
         </div>
       </div>

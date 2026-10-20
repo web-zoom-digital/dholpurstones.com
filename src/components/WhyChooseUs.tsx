@@ -167,20 +167,20 @@ export default function WhyChooseUs() {
           </AnimDiv>
 
           {/* Key Metric Badges */}
-          <AnimDiv delay={100} className="flex flex-wrap gap-3 sm:gap-4">
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-2xl px-5 py-3.5 shadow-xs hover:border-[#C29B38]/60 transition-colors">
-              <span className="block font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#141A17]">
+          <AnimDiv delay={100} className="grid grid-cols-2 gap-3 sm:flex shrink-0 w-full lg:w-auto">
+            <div className="bg-[#FAF7F2] border border-black/8 rounded-2xl px-3.5 sm:px-5 py-3 sm:py-3.5 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
                 Zero Middlemen
               </span>
-              <span className="text-[10px] text-[#68726E] font-semibold uppercase tracking-wider">
+              <span className="text-[9px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
                 Direct Quarry Pricing
               </span>
             </div>
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-2xl px-5 py-3.5 shadow-xs hover:border-[#C29B38]/60 transition-colors">
-              <span className="block font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#141A17]">
+            <div className="bg-[#FAF7F2] border border-black/8 rounded-2xl px-3.5 sm:px-5 py-3 sm:py-3.5 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
                 100% Homogeneous
               </span>
-              <span className="text-[10px] text-[#68726E] font-semibold uppercase tracking-wider">
+              <span className="text-[9px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
                 Certified Rock Strata
               </span>
             </div>

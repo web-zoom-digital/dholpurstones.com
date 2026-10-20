@@ -75,10 +75,10 @@ export default function ProjectsPage() {
               Consult directly with Director Mr. Arvind Garg (Awarded by Govt. of India) for turnkey stone supply and engineering.
             </p>
           </div>
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-3 w-full sm:w-auto shrink-0">
             <Link
               href="/contact"
-              className="px-6 py-3 rounded-full bg-[#C29B38] hover:bg-[#d4ab44] text-black text-xs font-bold uppercase tracking-wider transition-colors"
+              className="w-full sm:w-auto text-center px-6 py-3 rounded-full bg-[#C29B38] hover:bg-[#d4ab44] text-black text-xs font-bold uppercase tracking-wider transition-colors"
             >
               Consult Director
             </Link>

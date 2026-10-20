@@ -675,29 +675,29 @@ export default function OurProducts() {
           </AnimDiv>
 
           {/* Key Metric Highlights with Gilded Accents */}
-          <AnimDiv delay={100} className="flex flex-wrap gap-3 sm:gap-4">
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-2xl px-5 py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors">
-              <span className="block font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#141A17]">
+          <AnimDiv delay={100} className="grid grid-cols-3 gap-2 sm:gap-4 shrink-0 w-full lg:w-auto">
+            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2.5 sm:py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
                 70+ Years
               </span>
-              <span className="text-[10px] text-[#68726E] font-semibold uppercase tracking-wider">
-                Quarry Legacy 1953
+              <span className="text-[9px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
+                Since 1953
               </span>
             </div>
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-2xl px-5 py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors">
-              <span className="block font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#141A17]">
-                500k+ Sq.Ft
+            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2.5 sm:py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
+                500k+
               </span>
-              <span className="text-[10px] text-[#68726E] font-semibold uppercase tracking-wider">
-                Monthly Sawn Output
+              <span className="text-[9px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
+                Sq.Ft / Mo
               </span>
             </div>
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-2xl px-5 py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors">
-              <span className="block font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#141A17]">
+            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2.5 sm:py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
                 IS:3620
               </span>
-              <span className="text-[10px] text-[#68726E] font-semibold uppercase tracking-wider">
-                Certified Strength &gt;68 MPa
+              <span className="text-[9px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
+                Certified
               </span>
             </div>
           </AnimDiv>
@@ -717,31 +717,33 @@ export default function OurProducts() {
           </div>
         </AnimDiv>
 
-        {/* Filter Navigation Tabs */}
-        <AnimDiv delay={150} className="mb-8 sm:mb-10 overflow-x-auto pb-2 scrollbar-none flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-            {categoryTabs.map((tab) => (
-              <button
-                key={tab.id}
-                type="button"
-                onClick={() => {
-                  setActiveTab(tab.id);
-                  setCurrentSlide(0);
-                }}
-                className={`text-xs font-bold uppercase tracking-wider px-4 sm:px-5 py-2.5 rounded-full transition-all duration-300 border cursor-pointer ${
-                  activeTab === tab.id
-                    ? "bg-[#134e3f] text-white border-[#134e3f] shadow-md shadow-[#134e3f]/25 scale-102"
-                    : "bg-[#FAF7F2] text-[#4A5550] border-black/8 hover:border-[#C29B38] hover:text-[#141A17] hover:bg-white"
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
+        {/* Filter Navigation Tabs — horizontal scroll on mobile */}
+        <AnimDiv delay={150} className="mb-8 sm:mb-10">
+          <div className="flex items-center justify-between gap-4 mb-2">
+            <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none flex-nowrap -mx-1 px-1">
+              {categoryTabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => {
+                    setActiveTab(tab.id);
+                    setCurrentSlide(0);
+                  }}
+                  className={`text-xs font-bold uppercase tracking-wider px-4 sm:px-5 py-2.5 rounded-full transition-all duration-300 border cursor-pointer whitespace-nowrap shrink-0 ${
+                    activeTab === tab.id
+                      ? "bg-[#134e3f] text-white border-[#134e3f] shadow-md shadow-[#134e3f]/25"
+                      : "bg-[#FAF7F2] text-[#4A5550] border-black/8 hover:border-[#C29B38] hover:text-[#141A17] hover:bg-white"
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
 
-          <span className="text-xs text-[#68726E] font-semibold hidden md:inline shrink-0">
-            Showing {filteredProducts.length} Factory &amp; Quarry Products
-          </span>
+            <span className="text-xs text-[#68726E] font-semibold hidden md:inline shrink-0">
+              Showing {filteredProducts.length} Factory &amp; Quarry Products
+            </span>
+          </div>
         </AnimDiv>
 
         {/* =========================================================================

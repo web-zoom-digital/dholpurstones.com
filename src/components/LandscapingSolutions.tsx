@@ -262,8 +262,8 @@ export default function LandscapingSolutions() {
           </p>
         </AnimDiv>
 
-        {/* Category Navigation Pills */}
-        <AnimDiv delay={80} className="flex flex-wrap items-center justify-center gap-2 mb-10 sm:mb-12">
+        {/* Category Navigation Pills — horizontal scroll on mobile */}
+        <AnimDiv delay={80} className="flex items-center sm:justify-center gap-2 overflow-x-auto pb-2 mb-8 sm:mb-12 scrollbar-none w-full">
           {categoryTabs.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
@@ -272,7 +272,7 @@ export default function LandscapingSolutions() {
                 key={tab.id}
                 type="button"
                 onClick={() => setActiveTab(tab.id)}
-                className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer ${
+                className={`inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 shrink-0 cursor-pointer ${
                   isActive
                     ? "bg-[#134e3f] text-white shadow-md border border-[#C29B38]"
                     : "bg-white text-[#4A5550] border border-black/8 hover:border-[#C29B38]/50 hover:bg-[#FAF7F2]"
