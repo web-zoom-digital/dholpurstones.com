@@ -43,10 +43,10 @@ export default function AboutPage() {
             <span className="text-[#C29B38] font-semibold">About Us</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C29B38]/15 border border-[#C29B38]/30 mb-3">
-            <Award className="w-3 h-3 text-[#C29B38]" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C29B38] tracking-[0.2em] uppercase">
-              ESTABLISHED 1953 &bull; 3 GENERATIONS
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C29B38]/15 border border-[#C29B38]/30 mb-3 flex-wrap">
+            <Award className="w-3 h-3 text-[#C29B38] shrink-0" />
+            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#E0BA55] tracking-[0.14em] uppercase">
+              GOVT. OF INDIA AWARDED &bull; NOMINATED FOR INTERNATIONAL AWARD FOR BUSINESS EXCELLENCE
             </span>
           </div>
 
@@ -54,8 +54,7 @@ export default function AboutPage() {
             Heritage, Quarrying &amp; Infrastructure
           </h1>
           <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/70 max-w-2xl mt-3 leading-relaxed">
-            The pioneer name in natural stone since 1953. Operating continuous proprietary quarry
-            concessions in Sarmathura, Rajasthan with state-of-the-art wire saw fabrication and global export capabilities.
+            The pioneer name in natural stone since 1953. Awarded by the Government of India for 300+ front elevation designs in sandstone and nominated for the prestigious International Award for Business Excellence. Operating continuous proprietary quarry concessions in Sarmathura, Rajasthan with global export capabilities.
           </p>
         </div>
       </section>

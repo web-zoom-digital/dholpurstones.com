@@ -64,10 +64,10 @@ export default function AboutUs() {
             </h2>
             <div className="w-12 h-1 bg-[#C29B38] rounded-full mb-5" />
             <p className="font-['EB_Garamond',serif] text-base sm:text-lg lg:text-xl text-[#141A17]/85 leading-relaxed">
-              Dholpurestones.com is an established natural-stone business with a legacy dating back to 1953 (incorporating Garg Corporation Ltd. and Saroj Stone Industries). The company deals in sandstone, marble, granite and semi-precious stones, with capabilities across mining, manufacturing, exporting and contracting.
+              Dholpurestones.com is an established natural-stone business with a legacy dating back to 1953 (incorporating Garg Corporation Ltd. and Saroj Stone Industries). Awarded by the Government of India for creating 300+ front elevation designs in sandstone and nominated for the prestigious International Award for Business Excellence, the company deals in sandstone, marble, granite and semi-precious stones, with capabilities across mining, manufacturing, exporting and contracting.
             </p>
             <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#68726E] leading-relaxed mt-3.5">
-              The profile combines natural stone sourcing and manufacturing with finished architectural and decorative stone work for residential, commercial, institutional, spiritual and landscape applications.
+              The profile combines natural stone sourcing and manufacturing with finished architectural and decorative stone work for luxury farm houses, designer gardens, residential estates, commercial facades, and monumental sacred architecture.
             </p>
           </AnimDiv>
 
@@ -84,10 +84,15 @@ export default function AboutUs() {
               A Long-Standing Natural Stone Legacy
             </h3>
             <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] text-white/60 tracking-wider uppercase mb-5">
-              Natural Materials &bull; Craftsmanship &bull; Project Execution
+              Govt. of India Awarded &bull; Intl. Award Nominee &bull; Estd. 1953
             </p>
             <div className="pt-4 border-t border-white/10 grid grid-cols-2 gap-2.5 text-xs">
-              {["Own Mines", "Manufacturing", "Export", "Contracting"].map((item) => (
+              {[
+                "Govt. of India Awarded",
+                "Intl. Award Nominee",
+                "300+ Elevation Designs",
+                "Farm House Specialist",
+              ].map((item) => (
                 <div key={item} className="flex items-center gap-1.5 text-white/85 font-medium">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#C29B38] shrink-0" />
                   <span>{item}</span>

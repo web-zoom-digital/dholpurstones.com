@@ -125,7 +125,7 @@ const faqs: FAQItem[] = [
     id: "consultation",
     number: "08",
     q: "How can architects, developers, or overseas importers request tenders, swatches, and quotes?",
-    a: "You can consult directly with our managing director, Mr. Arvind Garg (Awarded by Govt. of India), via WhatsApp at +91 94149 45457, call at +91 90573 55232, or email CAD drawings and BOQs to gargcorporationltd@gmail.com. We provide complimentary architectural stone sample boxes and expedited quarry-direct factory quotations.",
+    a: "You can consult directly with our managing director, Mr. Arvind Garg (Awarded by Govt. of India & Nominated for International Award for Business Excellence), via WhatsApp at +91 94149 45457, call at +91 90573 55232, or email CAD drawings and BOQs to gargcorporationltd@gmail.com. We provide complimentary architectural stone sample boxes and expedited quarry-direct factory quotations.",
     category: "export",
     categoryLabel: "DIRECT QUOTATION",
     highlights: ["Direct Consultation with Arvind Garg", "Free Architectural Sample Box", "CAD & BOQ Drawing Support"],
@@ -134,10 +134,10 @@ const faqs: FAQItem[] = [
     id: "farmhouse-elevation",
     number: "09",
     q: "Do you specialize in luxury farm houses, designer gardens, and front elevation in sandstone?",
-    a: "Yes, this is our foremost specialty. We have made more than 300+ designs for front elevation in natural sandstone, for which we were awarded by the Government of India. Our dedicated outdoor architectural team executes turnkey stone projects for sprawling luxury farm houses, private country retreats, and designer gardens. This includes grand carved entrance gates, boundary wall copings, heavy-duty cobblestone driveways, natural cleft garden walkways, anti-slip pool decks, and monumental multi-tier stone fountains.",
+    a: "Yes, this is our foremost specialty. We have made more than 300+ designs for front elevation in natural sandstone, for which we were awarded by the Government of India, and our enterprise is nominated for the International Award for Business Excellence. Our dedicated outdoor architectural team executes turnkey stone projects for sprawling luxury farm houses, private country retreats, and designer gardens. This includes grand carved entrance gates, boundary wall copings, heavy-duty cobblestone driveways, natural cleft garden walkways, anti-slip pool decks, and monumental multi-tier stone fountains.",
     category: "landmarks",
     categoryLabel: "FARM HOUSE & FRONT ELEVATION",
-    highlights: ["300+ Front Elevation Designs", "Awarded by Govt. of India", "Complete Farm House & Garden Masonry"],
+    highlights: ["300+ Front Elevation Designs", "Awarded by Govt. of India", "Nominated for Intl. Award (Business Excellence)"],
   },
 ];
 
@@ -151,6 +151,7 @@ const categoryTabs = [
 
 const tickerHighlights = [
   "WE HAVE MADE MORE THAN 300+ DESIGNS FOR FRONT ELEVATION IN SANDSTONE (AWARDED BY GOVT. OF INDIA)",
+  "NOMINATED FOR INTERNATIONAL AWARD FOR BUSINESS EXCELLENCE",
   "SPECIALIZED IN LUXURY FARM HOUSES & DESIGNER GARDEN LANDSCAPING",
   "100% OWN QUARRY CONCESSIONS IN SARMATHURA & SIKANDRA",
   "HISTORIC DIRECT SUPPLIER TO NEW DELHI PARLIAMENT HOUSE",
@@ -520,7 +521,7 @@ export default function FAQSection() {
                 Have a Custom Architectural Specification or Tender?
               </h3>
               <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/80 leading-relaxed">
-                Connect directly with director Arvind Garg (Awarded by Govt. of India). We provide custom CAD drafting, IS:3620 laboratory certificates, and quarry-direct wholesale pricing.
+                Connect directly with director Arvind Garg (Awarded by Govt. of India &bull; Nominated for International Award for Business Excellence). We provide custom CAD drafting, IS:3620 laboratory certificates, and quarry-direct wholesale pricing.
               </p>
             </div>
 

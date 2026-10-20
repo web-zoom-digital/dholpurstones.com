@@ -184,16 +184,16 @@ export default function ContactSection() {
                       setPreviewCard({
                         src: "/assets/garg/card_gcl.jpg",
                         title: "Garg Corporation Ltd.",
-                        subtitle: "Arvind Garg (Director) • Awarded by Govt. of India",
+                        subtitle: "Arvind Garg (Director) • Govt. of India Awarded & Intl. Award Nominee",
                         entity: "Corporate Flagship & Global Export House",
                         phone: "+91 94149 45457 / +91 90573 55232",
                         email: "gargcorporationltd@gmail.com",
                         details: [
                           "Works: B P Garg & Sons, Near RAC line, Mothiyapura road, Sarmathura 328026 Dholpur, Raj. INDIA",
-                          "Director Mr. Arvind Garg awarded by Government of India for Natural Stone Excellence",
+                          "Director Mr. Arvind Garg awarded by Govt. of India & nominated for International Award for Business Excellence",
+                          "Over 300+ custom sandstone front elevation designs engineered for luxury farm houses & estates",
                           "Direct quarry concessions in Sarmathura & Sikandra (Dholpur, Rajasthan)",
                           "Automated 8-axis CNC processing & international ISPM-15 seaworthy crated logistics",
-                          "Registered corporate vendor for embassies, state assemblies & iconic temple trusts",
                         ],
                       })
                     }
@@ -236,7 +236,7 @@ export default function ContactSection() {
                           Mr. Arvind Garg
                         </span>
                         <span className="text-[10px] text-[#134e3f] font-semibold">
-                          Awarded by Govt. of India &bull; Director
+                          Awarded by Govt. of India &bull; Nominated for Intl. Award
                         </span>
                       </div>
                       <a
@@ -474,11 +474,11 @@ export default function ContactSection() {
                 <div className="flex items-center gap-2 mb-1.5">
                   <Award className="w-4 h-4 text-[#C29B38]" />
                   <span className="font-['Cinzel',serif] text-xs font-bold text-[#141A17] uppercase">
-                    Govt. Awarded
+                    Govt. &amp; Intl. Honors
                   </span>
                 </div>
                 <p className="text-[11px] text-[#68726E] leading-snug">
-                  Director Arvind Garg officially recognized by Govt. of India for natural stone industry excellence.
+                  Director Arvind Garg awarded by Govt. of India and nominated for International Award for Business Excellence.
                 </p>
               </div>
 

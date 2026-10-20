@@ -27,13 +27,13 @@ export default function Hero() {
       {/* Main Content */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-end text-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-6 sm:pb-10 lg:pb-14 w-full">
         <div className="w-full flex flex-col items-center text-center max-w-3xl mx-auto">
-          {/* National Award Ribbon Badge */}
+          {/* National & International Accolades Ribbon Badge */}
           <div
-            className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-black/60 border border-[#C29B38]/70 text-[#E0BA55] text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2.5 backdrop-blur-md shadow-xl"
+            className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-black/60 border border-[#C29B38]/70 text-[#E0BA55] text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2.5 backdrop-blur-md shadow-xl flex-wrap justify-center text-center max-w-full"
             style={{ animation: "gcl-fadeup 0.6s cubic-bezier(0.16,1,0.3,1) both" }}
           >
             <Award className="w-3.5 h-3.5 text-[#C29B38] shrink-0" />
-            <span>Awarded by Govt. of India &bull; 300+ Front Elevation Designs</span>
+            <span>Awarded by Govt. of India &bull; Nominated for International Award for Business Excellence</span>
           </div>
 
           {/* Sub-Tagline */}

@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Sparkles, Award, ShieldCheck, TreePine, Home, ArrowRight } from "lucide-react";
+import { Sparkles, Award, ShieldCheck, TreePine, ArrowRight, Trophy } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 export default function BurgundyBand() {
@@ -16,11 +16,11 @@ export default function BurgundyBand() {
       <div className="absolute -bottom-10 right-10 w-48 h-48 bg-[#c29b38]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* National Award Ribbon Badge */}
-        <div className="inline-flex items-center gap-2 bg-[#c29b38]/20 border border-[#c29b38]/50 px-4 py-1.5 rounded-full text-[#E0BA55] text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase mb-4 shadow-md backdrop-blur-xs">
-          <Award className="w-4 h-4 text-[#C29B38]" />
-          <span>AWARDED BY GOVT. OF INDIA &bull; ESTD. 1953</span>
-          <Sparkles className="w-3.5 h-3.5 text-[#C29B38]" />
+        {/* National & International Accolades Ribbon Badge */}
+        <div className="inline-flex items-center gap-2 bg-[#c29b38]/20 border border-[#c29b38]/50 px-4 py-1.5 rounded-full text-[#E0BA55] text-[10px] sm:text-xs font-bold tracking-[0.14em] uppercase mb-4 shadow-md backdrop-blur-xs flex-wrap justify-center">
+          <Award className="w-4 h-4 text-[#C29B38] shrink-0" />
+          <span>AWARDED BY GOVT. OF INDIA &bull; NOMINATED FOR INTERNATIONAL AWARD FOR BUSINESS EXCELLENCE</span>
+          <Sparkles className="w-3.5 h-3.5 text-[#C29B38] shrink-0" />
         </div>
 
         {/* Primary Statement — Exact User Requirement */}
@@ -32,10 +32,10 @@ export default function BurgundyBand() {
           for Front Elevation in Sandstone — Awarded by Govt. of India
         </h2>
 
-        {/* Strong Focus on Farm Houses & Gardens */}
+        {/* International Nomination & Strong Focus on Farm Houses & Gardens */}
         <div className="mt-4 sm:mt-5 max-w-3xl mx-auto">
           <p className="font-['Cinzel',serif] text-sm sm:text-base md:text-lg font-semibold text-[#F5E6BE] tracking-wide uppercase">
-            Specialized in Luxury Farm Houses, Sprawling Garden Landscapes &amp; Monumental Facades
+            Nominated for International Award for Business Excellence &bull; Specialized in Luxury Farm Houses &amp; Garden Landscapes
           </p>
           <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/85 mt-2.5 leading-relaxed">
             From regal farm house entrance gates, poolside bullnose coping, and cobblestone driveways to 
@@ -77,21 +77,21 @@ export default function BurgundyBand() {
             </span>
           </div>
           <div className="flex items-center justify-center gap-2 bg-black/20 p-2.5 rounded-xl border border-white/10">
-            <Home className="w-4 h-4 text-[#C29B38] shrink-0" />
+            <ShieldCheck className="w-4 h-4 text-[#C29B38] shrink-0" />
             <span className="font-semibold text-center sm:text-left text-[11px] sm:text-xs">
-              Luxury Farm House Specialist
+              Govt. of India Awarded
+            </span>
+          </div>
+          <div className="flex items-center justify-center gap-2 bg-black/20 p-2.5 rounded-xl border border-white/10">
+            <Trophy className="w-4 h-4 text-[#C29B38] shrink-0" />
+            <span className="font-semibold text-center sm:text-left text-[11px] sm:text-xs">
+              Intl. Award Nominated (Business Excellence)
             </span>
           </div>
           <div className="flex items-center justify-center gap-2 bg-black/20 p-2.5 rounded-xl border border-white/10">
             <TreePine className="w-4 h-4 text-[#C29B38] shrink-0" />
             <span className="font-semibold text-center sm:text-left text-[11px] sm:text-xs">
-              Designer Garden Landscaping
-            </span>
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-black/20 p-2.5 rounded-xl border border-white/10">
-            <ShieldCheck className="w-4 h-4 text-[#C29B38] shrink-0" />
-            <span className="font-semibold text-center sm:text-left text-[11px] sm:text-xs">
-              Govt. of India Awarded
+              Farm House &amp; Garden Specialist
             </span>
           </div>
         </div>

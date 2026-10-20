@@ -54,9 +54,9 @@ const apps = [
   {
     id: "elevation",
     title: "Sandstone Front Elevation (300+ Designs)",
-    desc: "Awarded by Govt. of India for creating 300+ bespoke front elevation designs — carved jharokhas, fluted pillars, and cornice relief.",
+    desc: "Awarded by Govt. of India & Nominated for International Award for Business Excellence — creating 300+ bespoke front elevation designs, carved jharokhas, and classical facades.",
     image: "/assets/garg/crop_lion.jpg",
-    badge: "Govt. of India Awarded",
+    badge: "Govt. Awarded & Intl. Nominee",
   },
   {
     id: "temples",

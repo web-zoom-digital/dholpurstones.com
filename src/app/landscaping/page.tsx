@@ -10,14 +10,14 @@ import { ChevronRight, Home as HomeIcon, TreePine, ShieldCheck } from "lucide-re
 export const metadata: Metadata = {
   title: "Luxury Farm House & Garden Landscaping Solutions in Sandstone | Dholpurestones",
   description:
-    "High-Quality Natural Stone for Luxury Farm Houses, Private Gardens, Builders & Landscapers. Over 300+ front elevation designs in sandstone awarded by the Govt. of India. Patios, pool coping, steps, retaining walls, and hand-carved water fountains from Sarmathura quarries.",
+    "High-Quality Natural Stone for Luxury Farm Houses, Private Gardens, Builders & Landscapers. Over 300+ front elevation designs in sandstone awarded by Govt. of India & nominated for International Award for Business Excellence. Patios, pool coping, steps, retaining walls, and hand-carved water fountains from Sarmathura quarries.",
   alternates: {
     canonical: "https://dholpurestones.com/landscaping",
   },
   openGraph: {
     title: "Luxury Farm House & Garden Landscaping Solutions | Dholpurestones",
     description:
-      "Direct quarry extraction from Sarmathura and Sikandra. Specializing in luxury farm houses, designer gardens, and 300+ front elevation designs awarded by Govt. of India.",
+      "Direct quarry extraction from Sarmathura and Sikandra. Specializing in luxury farm houses, designer gardens, and 300+ front elevation designs awarded by Govt. of India & nominated for International Award for Business Excellence.",
     url: "https://dholpurestones.com/landscaping",
   },
 };
@@ -52,7 +52,7 @@ export default function LandscapingPage() {
           </h1>
           <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/70 max-w-2xl mt-3 leading-relaxed">
             High-Quality Natural Stone for Luxury Farm Houses, Private Gardens &amp; Estate Builders. 
-            We have made more than 300+ front elevation designs in sandstone, for which we were awarded by the Government of India.
+            We have made more than 300+ front elevation designs in sandstone (Awarded by Govt. of India) and are nominated for International Award for Business Excellence.
           </p>
         </div>
       </section>

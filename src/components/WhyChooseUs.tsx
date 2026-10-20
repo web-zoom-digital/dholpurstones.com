@@ -51,12 +51,12 @@ const reasons = [
   {
     id: "elevation-award",
     icon: Award,
-    badge: "GOVT. OF INDIA AWARDED",
+    badge: "GOVT. AWARDED & INTL. NOMINEE",
     title: "300+ Front Elevation Designs (Farm Houses & Estates)",
     shortDesc:
-      "We have made more than 300+ designs for front elevation in sandstone, for which we were awarded by the Government of India.",
+      "We have made more than 300+ designs for front elevation in sandstone (Awarded by Govt. of India) and are nominated for International Award for Business Excellence.",
     fullDetails:
-      "Specialized in luxury farm houses, country estates, and grand villa frontages. From carved jharokhas, majestic entrance gate pillars, fluted columns, and stone cornices to boundary walls and garden courtyards — our award-winning design catalogue transforms properties into royal architectural landmarks.",
+      "Specialized in luxury farm houses, country estates, and grand villa frontages. Awarded by the Government of India and nominated for the prestigious International Award for Business Excellence — our 300+ bespoke sandstone elevation catalogue transforms private farm houses and sprawling gardens into royal architectural landmarks.",
     stat: "300+",
     statLabel: "Front Elevation Designs",
   },

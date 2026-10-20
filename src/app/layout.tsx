@@ -12,8 +12,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://dholpurestones.com"),
   title: "Dholpurestones.com (Estd. 1953) | Luxury Farm Houses, Gardens & 300+ Front Elevation Sandstone Designs",
   description:
-    "Dholpurestones.com (Estd. 1953) is a premier natural stone conglomerate and quarry owner. Specialized in luxury Farm Houses, Garden Landscaping, and over 300+ designs for front elevation in sandstone (awarded by the Government of India). Suppliers to Parliament House New Delhi, Akshardham, and global landmarks.",
+    "Dholpurestones.com (Estd. 1953) is a premier natural stone conglomerate and quarry owner. Specialized in luxury Farm Houses, Garden Landscaping, and over 300+ designs for front elevation in sandstone (Awarded by Govt. of India & Nominated for International Award for Business Excellence). Suppliers to Parliament House New Delhi, Akshardham, and global landmarks.",
   keywords: [
+    "Nominated for International Award for Business Excellence",
     "Sandstone Front Elevation Designs",
     "Farm House Sandstone Elevation",
     "Farm House Stone Landscaping",
@@ -120,7 +121,7 @@ const jsonLdData = {
         "@type": "Person",
         "name": "Arvind Garg",
         "jobTitle": "Mines Owner & Director",
-        "award": "Awarded by Govt. of India"
+        "award": ["Awarded by Govt. of India", "Nominated for International Award for Business Excellence"]
       },
       "telephone": ["+91-94149-45457", "+91-90573-55232"],
       "email": "gargcorporationltd@gmail.com",
@@ -287,7 +288,7 @@ const jsonLdData = {
           "name": "How can I contact Garg Corporation Ltd. for inquiries or stone samples?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "You can connect directly with Mr. Arvind Garg (Awarded by Govt. of India) via WhatsApp at +91 94149 45457, phone at +91 90573 55232, or email at gargcorporationltd@gmail.com and kamala_stone@yahoo.co.in."
+            "text": "You can connect directly with Mr. Arvind Garg (Awarded by Govt. of India & Nominated for International Award for Business Excellence) via WhatsApp at +91 94149 45457, phone at +91 90573 55232, or email at gargcorporationltd@gmail.com and kamala_stone@yahoo.co.in."
           }
         }
       ]
