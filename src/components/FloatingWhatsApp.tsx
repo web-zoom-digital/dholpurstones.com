@@ -38,7 +38,7 @@ export default function FloatingWhatsApp() {
             </p>
           </div>
           <p className="text-[11px] text-[#68726E] font-['Plus_Jakarta_Sans',sans-serif] mt-0.5 leading-snug">
-            Chat directly with Arvind Garg on WhatsApp
+            Chat directly with available person on WhatsApp
           </p>
           <div className="absolute -bottom-1.5 right-6 w-3 h-3 bg-white rotate-45 border-r border-b border-black/10" />
         </div>
