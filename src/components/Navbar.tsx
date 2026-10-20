@@ -62,9 +62,9 @@ export default function Navbar() {
       label: "Company",
       children: [
         { label: "About Us", href: "/about" },
+        { label: "Govt. & Intl. Honors", href: "/#international-excellence" },
         { label: "Infrastructure", href: "/about#strength" },
         { label: "Why Choose Us", href: "/about#why-choose" },
-        { label: "Our Team", href: "/about#team" },
         { label: "Our Mines", href: "/about#why-choose" },
       ],
     },

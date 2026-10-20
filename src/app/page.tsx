@@ -5,6 +5,7 @@ import BurgundyBand from "@/components/BurgundyBand";
 import AboutUs from "@/components/AboutUs";
 import OurStrength from "@/components/OurStrength";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import InternationalExcellence from "@/components/InternationalExcellence";
 import SandstoneArticles from "@/components/SandstoneArticles";
 import OurProducts from "@/components/OurProducts";
 import LandscapingSolutions from "@/components/LandscapingSolutions";
@@ -36,6 +37,9 @@ export default function Home() {
 
       {/* 4B. Why Choose Authentic Sandstone - Direct Quarry Mining Advantage */}
       <WhyChooseUs />
+
+      {/* 4C. Nominated for International Award for Business Excellence & Global Footprint */}
+      <InternationalExcellence />
 
       {/* 5. Sandstone Articles (Page 4 of PDF - Peacock Sculpture, Stone Lantern, Lion Sculpture) */}
       <SandstoneArticles />

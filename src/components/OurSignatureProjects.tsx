@@ -216,7 +216,10 @@ const categoryTabs = [
 ];
 
 const tickerHighlights = [
-  "500+ MONUMENTAL LANDMARKS EXECUTED",
+  "NOMINATED FOR INTERNATIONAL AWARD FOR BUSINESS EXCELLENCE",
+  "AWARDED BY GOVT. OF INDIA FOR 300+ FRONT ELEVATION DESIGNS",
+  "SPECIALIZED IN LUXURY FARM HOUSES & DESIGNER GARDENS",
+  "500+ MONUMENTAL LANDMARKS EXECUTED GLOBALLY",
   "100% DIRECT QUARRY SOURCING FROM SARMATHURA & SIKANDRA",
   "8-AXIS HIGH PRECISION CNC WATERJET CUTTING (±0.1MM)",
   "TIMELESS MONOLITHIC DRY-JOINT INTERLOCKING STONE",
@@ -544,29 +547,37 @@ export default function OurSignatureProjects() {
           </AnimDiv>
 
           {/* Key Metric Highlights with Gilded Accents */}
-          <AnimDiv delay={100} className="grid grid-cols-3 gap-2 sm:gap-4 shrink-0 w-full lg:w-auto">
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2.5 sm:py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
+          <AnimDiv delay={100} className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 shrink-0 w-full lg:w-auto">
+            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-4 py-2 sm:py-2.5 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-sm sm:text-xl font-bold text-[#141A17]">
                 70+ Years
               </span>
-              <span className="text-[9px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
+              <span className="text-[9px] text-[#68726E] font-semibold uppercase tracking-wider block">
                 Since 1953
               </span>
             </div>
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2.5 sm:py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
-                500+
+            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-4 py-2 sm:py-2.5 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-sm sm:text-xl font-bold text-[#C29B38]">
+                300+ Designs
               </span>
-              <span className="text-[9px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
-                Landmarks
+              <span className="text-[9px] text-[#68726E] font-semibold uppercase tracking-wider block">
+                Govt. Awarded
               </span>
             </div>
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2.5 sm:py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
-                100%
+            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-4 py-2 sm:py-2.5 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-sm sm:text-xl font-bold text-[#134e3f]">
+                Intl. Nominee
               </span>
-              <span className="text-[9px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
-                Direct Quarry
+              <span className="text-[9px] text-[#68726E] font-semibold uppercase tracking-wider block">
+                Business Excellence
+              </span>
+            </div>
+            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-4 py-2 sm:py-2.5 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-sm sm:text-xl font-bold text-[#141A17]">
+                500+
+              </span>
+              <span className="text-[9px] text-[#68726E] font-semibold uppercase tracking-wider block">
+                Landmarks Worldwide
               </span>
             </div>
           </AnimDiv>
