@@ -137,7 +137,7 @@ export default function WhyChooseUs() {
   return (
     <section
       id="why-choose"
-      className="bg-white py-14 sm:py-24 border-b border-black/6 relative overflow-hidden"
+      className="bg-white py-14 sm:py-24 border-b border-black/6 relative overflow-hidden scroll-mt-20 sm:scroll-mt-24"
     >
       {/* Background Subtle Architectural Blueprint Grid */}
       <div className="absolute inset-0 bg-[radial-gradient(#C29B38_1.2px,transparent_1.2px)] [background-size:32px_32px] opacity-[0.06] pointer-events-none" />
@@ -366,7 +366,7 @@ export default function WhyChooseUs() {
             BOTTOM CALLOUT: Schedule Quarry Visit & WhatsApp Direct Mine Consultation
             ========================================================================= */}
         <AnimDiv delay={250}>
-          <div className="bg-gradient-to-br from-[#134e3f] via-[#0e3b30] to-[#0A261F] rounded-3xl p-6 sm:p-10 border border-[#C29B38]/40 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6 relative overflow-hidden text-white">
+          <div id="mines" className="scroll-mt-20 sm:scroll-mt-24 bg-gradient-to-br from-[#134e3f] via-[#0e3b30] to-[#0A261F] rounded-3xl p-6 sm:p-10 border border-[#C29B38]/40 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6 relative overflow-hidden text-white">
             <div className="absolute -inset-full bg-gradient-to-r from-transparent via-[#C29B38]/15 to-transparent animate-beam-sweep pointer-events-none" />
             <div className="absolute -right-10 -bottom-10 w-72 h-72 bg-[#C29B38]/20 rounded-full blur-3xl pointer-events-none" />
 

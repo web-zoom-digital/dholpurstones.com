@@ -98,7 +98,7 @@ export default function InternationalExcellence() {
   return (
     <section
       id="international-excellence"
-      className="relative bg-gradient-to-b from-[#0D1311] via-[#141A17] to-[#0D1311] py-16 sm:py-24 text-white overflow-hidden border-b border-[#C29B38]/30"
+      className="relative bg-gradient-to-b from-[#0D1311] via-[#141A17] to-[#0D1311] py-16 sm:py-24 text-white overflow-hidden border-b border-[#C29B38]/30 scroll-mt-20 sm:scroll-mt-24"
     >
       {/* Background Radial Glow & Gold Dust Effect */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-96 bg-[radial-gradient(ellipse_at_top,rgba(194,155,56,0.18)_0%,transparent_70%)] pointer-events-none" />

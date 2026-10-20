@@ -82,7 +82,7 @@ export default function SandstoneArticles() {
   }, [activeModal]);
 
   return (
-    <section id="articles" className="bg-[#FAF7F2] py-14 sm:py-20 border-b border-black/6">
+    <section id="articles" className="bg-[#FAF7F2] py-14 sm:py-20 border-b border-black/6 scroll-mt-20 sm:scroll-mt-24">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header Label */}
         <AnimDiv className="flex items-center justify-between pb-3 border-b border-black/8 mb-8 sm:mb-10">

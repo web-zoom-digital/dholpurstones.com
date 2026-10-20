@@ -37,14 +37,31 @@ export default function Navbar() {
     Gallery: false,
   });
 
+  const navRef = useRef<HTMLElement>(null);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Scroll listener - only toggles shadow, NEVER changes padding or height to prevent scroll jitter
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 40);
+    const onScroll = () => {
+      const scrolled = window.scrollY > 20;
+      setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev));
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Click outside listener to close dropdowns
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setOpenDropdown(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Prevent background scroll when mobile drawer is open
   useEffect(() => {
     if (mobileOpen) {
       document.body.style.overflow = "hidden";
@@ -64,10 +81,10 @@ export default function Navbar() {
       children: [
         { label: "Front Elevation (300+ Designs)", href: "/#elevation" },
         { label: "Farm House & Gardens", href: "/#farmhouse-gardens" },
-        { label: "Agra Red", href: "/products#products" },
-        { label: "Dholpur Beige", href: "/products#products" },
-        { label: "Chocolate", href: "/products#products" },
-        { label: "Bansi Pink", href: "/products#products" },
+        { label: "Agra Red Sandstone", href: "/products#products" },
+        { label: "Dholpur Beige Stone", href: "/products#products" },
+        { label: "Chocolate Sandstone", href: "/products#products" },
+        { label: "Bansi Pink Sandstone", href: "/products#products" },
         { label: "Stone Articles & Sculptures", href: "/articles" },
       ],
     },
@@ -79,7 +96,7 @@ export default function Navbar() {
         { label: "Govt. & Intl. Honors", href: "/#international-excellence" },
         { label: "Infrastructure", href: "/about#strength" },
         { label: "Why Choose Us", href: "/about#why-choose" },
-        { label: "Our Mines", href: "/about#why-choose" },
+        { label: "Our Mines", href: "/about#mines" },
       ],
     },
     {
@@ -95,13 +112,28 @@ export default function Navbar() {
       label: "Gallery",
       children: [
         { label: "Media Gallery", href: "/gallery#media" },
-        { label: "Photo Gallery", href: "/gallery#photos" },
-        { label: "Video Gallery", href: "/gallery#videos" },
+        { label: "Photo Gallery", href: "/gallery#photo" },
+        { label: "Video Gallery", href: "/gallery#video" },
       ],
     },
     { label: "Contact us", href: "/contact" },
   ];
 
+  // Smooth scroll to hash on page load/navigation
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash) {
+      const id = window.location.hash.replace("#", "");
+      const timer = setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 250);
+      return () => clearTimeout(timer);
+    }
+  }, [pathname]);
+
+  // Mouse hover handlers with delay buffer
   const handleMouseEnter = (label: string) => {
     if (dropdownTimeoutRef.current) {
       clearTimeout(dropdownTimeoutRef.current);
@@ -112,7 +144,37 @@ export default function Navbar() {
   const handleMouseLeave = () => {
     dropdownTimeoutRef.current = setTimeout(() => {
       setOpenDropdown(null);
-    }, 180);
+    }, 200);
+  };
+
+  // Toggle on click
+  const handleDropdownClick = (label: string) => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+    }
+    setOpenDropdown((prev) => (prev === label ? null : label));
+  };
+
+  // Smooth scroll handler for anchor links
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    setOpenDropdown(null);
+    setMobileOpen(false);
+
+    if (href.includes("#")) {
+      const [path, hash] = href.split("#");
+      const currentPath = pathname === "" ? "/" : pathname;
+      const targetPath = path === "" ? "/" : path;
+
+      if (currentPath === targetPath) {
+        e.preventDefault();
+        const el = document.getElementById(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+          window.history.pushState(null, "", `#${hash}`);
+          window.dispatchEvent(new Event("hashchange"));
+        }
+      }
+    }
   };
 
   const toggleMobileSubmenu = (label: string) => {
@@ -179,12 +241,12 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* 2. Main Navigation Bar with Dropdowns */}
+      {/* 2. Main Sticky Navigation Bar (Fixed padding to prevent scroll jitter/bounce) */}
       <header
-        className={`sticky top-0 w-full z-40 transition-all duration-300 ${
+        className={`sticky top-0 w-full z-50 bg-white/98 backdrop-blur-md border-b transition-shadow duration-300 py-3 sm:py-3.5 ${
           isScrolled
-            ? "bg-white/95 backdrop-blur-md shadow-[0_4px_24px_rgba(0,0,0,0.06)] border-b border-black/8 py-2.5"
-            : "bg-white border-b border-black/6 py-3 sm:py-4"
+            ? "shadow-[0_4px_24px_rgba(0,0,0,0.08)] border-black/10"
+            : "border-black/6 shadow-2xs"
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
@@ -205,8 +267,8 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-5 xl:gap-8">
+          {/* Desktop Navigation Links with Bulletproof Hover and Click Support */}
+          <nav ref={navRef} className="hidden lg:flex items-center gap-4 xl:gap-7">
             {navItems.map((item) => {
               const active = isNavActive(item);
               const isDropdownOpen = openDropdown === item.label;
@@ -215,48 +277,50 @@ export default function Navbar() {
                 return (
                   <div
                     key={item.label}
-                    className="relative group py-2"
+                    className="relative py-1"
                     onMouseEnter={() => handleMouseEnter(item.label)}
                     onMouseLeave={handleMouseLeave}
                   >
                     <button
                       type="button"
-                      onClick={() => setOpenDropdown(isDropdownOpen ? null : item.label)}
-                      className={`inline-flex items-center gap-1.5 font-['Plus_Jakarta_Sans',sans-serif] text-[15px] font-bold tracking-tight transition-colors cursor-pointer ${
-                        active || isDropdownOpen ? "text-[#852233]" : "text-[#1E2328] hover:text-[#852233]"
+                      onClick={() => handleDropdownClick(item.label)}
+                      className={`inline-flex items-center gap-1.5 font-['Plus_Jakarta_Sans',sans-serif] text-[14.5px] font-bold tracking-tight transition-colors cursor-pointer py-1.5 px-2 rounded-lg ${
+                        active || isDropdownOpen
+                          ? "text-[#852233] bg-[#852233]/5"
+                          : "text-[#1E2328] hover:text-[#852233] hover:bg-[#FAF7F2]"
                       }`}
+                      aria-haspopup="true"
+                      aria-expanded={isDropdownOpen}
                     >
                       <span>{item.label}</span>
                       <ChevronDown
                         className={`w-4 h-4 transition-transform duration-200 ${
-                          isDropdownOpen ? "rotate-180 text-[#852233]" : "text-[#1E2328]/70"
+                          isDropdownOpen ? "rotate-180 text-[#852233]" : "text-[#1E2328]/60"
                         }`}
                       />
                     </button>
 
-                    {/* Dropdown Menu Box */}
-                    <div
-                      className={`absolute top-full left-0 pt-2 z-50 min-w-[220px] transition-all duration-200 ${
-                        isDropdownOpen
-                          ? "opacity-100 translate-y-0 pointer-events-auto"
-                          : "opacity-0 translate-y-1 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto"
-                      }`}
-                      onMouseEnter={() => handleMouseEnter(item.label)}
-                      onMouseLeave={handleMouseLeave}
-                    >
-                      <div className="bg-white rounded-2xl shadow-[0_12px_36px_rgba(0,0,0,0.12)] border border-black/8 py-3 px-2 flex flex-col space-y-1">
-                        {item.children.map((sub) => (
-                          <Link
-                            key={sub.label}
-                            href={sub.href}
-                            onClick={() => setOpenDropdown(null)}
-                            className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-bold text-[#1E2328] hover:text-[#852233] hover:bg-[#FAF7F2] rounded-xl px-3.5 py-2.5 transition-colors block"
-                          >
-                            {sub.label}
-                          </Link>
-                        ))}
+                    {/* Dropdown Menu Box with invisible bridge to prevent losing hover */}
+                    {isDropdownOpen && (
+                      <div
+                        className="absolute top-full left-0 pt-1.5 z-[100] min-w-[240px] animate-in fade-in slide-in-from-top-1 duration-150"
+                        onMouseEnter={() => handleMouseEnter(item.label)}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                        <div className="bg-white rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.14)] border border-black/10 p-2 flex flex-col space-y-0.5">
+                          {item.children.map((sub) => (
+                            <Link
+                              key={sub.label}
+                              href={sub.href}
+                              onClick={(e) => handleNavClick(e, sub.href)}
+                              className="font-['Plus_Jakarta_Sans',sans-serif] text-[13.5px] font-semibold text-[#1E2328] hover:text-[#852233] hover:bg-[#FAF7F2] rounded-xl px-3 py-2.5 transition-colors block"
+                            >
+                              {sub.label}
+                            </Link>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 );
               }
@@ -266,7 +330,8 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href || "/"}
-                  className={`font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-bold tracking-tight transition-all py-1 px-3 rounded-full flex items-center gap-1.5 shrink-0 ${
+                  onClick={(e) => handleNavClick(e, item.href || "/")}
+                  className={`font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-bold tracking-tight transition-all py-1.5 px-3 rounded-full flex items-center gap-1.5 shrink-0 ${
                     item.label === "Farm House & Gardens"
                       ? "bg-[#134e3f]/10 text-[#134e3f] border border-[#134e3f]/30 hover:bg-[#134e3f] hover:text-white"
                       : active
@@ -290,9 +355,9 @@ export default function Navbar() {
               href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20connect%20regarding%20natural%20stone%20projects"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-['Plus_Jakarta_Sans',sans-serif] text-xs font-bold tracking-wider uppercase px-4 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-1.5 font-['Plus_Jakarta_Sans',sans-serif] text-xs font-bold tracking-wider uppercase px-4 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-[#0D1311] transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 whitespace-nowrap shrink-0"
             >
-              <WhatsAppIcon className="w-4 h-4 fill-white shrink-0" size={16} />
+              <WhatsAppIcon className="w-4 h-4 fill-[#0D1311] shrink-0" size={16} />
               <span className="hidden sm:inline">WhatsApp Chat</span>
               <span className="sm:hidden">Chat</span>
             </a>
@@ -318,13 +383,13 @@ export default function Navbar() {
             onClick={() => setMobileOpen(false)}
           />
 
-          {/* Drawer content */}
-          <div className="relative ml-auto w-[86vw] max-w-[340px] h-full bg-[#FAF7F2] shadow-2xl flex flex-col z-10 border-l border-[#852233]/25">
+          {/* Drawer Content */}
+          <div className="relative ml-auto w-full max-w-xs bg-[#FAF7F2] h-full shadow-2xl flex flex-col z-10 border-l border-black/10">
             {/* Drawer Header */}
-            <div className="flex items-center justify-between p-4 bg-[#0D1311] border-b border-white/10 text-white">
-              <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-lg bg-[#161D1A] border border-[#C29B38] flex items-center justify-center">
-                  <span className="font-['Cinzel',serif] text-sm font-bold text-[#C29B38]">DS</span>
+            <div className="p-4 bg-[#0D1311] text-white flex items-center justify-between border-b border-white/10">
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 rounded-lg bg-[#141A17] border border-[#C29B38] flex items-center justify-center">
+                  <span className="font-['Cinzel',serif] text-xs font-bold text-[#C29B38]">DS</span>
                 </div>
                 <div>
                   <span className="font-['Cinzel',serif] text-sm font-bold text-white tracking-wider block">
@@ -374,8 +439,8 @@ export default function Navbar() {
                             <Link
                               key={sub.label}
                               href={sub.href}
-                              onClick={() => setMobileOpen(false)}
-                              className="block px-3 py-2 text-[13.5px] font-semibold text-[#4A5550] hover:text-[#852233] rounded-lg transition-colors"
+                              onClick={(e) => handleNavClick(e, sub.href)}
+                              className="block px-3 py-2.5 text-[13.5px] font-semibold text-[#4A5550] hover:text-[#852233] hover:bg-white rounded-lg transition-colors"
                             >
                               {sub.label}
                             </Link>
@@ -390,7 +455,7 @@ export default function Navbar() {
                   <Link
                     key={item.label}
                     href={item.href || "/"}
-                    onClick={() => setMobileOpen(false)}
+                    onClick={(e) => handleNavClick(e, item.href || "/")}
                     className={`flex items-center justify-between p-3.5 rounded-xl text-[14.5px] font-bold transition-all border ${
                       item.label === "Farm House & Gardens"
                         ? "bg-[#134e3f]/10 text-[#134e3f] border-[#134e3f]/30"
@@ -416,9 +481,9 @@ export default function Navbar() {
                 href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20connect%20regarding%20natural%20stone%20projects"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-full bg-[#25D366] text-white text-xs font-bold uppercase tracking-wider shadow-md hover:bg-[#20ba59] transition-colors"
+                className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-full bg-[#25D366] text-[#0D1311] text-xs font-bold uppercase tracking-wider shadow-md hover:bg-[#20ba59] transition-colors"
               >
-                <WhatsAppIcon className="w-4 h-4 fill-white" size={16} />
+                <WhatsAppIcon className="w-4 h-4 fill-[#0D1311]" size={16} />
                 <span>Chat On WhatsApp</span>
               </a>
               <div className="text-[10px] text-center text-[#68726E] flex items-center justify-center gap-2 pt-1">

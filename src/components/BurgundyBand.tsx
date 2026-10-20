@@ -9,7 +9,7 @@ export default function BurgundyBand() {
   return (
     <section
       id="elevation"
-      className="relative w-full bg-gradient-to-r from-[#0A110E] via-[#13352A] to-[#0A110E] py-14 sm:py-18 text-white overflow-hidden border-y border-[#C29B38]/40 shadow-[inset_0_0_90px_rgba(0,0,0,0.7)]"
+      className="relative w-full scroll-mt-20 sm:scroll-mt-24 bg-gradient-to-r from-[#0A110E] via-[#13352A] to-[#0A110E] py-14 sm:py-18 text-white overflow-hidden border-y border-[#C29B38]/40 shadow-[inset_0_0_90px_rgba(0,0,0,0.7)]"
     >
       {/* Decorative Gold Filigree & Radial Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full sm:w-3/4 h-full bg-[radial-gradient(ellipse_at_center,rgba(194,155,56,0.14)_0%,transparent_70%)] pointer-events-none" />

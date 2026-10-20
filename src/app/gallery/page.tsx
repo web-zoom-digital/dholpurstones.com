@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
@@ -28,6 +28,26 @@ interface GalleryItem {
 export default function GalleryPage() {
   const [activeTab, setActiveTab] = useState<"all" | "photo" | "media" | "video">("photo");
   const [activePreview, setActivePreview] = useState<GalleryItem | null>(null);
+
+  useEffect(() => {
+    const handleHash = () => {
+      let hash = window.location.hash.replace("#", "").toLowerCase();
+      if (hash === "photos") hash = "photo";
+      if (hash === "videos") hash = "video";
+      if (["all", "photo", "media", "video"].includes(hash)) {
+        setActiveTab(hash as "all" | "photo" | "media" | "video");
+        setTimeout(() => {
+          const el = document.getElementById("gallery-grid");
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      }
+    };
+    handleHash();
+    window.addEventListener("hashchange", handleHash);
+    return () => window.removeEventListener("hashchange", handleHash);
+  }, []);
 
   const galleryItems: GalleryItem[] = [
     {
@@ -199,7 +219,7 @@ export default function GalleryPage() {
       </div>
 
       {/* Grid */}
-      <section className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+      <section id="gallery-grid" className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 scroll-mt-20 sm:scroll-mt-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredItems.map((item) => (
             <div

@@ -277,7 +277,7 @@ export default function FarmHouseGardenSpecialist() {
   return (
     <section
       id="farmhouse-gardens"
-      className="bg-[#FAF7F2] py-16 sm:py-24 border-b border-black/8 relative overflow-hidden"
+      className="bg-[#FAF7F2] scroll-mt-20 sm:scroll-mt-24 py-16 sm:py-24 border-b border-black/8 relative overflow-hidden"
     >
       {/* Subtle Background Glows */}
       <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-[#C29B38]/6 rounded-full blur-3xl pointer-events-none" />

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -16,6 +16,24 @@ import {
 
 export default function ResourcesPage() {
   const [activeTab, setActiveTab] = useState<"blog" | "quality" | "exhibition" | "packaging">("quality");
+
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash.replace("#", "") as "blog" | "quality" | "exhibition" | "packaging";
+      if (["blog", "quality", "exhibition", "packaging"].includes(hash)) {
+        setActiveTab(hash);
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      }
+    };
+    handleHash();
+    window.addEventListener("hashchange", handleHash);
+    return () => window.removeEventListener("hashchange", handleHash);
+  }, []);
 
   const blogPosts = [
     {
@@ -181,7 +199,7 @@ export default function ResourcesPage() {
       <section className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
         {/* Quality Process */}
         {activeTab === "quality" && (
-          <div id="quality" className="space-y-8 animate-fade-in">
+          <div id="quality" className="space-y-8 animate-fade-in scroll-mt-20 sm:scroll-mt-24">
             <div className="max-w-2xl">
               <span className="text-[10px] font-bold text-[#852233] uppercase tracking-[0.2em] block mb-1">
                 IS:3620 LABORATORY ASSURANCE
@@ -211,7 +229,7 @@ export default function ResourcesPage() {
 
         {/* Packaging and Machinery */}
         {activeTab === "packaging" && (
-          <div id="packaging" className="space-y-8 animate-fade-in">
+          <div id="packaging" className="space-y-8 animate-fade-in scroll-mt-20 sm:scroll-mt-24">
             <div className="max-w-2xl">
               <span className="text-[10px] font-bold text-[#852233] uppercase tracking-[0.2em] block mb-1">
                 STATE-OF-THE-ART FABRICATION
@@ -244,7 +262,7 @@ export default function ResourcesPage() {
 
         {/* Exhibitions */}
         {activeTab === "exhibition" && (
-          <div id="exhibition" className="space-y-8 animate-fade-in">
+          <div id="exhibition" className="space-y-8 animate-fade-in scroll-mt-20 sm:scroll-mt-24">
             <div className="max-w-2xl">
               <span className="text-[10px] font-bold text-[#852233] uppercase tracking-[0.2em] block mb-1">
                 GLOBAL NATURAL STONE CONVENTIONS
@@ -277,7 +295,7 @@ export default function ResourcesPage() {
 
         {/* Blog & Insights */}
         {activeTab === "blog" && (
-          <div id="blog" className="space-y-8 animate-fade-in">
+          <div id="blog" className="space-y-8 animate-fade-in scroll-mt-20 sm:scroll-mt-24">
             <div className="max-w-2xl">
               <span className="text-[10px] font-bold text-[#852233] uppercase tracking-[0.2em] block mb-1">
                 INDUSTRY KNOWLEDGE &amp; ARTICLES
