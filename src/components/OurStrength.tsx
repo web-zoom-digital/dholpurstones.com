@@ -1,7 +1,15 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import { Mountain, Factory, Layers, Globe2, Trophy, Building, MapPin } from "lucide-react";
+import {
+  LuMountain as Mountain,
+  LuFactory as Factory,
+  LuLayers as Layers,
+  LuGlobe as Globe2,
+  LuTrophy as Trophy,
+  LuBuilding as Building,
+  LuMapPin as MapPin
+} from "react-icons/lu";
 
 function AnimDiv({
   children,

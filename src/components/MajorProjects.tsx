@@ -2,7 +2,13 @@
 
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-import { MapPin, ArrowRight, Building2, Landmark, Award } from "lucide-react";
+import {
+  LuMapPin as MapPin,
+  LuArrowRight as ArrowRight,
+  LuBuilding2 as Building2,
+  LuLandmark as Landmark,
+  LuAward as Award
+} from "react-icons/lu";
 
 function AnimDiv({
   children,

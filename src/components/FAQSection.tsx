@@ -2,17 +2,17 @@
 
 import React, { useState, useMemo, useRef, useEffect } from "react";
 import {
-  ChevronDown,
-  Sparkles,
-  HelpCircle,
-  Search,
-  X,
-  Compass,
-  CheckCircle2,
-  ArrowUpRight,
-  ShieldCheck,
-  Flame,
-} from "lucide-react";
+  LuChevronDown as ChevronDown,
+  LuSparkles as Sparkles,
+  LuCircleHelp as HelpCircle,
+  LuSearch as Search,
+  LuX as X,
+  LuCompass as Compass,
+  LuCircleCheck as CheckCircle2,
+  LuArrowUpRight as ArrowUpRight,
+  LuShieldCheck as ShieldCheck,
+  LuFlame as Flame
+} from "react-icons/lu";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 function AnimDiv({

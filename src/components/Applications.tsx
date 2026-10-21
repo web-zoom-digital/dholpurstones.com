@@ -2,7 +2,9 @@
 
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-import { Sparkles } from "lucide-react";
+import {
+  LuSparkles as Sparkles
+} from "react-icons/lu";
 
 function AnimDiv({
   children,

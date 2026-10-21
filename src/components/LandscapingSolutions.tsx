@@ -3,22 +3,22 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import {
-  Sparkles,
-  TreePine,
-  Layers,
-  Compass,
-  CheckCircle2,
-  ExternalLink,
-  ChevronRight,
-  ShieldCheck,
-  Ruler,
-  Sun,
-  Droplets,
-  HardHat,
-  X,
-  Phone,
-  Landmark,
-} from "lucide-react";
+  LuSparkles as Sparkles,
+  LuTreePine as TreePine,
+  LuLayers as Layers,
+  LuCompass as Compass,
+  LuCircleCheck as CheckCircle2,
+  LuExternalLink as ExternalLink,
+  LuChevronRight as ChevronRight,
+  LuShieldCheck as ShieldCheck,
+  LuRuler as Ruler,
+  LuSun as Sun,
+  LuDroplets as Droplets,
+  LuHardHat as HardHat,
+  LuX as X,
+  LuPhone as Phone,
+  LuLandmark as Landmark
+} from "react-icons/lu";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 function AnimDiv({

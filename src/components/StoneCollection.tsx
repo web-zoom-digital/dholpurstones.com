@@ -2,7 +2,12 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { X, ArrowUpRight, CheckCircle, Sparkles } from "lucide-react";
+import {
+  LuX as X,
+  LuArrowUpRight as ArrowUpRight,
+  LuCircleCheck as CheckCircle,
+  LuSparkles as Sparkles
+} from "react-icons/lu";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 function AnimDiv({

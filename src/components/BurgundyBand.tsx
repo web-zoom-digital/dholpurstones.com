@@ -2,7 +2,14 @@
 
 import React from "react";
 import Link from "next/link";
-import { Sparkles, Award, ShieldCheck, TreePine, ArrowRight, Trophy } from "lucide-react";
+import {
+  LuSparkles as Sparkles,
+  LuAward as Award,
+  LuShieldCheck as ShieldCheck,
+  LuTreePine as TreePine,
+  LuArrowRight as ArrowRight,
+  LuTrophy as Trophy
+} from "react-icons/lu";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 export default function BurgundyBand() {

@@ -1,7 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
-import { Sparkles, Send, CheckCircle2, Phone, Mail, MapPin, Package, ShieldCheck, MessageCircle } from "lucide-react";
+import {
+  LuSparkles as Sparkles,
+  LuSend as Send,
+  LuCircleCheck as CheckCircle2,
+  LuPhone as Phone,
+  LuMail as Mail,
+  LuMapPin as MapPin,
+  LuPackage as Package,
+  LuShieldCheck as ShieldCheck,
+  LuMessageCircle as MessageCircle
+} from "react-icons/lu";
 
 export default function InquirySection() {
   const [formData, setFormData] = useState({

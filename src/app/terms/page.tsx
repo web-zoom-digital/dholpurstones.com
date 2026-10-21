@@ -4,7 +4,11 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import { ChevronRight, Home as HomeIcon, FileText } from "lucide-react";
+import {
+  LuChevronRight as ChevronRight,
+  LuHouse as HomeIcon,
+  LuFileText as FileText
+} from "react-icons/lu";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions | Dholpurestones.com (B P Garg & Sons)",

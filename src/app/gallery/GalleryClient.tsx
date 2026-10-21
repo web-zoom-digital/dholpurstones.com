@@ -7,13 +7,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import {
-  ChevronRight,
-  Home as HomeIcon,
-  Camera,
-  ExternalLink,
-  X,
-  Play,
-} from "lucide-react";
+  LuChevronRight as ChevronRight,
+  LuHouse as HomeIcon,
+  LuCamera as Camera,
+  LuExternalLink as ExternalLink,
+  LuX as X,
+  LuPlay as Play
+} from "react-icons/lu";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 interface GalleryItem {

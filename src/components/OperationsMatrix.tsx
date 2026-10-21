@@ -1,7 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { Sparkles, Mountain, Cpu, Hammer, Ship, CheckCircle2 } from "lucide-react";
+import {
+  LuSparkles as Sparkles,
+  LuMountain as Mountain,
+  LuCpu as Cpu,
+  LuHammer as Hammer,
+  LuShip as Ship,
+  LuCircleCheck as CheckCircle2
+} from "react-icons/lu";
 
 export default function OperationsMatrix() {
   const [activeStep, setActiveStep] = useState<number>(0);

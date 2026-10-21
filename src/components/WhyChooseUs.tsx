@@ -3,20 +3,20 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import {
-  ShieldCheck,
-  Mountain,
-  Hammer,
-  Truck,
-  Layers,
-  Sparkles,
-  BadgeCheck,
-  Flame,
-  Award,
-  CheckCircle2,
-  FileText,
-  Compass,
-  ArrowRight,
-} from "lucide-react";
+  LuShieldCheck as ShieldCheck,
+  LuMountain as Mountain,
+  LuHammer as Hammer,
+  LuTruck as Truck,
+  LuLayers as Layers,
+  LuSparkles as Sparkles,
+  LuBadgeCheck as BadgeCheck,
+  LuFlame as Flame,
+  LuAward as Award,
+  LuCircleCheck as CheckCircle2,
+  LuFileText as FileText,
+  LuCompass as Compass,
+  LuArrowRight as ArrowRight
+} from "react-icons/lu";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 function AnimDiv({

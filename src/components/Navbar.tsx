@@ -4,29 +4,29 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
-  Mail,
-  Phone,
-  Menu,
-  X,
-  Award,
-  Sparkles,
-  ChevronDown,
-  ChevronRight,
-  ArrowRight,
-  Layers,
-  TreePine,
-  Building2,
-  ShieldCheck,
-  Mountain,
-  BookOpen,
-  Calendar,
-  Cpu,
-  Camera,
-  Play,
-  FileText,
-  Gem,
-  Palette,
-} from "lucide-react";
+  LuMail as Mail,
+  LuPhone as Phone,
+  LuMenu as Menu,
+  LuX as X,
+  LuAward as Award,
+  LuSparkles as Sparkles,
+  LuChevronDown as ChevronDown,
+  LuChevronRight as ChevronRight,
+  LuArrowRight as ArrowRight,
+  LuLayers as Layers,
+  LuTreePine as TreePine,
+  LuBuilding2 as Building2,
+  LuShieldCheck as ShieldCheck,
+  LuMountain as Mountain,
+  LuBookOpen as BookOpen,
+  LuCalendar as Calendar,
+  LuCpu as Cpu,
+  LuCamera as Camera,
+  LuPlay as Play,
+  LuFileText as FileText,
+  LuGem as Gem,
+  LuPalette as Palette
+} from "react-icons/lu";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 interface NavChild {

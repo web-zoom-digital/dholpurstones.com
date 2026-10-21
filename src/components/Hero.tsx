@@ -2,7 +2,13 @@
 
 import React from "react";
 import Image from "next/image";
-import { ArrowRight, MapPin, Globe, Award, TreePine } from "lucide-react";
+import {
+  LuArrowRight as ArrowRight,
+  LuMapPin as MapPin,
+  LuGlobe as Globe,
+  LuAward as Award,
+  LuTreePine as TreePine
+} from "react-icons/lu";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 export default function Hero() {

@@ -3,24 +3,24 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import {
-  Phone,
-  Mail,
-  MapPin,
-  Send,
-  CheckCircle2,
-  Award,
-  Sparkles,
-  Building2,
-  ShieldCheck,
-  Clock,
-  Eye,
-  Copy,
-  Check,
-  Compass,
-  FileCheck,
-  Globe,
-  X,
-} from "lucide-react";
+  LuPhone as Phone,
+  LuMail as Mail,
+  LuMapPin as MapPin,
+  LuSend as Send,
+  LuCircleCheck as CheckCircle2,
+  LuAward as Award,
+  LuSparkles as Sparkles,
+  LuBuilding2 as Building2,
+  LuShieldCheck as ShieldCheck,
+  LuClock as Clock,
+  LuEye as Eye,
+  LuCopy as Copy,
+  LuCheck as Check,
+  LuCompass as Compass,
+  LuFileCheck as FileCheck,
+  LuGlobe as Globe,
+  LuX as X
+} from "react-icons/lu";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 function AnimDiv({

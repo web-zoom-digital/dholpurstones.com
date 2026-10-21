@@ -2,7 +2,13 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { X, Package, CheckCircle2, Sparkles, Send } from "lucide-react";
+import {
+  LuX as X,
+  LuPackage as Package,
+  LuCircleCheck as CheckCircle2,
+  LuSparkles as Sparkles,
+  LuSend as Send
+} from "react-icons/lu";
 
 interface SampleModalProps {
   isOpen: boolean;

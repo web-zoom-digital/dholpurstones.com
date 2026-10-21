@@ -2,7 +2,14 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { ArrowUpRight, Sparkles, CheckCircle2, X, Download, SlidersHorizontal } from "lucide-react";
+import {
+  LuArrowUpRight as ArrowUpRight,
+  LuSparkles as Sparkles,
+  LuCircleCheck as CheckCircle2,
+  LuX as X,
+  LuDownload as Download,
+  LuSlidersHorizontal as SlidersHorizontal
+} from "react-icons/lu";
 
 interface MaterialDetail {
   id: string;

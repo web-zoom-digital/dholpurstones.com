@@ -3,17 +3,17 @@
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import {
-  Trophy,
-  Award,
-  Globe2,
-  ShieldCheck,
-  CheckCircle2,
-  Mountain,
-  Home,
-  Building2,
-  ArrowRight,
-  Sparkles,
-} from "lucide-react";
+  LuTrophy as Trophy,
+  LuAward as Award,
+  LuGlobe as Globe2,
+  LuShieldCheck as ShieldCheck,
+  LuCircleCheck as CheckCircle2,
+  LuMountain as Mountain,
+  LuHouse as Home,
+  LuBuilding2 as Building2,
+  LuArrowRight as ArrowRight,
+  LuSparkles as Sparkles
+} from "react-icons/lu";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 function AnimDiv({

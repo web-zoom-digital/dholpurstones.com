@@ -6,7 +6,11 @@ import ContactSection from "@/components/ContactSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import { ChevronRight, Home as HomeIcon, Phone } from "lucide-react";
+import {
+  LuChevronRight as ChevronRight,
+  LuHouse as HomeIcon,
+  LuPhone as Phone
+} from "react-icons/lu";
 
 export const metadata: Metadata = {
   title: "Contact Us & Official Works | B P Garg & Sons | Dholpurestones",

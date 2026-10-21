@@ -2,7 +2,16 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Sparkles, MapPin, Calendar, Layers, ArrowUpRight, X, Building, CheckCircle2 } from "lucide-react";
+import {
+  LuSparkles as Sparkles,
+  LuMapPin as MapPin,
+  LuCalendar as Calendar,
+  LuLayers as Layers,
+  LuArrowUpRight as ArrowUpRight,
+  LuX as X,
+  LuBuilding as Building,
+  LuCircleCheck as CheckCircle2
+} from "react-icons/lu";
 
 interface Project {
   id: string;

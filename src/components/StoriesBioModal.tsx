@@ -3,20 +3,20 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import {
-  X,
-  Phone,
-  Mail,
-  MapPin,
-  ExternalLink,
-  Download,
-  Building2,
-  Calendar,
-  Sparkles,
-  ChevronDown,
-  MessageCircle,
-  Share2,
-  Check,
-} from "lucide-react";
+  LuX as X,
+  LuPhone as Phone,
+  LuMail as Mail,
+  LuMapPin as MapPin,
+  LuExternalLink as ExternalLink,
+  LuDownload as Download,
+  LuBuilding2 as Building2,
+  LuCalendar as Calendar,
+  LuSparkles as Sparkles,
+  LuChevronDown as ChevronDown,
+  LuMessageCircle as MessageCircle,
+  LuShare2 as Share2,
+  LuCheck as Check
+} from "react-icons/lu";
 
 interface StoriesBioModalProps {
   isOpen: boolean;

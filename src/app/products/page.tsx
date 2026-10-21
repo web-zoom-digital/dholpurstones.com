@@ -8,7 +8,12 @@ import Applications from "@/components/Applications";
 import StoneTechnicalSpecsTable from "@/components/StoneTechnicalSpecsTable";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import { ChevronRight, Home as HomeIcon, Layers, ShieldCheck } from "lucide-react";
+import {
+  LuChevronRight as ChevronRight,
+  LuHouse as HomeIcon,
+  LuLayers as Layers,
+  LuShieldCheck as ShieldCheck
+} from "react-icons/lu";
 
 export const metadata: Metadata = {
   title: "Dholpur Sandstone Products, Tiles, Slabs & Collections | Dholpurestones",

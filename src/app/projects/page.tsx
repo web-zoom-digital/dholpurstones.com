@@ -5,7 +5,12 @@ import Navbar from "@/components/Navbar";
 import OurSignatureProjects from "@/components/OurSignatureProjects";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import { ChevronRight, Home as HomeIcon, Award, ShieldCheck } from "lucide-react";
+import {
+  LuChevronRight as ChevronRight,
+  LuHouse as HomeIcon,
+  LuAward as Award,
+  LuShieldCheck as ShieldCheck
+} from "react-icons/lu";
 
 export const metadata: Metadata = {
   title: "Featured Landmark Projects & Execution Portfolio | Dholpurestones",

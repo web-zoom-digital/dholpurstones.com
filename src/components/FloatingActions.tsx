@@ -1,7 +1,10 @@
 "use client";
 
 import React from "react";
-import { MessageCircle, Sparkles } from "lucide-react";
+import {
+  LuMessageCircle as MessageCircle,
+  LuSparkles as Sparkles
+} from "react-icons/lu";
 
 interface FloatingActionsProps {
   onOpenStories: () => void;

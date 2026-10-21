@@ -8,26 +8,26 @@ import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { BlogPost, BLOG_POSTS } from "@/data/blogData";
 import {
-  ChevronRight,
-  Home as HomeIcon,
-  BookOpen,
-  Calendar,
-  Clock,
-  ArrowRight,
-  Search,
-  Sparkles,
-  PhoneCall,
-  CheckCircle2,
-  Award,
-  ShieldCheck,
-  X,
-  Share2,
-  Check,
-  FileText,
-  Bookmark,
-  HelpCircle,
-  ChevronDown,
-} from "lucide-react";
+  LuChevronRight as ChevronRight,
+  LuHouse as HomeIcon,
+  LuBookOpen as BookOpen,
+  LuCalendar as Calendar,
+  LuClock as Clock,
+  LuArrowRight as ArrowRight,
+  LuSearch as Search,
+  LuSparkles as Sparkles,
+  LuPhoneCall as PhoneCall,
+  LuCircleCheck as CheckCircle2,
+  LuAward as Award,
+  LuShieldCheck as ShieldCheck,
+  LuX as X,
+  LuShare2 as Share2,
+  LuCheck as Check,
+  LuFileText as FileText,
+  LuBookmark as Bookmark,
+  LuCircleHelp as HelpCircle,
+  LuChevronDown as ChevronDown
+} from "react-icons/lu";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 const CATEGORIES = [

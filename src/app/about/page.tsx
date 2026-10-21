@@ -7,7 +7,12 @@ import OurStrength from "@/components/OurStrength";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import { ChevronRight, Home as HomeIcon, Award, ShieldCheck } from "lucide-react";
+import {
+  LuChevronRight as ChevronRight,
+  LuHouse as HomeIcon,
+  LuAward as Award,
+  LuShieldCheck as ShieldCheck
+} from "react-icons/lu";
 
 export const metadata: Metadata = {
   title: "About Us | Dholpurestones (Estd. 1953) - Sandstone Quarry & Heritage",

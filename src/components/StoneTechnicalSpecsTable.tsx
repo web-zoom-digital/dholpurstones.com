@@ -1,7 +1,12 @@
 "use client";
 
 import React from "react";
-import { ShieldCheck, CheckCircle2, Award, FileText } from "lucide-react";
+import {
+  LuShieldCheck as ShieldCheck,
+  LuCircleCheck as CheckCircle2,
+  LuAward as Award,
+  LuFileText as FileText
+} from "react-icons/lu";
 
 export default function StoneTechnicalSpecsTable() {
   const specs = [

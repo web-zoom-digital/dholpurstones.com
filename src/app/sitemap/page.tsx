@@ -5,19 +5,19 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import {
-  ChevronRight,
-  Home as HomeIcon,
-  MapPin,
-  Layers,
-  Building2,
-  TreePine,
-  BookOpen,
-  Camera,
-  ShieldCheck,
-  FileText,
-  Phone,
-  Compass,
-} from "lucide-react";
+  LuChevronRight as ChevronRight,
+  LuHouse as HomeIcon,
+  LuMapPin as MapPin,
+  LuLayers as Layers,
+  LuBuilding2 as Building2,
+  LuTreePine as TreePine,
+  LuBookOpen as BookOpen,
+  LuCamera as Camera,
+  LuShieldCheck as ShieldCheck,
+  LuFileText as FileText,
+  LuPhone as Phone,
+  LuCompass as Compass
+} from "react-icons/lu";
 
 export const metadata: Metadata = {
   title: "HTML Sitemap & Architectural Index | Dholpurestones (Estd. 1953)",

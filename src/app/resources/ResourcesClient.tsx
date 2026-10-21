@@ -7,13 +7,13 @@ import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import StoneTechnicalSpecsTable from "@/components/StoneTechnicalSpecsTable";
 import {
-  ChevronRight,
-  Home as HomeIcon,
-  BookOpen,
-  ShieldCheck,
-  Cpu,
-  ArrowRight,
-} from "lucide-react";
+  LuChevronRight as ChevronRight,
+  LuHouse as HomeIcon,
+  LuBookOpen as BookOpen,
+  LuShieldCheck as ShieldCheck,
+  LuCpu as Cpu,
+  LuArrowRight as ArrowRight
+} from "react-icons/lu";
 
 export default function ResourcesClient() {
   const [activeTab, setActiveTab] = useState<"blog" | "quality" | "exhibition" | "packaging">("quality");

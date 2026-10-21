@@ -3,19 +3,19 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
 import {
-  X,
-  Maximize2,
-  Sparkles,
-  MapPin,
-  Award,
-  CheckCircle2,
-  ArrowUpRight,
-  ChevronLeft,
-  ChevronRight,
-  LayoutGrid,
-  Compass,
-  Eye,
-} from "lucide-react";
+  LuX as X,
+  LuMaximize2 as Maximize2,
+  LuSparkles as Sparkles,
+  LuMapPin as MapPin,
+  LuAward as Award,
+  LuCircleCheck as CheckCircle2,
+  LuArrowUpRight as ArrowUpRight,
+  LuChevronLeft as ChevronLeft,
+  LuChevronRight as ChevronRight,
+  LuLayoutGrid as LayoutGrid,
+  LuCompass as Compass,
+  LuEye as Eye
+} from "react-icons/lu";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 function AnimDiv({

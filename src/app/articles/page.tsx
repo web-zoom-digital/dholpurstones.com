@@ -5,7 +5,12 @@ import Navbar from "@/components/Navbar";
 import SandstoneArticles from "@/components/SandstoneArticles";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import { ChevronRight, Home as HomeIcon, Sparkles, ShieldCheck } from "lucide-react";
+import {
+  LuChevronRight as ChevronRight,
+  LuHouse as HomeIcon,
+  LuSparkles as Sparkles,
+  LuShieldCheck as ShieldCheck
+} from "react-icons/lu";
 
 export const metadata: Metadata = {
   title: "Hand-Carved Sandstone Sculptures & Architectural Articles | Dholpurestones",

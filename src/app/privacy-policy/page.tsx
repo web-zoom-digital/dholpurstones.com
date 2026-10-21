@@ -4,7 +4,11 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import { ChevronRight, Home as HomeIcon, ShieldCheck } from "lucide-react";
+import {
+  LuChevronRight as ChevronRight,
+  LuHouse as HomeIcon,
+  LuShieldCheck as ShieldCheck
+} from "react-icons/lu";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Dholpurestones.com (B P Garg & Sons)",

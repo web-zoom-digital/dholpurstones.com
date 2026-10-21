@@ -7,16 +7,16 @@ import LandscapingSolutions from "@/components/LandscapingSolutions";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import {
-  ChevronRight,
-  Home as HomeIcon,
-  TreePine,
-  ShieldCheck,
-  Award,
-  Sparkles,
-  Phone,
-  Ruler,
-  Compass,
-} from "lucide-react";
+  LuChevronRight as ChevronRight,
+  LuHouse as HomeIcon,
+  LuTreePine as TreePine,
+  LuShieldCheck as ShieldCheck,
+  LuAward as Award,
+  LuSparkles as Sparkles,
+  LuPhone as Phone,
+  LuRuler as Ruler,
+  LuCompass as Compass
+} from "react-icons/lu";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export const metadata: Metadata = {
