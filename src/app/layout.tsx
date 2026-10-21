@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Cinzel, Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const cinzel = Cinzel({
@@ -75,7 +76,11 @@ export const metadata: Metadata = {
       { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
+  verification: {
+    google: "7od_sKJ0gYxX_2uddj6D5RCZtt-OEHYcio17B-4IXkA",
+  },
   other: {
+    "google-site-verification": "7od_sKJ0gYxX_2uddj6D5RCZtt-OEHYcio17B-4IXkA",
     "geo.region": "IN-RJ",
     "geo.placename": "Sarmathura, Dholpur, Rajasthan, India",
     "geo.position": "26.5492;77.2917",
@@ -334,12 +339,34 @@ export default function RootLayout({
   return (
     <html lang="en" className={`scroll-smooth ${cinzel.variable} ${plusJakartaSans.variable}`}>
       <head>
+        <meta
+          name="google-site-verification"
+          content="7od_sKJ0gYxX_2uddj6D5RCZtt-OEHYcio17B-4IXkA"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
         />
       </head>
       <body className="bg-[#FAF7F2] text-[#141A17] antialiased selection:bg-[#C29B38] selection:text-black">
+        {/* Google tag (gtag.js) */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-59ME7WLZ27"
+        />
+        <Script
+          id="google-analytics-gtag"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-59ME7WLZ27');
+            `,
+          }}
+        />
+
         {children}
       </body>
     </html>
