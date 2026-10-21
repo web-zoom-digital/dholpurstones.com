@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Cinzel:wght@500;600;700;800;900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 /* ==========================================================================
-   GARG CORPORATION LTD. (GCL) - ESTD. 1953
+   DHOLPURESTONES (B P GARG & SONS / GCL) - ESTD. 1953
    Luxury Architectural Stone Design System
    Mobile-First Optimised v2
    ========================================================================== */
@@ -19,13 +18,13 @@
   --gcl-gold-light: #E0BA55;
   --gcl-gold-subtle: rgba(194, 155, 56, 0.15);
   --gcl-charcoal: #141A17;
-  --gcl-muted: #68726E;
+  --gcl-muted: #4A5550; /* Optimized to >= 4.5:1 contrast against #FAF7F2 */
   --gcl-border-light: rgba(0, 0, 0, 0.08);
   --gcl-border-dark: rgba(255, 255, 255, 0.1);
 
-  --font-cinzel: 'Cinzel', serif;
+  --font-cinzel: var(--font-cinzel), 'Cinzel', serif;
+  --font-sans: var(--font-sans), 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-garamond: 'EB Garamond', serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-aboreto: 'Aboreto', serif;
 }
 

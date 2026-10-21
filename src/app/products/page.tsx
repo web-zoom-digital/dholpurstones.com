@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import OurProducts from "@/components/OurProducts";
 import StoneCollection from "@/components/StoneCollection";
 import Applications from "@/components/Applications";
+import StoneTechnicalSpecsTable from "@/components/StoneTechnicalSpecsTable";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { ChevronRight, Home as HomeIcon, Layers, ShieldCheck } from "lucide-react";
@@ -21,6 +22,21 @@ export const metadata: Metadata = {
     description:
       "Direct quarry extraction from Sarmathura and Sikandra. Calibrated tiles, CNC architectural panels, monolithic blocks, and containerized export supplies.",
     url: "https://dholpurestones.com/products",
+    siteName: "Dholpurestones.com",
+    images: [
+      {
+        url: "https://dholpurestones.com/assets/material-sandstone.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dholpur Sandstone Calibrated Tiles and Monolithic Blocks",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dholpur Sandstone Products & Slabs | Dholpurestones",
+    description: "Quarry-direct calibrated tiles, CNC grooved panels, and monolithic architectural blocks.",
+    images: ["https://dholpurestones.com/assets/material-sandstone.jpg"],
   },
 };
 
@@ -62,6 +78,7 @@ export default function ProductsPage() {
       {/* Core Product Components */}
       <OurProducts />
       <StoneCollection />
+      <StoneTechnicalSpecsTable />
       <Applications />
 
       {/* Bottom CTA Bar */}
@@ -81,10 +98,10 @@ export default function ProductsPage() {
           </div>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto shrink-0 text-center">
             <Link
-              href="/landscaping"
+              href="/farmhouse-gardens"
               className="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-bold uppercase tracking-wider transition-colors text-white text-center"
             >
-              Landscaping Stones
+              Farm House &amp; Gardens
             </Link>
             <Link
               href="/contact"
@@ -95,6 +112,55 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
+
+      {/* Product & Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://dholpurestones.com"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Products",
+                    "item": "https://dholpurestones.com/products"
+                  }
+                ]
+              },
+              {
+                "@type": "Product",
+                "@id": "https://dholpurestones.com/products#sandstone",
+                "name": "Authentic Dholpur Sandstone Tiles, Slabs & Monolithic Blocks",
+                "description": "Quarry-direct calibrated natural Dholpur sandstone in Red, Beige, and Chocolate varieties. Compressive strength >68 MPa, ASTM tested for luxury architectural cladding and flooring.",
+                "brand": {
+                  "@type": "Brand",
+                  "name": "Dholpurestones"
+                },
+                "category": "Building Materials > Natural Stone > Sandstone",
+                "offers": {
+                  "@type": "AggregateOffer",
+                  "priceCurrency": "INR",
+                  "lowPrice": "45",
+                  "highPrice": "450",
+                  "offerCount": "24",
+                  "priceValidUntil": "2027-12-31",
+                  "availability": "https://schema.org/InStock"
+                }
+              }
+            ]
+          }),
+        }}
+      />
 
       <Footer />
       <FloatingWhatsApp />

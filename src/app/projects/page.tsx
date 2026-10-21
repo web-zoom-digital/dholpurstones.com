@@ -19,6 +19,22 @@ export const metadata: Metadata = {
     description:
       "Selected landmark turnkey executions across government institutions, world-renowned spiritual temples, and luxury residential estates.",
     url: "https://dholpurestones.com/projects",
+    siteName: "Dholpurestones",
+    images: [
+      {
+        url: "https://dholpurestones.com/assets/projects/project-parliament.jpg",
+        width: 1200,
+        height: 630,
+        alt: "New Delhi Parliament House Sandstone Supply by Dholpurestones",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Signature Natural Stone Landmark Projects | Dholpurestones",
+    description:
+      "Turnkey executions across New Delhi Parliament House, Akshardham Temple, Adani House, and embassies worldwide.",
+    images: ["https://dholpurestones.com/assets/projects/project-parliament.jpg"],
   },
 };
 
@@ -85,6 +101,44 @@ export default function ProjectsPage() {
           </div>
         </div>
       </section>
+
+      {/* Breadcrumb & Projects Collection Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "CollectionPage",
+                "@id": "https://dholpurestones.com/projects#webpage",
+                "url": "https://dholpurestones.com/projects",
+                "name": "Landmark Turnkey Stone Projects Portfolio",
+                "isPartOf": {
+                  "@id": "https://dholpurestones.com/#website"
+                },
+                "breadcrumb": {
+                  "@type": "BreadcrumbList",
+                  "itemListElement": [
+                    {
+                      "@type": "ListItem",
+                      "position": 1,
+                      "name": "Home",
+                      "item": "https://dholpurestones.com"
+                    },
+                    {
+                      "@type": "ListItem",
+                      "position": 2,
+                      "name": "Signature Projects",
+                      "item": "https://dholpurestones.com/projects"
+                    }
+                  ]
+                }
+              }
+            ]
+          }),
+        }}
+      />
 
       <Footer />
       <FloatingWhatsApp />

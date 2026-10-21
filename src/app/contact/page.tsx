@@ -20,6 +20,22 @@ export const metadata: Metadata = {
     description:
       "Direct quarry inquiries, factory quotations, architectural sample boxes, and international export tenders.",
     url: "https://dholpurestones.com/contact",
+    siteName: "Dholpurestones",
+    images: [
+      {
+        url: "https://dholpurestones.com/assets/quarry_mining_operations.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dholpurestones Sarmathura Works and Quarry Contact",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Official Works | Dholpurestones (Estd. 1953)",
+    description:
+      "Direct coordination with Managing Director Mr. Arvind Garg (Awarded by Govt. of India) for quarry supply and architectural execution.",
+    images: ["https://dholpurestones.com/assets/quarry_mining_operations.jpg"],
   },
 };
 
@@ -61,6 +77,44 @@ export default function ContactPage() {
       {/* Core Contact & FAQ Components */}
       <ContactSection />
       <FAQSection />
+
+      {/* ContactPage & BreadcrumbList Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "ContactPage",
+                "@id": "https://dholpurestones.com/contact#webpage",
+                "url": "https://dholpurestones.com/contact",
+                "name": "Contact Dholpurestones Leadership & Works",
+                "isPartOf": {
+                  "@id": "https://dholpurestones.com/#website"
+                },
+                "breadcrumb": {
+                  "@type": "BreadcrumbList",
+                  "itemListElement": [
+                    {
+                      "@type": "ListItem",
+                      "position": 1,
+                      "name": "Home",
+                      "item": "https://dholpurestones.com"
+                    },
+                    {
+                      "@type": "ListItem",
+                      "position": 2,
+                      "name": "Contact & Credentials",
+                      "item": "https://dholpurestones.com/contact"
+                    }
+                  ]
+                }
+              }
+            ]
+          }),
+        }}
+      />
 
       <Footer />
       <FloatingWhatsApp />

@@ -547,11 +547,31 @@ export default function FAQSection() {
         </AnimDiv>
 
         {/* Running Bottom Bar */}
-        <div className="mt-8 pt-4 border-t border-black/8 flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] sm:text-[11px] font-semibold text-[#68726E] uppercase tracking-wider text-center sm:text-left">
+        <div className="mt-8 pt-4 border-t border-black/8 flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] sm:text-[11px] font-semibold text-[#4A5550] uppercase tracking-wider text-center sm:text-left">
           <span>Natural Sandstones &bull; Mines &bull; Manufacturing &bull; Export &bull; Contracting</span>
           <span className="font-['Cinzel',serif] text-[#141A17]">DHOLPURESTONES.COM</span>
         </div>
       </div>
+
+      {/* Comprehensive Dynamic FAQPage Schema for AEO (Answer Engines & Google Rich Results) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "@id": "https://dholpurestones.com/#faq-detailed",
+            "mainEntity": faqs.map((f) => ({
+              "@type": "Question",
+              "name": f.q,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": f.a,
+              },
+            })),
+          }),
+        }}
+      />
     </section>
   );
 }

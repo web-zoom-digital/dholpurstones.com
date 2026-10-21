@@ -62,7 +62,10 @@ export default function ContactSection() {
     email: "",
     stoneType: "Luxury Farm House & Garden Landscaping",
     message: "",
+    honeypot: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [copiedText, setCopiedText] = useState<string | null>(null);
   const [previewCard, setPreviewCard] = useState<{
@@ -75,6 +78,17 @@ export default function ContactSection() {
     email?: string;
   } | null>(null);
 
+  // Keyboard accessibility for lightbox modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setPreviewCard(null);
+    };
+    if (previewCard) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [previewCard]);
+
   const handleCopy = (text: string, label: string) => {
     if (typeof navigator !== "undefined" && navigator.clipboard) {
       navigator.clipboard.writeText(text);
@@ -83,9 +97,27 @@ export default function ContactSection() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "Unable to send inquiry. Please call directly.");
+      }
+      setSubmitted(true);
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "An unexpected error occurred.";
+      setErrorMessage(msg);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -703,6 +735,24 @@ export default function ContactSection() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Honeypot field to silently drop automated bot spam */}
+                <input
+                  type="text"
+                  name="hp_company"
+                  value={form.honeypot}
+                  onChange={(e) => setForm({ ...form, honeypot: e.target.value })}
+                  style={{ display: "none", position: "absolute", left: "-9999px" }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
+
+                {errorMessage && (
+                  <div className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/30 text-red-700 text-xs font-semibold">
+                    {errorMessage}
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-[11px] uppercase font-bold tracking-wider text-[#141A17] mb-1.5">
@@ -784,10 +834,11 @@ export default function ContactSection() {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm uppercase tracking-wider font-bold py-3.5 px-8 rounded-full bg-[#134e3f] hover:bg-[#0c3329] text-white shadow-lg hover:shadow-xl transition-all active:scale-95 border border-[#C29B38]/30 cursor-pointer"
+                    disabled={isSubmitting}
+                    className="inline-flex items-center justify-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm uppercase tracking-wider font-bold py-3.5 px-8 rounded-full bg-[#134e3f] hover:bg-[#0c3329] disabled:opacity-60 text-white shadow-lg hover:shadow-xl transition-all active:scale-95 border border-[#C29B38]/30 cursor-pointer"
                   >
-                    <span>Submit Inquiry</span>
-                    <Send className="w-3.5 h-3.5" />
+                    <span>{isSubmitting ? "Submitting Inquiry..." : "Submit Inquiry"}</span>
+                    <Send className={`w-3.5 h-3.5 ${isSubmitting ? "animate-pulse" : ""}`} />
                   </button>
                 </div>
               </form>
@@ -795,7 +846,72 @@ export default function ContactSection() {
           </div>
         </AnimDiv>
 
-        {/* 5. Authentic Bottom Banner */}
+        {/* 5. Interactive Google Maps & Quarry Location */}
+        <AnimDiv delay={280} className="mb-10">
+          <div className="bg-white rounded-3xl border border-black/8 shadow-sm overflow-hidden">
+            <div className="p-6 sm:p-8 border-b border-black/6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <MapPin className="w-4 h-4 text-[#C29B38]" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#C29B38]">
+                    GEOGRAPHICAL DISPATCH &amp; QUARRY WORKS
+                  </span>
+                </div>
+                <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#141A17] uppercase tracking-wide">
+                  Sarmathura Quarry Works &amp; Factory Site
+                </h3>
+                <p className="text-xs text-[#68726E] mt-1 max-w-xl">
+                  B P Garg &amp; Sons &bull; Near RAC line, Mothiyapura road, Sarmathura 328026, Dist. Dholpur, Rajasthan, India
+                </p>
+              </div>
+              <div className="flex flex-wrap items-center gap-2.5">
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=26.5492,77.2917"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#134e3f] hover:bg-[#0c3329] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-sm"
+                >
+                  <Compass className="w-3.5 h-3.5 text-[#E0BA55]" />
+                  <span>Get Driving Directions</span>
+                </a>
+                <span className="text-[11px] font-mono font-semibold px-3 py-2 rounded-full bg-[#FAF7F2] border border-black/8 text-[#141A17]">
+                  GPS: 26.5492° N, 77.2917° E
+                </span>
+              </div>
+            </div>
+
+            {/* Google Map Embed */}
+            <div className="relative w-full h-80 sm:h-96 bg-[#FAF7F2]">
+              <iframe
+                title="B P Garg & Sons Sarmathura Works Location Map"
+                src="https://maps.google.com/maps?q=26.5492,77.2917&hl=en&z=13&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full grayscale-[25%] contrast-105"
+              />
+            </div>
+
+            <div className="p-4 sm:p-5 bg-[#FAF7F2] border-t border-black/6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+              <div className="flex items-center gap-2 text-[#4A5550]">
+                <Clock className="w-4 h-4 text-[#C29B38] shrink-0" />
+                <span><strong>Quarry &amp; Factory Hours:</strong> Mon &ndash; Sat, 09:00 &ndash; 19:00 IST</span>
+              </div>
+              <div className="flex items-center gap-2 text-[#4A5550]">
+                <ShieldCheck className="w-4 h-4 text-[#134e3f] shrink-0" />
+                <span><strong>Rail / Logistics Siding:</strong> Sarmathura Broad Gauge Rail Head</span>
+              </div>
+              <div className="flex items-center gap-2 text-[#4A5550]">
+                <Globe className="w-4 h-4 text-[#852233] shrink-0" />
+                <span><strong>Export Hubs:</strong> Direct container transport to Mundra &amp; Pipavav</span>
+              </div>
+            </div>
+          </div>
+        </AnimDiv>
+
+        {/* 6. Authentic Bottom Banner */}
         <AnimDiv delay={300}>
           <div className="bg-[#0D1311] rounded-2xl p-6 sm:p-8 text-center border border-white/8">
             <h4 className="font-['Cinzel',serif] text-sm sm:text-lg font-bold text-[#C29B38] tracking-[0.18em] uppercase">
@@ -813,6 +929,9 @@ export default function ContactSection() {
           ========================================================================= */}
       {previewCard && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="card-modal-title"
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn"
           onClick={() => setPreviewCard(null)}
         >
@@ -828,7 +947,7 @@ export default function ContactSection() {
                   <span className="text-[9px] uppercase font-bold tracking-[0.2em] text-[#C29B38] block">
                     AUTHENTIC VISITING CARD &bull; ARCHIVAL DOSSIER
                   </span>
-                  <h4 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-white uppercase tracking-wider">
+                  <h4 id="card-modal-title" className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-white uppercase tracking-wider">
                     {previewCard.title}
                   </h4>
                 </div>

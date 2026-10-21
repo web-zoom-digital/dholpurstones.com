@@ -21,6 +21,21 @@ export const metadata: Metadata = {
     description:
       "Direct quarry concessions in Sarmathura, Rajasthan. Founded in 1953, supplying authentic sandstone to iconic national landmarks and global capitals.",
     url: "https://dholpurestones.com/about",
+    siteName: "Dholpurestones.com",
+    images: [
+      {
+        url: "https://dholpurestones.com/assets/crest-1953.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dholpurestones Established 1953 Quarry Lineage",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | Dholpurestones (Estd. 1953)",
+    description: "70+ Years of authentic natural sandstone quarrying in Sarmathura, Rajasthan.",
+    images: ["https://dholpurestones.com/assets/crest-1953.jpg"],
   },
 };
 
@@ -95,6 +110,44 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* AboutPage & BreadcrumbList Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "AboutPage",
+                "@id": "https://dholpurestones.com/about#webpage",
+                "url": "https://dholpurestones.com/about",
+                "name": "About Dholpurestones (B P Garg & Sons / Garg Corporation Ltd.)",
+                "isPartOf": {
+                  "@id": "https://dholpurestones.com/#website"
+                },
+                "breadcrumb": {
+                  "@type": "BreadcrumbList",
+                  "itemListElement": [
+                    {
+                      "@type": "ListItem",
+                      "position": 1,
+                      "name": "Home",
+                      "item": "https://dholpurestones.com"
+                    },
+                    {
+                      "@type": "ListItem",
+                      "position": 2,
+                      "name": "About Us",
+                      "item": "https://dholpurestones.com/about"
+                    }
+                  ]
+                }
+              }
+            ]
+          }),
+        }}
+      />
 
       <Footer />
       <FloatingWhatsApp />

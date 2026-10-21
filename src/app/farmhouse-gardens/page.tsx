@@ -33,6 +33,21 @@ export const metadata: Metadata = {
     url: "https://dholpurestones.com/farmhouse-gardens",
     siteName: "Dholpurestones",
     type: "website",
+    images: [
+      {
+        url: "https://dholpurestones.com/assets/garg/hero_peacock_widescreen_2k.jpg",
+        width: 1920,
+        height: 1080,
+        alt: "Luxury Farm House & Garden Landscaping Stone Solutions - Dholpurestones",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Luxury Farm House & Garden Stone Solutions | Dholpurestones",
+    description:
+      "Turnkey natural sandstone solutions for country estates, 300+ front elevation designs, cobblestone driveways, and carved pavilions.",
+    images: ["https://dholpurestones.com/assets/garg/hero_peacock_widescreen_2k.jpg"],
   },
 };
 
@@ -168,6 +183,89 @@ export default function FarmHouseGardensPage() {
           </div>
         </div>
       </section>
+
+      {/* Farmhouse & Landscaping Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Service",
+                "@id": "https://dholpurestones.com/farmhouse-gardens#service",
+                "name": "Luxury Farm House & Garden Sandstone Solutions",
+                "serviceType": "Architectural Sandstone Landscaping & Front Elevation",
+                "provider": {
+                  "@id": "https://dholpurestones.com/#organization"
+                },
+                "areaServed": ["IN", "CA", "US", "DE", "AE", "GB"],
+                "description": "Turnkey natural sandstone supply and artisanal carving for luxury farmhouses, cobblestone driveways, grand entrance portals, tiered fountains, and gazebo structures."
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://dholpurestones.com"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Farm House & Gardens",
+                    "item": "https://dholpurestones.com/farmhouse-gardens"
+                  }
+                ]
+              },
+              {
+                "@type": "HowTo",
+                "name": "How to Plan & Execute a Luxury Farm House Natural Sandstone Elevation & Landscape",
+                "description": "Step-by-step architectural workflow for sourcing certified Dholpur sandstone, custom CNC fabrication, and installing monolithic farm house porticos and cobblestone driveways.",
+                "totalTime": "P3W",
+                "step": [
+                  {
+                    "@type": "HowToStep",
+                    "position": 1,
+                    "name": "Architectural BOQ & 3D Elevation Review",
+                    "text": "Submit your architectural elevations and site dimensions to our engineering desk for stone thickness calibration and quantity optimization.",
+                    "url": "https://dholpurestones.com/farmhouse-gardens#elevation-review"
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "position": 2,
+                    "name": "Sarmathura Quarry Strata Selection",
+                    "text": "Direct monolithic block quarrying in Sarmathura matching your required color uniformity across Dholpur Beige, Red, or Chocolate tones.",
+                    "url": "https://dholpurestones.com/farmhouse-gardens#quarry-selection"
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "position": 3,
+                    "name": "8-Axis CNC Cutting & Artisanal Chiseling",
+                    "text": "Precision gangsaw slicing (+/-1mm calibration) followed by 8-axis CNC profiling for fluted pillars, jalis, and hand-carved decorative motifs.",
+                    "url": "https://dholpurestones.com/farmhouse-gardens#fabrication"
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "position": 4,
+                    "name": "ISPM-15 Wooden Crate Packaging",
+                    "text": "Heavy-duty seaworthy wooden crating with high-density foam cushioning to prevent any edge chipping during highway or ocean transit.",
+                    "url": "https://dholpurestones.com/farmhouse-gardens#packaging"
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "position": 5,
+                    "name": "Turnkey On-Site Installation Guidance",
+                    "text": "Delivery directly to your farm house estate with interlocking layout plans and recommendations for non-staining adhesive mortars.",
+                    "url": "https://dholpurestones.com/farmhouse-gardens#installation"
+                  }
+                ]
+              }
+            ]
+          }),
+        }}
+      />
 
       {/* 6. Heritage Footer & Floating Direct WhatsApp */}
       <Footer />

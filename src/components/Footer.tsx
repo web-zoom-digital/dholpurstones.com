@@ -48,15 +48,29 @@ function LinkedinIcon({ className = "w-4 h-4" }: { className?: string }) {
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
+  const [isSubscribing, setIsSubscribing] = useState(false);
+  const [subError, setSubError] = useState<string | null>(null);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email.trim()) {
+    if (!email.trim()) return;
+    setIsSubscribing(true);
+    setSubError(null);
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim() }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Subscription failed");
       setSubscribed(true);
-      setTimeout(() => {
-        setEmail("");
-        setSubscribed(false);
-      }, 4000);
+      setEmail("");
+      setTimeout(() => setSubscribed(false), 5000);
+    } catch (err: unknown) {
+      setSubError(err instanceof Error ? err.message : "Unable to subscribe");
+    } finally {
+      setIsSubscribing(false);
     }
   };
 
@@ -134,8 +148,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/landscaping" className="hover:text-[#C29B38] transition-colors">
-                  Landscaping Solutions
+                <Link href="/farmhouse-gardens" className="hover:text-[#C29B38] transition-colors">
+                  Farm House &amp; Gardens
                 </Link>
               </li>
               <li>
@@ -156,7 +170,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Useful Links */}
+          {/* Column 3: Useful Links & Legal */}
           <div>
             <h3 className="text-white text-base sm:text-lg font-bold tracking-wide mb-4 sm:mb-5">
               Useful Links
@@ -182,6 +196,26 @@ export default function Footer() {
                   Verified FAQs &amp; Inquiries
                 </Link>
               </li>
+              <li>
+                <Link href="/privacy-policy" className="hover:text-[#C29B38] transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="hover:text-[#C29B38] transition-colors">
+                  Terms &amp; Conditions
+                </Link>
+              </li>
+              <li>
+                <Link href="/sitemap" className="hover:text-[#C29B38] transition-colors">
+                  HTML Sitemap
+                </Link>
+              </li>
+              <li>
+                <a href="/llms.txt" target="_blank" rel="noopener noreferrer" className="hover:text-[#C29B38] transition-colors text-[11px] text-[#C29B38] font-mono">
+                  AI Context (/llms.txt)
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -191,7 +225,7 @@ export default function Footer() {
               Sign up for our newsletter
             </h3>
             <p className="text-xs sm:text-[13px] text-white/70 leading-relaxed mb-4">
-              Join our eco-conscious community—subscribe to our newsletter for natural stone updates and architectural insights!
+              Join our architectural stone community—subscribe for quarterly quarry updates, export schedules &amp; technical reports!
             </p>
 
             <form onSubmit={handleSubscribe} className="space-y-2">
@@ -206,11 +240,18 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="shrink-0 bg-[#C29B38] hover:bg-[#b08a2e] text-[#0D1311] font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-md transition-all active:scale-95 shadow-md cursor-pointer"
+                  disabled={isSubscribing}
+                  className="shrink-0 bg-[#C29B38] hover:bg-[#b08a2e] disabled:opacity-60 text-[#0D1311] font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-md transition-all active:scale-95 shadow-md cursor-pointer"
                 >
-                  Subscribe
+                  {isSubscribing ? "..." : "Subscribe"}
                 </button>
               </div>
+
+              {subError && (
+                <div className="text-red-400 text-xs pt-1 font-medium">
+                  {subError}
+                </div>
+              )}
 
               {subscribed && (
                 <div className="flex items-center gap-1.5 text-[#25D366] text-xs font-semibold pt-1">
@@ -358,9 +399,24 @@ export default function Footer() {
 
       {/* 3. BOTTOM COPYRIGHT SUB-BAR */}
       <div className="bg-[#080C0B] border-t border-white/5 py-3.5 px-4 text-center">
-        <p className="text-[11px] sm:text-xs text-white/60 tracking-wide">
-          Copyright &copy; 2026 | All Right Reserved | Dholpurestones.com (Garg Corporation Ltd. &amp; Sarmathura Stone Company)
-        </p>
+        <div className="max-w-[1280px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] sm:text-xs text-white/60 tracking-wide">
+          <p>
+            Copyright &copy; 2026 | All Rights Reserved | Dholpurestones.com (Garg Corporation Ltd. &amp; Sarmathura Stone Company)
+          </p>
+          <div className="flex items-center gap-3 font-medium">
+            <Link href="/sitemap" className="hover:text-[#C29B38] transition-colors">
+              HTML Sitemap
+            </Link>
+            <span>&bull;</span>
+            <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-[#C29B38] transition-colors">
+              XML Sitemap
+            </a>
+            <span>&bull;</span>
+            <a href="/llms.txt" target="_blank" rel="noopener noreferrer" className="hover:text-[#C29B38] transition-colors font-mono text-[10px] text-[#C29B38]">
+              LLMs.txt
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );

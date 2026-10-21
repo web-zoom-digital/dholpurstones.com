@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <Image
           src="/assets/garg/hero_peacock_widescreen_2k.jpg"
-          alt="Garg Corporation Ltd – A Legacy of Natural Stone Since 1953"
+          alt="Dholpurestones.com – Authentic Dholpur Sandstone Quarry Manufacturer and Front Elevation Specialist Since 1953"
           fill
           priority
           sizes="100vw"
@@ -26,7 +26,7 @@ export default function Hero() {
 
       {/* Main Content */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-end text-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-6 sm:pb-10 lg:pb-14 w-full">
-        <div className="w-full flex flex-col items-center text-center max-w-3xl mx-auto">
+        <div className="w-full flex flex-col items-center text-center max-w-4xl mx-auto">
           {/* National & International Accolades Ribbon Badge */}
           <div
             className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-black/60 border border-[#C29B38]/70 text-[#E0BA55] text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2.5 backdrop-blur-md shadow-xl flex-wrap justify-center text-center max-w-full"
@@ -46,10 +46,10 @@ export default function Hero() {
 
           {/* Headline */}
           <h1
-            className="font-['Cinzel',serif] font-bold text-white uppercase leading-[1.1] text-3xl sm:text-5xl lg:text-6xl drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]"
+            className="font-['Cinzel',serif] font-bold text-white uppercase leading-[1.1] text-2xl sm:text-4xl lg:text-5xl drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]"
             style={{ animation: "gcl-fadeup 0.8s 0.1s cubic-bezier(0.16,1,0.3,1) both" }}
           >
-            A Legacy of Natural Stone
+            Dholpur Sandstone Quarry Manufacturer &amp; Front Elevation Specialist
           </h1>
 
           {/* Year Callout */}
