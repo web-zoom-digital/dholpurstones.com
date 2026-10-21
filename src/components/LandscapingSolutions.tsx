@@ -17,6 +17,7 @@ import {
   HardHat,
   X,
   Phone,
+  Landmark,
 } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 
@@ -54,7 +55,7 @@ function AnimDiv({
 
 interface LandscapeItem {
   id: string;
-  category: "all" | "farmhouse" | "flagstones" | "pool" | "steps" | "fountains";
+  category: "all" | "farmhouse" | "gazebos" | "flagstones" | "pool" | "steps" | "fountains";
   title: string;
   tag: string;
   subtitle: string;
@@ -188,11 +189,36 @@ const landscapeSolutions: LandscapeItem[] = [
     ],
     waMsg: "Hello Dholpurestones.com, I would like to inquire about Hand-Carved Sandstone Water Fountains & Garden Basins.",
   },
+  {
+    id: "sandstone-gazebos",
+    category: "gazebos",
+    title: "Hand-Carved Gazebos, Pergolas & Garden Baradaris",
+    tag: "Royal Heritage Pavilions & Chhatris",
+    subtitle: "Fluted Sandstone Columns, Stone Canopies & Baradaris",
+    image: "/assets/landscaping/landscape_sandstone_gazebo.jpg",
+    provenance: "Sikandra Ateliers & Sarmathura Mines",
+    desc: "Bespoke hand-carved natural sandstone gazebos, garden baradaris, and open-air pergolas crafted for luxury farm house lawns, meditation courtyards, and palatial garden estates. Features hand-chiseled fluted columns, ornate brackets, carved domed chhatri canopies, and integrated perimeter stone bench seating.",
+    idealFor: "Luxury Farm Houses, Expansive Estate Lawns, Central Courtyards, Heritage Resort Gardens",
+    specs: [
+      { label: "Architectural Styles", value: "Baradari, Chhatri, Tuscan & Pergola" },
+      { label: "Pillar Formats", value: "Solid Carved Columns (8ft to 14ft height)" },
+      { label: "Stone Quality", value: "A-Grade Uniform Fine Dholpur Pink & Beige" },
+      { label: "Longevity", value: "100% Weatherproof, Multi-Generational Life" },
+    ],
+    features: [
+      "Traditional Shilpa Shastra stone artisans hand-sculpting each column, arch & dome canopy",
+      "Precision interlocking modular stone joints engineered for seismic stability and easy estate assembly",
+      "Concealed internal electrical channels for evening ambient LED chandelier and pillar downlighting",
+      "Available from compact 10ft x 10ft garden gazebos to grand 32ft monumental octagonal baradaris",
+    ],
+    waMsg: "Hello Dholpurestones.com, I would like to inquire about Hand-Carved Sandstone Gazebos, Pergolas & Garden Baradaris for a Farm House project.",
+  },
 ];
 
 const categoryTabs = [
   { id: "all", label: "All Solutions", icon: Layers },
   { id: "farmhouse", label: "Farm House & Gardens", icon: TreePine },
+  { id: "gazebos", label: "Gazebos & Baradaris", icon: Landmark },
   { id: "flagstones", label: "Patios & Paving", icon: Ruler },
   { id: "pool", label: "Pool Coping & Decks", icon: Droplets },
   { id: "steps", label: "Steps & Walling", icon: Layers },
@@ -310,8 +336,8 @@ export default function LandscapingSolutions() {
           })}
         </AnimDiv>
 
-        {/* Showcase Grid of 4 Core Landscaping Solutions */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-16 sm:mb-20">
+        {/* Showcase Grid of 6 Core Landscaping Solutions */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 sm:mb-20">
           {filteredItems.map((item, index) => (
             <AnimDiv
               key={item.id}
@@ -327,7 +353,7 @@ export default function LandscapingSolutions() {
                   src={item.image}
                   alt={item.title}
                   fill
-                  sizes="(max-width:768px) 100vw, 50vw"
+                  sizes="(max-width:768px) 100vw, (max-width:1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
