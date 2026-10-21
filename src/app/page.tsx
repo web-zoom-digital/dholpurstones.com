@@ -48,8 +48,8 @@ export default function Home() {
       {/* 6. Our Products (Your Trusted Sandstone Manufacturer, Supplier & Exporter) */}
       <OurProducts />
 
-      {/* 6B. Dedicated Luxury Farm House & Designer Garden Landscaping (8 Custom Masonry Solutions) */}
-      <FarmHouseGardenSpecialist />
+      {/* 6B. Dedicated Luxury Farm House & Designer Garden Landscaping (4 Preview Cards + View More Button) */}
+      <FarmHouseGardenSpecialist isHomePreview={true} />
 
       {/* 6C. Natural Sand Stone Solutions for Beautiful Landscaping (Flagstones, Paving & Pool Decks) */}
       <LandscapingSolutions />

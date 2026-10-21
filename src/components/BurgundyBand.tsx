@@ -62,7 +62,7 @@ export default function BurgundyBand() {
           </a>
 
           <Link
-            href="/#farmhouse-gardens"
+            href="/farmhouse-gardens"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#C29B38] hover:bg-[#d4aa3d] text-[#0D1311] font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full transition-all active:scale-95 shadow-md"
           >
             <TreePine className="w-4 h-4 text-[#0D1311]" />

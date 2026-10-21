@@ -43,10 +43,20 @@ function AnimDiv({
           obs.unobserve(el);
         }
       },
-      { threshold: 0.08 }
+      { threshold: 0.05 }
     );
     obs.observe(el);
-    return () => obs.disconnect();
+
+    const timer = setTimeout(() => {
+      if (el && !el.classList.contains("gcl-visible")) {
+        el.classList.add("gcl-visible");
+      }
+    }, 400 + delay);
+
+    return () => {
+      obs.disconnect();
+      clearTimeout(timer);
+    };
   }, [delay]);
   return (
     <div ref={ref} className={`gcl-animate ${className}`}>
@@ -265,7 +275,13 @@ const tabs = [
   { id: "pool", label: "Poolside Coping", icon: Droplets },
 ];
 
-export default function FarmHouseGardenSpecialist() {
+interface FarmHouseGardenSpecialistProps {
+  isHomePreview?: boolean;
+}
+
+export default function FarmHouseGardenSpecialist({
+  isHomePreview = false,
+}: FarmHouseGardenSpecialistProps) {
   const [activeTab, setActiveTab] = useState<string>("all");
   const [activeModal, setActiveModal] = useState<FarmhouseItem | null>(null);
 
@@ -273,6 +289,8 @@ export default function FarmHouseGardenSpecialist() {
     activeTab === "all"
       ? farmhouseSolutions
       : farmhouseSolutions.filter((item) => item.category === activeTab);
+
+  const displayItems = isHomePreview ? filteredItems.slice(0, 4) : filteredItems;
 
   return (
     <section
@@ -347,9 +365,9 @@ export default function FarmHouseGardenSpecialist() {
           })}
         </AnimDiv>
 
-        {/* 8 Farm House & Garden Masonry Solutions Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 sm:mb-20">
-          {filteredItems.map((item, idx) => (
+        {/* Farm House & Garden Masonry Solutions Grid (4 on Home Preview, 8 on Dedicated Page) */}
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ${isHomePreview ? "mb-10 sm:mb-12" : "mb-16 sm:mb-20"}`}>
+          {displayItems.map((item, idx) => (
             <AnimDiv key={item.id} delay={idx * 60}>
               <div
                 onClick={() => setActiveModal(item)}
@@ -436,6 +454,42 @@ export default function FarmHouseGardenSpecialist() {
             </AnimDiv>
           ))}
         </div>
+
+        {/* View More Button for Homepage Preview */}
+        {isHomePreview && (
+          <AnimDiv delay={80} className="text-center mb-16 sm:mb-20">
+            <div className="bg-gradient-to-b from-[#134e3f]/8 via-white to-[#FAF7F2] p-6 sm:p-9 rounded-3xl border border-[#134e3f]/20 shadow-md max-w-2xl mx-auto flex flex-col items-center">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#134e3f]/10 text-[#134e3f] text-xs font-bold uppercase tracking-wider mb-3.5 shadow-2xs">
+                <Sparkles className="w-3.5 h-3.5 text-[#C29B38]" />
+                <span>Showing 4 of 8 Master Solutions</span>
+              </div>
+              <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#141A17] mb-2 uppercase tracking-wide">
+                View All Farm House &amp; Garden Solutions
+              </h3>
+              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#505D57] max-w-lg mb-6 leading-relaxed">
+                Explore our full spectrum of specialized estate masonry — including Cobblestone Carriage Driveways, Natural Cleft Lawn Walkways, Anti-Slip Pool Copings, and Ambient Stone Lanterns.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto">
+                <Link
+                  href="/farmhouse-gardens"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm font-bold uppercase tracking-wider px-8 py-4 rounded-full bg-[#134e3f] hover:bg-[#0c3329] text-white shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 border border-[#C29B38]/40 group"
+                >
+                  <span>View More (All 8 Designs)</span>
+                  <ArrowRight className="w-4 h-4 text-[#C29B38] transition-transform group-hover:translate-x-1" />
+                </Link>
+                <a
+                  href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20explore%20all%208%20Farm%20House%20%26%20Garden%20stone%20solutions."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm font-bold uppercase tracking-wider px-6 py-4 rounded-full bg-white hover:bg-[#FAF7F2] text-[#141A17] border border-black/10 transition-colors shadow-2xs active:scale-95"
+                >
+                  <WhatsAppIcon className="w-4 h-4 fill-[#25D366]" size={16} />
+                  <span>Enquire on WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          </AnimDiv>
+        )}
 
         {/* 4 Pillars: Why Natural Sandstone Is Essential for Farm Houses & Gardens */}
         <AnimDiv delay={100} className="mb-14 sm:mb-18">

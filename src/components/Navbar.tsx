@@ -78,12 +78,12 @@ export default function Navbar() {
 
   const navItems: NavItem[] = [
     { label: "Home", href: "/" },
-    { label: "Farm House & Gardens", href: "/#farmhouse-gardens" },
+    { label: "Farm House & Gardens", href: "/farmhouse-gardens" },
     {
       label: "Products",
       children: [
         { label: "Front Elevation (300+ Designs)", href: "/#elevation" },
-        { label: "Farm House & Gardens", href: "/#farmhouse-gardens" },
+        { label: "Farm House & Gardens", href: "/farmhouse-gardens" },
         { label: "Agra Red Sandstone", href: "/products#products" },
         { label: "Dholpur Beige Stone", href: "/products#products" },
         { label: "Chocolate Sandstone", href: "/products#products" },
