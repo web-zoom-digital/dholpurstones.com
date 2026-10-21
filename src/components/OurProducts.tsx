@@ -574,7 +574,7 @@ export default function OurProducts() {
   return (
     <section
       id="products"
-      className="bg-white py-10 sm:py-20 border-b border-black/6 relative overflow-hidden scroll-mt-20 sm:scroll-mt-24"
+      className="bg-[#FAF7F2] py-10 sm:py-20 border-b border-black/6 relative overflow-hidden scroll-mt-20 sm:scroll-mt-24"
     >
       {/* =========================================================================
           MOTION GRAPHIC BACKGROUND: Geometric Blueprint Grid & Rotating Sacred Yantras

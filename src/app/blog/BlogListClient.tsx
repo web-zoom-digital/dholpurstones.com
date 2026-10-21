@@ -588,7 +588,7 @@ export default function BlogListClient() {
                           ? "bg-[#0D1311] text-white border-[#C29B38]/40 italic"
                           : section.callout.type === "spec"
                           ? "bg-[#134e3f]/10 text-[#134e3f] border-[#134e3f]/30"
-                          : "bg-[#852233]/10 text-[#852233] border-[#852233]/30"
+                          : "bg-[#C29B38]/15 text-[#C29B38] border-[#C29B38]/40"
                       }`}
                     >
                       <span className="text-[10px] font-bold uppercase tracking-widest block mb-1">

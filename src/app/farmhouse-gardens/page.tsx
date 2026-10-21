@@ -151,7 +151,7 @@ export default function FarmHouseGardensPage() {
       <LandscapingSolutions />
 
       {/* 5. Bottom Architectural Tender & Quarry Direct Supply Banner */}
-      <section className="bg-[#141A17] text-white py-14 border-t border-[#C29B38]/20 relative overflow-hidden">
+      <section className="bg-[#0D1311] text-white py-14 border-t border-[#C29B38]/20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#C29B38]/8 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>

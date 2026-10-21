@@ -124,7 +124,7 @@ export default function LandmarkProjects() {
       : projects.filter((p) => p.category === activeFilter);
 
   return (
-    <section id="portfolio" className="py-20 sm:py-28 bg-[#121212] relative overflow-hidden border-b border-white/10">
+    <section id="portfolio" className="py-20 sm:py-28 bg-[#0D1311] relative overflow-hidden border-b border-white/10">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-14">

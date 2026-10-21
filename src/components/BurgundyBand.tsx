@@ -16,21 +16,20 @@ export default function BurgundyBand() {
   return (
     <section
       id="elevation"
-      className="relative w-full scroll-mt-20 sm:scroll-mt-24 bg-gradient-to-r from-[#0A110E] via-[#13352A] to-[#0A110E] py-9 sm:py-16 text-white overflow-hidden border-y border-[#C29B38]/40 shadow-[inset_0_0_90px_rgba(0,0,0,0.7)]"
+      className="relative w-full scroll-mt-20 sm:scroll-mt-24 bg-gradient-to-b from-[#0D1311] via-[#141A17] to-[#0D1311] py-9 sm:py-16 text-white overflow-hidden border-y border-[#C29B38]/30"
     >
       {/* Decorative Gold Filigree & Radial Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full sm:w-3/4 h-full bg-[radial-gradient(ellipse_at_center,rgba(194,155,56,0.14)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full sm:w-3/4 h-full bg-[radial-gradient(ellipse_at_center,rgba(194,155,56,0.12)_0%,transparent_70%)] pointer-events-none" />
 
-      {/* Ambient Forest & Gold Glows */}
+      {/* Ambient Gold Glows */}
       <div className="absolute -top-10 left-10 w-48 h-48 bg-[#C29B38]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-10 right-10 w-64 h-64 bg-[#134e3f]/25 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-10 right-10 w-64 h-64 bg-[#C29B38]/8 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* National & International Accolades Ribbon Badge */}
         <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-[#C29B38]/15 border border-[#C29B38]/45 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-[#E0BA55] text-[9.5px] sm:text-xs font-bold tracking-[0.1em] sm:tracking-[0.14em] uppercase mb-3 sm:mb-4 shadow-md backdrop-blur-xs flex-wrap justify-center leading-tight">
           <Award className="w-3.5 h-3.5 text-[#C29B38] shrink-0" />
           <span>AWARDED BY GOVT. OF INDIA &bull; NOMINATED FOR INTERNATIONAL AWARD FOR BUSINESS EXCELLENCE</span>
-          <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#C29B38] shrink-0" />
         </div>
 
         {/* Primary Statement — Exact User Requirement */}
@@ -62,7 +61,7 @@ export default function BurgundyBand() {
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-[#0D1311] font-bold text-xs uppercase tracking-wider px-5 sm:px-6 py-3 sm:py-3.5 rounded-full shadow-lg transition-all active:scale-95"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#C29B38] hover:bg-[#d4aa3d] text-[#0D1311] font-bold text-xs uppercase tracking-wider px-5 sm:px-6 py-3 sm:py-3.5 rounded-full shadow-lg transition-all active:scale-95"
           >
             <WhatsAppIcon className="w-4 h-4 fill-[#0D1311]" size={16} />
             <span>Explore 300+ Elevation Designs</span>
@@ -70,35 +69,35 @@ export default function BurgundyBand() {
 
           <Link
             href="/farmhouse-gardens"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#C29B38] hover:bg-[#d4aa3d] text-[#0D1311] font-bold text-xs uppercase tracking-wider px-5 sm:px-6 py-3 sm:py-3.5 rounded-full transition-all active:scale-95 shadow-md"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider px-5 sm:px-6 py-3 sm:py-3.5 rounded-full transition-all active:scale-95 border border-white/20 hover:border-[#C29B38]/60 shadow-md"
           >
-            <TreePine className="w-4 h-4 text-[#0D1311]" />
+            <TreePine className="w-4 h-4 text-[#C29B38]" />
             <span>Farm House &amp; Garden Solutions</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#0D1311]" />
+            <ArrowRight className="w-3.5 h-3.5 text-[#C29B38]" />
           </Link>
         </div>
 
         {/* 4 Trust Points Row */}
         <div className="mt-8 pt-5 sm:pt-8 border-t border-white/10 grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-5 text-xs tracking-wider uppercase text-white/90">
-          <div className="flex items-center justify-center gap-1.5 sm:gap-2 bg-[#0D1311]/50 hover:bg-[#0D1311]/80 p-2.5 sm:p-3 rounded-xl border border-white/8 hover:border-[#C29B38]/40 transition-colors">
+          <div className="flex items-center justify-center gap-1.5 sm:gap-2 bg-white/5 hover:bg-white/10 p-2.5 sm:p-3 rounded-xl border border-white/8 hover:border-[#C29B38]/40 transition-colors">
             <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#C29B38] shrink-0" />
             <span className="font-semibold text-center sm:text-left text-[10.5px] sm:text-xs">
               300+ Elevation Designs
             </span>
           </div>
-          <div className="flex items-center justify-center gap-1.5 sm:gap-2 bg-[#0D1311]/50 hover:bg-[#0D1311]/80 p-2.5 sm:p-3 rounded-xl border border-white/8 hover:border-[#C29B38]/40 transition-colors">
+          <div className="flex items-center justify-center gap-1.5 sm:gap-2 bg-white/5 hover:bg-white/10 p-2.5 sm:p-3 rounded-xl border border-white/8 hover:border-[#C29B38]/40 transition-colors">
             <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#C29B38] shrink-0" />
             <span className="font-semibold text-center sm:text-left text-[10.5px] sm:text-xs">
               Govt. of India Awarded
             </span>
           </div>
-          <div className="flex items-center justify-center gap-1.5 sm:gap-2 bg-[#0D1311]/50 hover:bg-[#0D1311]/80 p-2.5 sm:p-3 rounded-xl border border-white/8 hover:border-[#C29B38]/40 transition-colors">
+          <div className="flex items-center justify-center gap-1.5 sm:gap-2 bg-white/5 hover:bg-white/10 p-2.5 sm:p-3 rounded-xl border border-white/8 hover:border-[#C29B38]/40 transition-colors">
             <Trophy className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#C29B38] shrink-0" />
             <span className="font-semibold text-center sm:text-left text-[10.5px] sm:text-xs">
               Intl. Award Nominee
             </span>
           </div>
-          <div className="flex items-center justify-center gap-1.5 sm:gap-2 bg-[#0D1311]/50 hover:bg-[#0D1311]/80 p-2.5 sm:p-3 rounded-xl border border-white/8 hover:border-[#C29B38]/40 transition-colors">
+          <div className="flex items-center justify-center gap-1.5 sm:gap-2 bg-white/5 hover:bg-white/10 p-2.5 sm:p-3 rounded-xl border border-white/8 hover:border-[#C29B38]/40 transition-colors">
             <TreePine className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#C29B38] shrink-0" />
             <span className="font-semibold text-center sm:text-left text-[10.5px] sm:text-xs">
               Farm House &amp; Gardens

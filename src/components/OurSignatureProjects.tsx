@@ -449,7 +449,7 @@ export default function OurSignatureProjects() {
   return (
     <section
       id="signature-projects"
-      className="bg-white py-10 sm:py-20 border-b border-black/6 relative overflow-hidden"
+      className="bg-[#FAF7F2] py-10 sm:py-20 border-b border-black/6 relative overflow-hidden"
     >
       {/* =========================================================================
           MOTION GRAPHIC BACKGROUND: Geometric Blueprint Grid & Rotating Sacred Yantras

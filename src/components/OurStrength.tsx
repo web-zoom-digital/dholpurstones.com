@@ -84,7 +84,7 @@ const strengths = [
 
 export default function OurStrength() {
   return (
-    <section id="strength" className="bg-white py-10 sm:py-20 border-b border-black/6 scroll-mt-20 sm:scroll-mt-24">
+    <section id="strength" className="bg-[#FAF7F2] py-10 sm:py-20 border-b border-black/6 scroll-mt-20 sm:scroll-mt-24">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header Label */}
         <AnimDiv className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-black/8 mb-6 sm:mb-10">
@@ -116,13 +116,13 @@ export default function OurStrength() {
             const Icon = s.icon;
             return (
               <AnimDiv key={s.num} delay={i * 70}>
-                <div className="bg-[#FAF7F2] rounded-xl sm:rounded-2xl p-3 sm:p-6 border border-black/8 hover:border-[#C29B38]/60 hover:shadow-lg transition-all duration-300 group h-full flex flex-col justify-between">
+                <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 border border-black/8 hover:border-[#C29B38]/60 hover:shadow-lg transition-all duration-300 group h-full flex flex-col justify-between">
                   <div>
                     <div className="flex items-center justify-between mb-2 sm:mb-4">
                       <span className="font-['Cinzel',serif] text-sm sm:text-xl font-bold text-[#C29B38]">
                         {s.num}
                       </span>
-                      <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-white border border-black/6 flex items-center justify-center text-[#134e3f] shadow-xs group-hover:bg-[#134e3f] group-hover:text-white transition-all duration-300">
+                      <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#FAF7F2] border border-black/6 flex items-center justify-center text-[#134e3f] shadow-xs group-hover:bg-[#134e3f] group-hover:text-white transition-all duration-300">
                         <Icon className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                       </div>
                     </div>
@@ -144,7 +144,7 @@ export default function OurStrength() {
 
         {/* Offices & Business Presence Banner */}
         <AnimDiv delay={200}>
-          <div className="bg-[#161D1A] rounded-2xl p-4 sm:p-8 text-white border border-white/8 shadow-xl relative overflow-hidden">
+          <div className="bg-[#0D1311] rounded-2xl p-4 sm:p-8 text-white border border-[#C29B38]/30 shadow-xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#C29B38]/5 rounded-full blur-3xl pointer-events-none" />
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5 sm:gap-6 relative z-10">
               <div className="flex-1">

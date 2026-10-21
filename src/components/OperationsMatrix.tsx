@@ -93,7 +93,7 @@ export default function OperationsMatrix() {
   ];
 
   return (
-    <section id="operations" className="py-20 sm:py-28 bg-[#18181b] relative overflow-hidden border-b border-white/10">
+    <section id="operations" className="py-20 sm:py-28 bg-[#0D1311] relative overflow-hidden border-b border-white/10">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">

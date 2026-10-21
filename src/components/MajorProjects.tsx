@@ -117,7 +117,7 @@ const projects = [
 
 export default function MajorProjects() {
   return (
-    <section id="projects" className="bg-white py-14 sm:py-20 border-b border-black/6">
+    <section id="projects" className="bg-[#FAF7F2] py-14 sm:py-20 border-b border-black/6">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header Label */}
         <AnimDiv className="flex items-center justify-between pb-3 border-b border-black/8 mb-8 sm:mb-10">

@@ -85,7 +85,7 @@ export default function AboutPage() {
       <WhyChooseUs />
 
       {/* Bottom CTA Bar */}
-      <section className="bg-[#141A17] text-white py-12 border-t border-[#C29B38]/20">
+      <section className="bg-[#0D1311] text-white py-12 border-t border-[#C29B38]/20">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <div className="inline-flex items-center gap-2 text-[#C29B38] text-xs font-bold uppercase tracking-wider mb-1">

@@ -112,7 +112,7 @@ export default function StoneCollection() {
   }, [selected]);
 
   return (
-    <section id="collection" className="bg-white py-10 sm:py-20 border-b border-black/6">
+    <section id="collection" className="bg-[#FAF7F2] py-10 sm:py-20 border-b border-black/6">
       <div className="max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-8">
         {/* Section Header Label */}
         <AnimDiv className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-black/8 mb-6 sm:mb-10">
@@ -148,7 +148,7 @@ export default function StoneCollection() {
               <button
                 type="button"
                 onClick={() => setSelected(s)}
-                className="w-full text-left bg-[#FAF7F2] rounded-xl sm:rounded-2xl overflow-hidden border border-black/8 hover:border-[#C29B38]/60 hover:shadow-xl transition-all duration-300 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#C29B38]/50"
+                className="w-full text-left bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-black/8 hover:border-[#C29B38]/60 hover:shadow-xl transition-all duration-300 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#C29B38]/50"
               >
                 {/* Image */}
                 <div className="relative h-48 sm:h-64 w-full overflow-hidden bg-[#EAE6DE]">
