@@ -192,7 +192,7 @@ const farmhouseSolutions: FarmhouseItem[] = [
     categoryLabel: "DRIVEWAYS & COURTYARDS",
     title: "Cobblestone Carriage Driveways & Portico Courtyards",
     subtitle: "Heavy-Duty Axle Load-Bearing Hand-Split Sandstone Paving",
-    image: "/assets/landscaping/landscape_patio_paving.jpg",
+    image: "/assets/landscaping/landscape_cobblestone_driveway.jpg",
     desc: "Engineered specifically for heavy vehicle traffic — from luxury SUVs to estate service trucks. Hand-dressed sandstone cobblestones laid in fan, herringbone, or linear patterns, creating an aristocratic European manor or royal Rajasthani haveli arrival experience.",
     specs: [
       { label: "Standard Dimensions", value: "100x100x50mm, 140x140x60mm, 100x200x50mm" },

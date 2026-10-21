@@ -74,7 +74,7 @@ const landscapeSolutions: LandscapeItem[] = [
     title: "Luxury Farm House & Estate Landscaping",
     tag: "Exclusive Farm Houses & Lawns",
     subtitle: "Front Elevation, Grand Gates, Cobblestone Driveways & Courtyards",
-    image: "/assets/landscaping/landscape_patio_paving.jpg",
+    image: "/assets/landscaping/landscape_cobblestone_driveway.jpg",
     provenance: "Direct Sarmathura Sandstone Strata",
     desc: "Turnkey natural stone landscaping crafted specially for luxury farm houses, expansive private gardens, and countryside retreats. Features grand front elevation facades, hand-dressed boundary wall copings, heavy-duty cobblestone driveways, and serene garden seating gazebos.",
     idealFor: "Luxury Farm Houses, Sprawling Private Estates, Country Retreats, Eco-Resorts",
