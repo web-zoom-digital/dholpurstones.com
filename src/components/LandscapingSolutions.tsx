@@ -72,26 +72,26 @@ const landscapeSolutions: LandscapeItem[] = [
   {
     id: "farmhouse-landscaping",
     category: "farmhouse",
-    title: "Luxury Farm House & Estate Landscaping",
-    tag: "Exclusive Farm Houses & Lawns",
-    subtitle: "Front Elevation, Grand Gates, Cobblestone Driveways & Courtyards",
+    title: "Cobblestone Carriage Driveways & Portico Courtyards",
+    tag: "Heavy-Duty Vehicle Paving",
+    subtitle: "Hand-Split Sandstone Cobbles for Axle-Load Entrance Roads",
     image: "/assets/landscaping/landscape_cobblestone_driveway.jpg",
     provenance: "Direct Sarmathura Sandstone Strata",
-    desc: "Turnkey natural stone landscaping crafted specially for luxury farm houses, expansive private gardens, and countryside retreats. Features grand front elevation facades, hand-dressed boundary wall copings, heavy-duty cobblestone driveways, and serene garden seating gazebos.",
-    idealFor: "Luxury Farm Houses, Sprawling Private Estates, Country Retreats, Eco-Resorts",
+    desc: "Engineered specifically for heavy vehicular traffic — from luxury SUVs to estate service vehicles. Hand-dressed natural sandstone cobblestones laid in fan, herringbone, or linear patterns, creating an aristocratic European manor or royal haveli arrival experience.",
+    idealFor: "Estate Driveways, Farm House Porticos, Luxury Hotel Forecourts, Valet Courtyards",
     specs: [
-      { label: "Front Elevation Range", value: "Over 300+ Sandstone Designs (Govt. Awarded)" },
-      { label: "Key Elements", value: "Grand Entrance Gates, Cobblestones, Patios & Steps" },
-      { label: "Durability", value: "100% Weatherproof, Frost & Midday Sun Resistant" },
-      { label: "Quarry Sourcing", value: "Direct from Sarmathura & Sikandra Facilities" },
+      { label: "Standard Formats", value: "100x100x50mm, 140x140x60mm & 100x200mm" },
+      { label: "Crushing Strength", value: "68–72 MPa (Extreme Axle Load Bearing)" },
+      { label: "Jointing Type", value: "Permeable Eco-Grout or Traditional Sand" },
+      { label: "Quarry Source", value: "Direct from Sarmathura Heavy Strata" },
     ],
     features: [
-      "Custom catalogue of 300+ front elevation designs tailored for luxury farm houses",
-      "Heavy load-bearing cobblestone pavers for royal farm house entrance driveways",
-      "Non-slip natural cleft garden pathways that remain cool under intense summer heat",
-      "Monumental hand-carved stone fountains, bird baths & planters for lush outdoor lawns",
+      "Extreme compressive resistance handles heavy vehicle traffic without sinking or cracking",
+      "Naturally textured split finish ensures optimal tire traction during torrential monsoon rains",
+      "Permeable joints support natural rainwater drainage and eco-friendly groundwater recharge",
+      "Rich natural mineral patina that looks more regal with every passing decade",
     ],
-    waMsg: "Hello Dholpurestones.com, I would like to inquire about stone solutions and 300+ front elevation designs for a Farm House project.",
+    waMsg: "Hello Dholpurestones.com, I would like to inquire about Sandstone Cobblestones & Driveway Paving for an estate project.",
   },
   {
     id: "patio-paving",
@@ -216,13 +216,13 @@ const landscapeSolutions: LandscapeItem[] = [
 ];
 
 const categoryTabs = [
-  { id: "all", label: "All Solutions", icon: Layers },
-  { id: "farmhouse", label: "Farm House & Gardens", icon: TreePine },
-  { id: "gazebos", label: "Gazebos & Baradaris", icon: Landmark },
+  { id: "all", label: "All Hardscapes", icon: Layers },
+  { id: "farmhouse", label: "Driveways & Cobbles", icon: HardHat },
   { id: "flagstones", label: "Patios & Paving", icon: Ruler },
   { id: "pool", label: "Pool Coping & Decks", icon: Droplets },
   { id: "steps", label: "Steps & Walling", icon: Layers },
-  { id: "fountains", label: "Fountains & Features", icon: Sparkles },
+  { id: "gazebos", label: "Gazebos & Baradaris", icon: Landmark },
+  { id: "fountains", label: "Fountains & Cascades", icon: Sparkles },
 ];
 
 const stakeholderPillars = [
@@ -285,31 +285,31 @@ export default function LandscapingSolutions() {
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#C29B38]" />
             <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#141A17] uppercase">
-              DHOLPURESTONES &bull; LANDSCAPE DIVISION
+              DHOLPURESTONES &bull; HARDSCAPE &amp; PAVING DIVISION
             </span>
           </div>
-          <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C29B38] tracking-widest">
-            06
+          <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C29B38] tracking-widest uppercase">
+            LANDSCAPE MASONRY
           </span>
         </AnimDiv>
 
         {/* Section Header */}
         <AnimDiv delay={40} className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#134e3f]/10 border border-[#134e3f]/20 mb-3.5 shadow-2xs">
-            <TreePine className="w-3.5 h-3.5 text-[#134e3f]" />
+            <Ruler className="w-3.5 h-3.5 text-[#134e3f]" />
             <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#134e3f] tracking-[0.2em] uppercase">
-              SPECIALIZED IN LUXURY FARM HOUSES, GARDENS &amp; ESTATES
+              CALIBRATED PAVING, POOL DECKS &amp; HARDSCAPE MASONRY
             </span>
           </div>
 
           <h2 className="font-['Cinzel',serif] font-bold text-[#141A17] uppercase tracking-[0.05em] leading-[1.18] text-2xl sm:text-3xl lg:text-4xl">
-            Natural Sand Stone Solutions for Luxury Farm Houses &amp; Garden Landscaping
+            Architectural Sandstone Paving, Flagstones &amp; Landscape Hardscapes
           </h2>
 
           <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#4A5550] mt-3 sm:mt-4 leading-relaxed font-medium">
-            High-Quality Natural Stone for Architects, Builders &amp; Farm House Owners. Specialized in expansive
-            garden flagstones, pool surrounds, boundary retaining walls, grand entrance facades, and monumental fountains.
-            We have created more than <strong className="text-[#141A17]">300+ front elevation designs in sandstone</strong>, for which we were awarded by the Government of India.
+            Heavy-duty outdoor stone engineering for luxury villa courtyards, estate driveways, and swimming pool decks.
+            Featuring Class R11 non-slip calibrated flagstones (+/-1mm), drop-face pool copings, monolithic stepped blocks,
+            hand-chiseled cobblestones, and ornate garden gazebos direct from Sarmathura quarries.
           </p>
         </AnimDiv>
 

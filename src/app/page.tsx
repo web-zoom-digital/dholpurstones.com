@@ -9,7 +9,6 @@ import InternationalExcellence from "@/components/InternationalExcellence";
 import SandstoneArticles from "@/components/SandstoneArticles";
 import OurProducts from "@/components/OurProducts";
 import FarmHouseGardenSpecialist from "@/components/FarmHouseGardenSpecialist";
-import LandscapingSolutions from "@/components/LandscapingSolutions";
 import StoneCollection from "@/components/StoneCollection";
 import Applications from "@/components/Applications";
 import OurSignatureProjects from "@/components/OurSignatureProjects";
@@ -50,9 +49,6 @@ export default function Home() {
 
       {/* 6B. Dedicated Luxury Farm House & Designer Garden Landscaping (4 Preview Cards + View More Button) */}
       <FarmHouseGardenSpecialist isHomePreview={true} />
-
-      {/* 6C. Natural Sand Stone Solutions for Beautiful Landscaping (Flagstones, Paving & Pool Decks) */}
-      <LandscapingSolutions />
 
       {/* 7. Natural Stone Collection (Page 5 of PDF - Botticino, Black Granite, Semi-Precious, Elmali Beige) */}
       <StoneCollection />
