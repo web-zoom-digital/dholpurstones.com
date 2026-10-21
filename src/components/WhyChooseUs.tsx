@@ -171,7 +171,7 @@ export default function WhyChooseUs() {
         <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-16">
           <AnimDiv delay={0}>
             <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#134e3f]/10 border border-[#134e3f]/25 text-[#134e3f] text-[9.5px] sm:text-xs font-bold uppercase tracking-[0.2em] mb-3 sm:mb-4 shadow-2xs">
-              <Sparkles className="w-3.5 h-3.5 text-[#C29B38]" />
+              <Award className="w-3.5 h-3.5 text-[#C29B38]" />
               <span>Direct Mine Owner Advantage Since 1953</span>
             </div>
 
@@ -273,7 +273,7 @@ export default function WhyChooseUs() {
                             : "bg-[#FAF7F2] text-[#C29B38] border-black/6"
                         }`}
                       >
-                        <Sparkles className="w-2.5 h-2.5" />
+                        <BadgeCheck className="w-2.5 h-2.5" />
                         <span>{reason.badge}</span>
                       </span>
                     </div>
