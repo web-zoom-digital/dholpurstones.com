@@ -396,11 +396,6 @@ export default function Navbar() {
               <Mail className="w-3.5 h-3.5 text-[#C29B38] shrink-0" />
               <span>gargcorporationltd@gmail.com</span>
             </a>
-
-            <span className="hidden xl:inline-flex items-center gap-1 text-[#C29B38] bg-[#C29B38]/10 border border-[#C29B38]/30 px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider text-[10px]">
-              <Award className="w-3 h-3 text-[#C29B38]" />
-              Govt. of India Awarded &bull; Nominated for Intl. Award (Business Excellence)
-            </span>
           </div>
         </div>
       </div>
