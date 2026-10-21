@@ -195,11 +195,10 @@ export default function FAQSection() {
     return (
       <AnimDiv key={faq.id} delay={delayIdx * 40}>
         <div
-          className={`rounded-3xl border transition-all duration-300 overflow-hidden relative group gcl-card-glow ${
-            isOpen
+          className={`rounded-3xl border transition-all duration-300 overflow-hidden relative group gcl-card-glow ${isOpen
               ? "bg-[#FAF7F2] border-[#C29B38] shadow-xl"
               : "bg-white border-black/8 hover:border-[#C29B38]/50 hover:bg-[#FAF7F2]/40 hover:shadow-md"
-          }`}
+            }`}
         >
           {/* Architectural Corner Crosshairs */}
           <span className="absolute top-2 left-2 text-[10px] text-[#C29B38] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
@@ -218,11 +217,10 @@ export default function FAQSection() {
             <div className="flex items-start gap-2.5 sm:gap-3.5">
               {/* Number Index */}
               <div
-                className={`w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl flex items-center justify-center font-['Cinzel',serif] text-[10px] sm:text-xs font-bold shrink-0 transition-colors shadow-2xs ${
-                  isOpen
+                className={`w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl flex items-center justify-center font-['Cinzel',serif] text-[10px] sm:text-xs font-bold shrink-0 transition-colors shadow-2xs ${isOpen
                     ? "bg-[#134e3f] text-white"
                     : "bg-[#FAF7F2] text-[#C29B38] group-hover:bg-[#134e3f] group-hover:text-white"
-                }`}
+                  }`}
               >
                 {faq.number}
               </div>
@@ -239,11 +237,10 @@ export default function FAQSection() {
             </div>
 
             <div
-              className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
-                isOpen
+              className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen
                   ? "bg-[#134e3f] text-white rotate-180"
                   : "bg-[#FAF7F2] text-[#141A17] group-hover:bg-[#C29B38] group-hover:text-black"
-              }`}
+                }`}
             >
               <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </div>
@@ -299,7 +296,7 @@ export default function FAQSection() {
   return (
     <section
       id="faq"
-      className="bg-[#FAF7F2] py-10 sm:py-20 border-b border-black/6 relative overflow-hidden"
+      className="bg-white py-10 sm:py-20 border-b border-black/6 relative overflow-hidden"
     >
       {/* =========================================================================
           MOTION GRAPHIC BACKGROUND: Geometric Blueprint Grid & Rotating Sacred Yantras
@@ -421,17 +418,15 @@ export default function FAQSection() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold uppercase tracking-wider transition-all duration-200 shrink-0 cursor-pointer ${
-                    isActive
+                  className={`inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold uppercase tracking-wider transition-all duration-200 shrink-0 cursor-pointer ${isActive
                       ? "bg-[#134e3f] text-white shadow-md scale-102"
                       : "bg-[#FAF7F2] text-[#141A17]/80 hover:text-[#C29B38] hover:bg-white border border-black/8"
-                  }`}
+                    }`}
                 >
                   <span>{tab.label}</span>
                   <span
-                    className={`text-[9.5px] sm:text-[10px] px-1.5 py-0.2 rounded-full ${
-                      isActive ? "bg-white/20 text-white" : "bg-black/5 text-[#68726E]"
-                    }`}
+                    className={`text-[9.5px] sm:text-[10px] px-1.5 py-0.2 rounded-full ${isActive ? "bg-white/20 text-white" : "bg-black/5 text-[#68726E]"
+                      }`}
                   >
                     {tab.count}
                   </span>
