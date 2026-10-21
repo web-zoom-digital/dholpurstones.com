@@ -212,13 +212,13 @@ export default function FAQSection() {
           <button
             type="button"
             onClick={() => toggle(faq.id)}
-            className="w-full p-4 sm:p-6 flex items-start justify-between gap-3 sm:gap-4 text-left focus:outline-none cursor-pointer"
+            className="w-full p-3.5 sm:p-5 md:p-6 flex items-start justify-between gap-2.5 sm:gap-4 text-left focus:outline-none cursor-pointer"
             aria-expanded={isOpen}
           >
             <div className="flex items-start gap-2.5 sm:gap-3.5">
               {/* Number Index */}
               <div
-                className={`w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center font-['Cinzel',serif] text-[11px] sm:text-xs font-bold shrink-0 transition-colors shadow-2xs ${
+                className={`w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl flex items-center justify-center font-['Cinzel',serif] text-[10px] sm:text-xs font-bold shrink-0 transition-colors shadow-2xs ${
                   isOpen
                     ? "bg-[#134e3f] text-white"
                     : "bg-[#FAF7F2] text-[#C29B38] group-hover:bg-[#134e3f] group-hover:text-white"
@@ -228,40 +228,40 @@ export default function FAQSection() {
               </div>
 
               <div>
-                <div className="inline-flex items-center gap-1.5 text-[9px] font-bold text-[#C29B38] uppercase tracking-widest bg-white px-2.5 py-0.5 rounded-full border border-black/6 mb-1.5">
+                <div className="inline-flex items-center gap-1 text-[8.5px] sm:text-[9px] font-bold text-[#C29B38] uppercase tracking-widest bg-white px-2 sm:px-2.5 py-0.5 rounded-full border border-black/6 mb-1">
                   <Sparkles className="w-2.5 h-2.5 text-[#C29B38]" />
                   <span>{faq.categoryLabel}</span>
                 </div>
-                <h4 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-[#141A17] uppercase tracking-wide leading-snug group-hover:text-[#134e3f] transition-colors">
+                <h4 className="font-['Cinzel',serif] text-xs sm:text-base font-bold text-[#141A17] uppercase tracking-wide leading-snug group-hover:text-[#134e3f] transition-colors">
                   {faq.q}
                 </h4>
               </div>
             </div>
 
             <div
-              className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+              className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
                 isOpen
                   ? "bg-[#134e3f] text-white rotate-180"
                   : "bg-[#FAF7F2] text-[#141A17] group-hover:bg-[#C29B38] group-hover:text-black"
               }`}
             >
-              <ChevronDown className="w-4 h-4" />
+              <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </div>
           </button>
 
           {/* Expandable Accordion Body */}
           {isOpen && (
-            <div className="px-5 sm:px-6 pb-6 pt-1 border-t border-black/6 animate-fadeIn">
-              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#4A5550] leading-relaxed mb-4">
+            <div className="px-4 sm:px-6 pb-4 sm:pb-6 pt-1 border-t border-black/6 animate-fadeIn">
+              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#4A5550] leading-relaxed mb-3 sm:mb-4">
                 {faq.a}
               </p>
 
               {/* Verified Highlights Pills */}
-              <div className="flex flex-wrap items-center gap-2 mb-4">
+              <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                 {faq.highlights.map((h, idx) => (
                   <span
                     key={idx}
-                    className="inline-flex items-center gap-1.5 bg-white text-[#134e3f] text-[10px] font-bold px-2.5 py-1 rounded-lg border border-black/6 shadow-2xs"
+                    className="inline-flex items-center gap-1 bg-white text-[#134e3f] text-[9px] sm:text-[10px] font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg border border-black/6 shadow-2xs"
                   >
                     <CheckCircle2 className="w-3 h-3 text-[#134e3f]" />
                     <span>{h}</span>
@@ -299,7 +299,7 @@ export default function FAQSection() {
   return (
     <section
       id="faq"
-      className="bg-white py-14 sm:py-24 border-b border-black/6 relative overflow-hidden"
+      className="bg-white py-10 sm:py-20 border-b border-black/6 relative overflow-hidden"
     >
       {/* =========================================================================
           MOTION GRAPHIC BACKGROUND: Geometric Blueprint Grid & Rotating Sacred Yantras
@@ -335,10 +335,10 @@ export default function FAQSection() {
 
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header Label */}
-        <AnimDiv className="flex items-center justify-between pb-3 border-b border-black/8 mb-8 sm:mb-10">
+        <AnimDiv className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-black/8 mb-6 sm:mb-8">
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#C29B38] animate-pulse" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.18em] text-[#141A17] uppercase">
+            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#C29B38] animate-pulse" />
+            <span className="font-['Cinzel',serif] text-[9.5px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.18em] text-[#141A17] uppercase">
               DHOLPURESTONES.COM &bull; KNOWLEDGE BASE &bull; ESTD. 1953
             </span>
           </div>
@@ -348,19 +348,19 @@ export default function FAQSection() {
         </AnimDiv>
 
         {/* Section Title & Description */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 sm:mb-10">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5 sm:gap-6 mb-6 sm:mb-9">
           <AnimDiv delay={0} className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C29B38]/10 border border-[#C29B38]/25 text-[#C29B38] text-[10px] font-bold uppercase tracking-[0.2em] mb-3">
-              <Compass className="w-3.5 h-3.5 animate-spin-slow" />
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-[#C29B38]/10 border border-[#C29B38]/25 text-[#C29B38] text-[9.5px] sm:text-[10px] font-bold uppercase tracking-[0.18em] mb-2 sm:mb-3">
+              <Compass className="w-3 h-3 sm:w-3.5 sm:h-3.5 animate-spin-slow" />
               <span>Verified Corporate Knowledge &amp; AEO Architecture</span>
             </div>
-            <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl lg:text-5xl font-bold text-[#141A17] uppercase tracking-wide mb-3">
+            <h2 className="font-['Cinzel',serif] text-xl sm:text-3xl lg:text-5xl font-bold text-[#141A17] uppercase tracking-wide mb-1.5 sm:mb-2 leading-snug">
               Frequently Asked Questions
             </h2>
-            <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl lg:text-3xl font-bold text-[#C29B38] uppercase tracking-wider mb-3">
+            <h3 className="font-['Cinzel',serif] text-base sm:text-2xl lg:text-3xl font-bold text-[#C29B38] uppercase tracking-wider mb-2.5 sm:mb-3">
               Company Knowledge &amp; Inquiries
             </h3>
-            <div className="w-16 h-1 bg-gradient-to-r from-[#C29B38] via-[#E0BA55] to-transparent rounded-full mb-4" />
+            <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#C29B38] via-[#E0BA55] to-transparent rounded-full mb-3 sm:mb-4" />
             <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#4A5550] leading-relaxed">
               Transparent, verified insights into our quarry concessions, geotechnical lab certifications, monumental landmark executions, and turnkey export logistics.
             </p>
@@ -368,27 +368,27 @@ export default function FAQSection() {
 
           {/* Key Metric Highlights with Gilded Accents */}
           <AnimDiv delay={100} className="grid grid-cols-3 gap-2 sm:gap-4 shrink-0 w-full lg:w-auto">
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2.5 sm:py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
+            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2 sm:py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-xs sm:text-2xl font-bold text-[#141A17]">
                 70+ Years
               </span>
-              <span className="text-[9px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
+              <span className="text-[8.5px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
                 Legacy
               </span>
             </div>
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2.5 sm:py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
+            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2 sm:py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-xs sm:text-2xl font-bold text-[#141A17]">
                 100% Direct
               </span>
-              <span className="text-[9px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
+              <span className="text-[8.5px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
                 Sarmathura
               </span>
             </div>
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2.5 sm:py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
+            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2 sm:py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-xs sm:text-2xl font-bold text-[#141A17]">
                 50+ Temples
               </span>
-              <span className="text-[9px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
+              <span className="text-[8.5px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
                 Monumental
               </span>
             </div>
@@ -398,10 +398,10 @@ export default function FAQSection() {
         {/* =========================================================================
             MOTION GRAPHIC INFINITE MARQUEE TICKER (Verified Corporate Ledger)
             ========================================================================= */}
-        <AnimDiv delay={120} className="mb-8 overflow-hidden rounded-xl bg-gradient-to-r from-[#FAF7F2] via-white to-[#FAF7F2] border border-black/8 py-2.5 shadow-xs">
-          <div className="animate-marquee whitespace-nowrap flex items-center gap-8">
+        <AnimDiv delay={120} className="mb-6 sm:mb-8 overflow-hidden rounded-xl bg-gradient-to-r from-[#FAF7F2] via-white to-[#FAF7F2] border border-black/8 py-2 sm:py-2.5 shadow-xs">
+          <div className="animate-marquee whitespace-nowrap flex items-center gap-6 sm:gap-8">
             {[...tickerHighlights, ...tickerHighlights].map((item, idx) => (
-              <div key={idx} className="inline-flex items-center gap-2 text-[11px] font-bold text-[#141A17] uppercase tracking-wider shrink-0">
+              <div key={idx} className="inline-flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] font-bold text-[#141A17] uppercase tracking-wider shrink-0">
                 <span className="text-[#C29B38] text-xs">✦</span>
                 <span>{item}</span>
               </div>
@@ -412,16 +412,16 @@ export default function FAQSection() {
         {/* =========================================================================
             INTERACTIVE CONTROLS BAR: Category Filter Tabs + Search Input
             ========================================================================= */}
-        <AnimDiv delay={150} className="flex flex-col md:flex-row items-center justify-between gap-4 mb-8 sm:mb-10 pb-4 border-b border-black/8">
+        <AnimDiv delay={150} className="flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 mb-6 sm:mb-9 pb-3 sm:pb-4 border-b border-black/8">
           {/* Category Tabs */}
-          <div className="flex items-center gap-2 sm:gap-2.5 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">
+          <div className="flex items-center gap-1.5 sm:gap-2.5 overflow-x-auto w-full md:w-auto pb-1.5 md:pb-0 scrollbar-none">
             {categoryTabs.map((tab) => {
               const isActive = activeTab === tab.id;
               return (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 shrink-0 cursor-pointer ${
+                  className={`inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold uppercase tracking-wider transition-all duration-200 shrink-0 cursor-pointer ${
                     isActive
                       ? "bg-[#134e3f] text-white shadow-md scale-102"
                       : "bg-[#FAF7F2] text-[#141A17]/80 hover:text-[#C29B38] hover:bg-white border border-black/8"
@@ -429,7 +429,7 @@ export default function FAQSection() {
                 >
                   <span>{tab.label}</span>
                   <span
-                    className={`text-[10px] px-1.5 py-0.2 rounded-full ${
+                    className={`text-[9.5px] sm:text-[10px] px-1.5 py-0.2 rounded-full ${
                       isActive ? "bg-white/20 text-white" : "bg-black/5 text-[#68726E]"
                     }`}
                   >
@@ -448,7 +448,7 @@ export default function FAQSection() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search questions or specs..."
-              className="w-full bg-[#FAF7F2] hover:bg-white focus:bg-white border border-black/10 focus:border-[#C29B38] text-xs font-medium text-[#141A17] pl-10 pr-9 py-2.5 rounded-full transition-all duration-200 outline-none shadow-2xs"
+              className="w-full bg-[#FAF7F2] hover:bg-white focus:bg-white border border-black/10 focus:border-[#C29B38] text-base sm:text-xs font-medium text-[#141A17] pl-10 pr-9 py-2 sm:py-2.5 rounded-full transition-all duration-200 outline-none shadow-2xs"
             />
             {searchQuery && (
               <button
@@ -507,17 +507,17 @@ export default function FAQSection() {
             ADVANCED MOTION GRAPHIC CALLOUT: Direct Architectural Consultation
             ========================================================================= */}
         <AnimDiv delay={250}>
-          <div className="bg-gradient-to-br from-[#134e3f] via-[#0e3b30] to-[#0A261F] rounded-3xl p-6 sm:p-10 border border-[#C29B38]/40 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6 relative overflow-hidden text-white group">
+          <div className="bg-gradient-to-br from-[#134e3f] via-[#0e3b30] to-[#0A261F] rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border border-[#C29B38]/40 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-5 sm:gap-6 relative overflow-hidden text-white group">
             {/* Ambient Background Gold Beam Sweep */}
             <div className="absolute -inset-full bg-gradient-to-r from-transparent via-[#C29B38]/15 to-transparent animate-beam-sweep pointer-events-none" />
             <div className="absolute -right-10 -bottom-10 w-72 h-72 bg-[#C29B38]/20 rounded-full blur-3xl pointer-events-none" />
 
             <div className="max-w-2xl text-center lg:text-left relative z-10">
-              <div className="inline-flex items-center gap-2 bg-[#C29B38]/20 border border-[#C29B38]/40 px-3.5 py-1 rounded-full text-[10px] font-bold text-[#FAF7F2] uppercase tracking-widest mb-3 shadow-xs">
-                <Flame className="w-3.5 h-3.5 text-[#C29B38]" />
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-[#C29B38]/20 border border-[#C29B38]/40 px-3 py-1 rounded-full text-[9px] sm:text-[10px] font-bold text-[#FAF7F2] uppercase tracking-widest mb-2.5 sm:mb-3 shadow-xs">
+                <Flame className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#C29B38]" />
                 <span>Architectural Tenders &bull; BOQ Engineering</span>
               </div>
-              <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl lg:text-3xl font-bold text-white uppercase tracking-wider mb-2">
+              <h3 className="font-['Cinzel',serif] text-lg sm:text-2xl lg:text-3xl font-bold text-white uppercase tracking-wider mb-2">
                 Have a Custom Architectural Specification or Tender?
               </h3>
               <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/80 leading-relaxed">
@@ -525,12 +525,12 @@ export default function FAQSection() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto shrink-0 relative z-10">
+            <div className="flex flex-col sm:flex-row items-center gap-2.5 sm:gap-3 w-full lg:w-auto shrink-0 relative z-10">
               <a
                 href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20have%20an%20architectural%20tender%20and%20specification%20inquiry%20regarding%20natural%20stone."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-[#0A0F0D] hover:bg-white font-bold text-xs uppercase px-7 py-3.5 rounded-full transition-all duration-300 shadow-xl active:scale-95"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-[#0A0F0D] hover:bg-white font-bold text-xs uppercase px-5 sm:px-7 py-3 sm:py-3.5 rounded-full transition-all duration-300 shadow-xl active:scale-95"
               >
                 <WhatsAppIcon className="w-4 h-4 fill-[#0A0F0D]" size={16} />
                 <span>Chat Directly on WhatsApp</span>
@@ -538,7 +538,7 @@ export default function FAQSection() {
 
               <a
                 href="#contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center font-['Plus_Jakarta_Sans',sans-serif] text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all duration-300 active:scale-95 shadow-md"
+                className="w-full sm:w-auto inline-flex items-center justify-center font-['Plus_Jakarta_Sans',sans-serif] text-xs font-bold uppercase tracking-wider px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all duration-300 active:scale-95 shadow-md"
               >
                 <span>View Contact Details</span>
               </a>

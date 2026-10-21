@@ -389,7 +389,7 @@ function SpotlightProductCard({
         </span>
 
         {/* Image Container with Ken Burns Zoom & Live Provenance Beacon */}
-        <div className="relative w-full h-64 sm:h-72 overflow-hidden bg-[#EAE6DE] shrink-0">
+        <div className="relative w-full h-56 sm:h-72 overflow-hidden bg-[#EAE6DE] shrink-0">
           <Image
             src={product.image}
             alt={product.title}
@@ -402,7 +402,7 @@ function SpotlightProductCard({
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
 
           {/* Category Tag with Gilded Sparkle */}
-          <div className="absolute top-3 left-3 bg-[#0D1311]/85 backdrop-blur-md px-3 py-1 rounded-full border border-white/15 z-20 shadow-md">
+          <div className="absolute top-3 left-3 bg-[#0D1311]/85 backdrop-blur-md px-2.5 sm:px-3 py-1 rounded-full border border-white/15 z-20 shadow-md">
             <span className="text-[9px] font-bold text-[#C29B38] uppercase tracking-widest flex items-center gap-1.5">
               <Sparkles className="w-3 h-3 text-[#C29B38]" />
               {product.categoryLabel}
@@ -410,29 +410,29 @@ function SpotlightProductCard({
           </div>
 
           {/* Giant Watermark Product Index */}
-          <div className="absolute top-1 right-3 font-['Cinzel',serif] text-5xl font-black text-white/30 select-none pointer-events-none z-10 group-hover:text-[#C29B38]/50 transition-colors">
+          <div className="absolute top-1 right-3 font-['Cinzel',serif] text-4xl sm:text-5xl font-black text-white/30 select-none pointer-events-none z-10 group-hover:text-[#C29B38]/50 transition-colors">
             {product.number}
           </div>
 
           {/* Expand Image Button */}
-          <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-sm p-2 rounded-full text-white opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 hover:bg-[#C29B38] hover:text-[#0D1311] shadow-lg">
-            <Maximize2 className="w-4 h-4" />
+          <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-sm p-1.5 sm:p-2 rounded-full text-white opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 hover:bg-[#C29B38] hover:text-[#0D1311] shadow-lg">
+            <Maximize2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </div>
 
           {/* Pulsing Location / Provenance Radar Beacon */}
-          <div className="absolute bottom-3 left-3 flex items-center gap-1.5 text-[11px] font-medium text-white/95 bg-[#0D1311]/80 backdrop-blur-md px-2.5 py-1 rounded-md border border-white/10 z-20 shadow-md">
+          <div className="absolute bottom-2.5 left-2.5 sm:bottom-3 sm:left-3 flex items-center gap-1.5 text-[10px] sm:text-[11px] font-medium text-white/95 bg-[#0D1311]/80 backdrop-blur-md px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md border border-white/10 z-20 shadow-md">
             <span className="relative flex h-2 w-2 mr-0.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C29B38] opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C29B38]" />
             </span>
-            <span className="truncate max-w-[220px]">{product.provenance}</span>
+            <span className="truncate max-w-[200px] sm:max-w-[220px]">{product.provenance}</span>
           </div>
         </div>
 
         {/* Card Content */}
-        <div className="p-5 sm:p-6 flex flex-col flex-1 justify-between relative z-20">
+        <div className="p-4 sm:p-6 flex flex-col flex-1 justify-between relative z-20">
           <div>
-            <h3 className="font-['Cinzel',serif] text-base sm:text-lg font-bold text-[#141A17] uppercase tracking-wider mb-1.5 group-hover:text-[#134e3f] transition-colors leading-snug">
+            <h3 className="font-['Cinzel',serif] text-sm sm:text-lg font-bold text-[#141A17] uppercase tracking-wider mb-1 sm:mb-1.5 group-hover:text-[#134e3f] transition-colors leading-snug">
               {product.title}
             </h3>
 
@@ -574,7 +574,7 @@ export default function OurProducts() {
   return (
     <section
       id="products"
-      className="bg-white py-14 sm:py-24 border-b border-black/6 relative overflow-hidden scroll-mt-20 sm:scroll-mt-24"
+      className="bg-white py-10 sm:py-20 border-b border-black/6 relative overflow-hidden scroll-mt-20 sm:scroll-mt-24"
     >
       {/* =========================================================================
           MOTION GRAPHIC BACKGROUND: Geometric Blueprint Grid & Rotating Sacred Yantras
@@ -720,7 +720,7 @@ export default function OurProducts() {
         {/* Filter Navigation Tabs — horizontal scroll on mobile */}
         <AnimDiv delay={150} className="mb-8 sm:mb-10">
           <div className="flex items-center justify-between gap-4 mb-2">
-            <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none flex-nowrap -mx-1 px-1">
+            <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-none flex-nowrap -mx-1 px-1">
               {categoryTabs.map((tab) => (
                 <button
                   key={tab.id}
@@ -729,7 +729,7 @@ export default function OurProducts() {
                     setActiveTab(tab.id);
                     setCurrentSlide(0);
                   }}
-                  className={`text-xs font-bold uppercase tracking-wider px-4 sm:px-5 py-2.5 rounded-full transition-all duration-300 border cursor-pointer whitespace-nowrap shrink-0 ${
+                  className={`text-[11px] sm:text-xs font-bold uppercase tracking-wider px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full transition-all duration-300 border cursor-pointer whitespace-nowrap shrink-0 ${
                     activeTab === tab.id
                       ? "bg-[#134e3f] text-white border-[#134e3f] shadow-md shadow-[#134e3f]/25"
                       : "bg-[#FAF7F2] text-[#4A5550] border-black/8 hover:border-[#C29B38] hover:text-[#141A17] hover:bg-white"
@@ -1017,7 +1017,7 @@ export default function OurProducts() {
             </button>
 
             {/* Modal Image Header */}
-            <div className="relative h-64 sm:h-80 w-full bg-[#0D1311]">
+            <div className="relative h-56 sm:h-80 w-full bg-[#0D1311]">
               <Image
                 src={activeModal.image}
                 alt={activeModal.title}
@@ -1027,18 +1027,18 @@ export default function OurProducts() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#161D1A] via-transparent to-black/30" />
 
-              <div className="absolute bottom-4 left-6 right-6">
-                <span className="text-[10px] font-bold text-[#C29B38] uppercase tracking-[0.2em] bg-black/60 px-2.5 py-1 rounded-md backdrop-blur-sm border border-white/10 inline-block mb-1.5">
+              <div className="absolute bottom-3 left-4 right-4 sm:bottom-4 sm:left-6 sm:right-6">
+                <span className="text-[9.5px] sm:text-[10px] font-bold text-[#C29B38] uppercase tracking-[0.2em] bg-black/60 px-2.5 py-0.5 rounded-md backdrop-blur-sm border border-white/10 inline-block mb-1">
                   {activeModal.categoryLabel} &bull; {activeModal.number}
                 </span>
-                <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-white uppercase tracking-wider leading-snug">
+                <h3 className="font-['Cinzel',serif] text-base sm:text-2xl font-bold text-white uppercase tracking-wider leading-snug">
                   {activeModal.title}
                 </h3>
               </div>
             </div>
 
             {/* Modal Details Content */}
-            <div className="p-6 sm:p-8 space-y-6">
+            <div className="p-4 sm:p-8 space-y-4 sm:space-y-6">
               <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
                 {activeModal.longDetails}
               </p>

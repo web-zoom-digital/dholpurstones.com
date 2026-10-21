@@ -83,10 +83,10 @@ const apps = [
 
 export default function Applications() {
   return (
-    <section id="applications" className="bg-[#FAF7F2] py-14 sm:py-20 border-b border-black/6">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="applications" className="bg-[#FAF7F2] py-10 sm:py-20 border-b border-black/6">
+      <div className="max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-8">
         {/* Section Header Label */}
-        <AnimDiv className="flex items-center justify-between pb-3 border-b border-black/8 mb-8 sm:mb-10">
+        <AnimDiv className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-black/8 mb-6 sm:mb-10">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#C29B38]" />
             <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#141A17] uppercase">
@@ -99,26 +99,26 @@ export default function Applications() {
         </AnimDiv>
 
         {/* Section Title */}
-        <AnimDiv delay={0} className="mb-8 sm:mb-10">
-          <span className="text-[10px] sm:text-xs font-bold text-[#C29B38] uppercase tracking-[0.18em] block mb-2">
+        <AnimDiv delay={0} className="mb-6 sm:mb-10">
+          <span className="text-[10px] sm:text-xs font-bold text-[#C29B38] uppercase tracking-[0.18em] block mb-1.5 sm:mb-2">
             FARM HOUSES &bull; GARDENS &bull; FRONT ELEVATION
           </span>
-          <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl lg:text-4xl font-bold text-[#141A17] uppercase tracking-wide mb-3">
+          <h2 className="font-['Cinzel',serif] text-xl sm:text-3xl lg:text-4xl font-bold text-[#141A17] uppercase tracking-wide mb-2 sm:mb-3">
             Architectural Applications
           </h2>
-          <div className="w-12 h-1 bg-[#C29B38] rounded-full mb-3" />
+          <div className="w-10 sm:w-12 h-1 bg-[#C29B38] rounded-full mb-2.5 sm:mb-3" />
           <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#68726E] max-w-2xl">
             Specialized natural stone execution for luxury farm houses, expansive private gardens, and award-winning front elevations — alongside temples and heritage monuments across India &amp; worldwide.
           </p>
         </AnimDiv>
 
         {/* 6 Application Cards (3x2 grid) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10 sm:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-8 sm:mb-12">
           {apps.map((a, i) => (
             <AnimDiv key={a.id} delay={i * 70}>
-              <div className="bg-white rounded-2xl overflow-hidden border border-black/8 hover:border-[#C29B38]/60 hover:shadow-xl transition-all duration-300 group flex flex-col h-full">
+              <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-black/8 hover:border-[#C29B38]/60 hover:shadow-xl transition-all duration-300 group flex flex-col h-full">
                 {/* Image */}
-                <div className="relative h-56 sm:h-60 w-full overflow-hidden bg-[#F5F2EC] shrink-0">
+                <div className="relative h-48 sm:h-60 w-full overflow-hidden bg-[#F5F2EC] shrink-0">
                   <Image
                     src={a.image}
                     alt={a.title}
@@ -129,7 +129,7 @@ export default function Applications() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
                   {/* Category Pill */}
-                  <div className="absolute top-3 left-3 bg-[#0D1311]/85 backdrop-blur-xs px-3 py-1 rounded-full border border-white/15">
+                  <div className="absolute top-3 left-3 bg-[#0D1311]/85 backdrop-blur-xs px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full border border-white/15">
                     <span className="text-[9px] font-bold text-[#E0BA55] uppercase tracking-wider">
                       {a.badge}
                     </span>
@@ -139,10 +139,10 @@ export default function Applications() {
                 {/* Details */}
                 <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#141A17] uppercase tracking-wider group-hover:text-[#134e3f] transition-colors mb-1.5">
+                    <h3 className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#141A17] uppercase tracking-wider group-hover:text-[#134e3f] transition-colors mb-1.5 leading-snug">
                       {a.title}
                     </h3>
-                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs text-[#68726E] leading-relaxed">
+                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] sm:text-xs text-[#68726E] leading-relaxed">
                       {a.desc}
                     </p>
                   </div>
@@ -161,7 +161,7 @@ export default function Applications() {
 
         {/* Emerald Landmark Banner */}
         <AnimDiv delay={200}>
-          <div className="bg-[#134e3f] rounded-2xl p-6 sm:p-10 text-center text-white shadow-xl relative overflow-hidden border border-[#C29B38]/30">
+          <div className="bg-[#134e3f] rounded-2xl p-5 sm:p-10 text-center text-white shadow-xl relative overflow-hidden border border-[#C29B38]/30">
             <div
               className="absolute inset-0 opacity-15"
               style={{

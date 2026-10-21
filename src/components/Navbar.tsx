@@ -408,25 +408,25 @@ export default function Navbar() {
       {/* 2. Main Sticky Navigation Bar (Fixed padding to prevent scroll jitter/bounce) */}
       <header
         style={{ overflow: "visible" }}
-        className={`sticky top-0 w-full z-[100] bg-white/98 backdrop-blur-md border-b transition-shadow duration-300 py-3 sm:py-3.5 overflow-visible ${
+        className={`sticky top-0 w-full z-[100] bg-white/98 backdrop-blur-md border-b transition-shadow duration-300 py-2.5 sm:py-3.5 overflow-visible ${
           isScrolled
             ? "shadow-[0_4px_24px_rgba(0,0,0,0.08)] border-black/10"
             : "border-black/6 shadow-2xs"
         }`}
       >
-        <div style={{ overflow: "visible" }} className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4 overflow-visible">
+        <div style={{ overflow: "visible" }} className="max-w-[1400px] mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4 overflow-visible">
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0 group">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#0D1311] border border-[#C29B38]/80 flex items-center justify-center shadow-md transition-transform group-hover:scale-105 shrink-0">
-              <span className="font-['Cinzel',serif] text-sm sm:text-base font-extrabold text-[#C29B38]">
+          <Link href="/" className="flex items-center gap-2 sm:gap-2.5 shrink-0 group">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-[#0D1311] border border-[#C29B38]/80 flex items-center justify-center shadow-md transition-transform group-hover:scale-105 shrink-0">
+              <span className="font-['Cinzel',serif] text-xs sm:text-base font-extrabold text-[#C29B38]">
                 DS
               </span>
             </div>
             <div className="flex flex-col leading-tight min-w-0">
-              <span className="font-['Cinzel',serif] text-sm sm:text-lg font-bold text-[#141A17] uppercase tracking-[0.06em] group-hover:text-[#C29B38] transition-colors whitespace-nowrap">
+              <span className="font-['Cinzel',serif] text-xs sm:text-lg font-bold text-[#141A17] uppercase tracking-[0.06em] group-hover:text-[#C29B38] transition-colors whitespace-nowrap">
                 Dholpurestones
               </span>
-              <span className="text-[8.5px] sm:text-[9.5px] text-[#68726E] uppercase tracking-[0.14em] font-semibold whitespace-nowrap">
+              <span className="text-[7.5px] sm:text-[9.5px] text-[#68726E] uppercase tracking-[0.12em] sm:tracking-[0.14em] font-semibold whitespace-nowrap">
                 Natural Stone &bull; Since 1953
               </span>
             </div>
@@ -589,17 +589,17 @@ export default function Navbar() {
           </nav>
 
           {/* Right Action Buttons */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             {/* WhatsApp CTA Styled in Website's Royal Gold Theme */}
             <a
               href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20connect%20regarding%20natural%20stone%20projects"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs font-bold tracking-wider uppercase px-4 sm:px-5 py-2.5 rounded-full bg-[#C29B38] hover:bg-[#dfb54b] text-[#0D1311] transition-all duration-300 shadow-[0_4px_16px_rgba(194,155,56,0.32)] hover:shadow-[0_6px_22px_rgba(194,155,56,0.5)] border border-[#C29B38] active:scale-95 whitespace-nowrap shrink-0 group"
+              className="inline-flex items-center gap-1.5 sm:gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs font-bold tracking-wider uppercase px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#C29B38] hover:bg-[#dfb54b] text-[#0D1311] transition-all duration-300 shadow-[0_4px_16px_rgba(194,155,56,0.32)] hover:shadow-[0_6px_22px_rgba(194,155,56,0.5)] border border-[#C29B38] active:scale-95 whitespace-nowrap shrink-0 group"
             >
-              <WhatsAppIcon className="w-4 h-4 fill-[#0D1311] shrink-0 transition-transform group-hover:scale-110" size={16} />
+              <WhatsAppIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-[#0D1311] shrink-0 transition-transform group-hover:scale-110" size={16} />
               <span className="hidden sm:inline">WhatsApp Chat</span>
-              <span className="sm:hidden">Chat</span>
+              <span className="sm:hidden text-[11px]">Chat</span>
             </a>
 
             {/* Mobile Hamburger Button */}

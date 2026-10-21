@@ -144,7 +144,7 @@ export default function WhyChooseUs() {
   return (
     <section
       id="why-choose"
-      className="bg-[#FAF7F2] py-16 sm:py-24 border-b border-black/8 relative overflow-hidden scroll-mt-20 sm:scroll-mt-24"
+      className="bg-[#FAF7F2] py-10 sm:py-20 border-b border-black/8 relative overflow-hidden scroll-mt-20 sm:scroll-mt-24"
     >
       {/* Background Subtle Architectural Blueprint Grid */}
       <div className="absolute inset-0 bg-[radial-gradient(#C29B38_1.2px,transparent_1.2px)] [background-size:32px_32px] opacity-[0.05] pointer-events-none" />
@@ -155,7 +155,7 @@ export default function WhyChooseUs() {
 
       <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header Label */}
-        <AnimDiv className="flex items-center justify-between pb-3.5 border-b border-black/8 mb-8 sm:mb-12">
+        <AnimDiv className="flex items-center justify-between pb-2.5 sm:pb-3.5 border-b border-black/8 mb-6 sm:mb-12">
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-[#134e3f] animate-pulse" />
             <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.2em] text-[#141A17] uppercase">
@@ -168,56 +168,56 @@ export default function WhyChooseUs() {
         </AnimDiv>
 
         {/* Section Title & Subtitle */}
-        <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-16">
           <AnimDiv delay={0}>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#134e3f]/10 border border-[#134e3f]/25 text-[#134e3f] text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] mb-4 shadow-2xs">
+            <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#134e3f]/10 border border-[#134e3f]/25 text-[#134e3f] text-[9.5px] sm:text-xs font-bold uppercase tracking-[0.2em] mb-3 sm:mb-4 shadow-2xs">
               <Sparkles className="w-3.5 h-3.5 text-[#C29B38]" />
               <span>Direct Mine Owner Advantage Since 1953</span>
             </div>
 
-            <h2 className="font-['Cinzel',serif] text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#141A17] uppercase tracking-wide leading-tight mb-3">
+            <h2 className="font-['Cinzel',serif] text-xl sm:text-3xl lg:text-5xl font-extrabold text-[#141A17] uppercase tracking-wide leading-snug sm:leading-tight mb-2 sm:mb-3">
               Why Choose Authentic Sandstone, Mined Straight from Our Quarries
             </h2>
 
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#505D57] max-w-3xl mx-auto leading-relaxed mt-3">
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#505D57] max-w-3xl mx-auto leading-relaxed mt-2 sm:mt-3">
               We own and operate proprietary sandstone quarry concessions in Sarmathura, Rajasthan. By eliminating all commercial middlemen, we guarantee homogeneous mineral strata, certified geotechnical strength, and direct quarry pricing for world-class architectural and landscape projects.
             </p>
           </AnimDiv>
 
           {/* Key Metric Trust Strip */}
-          <AnimDiv delay={60} className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-8 max-w-4xl mx-auto">
-            <div className="bg-white border border-black/8 rounded-2xl p-3.5 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center">
-              <span className="block font-['Cinzel',serif] text-lg sm:text-2xl font-bold text-[#141A17]">
+          <AnimDiv delay={60} className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4 mt-6 sm:mt-8 max-w-4xl mx-auto">
+            <div className="bg-white border border-black/8 rounded-xl sm:rounded-2xl p-2.5 sm:p-3.5 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center">
+              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
                 Zero Middlemen
               </span>
-              <span className="text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block mt-0.5">
+              <span className="text-[9.5px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block mt-0.5">
                 Direct Quarry Pricing
               </span>
             </div>
 
-            <div className="bg-white border border-black/8 rounded-2xl p-3.5 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center">
-              <span className="block font-['Cinzel',serif] text-lg sm:text-2xl font-bold text-[#141A17]">
+            <div className="bg-white border border-black/8 rounded-xl sm:rounded-2xl p-2.5 sm:p-3.5 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center">
+              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
                 100% Homogeneous
               </span>
-              <span className="text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block mt-0.5">
+              <span className="text-[9.5px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block mt-0.5">
                 Certified Rock Strata
               </span>
             </div>
 
-            <div className="bg-white border border-[#C29B38]/50 rounded-2xl p-3.5 shadow-xs hover:border-[#C29B38] transition-colors text-center bg-gradient-to-b from-[#C29B38]/10 to-white">
-              <span className="block font-['Cinzel',serif] text-lg sm:text-2xl font-bold text-[#134e3f]">
+            <div className="bg-white border border-[#C29B38]/50 rounded-xl sm:rounded-2xl p-2.5 sm:p-3.5 shadow-xs hover:border-[#C29B38] transition-colors text-center bg-gradient-to-b from-[#C29B38]/10 to-white">
+              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#134e3f]">
                 300+ Designs
               </span>
-              <span className="text-[10px] text-[#C29B38] font-bold uppercase tracking-wider block mt-0.5">
+              <span className="text-[9.5px] sm:text-[10px] text-[#C29B38] font-bold uppercase tracking-wider block mt-0.5">
                 Govt. Awarded Elevation
               </span>
             </div>
 
-            <div className="bg-white border border-black/8 rounded-2xl p-3.5 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center">
-              <span className="block font-['Cinzel',serif] text-lg sm:text-2xl font-bold text-[#141A17]">
+            <div className="bg-white border border-black/8 rounded-xl sm:rounded-2xl p-2.5 sm:p-3.5 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center">
+              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
                 IS:3620 Tested
               </span>
-              <span className="text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block mt-0.5">
+              <span className="text-[9.5px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block mt-0.5">
                 Lab Certified Strength
               </span>
             </div>
@@ -227,13 +227,13 @@ export default function WhyChooseUs() {
         {/* =========================================================================
             STAGE 1: 6 CORE ADVANTAGE PILLARS IN A BALANCED 3x2 LUXURY CARD GRID
             ========================================================================= */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 sm:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-10 sm:mb-20">
           {reasons.map((reason, idx) => {
             const IconComponent = reason.icon;
             return (
               <AnimDiv key={reason.id} delay={idx * 50}>
                 <div
-                  className={`relative rounded-3xl p-6 sm:p-7 border transition-all duration-300 h-full flex flex-col justify-between group hover:-translate-y-1.5 ${
+                  className={`relative rounded-2xl sm:rounded-3xl p-4 sm:p-7 border transition-all duration-300 h-full flex flex-col justify-between group hover:-translate-y-1.5 ${
                     reason.highlight
                       ? "bg-gradient-to-b from-white via-white to-[#FAF7F2] border-[#C29B38] shadow-lg hover:shadow-2xl ring-1 ring-[#C29B38]/40"
                       : "bg-white border-black/8 hover:border-[#C29B38]/70 shadow-sm hover:shadow-xl"

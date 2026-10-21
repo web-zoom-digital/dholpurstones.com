@@ -60,79 +60,83 @@ export default function StoneTechnicalSpecsTable() {
     <section
       id="specifications"
       aria-label="Dholpur Sandstone Technical Physical Properties"
-      className="py-14 sm:py-20 bg-[#FAF7F2] border-t border-b border-black/8"
+      className="py-10 sm:py-20 bg-[#FAF7F2] border-t border-b border-black/8"
     >
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-8">
         {/* Header Ribbon */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#134e3f]/15 border border-[#134e3f]/30 mb-3 text-[#134e3f]">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 rounded-full bg-[#134e3f]/15 border border-[#134e3f]/30 mb-2.5 sm:mb-3 text-[#134e3f]">
             <Award className="w-3.5 h-3.5" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase">
+            <span className="font-['Cinzel',serif] text-[9.5px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] uppercase">
               CERTIFIED LABORATORY METRICS &bull; ASTM C616 / IS 3622
             </span>
           </div>
 
-          <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl lg:text-4xl font-bold uppercase text-[#0D1311] tracking-wide">
+          <h2 className="font-['Cinzel',serif] text-xl sm:text-3xl lg:text-4xl font-bold uppercase text-[#0D1311] tracking-wide leading-snug sm:leading-tight">
             Technical Properties &amp; Comparative Engineering Specs
           </h2>
-          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#4A5550] mt-3 leading-relaxed">
+          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#4A5550] mt-2 sm:mt-3 leading-relaxed">
             Authentic Dholpur sandstone extracted from our Sarmathura quarries consistently exceeds both Indian Standards (IS 3622) and American Society for Testing and Materials (ASTM C616) requirements.
           </p>
         </div>
 
-        {/* 4 Summary Definition Callout Cards for AEO (Answer Engines) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          <div className="bg-white p-5 rounded-2xl border border-black/8 shadow-sm">
-            <span className="text-[11px] font-bold text-[#C29B38] uppercase tracking-wider block mb-1">
+        {/* 4 Summary Definition Callout Cards (Compact 2x2 Matrix on Mobile, 4-col on lg) */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 mb-6 sm:mb-8">
+          <div className="bg-white p-3 sm:p-5 rounded-xl sm:rounded-2xl border border-black/8 shadow-xs">
+            <span className="text-[10px] sm:text-[11px] font-bold text-[#C29B38] uppercase tracking-wider block mb-1">
               Compressive Strength
             </span>
-            <div className="text-2xl sm:text-3xl font-bold font-['Cinzel',serif] text-[#0D1311]">
+            <div className="text-xl sm:text-3xl font-bold font-['Cinzel',serif] text-[#0D1311]">
               72.8 MPa
             </div>
-            <p className="text-xs text-[#4A5550] mt-1.5 leading-snug">
+            <p className="text-[10.5px] sm:text-xs text-[#4A5550] mt-1 sm:mt-1.5 leading-snug">
               Exceeds ASTM C616 (&gt;28 MPa) by over 140%, supporting multi-tier structural loads.
             </p>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl border border-black/8 shadow-sm">
-            <span className="text-[11px] font-bold text-[#C29B38] uppercase tracking-wider block mb-1">
+          <div className="bg-white p-3 sm:p-5 rounded-xl sm:rounded-2xl border border-black/8 shadow-xs">
+            <span className="text-[10px] sm:text-[11px] font-bold text-[#C29B38] uppercase tracking-wider block mb-1">
               Water Absorption
             </span>
-            <div className="text-2xl sm:text-3xl font-bold font-['Cinzel',serif] text-[#0D1311]">
+            <div className="text-xl sm:text-3xl font-bold font-['Cinzel',serif] text-[#0D1311]">
               1.10% Max
             </div>
-            <p className="text-xs text-[#4A5550] mt-1.5 leading-snug">
+            <p className="text-[10.5px] sm:text-xs text-[#4A5550] mt-1 sm:mt-1.5 leading-snug">
               Far below the standard 8% ceiling, preventing efflorescence, salt decay, and moss.
             </p>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl border border-black/8 shadow-sm">
-            <span className="text-[11px] font-bold text-[#C29B38] uppercase tracking-wider block mb-1">
+          <div className="bg-white p-3 sm:p-5 rounded-xl sm:rounded-2xl border border-black/8 shadow-xs">
+            <span className="text-[10px] sm:text-[11px] font-bold text-[#C29B38] uppercase tracking-wider block mb-1">
               Wet Slip Rating
             </span>
-            <div className="text-2xl sm:text-3xl font-bold font-['Cinzel',serif] text-[#0D1311]">
+            <div className="text-xl sm:text-3xl font-bold font-['Cinzel',serif] text-[#0D1311]">
               R11 / R12
             </div>
-            <p className="text-xs text-[#4A5550] mt-1.5 leading-snug">
+            <p className="text-[10.5px] sm:text-xs text-[#4A5550] mt-1 sm:mt-1.5 leading-snug">
               Certified anti-slip traction for wet swimming pool coping, courtyards, and driveways.
             </p>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl border border-black/8 shadow-sm">
-            <span className="text-[11px] font-bold text-[#C29B38] uppercase tracking-wider block mb-1">
+          <div className="bg-white p-3 sm:p-5 rounded-xl sm:rounded-2xl border border-black/8 shadow-xs">
+            <span className="text-[10px] sm:text-[11px] font-bold text-[#C29B38] uppercase tracking-wider block mb-1">
               Mineral Density
             </span>
-            <div className="text-2xl sm:text-3xl font-bold font-['Cinzel',serif] text-[#0D1311]">
+            <div className="text-xl sm:text-3xl font-bold font-['Cinzel',serif] text-[#0D1311]">
               2.52 g/cm³
             </div>
-            <p className="text-xs text-[#4A5550] mt-1.5 leading-snug">
+            <p className="text-[10.5px] sm:text-xs text-[#4A5550] mt-1 sm:mt-1.5 leading-snug">
               Fine-grained quartzitic formation ensuring zero crumbling and centuries of weather resistance.
             </p>
           </div>
         </div>
 
         {/* The Core Semantic Responsive HTML Table */}
-        <div className="bg-white rounded-3xl border border-black/10 shadow-md overflow-hidden">
+        <div className="bg-white rounded-2xl sm:rounded-3xl border border-black/10 shadow-md overflow-hidden">
+          {/* Mobile Swipe Hint */}
+          <div className="sm:hidden flex items-center justify-center gap-1.5 py-1.5 px-3 bg-[#FAF7F2] border-b border-black/6 text-[9.5px] font-semibold text-[#68726E] tracking-wider uppercase">
+            <span>&larr; Swipe table horizontally to compare all standards &rarr;</span>
+          </div>
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse text-xs sm:text-sm">
               <caption className="sr-only">

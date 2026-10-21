@@ -295,15 +295,15 @@ export default function FarmHouseGardenSpecialist({
   return (
     <section
       id="farmhouse-gardens"
-      className="bg-[#FAF7F2] scroll-mt-20 sm:scroll-mt-24 py-16 sm:py-24 border-b border-black/8 relative overflow-hidden"
+      className="bg-[#FAF7F2] scroll-mt-20 sm:scroll-mt-24 py-10 sm:py-20 border-b border-black/8 relative overflow-hidden"
     >
       {/* Subtle Background Glows */}
       <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-[#C29B38]/6 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[550px] h-[550px] bg-[#134e3f]/6 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
         {/* Section Pre-Header Badge */}
-        <AnimDiv className="flex items-center justify-between pb-3 border-b border-black/8 mb-8 sm:mb-10">
+        <AnimDiv className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-black/8 mb-6 sm:mb-10">
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-[#134e3f] animate-pulse" />
             <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.2em] text-[#141A17] uppercase">
@@ -316,23 +316,23 @@ export default function FarmHouseGardenSpecialist({
         </AnimDiv>
 
         {/* Grand Headline Highlighting User Requirements */}
-        <AnimDiv delay={40} className="text-center max-w-4xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#134e3f]/10 border border-[#134e3f]/25 mb-4 shadow-2xs">
-            <TreePine className="w-4 h-4 text-[#134e3f]" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#134e3f] tracking-[0.2em] uppercase">
+        <AnimDiv delay={40} className="text-center max-w-4xl mx-auto mb-8 sm:mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#134e3f]/10 border border-[#134e3f]/25 mb-3 sm:mb-4 shadow-2xs">
+            <TreePine className="w-3.5 h-3.5 text-[#134e3f]" />
+            <span className="font-['Cinzel',serif] text-[9.5px] sm:text-xs font-bold text-[#134e3f] tracking-[0.16em] sm:tracking-[0.2em] uppercase">
               SPECIALIZED IN LUXURY FARM HOUSES &amp; DESIGNER GARDEN LANDSCAPING
             </span>
           </div>
 
-          <h2 className="font-['Cinzel',serif] font-bold text-[#141A17] uppercase tracking-[0.04em] leading-[1.16] text-2xl sm:text-4xl lg:text-5xl">
+          <h2 className="font-['Cinzel',serif] font-bold text-[#141A17] uppercase tracking-[0.03em] leading-snug sm:leading-[1.16] text-xl sm:text-4xl lg:text-5xl">
             Natural Sand Stone Solutions for Luxury Farm Houses &amp; Garden Landscapes
           </h2>
 
-          <div className="mt-4 max-w-3xl mx-auto">
-            <p className="font-['EB_Garamond',serif] text-lg sm:text-xl text-[#141A17]/90 leading-relaxed font-semibold">
+          <div className="mt-3 sm:mt-4 max-w-3xl mx-auto">
+            <p className="font-['EB_Garamond',serif] text-base sm:text-xl text-[#141A17]/90 leading-relaxed font-semibold">
               Transforming vast private acreage, countryside retreats, and sprawling estate lawns into timeless royal sanctuaries with authentic Sarmathura natural sandstone.
             </p>
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#505D57] mt-2.5 leading-relaxed">
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#505D57] mt-2 sm:mt-2.5 leading-relaxed">
               We have made more than{" "}
               <strong className="text-[#134e3f] font-bold underline decoration-[#C29B38]/60 underline-offset-4">
                 300+ designs for front elevation in sandstone
@@ -343,7 +343,7 @@ export default function FarmHouseGardenSpecialist({
         </AnimDiv>
 
         {/* Filter Navigation Tabs */}
-        <AnimDiv delay={80} className="flex items-center sm:justify-center gap-2 overflow-x-auto pb-2 mb-10 sm:mb-12 scrollbar-none w-full">
+        <AnimDiv delay={80} className="flex items-center sm:justify-center gap-1.5 sm:gap-2 overflow-x-auto pb-2 mb-8 sm:mb-12 scrollbar-none w-full -mx-1 px-1">
           {tabs.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
@@ -352,7 +352,7 @@ export default function FarmHouseGardenSpecialist({
                 key={tab.id}
                 type="button"
                 onClick={() => setActiveTab(tab.id)}
-                className={`inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 shrink-0 cursor-pointer ${
+                className={`inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold tracking-wider uppercase transition-all duration-300 shrink-0 cursor-pointer ${
                   isActive
                     ? "bg-[#134e3f] text-white shadow-md shadow-[#134e3f]/30 border border-[#134e3f] scale-[1.02]"
                     : "bg-white text-[#4A5550] border border-black/8 hover:border-[#C29B38] hover:text-[#141A17]"
@@ -366,7 +366,7 @@ export default function FarmHouseGardenSpecialist({
         </AnimDiv>
 
         {/* Farm House & Garden Masonry Solutions Grid (4 on Home Preview, 8 on Dedicated Page) */}
-        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ${isHomePreview ? "mb-10 sm:mb-12" : "mb-16 sm:mb-20"}`}>
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 ${isHomePreview ? "mb-8 sm:mb-12" : "mb-12 sm:mb-20"}`}>
           {displayItems.map((item, idx) => (
             <AnimDiv key={item.id} delay={idx * 60}>
               <div
@@ -404,19 +404,19 @@ export default function FarmHouseGardenSpecialist({
                   </div>
 
                   {/* Card Content */}
-                  <div className="p-5">
-                    <h3 className="font-['Cinzel',serif] text-base font-bold text-[#141A17] uppercase tracking-wide group-hover:text-[#134e3f] transition-colors mb-2">
+                  <div className="p-4 sm:p-5">
+                    <h3 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-[#141A17] uppercase tracking-wide group-hover:text-[#134e3f] transition-colors mb-1.5 sm:mb-2 leading-snug">
                       {item.title}
                     </h3>
 
-                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs text-[#505D57] leading-relaxed line-clamp-3 mb-4">
+                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] sm:text-xs text-[#505D57] leading-relaxed line-clamp-3 mb-3 sm:mb-4">
                       {item.desc}
                     </p>
 
                     {/* Quick Specs Snippet */}
-                    <div className="space-y-1.5 pt-3 border-t border-black/6">
+                    <div className="space-y-1.5 pt-2.5 sm:pt-3 border-t border-black/6">
                       {item.specs.slice(0, 2).map((s, i) => (
-                        <div key={i} className="flex items-center justify-between text-[11px]">
+                        <div key={i} className="flex items-center justify-between text-[10.5px] sm:text-[11px]">
                           <span className="text-[#68726E] font-medium">{s.label}:</span>
                           <span className="text-[#141A17] font-bold text-right truncate max-w-[55%]">
                             {s.value}
@@ -428,8 +428,8 @@ export default function FarmHouseGardenSpecialist({
                 </div>
 
                 {/* Card Footer Actions */}
-                <div className="p-5 pt-0">
-                  <div className="pt-3 border-t border-black/6 flex items-center justify-between">
+                <div className="p-4 sm:p-5 pt-0">
+                  <div className="pt-2.5 sm:pt-3 border-t border-black/6 flex items-center justify-between">
                     <button
                       type="button"
                       className="inline-flex items-center gap-1.5 text-xs font-bold text-[#134e3f] group-hover:text-[#C29B38] uppercase tracking-wider transition-colors"
@@ -508,51 +508,51 @@ export default function FarmHouseGardenSpecialist({
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 relative z-10">
-              <div className="bg-white/5 border border-white/8 rounded-2xl p-5 hover:border-[#C29B38]/50 transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-[#C29B38]/15 flex items-center justify-center text-[#C29B38] mb-3">
-                  <Sun className="w-5 h-5" />
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-5 relative z-10">
+              <div className="bg-white/5 border border-white/8 rounded-xl sm:rounded-2xl p-3 sm:p-5 hover:border-[#C29B38]/50 transition-colors">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#C29B38]/15 flex items-center justify-center text-[#C29B38] mb-2 sm:mb-3">
+                  <Sun className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
-                <h4 className="font-['Cinzel',serif] text-sm font-bold text-white uppercase tracking-wider mb-2">
+                <h4 className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-white uppercase tracking-wider mb-1 sm:mb-2 leading-tight">
                   Barefoot Thermal Comfort
                 </h4>
-                <p className="text-xs text-white/70 leading-relaxed">
+                <p className="text-[10px] sm:text-xs text-white/70 leading-relaxed line-clamp-3 sm:line-clamp-none">
                   Unlike granite or vitrified tiles that burn bare feet in summer, natural sandstone stays pleasantly cool even in 45°C midday sun.
                 </p>
               </div>
 
-              <div className="bg-white/5 border border-white/8 rounded-2xl p-5 hover:border-[#C29B38]/50 transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-[#C29B38]/15 flex items-center justify-center text-[#C29B38] mb-3">
-                  <Droplets className="w-5 h-5" />
+              <div className="bg-white/5 border border-white/8 rounded-xl sm:rounded-2xl p-3 sm:p-5 hover:border-[#C29B38]/50 transition-colors">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#C29B38]/15 flex items-center justify-center text-[#C29B38] mb-2 sm:mb-3">
+                  <Droplets className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
-                <h4 className="font-['Cinzel',serif] text-sm font-bold text-white uppercase tracking-wider mb-2">
+                <h4 className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-white uppercase tracking-wider mb-1 sm:mb-2 leading-tight">
                   Natural Anti-Slip Grip
                 </h4>
-                <p className="text-xs text-white/70 leading-relaxed">
+                <p className="text-[10px] sm:text-xs text-white/70 leading-relaxed line-clamp-3 sm:line-clamp-none">
                   Natural cleft textures provide certified R11/R12 slip resistance, ensuring safety for children and elders during monsoon rains and near pool edges.
                 </p>
               </div>
 
-              <div className="bg-white/5 border border-white/8 rounded-2xl p-5 hover:border-[#C29B38]/50 transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-[#C29B38]/15 flex items-center justify-center text-[#C29B38] mb-3">
-                  <Award className="w-5 h-5" />
+              <div className="bg-white/5 border border-white/8 rounded-xl sm:rounded-2xl p-3 sm:p-5 hover:border-[#C29B38]/50 transition-colors">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#C29B38]/15 flex items-center justify-center text-[#C29B38] mb-2 sm:mb-3">
+                  <Award className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
-                <h4 className="font-['Cinzel',serif] text-sm font-bold text-white uppercase tracking-wider mb-2">
+                <h4 className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-white uppercase tracking-wider mb-1 sm:mb-2 leading-tight">
                   300+ Front Elevations
                 </h4>
-                <p className="text-xs text-white/70 leading-relaxed">
+                <p className="text-[10px] sm:text-xs text-white/70 leading-relaxed line-clamp-3 sm:line-clamp-none">
                   Awarded by Govt. of India for creating over 300 turnkey front elevation designs tailored for royal farm houses and country residences.
                 </p>
               </div>
 
-              <div className="bg-white/5 border border-white/8 rounded-2xl p-5 hover:border-[#C29B38]/50 transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-[#C29B38]/15 flex items-center justify-center text-[#C29B38] mb-3">
-                  <ShieldCheck className="w-5 h-5" />
+              <div className="bg-white/5 border border-white/8 rounded-xl sm:rounded-2xl p-3 sm:p-5 hover:border-[#C29B38]/50 transition-colors">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#C29B38]/15 flex items-center justify-center text-[#C29B38] mb-2 sm:mb-3">
+                  <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
-                <h4 className="font-['Cinzel',serif] text-sm font-bold text-white uppercase tracking-wider mb-2">
+                <h4 className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-white uppercase tracking-wider mb-1 sm:mb-2 leading-tight">
                   Zero Middlemen Pricing
                 </h4>
-                <p className="text-xs text-white/70 leading-relaxed">
+                <p className="text-[10px] sm:text-xs text-white/70 leading-relaxed line-clamp-3 sm:line-clamp-none">
                   Direct mine-to-site delivery from our own quarry leases in Sarmathura and Sikandra, saving estate owners substantial costs on large acreage.
                 </p>
               </div>

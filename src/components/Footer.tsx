@@ -77,27 +77,27 @@ export default function Footer() {
   return (
     <footer className="bg-[#0D1311] text-white border-t border-white/10 relative overflow-hidden font-['Plus_Jakarta_Sans',sans-serif]">
       {/* Top Accolades & Recognition Ribbon */}
-      <div className="bg-[#141A17] border-b border-white/10 py-3.5 px-4">
-        <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row items-center justify-between gap-2.5 text-center md:text-left">
-          <div className="flex items-center justify-center gap-2 text-[#E0BA55] font-bold tracking-wider uppercase text-[10px] sm:text-xs">
-            <span className="w-2 h-2 rounded-full bg-[#C29B38] shrink-0" />
+      <div className="bg-[#141A17] border-b border-white/10 py-2.5 sm:py-3.5 px-4">
+        <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row items-center justify-between gap-1.5 sm:gap-2.5 text-center md:text-left">
+          <div className="flex items-center justify-center gap-1.5 sm:gap-2 text-[#E0BA55] font-bold tracking-wider uppercase text-[9.5px] sm:text-xs">
+            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#C29B38] shrink-0" />
             <span>Awarded by Govt. of India &bull; Nominated for International Award for Business Excellence</span>
           </div>
-          <div className="text-white/75 text-[11px] tracking-wide font-medium">
+          <div className="text-white/75 text-[10px] sm:text-[11px] tracking-wide font-medium">
             300+ Sandstone Front Elevation Designs &bull; Luxury Farm Houses &amp; Designer Gardens
           </div>
         </div>
       </div>
 
       {/* 1. TOP SECTION: 4 COLUMNS (Products, Quick Links, Useful Links, Newsletter) */}
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-12 sm:pt-14 sm:pb-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8 sm:pt-12 sm:pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
           {/* Column 1: Our Products */}
           <div>
-            <h3 className="text-white text-base sm:text-lg font-bold tracking-wide mb-4 sm:mb-5">
+            <h3 className="text-white text-sm sm:text-base lg:text-lg font-bold tracking-wide mb-2.5 sm:mb-4">
               Our Products
             </h3>
-            <ul className="space-y-2.5 text-xs sm:text-[13px] text-white/70">
+            <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-[13px] text-white/70">
               <li>
                 <Link href="/products" className="hover:text-[#C29B38] transition-colors">
                   Agra Red Stone
@@ -133,10 +133,10 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h3 className="text-white text-base sm:text-lg font-bold tracking-wide mb-4 sm:mb-5">
+            <h3 className="text-white text-sm sm:text-base lg:text-lg font-bold tracking-wide mb-2.5 sm:mb-4">
               Quick Links
             </h3>
-            <ul className="space-y-2.5 text-xs sm:text-[13px] text-white/70">
+            <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-[13px] text-white/70">
               <li>
                 <Link href="/about" className="hover:text-[#C29B38] transition-colors">
                   About Us
@@ -172,10 +172,10 @@ export default function Footer() {
 
           {/* Column 3: Useful Links & Legal */}
           <div>
-            <h3 className="text-white text-base sm:text-lg font-bold tracking-wide mb-4 sm:mb-5">
+            <h3 className="text-white text-sm sm:text-base lg:text-lg font-bold tracking-wide mb-2.5 sm:mb-4">
               Useful Links
             </h3>
-            <ul className="space-y-2.5 text-xs sm:text-[13px] text-white/70">
+            <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-[13px] text-white/70">
               <li>
                 <Link href="/about" className="hover:text-[#C29B38] transition-colors">
                   Corporate Lineage &amp; Heritage
@@ -221,10 +221,10 @@ export default function Footer() {
 
           {/* Column 4: Newsletter */}
           <div>
-            <h3 className="text-white text-base sm:text-lg font-bold tracking-wide mb-3">
+            <h3 className="text-white text-sm sm:text-base lg:text-lg font-bold tracking-wide mb-2 sm:mb-3">
               Sign up for our newsletter
             </h3>
-            <p className="text-xs sm:text-[13px] text-white/70 leading-relaxed mb-4">
+            <p className="text-xs sm:text-[13px] text-white/70 leading-relaxed mb-3 sm:mb-4">
               Join our architectural stone community—subscribe for quarterly quarry updates, export schedules &amp; technical reports!
             </p>
 
@@ -236,7 +236,7 @@ export default function Footer() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your email"
-                  className="w-full bg-white text-[#141A17] placeholder:text-gray-400 text-xs sm:text-sm px-3.5 py-2.5 rounded-md outline-none focus:ring-2 focus:ring-[#C29B38] transition-all"
+                  className="w-full bg-white text-[#141A17] placeholder:text-gray-400 text-base sm:text-sm px-3.5 py-2 sm:py-2.5 rounded-md outline-none focus:ring-2 focus:ring-[#C29B38] transition-all"
                 />
                 <button
                   type="submit"
@@ -266,15 +266,15 @@ export default function Footer() {
 
       {/* 2. MIDDLE CONTACT & SOCIAL BAR */}
       <div className="border-t border-white/10">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-7 sm:py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-7">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-8 items-center">
             {/* Phone */}
-            <div className="lg:col-span-3 flex items-start gap-3">
-              <div className="w-10 h-10 rounded-full border border-[#C29B38]/40 bg-[#161D1A] flex items-center justify-center shrink-0 mt-0.5 text-[#C29B38]">
-                <Phone className="w-4 h-4" />
+            <div className="lg:col-span-3 flex items-start gap-2.5 sm:gap-3">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#C29B38]/40 bg-[#161D1A] flex items-center justify-center shrink-0 mt-0.5 text-[#C29B38]">
+                <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </div>
               <div className="text-xs sm:text-[13px] leading-snug">
-                <span className="text-[#C29B38] font-bold tracking-wider uppercase text-[11px] block mb-0.5">
+                <span className="text-[#C29B38] font-bold tracking-wider uppercase text-[10px] sm:text-[11px] block mb-0.5">
                   Have a Questions?
                 </span>
                 <a
@@ -293,12 +293,12 @@ export default function Footer() {
             </div>
 
             {/* Email */}
-            <div className="lg:col-span-3 flex items-start gap-3">
-              <div className="w-10 h-10 rounded-full border border-[#C29B38]/40 bg-[#161D1A] flex items-center justify-center shrink-0 mt-0.5 text-[#C29B38]">
-                <Mail className="w-4 h-4" />
+            <div className="lg:col-span-3 flex items-start gap-2.5 sm:gap-3">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#C29B38]/40 bg-[#161D1A] flex items-center justify-center shrink-0 mt-0.5 text-[#C29B38]">
+                <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </div>
               <div className="text-xs sm:text-[13px] leading-snug">
-                <span className="text-[#C29B38] font-bold tracking-wider uppercase text-[11px] block mb-0.5">
+                <span className="text-[#C29B38] font-bold tracking-wider uppercase text-[10px] sm:text-[11px] block mb-0.5">
                   Contact us at
                 </span>
                 <a
@@ -317,30 +317,30 @@ export default function Footer() {
             </div>
 
             {/* Location */}
-            <div className="lg:col-span-3 flex items-start gap-3">
-              <div className="w-10 h-10 rounded-full border border-[#C29B38]/40 bg-[#161D1A] flex items-center justify-center shrink-0 mt-0.5 text-[#C29B38]">
-                <MapPin className="w-4 h-4" />
+            <div className="lg:col-span-3 flex items-start gap-2.5 sm:gap-3">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#C29B38]/40 bg-[#161D1A] flex items-center justify-center shrink-0 mt-0.5 text-[#C29B38]">
+                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </div>
               <div className="text-xs sm:text-[13px] leading-snug">
-                <span className="text-[#C29B38] font-bold tracking-wider uppercase text-[11px] block mb-0.5">
+                <span className="text-[#C29B38] font-bold tracking-wider uppercase text-[10px] sm:text-[11px] block mb-0.5">
                   We are located at
                 </span>
                 <p className="text-white font-semibold text-xs sm:text-[13px]">
                   B P Garg &amp; Sons
                 </p>
-                <p className="text-white/80 text-[11px] sm:text-xs leading-relaxed">
+                <p className="text-white/80 text-[10.5px] sm:text-xs leading-relaxed">
                   Near RAC line, Mothiyapura road, Sarmathura 328026 Dholpur, Raj. INDIA
                 </p>
               </div>
             </div>
 
             {/* Vertical Divider & Social Icons */}
-            <div className="lg:col-span-3 flex items-center lg:justify-end gap-5 pt-4 lg:pt-0 border-t lg:border-t-0 lg:border-l border-white/10 lg:pl-6">
+            <div className="lg:col-span-3 flex items-center lg:justify-end gap-4 sm:gap-5 pt-3 sm:pt-4 lg:pt-0 border-t lg:border-t-0 lg:border-l border-white/10 lg:pl-6">
               <div>
-                <span className="text-[#C29B38] font-bold tracking-wider uppercase text-[11px] block mb-2">
+                <span className="text-[#C29B38] font-bold tracking-wider uppercase text-[10px] sm:text-[11px] block mb-1.5 sm:mb-2">
                   Follow Us On
                 </span>
-                <div className="flex items-center gap-2.5">
+                <div className="flex items-center gap-2 sm:gap-2.5">
                   <a
                     href="https://facebook.com"
                     target="_blank"

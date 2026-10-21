@@ -123,30 +123,30 @@ export default function ContactSection() {
   return (
     <section id="contact" className="bg-[#FAF7F2]">
       {/* 1. Dark Dramatic Header */}
-      <div className="bg-[#0D1311] text-white py-14 sm:py-20 px-4 text-center border-b border-white/8 relative overflow-hidden">
+      <div className="bg-[#0D1311] text-white py-10 sm:py-16 px-4 text-center border-b border-white/8 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#C29B38]/10 rounded-full blur-3xl pointer-events-none" />
         <AnimDiv delay={0} className="relative z-10 max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C29B38]/15 border border-[#C29B38]/30 mb-3">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-0.5 sm:py-1 rounded-full bg-[#C29B38]/15 border border-[#C29B38]/30 mb-2 sm:mb-3">
             <Sparkles className="w-3 h-3 text-[#C29B38]" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C29B38] tracking-[0.25em] uppercase">
+            <span className="font-['Cinzel',serif] text-[9.5px] sm:text-xs font-bold text-[#C29B38] tracking-[0.22em] sm:tracking-[0.25em] uppercase">
               GET IN TOUCH
             </span>
           </div>
-          <h2 className="font-['Cinzel',serif] font-bold text-white uppercase tracking-[0.08em] leading-tight text-3xl sm:text-4xl lg:text-5xl">
+          <h2 className="font-['Cinzel',serif] font-bold text-white uppercase tracking-[0.08em] leading-tight text-2xl sm:text-4xl lg:text-5xl">
             Let&apos;s Build With Stone
           </h2>
-          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/70 tracking-wider uppercase mt-3">
+          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/70 tracking-wider uppercase mt-2 sm:mt-3">
             Connect for stone inquiries, tenders, export supplies &amp; architectural collaborations.
           </p>
         </AnimDiv>
       </div>
 
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14">
         {/* Section Header Label */}
-        <AnimDiv className="flex items-center justify-between pb-3 border-b border-black/8 mb-8 sm:mb-10">
+        <AnimDiv className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-black/8 mb-6 sm:mb-8">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#C29B38]" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#141A17] uppercase">
+            <span className="font-['Cinzel',serif] text-[9.5px] sm:text-xs font-bold tracking-[0.16em] text-[#141A17] uppercase">
               DHOLPURESTONES.COM
             </span>
           </div>
@@ -158,17 +158,17 @@ export default function ContactSection() {
         {/* =========================================================================
             2. ULTRA-LUXURY COMPANY CREDENTIALS & STATUTORY REGISTRY (Estd. 1953)
             ========================================================================= */}
-        <div className="mb-14 sm:mb-20">
+        <div className="mb-10 sm:mb-16">
           {/* Section Header */}
-          <AnimDiv delay={40} className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#C29B38]/10 border border-[#C29B38]/30 mb-3.5 shadow-2xs">
+          <AnimDiv delay={40} className="text-center max-w-3xl mx-auto mb-6 sm:mb-10">
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-[#C29B38]/10 border border-[#C29B38]/30 mb-2.5 shadow-2xs">
               <ShieldCheck className="w-3.5 h-3.5 text-[#C29B38]" />
-              <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C29B38] tracking-[0.22em] uppercase">
+              <span className="font-['Cinzel',serif] text-[9.5px] sm:text-xs font-bold text-[#C29B38] tracking-[0.2em] uppercase">
                 Official Identification &bull; Estd. 1953
               </span>
             </div>
 
-            <h3 className="font-['Cinzel',serif] text-2xl sm:text-3xl lg:text-4xl font-bold text-[#141A17] uppercase tracking-wide">
+            <h3 className="font-['Cinzel',serif] text-xl sm:text-3xl lg:text-4xl font-bold text-[#141A17] uppercase tracking-wide">
               Company Credentials
             </h3>
 
@@ -554,36 +554,36 @@ export default function ContactSection() {
         </div>
 
         {/* 3. Direct Contact Box & WhatsApp QR Card */}
-        <AnimDiv delay={200} className="mb-10 sm:mb-12">
-          <div className="bg-white rounded-3xl border border-black/8 shadow-sm overflow-hidden">
+        <AnimDiv delay={200} className="mb-8 sm:mb-12">
+          <div className="bg-white rounded-2xl sm:rounded-3xl border border-black/8 shadow-sm overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
               {/* Left Details (7 cols) */}
-              <div className="lg:col-span-7 p-6 sm:p-10 border-b lg:border-b-0 lg:border-r border-black/8">
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#C29B38] block mb-1">
+              <div className="lg:col-span-7 p-4 sm:p-7 md:p-8 border-b lg:border-b-0 lg:border-r border-black/8">
+                <span className="text-[9.5px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-[#C29B38] block mb-1">
                   Direct Communications
                 </span>
-                <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#141A17] uppercase tracking-wider mb-6">
+                <h3 className="font-['Cinzel',serif] text-lg sm:text-2xl font-bold text-[#141A17] uppercase tracking-wider mb-4 sm:mb-6">
                   Garg Corporation Ltd.
                 </h3>
 
-                <div className="space-y-4 sm:space-y-5">
+                <div className="space-y-3.5 sm:space-y-4">
                   {/* WhatsApp Direct */}
-                  <div className="p-3.5 rounded-xl bg-[#FAF7F2] border border-black/5">
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#68726E] block mb-1">
+                  <div className="p-3 sm:p-3.5 rounded-xl bg-[#FAF7F2] border border-black/5">
+                    <span className="text-[9px] uppercase font-bold tracking-widest text-[#68726E] block mb-1">
                       DIRECT WHATSAPP &bull; CALL
                     </span>
-                    <div className="space-y-1.5">
+                    <div className="space-y-1">
                       <a
                         href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20am%20interested%20in%20natural%20stone%20inquiry"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-base sm:text-lg font-bold text-[#134e3f] hover:text-[#C29B38] transition-colors"
+                        className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-[#134e3f] hover:text-[#C29B38] transition-colors"
                       >
-                        <WhatsAppIcon className="w-5 h-5 fill-[#25D366] shrink-0" size={20} />
+                        <WhatsAppIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-[#25D366] shrink-0" size={18} />
                         <span>+91 94149 45457</span>
-                        <span className="text-xs font-normal text-[#68726E]">(WhatsApp)</span>
+                        <span className="text-[11px] font-normal text-[#68726E]">(WhatsApp)</span>
                       </a>
-                      <div className="flex items-center gap-2 pl-7">
+                      <div className="flex items-center gap-2 pl-6 sm:pl-7">
                         <Phone className="w-3.5 h-3.5 text-[#C29B38] shrink-0" />
                         <a
                           href="tel:+919057355232"
@@ -597,39 +597,39 @@ export default function ContactSection() {
 
                   {/* Primary Email */}
                   <div>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#68726E] block mb-1">
+                    <span className="text-[9px] uppercase font-bold tracking-widest text-[#68726E] block mb-0.5">
                       PRIMARY INQUIRY EMAIL
                     </span>
                     <a
                       href="mailto:gargcorporationltd@gmail.com"
-                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#141A17] hover:text-[#C29B38] transition-colors"
+                      className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-[#141A17] hover:text-[#C29B38] transition-colors"
                     >
-                      <Mail className="w-4 h-4 text-[#C29B38] shrink-0" />
+                      <Mail className="w-3.5 h-3.5 text-[#C29B38] shrink-0" />
                       <span>gargcorporationltd@gmail.com</span>
                     </a>
                   </div>
 
                   {/* Associated Unit Email */}
                   <div>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#68726E] block mb-1">
+                    <span className="text-[9px] uppercase font-bold tracking-widest text-[#68726E] block mb-0.5">
                       ASSOCIATED UNIT EMAIL
                     </span>
                     <a
                       href="mailto:kamala_stone@yahoo.co.in"
-                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#141A17] hover:text-[#C29B38] transition-colors"
+                      className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-[#141A17] hover:text-[#C29B38] transition-colors"
                     >
-                      <Mail className="w-4 h-4 text-[#C29B38] shrink-0" />
+                      <Mail className="w-3.5 h-3.5 text-[#C29B38] shrink-0" />
                       <span>kamala_stone@yahoo.co.in</span>
                     </a>
                   </div>
 
                   {/* Registered Works Address */}
                   <div>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#68726E] block mb-1">
+                    <span className="text-[9px] uppercase font-bold tracking-widest text-[#68726E] block mb-0.5">
                       REGISTERED WORKS &amp; ADDRESS
                     </span>
-                    <div className="flex items-start gap-2 text-xs sm:text-sm text-[#141A17] font-medium leading-relaxed">
-                      <MapPin className="w-4 h-4 text-[#C29B38] shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-1.5 sm:gap-2 text-xs text-[#141A17] font-medium leading-relaxed">
+                      <MapPin className="w-3.5 h-3.5 text-[#C29B38] shrink-0 mt-0.5" />
                       <div>
                         <span className="font-bold text-[#141A17] block">B P Garg &amp; Sons</span>
                         <span>Near RAC line, Mothiyapura road, Sarmathura 328026 Dholpur, Raj. INDIA</span>
@@ -638,20 +638,20 @@ export default function ContactSection() {
                   </div>
 
                   {/* Offices List */}
-                  <div className="grid grid-cols-2 gap-3 pt-2">
-                    <div className="bg-[#FAF7F2] p-3 rounded-xl border border-black/5">
-                      <span className="text-[9px] uppercase font-bold tracking-widest text-[#68726E] block mb-0.5">
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3 pt-1">
+                    <div className="bg-[#FAF7F2] p-2.5 sm:p-3 rounded-xl border border-black/5">
+                      <span className="text-[8.5px] uppercase font-bold tracking-widest text-[#68726E] block mb-0.5">
                         INDIA OFFICES
                       </span>
-                      <span className="text-xs font-bold text-[#141A17] leading-tight block">
+                      <span className="text-[11px] sm:text-xs font-bold text-[#141A17] leading-tight block">
                         Sarmathura &bull; Sikandra &bull; Kishangarh
                       </span>
                     </div>
-                    <div className="bg-[#FAF7F2] p-3 rounded-xl border border-black/5">
-                      <span className="text-[9px] uppercase font-bold tracking-widest text-[#68726E] block mb-0.5">
+                    <div className="bg-[#FAF7F2] p-2.5 sm:p-3 rounded-xl border border-black/5">
+                      <span className="text-[8.5px] uppercase font-bold tracking-widest text-[#68726E] block mb-0.5">
                         OVERSEAS PRESENCE
                       </span>
-                      <span className="text-xs font-bold text-[#134e3f] leading-tight block">
+                      <span className="text-[11px] sm:text-xs font-bold text-[#134e3f] leading-tight block">
                         Canada Office
                       </span>
                     </div>
@@ -660,20 +660,20 @@ export default function ContactSection() {
               </div>
 
               {/* Right QR Box (5 cols) */}
-              <div className="lg:col-span-5 flex flex-col items-center justify-center p-6 sm:p-10 bg-[#FAF7F2] text-center">
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#C29B38] block mb-1">
+              <div className="lg:col-span-5 flex flex-col items-center justify-center p-4 sm:p-7 md:p-8 bg-[#FAF7F2] text-center">
+                <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-[#C29B38] block mb-1">
                   Instant Smartphone Scan
                 </span>
-                <h4 className="font-['Cinzel',serif] text-sm sm:text-base font-bold uppercase tracking-wider text-[#141A17] mb-4">
+                <h4 className="font-['Cinzel',serif] text-xs sm:text-base font-bold uppercase tracking-wider text-[#141A17] mb-3">
                   Scan To Connect
                 </h4>
 
-                <div className="relative w-44 h-44 sm:w-48 sm:h-48 bg-white rounded-2xl shadow-md border border-[#C29B38]/30 p-2.5 mb-4 group hover:shadow-xl transition-shadow">
+                <div className="relative w-36 h-36 sm:w-44 sm:h-44 bg-white rounded-2xl shadow-md border border-[#C29B38]/30 p-2 mb-3 group hover:shadow-xl transition-shadow">
                   <Image
                     src="/assets/garg/whatsapp_qr.jpg"
                     alt="WhatsApp QR – Garg Corporation Ltd"
                     fill
-                    sizes="192px"
+                    sizes="176px"
                     className="object-contain p-1"
                   />
                 </div>
@@ -682,12 +682,12 @@ export default function ContactSection() {
                   href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20connect%20regarding%20natural%20stone%20products"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all active:scale-95"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all active:scale-95"
                 >
                   <WhatsAppIcon className="w-4 h-4 fill-white" size={16} />
                   <span>Start WhatsApp Chat</span>
                 </a>
-                <p className="text-[11px] text-[#68726E] mt-2 max-w-[200px]">
+                <p className="text-[10.5px] sm:text-[11px] text-[#68726E] mt-2 max-w-[200px]">
                   Scan QR with camera or tap button to connect directly with Arvind Garg
                 </p>
               </div>
@@ -696,13 +696,13 @@ export default function ContactSection() {
         </AnimDiv>
 
         {/* 4. Project Inquiry Form */}
-        <AnimDiv delay={250} className="mb-10">
-          <div className="bg-white rounded-3xl border border-black/8 shadow-sm p-6 sm:p-10">
-            <div className="max-w-2xl mb-6">
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#C29B38] block mb-1">
+        <AnimDiv delay={250} className="mb-8 sm:mb-10">
+          <div className="bg-white rounded-2xl sm:rounded-3xl border border-black/8 shadow-sm p-4 sm:p-7 md:p-10">
+            <div className="max-w-2xl mb-4 sm:mb-6">
+              <span className="text-[9.5px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-[#C29B38] block mb-1">
                 Project Sourcing &bull; Architecture &bull; Contracting
               </span>
-              <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#141A17] uppercase tracking-wide mb-1">
+              <h3 className="font-['Cinzel',serif] text-lg sm:text-2xl font-bold text-[#141A17] uppercase tracking-wide mb-1">
                 Send Project Inquiry
               </h3>
               <p className="text-xs text-[#68726E] leading-relaxed">
@@ -711,11 +711,11 @@ export default function ContactSection() {
             </div>
 
             {submitted ? (
-              <div className="py-10 text-center space-y-3 bg-[#FAF7F2] rounded-2xl p-6 border border-emerald-500/20">
-                <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center">
-                  <CheckCircle2 className="w-6 h-6" />
+              <div className="py-8 sm:py-10 text-center space-y-3 bg-[#FAF7F2] rounded-2xl p-4 sm:p-6 border border-emerald-500/20">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center">
+                  <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <h4 className="font-['Cinzel',serif] text-base sm:text-lg font-bold text-[#141A17] uppercase">
+                <h4 className="font-['Cinzel',serif] text-sm sm:text-lg font-bold text-[#141A17] uppercase">
                   Inquiry Transmitted Successfully
                 </h4>
                 <p className="text-xs text-[#68726E] max-w-sm mx-auto leading-relaxed">
@@ -734,7 +734,7 @@ export default function ContactSection() {
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4">
                 {/* Honeypot field to silently drop automated bot spam */}
                 <input
                   type="text"
@@ -748,14 +748,14 @@ export default function ContactSection() {
                 />
 
                 {errorMessage && (
-                  <div className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/30 text-red-700 text-xs font-semibold">
+                  <div className="p-3 sm:p-3.5 rounded-xl bg-red-500/10 border border-red-500/30 text-red-700 text-xs font-semibold">
                     {errorMessage}
                   </div>
                 )}
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div>
-                    <label className="block text-[11px] uppercase font-bold tracking-wider text-[#141A17] mb-1.5">
+                    <label className="block text-[10.5px] sm:text-[11px] uppercase font-bold tracking-wider text-[#141A17] mb-1">
                       Your Full Name *
                     </label>
                     <input
@@ -764,12 +764,12 @@ export default function ContactSection() {
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                       placeholder="e.g. Rajesh Sharma"
-                      className="w-full bg-[#FAF7F2] border border-black/10 focus:border-[#C29B38] focus:ring-1 focus:ring-[#C29B38] rounded-xl px-4 py-3 text-xs sm:text-sm text-[#141A17] outline-none transition-all"
+                      className="w-full bg-[#FAF7F2] border border-black/10 focus:border-[#C29B38] focus:ring-1 focus:ring-[#C29B38] rounded-xl px-3.5 sm:px-4 py-2.5 sm:py-3 text-base sm:text-sm text-[#141A17] outline-none transition-all"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] uppercase font-bold tracking-wider text-[#141A17] mb-1.5">
+                    <label className="block text-[10.5px] sm:text-[11px] uppercase font-bold tracking-wider text-[#141A17] mb-1">
                       Phone / WhatsApp *
                     </label>
                     <input
@@ -778,12 +778,12 @@ export default function ContactSection() {
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
                       placeholder="+91 98765 43210"
-                      className="w-full bg-[#FAF7F2] border border-black/10 focus:border-[#C29B38] focus:ring-1 focus:ring-[#C29B38] rounded-xl px-4 py-3 text-xs sm:text-sm text-[#141A17] outline-none transition-all"
+                      className="w-full bg-[#FAF7F2] border border-black/10 focus:border-[#C29B38] focus:ring-1 focus:ring-[#C29B38] rounded-xl px-3.5 sm:px-4 py-2.5 sm:py-3 text-base sm:text-sm text-[#141A17] outline-none transition-all"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] uppercase font-bold tracking-wider text-[#141A17] mb-1.5">
+                    <label className="block text-[10.5px] sm:text-[11px] uppercase font-bold tracking-wider text-[#141A17] mb-1">
                       Email Address
                     </label>
                     <input
@@ -791,18 +791,18 @@ export default function ContactSection() {
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       placeholder="name@company.com"
-                      className="w-full bg-[#FAF7F2] border border-black/10 focus:border-[#C29B38] focus:ring-1 focus:ring-[#C29B38] rounded-xl px-4 py-3 text-xs sm:text-sm text-[#141A17] outline-none transition-all"
+                      className="w-full bg-[#FAF7F2] border border-black/10 focus:border-[#C29B38] focus:ring-1 focus:ring-[#C29B38] rounded-xl px-3.5 sm:px-4 py-2.5 sm:py-3 text-base sm:text-sm text-[#141A17] outline-none transition-all"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] uppercase font-bold tracking-wider text-[#141A17] mb-1.5">
+                    <label className="block text-[10.5px] sm:text-[11px] uppercase font-bold tracking-wider text-[#141A17] mb-1">
                       Requirement Type
                     </label>
                     <select
                       value={form.stoneType}
                       onChange={(e) => setForm({ ...form, stoneType: e.target.value })}
-                      className="w-full bg-[#FAF7F2] border border-black/10 focus:border-[#C29B38] focus:ring-1 focus:ring-[#C29B38] rounded-xl px-4 py-3 text-xs sm:text-sm text-[#141A17] outline-none transition-all"
+                      className="w-full bg-[#FAF7F2] border border-black/10 focus:border-[#C29B38] focus:ring-1 focus:ring-[#C29B38] rounded-xl px-3.5 sm:px-4 py-2.5 sm:py-3 text-base sm:text-sm text-[#141A17] outline-none transition-all"
                     >
                       <option>Luxury Farm House &amp; Garden Landscaping</option>
                       <option>Sandstone Front Elevation (300+ Designs - Govt. Awarded)</option>
@@ -819,7 +819,7 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <label className="block text-[11px] uppercase font-bold tracking-wider text-[#141A17] mb-1.5">
+                  <label className="block text-[10.5px] sm:text-[11px] uppercase font-bold tracking-wider text-[#141A17] mb-1">
                     Message / Specifications
                   </label>
                   <textarea
@@ -827,15 +827,15 @@ export default function ContactSection() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     placeholder="Specify project site, quantity, dimensions, required finishes, or timeline..."
-                    className="w-full bg-[#FAF7F2] border border-black/10 focus:border-[#C29B38] focus:ring-1 focus:ring-[#C29B38] rounded-xl p-4 text-xs sm:text-sm text-[#141A17] outline-none transition-all resize-none"
+                    className="w-full bg-[#FAF7F2] border border-black/10 focus:border-[#C29B38] focus:ring-1 focus:ring-[#C29B38] rounded-xl p-3 sm:p-4 text-base sm:text-sm text-[#141A17] outline-none transition-all resize-none"
                   />
                 </div>
 
-                <div className="pt-2">
+                <div className="pt-1 sm:pt-2">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex items-center justify-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm uppercase tracking-wider font-bold py-3.5 px-8 rounded-full bg-[#134e3f] hover:bg-[#0c3329] disabled:opacity-60 text-white shadow-lg hover:shadow-xl transition-all active:scale-95 border border-[#C29B38]/30 cursor-pointer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm uppercase tracking-wider font-bold py-3 sm:py-3.5 px-7 sm:px-8 rounded-full bg-[#134e3f] hover:bg-[#0c3329] disabled:opacity-60 text-white shadow-lg hover:shadow-xl transition-all active:scale-95 border border-[#C29B38]/30 cursor-pointer"
                   >
                     <span>{isSubmitting ? "Submitting Inquiry..." : "Submit Inquiry"}</span>
                     <Send className={`w-3.5 h-3.5 ${isSubmitting ? "animate-pulse" : ""}`} />
@@ -847,41 +847,41 @@ export default function ContactSection() {
         </AnimDiv>
 
         {/* 5. Interactive Google Maps & Quarry Location */}
-        <AnimDiv delay={280} className="mb-10">
-          <div className="bg-white rounded-3xl border border-black/8 shadow-sm overflow-hidden">
-            <div className="p-6 sm:p-8 border-b border-black/6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <AnimDiv delay={280} className="mb-8 sm:mb-10">
+          <div className="bg-white rounded-2xl sm:rounded-3xl border border-black/8 shadow-sm overflow-hidden">
+            <div className="p-4 sm:p-6 md:p-8 border-b border-black/6 flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4">
               <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <MapPin className="w-4 h-4 text-[#C29B38]" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#C29B38]">
+                <div className="flex items-center gap-1.5 mb-1">
+                  <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#C29B38]" />
+                  <span className="text-[9.5px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-[#C29B38]">
                     GEOGRAPHICAL DISPATCH &amp; QUARRY WORKS
                   </span>
                 </div>
-                <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#141A17] uppercase tracking-wide">
+                <h3 className="font-['Cinzel',serif] text-lg sm:text-2xl font-bold text-[#141A17] uppercase tracking-wide">
                   Sarmathura Quarry Works &amp; Factory Site
                 </h3>
                 <p className="text-xs text-[#68726E] mt-1 max-w-xl">
                   B P Garg &amp; Sons &bull; Near RAC line, Mothiyapura road, Sarmathura 328026, Dist. Dholpur, Rajasthan, India
                 </p>
               </div>
-              <div className="flex flex-wrap items-center gap-2.5">
+              <div className="flex flex-wrap items-center gap-2">
                 <a
                   href="https://www.google.com/maps/dir/?api=1&destination=26.5492,77.2917"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#134e3f] hover:bg-[#0c3329] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-sm"
+                  className="inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#134e3f] hover:bg-[#0c3329] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-sm"
                 >
                   <Compass className="w-3.5 h-3.5 text-[#E0BA55]" />
                   <span>Get Driving Directions</span>
                 </a>
-                <span className="text-[11px] font-mono font-semibold px-3 py-2 rounded-full bg-[#FAF7F2] border border-black/8 text-[#141A17]">
+                <span className="text-[10px] sm:text-[11px] font-mono font-semibold px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-[#FAF7F2] border border-black/8 text-[#141A17]">
                   GPS: 26.5492° N, 77.2917° E
                 </span>
               </div>
             </div>
 
             {/* Google Map Embed */}
-            <div className="relative w-full h-80 sm:h-96 bg-[#FAF7F2]">
+            <div className="relative w-full h-64 sm:h-80 md:h-96 bg-[#FAF7F2]">
               <iframe
                 title="B P Garg & Sons Sarmathura Works Location Map"
                 src="https://maps.google.com/maps?q=26.5492,77.2917&hl=en&z=13&output=embed"
@@ -894,7 +894,7 @@ export default function ContactSection() {
               />
             </div>
 
-            <div className="p-4 sm:p-5 bg-[#FAF7F2] border-t border-black/6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+            <div className="p-3.5 sm:p-5 bg-[#FAF7F2] border-t border-black/6 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4 text-xs">
               <div className="flex items-center gap-2 text-[#4A5550]">
                 <Clock className="w-4 h-4 text-[#C29B38] shrink-0" />
                 <span><strong>Quarry &amp; Factory Hours:</strong> Mon &ndash; Sat, 09:00 &ndash; 19:00 IST</span>
@@ -932,22 +932,22 @@ export default function ContactSection() {
           role="dialog"
           aria-modal="true"
           aria-labelledby="card-modal-title"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn"
+          className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-4 bg-black/80 backdrop-blur-md animate-fadeIn"
           onClick={() => setPreviewCard(null)}
         >
           <div
-            className="bg-[#FAF7F2] rounded-3xl max-w-lg w-full border border-[#C29B38]/50 shadow-2xl overflow-hidden relative"
+            className="bg-[#FAF7F2] rounded-2xl sm:rounded-3xl max-w-lg w-full max-h-[88vh] overflow-y-auto border border-[#C29B38]/50 shadow-2xl relative scrollbar-none"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="bg-gradient-to-r from-[#134e3f] via-[#0f3d32] to-[#0A261F] text-white p-4 sm:p-5 flex items-center justify-between border-b border-[#C29B38]/30">
-              <div className="flex items-center gap-2.5">
-                <ShieldCheck className="w-5 h-5 text-[#E0BA55]" />
+            <div className="bg-gradient-to-r from-[#134e3f] via-[#0f3d32] to-[#0A261F] text-white p-3.5 sm:p-5 flex items-center justify-between border-b border-[#C29B38]/30 sticky top-0 z-20">
+              <div className="flex items-center gap-2 sm:gap-2.5">
+                <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-[#E0BA55]" />
                 <div>
-                  <span className="text-[9px] uppercase font-bold tracking-[0.2em] text-[#C29B38] block">
+                  <span className="text-[8.5px] sm:text-[9px] uppercase font-bold tracking-[0.2em] text-[#C29B38] block">
                     AUTHENTIC VISITING CARD &bull; ARCHIVAL DOSSIER
                   </span>
-                  <h4 id="card-modal-title" className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-white uppercase tracking-wider">
+                  <h4 id="card-modal-title" className="font-['Cinzel',serif] text-xs sm:text-base font-bold text-white uppercase tracking-wider">
                     {previewCard.title}
                   </h4>
                 </div>
@@ -955,7 +955,7 @@ export default function ContactSection() {
               <button
                 type="button"
                 onClick={() => setPreviewCard(null)}
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
+                className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
                 aria-label="Close modal"
               >
                 <X className="w-4 h-4" />
@@ -963,9 +963,9 @@ export default function ContactSection() {
             </div>
 
             {/* Modal Body */}
-            <div className="p-5 sm:p-6 bg-white">
+            <div className="p-3.5 sm:p-6 bg-white">
               {/* Card Image */}
-              <div className="relative aspect-[1.85/1] w-full rounded-2xl overflow-hidden border border-black/10 shadow-lg bg-[#FAF7F2] mb-5">
+              <div className="relative aspect-[1.85/1] w-full rounded-xl sm:rounded-2xl overflow-hidden border border-black/10 shadow-lg bg-[#FAF7F2] mb-3.5 sm:mb-5">
                 <Image
                   src={previewCard.src}
                   alt={previewCard.title}
@@ -976,8 +976,8 @@ export default function ContactSection() {
               </div>
 
               {/* Entity Context */}
-              <div className="bg-[#FAF7F2] rounded-2xl p-4 border border-black/8 space-y-2 mb-5">
-                <span className="text-[10px] uppercase font-bold tracking-wider text-[#C29B38] block">
+              <div className="bg-[#FAF7F2] rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-black/8 space-y-1.5 sm:space-y-2 mb-3.5 sm:mb-5">
+                <span className="text-[9.5px] sm:text-[10px] uppercase font-bold tracking-wider text-[#C29B38] block">
                   {previewCard.entity}
                 </span>
                 <p className="text-xs font-bold text-[#141A17]">
@@ -986,7 +986,7 @@ export default function ContactSection() {
 
                 <ul className="space-y-1.5 pt-2 border-t border-black/6">
                   {previewCard.details.map((detail, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-[11px] text-[#4A5550] leading-snug">
+                    <li key={idx} className="flex items-start gap-1.5 sm:gap-2 text-[10.5px] sm:text-[11px] text-[#4A5550] leading-snug">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#134e3f] shrink-0 mt-0.5" />
                       <span>{detail}</span>
                     </li>
@@ -995,14 +995,14 @@ export default function ContactSection() {
               </div>
 
               {/* Actions */}
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 sm:gap-3">
                 <a
                   href={`https://wa.me/919414945457?text=${encodeURIComponent(
                     `Hello Dholpurestones.com, I am inquiring regarding credentials for: ${previewCard.title}`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-all active:scale-95"
+                  className="flex-1 py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-all active:scale-95"
                 >
                   <WhatsAppIcon className="w-4 h-4 fill-white" size={16} />
                   <span>Connect on WhatsApp</span>
@@ -1010,7 +1010,7 @@ export default function ContactSection() {
                 <button
                   type="button"
                   onClick={() => setPreviewCard(null)}
-                  className="py-3 px-5 rounded-xl bg-[#FAF7F2] hover:bg-[#eae4d7] border border-black/10 text-xs font-bold text-[#141A17] uppercase tracking-wider transition-colors cursor-pointer"
+                  className="py-2.5 sm:py-3 px-4 sm:px-5 rounded-xl bg-[#FAF7F2] hover:bg-[#eae4d7] border border-black/10 text-xs font-bold text-[#141A17] uppercase tracking-wider transition-colors cursor-pointer"
                 >
                   Close
                 </button>
