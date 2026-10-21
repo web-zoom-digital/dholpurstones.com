@@ -11,17 +11,38 @@ import {
   Award,
   Sparkles,
   ChevronDown,
+  ChevronRight,
+  ArrowRight,
+  Layers,
+  TreePine,
+  Building2,
+  ShieldCheck,
+  Mountain,
+  BookOpen,
+  Calendar,
+  Cpu,
+  Camera,
+  Play,
+  FileText,
+  Gem,
+  Palette,
 } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 interface NavChild {
   label: string;
   href: string;
+  desc: string;
+  icon: React.ComponentType<{ className?: string }>;
+  badge?: string;
 }
 
 interface NavItem {
   label: string;
   href?: string;
+  headerTag?: string;
+  footerNote?: { text: string; href: string };
+  isGrid?: boolean;
   children?: NavChild[];
 }
 
@@ -42,7 +63,6 @@ export default function Navbar() {
   const lastMouseEnterTimeRef = useRef<number>(0);
   const clickLockedRef = useRef<string | null>(null);
 
-  // Scroll listener - only toggles shadow, NEVER changes padding or height to prevent scroll jitter
   useEffect(() => {
     const onScroll = () => {
       const scrolled = window.scrollY > 20;
@@ -81,42 +101,168 @@ export default function Navbar() {
     { label: "Farm House & Gardens", href: "/farmhouse-gardens" },
     {
       label: "Products",
+      headerTag: "NATURAL SANDSTONE & PRODUCTS DIRECTORY",
+      // footerNote: {
+      //   text: "Need custom sizes or 3D CNC profiling? WhatsApp our Stone Desk",
+      //   href: "https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20am%20inquiring%20about%20custom%20stone%20products",
+      // },
+      isGrid: true,
       children: [
-        { label: "Front Elevation (300+ Designs)", href: "/#elevation" },
-        { label: "Farm House & Gardens", href: "/farmhouse-gardens" },
-        { label: "Agra Red Sandstone", href: "/products#products" },
-        { label: "Dholpur Beige Stone", href: "/products#products" },
-        { label: "Chocolate Sandstone", href: "/products#products" },
-        { label: "Bansi Pink Sandstone", href: "/products#products" },
-        { label: "Stone Articles & Sculptures", href: "/articles" },
+        {
+          label: "Front Elevation",
+          href: "/#elevation",
+          desc: "300+ Bespoke classical & modern designs",
+          icon: Building2,
+          badge: "300+ Designs",
+        },
+        {
+          label: "Farm House & Gardens",
+          href: "/farmhouse-gardens",
+          desc: "Patios, pool coping & carved gazebos",
+          icon: TreePine,
+          badge: "Specialty",
+        },
+        {
+          label: "Agra Red Sandstone",
+          href: "/products#products",
+          desc: "Mughal fort stone & iron-rich ferric blocks",
+          icon: Layers,
+        },
+        {
+          label: "Dholpur Beige Stone",
+          href: "/products#products",
+          desc: "Siliceous buff cream facade cladding",
+          icon: Layers,
+          badge: "Best Seller",
+        },
+        {
+          label: "Chocolate Sandstone",
+          href: "/products#products",
+          desc: "Exotic wood-grain teakwood patterns",
+          icon: Gem,
+        },
+        {
+          label: "Bansi Pink Sandstone",
+          href: "/products#products",
+          desc: "Sacred blush pink temple stone",
+          icon: Palette,
+        },
+        {
+          label: "Stone Articles & Sculptures",
+          href: "/articles",
+          desc: "Hand-carved peacocks, lanterns & jalis",
+          icon: Sparkles,
+          badge: "Sikandra",
+        },
       ],
     },
     { label: "Projects", href: "/projects" },
     {
       label: "Company",
+      headerTag: "HERITAGE & QUARRY OPERATIONS",
+      // footerNote: {
+      //   text: "Sarmathura, Sikandra & Kishangarh mining hubs • Estd. 1953",
+      //   href: "/about",
+      // },
       children: [
-        { label: "About Us", href: "/about" },
-        { label: "Govt. & Intl. Honors", href: "/#international-excellence" },
-        { label: "Infrastructure", href: "/about#strength" },
-        { label: "Why Choose Us", href: "/about#why-choose" },
-        { label: "Our Mines", href: "/about#mines" },
+        {
+          label: "About Us",
+          href: "/about",
+          desc: "70+ Years lineage since 1953 & founder vision",
+          icon: Building2,
+        },
+        {
+          label: "Govt. & Intl. Honors",
+          href: "/#international-excellence",
+          desc: "Awarded by Govt. of India & global nominations",
+          icon: Award,
+          badge: "Awarded",
+        },
+        {
+          label: "Infrastructure",
+          href: "/about#strength",
+          desc: "Automated multi-wire saws & processing yards",
+          icon: Cpu,
+        },
+        {
+          label: "Why Choose Us",
+          href: "/about#why-choose",
+          desc: "Direct quarry concessionaire advantages",
+          icon: ShieldCheck,
+        },
+        {
+          label: "Our Mines",
+          href: "/about#mines",
+          desc: "Active Sarmathura & Bari quarry strata",
+          icon: Mountain,
+          badge: "Proprietary",
+        },
       ],
     },
     {
       label: "Resources",
+      headerTag: "TECHNICAL DOSSIERS & PUBLICATIONS",
+      // footerNote: {
+      //   text: "Explore all 20 architectural masterclasses on our blog",
+      //   href: "/blog",
+      // },
       children: [
-        { label: "Blog", href: "/resources#blog" },
-        { label: "Quality Process", href: "/resources#quality" },
-        { label: "Exhibition", href: "/resources#exhibition" },
-        { label: "Packaging and Machinery", href: "/resources#packaging" },
+        {
+          label: "Blog",
+          href: "/blog",
+          desc: "20 in-depth architectural guides & reports",
+          icon: BookOpen,
+          badge: "20 Guides",
+        },
+        {
+          label: "Quality Process",
+          href: "/resources#quality",
+          desc: "IS:3620 & ASTM C616 geotechnical test data",
+          icon: ShieldCheck,
+          badge: "IS:3620",
+        },
+        {
+          label: "Exhibition",
+          href: "/resources#exhibition",
+          desc: "STONA, Marmomac & Big 5 Dubai presence",
+          icon: Calendar,
+        },
+        {
+          label: "Packaging and Machinery",
+          href: "/resources#packaging",
+          desc: "ISPM-15 export crating & 8-axis CNC profiling",
+          icon: Cpu,
+        },
       ],
     },
     {
       label: "Gallery",
+      headerTag: "VISUAL MEDIA ARCHIVES",
+      // footerNote: { 
+      //   text: "View 4K visual documentation of quarry benches & projects",
+      //   href: "/gallery",
+      // },
       children: [
-        { label: "Media Gallery", href: "/gallery#media" },
-        { label: "Photo Gallery", href: "/gallery#photo" },
-        { label: "Video Gallery", href: "/gallery#video" },
+        {
+          label: "Photo Gallery",
+          href: "/gallery#photo",
+          desc: "High-resolution quarry & architecture archive",
+          icon: Camera,
+        },
+        {
+          label: "Media Gallery",
+          href: "/gallery#media",
+          desc: "Press coverage, certificates & awards",
+          icon: FileText,
+          badge: "Press",
+        },
+        {
+          label: "Video Gallery",
+          href: "/gallery#video",
+          desc: "Artisan carving & automated factory operations",
+          icon: Play,
+          badge: "Watch",
+        },
       ],
     },
     { label: "Contact us", href: "/contact" },
@@ -323,21 +469,95 @@ export default function Navbar() {
                     {/* Dropdown Menu Box with invisible bridge to prevent losing hover */}
                     {isDropdownOpen && (
                       <div
-                        className="absolute top-full left-0 pt-2 z-[150] min-w-[260px] animate-in fade-in slide-in-from-top-1 duration-150 overflow-visible"
+                        className={`absolute top-full pt-2 z-[150] animate-in fade-in slide-in-from-top-1.5 duration-200 overflow-visible ${
+                          item.label === "Gallery"
+                            ? "right-0"
+                            : item.label === "Resources"
+                            ? "left-1/2 -translate-x-1/2"
+                            : "left-0"
+                        } ${item.isGrid ? "w-[620px]" : "w-[380px]"}`}
                         onMouseEnter={() => handleMouseEnter(item.label)}
                         onMouseLeave={handleMouseLeave}
                       >
-                        <div className="bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.18)] border border-[#C29B38]/30 p-2.5 flex flex-col space-y-0.5">
-                          {item.children.map((sub) => (
+                        <div className="bg-white/98 backdrop-blur-xl rounded-2xl shadow-[0_24px_60px_-10px_rgba(13,19,17,0.22),0_8px_24px_-4px_rgba(194,155,56,0.18)] border border-[#C29B38]/35 ring-1 ring-black/5 overflow-hidden flex flex-col">
+                          {/* Top Royal Accent Line */}
+                          <div className="h-[3px] w-full bg-gradient-to-r from-[#852233] via-[#C29B38] to-[#852233]" />
+
+                          {/* Category Header Strip */}
+                          {item.headerTag && (
+                            <div className="px-4 py-2.5 bg-gradient-to-r from-[#FAF7F2] via-white to-[#FAF7F2] border-b border-black/6 flex items-center justify-between">
+                              <span className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.14em] text-[#852233]">
+                                <Sparkles className="w-3 h-3 text-[#C29B38]" />
+                                {item.headerTag}
+                              </span>
+                              <span className="text-[10px] font-bold text-[#68726E] uppercase tracking-wider">
+                                {item.children.length} Options
+                              </span>
+                            </div>
+                          )}
+
+                          {/* Items Grid or List */}
+                          <div
+                            className={
+                              item.isGrid
+                                ? "grid grid-cols-2 gap-1.5 p-2.5 bg-[#FCFAF7]/50"
+                                : "flex flex-col space-y-1 p-2 bg-[#FCFAF7]/50"
+                            }
+                          >
+                            {item.children.map((sub) => {
+                              const IconComponent = sub.icon;
+                              return (
+                                <Link
+                                  key={sub.label}
+                                  href={sub.href}
+                                  onClick={(e) => handleNavClick(e, sub.href)}
+                                  className="group flex items-start gap-3 p-2.5 rounded-xl border border-transparent hover:border-[#C29B38]/40 hover:bg-white hover:shadow-sm transition-all duration-150 text-left"
+                                >
+                                  {/* Icon Tile */}
+                                  <div className="w-9 h-9 rounded-lg bg-[#0D1311] text-[#C29B38] border border-[#C29B38]/30 flex items-center justify-center shrink-0 shadow-xs group-hover:bg-[#C29B38] group-hover:text-[#0D1311] group-hover:scale-105 transition-all duration-200 mt-0.5">
+                                    <IconComponent className="w-4 h-4 transition-transform group-hover:scale-110" />
+                                  </div>
+
+                                  {/* Content Info */}
+                                  <div className="flex-1 min-w-0">
+                                    <div className="flex items-center gap-1.5 flex-wrap">
+                                      <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[13px] font-bold text-[#141A17] group-hover:text-[#852233] transition-colors leading-tight">
+                                        {sub.label}
+                                      </span>
+                                      {sub.badge && (
+                                        <span className="text-[9px] font-extrabold uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-[#C29B38]/15 text-[#852233] border border-[#C29B38]/40 shrink-0 group-hover:bg-[#852233] group-hover:text-white transition-colors">
+                                          {sub.badge}
+                                        </span>
+                                      )}
+                                    </div>
+                                    <p className="text-[11px] text-[#68726E] group-hover:text-[#333E39] leading-snug mt-0.5 line-clamp-1">
+                                      {sub.desc}
+                                    </p>
+                                  </div>
+
+                                  {/* Micro chevron arrow */}
+                                  <ChevronRight className="w-3.5 h-3.5 text-[#C29B38]/40 group-hover:text-[#852233] group-hover:translate-x-0.5 transition-all shrink-0 self-center opacity-0 group-hover:opacity-100" />
+                                </Link>
+                              );
+                            })}
+                          </div>
+
+                          {/* Advisory / Direct Link Footer Strip */}
+                          {item.footerNote && (
                             <Link
-                              key={sub.label}
-                              href={sub.href}
-                              onClick={(e) => handleNavClick(e, sub.href)}
-                              className="font-['Plus_Jakarta_Sans',sans-serif] text-[13.5px] font-semibold text-[#141A17] hover:text-[#0D1311] hover:bg-[#C29B38]/15 hover:translate-x-1 rounded-xl px-3.5 py-2.5 transition-all block"
+                              href={item.footerNote.href}
+                              onClick={(e) => handleNavClick(e, item.footerNote!.href)}
+                              className="px-4 py-2.5 bg-[#0D1311] hover:bg-[#141D19] text-white/90 border-t border-[#C29B38]/30 flex items-center justify-between gap-3 text-[11px] transition-colors group/foot"
                             >
-                              {sub.label}
+                              <div className="flex items-center gap-2 truncate">
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#C29B38] animate-pulse shrink-0" />
+                                <span className="text-[#FAF7F2] font-medium truncate group-hover/foot:text-[#C29B38] transition-colors">
+                                  {item.footerNote.text}
+                                </span>
+                              </div>
+                              <ArrowRight className="w-3.5 h-3.5 text-[#C29B38] shrink-0 group-hover/foot:translate-x-1 transition-transform" />
                             </Link>
-                          ))}
+                          )}
                         </div>
                       </div>
                     )}
@@ -454,17 +674,57 @@ export default function Navbar() {
                       </button>
 
                       {isExpanded && (
-                        <div className="bg-[#FAF7F2] border-t border-black/6 p-2 space-y-1">
-                          {item.children.map((sub) => (
+                        <div className="bg-[#FAF7F2] border-t border-black/8 p-2.5 space-y-1.5">
+                          {item.headerTag && (
+                            <div className="px-2 pt-1 pb-1 flex items-center justify-between text-[9.5px] font-extrabold uppercase tracking-widest text-[#852233]">
+                              <span className="flex items-center gap-1.5">
+                                <Sparkles className="w-3 h-3 text-[#C29B38]" />
+                                {item.headerTag}
+                              </span>
+                              <span className="text-[#68726E] font-bold">{item.children.length}</span>
+                            </div>
+                          )}
+                          {item.children.map((sub) => {
+                            const IconComponent = sub.icon;
+                            return (
+                              <Link
+                                key={sub.label}
+                                href={sub.href}
+                                onClick={(e) => handleNavClick(e, sub.href)}
+                                className="flex items-start gap-2.5 p-2.5 rounded-xl bg-white border border-black/5 hover:border-[#C29B38]/40 hover:bg-[#C29B38]/10 transition-all text-left shadow-2xs group"
+                              >
+                                <div className="w-7 h-7 rounded-lg bg-[#0D1311] text-[#C29B38] flex items-center justify-center shrink-0 border border-[#C29B38]/30 mt-0.5 group-hover:bg-[#C29B38] group-hover:text-[#0D1311] transition-colors">
+                                  <IconComponent className="w-3.5 h-3.5" />
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <div className="flex items-center gap-1.5 flex-wrap">
+                                    <span className="text-[13px] font-bold text-[#141A17] group-hover:text-[#852233] transition-colors leading-tight">
+                                      {sub.label}
+                                    </span>
+                                    {sub.badge && (
+                                      <span className="text-[8.5px] font-extrabold uppercase tracking-wider px-1.5 py-0.2 rounded-full bg-[#C29B38]/20 text-[#852233] border border-[#C29B38]/40 shrink-0">
+                                        {sub.badge}
+                                      </span>
+                                    )}
+                                  </div>
+                                  <p className="text-[10.5px] text-[#68726E] leading-snug mt-0.5 line-clamp-1">
+                                    {sub.desc}
+                                  </p>
+                                </div>
+                                <ChevronRight className="w-3.5 h-3.5 text-[#C29B38]/60 shrink-0 ml-auto self-center" />
+                              </Link>
+                            );
+                          })}
+                          {/* {item.footerNote && (
                             <Link
-                              key={sub.label}
-                              href={sub.href}
-                              onClick={(e) => handleNavClick(e, sub.href)}
-                              className="block px-3 py-2.5 text-[13.5px] font-semibold text-[#4A5550] hover:text-[#C29B38] hover:bg-white rounded-lg transition-colors"
+                              href={item.footerNote.href}
+                              onClick={(e) => handleNavClick(e, item.footerNote!.href)}
+                              className="flex items-center justify-between p-2 rounded-lg bg-[#0D1311] text-[#FAF7F2] text-[10.5px] font-semibold border border-[#C29B38]/40 hover:text-[#C29B38] transition-colors mt-1"
                             >
-                              {sub.label}
+                              <span className="truncate">{item.footerNote.text}</span>
+                              <ArrowRight className="w-3 h-3 text-[#C29B38] shrink-0 ml-1" />
                             </Link>
-                          ))}
+                          )} */}
                         </div>
                       )}
                     </div>
