@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import {
   ShieldCheck,
@@ -12,6 +12,10 @@ import {
   BadgeCheck,
   Flame,
   Award,
+  CheckCircle2,
+  FileText,
+  Compass,
+  ArrowRight,
 } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 
@@ -35,11 +39,22 @@ function AnimDiv({
           obs.unobserve(el);
         }
       },
-      { threshold: 0.08 }
+      { threshold: 0.05 }
     );
     obs.observe(el);
-    return () => obs.disconnect();
+
+    const timer = setTimeout(() => {
+      if (el && !el.classList.contains("gcl-visible")) {
+        el.classList.add("gcl-visible");
+      }
+    }, 400 + delay);
+
+    return () => {
+      obs.disconnect();
+      clearTimeout(timer);
+    };
   }, [delay]);
+
   return (
     <div ref={ref} className={`gcl-animate ${className}`}>
       {children}
@@ -53,72 +68,66 @@ const reasons = [
     icon: Award,
     badge: "GOVT. AWARDED & INTL. NOMINEE",
     title: "300+ Front Elevation Designs (Farm Houses & Estates)",
-    shortDesc:
-      "We have made more than 300+ designs for front elevation in sandstone (Awarded by Govt. of India) and are nominated for International Award for Business Excellence.",
-    fullDetails:
-      "Specialized in luxury farm houses, country estates, and grand villa frontages. Awarded by the Government of India and nominated for the prestigious International Award for Business Excellence — our 300+ bespoke sandstone elevation catalogue transforms private farm houses and sprawling gardens into royal architectural landmarks.",
+    desc: "Awarded by the Government of India and nominated for the prestigious International Award for Business Excellence. We have made more than 300+ bespoke front elevation designs in sandstone, transforming private farm houses, sprawling gardens, and grand villa estates into royal architectural landmarks.",
     stat: "300+",
     statLabel: "Front Elevation Designs",
+    highlight: true,
+    tag: "National & Intl. Honors",
   },
   {
     id: "quarry-direct",
     icon: Mountain,
     badge: "100% OWN MINES",
     title: "Direct Mine Ownership & Zero Middlemen",
-    shortDesc:
-      "Direct extraction from our proprietary quarry leases in Sarmathura, Rajasthan. No trading intermediaries or distributor markups.",
-    fullDetails:
-      "We control the entire chain of custody from deep underground strata blasting to wire-cut block extraction. You receive unadulterated natural stone at genuine factory-direct wholesale rates with complete legal documentation and mining royalty clearance.",
+    desc: "Direct extraction from our proprietary quarry concessions in Sarmathura, Rajasthan. We control the complete custody chain from deep underground strata blasting to wire-cut block extraction, delivering genuine quarry-direct wholesale rates with zero middleman markups.",
     stat: "100%",
     statLabel: "Mine Direct Provenance",
+    highlight: false,
+    tag: "Zero Middleman Markups",
   },
   {
     id: "geological-purity",
     icon: ShieldCheck,
     badge: "LAB TESTED DENSITY",
     title: "Superior Geological Density & Weather Endurance",
-    shortDesc:
-      "High compressive strength (>68 MPa) with low water absorption (<1.15%), naturally resisting extreme frost, harsh monsoon, and desert heat.",
-    fullDetails:
-      "Dholpur sandstone from our quarries is geologically renowned for fine quartz grains bound by siliceous cement. Unlike porous alternatives, our stone does not chip, crack, or discolor when exposed to acid rain, saline climates, or decades of UV radiation.",
+    desc: "High compressive strength (>68 MPa) with ultra-low water absorption (<1.15%). Dholpur sandstone quartz grains are bound by siliceous cement, naturally resisting acid rain, saline climates, harsh monsoon showers, and intense 45°C desert heat without chipping or fading.",
     stat: ">68 MPa",
     statLabel: "Compressive Strength",
+    highlight: false,
+    tag: "High Quartz Density",
   },
   {
     id: "artisan-cnc",
     icon: Hammer,
     badge: "3RD GEN CRAFTSMEN",
     title: "Generational Artisans & 8-Axis CNC Precision",
-    shortDesc:
-      "Harmonious blend of ancestral Shilpa Shastra stone carvers and modern CNC profiling machinery for bespoke architectural detailing.",
-    fullDetails:
-      "Our Sikandra and Sarmathura facilities house both generational master masons chiseled in temple sculpting and advanced automated wire-saws. Whether you require laser-precise calibrated flooring or hand-carved ornamental jharokhas, we deliver millimeter tolerances.",
+    desc: "A harmonious synthesis of ancestral Shilpa Shastra temple masons and modern multi-axis CNC wire-saws. Whether you require laser-precise calibrated flooring (±0.5mm) or intricate hand-carved floral capitals and jharokha filigree, we deliver millimeter tolerances.",
     stat: "±0.5mm",
     statLabel: "Calibration Tolerance",
+    highlight: false,
+    tag: "Shilpa Shastra Guild",
   },
   {
     id: "color-uniformity",
     icon: Layers,
     badge: "HOMOGENEOUS STRATA",
     title: "Homogeneous Strata & Consistent Color Tones",
-    shortDesc:
-      "Strict sorting by color tones — Dholpur Red, Beige, White, and Chocolate — ensuring zero banding or shade mismatches across large projects.",
-    fullDetails:
-      "One of the biggest risks in natural stone is irregular color variation between batches. Because we operate our own expansive rock faces, we harvest contiguous geological benches, guaranteeing flawless visual continuity across hundreds of thousands of square feet.",
+    desc: "Strict sorting by color tones — Dholpur Red, Beige, White, and Chocolate. Because we operate extensive contiguous rock faces, we harvest contiguous geological benches, guaranteeing flawless visual color continuity across massive hundreds of thousands of square feet projects.",
     stat: "500k+",
     statLabel: "Sq.Ft Quarry Capacity/Mo",
+    highlight: false,
+    tag: "Contiguous Geological Benches",
   },
   {
     id: "turnkey-export",
     icon: Truck,
     badge: "GLOBAL EXPORT",
     title: "ISPM-15 Certified Crating & Doorstep Delivery",
-    shortDesc:
-      "Seaworthy fumigated wooden crates, barcode tagging, and established logistics networks reaching global seaports and domestic job sites.",
-    fullDetails:
-      "Every slab and article is foam-separated, corner-guarded, and secured in heavy-duty timber packaging built to withstand rough ocean transit and crane handling. Supported by our corporate presence in Canada, exports are seamless and fully insured.",
+    desc: "Every slab and architectural article is foam-separated, corner-guarded, and secured in heavy-duty fumigated timber packaging built to withstand rough ocean transit and crane handling. Supported by our corporate presence in Canada, exports are seamless and fully insured.",
     stat: "40+ Countries",
     statLabel: "Global Supply Footprint",
+    highlight: false,
+    tag: "Worldwide ISPM-15 Crating",
   },
 ];
 
@@ -127,245 +136,345 @@ const technicalSpecs = [
   { label: "Water Absorption", value: "< 1.15% by weight", status: "Ultra Low Porosity" },
   { label: "Specific Gravity / Density", value: "2.42 - 2.50 g/cm³", status: "High Quartz Density" },
   { label: "Modulus of Rupture", value: "11.2 - 13.5 N/mm²", status: "Structural Grade" },
-  { label: "Thermal Conductivity", value: "Naturally thermally insulating", status: "Pleasantly Cool" },
-  { label: "Weathering Resistance", value: "Zero efflorescence, UV stable", status: "Centuries Durability" },
+  { label: "Thermal Insulation", value: "Naturally insulating, cool in 45°C sun", status: "Barefoot Comfort" },
+  { label: "Weathering Resistance", value: "Zero efflorescence & UV stable", status: "Centuries Longevity" },
 ];
 
 export default function WhyChooseUs() {
-  const [activeReason, setActiveReason] = useState(reasons[0].id);
-
   return (
     <section
       id="why-choose"
-      className="bg-white py-14 sm:py-24 border-b border-black/6 relative overflow-hidden scroll-mt-20 sm:scroll-mt-24"
+      className="bg-[#FAF7F2] py-16 sm:py-24 border-b border-black/8 relative overflow-hidden scroll-mt-20 sm:scroll-mt-24"
     >
       {/* Background Subtle Architectural Blueprint Grid */}
-      <div className="absolute inset-0 bg-[radial-gradient(#C29B38_1.2px,transparent_1.2px)] [background-size:32px_32px] opacity-[0.06] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(#C29B38_1.2px,transparent_1.2px)] [background-size:32px_32px] opacity-[0.05] pointer-events-none" />
 
       {/* Floating Animated Radiant Glow Orbs */}
-      <div className="absolute -top-20 left-1/3 w-[500px] h-[500px] bg-[#C29B38]/6 rounded-full blur-[140px] pointer-events-none animate-ambient-float-1" />
-      <div className="absolute bottom-10 right-10 w-[480px] h-[480px] bg-[#134e3f]/6 rounded-full blur-[130px] pointer-events-none animate-ambient-float-2" />
+      <div className="absolute -top-20 left-1/3 w-[550px] h-[550px] bg-[#C29B38]/6 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-[#134e3f]/6 rounded-full blur-[130px] pointer-events-none" />
 
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header Label */}
-        <AnimDiv className="flex items-center justify-between pb-3 border-b border-black/8 mb-8 sm:mb-10">
+        <AnimDiv className="flex items-center justify-between pb-3.5 border-b border-black/8 mb-8 sm:mb-12">
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#C29B38] animate-pulse" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.18em] text-[#141A17] uppercase">
-              DHOLPURESTONES.COM &bull; WHY CHOOSE US
+            <span className="w-2.5 h-2.5 rounded-full bg-[#134e3f] animate-pulse" />
+            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.2em] text-[#141A17] uppercase">
+              DHOLPURESTONES.COM &bull; DIRECT MINE OWNER ADVANTAGE
             </span>
           </div>
           <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C29B38] tracking-widest">
-            04
+            ESTD. 1953
           </span>
         </AnimDiv>
 
         {/* Section Title & Subtitle */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-14">
-          <AnimDiv delay={0} className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C29B38]/10 border border-[#C29B38]/25 text-[#C29B38] text-[10px] font-bold uppercase tracking-[0.2em] mb-3">
-              <Sparkles className="w-3.5 h-3.5" />
+        <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16">
+          <AnimDiv delay={0}>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#134e3f]/10 border border-[#134e3f]/25 text-[#134e3f] text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] mb-4 shadow-2xs">
+              <Sparkles className="w-3.5 h-3.5 text-[#C29B38]" />
               <span>Direct Mine Owner Advantage Since 1953</span>
             </div>
-            <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl lg:text-5xl font-bold text-[#141A17] uppercase tracking-wide mb-3">
-              Why Choose
+
+            <h2 className="font-['Cinzel',serif] text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#141A17] uppercase tracking-wide leading-tight mb-3">
+              Why Choose Authentic Sandstone, Mined Straight from Our Quarries
             </h2>
-            <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl lg:text-3xl font-bold text-[#C29B38] uppercase tracking-wider mb-3">
-              Authentic Sandstone, Mined Straight from Our Quarries
-            </h3>
-            <div className="w-16 h-1 bg-gradient-to-r from-[#C29B38] via-[#E0BA55] to-transparent rounded-full mb-4" />
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#68726E] leading-relaxed">
-              We own and operate proprietary sandstone quarry concessions in Sarmathura, Rajasthan. By eliminating all commercial middlemen, we guarantee homogeneous mineral strata, certified geotechnical strength, and direct quarry pricing for world-class architectural projects.
+
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#505D57] max-w-3xl mx-auto leading-relaxed mt-3">
+              We own and operate proprietary sandstone quarry concessions in Sarmathura, Rajasthan. By eliminating all commercial middlemen, we guarantee homogeneous mineral strata, certified geotechnical strength, and direct quarry pricing for world-class architectural and landscape projects.
             </p>
           </AnimDiv>
 
-          {/* Key Metric Badges */}
-          <AnimDiv delay={100} className="grid grid-cols-2 gap-3 sm:flex shrink-0 w-full lg:w-auto">
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-2xl px-3.5 sm:px-5 py-3 sm:py-3.5 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
+          {/* Key Metric Trust Strip */}
+          <AnimDiv delay={60} className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-8 max-w-4xl mx-auto">
+            <div className="bg-white border border-black/8 rounded-2xl p-3.5 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center">
+              <span className="block font-['Cinzel',serif] text-lg sm:text-2xl font-bold text-[#141A17]">
                 Zero Middlemen
               </span>
-              <span className="text-[9px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
+              <span className="text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block mt-0.5">
                 Direct Quarry Pricing
               </span>
             </div>
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-2xl px-3.5 sm:px-5 py-3 sm:py-3.5 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
+
+            <div className="bg-white border border-black/8 rounded-2xl p-3.5 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center">
+              <span className="block font-['Cinzel',serif] text-lg sm:text-2xl font-bold text-[#141A17]">
                 100% Homogeneous
               </span>
-              <span className="text-[9px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
+              <span className="text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block mt-0.5">
                 Certified Rock Strata
               </span>
             </div>
+
+            <div className="bg-white border border-[#C29B38]/50 rounded-2xl p-3.5 shadow-xs hover:border-[#C29B38] transition-colors text-center bg-gradient-to-b from-[#C29B38]/10 to-white">
+              <span className="block font-['Cinzel',serif] text-lg sm:text-2xl font-bold text-[#134e3f]">
+                300+ Designs
+              </span>
+              <span className="text-[10px] text-[#C29B38] font-bold uppercase tracking-wider block mt-0.5">
+                Govt. Awarded Elevation
+              </span>
+            </div>
+
+            <div className="bg-white border border-black/8 rounded-2xl p-3.5 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center">
+              <span className="block font-['Cinzel',serif] text-lg sm:text-2xl font-bold text-[#141A17]">
+                IS:3620 Tested
+              </span>
+              <span className="text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block mt-0.5">
+                Lab Certified Strength
+              </span>
+            </div>
           </AnimDiv>
         </div>
 
         {/* =========================================================================
-            SPLIT SHOWCASE: Left Visual Quarry Documentary + Right Interactive Pillars
+            STAGE 1: 6 CORE ADVANTAGE PILLARS IN A BALANCED 3x2 LUXURY CARD GRID
             ========================================================================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start mb-12 sm:mb-16">
-          {/* Left Column (5 Cols): Live Quarry Operations & Craftsmen Feature */}
-          <AnimDiv delay={150} className="lg:col-span-5 flex flex-col gap-6">
-            {/* Main Quarry Mining Operations Image */}
-            <div className="relative rounded-3xl overflow-hidden bg-[#0D1311] border border-black/8 shadow-xl group">
-              <div className="relative h-72 sm:h-80 w-full overflow-hidden">
-                <Image
-                  src="/assets/quarry_mining_operations.jpg"
-                  alt="Sarmathura Sandstone Quarry Operations"
-                  fill
-                  sizes="(max-width:1024px) 100vw, 40vw"
-                  className="object-cover group-hover:scale-106 transition-transform duration-700 ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
-
-                {/* Live Quarry Status Badge */}
-                <div className="absolute top-3 left-3 bg-[#0D1311]/85 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15 flex items-center gap-2">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#25D366]" />
-                  </span>
-                  <span className="text-[10px] font-bold text-white uppercase tracking-widest">
-                    Active Mine Lease &bull; Sarmathura
-                  </span>
-                </div>
-
-                <div className="absolute bottom-3 left-3 right-3 text-white">
-                  <span className="text-[10px] font-bold text-[#C29B38] uppercase tracking-wider block mb-1">
-                    Direct Geological Strata
-                  </span>
-                  <h4 className="font-['Cinzel',serif] text-base sm:text-lg font-bold leading-snug">
-                    Over 500,000 Sq.Ft Sawn Quarry Capacity
-                  </h4>
-                </div>
-              </div>
-            </div>
-
-            {/* Sub-Card: Master Artisans Stonecarving Workshop */}
-            <div className="relative rounded-3xl overflow-hidden bg-[#FAF7F2] border border-black/8 p-5 shadow-md flex items-center gap-4 group hover:border-[#C29B38]/60 transition-colors">
-              <div className="relative w-28 h-24 rounded-2xl overflow-hidden shrink-0 bg-black/10">
-                <Image
-                  src="/assets/master_stone_artisans.jpg"
-                  alt="Generational Master Sandstone Artisans"
-                  fill
-                  sizes="120px"
-                  className="object-cover group-hover:scale-108 transition-transform duration-500"
-                />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="inline-flex items-center gap-1.5 text-[9px] font-bold text-[#134e3f] bg-white px-2 py-0.5 rounded-md border border-black/5 uppercase tracking-wider mb-1">
-                  <Hammer className="w-3 h-3 text-[#C29B38]" />
-                  <span>Generational Carvers</span>
-                </div>
-                <h5 className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#141A17] uppercase tracking-wide truncate">
-                  Shilpa Shastra Guild
-                </h5>
-                <p className="text-[11px] text-[#68726E] leading-relaxed line-clamp-2">
-                  Master artisans hand-sculpting monumental pillars, jali filigree, and floral capitals with traditional mallets.
-                </p>
-              </div>
-            </div>
-
-            {/* Geotechnical Lab Test Table Accordion */}
-            <div className="bg-[#FAF7F2] rounded-3xl p-5 border border-black/8 shadow-md">
-              <div className="flex items-center justify-between pb-3 border-b border-black/8 mb-3">
-                <div className="flex items-center gap-2">
-                  <BadgeCheck className="w-4 h-4 text-[#134e3f]" />
-                  <span className="text-xs font-bold text-[#141A17] uppercase tracking-wider">
-                    Geotechnical Quality Certificate
-                  </span>
-                </div>
-                <span className="text-[10px] font-bold text-[#C29B38] uppercase tracking-widest bg-white px-2 py-0.5 rounded border border-black/5">
-                  IS:3620 Compliant
-                </span>
-              </div>
-
-              <div className="space-y-2 text-xs">
-                {technicalSpecs.slice(0, 4).map((spec, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center justify-between p-2 rounded-xl bg-white border border-black/5"
-                  >
-                    <span className="text-[#68726E] font-medium text-[11px]">
-                      {spec.label}
-                    </span>
-                    <span className="text-[#141A17] font-bold text-[11px] font-mono">
-                      {spec.value}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </AnimDiv>
-
-          {/* Right Column (7 Cols): Interactive Advantage Pillars */}
-          <AnimDiv delay={200} className="lg:col-span-7 flex flex-col gap-4">
-            {reasons.map((reason) => {
-              const isSelected = activeReason === reason.id;
-              const IconComponent = reason.icon;
-              return (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 sm:mb-20">
+          {reasons.map((reason, idx) => {
+            const IconComponent = reason.icon;
+            return (
+              <AnimDiv key={reason.id} delay={idx * 50}>
                 <div
-                  key={reason.id}
-                  onClick={() => setActiveReason(reason.id)}
-                  className={`group relative rounded-2xl p-5 sm:p-6 border transition-all duration-300 cursor-pointer ${
-                    isSelected
-                      ? "bg-[#FAF7F2] border-[#C29B38] shadow-xl scale-[1.01]"
-                      : "bg-white border-black/8 hover:border-[#C29B38]/50 hover:bg-[#FAF7F2]/50 hover:shadow-md"
+                  className={`relative rounded-3xl p-6 sm:p-7 border transition-all duration-300 h-full flex flex-col justify-between group hover:-translate-y-1.5 ${
+                    reason.highlight
+                      ? "bg-gradient-to-b from-white via-white to-[#FAF7F2] border-[#C29B38] shadow-lg hover:shadow-2xl ring-1 ring-[#C29B38]/40"
+                      : "bg-white border-black/8 hover:border-[#C29B38]/70 shadow-sm hover:shadow-xl"
                   }`}
                 >
-                  <div className="flex items-start gap-4">
-                    {/* Icon Box */}
-                    <div
-                      className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-colors shadow-xs ${
-                        isSelected
-                          ? "bg-[#134e3f] text-white"
-                          : "bg-[#FAF7F2] text-[#C29B38] group-hover:bg-[#134e3f] group-hover:text-white"
-                      }`}
-                    >
-                      <IconComponent className="w-6 h-6" />
+                  {/* Top Header Row of Card */}
+                  <div>
+                    <div className="flex items-start justify-between gap-3 mb-4">
+                      {/* Icon */}
+                      <div
+                        className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 shadow-xs ${
+                          reason.highlight
+                            ? "bg-[#134e3f] text-white"
+                            : "bg-[#FAF7F2] text-[#134e3f] group-hover:bg-[#134e3f] group-hover:text-white"
+                        }`}
+                      >
+                        <IconComponent className="w-6 h-6" />
+                      </div>
+
+                      {/* Stat Display */}
+                      <div className="text-right">
+                        <span className="font-['Cinzel',serif] text-xl sm:text-2xl font-extrabold text-[#141A17] block leading-none">
+                          {reason.stat}
+                        </span>
+                        <span className="text-[9px] sm:text-[10px] text-[#68726E] uppercase tracking-wider font-semibold block mt-1">
+                          {reason.statLabel}
+                        </span>
+                      </div>
                     </div>
 
-                    {/* Main Content */}
-                    <div className="flex-1 min-w-0">
-                      <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
-                        <span className="text-[10px] font-bold text-[#C29B38] uppercase tracking-widest bg-white px-2.5 py-0.5 rounded-full border border-black/6">
-                          {reason.badge}
-                        </span>
-                        <div className="text-right">
-                          <span className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-[#141A17] block">
-                            {reason.stat}
+                    {/* Badge */}
+                    <div className="mb-3">
+                      <span
+                        className={`inline-flex items-center gap-1.5 text-[9.5px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border ${
+                          reason.highlight
+                            ? "bg-[#134e3f]/10 text-[#134e3f] border-[#134e3f]/30"
+                            : "bg-[#FAF7F2] text-[#C29B38] border-black/6"
+                        }`}
+                      >
+                        <Sparkles className="w-2.5 h-2.5" />
+                        <span>{reason.badge}</span>
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="font-['Cinzel',serif] text-base sm:text-lg font-bold text-[#141A17] uppercase tracking-wide mb-3 group-hover:text-[#134e3f] transition-colors leading-snug">
+                      {reason.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs text-[#505D57] leading-relaxed">
+                      {reason.desc}
+                    </p>
+                  </div>
+
+                  {/* Card Bottom Tag */}
+                  <div className="pt-4 mt-5 border-t border-black/6 flex items-center justify-between text-[11px]">
+                    <span className="text-[#C29B38] font-semibold flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#25D366]" />
+                      <span>{reason.tag}</span>
+                    </span>
+                    <a
+                      href={`https://wa.me/919414945457?text=${encodeURIComponent(
+                        `Hello Dholpurestones.com, I am inquiring regarding ${reason.title}`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#68726E] hover:text-[#134e3f] font-bold uppercase text-[10px] tracking-wider transition-colors inline-flex items-center gap-1"
+                    >
+                      <span>Inquire</span>
+                      <ArrowRight className="w-3 h-3 text-[#C29B38]" />
+                    </a>
+                  </div>
+                </div>
+              </AnimDiv>
+            );
+          })}
+        </div>
+
+        {/* =========================================================================
+            STAGE 2: DIRECT QUARRY INFRASTRUCTURE & CERTIFIED GEOTECHNICAL LAB DATA
+            Balanced 2-Column Showcase (Left: Quarry & Artisans / Right: Lab Certificate)
+            ========================================================================= */}
+        <div className="mb-14 sm:mb-18">
+          <AnimDiv className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C29B38] tracking-[0.2em] uppercase block mb-1">
+              TANGIBLE EVIDENCE &bull; MINE OPERATIONS &amp; LAB DATA
+            </span>
+            <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl lg:text-3xl font-bold uppercase tracking-wide text-[#141A17]">
+              Verified Quarry Infrastructure &amp; Technical Specifications
+            </h3>
+            <p className="text-xs sm:text-sm text-[#68726E] mt-2">
+              Inspect our live quarry concessions in Sarmathura and certified laboratory test reports adhering strictly to IS:3620 and ASTM C616 standards.
+            </p>
+          </AnimDiv>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+            {/* Left Column (6 Cols): Live Quarry Operations & Master Artisans Workshop */}
+            <AnimDiv delay={100} className="lg:col-span-6 flex flex-col gap-6 justify-between">
+              {/* Main Quarry Mining Operations Image */}
+              <div className="relative rounded-3xl overflow-hidden bg-[#0D1311] border border-black/8 shadow-xl group flex-1 min-h-[280px]">
+                <div className="relative h-full min-h-[280px] w-full overflow-hidden">
+                  <Image
+                    src="/assets/quarry_mining_operations.jpg"
+                    alt="Sarmathura Sandstone Quarry Operations"
+                    fill
+                    sizes="(max-width:1024px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-106 transition-transform duration-700 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10" />
+
+                  {/* Live Quarry Status Badge */}
+                  <div className="absolute top-4 left-4 bg-[#0D1311]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 flex items-center gap-2 shadow-lg">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-[#25D366]" />
+                    </span>
+                    <span className="text-[10px] font-bold text-white uppercase tracking-widest">
+                      Active Mine Lease &bull; Sarmathura
+                    </span>
+                  </div>
+
+                  <div className="absolute bottom-4 left-4 right-4 text-white">
+                    <span className="text-[10px] font-bold text-[#C29B38] uppercase tracking-wider block mb-1">
+                      Direct Geological Strata Concessions
+                    </span>
+                    <h4 className="font-['Cinzel',serif] text-base sm:text-xl font-bold leading-snug">
+                      Over 500,000 Sq.Ft Sawn Quarry Capacity
+                    </h4>
+                    <p className="text-xs text-white/80 mt-1 line-clamp-2">
+                      Modern diamond wire-saws and non-explosive block splitters operating continuously to fulfill large landmark orders.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Sub-Card: Master Artisans Stonecarving Workshop */}
+              <div className="relative rounded-3xl overflow-hidden bg-white border border-black/8 p-5 shadow-md flex items-center gap-4 group hover:border-[#C29B38]/60 transition-colors">
+                <div className="relative w-28 h-24 rounded-2xl overflow-hidden shrink-0 bg-black/10">
+                  <Image
+                    src="/assets/master_stone_artisans.jpg"
+                    alt="Generational Master Sandstone Artisans"
+                    fill
+                    sizes="120px"
+                    className="object-cover group-hover:scale-108 transition-transform duration-500"
+                  />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="inline-flex items-center gap-1.5 text-[9px] font-bold text-[#134e3f] bg-[#134e3f]/10 px-2.5 py-0.5 rounded-md border border-[#134e3f]/20 uppercase tracking-wider mb-1.5">
+                    <Hammer className="w-3 h-3 text-[#C29B38]" />
+                    <span>Generational Carvers</span>
+                  </div>
+                  <h4 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-[#141A17] uppercase tracking-wide truncate">
+                    Shilpa Shastra Guild
+                  </h4>
+                  <p className="text-[11.5px] text-[#505D57] leading-relaxed line-clamp-2 mt-1">
+                    Master artisans hand-sculpting monumental pillars, boundary wall copings, jali filigree, and floral capitals with traditional mallets.
+                  </p>
+                </div>
+              </div>
+            </AnimDiv>
+
+            {/* Right Column (6 Cols): Geotechnical Quality Certificate & Mine Owner Guarantee */}
+            <AnimDiv delay={150} className="lg:col-span-6 flex flex-col justify-between">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-black/8 shadow-xl flex flex-col justify-between h-full">
+                <div>
+                  {/* Certificate Header */}
+                  <div className="flex items-center justify-between pb-4 border-b border-black/8 mb-4">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-9 h-9 rounded-xl bg-[#134e3f]/10 text-[#134e3f] flex items-center justify-center">
+                        <BadgeCheck className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <h4 className="text-xs sm:text-sm font-bold text-[#141A17] uppercase tracking-wider">
+                          Geotechnical Quality Certificate
+                        </h4>
+                        <span className="text-[10px] text-[#68726E]">Laboratory Test Report &bull; Bureau of Indian Standards</span>
+                      </div>
+                    </div>
+                    <span className="text-[10px] font-bold text-[#C29B38] uppercase tracking-widest bg-[#FAF7F2] px-3 py-1 rounded-full border border-[#C29B38]/30">
+                      IS:3620 &amp; ASTM C616
+                    </span>
+                  </div>
+
+                  {/* 6 Full Laboratory Test Specs Table */}
+                  <div className="space-y-2.5">
+                    {technicalSpecs.map((spec, i) => (
+                      <div
+                        key={i}
+                        className="flex items-center justify-between p-2.5 sm:p-3 rounded-xl bg-[#FAF7F2] border border-black/5 hover:border-[#C29B38]/40 transition-colors"
+                      >
+                        <div className="flex items-center gap-2 min-w-0 pr-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#25D366] shrink-0" />
+                          <span className="text-[#141A17] font-semibold text-[11.5px] truncate">
+                            {spec.label}
                           </span>
-                          <span className="text-[9px] text-[#68726E] uppercase tracking-wider block">
-                            {reason.statLabel}
+                        </div>
+                        <div className="text-right shrink-0">
+                          <span className="text-[#141A17] font-bold text-[11.5px] font-mono block">
+                            {spec.value}
+                          </span>
+                          <span className="text-[9.5px] text-[#C29B38] font-bold uppercase tracking-wider">
+                            {spec.status}
                           </span>
                         </div>
                       </div>
-
-                      <h4 className="font-['Cinzel',serif] text-base sm:text-lg font-bold text-[#141A17] uppercase tracking-wide mb-1.5 group-hover:text-[#134e3f] transition-colors">
-                        {reason.title}
-                      </h4>
-
-                      <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs text-[#68726E] leading-relaxed mb-3">
-                        {reason.shortDesc}
-                      </p>
-
-                      {/* Expandable details when selected */}
-                      {isSelected && (
-                        <div className="mt-3 pt-3 border-t border-black/8 text-xs text-[#4A5550] leading-relaxed bg-white/70 p-3 rounded-xl animate-fadeIn">
-                          {reason.fullDetails}
-                        </div>
-                      )}
-                    </div>
+                    ))}
                   </div>
                 </div>
-              );
-            })}
-          </AnimDiv>
+
+                {/* Provenance Assurance Seal */}
+                <div className="mt-5 pt-4 border-t border-black/8 flex items-center justify-between bg-[#FAF7F2] p-3.5 rounded-2xl">
+                  <div className="flex items-center gap-2.5">
+                    <FileText className="w-4 h-4 text-[#C29B38] shrink-0" />
+                    <div>
+                      <span className="text-[10.5px] font-bold text-[#141A17] uppercase tracking-wider block">
+                        Official Quarry Provenance Guarantee
+                      </span>
+                      <span className="text-[9.5px] text-[#68726E]">
+                        Sarmathura Leases &bull; Garg Corporation Ltd. (Estd. 1953)
+                      </span>
+                    </div>
+                  </div>
+                  <a
+                    href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20please%20share%20official%20Geotechnical%20Lab%20Test%20Reports%20for%20Dholpur%20Sandstone."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[10px] font-bold text-[#134e3f] bg-white border border-black/10 px-3 py-1.5 rounded-full hover:bg-[#134e3f] hover:text-white transition-colors shrink-0"
+                  >
+                    Request Lab PDF
+                  </a>
+                </div>
+              </div>
+            </AnimDiv>
+          </div>
         </div>
 
         {/* =========================================================================
-            BOTTOM CALLOUT: Schedule Quarry Visit & WhatsApp Direct Mine Consultation
+            STAGE 3: BOTTOM CALLOUT: Schedule Quarry Visit & WhatsApp Consultation
             ========================================================================= */}
-        <AnimDiv delay={250}>
+        <AnimDiv delay={200}>
           <div id="mines" className="scroll-mt-20 sm:scroll-mt-24 bg-gradient-to-br from-[#134e3f] via-[#0e3b30] to-[#0A261F] rounded-3xl p-6 sm:p-10 border border-[#C29B38]/40 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6 relative overflow-hidden text-white">
             <div className="absolute -inset-full bg-gradient-to-r from-transparent via-[#C29B38]/15 to-transparent animate-beam-sweep pointer-events-none" />
             <div className="absolute -right-10 -bottom-10 w-72 h-72 bg-[#C29B38]/20 rounded-full blur-3xl pointer-events-none" />
@@ -379,7 +488,7 @@ export default function WhyChooseUs() {
                 Inspect Raw Strata Directly At Our Mines
               </h3>
               <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/80 leading-relaxed">
-                Architects, developers, and temple committees are warmly invited to inspect live quarry benches in Sarmathura and select custom monolithic blocks for their landmark projects.
+                Architects, developers, and estate owners are warmly invited to inspect live quarry benches in Sarmathura and select custom monolithic blocks for their landmark projects.
               </p>
             </div>
 
@@ -388,9 +497,9 @@ export default function WhyChooseUs() {
                 href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20inquire%20about%20authentic%20sandstone%20directly%20mined%20from%20your%20Sarmathura%20quarries."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-[#0A0F0D] hover:bg-white font-bold text-xs uppercase px-7 py-3.5 rounded-full transition-all duration-300 shadow-xl active:scale-95"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#C29B38] hover:bg-[#dfb54b] text-[#0D1311] font-bold text-xs uppercase px-7 py-3.5 rounded-full transition-all duration-300 shadow-xl active:scale-95 border border-[#C29B38]"
               >
-                <WhatsAppIcon className="w-4 h-4 fill-[#0A0F0D]" size={16} />
+                <WhatsAppIcon className="w-4 h-4 fill-[#0D1311]" size={16} />
                 <span>Direct Quarry Consultation</span>
               </a>
 
