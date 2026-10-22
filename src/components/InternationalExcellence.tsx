@@ -170,50 +170,7 @@ export default function InternationalExcellence() {
           </AnimDiv>
         </div>
 
-        {/* 4 Pillars of International Business Excellence Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 mb-12 sm:mb-16">
-          {excellencePillars.map((pillar, idx) => {
-            const Icon = pillar.icon;
-            return (
-              <AnimDiv key={pillar.number} delay={idx * 80}>
-                <div className="bg-[#1E5A46]/90 hover:bg-[#1E5A46] rounded-2xl p-6 border border-white/10 hover:border-[#C5A15B]/70 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-full group">
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#C5A15B] group-hover:bg-[#C5A15B] group-hover:text-[#123D32] transition-colors shadow-sm">
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <span className="font-['Cinzel',serif] text-xl font-bold text-white/30 group-hover:text-[#C5A15B] transition-colors">
-                        {pillar.number}
-                      </span>
-                    </div>
-
-                    <span className="text-[9px] font-bold text-[#C5A15B] uppercase tracking-[0.16em] block mb-1">
-                      {pillar.badge}
-                    </span>
-                    <h3 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-white uppercase tracking-wider mb-2.5 group-hover:text-[#C5A15B] transition-colors">
-                      {pillar.title}
-                    </h3>
-                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs text-white/70 leading-relaxed mb-4">
-                      {pillar.desc}
-                    </p>
-                  </div>
-
-                  <div className="pt-3 border-t border-white/10 flex items-center justify-between">
-                    <div>
-                      <span className="block font-['Cinzel',serif] text-sm font-bold text-[#C5A15B]">
-                        {pillar.stats}
-                      </span>
-                      <span className="text-[9px] text-white/50 uppercase tracking-wider">
-                        {pillar.statsLabel}
-                      </span>
-                    </div>
-                    <ArrowRight className="w-4 h-4 text-[#C5A15B] group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </AnimDiv>
-            );
-          })}
-        </div>
+        
 
         {/* Global Footprint Banner */}
         <AnimDiv delay={200}>
