@@ -282,7 +282,7 @@ const products: ProductItem[] = [
     category: "blocks",
     categoryLabel: "QUARRY MONOLITHS & SLABS",
     provenance: "Direct Sarmathura Mines, Rajasthan",
-    image: "/assets/products/dholpur_red_quarry_blocks.jpg",
+    image: "/sandstone/dolpur-beige-sandstone.jpeg",
     shortDesc:
       "Direct quarry-extracted monolithic Dholpur Red sandstone blocks cut with precision diamond wire saws, offering centuries of structural longevity.",
     longDetails:
@@ -401,7 +401,7 @@ const products: ProductItem[] = [
     category: "export",
     categoryLabel: "ISPM-15 EXPORT CRATING",
     provenance: "Central Export Logistics Hub & Mundra Port",
-    image: "/assets/products/real_sandstone_export_crating_yard.jpg",
+    image: "/semi-precious/green-agate.jpeg",
     shortDesc:
       "Industrial-scale inventory of project-calibrated sandstone bundles packed into heavy-duty ISPM-15 fumigated timber crates for global transit.",
     longDetails:
