@@ -112,31 +112,31 @@ export default function StoneCollection() {
   }, [selected]);
 
   return (
-    <section id="collection" className="bg-white py-10 sm:py-20 border-b border-black/6">
+    <section id="collection" className="bg-[#F7F4EB] py-10 sm:py-20 border-b border-black/6">
       <div className="max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-8">
         {/* Section Header Label */}
         <AnimDiv className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-black/8 mb-6 sm:mb-10">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#C29B38]" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#141A17] uppercase">
+            <span className="w-2 h-2 rounded-full bg-[#C5A15B]" />
+            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#1F2A24] uppercase">
               DHOLPURESTONES.COM
             </span>
           </div>
-          <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C29B38] tracking-widest">
+          <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest">
             05
           </span>
         </AnimDiv>
 
         {/* Section Title */}
         <AnimDiv delay={0} className="mb-6 sm:mb-10">
-          <span className="text-[10px] sm:text-xs font-bold text-[#C29B38] uppercase tracking-[0.18em] block mb-1.5 sm:mb-2">
+          <span className="text-[10px] sm:text-xs font-bold text-[#C5A15B] uppercase tracking-[0.18em] block mb-1.5 sm:mb-2">
             Materials &amp; Finishes
           </span>
-          <h2 className="font-['Cinzel',serif] text-xl sm:text-3xl lg:text-4xl font-bold text-[#141A17] uppercase tracking-wide mb-2 sm:mb-3">
+          <h2 className="font-['Cinzel',serif] text-xl sm:text-3xl lg:text-4xl font-bold text-[#1F2A24] uppercase tracking-wide mb-2 sm:mb-3">
             Natural Stone Collection
           </h2>
-          <div className="w-10 sm:w-12 h-1 bg-[#C29B38] rounded-full mb-2.5 sm:mb-3" />
-          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#68726E] max-w-2xl">
+          <div className="w-10 sm:w-12 h-1 bg-[#C5A15B] rounded-full mb-2.5 sm:mb-3" />
+          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] max-w-2xl">
             Selected product references from our inventory. Click any stone to inspect technical specifications, finish variants, and request supply.
           </p>
         </AnimDiv>
@@ -148,10 +148,10 @@ export default function StoneCollection() {
               <button
                 type="button"
                 onClick={() => setSelected(s)}
-                className="w-full text-left bg-[#FAF7F2] rounded-xl sm:rounded-2xl overflow-hidden border border-black/8 hover:border-[#C29B38]/60 hover:shadow-xl transition-all duration-300 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#C29B38]/50"
+                className="w-full text-left bg-[#F7F4EB] rounded-xl sm:rounded-2xl overflow-hidden border border-black/8 hover:border-[#C5A15B]/60 hover:shadow-xl transition-all duration-300 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#C5A15B]/50"
               >
                 {/* Image */}
-                <div className="relative h-48 sm:h-64 w-full overflow-hidden bg-[#EAE6DE]">
+                <div className="relative h-48 sm:h-64 w-full overflow-hidden bg-[#F7F4EB]">
                   <Image
                     src={s.image}
                     alt={s.name}
@@ -159,11 +159,11 @@ export default function StoneCollection() {
                     sizes="(max-width:640px) 100vw, 50vw"
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-[#134e3f] text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+                  <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-[#123D32] text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
                     <ArrowUpRight className="w-4 h-4" />
                   </div>
-                  <div className="absolute bottom-3 left-3 bg-[#0D1311]/85 backdrop-blur-md px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full border border-white/10">
-                    <span className="text-[9px] font-bold text-[#C29B38] uppercase tracking-wider">
+                  <div className="absolute bottom-3 left-3 bg-[#123D32]/85 backdrop-blur-md px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full border border-white/10">
+                    <span className="text-[9px] font-bold text-[#C5A15B] uppercase tracking-wider">
                       {s.category}
                     </span>
                   </div>
@@ -171,13 +171,13 @@ export default function StoneCollection() {
 
                 {/* Details */}
                 <div className="p-4 sm:p-5">
-                  <h3 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-[#141A17] uppercase tracking-wider mb-1.5 sm:mb-2 group-hover:text-[#134e3f] transition-colors">
+                  <h3 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-[#1F2A24] uppercase tracking-wider mb-1.5 sm:mb-2 group-hover:text-[#123D32] transition-colors">
                     {s.name}
                   </h3>
-                  <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] sm:text-xs text-[#68726E] leading-relaxed line-clamp-2">
+                  <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] sm:text-xs text-[#6B7C73] leading-relaxed line-clamp-2">
                     {s.desc}
                   </p>
-                  <div className="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-black/5 flex items-center justify-between text-xs font-bold text-[#C29B38] group-hover:text-[#134e3f] transition-colors">
+                  <div className="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-black/5 flex items-center justify-between text-xs font-bold text-[#C5A15B] group-hover:text-[#123D32] transition-colors">
                     <span>Inspect Specifications</span>
                     <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </div>
@@ -188,9 +188,9 @@ export default function StoneCollection() {
         </div>
 
         {/* Section Footer Bar */}
-        <div className="mt-10 sm:mt-12 pt-4 border-t border-black/8 flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] sm:text-[11px] font-semibold text-[#68726E] uppercase tracking-wider text-center sm:text-left">
+        <div className="mt-10 sm:mt-12 pt-4 border-t border-black/8 flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] sm:text-[11px] font-semibold text-[#6B7C73] uppercase tracking-wider text-center sm:text-left">
           <span>Natural Stone &bull; Mines &bull; Manufacturing &bull; Export &bull; Contracting</span>
-          <span className="font-['Cinzel',serif] text-[#141A17]">DHOLPURESTONES.COM</span>
+          <span className="font-['Cinzel',serif] text-[#1F2A24]">DHOLPURESTONES.COM</span>
         </div>
       </div>
 
@@ -202,7 +202,7 @@ export default function StoneCollection() {
             onClick={() => setSelected(null)}
           />
 
-          <div className="relative z-10 w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col border border-[#C29B38]/30">
+          <div className="relative z-10 w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col border border-[#C5A15B]/30">
             {/* Modal Header Image */}
             <div className="relative h-48 sm:h-56 w-full shrink-0">
               <Image
@@ -222,7 +222,7 @@ export default function StoneCollection() {
                 <X className="w-4 h-4" />
               </button>
               <div className="absolute bottom-4 left-5 right-5 text-white">
-                <span className="text-[10px] font-bold text-[#C29B38] uppercase tracking-wider block mb-1">
+                <span className="text-[10px] font-bold text-[#C5A15B] uppercase tracking-wider block mb-1">
                   {selected.category}
                 </span>
                 <h3 className="font-['Cinzel',serif] text-lg sm:text-xl font-bold uppercase tracking-wide">
@@ -233,7 +233,7 @@ export default function StoneCollection() {
 
             {/* Modal Body */}
             <div className="p-5 sm:p-6 overflow-y-auto space-y-4">
-              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#141A17]/85 leading-relaxed">
+              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#1F2A24]/85 leading-relaxed">
                 {selected.desc}
               </p>
 
@@ -244,11 +244,11 @@ export default function StoneCollection() {
                   { label: "Best Applications", value: selected.specs.application },
                   { label: "Thickness & Formats", value: selected.specs.thickness },
                 ].map((spec) => (
-                  <div key={spec.label} className="bg-[#FAF7F2] p-3 rounded-xl border border-black/5">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#68726E] block mb-1">
+                  <div key={spec.label} className="bg-[#F7F4EB] p-3 rounded-xl border border-black/5">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#6B7C73] block mb-1">
                       {spec.label}
                     </span>
-                    <span className="text-xs font-semibold text-[#141A17]">{spec.value}</span>
+                    <span className="text-xs font-semibold text-[#1F2A24]">{spec.value}</span>
                   </div>
                 ))}
               </div>

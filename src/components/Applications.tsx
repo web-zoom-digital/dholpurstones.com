@@ -85,31 +85,31 @@ const apps = [
 
 export default function Applications() {
   return (
-    <section id="applications" className="bg-[#FAF7F2] py-10 sm:py-20 border-b border-black/6">
+    <section id="applications" className="bg-[#E5ECE4] py-10 sm:py-20 border-b border-black/6">
       <div className="max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-8">
         {/* Section Header Label */}
         <AnimDiv className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-black/8 mb-6 sm:mb-10">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#C29B38]" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#141A17] uppercase">
+            <span className="w-2 h-2 rounded-full bg-[#C5A15B]" />
+            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#1F2A24] uppercase">
               DHOLPURESTONES.COM &bull; ARCHITECTURAL TYPOLOGIES
             </span>
           </div>
-          <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C29B38] tracking-widest">
+          <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest">
             06
           </span>
         </AnimDiv>
 
         {/* Section Title */}
         <AnimDiv delay={0} className="mb-6 sm:mb-10">
-          <span className="text-[10px] sm:text-xs font-bold text-[#C29B38] uppercase tracking-[0.18em] block mb-1.5 sm:mb-2">
+          <span className="text-[10px] sm:text-xs font-bold text-[#C5A15B] uppercase tracking-[0.18em] block mb-1.5 sm:mb-2">
             FARM HOUSES &bull; GARDENS &bull; FRONT ELEVATION
           </span>
-          <h2 className="font-['Cinzel',serif] text-xl sm:text-3xl lg:text-4xl font-bold text-[#141A17] uppercase tracking-wide mb-2 sm:mb-3">
+          <h2 className="font-['Cinzel',serif] text-xl sm:text-3xl lg:text-4xl font-bold text-[#1F2A24] uppercase tracking-wide mb-2 sm:mb-3">
             Architectural Applications
           </h2>
-          <div className="w-10 sm:w-12 h-1 bg-[#C29B38] rounded-full mb-2.5 sm:mb-3" />
-          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#68726E] max-w-2xl">
+          <div className="w-10 sm:w-12 h-1 bg-[#C5A15B] rounded-full mb-2.5 sm:mb-3" />
+          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] max-w-2xl">
             Specialized natural stone execution for luxury farm houses, expansive private gardens, and award-winning front elevations — alongside temples and heritage monuments across India &amp; worldwide.
           </p>
         </AnimDiv>
@@ -118,9 +118,9 @@ export default function Applications() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-8 sm:mb-12">
           {apps.map((a, i) => (
             <AnimDiv key={a.id} delay={i * 70}>
-              <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-black/8 hover:border-[#C29B38]/60 hover:shadow-xl transition-all duration-300 group flex flex-col h-full">
+              <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-black/8 hover:border-[#C5A15B]/60 hover:shadow-xl transition-all duration-300 group flex flex-col h-full">
                 {/* Image */}
-                <div className="relative h-48 sm:h-60 w-full overflow-hidden bg-[#F5F2EC] shrink-0">
+                <div className="relative h-48 sm:h-60 w-full overflow-hidden bg-[#F7F4EB] shrink-0">
                   <Image
                     src={a.image}
                     alt={a.title}
@@ -131,8 +131,8 @@ export default function Applications() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
                   {/* Category Pill */}
-                  <div className="absolute top-3 left-3 bg-[#0D1311]/85 backdrop-blur-xs px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full border border-white/15">
-                    <span className="text-[9px] font-bold text-[#E0BA55] uppercase tracking-wider">
+                  <div className="absolute top-3 left-3 bg-[#123D32]/85 backdrop-blur-xs px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full border border-white/15">
+                    <span className="text-[9px] font-bold text-[#C5A15B] uppercase tracking-wider">
                       {a.badge}
                     </span>
                   </div>
@@ -141,19 +141,19 @@ export default function Applications() {
                 {/* Details */}
                 <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#141A17] uppercase tracking-wider group-hover:text-[#134e3f] transition-colors mb-1.5 leading-snug">
+                    <h3 className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#1F2A24] uppercase tracking-wider group-hover:text-[#123D32] transition-colors mb-1.5 leading-snug">
                       {a.title}
                     </h3>
-                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] sm:text-xs text-[#68726E] leading-relaxed">
+                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] sm:text-xs text-[#6B7C73] leading-relaxed">
                       {a.desc}
                     </p>
                   </div>
-                  <div className="mt-3 pt-2.5 border-t border-black/5 flex items-center justify-between text-[10px] font-bold text-[#C29B38] uppercase tracking-wider">
+                  <div className="mt-3 pt-2.5 border-t border-black/5 flex items-center justify-between text-[10px] font-bold text-[#C5A15B] uppercase tracking-wider">
                     <div className="flex items-center gap-1.5">
-                      <Sparkles className="w-3 h-3 text-[#C29B38]" />
+                      <Sparkles className="w-3 h-3 text-[#C5A15B]" />
                       <span>Quarry Direct Supply</span>
                     </div>
-                    <span className="text-[#134e3f]">Custom CAD</span>
+                    <span className="text-[#123D32]">Custom CAD</span>
                   </div>
                 </div>
               </div>
@@ -163,16 +163,16 @@ export default function Applications() {
 
         {/* Emerald Landmark Banner */}
         <AnimDiv delay={200}>
-          <div className="bg-[#134e3f] rounded-2xl p-5 sm:p-10 text-center text-white shadow-xl relative overflow-hidden border border-[#C29B38]/30">
+          <div className="bg-[#123D32] rounded-2xl p-5 sm:p-10 text-center text-white shadow-xl relative overflow-hidden border border-[#C5A15B]/30">
             <div
               className="absolute inset-0 opacity-15"
               style={{
                 backgroundImage:
-                  "radial-gradient(circle at 50% 50%, #C29B38 0%, transparent 70%)",
+                  "radial-gradient(circle at 50% 50%, #C5A15B 0%, transparent 70%)",
               }}
             />
             <div className="relative z-10 max-w-2xl mx-auto">
-              <span className="font-['Cinzel',serif] text-[10px] font-bold text-[#C29B38] tracking-[0.25em] uppercase block mb-2">
+              <span className="font-['Cinzel',serif] text-[10px] font-bold text-[#C5A15B] tracking-[0.25em] uppercase block mb-2">
                 Enduring Architectural Philosophy
               </span>
               <h3 className="font-['Cinzel',serif] text-lg sm:text-2xl lg:text-3xl font-bold tracking-[0.08em] text-white uppercase leading-tight mb-2 sm:mb-3">
@@ -186,9 +186,9 @@ export default function Applications() {
         </AnimDiv>
 
         {/* Section Footer Bar */}
-        <div className="mt-10 sm:mt-12 pt-4 border-t border-black/8 flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] sm:text-[11px] font-semibold text-[#68726E] uppercase tracking-wider text-center sm:text-left">
+        <div className="mt-10 sm:mt-12 pt-4 border-t border-black/8 flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] sm:text-[11px] font-semibold text-[#6B7C73] uppercase tracking-wider text-center sm:text-left">
           <span>Natural Stone &bull; Mines &bull; Manufacturing &bull; Export &bull; Contracting</span>
-          <span className="font-['Cinzel',serif] text-[#141A17]">DHOLPURESTONES.COM</span>
+          <span className="font-['Cinzel',serif] text-[#1F2A24]">DHOLPURESTONES.COM</span>
         </div>
       </div>
     </section>

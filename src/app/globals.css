@@ -6,20 +6,41 @@
    Mobile-First Optimised v2
    ========================================================================== */
 
+@theme {
+  --color-primary-forest: #123D32;
+  --color-secondary-green: #1E5A46;
+  --color-main-ivory: #F7F4EB;
+  --color-pale-sage: #E5ECE4;
+  --color-antique-gold: #C5A15B;
+  --color-heading-text: #1F2A24;
+  --color-secondary-text: #6B7C73;
+  --color-card-surface: #FFFFFF;
+}
+
 :root {
-  --gcl-cream: #FAF7F2;
-  --gcl-cream-card: #FFFFFF;
-  --gcl-cream-tint: #F3EFEA;
-  --gcl-dark: #0D1311;
-  --gcl-slate: #161D1A;
-  --gcl-emerald: #134e3f;
-  --gcl-emerald-dark: #0c3329;
-  --gcl-gold: #C29B38;
-  --gcl-gold-light: #E0BA55;
-  --gcl-gold-subtle: rgba(194, 155, 56, 0.15);
-  --gcl-charcoal: #141A17;
-  --gcl-muted: #4A5550; /* Optimized to >= 4.5:1 contrast against #FAF7F2 */
-  --gcl-border-light: rgba(0, 0, 0, 0.08);
+  --theme-forest: #123D32;
+  --theme-forest-secondary: #1E5A46;
+  --theme-ivory: #F7F4EB;
+  --theme-sage: #E5ECE4;
+  --theme-gold: #C5A15B;
+  --theme-heading: #1F2A24;
+  --theme-secondary: #6B7C73;
+  --theme-card: #FFFFFF;
+
+  /* Backward compatible variables */
+  --gcl-cream: var(--theme-ivory);
+  --gcl-cream-card: var(--theme-card);
+  --gcl-cream-tint: var(--theme-sage);
+  --gcl-dark: var(--theme-forest);
+  --gcl-slate: var(--theme-forest-secondary);
+  --gcl-emerald: var(--theme-forest);
+  --gcl-emerald-dark: #0A261F;
+  --gcl-gold: var(--theme-gold);
+  --gcl-gold-light: #D4B574;
+  --gcl-gold-subtle: rgba(197, 161, 91, 0.15);
+  --gcl-charcoal: var(--theme-heading);
+  --gcl-muted: var(--theme-secondary);
+  --gcl-border-light: rgba(31, 42, 36, 0.09);
   --gcl-border-dark: rgba(255, 255, 255, 0.1);
 
   --font-cinzel: var(--font-cinzel), 'Cinzel', serif;
@@ -72,9 +93,9 @@ header, nav, main {
 /* Custom Scrollbar (desktop) */
 @media (min-width: 1024px) {
   ::-webkit-scrollbar { width: 8px; }
-  ::-webkit-scrollbar-track { background: #FAF7F2; }
-  ::-webkit-scrollbar-thumb { background: #C29B38; border-radius: 4px; }
-  ::-webkit-scrollbar-thumb:hover { background: #a38028; }
+  ::-webkit-scrollbar-track { background: #F7F4EB; }
+  ::-webkit-scrollbar-thumb { background: #C5A15B; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #A6823F; }
 }
 
 /* Image containment */
@@ -149,17 +170,17 @@ img {
    DESIGN SYSTEM UTILITIES
    ============================================================ */
 .gcl-gold-gradient-text {
-  background: linear-gradient(135deg, #E0BA55 0%, #C29B38 50%, #9E7B24 100%);
+  background: linear-gradient(135deg, #D4B574 0%, #C5A15B 50%, #9E7B24 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gcl-gold-border {
-  border-color: rgba(194, 155, 56, 0.3);
+  border-color: rgba(197, 161, 91, 0.3);
 }
 
 .gcl-glass-dark {
-  background: rgba(13, 19, 17, 0.82);
+  background: rgba(18, 61, 50, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -178,7 +199,7 @@ img {
 }
 .gcl-card-glow:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.09), 0 0 20px -5px rgba(194, 155, 56, 0.15);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.09), 0 0 20px -5px rgba(197, 161, 91, 0.18);
 }
 
 /* ============================================================

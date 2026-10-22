@@ -65,22 +65,22 @@ export default function StoneTechnicalSpecsTable() {
     <section
       id="specifications"
       aria-label="Dholpur Sandstone Technical Physical Properties"
-      className="py-10 sm:py-20 bg-[#FAF7F2] border-t border-b border-black/8"
+      className="py-10 sm:py-20 bg-[#F7F4EB] border-t border-b border-black/8"
     >
       <div className="max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-8">
         {/* Header Ribbon */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 rounded-full bg-[#134e3f]/15 border border-[#134e3f]/30 mb-2.5 sm:mb-3 text-[#134e3f]">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 rounded-full bg-[#123D32]/15 border border-[#123D32]/30 mb-2.5 sm:mb-3 text-[#123D32]">
             <Award className="w-3.5 h-3.5" />
             <span className="font-['Cinzel',serif] text-[9.5px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] uppercase">
               CERTIFIED LABORATORY METRICS &bull; ASTM C616 / IS 3622
             </span>
           </div>
 
-          <h2 className="font-['Cinzel',serif] text-xl sm:text-3xl lg:text-4xl font-bold uppercase text-[#0D1311] tracking-wide leading-snug sm:leading-tight">
+          <h2 className="font-['Cinzel',serif] text-xl sm:text-3xl lg:text-4xl font-bold uppercase text-[#123D32] tracking-wide leading-snug sm:leading-tight">
             Technical Properties &amp; Comparative Engineering Specs
           </h2>
-          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#4A5550] mt-2 sm:mt-3 leading-relaxed">
+          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] mt-2 sm:mt-3 leading-relaxed">
             Authentic Dholpur sandstone extracted from our Sarmathura quarries consistently exceeds both Indian Standards (IS 3622) and American Society for Testing and Materials (ASTM C616) requirements.
           </p>
         </div>
@@ -88,49 +88,49 @@ export default function StoneTechnicalSpecsTable() {
         {/* 4 Summary Definition Callout Cards (Compact 2x2 Matrix on Mobile, 4-col on lg) */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 mb-6 sm:mb-8">
           <div className="bg-white p-3 sm:p-5 rounded-xl sm:rounded-2xl border border-black/8 shadow-xs">
-            <span className="text-[10px] sm:text-[11px] font-bold text-[#C29B38] uppercase tracking-wider block mb-1">
+            <span className="text-[10px] sm:text-[11px] font-bold text-[#C5A15B] uppercase tracking-wider block mb-1">
               Compressive Strength
             </span>
-            <div className="text-xl sm:text-3xl font-bold font-['Cinzel',serif] text-[#0D1311]">
+            <div className="text-xl sm:text-3xl font-bold font-['Cinzel',serif] text-[#123D32]">
               72.8 MPa
             </div>
-            <p className="text-[10.5px] sm:text-xs text-[#4A5550] mt-1 sm:mt-1.5 leading-snug">
+            <p className="text-[10.5px] sm:text-xs text-[#6B7C73] mt-1 sm:mt-1.5 leading-snug">
               Exceeds ASTM C616 (&gt;28 MPa) by over 140%, supporting multi-tier structural loads.
             </p>
           </div>
 
           <div className="bg-white p-3 sm:p-5 rounded-xl sm:rounded-2xl border border-black/8 shadow-xs">
-            <span className="text-[10px] sm:text-[11px] font-bold text-[#C29B38] uppercase tracking-wider block mb-1">
+            <span className="text-[10px] sm:text-[11px] font-bold text-[#C5A15B] uppercase tracking-wider block mb-1">
               Water Absorption
             </span>
-            <div className="text-xl sm:text-3xl font-bold font-['Cinzel',serif] text-[#0D1311]">
+            <div className="text-xl sm:text-3xl font-bold font-['Cinzel',serif] text-[#123D32]">
               1.10% Max
             </div>
-            <p className="text-[10.5px] sm:text-xs text-[#4A5550] mt-1 sm:mt-1.5 leading-snug">
+            <p className="text-[10.5px] sm:text-xs text-[#6B7C73] mt-1 sm:mt-1.5 leading-snug">
               Far below the standard 8% ceiling, preventing efflorescence, salt decay, and moss.
             </p>
           </div>
 
           <div className="bg-white p-3 sm:p-5 rounded-xl sm:rounded-2xl border border-black/8 shadow-xs">
-            <span className="text-[10px] sm:text-[11px] font-bold text-[#C29B38] uppercase tracking-wider block mb-1">
+            <span className="text-[10px] sm:text-[11px] font-bold text-[#C5A15B] uppercase tracking-wider block mb-1">
               Wet Slip Rating
             </span>
-            <div className="text-xl sm:text-3xl font-bold font-['Cinzel',serif] text-[#0D1311]">
+            <div className="text-xl sm:text-3xl font-bold font-['Cinzel',serif] text-[#123D32]">
               R11 / R12
             </div>
-            <p className="text-[10.5px] sm:text-xs text-[#4A5550] mt-1 sm:mt-1.5 leading-snug">
+            <p className="text-[10.5px] sm:text-xs text-[#6B7C73] mt-1 sm:mt-1.5 leading-snug">
               Certified anti-slip traction for wet swimming pool coping, courtyards, and driveways.
             </p>
           </div>
 
           <div className="bg-white p-3 sm:p-5 rounded-xl sm:rounded-2xl border border-black/8 shadow-xs">
-            <span className="text-[10px] sm:text-[11px] font-bold text-[#C29B38] uppercase tracking-wider block mb-1">
+            <span className="text-[10px] sm:text-[11px] font-bold text-[#C5A15B] uppercase tracking-wider block mb-1">
               Mineral Density
             </span>
-            <div className="text-xl sm:text-3xl font-bold font-['Cinzel',serif] text-[#0D1311]">
+            <div className="text-xl sm:text-3xl font-bold font-['Cinzel',serif] text-[#123D32]">
               2.52 g/cm³
             </div>
-            <p className="text-[10.5px] sm:text-xs text-[#4A5550] mt-1 sm:mt-1.5 leading-snug">
+            <p className="text-[10.5px] sm:text-xs text-[#6B7C73] mt-1 sm:mt-1.5 leading-snug">
               Fine-grained quartzitic formation ensuring zero crumbling and centuries of weather resistance.
             </p>
           </div>
@@ -139,7 +139,7 @@ export default function StoneTechnicalSpecsTable() {
         {/* The Core Semantic Responsive HTML Table */}
         <div className="bg-white rounded-2xl sm:rounded-3xl border border-black/10 shadow-md overflow-hidden">
           {/* Mobile Swipe Hint */}
-          <div className="sm:hidden flex items-center justify-center gap-1.5 py-1.5 px-3 bg-[#FAF7F2] border-b border-black/6 text-[9.5px] font-semibold text-[#68726E] tracking-wider uppercase">
+          <div className="sm:hidden flex items-center justify-center gap-1.5 py-1.5 px-3 bg-[#F7F4EB] border-b border-black/6 text-[9.5px] font-semibold text-[#6B7C73] tracking-wider uppercase">
             <span>&larr; Swipe table horizontally to compare all standards &rarr;</span>
           </div>
           <div className="overflow-x-auto">
@@ -148,11 +148,11 @@ export default function StoneTechnicalSpecsTable() {
                 Laboratory physical test metrics for Dholpur sandstone compared against ASTM C616 and IS 3622
               </caption>
               <thead>
-                <tr className="bg-[#0D1311] text-white font-['Cinzel',serif] uppercase tracking-wider text-[11px] sm:text-xs">
+                <tr className="bg-[#123D32] text-white font-['Cinzel',serif] uppercase tracking-wider text-[11px] sm:text-xs">
                   <th scope="col" className="py-4 px-4 sm:px-6 font-bold border-b border-white/10">
                     Physical Property
                   </th>
-                  <th scope="col" className="py-4 px-4 sm:px-6 font-bold border-b border-white/10 text-[#E0BA55]">
+                  <th scope="col" className="py-4 px-4 sm:px-6 font-bold border-b border-white/10 text-[#C5A15B]">
                     Dholpurestones Test Value
                   </th>
                   <th scope="col" className="py-4 px-4 sm:px-6 font-bold border-b border-white/10">
@@ -166,28 +166,28 @@ export default function StoneTechnicalSpecsTable() {
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-black/8 text-[#141A17]">
+              <tbody className="divide-y divide-black/8 text-[#1F2A24]">
                 {specs.map((row, idx) => (
                   <tr
                     key={idx}
-                    className={`hover:bg-[#FAF7F2] transition-colors ${idx % 2 === 0 ? "bg-white" : "bg-[#FAF7F2]/40"}`}
+                    className={`hover:bg-[#F7F4EB] transition-colors ${idx % 2 === 0 ? "bg-white" : "bg-[#F7F4EB]/40"}`}
                   >
-                    <td className="py-4 px-4 sm:px-6 font-semibold text-[#0D1311]">
+                    <td className="py-4 px-4 sm:px-6 font-semibold text-[#123D32]">
                       {row.property}
                     </td>
-                    <td className="py-4 px-4 sm:px-6 font-bold text-[#134e3f] bg-[#134e3f]/5">
+                    <td className="py-4 px-4 sm:px-6 font-bold text-[#123D32] bg-[#123D32]/5">
                       <div className="flex items-center gap-1.5">
                         <CheckCircle2 className="w-3.5 h-3.5 text-[#25D366] shrink-0" />
                         <span>{row.dholpurValue}</span>
                       </div>
                     </td>
-                    <td className="py-4 px-4 sm:px-6 text-[#4A5550]">
+                    <td className="py-4 px-4 sm:px-6 text-[#6B7C73]">
                       {row.astmReq}
                     </td>
-                    <td className="py-4 px-4 sm:px-6 text-[#4A5550]">
+                    <td className="py-4 px-4 sm:px-6 text-[#6B7C73]">
                       {row.isReq}
                     </td>
-                    <td className="py-4 px-4 sm:px-6 text-xs text-[#4A5550] leading-relaxed">
+                    <td className="py-4 px-4 sm:px-6 text-xs text-[#6B7C73] leading-relaxed">
                       {row.significance}
                     </td>
                   </tr>
@@ -197,12 +197,12 @@ export default function StoneTechnicalSpecsTable() {
           </div>
 
           {/* Table Footer Callout */}
-          <div className="bg-[#FAF7F2] p-4 sm:p-5 border-t border-black/8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#4A5550]">
+          <div className="bg-[#F7F4EB] p-4 sm:p-5 border-t border-black/8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#6B7C73]">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-[#C29B38] shrink-0" />
+              <ShieldCheck className="w-4 h-4 text-[#C5A15B] shrink-0" />
               <span>Certified NABL-accredited laboratory test reports available upon architectural BOQ request.</span>
             </div>
-            <div className="text-[11px] font-semibold text-[#134e3f] tracking-wide uppercase">
+            <div className="text-[11px] font-semibold text-[#123D32] tracking-wide uppercase">
               Standards: ASTM C616 &bull; ASTM C1028 &bull; IS:3622 &bull; IS:1121
             </div>
           </div>

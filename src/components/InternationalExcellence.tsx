@@ -98,23 +98,23 @@ export default function InternationalExcellence() {
   return (
     <section
       id="international-excellence"
-      className="relative bg-gradient-to-b from-[#0D1311] via-[#141A17] to-[#0D1311] py-16 sm:py-24 text-white overflow-hidden border-b border-[#C29B38]/30 scroll-mt-20 sm:scroll-mt-24"
+      className="relative bg-gradient-to-b from-[#123D32] via-[#1F2A24] to-[#123D32] py-16 sm:py-24 text-white overflow-hidden border-b border-[#C5A15B]/30 scroll-mt-20 sm:scroll-mt-24"
     >
       {/* Background Radial Glow & Gold Dust Effect */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-96 bg-[radial-gradient(ellipse_at_top,rgba(194,155,56,0.18)_0%,transparent_70%)] pointer-events-none" />
-      <div className="absolute -bottom-20 right-10 w-96 h-96 bg-[#134e3f]/25 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-20 right-10 w-96 h-96 bg-[#123D32]/25 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Pre-Header Badge */}
         <AnimDiv className="flex flex-col sm:flex-row items-center justify-between pb-4 border-b border-white/10 mb-10 sm:mb-14 gap-3 text-center sm:text-left">
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#C29B38] animate-pulse" />
-            <span className="font-['Cinzel',serif] text-xs font-bold tracking-[0.2em] text-[#E0BA55] uppercase">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#C5A15B] animate-pulse" />
+            <span className="font-['Cinzel',serif] text-xs font-bold tracking-[0.2em] text-[#C5A15B] uppercase">
               GLOBAL BENCHMARK OF STONE EXCELLENCE
             </span>
           </div>
-          <div className="inline-flex items-center gap-2 bg-[#C29B38]/15 border border-[#C29B38]/40 px-3.5 py-1 rounded-full text-[10px] sm:text-xs font-bold text-[#E0BA55] uppercase tracking-wider">
-            <Trophy className="w-3.5 h-3.5 text-[#C29B38]" />
+          <div className="inline-flex items-center gap-2 bg-[#C5A15B]/15 border border-[#C5A15B]/40 px-3.5 py-1 rounded-full text-[10px] sm:text-xs font-bold text-[#C5A15B] uppercase tracking-wider">
+            <Trophy className="w-3.5 h-3.5 text-[#C5A15B]" />
             <span>ESTD. 1953 &bull; GLOBAL NATURAL STONE LEADER</span>
           </div>
         </AnimDiv>
@@ -122,16 +122,16 @@ export default function InternationalExcellence() {
         {/* Grand Headline & International Seal Banner */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12 sm:mb-16">
           <AnimDiv delay={50} className="lg:col-span-8 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C29B38]/20 border border-[#C29B38]/50 text-[#E0BA55] text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
-              <Sparkles className="w-4 h-4 text-[#C29B38]" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C5A15B]/20 border border-[#C5A15B]/50 text-[#C5A15B] text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
+              <Sparkles className="w-4 h-4 text-[#C5A15B]" />
               <span>OFFICIALLY NOMINATED &bull; INTERNATIONAL RECOGNITION</span>
             </div>
 
             <h2 className="font-['Cinzel',serif] text-2xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wide leading-tight text-white mb-4">
-              Nominated for <span className="text-[#E0BA55]">International Award</span> for Business Excellence
+              Nominated for <span className="text-[#C5A15B]">International Award</span> for Business Excellence
             </h2>
 
-            <p className="font-['EB_Garamond',serif] text-lg sm:text-xl text-[#F5E6BE]/90 leading-relaxed mb-4">
+            <p className="font-['EB_Garamond',serif] text-lg sm:text-xl text-[#C5A15B]/90 leading-relaxed mb-4">
               Celebrating seven decades of uncompromising natural stone quarrying, award-winning front elevation designs, and global architectural contracting under Garg Corporation Ltd. and Saroj Stone Industries.
             </p>
 
@@ -143,21 +143,21 @@ export default function InternationalExcellence() {
           {/* Right Gold Seal Emblem Card */}
           <AnimDiv
             delay={120}
-            className="lg:col-span-4 bg-gradient-to-br from-[#1a231f] via-[#141A17] to-[#0D1311] rounded-3xl p-6 sm:p-8 border-2 border-[#C29B38]/50 shadow-[0_10px_40px_rgba(0,0,0,0.6)] text-center relative overflow-hidden group"
+            className="lg:col-span-4 bg-gradient-to-br from-[#1E5A46] via-[#1F2A24] to-[#123D32] rounded-3xl p-6 sm:p-8 border-2 border-[#C5A15B]/50 shadow-[0_10px_40px_rgba(0,0,0,0.6)] text-center relative overflow-hidden group"
           >
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#C29B38]/20 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-700" />
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#C5A15B]/20 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-700" />
 
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#C29B38] to-[#8C6D23] mx-auto flex items-center justify-center shadow-xl mb-4 text-[#0D1311] border-2 border-white/30">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#C5A15B] to-[#C5A15B] mx-auto flex items-center justify-center shadow-xl mb-4 text-[#123D32] border-2 border-white/30">
               <Trophy className="w-10 h-10 stroke-[2.2]" />
             </div>
 
-            <span className="font-['Cinzel',serif] text-xs font-bold text-[#E0BA55] tracking-[0.2em] uppercase block mb-1">
+            <span className="font-['Cinzel',serif] text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase block mb-1">
               WORLDWIDE RECOGNITION
             </span>
             <h3 className="font-['Cinzel',serif] text-base sm:text-lg font-bold text-white uppercase tracking-wider mb-2">
               International Award for Business Excellence
             </h3>
-            <div className="w-10 h-0.5 bg-[#C29B38] mx-auto mb-3" />
+            <div className="w-10 h-0.5 bg-[#C5A15B] mx-auto mb-3" />
 
             <p className="text-[11px] text-white/70 leading-relaxed mb-4">
               Nominated for supreme standards in stone quarrying, zero-defect fabrication, and execution of 300+ Government-awarded sandstone front elevation designs.
@@ -176,21 +176,21 @@ export default function InternationalExcellence() {
             const Icon = pillar.icon;
             return (
               <AnimDiv key={pillar.number} delay={idx * 80}>
-                <div className="bg-[#161D1A]/90 hover:bg-[#1A2420] rounded-2xl p-6 border border-white/10 hover:border-[#C29B38]/70 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-full group">
+                <div className="bg-[#1E5A46]/90 hover:bg-[#1E5A46] rounded-2xl p-6 border border-white/10 hover:border-[#C5A15B]/70 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-full group">
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#C29B38] group-hover:bg-[#C29B38] group-hover:text-[#0D1311] transition-colors shadow-sm">
+                      <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#C5A15B] group-hover:bg-[#C5A15B] group-hover:text-[#123D32] transition-colors shadow-sm">
                         <Icon className="w-5 h-5" />
                       </div>
-                      <span className="font-['Cinzel',serif] text-xl font-bold text-white/30 group-hover:text-[#C29B38] transition-colors">
+                      <span className="font-['Cinzel',serif] text-xl font-bold text-white/30 group-hover:text-[#C5A15B] transition-colors">
                         {pillar.number}
                       </span>
                     </div>
 
-                    <span className="text-[9px] font-bold text-[#C29B38] uppercase tracking-[0.16em] block mb-1">
+                    <span className="text-[9px] font-bold text-[#C5A15B] uppercase tracking-[0.16em] block mb-1">
                       {pillar.badge}
                     </span>
-                    <h3 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-white uppercase tracking-wider mb-2.5 group-hover:text-[#E0BA55] transition-colors">
+                    <h3 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-white uppercase tracking-wider mb-2.5 group-hover:text-[#C5A15B] transition-colors">
                       {pillar.title}
                     </h3>
                     <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs text-white/70 leading-relaxed mb-4">
@@ -200,14 +200,14 @@ export default function InternationalExcellence() {
 
                   <div className="pt-3 border-t border-white/10 flex items-center justify-between">
                     <div>
-                      <span className="block font-['Cinzel',serif] text-sm font-bold text-[#E0BA55]">
+                      <span className="block font-['Cinzel',serif] text-sm font-bold text-[#C5A15B]">
                         {pillar.stats}
                       </span>
                       <span className="text-[9px] text-white/50 uppercase tracking-wider">
                         {pillar.statsLabel}
                       </span>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-[#C29B38] group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 text-[#C5A15B] group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               </AnimDiv>
@@ -217,10 +217,10 @@ export default function InternationalExcellence() {
 
         {/* Global Footprint Banner */}
         <AnimDiv delay={200}>
-          <div className="bg-gradient-to-r from-[#161D1A] via-[#1a231f] to-[#161D1A] rounded-2xl p-6 sm:p-8 border border-white/10 shadow-xl mb-10">
+          <div className="bg-gradient-to-r from-[#1E5A46] via-[#1E5A46] to-[#1E5A46] rounded-2xl p-6 sm:p-8 border border-white/10 shadow-xl mb-10">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
               <div className="flex-1 text-center lg:text-left">
-                <span className="font-['Cinzel',serif] text-[10px] font-bold text-[#C29B38] tracking-[0.2em] uppercase block mb-1">
+                <span className="font-['Cinzel',serif] text-[10px] font-bold text-[#C5A15B] tracking-[0.2em] uppercase block mb-1">
                   GLOBAL EXPORT INFRASTRUCTURE
                 </span>
                 <h3 className="font-['Cinzel',serif] text-base sm:text-xl font-bold uppercase tracking-wider text-white mb-2">
@@ -237,11 +237,11 @@ export default function InternationalExcellence() {
                     key={item.country}
                     className="p-3 rounded-xl bg-white/5 border border-white/10 text-left flex items-start gap-2.5"
                   >
-                    <Globe2 className="w-4 h-4 text-[#C29B38] shrink-0 mt-0.5" />
+                    <Globe2 className="w-4 h-4 text-[#C5A15B] shrink-0 mt-0.5" />
                     <div>
                       <span
                         className={`text-xs font-bold block ${
-                          item.highlight ? "text-[#E0BA55]" : "text-white"
+                          item.highlight ? "text-[#C5A15B]" : "text-white"
                         }`}
                       >
                         {item.country}
@@ -264,9 +264,9 @@ export default function InternationalExcellence() {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-[#0D1311] font-bold text-xs uppercase tracking-wider px-7 py-3.5 rounded-full shadow-xl transition-all active:scale-95 cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-[#123D32] font-bold text-xs uppercase tracking-wider px-7 py-3.5 rounded-full shadow-xl transition-all active:scale-95 cursor-pointer"
             >
-              <WhatsAppIcon className="w-4 h-4 fill-[#0D1311]" size={16} />
+              <WhatsAppIcon className="w-4 h-4 fill-[#123D32]" size={16} />
               <span>Consult with Director Arvind Garg</span>
             </a>
 
@@ -274,9 +274,9 @@ export default function InternationalExcellence() {
               href="/landscaping"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/25 text-white font-bold text-xs uppercase tracking-wider px-7 py-3.5 rounded-full transition-all active:scale-95 text-center"
             >
-              <Home className="w-4 h-4 text-[#C29B38]" />
+              <Home className="w-4 h-4 text-[#C5A15B]" />
               <span>Farm House &amp; Gardens Portfolio</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#C29B38]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#C5A15B]" />
             </Link>
           </div>
         </AnimDiv>

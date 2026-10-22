@@ -126,23 +126,23 @@ export default function MaterialShowcase() {
   ];
 
   return (
-    <section id="materials" className="py-20 sm:py-28 bg-[#18181b] relative overflow-hidden border-b border-white/10">
+    <section id="materials" className="py-20 sm:py-28 bg-[#1E5A46] relative overflow-hidden border-b border-white/10">
       {/* Background Ambience */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#c29b38]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#5a1224]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A15B]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#123D32]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 text-[#c29b38] text-xs font-semibold tracking-[0.25em] uppercase mb-3">
+            <div className="inline-flex items-center gap-2 text-[#C5A15B] text-xs font-semibold tracking-[0.25em] uppercase mb-3">
               <Sparkles className="w-4 h-4" />
               THE 5 MATERIAL PILLARS • DIRECT QUARRY TO PORT
             </div>
             <h2 className="font-['Aboreto',serif] text-3xl sm:text-4xl md:text-5xl font-bold tracking-[0.1em] text-white uppercase leading-tight">
               RAW NOBILITY OF THE EARTH
             </h2>
-            <p className="font-['EB_Garamond',serif] italic text-lg sm:text-xl text-[#a8a8a8] max-w-2xl mt-3">
+            <p className="font-['EB_Garamond',serif] italic text-lg sm:text-xl text-white/75 max-w-2xl mt-3">
               From monumental sandstone blocks to gemological lapidary inlays, each specimen is mined, hand-graded, and precision-calibrated for international architectural excellence.
             </p>
           </div>
@@ -160,7 +160,7 @@ export default function MaterialShowcase() {
             <div
               key={mat.id}
               onClick={() => setSelectedMaterial(mat)}
-              className="group relative h-[460px] rounded-2xl overflow-hidden cursor-pointer border border-white/10 hover:border-[#c29b38] transition-all duration-500 shadow-xl bg-[#121212] flex flex-col justify-end p-6"
+              className="group relative h-[460px] rounded-2xl overflow-hidden cursor-pointer border border-white/10 hover:border-[#C5A15B] transition-all duration-500 shadow-xl bg-[#123D32] flex flex-col justify-end p-6"
             >
               {/* Background Next.js Image */}
               <div className="absolute inset-0 z-0">
@@ -172,29 +172,29 @@ export default function MaterialShowcase() {
                 />
                 {/* Gradient Overlays */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent group-hover:via-black/70 transition-colors" />
-                <div className="absolute inset-0 bg-[#5a1224]/0 group-hover:bg-[#5a1224]/30 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-[#123D32]/0 group-hover:bg-[#123D32]/30 transition-colors duration-500" />
               </div>
 
               {/* Top Pill Category Tag */}
               <div className="absolute top-4 left-4 z-10">
-                <span className="text-[10px] tracking-[0.18em] uppercase font-semibold px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[#c29b38] border border-[#c29b38]/40">
+                <span className="text-[10px] tracking-[0.18em] uppercase font-semibold px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[#C5A15B] border border-[#C5A15B]/40">
                   {mat.category}
                 </span>
               </div>
 
               {/* Floating Quick Inspect Icon */}
               <div className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="w-9 h-9 rounded-full bg-[#c29b38] text-black flex items-center justify-center shadow-lg">
+                <div className="w-9 h-9 rounded-full bg-[#C5A15B] text-black flex items-center justify-center shadow-lg">
                   <ArrowUpRight className="w-5 h-5" />
                 </div>
               </div>
 
               {/* Card Body */}
               <div className="relative z-10">
-                <h3 className="font-['Aboreto',serif] text-xl font-bold text-white uppercase tracking-wider group-hover:text-[#c29b38] transition-colors">
+                <h3 className="font-['Aboreto',serif] text-xl font-bold text-white uppercase tracking-wider group-hover:text-[#C5A15B] transition-colors">
                   {mat.name}
                 </h3>
-                <p className="font-['EB_Garamond',serif] italic text-sm text-[#f4efe6] line-clamp-2 mt-1.5 opacity-90">
+                <p className="font-['EB_Garamond',serif] italic text-sm text-[#F7F4EB] line-clamp-2 mt-1.5 opacity-90">
                   {mat.tagline}
                 </p>
 
@@ -209,13 +209,13 @@ export default function MaterialShowcase() {
                     </span>
                   ))}
                   {mat.varieties.length > 2 && (
-                    <span className="text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-[#c29b38]/20 text-[#c29b38]">
+                    <span className="text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-[#C5A15B]/20 text-[#C5A15B]">
                       +{mat.varieties.length - 2} More
                     </span>
                   )}
                 </div>
 
-                <div className="mt-4 flex items-center justify-between text-xs text-[#c29b38] font-semibold tracking-wider uppercase group-hover:translate-x-1 transition-transform">
+                <div className="mt-4 flex items-center justify-between text-xs text-[#C5A15B] font-semibold tracking-wider uppercase group-hover:translate-x-1 transition-transform">
                   <span>View Specifications</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </div>
@@ -235,7 +235,7 @@ export default function MaterialShowcase() {
           />
 
           {/* Modal Container */}
-          <div className="relative z-10 w-full max-w-4xl bg-[#1a1a1a] border border-[#c29b38]/40 rounded-2xl shadow-2xl overflow-hidden my-8">
+          <div className="relative z-10 w-full max-w-4xl bg-[#1E5A46] border border-[#C5A15B]/40 rounded-2xl shadow-2xl overflow-hidden my-8">
             <div className="grid grid-cols-1 md:grid-cols-2">
               {/* Left Column: Image with overlay */}
               <div className="relative min-h-[300px] md:min-h-full">
@@ -247,13 +247,13 @@ export default function MaterialShowcase() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <span className="text-xs uppercase tracking-[0.2em] text-[#c29b38] font-bold">
+                  <span className="text-xs uppercase tracking-[0.2em] text-[#C5A15B] font-bold">
                     {selectedMaterial.category}
                   </span>
                   <h3 className="font-['Aboreto',serif] text-2xl sm:text-3xl font-bold tracking-wider uppercase mt-1">
                     {selectedMaterial.name}
                   </h3>
-                  <p className="font-['EB_Garamond',serif] italic text-sm text-[#f4efe6] mt-1">
+                  <p className="font-['EB_Garamond',serif] italic text-sm text-[#F7F4EB] mt-1">
                     {selectedMaterial.tagline}
                   </p>
                 </div>
@@ -263,7 +263,7 @@ export default function MaterialShowcase() {
               <div className="p-6 sm:p-8 flex flex-col justify-between max-h-[85vh] overflow-y-auto">
                 <div>
                   <div className="flex items-center justify-between pb-4 border-b border-white/10">
-                    <span className="text-xs font-semibold text-[#c29b38] uppercase tracking-wider flex items-center gap-1.5">
+                    <span className="text-xs font-semibold text-[#C5A15B] uppercase tracking-wider flex items-center gap-1.5">
                       <SlidersHorizontal className="w-3.5 h-3.5" />
                       TECHNICAL DATA SHEET
                     </span>
@@ -275,7 +275,7 @@ export default function MaterialShowcase() {
                     </button>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-[#d4d4d4] leading-relaxed mt-4">
+                  <p className="text-xs sm:text-sm text-white/80 leading-relaxed mt-4">
                     {selectedMaterial.description}
                   </p>
 
@@ -287,19 +287,19 @@ export default function MaterialShowcase() {
                     <div className="grid grid-cols-2 gap-3 bg-black/40 p-4 rounded-xl border border-white/5">
                       <div>
                         <span className="text-[10px] text-white/50 uppercase block">Compressive Strength</span>
-                        <span className="text-xs font-semibold text-[#c29b38]">{selectedMaterial.specs.compressive}</span>
+                        <span className="text-xs font-semibold text-[#C5A15B]">{selectedMaterial.specs.compressive}</span>
                       </div>
                       <div>
                         <span className="text-[10px] text-white/50 uppercase block">Water Absorption</span>
-                        <span className="text-xs font-semibold text-[#c29b38]">{selectedMaterial.specs.waterAbsorption}</span>
+                        <span className="text-xs font-semibold text-[#C5A15B]">{selectedMaterial.specs.waterAbsorption}</span>
                       </div>
                       <div>
                         <span className="text-[10px] text-white/50 uppercase block">Bulk Density</span>
-                        <span className="text-xs font-semibold text-[#c29b38]">{selectedMaterial.specs.density}</span>
+                        <span className="text-xs font-semibold text-[#C5A15B]">{selectedMaterial.specs.density}</span>
                       </div>
                       <div>
                         <span className="text-[10px] text-white/50 uppercase block">Modulus of Rupture</span>
-                        <span className="text-xs font-semibold text-[#c29b38]">{selectedMaterial.specs.modulus}</span>
+                        <span className="text-xs font-semibold text-[#C5A15B]">{selectedMaterial.specs.modulus}</span>
                       </div>
                     </div>
                   </div>
@@ -313,7 +313,7 @@ export default function MaterialShowcase() {
                       {selectedMaterial.varieties.map((v, i) => (
                         <span
                           key={i}
-                          className="text-xs px-2.5 py-1 rounded bg-[#5a1224]/30 border border-[#5a1224] text-white/90"
+                          className="text-xs px-2.5 py-1 rounded bg-[#123D32]/30 border border-[#123D32] text-white/90"
                         >
                           {v}
                         </span>
@@ -344,7 +344,7 @@ export default function MaterialShowcase() {
                   <a
                     href="#contact"
                     onClick={() => setSelectedMaterial(null)}
-                    className="flex-1 font-['Aboreto',serif] text-xs uppercase tracking-widest py-3 rounded-full bg-[#c29b38] text-black font-bold text-center hover:bg-[#dfb54b] transition-all"
+                    className="flex-1 font-['Aboreto',serif] text-xs uppercase tracking-widest py-3 rounded-full bg-[#C5A15B] text-black font-bold text-center hover:bg-[#C5A15B] transition-all"
                   >
                     REQUEST SAMPLES FOR THIS STONE
                   </a>

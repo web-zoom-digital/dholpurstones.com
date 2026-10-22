@@ -124,11 +124,11 @@ export default function LandmarkProjects() {
       : projects.filter((p) => p.category === activeFilter);
 
   return (
-    <section id="portfolio" className="py-20 sm:py-28 bg-[#121212] relative overflow-hidden border-b border-white/10">
+    <section id="portfolio" className="py-20 sm:py-28 bg-[#123D32] relative overflow-hidden border-b border-white/10">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 text-[#c29b38] text-xs font-semibold tracking-[0.25em] uppercase mb-3">
+          <div className="inline-flex items-center gap-2 text-[#C5A15B] text-xs font-semibold tracking-[0.25em] uppercase mb-3">
             <Sparkles className="w-4 h-4" />
             LANDMARK PORTFOLIO • MONUMENTS OF NATIONAL PRIDE
             <Sparkles className="w-4 h-4" />
@@ -136,7 +136,7 @@ export default function LandmarkProjects() {
           <h2 className="font-['Aboreto',serif] text-3xl sm:text-4xl md:text-5xl font-bold tracking-[0.1em] text-white uppercase leading-tight">
             STONES THAT SHAPED NATIONS
           </h2>
-          <p className="font-['EB_Garamond',serif] italic text-lg sm:text-2xl text-[#a8a8a8] mt-4 leading-relaxed">
+          <p className="font-['EB_Garamond',serif] italic text-lg sm:text-2xl text-white/75 mt-4 leading-relaxed">
             For seven continuous decades, India’s top ministries, international embassies, and landmark religious foundations have entrusted their monumental facades to Dholpur Stones.
           </p>
         </div>
@@ -149,8 +149,8 @@ export default function LandmarkProjects() {
               onClick={() => setActiveFilter(tab.key)}
               className={`font-['Aboreto',serif] text-[11px] sm:text-xs tracking-[0.16em] uppercase px-5 py-2.5 rounded-full transition-all duration-300 border ${
                 activeFilter === tab.key
-                  ? "bg-[#c29b38] text-black font-bold border-[#c29b38] shadow-[0_0_20px_rgba(194,155,56,0.3)]"
-                  : "bg-white/5 text-white/70 border-white/10 hover:border-[#c29b38] hover:text-white"
+                  ? "bg-[#C5A15B] text-black font-bold border-[#C5A15B] shadow-[0_0_20px_rgba(194,155,56,0.3)]"
+                  : "bg-white/5 text-white/70 border-white/10 hover:border-[#C5A15B] hover:text-white"
               }`}
             >
               {tab.label}
@@ -164,7 +164,7 @@ export default function LandmarkProjects() {
             <div
               key={project.id}
               onClick={() => setActiveProject(project)}
-              className="group bg-[#1a1a1a] rounded-2xl overflow-hidden border border-white/10 hover:border-[#c29b38] transition-all duration-500 shadow-xl flex flex-col justify-between cursor-pointer"
+              className="group bg-[#1E5A46] rounded-2xl overflow-hidden border border-white/10 hover:border-[#C5A15B] transition-all duration-500 shadow-xl flex flex-col justify-between cursor-pointer"
             >
               {/* Image Container */}
               <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-black">
@@ -174,14 +174,14 @@ export default function LandmarkProjects() {
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1E5A46] via-transparent to-transparent opacity-80" />
                 <div className="absolute top-4 left-4">
-                  <span className="text-[10px] tracking-[0.18em] uppercase font-bold px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-[#c29b38] border border-[#c29b38]/40">
+                  <span className="text-[10px] tracking-[0.18em] uppercase font-bold px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-[#C5A15B] border border-[#C5A15B]/40">
                     {project.categoryLabel}
                   </span>
                 </div>
                 <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="w-8 h-8 rounded-full bg-[#c29b38] text-black flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-full bg-[#C5A15B] text-black flex items-center justify-center">
                     <ArrowUpRight className="w-4 h-4" />
                   </div>
                 </div>
@@ -192,30 +192,30 @@ export default function LandmarkProjects() {
                 <div>
                   <div className="flex items-center gap-4 text-xs text-white/50 mb-2">
                     <span className="flex items-center gap-1">
-                      <MapPin className="w-3.5 h-3.5 text-[#c29b38]" />
+                      <MapPin className="w-3.5 h-3.5 text-[#C5A15B]" />
                       {project.location}
                     </span>
                     <span>•</span>
                     <span className="flex items-center gap-1">
-                      <Calendar className="w-3.5 h-3.5 text-[#c29b38]" />
+                      <Calendar className="w-3.5 h-3.5 text-[#C5A15B]" />
                       {project.year}
                     </span>
                   </div>
 
-                  <h3 className="font-['Aboreto',serif] text-xl font-bold text-white uppercase tracking-wider group-hover:text-[#c29b38] transition-colors">
+                  <h3 className="font-['Aboreto',serif] text-xl font-bold text-white uppercase tracking-wider group-hover:text-[#C5A15B] transition-colors">
                     {project.title}
                   </h3>
-                  <p className="font-['EB_Garamond',serif] italic text-sm text-[#f4efe6]/80 mt-1">
+                  <p className="font-['EB_Garamond',serif] italic text-sm text-[#F7F4EB]/80 mt-1">
                     {project.subtitle}
                   </p>
 
-                  <p className="text-xs text-[#a8a8a8] mt-3 line-clamp-3 leading-relaxed">
+                  <p className="text-xs text-white/75 mt-3 line-clamp-3 leading-relaxed">
                     {project.overview}
                   </p>
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                  <span className="text-xs text-[#c29b38] font-semibold tracking-wider uppercase group-hover:translate-x-1 transition-transform flex items-center gap-1">
+                  <span className="text-xs text-[#C5A15B] font-semibold tracking-wider uppercase group-hover:translate-x-1 transition-transform flex items-center gap-1">
                     Inspect Architectural Case Study
                     <ArrowUpRight className="w-4 h-4" />
                   </span>
@@ -234,7 +234,7 @@ export default function LandmarkProjects() {
             onClick={() => setActiveProject(null)}
           />
 
-          <div className="relative z-10 w-full max-w-4xl bg-[#18181b] border border-[#c29b38]/40 rounded-2xl shadow-2xl overflow-hidden my-8">
+          <div className="relative z-10 w-full max-w-4xl bg-[#1E5A46] border border-[#C5A15B]/40 rounded-2xl shadow-2xl overflow-hidden my-8">
             <div className="relative h-72 sm:h-96 w-full">
               <Image
                 src={activeProject.image}
@@ -242,7 +242,7 @@ export default function LandmarkProjects() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#18181b] via-[#18181b]/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1E5A46] via-[#1E5A46]/50 to-transparent" />
               <button
                 onClick={() => setActiveProject(null)}
                 className="absolute top-6 right-6 p-2 rounded-full bg-black/60 text-white hover:bg-black/90 transition-colors z-20"
@@ -250,13 +250,13 @@ export default function LandmarkProjects() {
                 <X className="w-6 h-6" />
               </button>
               <div className="absolute bottom-6 left-6 right-6 text-white">
-                <span className="text-xs uppercase tracking-[0.2em] text-[#c29b38] font-bold">
+                <span className="text-xs uppercase tracking-[0.2em] text-[#C5A15B] font-bold">
                   {activeProject.categoryLabel} • {activeProject.location}
                 </span>
                 <h3 className="font-['Aboreto',serif] text-2xl sm:text-4xl font-bold tracking-wider uppercase mt-1">
                   {activeProject.title}
                 </h3>
-                <p className="font-['EB_Garamond',serif] italic text-base sm:text-lg text-[#f4efe6]">
+                <p className="font-['EB_Garamond',serif] italic text-base sm:text-lg text-[#F7F4EB]">
                   {activeProject.subtitle}
                 </p>
               </div>
@@ -264,10 +264,10 @@ export default function LandmarkProjects() {
 
             <div className="p-6 sm:p-8 space-y-6">
               <div>
-                <h4 className="text-xs uppercase font-bold tracking-wider text-[#c29b38] mb-2">
+                <h4 className="text-xs uppercase font-bold tracking-wider text-[#C5A15B] mb-2">
                   ARCHITECTURAL SCOPE & DELIVERABLES:
                 </h4>
-                <p className="text-sm text-[#d4d4d4] leading-relaxed">
+                <p className="text-sm text-white/80 leading-relaxed">
                   {activeProject.overview}
                 </p>
               </div>
@@ -277,7 +277,7 @@ export default function LandmarkProjects() {
                   <span className="text-[10px] text-white/50 uppercase block">Supplied Stone Materials</span>
                   <div className="flex flex-wrap gap-1.5 mt-1">
                     {activeProject.stoneSupplied.map((s, i) => (
-                      <span key={i} className="text-xs font-semibold text-[#c29b38]">
+                      <span key={i} className="text-xs font-semibold text-[#C5A15B]">
                         • {s}
                       </span>
                     ))}
@@ -292,10 +292,10 @@ export default function LandmarkProjects() {
               </div>
 
               <div>
-                <h4 className="text-xs uppercase font-bold tracking-wider text-[#c29b38] mb-2">
+                <h4 className="text-xs uppercase font-bold tracking-wider text-[#C5A15B] mb-2">
                   KEY ENGINEERING & ARTISANAL HIGHLIGHT:
                 </h4>
-                <p className="text-xs sm:text-sm text-[#f4efe6] bg-[#5a1224]/20 border border-[#5a1224]/50 p-4 rounded-xl">
+                <p className="text-xs sm:text-sm text-[#F7F4EB] bg-[#123D32]/20 border border-[#123D32]/50 p-4 rounded-xl">
                   {activeProject.keyFeature}
                 </p>
               </div>
@@ -304,7 +304,7 @@ export default function LandmarkProjects() {
                 <a
                   href="#contact"
                   onClick={() => setActiveProject(null)}
-                  className="font-['Aboreto',serif] text-xs uppercase tracking-widest px-8 py-3.5 rounded-full bg-[#c29b38] text-black font-bold hover:bg-[#dfb54b] transition-all"
+                  className="font-['Aboreto',serif] text-xs uppercase tracking-widest px-8 py-3.5 rounded-full bg-[#C5A15B] text-black font-bold hover:bg-[#C5A15B] transition-all"
                 >
                   CONSULT ON SIMILAR PROJECT
                 </a>
