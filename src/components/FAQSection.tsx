@@ -196,15 +196,15 @@ export default function FAQSection() {
       <AnimDiv key={faq.id} delay={delayIdx * 40}>
         <div
           className={`rounded-3xl border transition-all duration-300 overflow-hidden relative group gcl-card-glow ${isOpen
-              ? "bg-[#FAF7F2] border-[#C29B38] shadow-xl"
-              : "bg-white border-black/8 hover:border-[#C29B38]/50 hover:bg-[#FAF7F2]/40 hover:shadow-md"
+              ? "bg-[#F7F4EB] border-[#C5A15B] shadow-xl"
+              : "bg-white border-black/8 hover:border-[#C5A15B]/50 hover:bg-[#F7F4EB]/40 hover:shadow-md"
             }`}
         >
           {/* Architectural Corner Crosshairs */}
-          <span className="absolute top-2 left-2 text-[10px] text-[#C29B38] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+          <span className="absolute top-2 left-2 text-[10px] text-[#C5A15B] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
             +
           </span>
-          <span className="absolute top-2 right-2 text-[10px] text-[#C29B38] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+          <span className="absolute top-2 right-2 text-[10px] text-[#C5A15B] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
             +
           </span>
 
@@ -218,19 +218,19 @@ export default function FAQSection() {
               {/* Number Index */}
               <div
                 className={`w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl flex items-center justify-center font-['Cinzel',serif] text-[10px] sm:text-xs font-bold shrink-0 transition-colors shadow-2xs ${isOpen
-                    ? "bg-[#134e3f] text-white"
-                    : "bg-[#FAF7F2] text-[#C29B38] group-hover:bg-[#134e3f] group-hover:text-white"
+                    ? "bg-[#123D32] text-white"
+                    : "bg-[#F7F4EB] text-[#C5A15B] group-hover:bg-[#123D32] group-hover:text-white"
                   }`}
               >
                 {faq.number}
               </div>
 
               <div>
-                <div className="inline-flex items-center gap-1 text-[8.5px] sm:text-[9px] font-bold text-[#C29B38] uppercase tracking-widest bg-white px-2 sm:px-2.5 py-0.5 rounded-full border border-black/6 mb-1">
-                  <Sparkles className="w-2.5 h-2.5 text-[#C29B38]" />
+                <div className="inline-flex items-center gap-1 text-[8.5px] sm:text-[9px] font-bold text-[#C5A15B] uppercase tracking-widest bg-white px-2 sm:px-2.5 py-0.5 rounded-full border border-black/6 mb-1">
+                  <Sparkles className="w-2.5 h-2.5 text-[#C5A15B]" />
                   <span>{faq.categoryLabel}</span>
                 </div>
-                <h4 className="font-['Cinzel',serif] text-xs sm:text-base font-bold text-[#141A17] uppercase tracking-wide leading-snug group-hover:text-[#134e3f] transition-colors">
+                <h4 className="font-['Cinzel',serif] text-xs sm:text-base font-bold text-[#1F2A24] uppercase tracking-wide leading-snug group-hover:text-[#123D32] transition-colors">
                   {faq.q}
                 </h4>
               </div>
@@ -238,8 +238,8 @@ export default function FAQSection() {
 
             <div
               className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen
-                  ? "bg-[#134e3f] text-white rotate-180"
-                  : "bg-[#FAF7F2] text-[#141A17] group-hover:bg-[#C29B38] group-hover:text-black"
+                  ? "bg-[#123D32] text-white rotate-180"
+                  : "bg-[#F7F4EB] text-[#1F2A24] group-hover:bg-[#C5A15B] group-hover:text-black"
                 }`}
             >
               <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -249,7 +249,7 @@ export default function FAQSection() {
           {/* Expandable Accordion Body */}
           {isOpen && (
             <div className="px-4 sm:px-6 pb-4 sm:pb-6 pt-1 border-t border-black/6 animate-fadeIn">
-              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#4A5550] leading-relaxed mb-3 sm:mb-4">
+              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] leading-relaxed mb-3 sm:mb-4">
                 {faq.a}
               </p>
 
@@ -258,9 +258,9 @@ export default function FAQSection() {
                 {faq.highlights.map((h, idx) => (
                   <span
                     key={idx}
-                    className="inline-flex items-center gap-1 bg-white text-[#134e3f] text-[9px] sm:text-[10px] font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg border border-black/6 shadow-2xs"
+                    className="inline-flex items-center gap-1 bg-white text-[#123D32] text-[9px] sm:text-[10px] font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg border border-black/6 shadow-2xs"
                   >
-                    <CheckCircle2 className="w-3 h-3 text-[#134e3f]" />
+                    <CheckCircle2 className="w-3 h-3 text-[#123D32]" />
                     <span>{h}</span>
                   </span>
                 ))}
@@ -268,8 +268,8 @@ export default function FAQSection() {
 
               {/* Direct Verification Footer & WhatsApp Trigger */}
               <div className="pt-3 border-t border-black/6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
-                <div className="flex items-center gap-1.5 text-[10px] font-semibold text-[#134e3f]">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#C29B38]" />
+                <div className="flex items-center gap-1.5 text-[10px] font-semibold text-[#123D32]">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#C5A15B]" />
                   <span>Verified from Dholpurestones.com technical archives (1953–Present)</span>
                 </div>
 
@@ -279,7 +279,7 @@ export default function FAQSection() {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 font-bold text-[#134e3f] hover:text-[#25D366] transition-colors"
+                  className="inline-flex items-center gap-1.5 font-bold text-[#123D32] hover:text-[#25D366] transition-colors"
                 >
                   <WhatsAppIcon className="w-3.5 h-3.5 fill-[#25D366]" size={14} />
                   <span>Ask on WhatsApp</span>
@@ -296,21 +296,21 @@ export default function FAQSection() {
   return (
     <section
       id="faq"
-      className="bg-white py-10 sm:py-20 border-b border-black/6 relative overflow-hidden"
+      className="bg-[#E5ECE4] py-10 sm:py-20 border-b border-black/6 relative overflow-hidden"
     >
       {/* =========================================================================
           MOTION GRAPHIC BACKGROUND: Geometric Blueprint Grid & Rotating Sacred Yantras
           ========================================================================= */}
       {/* Subtle Dotted Architectural Grid */}
-      <div className="absolute inset-0 bg-[radial-gradient(#C29B38_1.2px,transparent_1.2px)] [background-size:32px_32px] opacity-[0.06] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(#C5A15B_1.2px,transparent_1.2px)] [background-size:32px_32px] opacity-[0.06] pointer-events-none" />
 
       {/* Floating Animated Ambient Glow Orbs */}
-      <div className="absolute -top-24 right-10 w-[550px] h-[550px] bg-[#C29B38]/6 rounded-full blur-[140px] pointer-events-none animate-ambient-float-1" />
-      <div className="absolute -bottom-24 left-10 w-[500px] h-[500px] bg-[#134e3f]/6 rounded-full blur-[130px] pointer-events-none animate-ambient-float-2" />
+      <div className="absolute -top-24 right-10 w-[550px] h-[550px] bg-[#C5A15B]/6 rounded-full blur-[140px] pointer-events-none animate-ambient-float-1" />
+      <div className="absolute -bottom-24 left-10 w-[500px] h-[500px] bg-[#123D32]/6 rounded-full blur-[130px] pointer-events-none animate-ambient-float-2" />
 
       {/* Rotating Sacred Geometry Mandalas / Yantras in Background */}
       <div className="absolute -top-32 -left-32 w-[460px] h-[460px] opacity-[0.04] pointer-events-none animate-spin-slow">
-        <svg viewBox="0 0 200 200" className="w-full h-full fill-none stroke-[#C29B38]" strokeWidth="0.8">
+        <svg viewBox="0 0 200 200" className="w-full h-full fill-none stroke-[#C5A15B]" strokeWidth="0.8">
           <circle cx="100" cy="100" r="95" strokeDasharray="3 3" />
           <circle cx="100" cy="100" r="80" />
           <circle cx="100" cy="100" r="60" strokeDasharray="6 4" />
@@ -321,7 +321,7 @@ export default function FAQSection() {
       </div>
 
       <div className="absolute -bottom-40 -right-40 w-[520px] h-[520px] opacity-[0.035] pointer-events-none animate-spin-reverse">
-        <svg viewBox="0 0 200 200" className="w-full h-full fill-none stroke-[#134e3f]" strokeWidth="0.8">
+        <svg viewBox="0 0 200 200" className="w-full h-full fill-none stroke-[#123D32]" strokeWidth="0.8">
           <circle cx="100" cy="100" r="95" />
           <circle cx="100" cy="100" r="75" strokeDasharray="4 4" />
           <polygon points="100,5 180,175 20,175" />
@@ -334,12 +334,12 @@ export default function FAQSection() {
         {/* Section Header Label */}
         <AnimDiv className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-black/8 mb-6 sm:mb-8">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#C29B38] animate-pulse" />
-            <span className="font-['Cinzel',serif] text-[9.5px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.18em] text-[#141A17] uppercase">
+            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#C5A15B] animate-pulse" />
+            <span className="font-['Cinzel',serif] text-[9.5px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.18em] text-[#1F2A24] uppercase">
               DHOLPURESTONES.COM &bull; KNOWLEDGE BASE &bull; ESTD. 1953
             </span>
           </div>
-          <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C29B38] tracking-widest">
+          <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest">
             AEO / 09
           </span>
         </AnimDiv>
@@ -347,45 +347,45 @@ export default function FAQSection() {
         {/* Section Title & Description */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5 sm:gap-6 mb-6 sm:mb-9">
           <AnimDiv delay={0} className="max-w-2xl">
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-[#C29B38]/10 border border-[#C29B38]/25 text-[#C29B38] text-[9.5px] sm:text-[10px] font-bold uppercase tracking-[0.18em] mb-2 sm:mb-3">
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-[#C5A15B]/10 border border-[#C5A15B]/25 text-[#C5A15B] text-[9.5px] sm:text-[10px] font-bold uppercase tracking-[0.18em] mb-2 sm:mb-3">
               <Compass className="w-3 h-3 sm:w-3.5 sm:h-3.5 animate-spin-slow" />
               <span>Verified Corporate Knowledge &amp; AEO Architecture</span>
             </div>
-            <h2 className="font-['Cinzel',serif] text-xl sm:text-3xl lg:text-5xl font-bold text-[#141A17] uppercase tracking-wide mb-1.5 sm:mb-2 leading-snug">
+            <h2 className="font-['Cinzel',serif] text-xl sm:text-3xl lg:text-5xl font-bold text-[#1F2A24] uppercase tracking-wide mb-1.5 sm:mb-2 leading-snug">
               Frequently Asked Questions
             </h2>
-            <h3 className="font-['Cinzel',serif] text-base sm:text-2xl lg:text-3xl font-bold text-[#C29B38] uppercase tracking-wider mb-2.5 sm:mb-3">
+            <h3 className="font-['Cinzel',serif] text-base sm:text-2xl lg:text-3xl font-bold text-[#C5A15B] uppercase tracking-wider mb-2.5 sm:mb-3">
               Company Knowledge &amp; Inquiries
             </h3>
-            <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#C29B38] via-[#E0BA55] to-transparent rounded-full mb-3 sm:mb-4" />
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#4A5550] leading-relaxed">
+            <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#C5A15B] via-[#C5A15B] to-transparent rounded-full mb-3 sm:mb-4" />
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] leading-relaxed">
               Transparent, verified insights into our quarry concessions, geotechnical lab certifications, monumental landmark executions, and turnkey export logistics.
             </p>
           </AnimDiv>
 
           {/* Key Metric Highlights with Gilded Accents */}
           <AnimDiv delay={100} className="grid grid-cols-3 gap-2 sm:gap-4 shrink-0 w-full lg:w-auto">
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2 sm:py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-xs sm:text-2xl font-bold text-[#141A17]">
+            <div className="bg-[#F7F4EB] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2 sm:py-3 shadow-xs hover:border-[#C5A15B]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-xs sm:text-2xl font-bold text-[#1F2A24]">
                 70+ Years
               </span>
-              <span className="text-[8.5px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
+              <span className="text-[8.5px] sm:text-[10px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
                 Legacy
               </span>
             </div>
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2 sm:py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-xs sm:text-2xl font-bold text-[#141A17]">
+            <div className="bg-[#F7F4EB] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2 sm:py-3 shadow-xs hover:border-[#C5A15B]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-xs sm:text-2xl font-bold text-[#1F2A24]">
                 100% Direct
               </span>
-              <span className="text-[8.5px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
+              <span className="text-[8.5px] sm:text-[10px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
                 Sarmathura
               </span>
             </div>
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2 sm:py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-xs sm:text-2xl font-bold text-[#141A17]">
+            <div className="bg-[#F7F4EB] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2 sm:py-3 shadow-xs hover:border-[#C5A15B]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-xs sm:text-2xl font-bold text-[#1F2A24]">
                 50+ Temples
               </span>
-              <span className="text-[8.5px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
+              <span className="text-[8.5px] sm:text-[10px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
                 Monumental
               </span>
             </div>
@@ -395,11 +395,11 @@ export default function FAQSection() {
         {/* =========================================================================
             MOTION GRAPHIC INFINITE MARQUEE TICKER (Verified Corporate Ledger)
             ========================================================================= */}
-        <AnimDiv delay={120} className="mb-6 sm:mb-8 overflow-hidden rounded-xl bg-gradient-to-r from-[#FAF7F2] via-white to-[#FAF7F2] border border-black/8 py-2 sm:py-2.5 shadow-xs">
+        <AnimDiv delay={120} className="mb-6 sm:mb-8 overflow-hidden rounded-xl bg-gradient-to-r from-[#F7F4EB] via-white to-[#F7F4EB] border border-black/8 py-2 sm:py-2.5 shadow-xs">
           <div className="animate-marquee whitespace-nowrap flex items-center gap-6 sm:gap-8">
             {[...tickerHighlights, ...tickerHighlights].map((item, idx) => (
-              <div key={idx} className="inline-flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] font-bold text-[#141A17] uppercase tracking-wider shrink-0">
-                <span className="text-[#C29B38] text-xs">✦</span>
+              <div key={idx} className="inline-flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] font-bold text-[#1F2A24] uppercase tracking-wider shrink-0">
+                <span className="text-[#C5A15B] text-xs">✦</span>
                 <span>{item}</span>
               </div>
             ))}
@@ -419,13 +419,13 @@ export default function FAQSection() {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold uppercase tracking-wider transition-all duration-200 shrink-0 cursor-pointer ${isActive
-                      ? "bg-[#134e3f] text-white shadow-md scale-102"
-                      : "bg-[#FAF7F2] text-[#141A17]/80 hover:text-[#C29B38] hover:bg-white border border-black/8"
+                      ? "bg-[#123D32] text-white shadow-md scale-102"
+                      : "bg-[#F7F4EB] text-[#1F2A24]/80 hover:text-[#C5A15B] hover:bg-white border border-black/8"
                     }`}
                 >
                   <span>{tab.label}</span>
                   <span
-                    className={`text-[9.5px] sm:text-[10px] px-1.5 py-0.2 rounded-full ${isActive ? "bg-white/20 text-white" : "bg-black/5 text-[#68726E]"
+                    className={`text-[9.5px] sm:text-[10px] px-1.5 py-0.2 rounded-full ${isActive ? "bg-white/20 text-white" : "bg-black/5 text-[#6B7C73]"
                       }`}
                   >
                     {tab.count}
@@ -437,19 +437,19 @@ export default function FAQSection() {
 
           {/* Real-Time Search Bar */}
           <div className="relative w-full md:w-72 shrink-0">
-            <Search className="w-4 h-4 text-[#C29B38] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <Search className="w-4 h-4 text-[#C5A15B] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search questions or specs..."
-              className="w-full bg-[#FAF7F2] hover:bg-white focus:bg-white border border-black/10 focus:border-[#C29B38] text-base sm:text-xs font-medium text-[#141A17] pl-10 pr-9 py-2 sm:py-2.5 rounded-full transition-all duration-200 outline-none shadow-2xs"
+              className="w-full bg-[#F7F4EB] hover:bg-white focus:bg-white border border-black/10 focus:border-[#C5A15B] text-base sm:text-xs font-medium text-[#1F2A24] pl-10 pr-9 py-2 sm:py-2.5 rounded-full transition-all duration-200 outline-none shadow-2xs"
             />
             {searchQuery && (
               <button
                 type="button"
                 onClick={() => setSearchQuery("")}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-[#68726E] hover:text-[#141A17]"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-[#6B7C73] hover:text-[#1F2A24]"
               >
                 <X className="w-3.5 h-3.5" />
               </button>
@@ -461,12 +461,12 @@ export default function FAQSection() {
             ADVANCED ACCORDION GRID (2-Column Architecture with Spotlight & Micro-Tabs)
             ========================================================================= */}
         {filteredFaqs.length === 0 ? (
-          <div className="text-center py-12 bg-[#FAF7F2] rounded-3xl border border-black/8 p-8 mb-12">
-            <HelpCircle className="w-10 h-10 text-[#C29B38] mx-auto mb-3" />
-            <h4 className="font-['Cinzel',serif] text-base font-bold text-[#141A17] uppercase mb-1">
+          <div className="text-center py-12 bg-[#F7F4EB] rounded-3xl border border-black/8 p-8 mb-12">
+            <HelpCircle className="w-10 h-10 text-[#C5A15B] mx-auto mb-3" />
+            <h4 className="font-['Cinzel',serif] text-base font-bold text-[#1F2A24] uppercase mb-1">
               No matching inquiries found
             </h4>
-            <p className="text-xs text-[#68726E]">
+            <p className="text-xs text-[#6B7C73]">
               Try searching with another keyword or reset the filter tabs.
             </p>
             <button
@@ -474,7 +474,7 @@ export default function FAQSection() {
                 setActiveTab("all");
                 setSearchQuery("");
               }}
-              className="mt-4 text-xs font-bold text-[#134e3f] underline uppercase tracking-wider"
+              className="mt-4 text-xs font-bold text-[#123D32] underline uppercase tracking-wider"
             >
               Reset Filters
             </button>
@@ -502,14 +502,14 @@ export default function FAQSection() {
             ADVANCED MOTION GRAPHIC CALLOUT: Direct Architectural Consultation
             ========================================================================= */}
         <AnimDiv delay={250}>
-          <div className="bg-gradient-to-br from-[#134e3f] via-[#0e3b30] to-[#0A261F] rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border border-[#C29B38]/40 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-5 sm:gap-6 relative overflow-hidden text-white group">
+          <div className="bg-gradient-to-br from-[#123D32] via-[#123D32] to-[#0A261F] rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border border-[#C5A15B]/40 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-5 sm:gap-6 relative overflow-hidden text-white group">
             {/* Ambient Background Gold Beam Sweep */}
-            <div className="absolute -inset-full bg-gradient-to-r from-transparent via-[#C29B38]/15 to-transparent animate-beam-sweep pointer-events-none" />
-            <div className="absolute -right-10 -bottom-10 w-72 h-72 bg-[#C29B38]/20 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -inset-full bg-gradient-to-r from-transparent via-[#C5A15B]/15 to-transparent animate-beam-sweep pointer-events-none" />
+            <div className="absolute -right-10 -bottom-10 w-72 h-72 bg-[#C5A15B]/20 rounded-full blur-3xl pointer-events-none" />
 
             <div className="max-w-2xl text-center lg:text-left relative z-10">
-              <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-[#C29B38]/20 border border-[#C29B38]/40 px-3 py-1 rounded-full text-[9px] sm:text-[10px] font-bold text-[#FAF7F2] uppercase tracking-widest mb-2.5 sm:mb-3 shadow-xs">
-                <Flame className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#C29B38]" />
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-[#C5A15B]/20 border border-[#C5A15B]/40 px-3 py-1 rounded-full text-[9px] sm:text-[10px] font-bold text-[#F7F4EB] uppercase tracking-widest mb-2.5 sm:mb-3 shadow-xs">
+                <Flame className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#C5A15B]" />
                 <span>Architectural Tenders &bull; BOQ Engineering</span>
               </div>
               <h3 className="font-['Cinzel',serif] text-lg sm:text-2xl lg:text-3xl font-bold text-white uppercase tracking-wider mb-2">
@@ -525,9 +525,9 @@ export default function FAQSection() {
                 href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20have%20an%20architectural%20tender%20and%20specification%20inquiry%20regarding%20natural%20stone."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-[#0A0F0D] hover:bg-white font-bold text-xs uppercase px-5 sm:px-7 py-3 sm:py-3.5 rounded-full transition-all duration-300 shadow-xl active:scale-95"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-[#123D32] hover:bg-white font-bold text-xs uppercase px-5 sm:px-7 py-3 sm:py-3.5 rounded-full transition-all duration-300 shadow-xl active:scale-95"
               >
-                <WhatsAppIcon className="w-4 h-4 fill-[#0A0F0D]" size={16} />
+                <WhatsAppIcon className="w-4 h-4 fill-[#123D32]" size={16} />
                 <span>Chat Directly on WhatsApp</span>
               </a>
 
@@ -542,9 +542,9 @@ export default function FAQSection() {
         </AnimDiv>
 
         {/* Running Bottom Bar */}
-        <div className="mt-8 pt-4 border-t border-black/8 flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] sm:text-[11px] font-semibold text-[#4A5550] uppercase tracking-wider text-center sm:text-left">
+        <div className="mt-8 pt-4 border-t border-black/8 flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] sm:text-[11px] font-semibold text-[#6B7C73] uppercase tracking-wider text-center sm:text-left">
           <span>Natural Sandstones &bull; Mines &bull; Manufacturing &bull; Export &bull; Contracting</span>
-          <span className="font-['Cinzel',serif] text-[#141A17]">DHOLPURESTONES.COM</span>
+          <span className="font-['Cinzel',serif] text-[#1F2A24]">DHOLPURESTONES.COM</span>
         </div>
       </div>
 

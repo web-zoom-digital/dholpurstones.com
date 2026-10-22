@@ -284,6 +284,7 @@ export default function Navbar() {
 
   // Mouse hover handlers with delay buffer
   const handleMouseEnter = (label: string) => {
+    // eslint-disable-next-line react-hooks/purity
     lastMouseEnterTimeRef.current = Date.now();
     if (dropdownTimeoutRef.current) {
       clearTimeout(dropdownTimeoutRef.current);
@@ -304,6 +305,7 @@ export default function Navbar() {
     if (dropdownTimeoutRef.current) {
       clearTimeout(dropdownTimeoutRef.current);
     }
+    // eslint-disable-next-line react-hooks/purity
     const timeSinceEnter = Date.now() - lastMouseEnterTimeRef.current;
 
     if (openDropdown === label && clickLockedRef.current === label && timeSinceEnter > 450) {
@@ -361,11 +363,11 @@ export default function Navbar() {
   return (
     <>
       {/* 1. Top Utility Bar (Desktop & Tablet) */}
-      <div className="bg-[#0D1311] text-white/80 py-2 px-3 sm:px-6 relative z-50 border-b border-white/8 text-[11px] sm:text-xs">
+      <div className="bg-[#123D32] text-white/80 py-2 px-3 sm:px-6 relative z-50 border-b border-white/8 text-[11px] sm:text-xs">
         <div className="max-w-[1400px] mx-auto flex items-center justify-between gap-2">
           {/* Heritage Tag */}
-          <div className="flex items-center gap-1.5 text-[#C29B38] font-bold tracking-wider uppercase truncate">
-            <Landmark className="w-3.5 h-3.5 shrink-0 text-[#C29B38]" />
+          <div className="flex items-center gap-1.5 text-[#C5A15B] font-bold tracking-wider uppercase truncate">
+            <Landmark className="w-3.5 h-3.5 shrink-0 text-[#C5A15B]" />
             <span className="hidden xs:inline">ESTD. 1953 &bull;</span> DHOLPURESTONES
           </div>
 
@@ -375,25 +377,25 @@ export default function Navbar() {
               href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20inquire%20about%20natural%20stone"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-[#C29B38] font-semibold hover:text-[#FAF7F2] transition-colors"
+              className="flex items-center gap-1.5 text-[#C5A15B] font-semibold hover:text-[#F7F4EB] transition-colors"
             >
-              <WhatsAppIcon className="w-4 h-4 shrink-0 fill-[#C29B38]" size={16} />
+              <WhatsAppIcon className="w-4 h-4 shrink-0 fill-[#C5A15B]" size={16} />
               <span>+91 94149 45457</span>
             </a>
 
             <a
               href="tel:+919057355232"
-              className="hidden sm:flex items-center gap-1.5 text-white/80 hover:text-[#C29B38] transition-colors"
+              className="hidden sm:flex items-center gap-1.5 text-white/80 hover:text-[#C5A15B] transition-colors"
             >
-              <Phone className="w-3 h-3 text-[#C29B38] shrink-0" />
+              <Phone className="w-3 h-3 text-[#C5A15B] shrink-0" />
               <span>+91 90573 55232</span>
             </a>
 
             <a
               href="mailto:gargcorporationltd@gmail.com"
-              className="hidden md:flex items-center gap-1.5 text-white/70 hover:text-[#C29B38] transition-colors"
+              className="hidden md:flex items-center gap-1.5 text-white/70 hover:text-[#C5A15B] transition-colors"
             >
-              <Mail className="w-3.5 h-3.5 text-[#C29B38] shrink-0" />
+              <Mail className="w-3.5 h-3.5 text-[#C5A15B] shrink-0" />
               <span>gargcorporationltd@gmail.com</span>
             </a>
           </div>
@@ -412,16 +414,16 @@ export default function Navbar() {
         <div style={{ overflow: "visible" }} className="max-w-[1400px] mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4 overflow-visible">
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-2 sm:gap-2.5 shrink-0 group">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-[#0D1311] border border-[#C29B38]/80 flex items-center justify-center shadow-md transition-transform group-hover:scale-105 shrink-0">
-              <span className="font-['Cinzel',serif] text-xs sm:text-base font-extrabold text-[#C29B38]">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-[#123D32] border border-[#C5A15B]/80 flex items-center justify-center shadow-md transition-transform group-hover:scale-105 shrink-0">
+              <span className="font-['Cinzel',serif] text-xs sm:text-base font-extrabold text-[#C5A15B]">
                 DS
               </span>
             </div>
             <div className="flex flex-col leading-tight min-w-0">
-              <span className="font-['Cinzel',serif] text-xs sm:text-lg font-bold text-[#141A17] uppercase tracking-[0.06em] group-hover:text-[#C29B38] transition-colors whitespace-nowrap">
+              <span className="font-['Cinzel',serif] text-xs sm:text-lg font-bold text-[#1F2A24] uppercase tracking-[0.06em] group-hover:text-[#C5A15B] transition-colors whitespace-nowrap">
                 Dholpurestones
               </span>
-              <span className="text-[7.5px] sm:text-[9.5px] text-[#68726E] uppercase tracking-[0.12em] sm:tracking-[0.14em] font-semibold whitespace-nowrap">
+              <span className="text-[7.5px] sm:text-[9.5px] text-[#6B7C73] uppercase tracking-[0.12em] sm:tracking-[0.14em] font-semibold whitespace-nowrap">
                 Natural Stone &bull; Since 1953
               </span>
             </div>
@@ -447,8 +449,8 @@ export default function Navbar() {
                       onClick={(e) => handleDropdownClick(e, item.label)}
                       className={`inline-flex items-center gap-1.5 font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-bold tracking-tight transition-all cursor-pointer py-1.5 px-3 rounded-full ${
                         active || isDropdownOpen
-                          ? "text-[#0D1311] bg-[#C29B38]/20 border border-[#C29B38]/60 shadow-2xs"
-                          : "text-[#141A17] hover:text-[#C29B38] hover:bg-[#FAF7F2]"
+                          ? "text-[#123D32] bg-[#C5A15B]/20 border border-[#C5A15B]/60 shadow-2xs"
+                          : "text-[#1F2A24] hover:text-[#C5A15B] hover:bg-[#F7F4EB]"
                       }`}
                       aria-haspopup="true"
                       aria-expanded={isDropdownOpen}
@@ -456,7 +458,7 @@ export default function Navbar() {
                       <span>{item.label}</span>
                       <ChevronDown
                         className={`w-4 h-4 transition-transform duration-200 ${
-                          isDropdownOpen ? "rotate-180 text-[#C29B38]" : "text-[#141A17]/60"
+                          isDropdownOpen ? "rotate-180 text-[#C5A15B]" : "text-[#1F2A24]/60"
                         }`}
                       />
                     </button>
@@ -474,18 +476,18 @@ export default function Navbar() {
                         onMouseEnter={() => handleMouseEnter(item.label)}
                         onMouseLeave={handleMouseLeave}
                       >
-                        <div className="bg-white/98 backdrop-blur-xl rounded-2xl shadow-[0_24px_60px_-10px_rgba(13,19,17,0.22),0_8px_24px_-4px_rgba(194,155,56,0.18)] border border-[#C29B38]/35 ring-1 ring-black/5 overflow-hidden flex flex-col">
+                        <div className="bg-white/98 backdrop-blur-xl rounded-2xl shadow-[0_24px_60px_-10px_rgba(13,19,17,0.22),0_8px_24px_-4px_rgba(194,155,56,0.18)] border border-[#C5A15B]/35 ring-1 ring-black/5 overflow-hidden flex flex-col">
                           {/* Top Royal Accent Line */}
-                          <div className="h-[3px] w-full bg-gradient-to-r from-[#852233] via-[#C29B38] to-[#852233]" />
+                          <div className="h-[3px] w-full bg-gradient-to-r from-[#123D32] via-[#C5A15B] to-[#123D32]" />
 
                           {/* Category Header Strip */}
                           {item.headerTag && (
-                            <div className="px-4 py-2.5 bg-gradient-to-r from-[#FAF7F2] via-white to-[#FAF7F2] border-b border-black/6 flex items-center justify-between">
-                              <span className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.14em] text-[#852233]">
-                                <Landmark className="w-3 h-3 text-[#C29B38]" />
+                            <div className="px-4 py-2.5 bg-gradient-to-r from-[#F7F4EB] via-white to-[#F7F4EB] border-b border-black/6 flex items-center justify-between">
+                              <span className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.14em] text-[#123D32]">
+                                <Landmark className="w-3 h-3 text-[#C5A15B]" />
                                 {item.headerTag}
                               </span>
-                              <span className="text-[10px] font-bold text-[#68726E] uppercase tracking-wider">
+                              <span className="text-[10px] font-bold text-[#6B7C73] uppercase tracking-wider">
                                 {item.children.length} Options
                               </span>
                             </div>
@@ -495,8 +497,8 @@ export default function Navbar() {
                           <div
                             className={
                               item.isGrid
-                                ? "grid grid-cols-2 gap-1.5 p-2.5 bg-[#FCFAF7]/50"
-                                : "flex flex-col space-y-1 p-2 bg-[#FCFAF7]/50"
+                                ? "grid grid-cols-2 gap-1.5 p-2.5 bg-[#F7F4EB]/50"
+                                : "flex flex-col space-y-1 p-2 bg-[#F7F4EB]/50"
                             }
                           >
                             {item.children.map((sub) => {
@@ -506,32 +508,32 @@ export default function Navbar() {
                                   key={sub.label}
                                   href={sub.href}
                                   onClick={(e) => handleNavClick(e, sub.href)}
-                                  className="group flex items-start gap-3 p-2.5 rounded-xl border border-transparent hover:border-[#C29B38]/40 hover:bg-white hover:shadow-sm transition-all duration-150 text-left"
+                                  className="group flex items-start gap-3 p-2.5 rounded-xl border border-transparent hover:border-[#C5A15B]/40 hover:bg-white hover:shadow-sm transition-all duration-150 text-left"
                                 >
                                   {/* Icon Tile */}
-                                  <div className="w-9 h-9 rounded-lg bg-[#0D1311] text-[#C29B38] border border-[#C29B38]/30 flex items-center justify-center shrink-0 shadow-xs group-hover:bg-[#C29B38] group-hover:text-[#0D1311] group-hover:scale-105 transition-all duration-200 mt-0.5">
+                                  <div className="w-9 h-9 rounded-lg bg-[#123D32] text-[#C5A15B] border border-[#C5A15B]/30 flex items-center justify-center shrink-0 shadow-xs group-hover:bg-[#C5A15B] group-hover:text-[#123D32] group-hover:scale-105 transition-all duration-200 mt-0.5">
                                     <IconComponent className="w-4 h-4 transition-transform group-hover:scale-110" />
                                   </div>
 
                                   {/* Content Info */}
                                   <div className="flex-1 min-w-0">
                                     <div className="flex items-center gap-1.5 flex-wrap">
-                                      <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[13px] font-bold text-[#141A17] group-hover:text-[#852233] transition-colors leading-tight">
+                                      <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[13px] font-bold text-[#1F2A24] group-hover:text-[#123D32] transition-colors leading-tight">
                                         {sub.label}
                                       </span>
                                       {sub.badge && (
-                                        <span className="text-[9px] font-extrabold uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-[#C29B38]/15 text-[#852233] border border-[#C29B38]/40 shrink-0 group-hover:bg-[#852233] group-hover:text-white transition-colors">
+                                        <span className="text-[9px] font-extrabold uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-[#C5A15B]/15 text-[#123D32] border border-[#C5A15B]/40 shrink-0 group-hover:bg-[#123D32] group-hover:text-white transition-colors">
                                           {sub.badge}
                                         </span>
                                       )}
                                     </div>
-                                    <p className="text-[11px] text-[#68726E] group-hover:text-[#333E39] leading-snug mt-0.5 line-clamp-1">
+                                    <p className="text-[11px] text-[#6B7C73] group-hover:text-[#6B7C73] leading-snug mt-0.5 line-clamp-1">
                                       {sub.desc}
                                     </p>
                                   </div>
 
                                   {/* Micro chevron arrow */}
-                                  <ChevronRight className="w-3.5 h-3.5 text-[#C29B38]/40 group-hover:text-[#852233] group-hover:translate-x-0.5 transition-all shrink-0 self-center opacity-0 group-hover:opacity-100" />
+                                  <ChevronRight className="w-3.5 h-3.5 text-[#C5A15B]/40 group-hover:text-[#123D32] group-hover:translate-x-0.5 transition-all shrink-0 self-center opacity-0 group-hover:opacity-100" />
                                 </Link>
                               );
                             })}
@@ -542,15 +544,15 @@ export default function Navbar() {
                             <Link
                               href={item.footerNote.href}
                               onClick={(e) => handleNavClick(e, item.footerNote!.href)}
-                              className="px-4 py-2.5 bg-[#0D1311] hover:bg-[#141D19] text-white/90 border-t border-[#C29B38]/30 flex items-center justify-between gap-3 text-[11px] transition-colors group/foot"
+                              className="px-4 py-2.5 bg-[#123D32] hover:bg-[#1E5A46] text-white/90 border-t border-[#C5A15B]/30 flex items-center justify-between gap-3 text-[11px] transition-colors group/foot"
                             >
                               <div className="flex items-center gap-2 truncate">
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#C29B38] animate-pulse shrink-0" />
-                                <span className="text-[#FAF7F2] font-medium truncate group-hover/foot:text-[#C29B38] transition-colors">
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#C5A15B] animate-pulse shrink-0" />
+                                <span className="text-[#F7F4EB] font-medium truncate group-hover/foot:text-[#C5A15B] transition-colors">
                                   {item.footerNote.text}
                                 </span>
                               </div>
-                              <ArrowRight className="w-3.5 h-3.5 text-[#C29B38] shrink-0 group-hover/foot:translate-x-1 transition-transform" />
+                              <ArrowRight className="w-3.5 h-3.5 text-[#C5A15B] shrink-0 group-hover/foot:translate-x-1 transition-transform" />
                             </Link>
                           )}
                         </div>
@@ -568,10 +570,10 @@ export default function Navbar() {
                   onClick={(e) => handleNavClick(e, item.href || "/")}
                   className={`font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-bold tracking-tight transition-all py-1.5 px-3 rounded-full flex items-center gap-1.5 shrink-0 ${
                     item.label === "Farm House & Gardens"
-                      ? "bg-[#134e3f]/10 text-[#134e3f] border border-[#134e3f]/30 hover:bg-[#134e3f] hover:text-white shadow-2xs"
+                      ? "bg-[#123D32]/10 text-[#123D32] border border-[#123D32]/30 hover:bg-[#123D32] hover:text-white shadow-2xs"
                       : active
-                      ? "text-[#0D1311] bg-[#C29B38]/20 border border-[#C29B38]/60 shadow-2xs"
-                      : "text-[#141A17] hover:text-[#C29B38] hover:bg-[#FAF7F2]"
+                      ? "text-[#123D32] bg-[#C5A15B]/20 border border-[#C5A15B]/60 shadow-2xs"
+                      : "text-[#1F2A24] hover:text-[#C5A15B] hover:bg-[#F7F4EB]"
                   }`}
                 >
                   {item.label === "Farm House & Gardens" && (
@@ -590,9 +592,9 @@ export default function Navbar() {
               href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20connect%20regarding%20natural%20stone%20projects"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 sm:gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs font-bold tracking-wider uppercase px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#C29B38] hover:bg-[#dfb54b] text-[#0D1311] transition-all duration-300 shadow-[0_4px_16px_rgba(194,155,56,0.32)] hover:shadow-[0_6px_22px_rgba(194,155,56,0.5)] border border-[#C29B38] active:scale-95 whitespace-nowrap shrink-0 group"
+              className="inline-flex items-center gap-1.5 sm:gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs font-bold tracking-wider uppercase px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#C5A15B] hover:bg-[#C5A15B] text-[#123D32] transition-all duration-300 shadow-[0_4px_16px_rgba(194,155,56,0.32)] hover:shadow-[0_6px_22px_rgba(194,155,56,0.5)] border border-[#C5A15B] active:scale-95 whitespace-nowrap shrink-0 group"
             >
-              <WhatsAppIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-[#0D1311] shrink-0 transition-transform group-hover:scale-110" size={16} />
+              <WhatsAppIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-[#123D32] shrink-0 transition-transform group-hover:scale-110" size={16} />
               <span className="hidden sm:inline">WhatsApp Chat</span>
               <span className="sm:hidden text-[11px]">Chat</span>
             </a>
@@ -600,10 +602,10 @@ export default function Navbar() {
             {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 rounded-xl bg-black/5 hover:bg-black/10 text-[#141A17] transition-colors focus:outline-none focus:ring-2 focus:ring-[#C29B38]"
+              className="lg:hidden p-2 rounded-xl bg-black/5 hover:bg-black/10 text-[#1F2A24] transition-colors focus:outline-none focus:ring-2 focus:ring-[#C5A15B]"
               aria-label="Toggle Navigation Menu"
             >
-              {mobileOpen ? <X className="w-5 h-5 text-[#C29B38]" /> : <Menu className="w-5 h-5" />}
+              {mobileOpen ? <X className="w-5 h-5 text-[#C5A15B]" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
@@ -619,18 +621,18 @@ export default function Navbar() {
           />
 
           {/* Drawer Content */}
-          <div className="relative ml-auto w-full max-w-xs bg-[#FAF7F2] h-full shadow-2xl flex flex-col z-10 border-l border-black/10">
+          <div className="relative ml-auto w-full max-w-xs bg-[#F7F4EB] h-full shadow-2xl flex flex-col z-10 border-l border-black/10">
             {/* Drawer Header */}
-            <div className="p-4 bg-[#0D1311] text-white flex items-center justify-between border-b border-white/10">
+            <div className="p-4 bg-[#123D32] text-white flex items-center justify-between border-b border-white/10">
               <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg bg-[#141A17] border border-[#C29B38] flex items-center justify-center">
-                  <span className="font-['Cinzel',serif] text-xs font-bold text-[#C29B38]">DS</span>
+                <div className="w-7 h-7 rounded-lg bg-[#1F2A24] border border-[#C5A15B] flex items-center justify-center">
+                  <span className="font-['Cinzel',serif] text-xs font-bold text-[#C5A15B]">DS</span>
                 </div>
                 <div>
                   <span className="font-['Cinzel',serif] text-sm font-bold text-white tracking-wider block">
                     DHOLPURESTONES
                   </span>
-                  <span className="text-[9px] text-[#C29B38] uppercase tracking-widest font-semibold">
+                  <span className="text-[9px] text-[#C5A15B] uppercase tracking-widest font-semibold">
                     ESTD. 1953
                   </span>
                 </div>
@@ -657,26 +659,26 @@ export default function Navbar() {
                         type="button"
                         onClick={() => toggleMobileSubmenu(item.label)}
                         className={`w-full flex items-center justify-between p-3.5 text-[14.5px] font-bold text-left transition-colors ${
-                          active ? "text-[#C29B38] bg-[#0D1311]" : "text-[#141A17]"
+                          active ? "text-[#C5A15B] bg-[#123D32]" : "text-[#1F2A24]"
                         }`}
                       >
                         <span>{item.label}</span>
                         <ChevronDown
                           className={`w-4 h-4 transition-transform duration-200 ${
-                            isExpanded ? "rotate-180 text-[#C29B38]" : "text-[#141A17]/60"
+                            isExpanded ? "rotate-180 text-[#C5A15B]" : "text-[#1F2A24]/60"
                           }`}
                         />
                       </button>
 
                       {isExpanded && (
-                        <div className="bg-[#FAF7F2] border-t border-black/8 p-2.5 space-y-1.5">
+                        <div className="bg-[#F7F4EB] border-t border-black/8 p-2.5 space-y-1.5">
                           {item.headerTag && (
-                            <div className="px-2 pt-1 pb-1 flex items-center justify-between text-[9.5px] font-extrabold uppercase tracking-widest text-[#852233]">
+                            <div className="px-2 pt-1 pb-1 flex items-center justify-between text-[9.5px] font-extrabold uppercase tracking-widest text-[#123D32]">
                               <span className="flex items-center gap-1.5">
-                                <Landmark className="w-3 h-3 text-[#C29B38]" />
+                                <Landmark className="w-3 h-3 text-[#C5A15B]" />
                                 {item.headerTag}
                               </span>
-                              <span className="text-[#68726E] font-bold">{item.children.length}</span>
+                              <span className="text-[#6B7C73] font-bold">{item.children.length}</span>
                             </div>
                           )}
                           {item.children.map((sub) => {
@@ -686,27 +688,27 @@ export default function Navbar() {
                                 key={sub.label}
                                 href={sub.href}
                                 onClick={(e) => handleNavClick(e, sub.href)}
-                                className="flex items-start gap-2.5 p-2.5 rounded-xl bg-white border border-black/5 hover:border-[#C29B38]/40 hover:bg-[#C29B38]/10 transition-all text-left shadow-2xs group"
+                                className="flex items-start gap-2.5 p-2.5 rounded-xl bg-white border border-black/5 hover:border-[#C5A15B]/40 hover:bg-[#C5A15B]/10 transition-all text-left shadow-2xs group"
                               >
-                                <div className="w-7 h-7 rounded-lg bg-[#0D1311] text-[#C29B38] flex items-center justify-center shrink-0 border border-[#C29B38]/30 mt-0.5 group-hover:bg-[#C29B38] group-hover:text-[#0D1311] transition-colors">
+                                <div className="w-7 h-7 rounded-lg bg-[#123D32] text-[#C5A15B] flex items-center justify-center shrink-0 border border-[#C5A15B]/30 mt-0.5 group-hover:bg-[#C5A15B] group-hover:text-[#123D32] transition-colors">
                                   <IconComponent className="w-3.5 h-3.5" />
                                 </div>
                                 <div className="flex-1 min-w-0">
                                   <div className="flex items-center gap-1.5 flex-wrap">
-                                    <span className="text-[13px] font-bold text-[#141A17] group-hover:text-[#852233] transition-colors leading-tight">
+                                    <span className="text-[13px] font-bold text-[#1F2A24] group-hover:text-[#123D32] transition-colors leading-tight">
                                       {sub.label}
                                     </span>
                                     {sub.badge && (
-                                      <span className="text-[8.5px] font-extrabold uppercase tracking-wider px-1.5 py-0.2 rounded-full bg-[#C29B38]/20 text-[#852233] border border-[#C29B38]/40 shrink-0">
+                                      <span className="text-[8.5px] font-extrabold uppercase tracking-wider px-1.5 py-0.2 rounded-full bg-[#C5A15B]/20 text-[#123D32] border border-[#C5A15B]/40 shrink-0">
                                         {sub.badge}
                                       </span>
                                     )}
                                   </div>
-                                  <p className="text-[10.5px] text-[#68726E] leading-snug mt-0.5 line-clamp-1">
+                                  <p className="text-[10.5px] text-[#6B7C73] leading-snug mt-0.5 line-clamp-1">
                                     {sub.desc}
                                   </p>
                                 </div>
-                                <ChevronRight className="w-3.5 h-3.5 text-[#C29B38]/60 shrink-0 ml-auto self-center" />
+                                <ChevronRight className="w-3.5 h-3.5 text-[#C5A15B]/60 shrink-0 ml-auto self-center" />
                               </Link>
                             );
                           })}
@@ -714,10 +716,10 @@ export default function Navbar() {
                             <Link
                               href={item.footerNote.href}
                               onClick={(e) => handleNavClick(e, item.footerNote!.href)}
-                              className="flex items-center justify-between p-2 rounded-lg bg-[#0D1311] text-[#FAF7F2] text-[10.5px] font-semibold border border-[#C29B38]/40 hover:text-[#C29B38] transition-colors mt-1"
+                              className="flex items-center justify-between p-2 rounded-lg bg-[#123D32] text-[#F7F4EB] text-[10.5px] font-semibold border border-[#C5A15B]/40 hover:text-[#C5A15B] transition-colors mt-1"
                             >
                               <span className="truncate">{item.footerNote.text}</span>
-                              <ArrowRight className="w-3 h-3 text-[#C29B38] shrink-0 ml-1" />
+                              <ArrowRight className="w-3 h-3 text-[#C5A15B] shrink-0 ml-1" />
                             </Link>
                           )} */}
                         </div>
@@ -733,15 +735,15 @@ export default function Navbar() {
                     onClick={(e) => handleNavClick(e, item.href || "/")}
                     className={`flex items-center justify-between p-3.5 rounded-xl text-[14.5px] font-bold transition-all border ${
                       item.label === "Farm House & Gardens"
-                        ? "bg-[#134e3f]/10 text-[#134e3f] border-[#134e3f]/30"
+                        ? "bg-[#123D32]/10 text-[#123D32] border-[#123D32]/30"
                         : active
-                        ? "text-[#C29B38] bg-[#0D1311] border-[#C29B38]/40"
-                        : "text-[#141A17] bg-white border-black/6 hover:text-[#C29B38]"
+                        ? "text-[#C5A15B] bg-[#123D32] border-[#C5A15B]/40"
+                        : "text-[#1F2A24] bg-white border-black/6 hover:text-[#C5A15B]"
                     }`}
                   >
                     <span>{item.label}</span>
                     {item.label === "Farm House & Gardens" && (
-                      <span className="text-[9px] bg-[#134e3f] text-white px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
+                      <span className="text-[9px] bg-[#123D32] text-white px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
                         SPECIALTY
                       </span>
                     )}
@@ -756,17 +758,17 @@ export default function Navbar() {
                 href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20connect%20regarding%20natural%20stone%20projects"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full py-3.5 px-4 rounded-full bg-[#C29B38] hover:bg-[#dfb54b] text-[#0D1311] text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all active:scale-95 border border-[#C29B38]"
+                className="flex items-center justify-center gap-2 w-full py-3.5 px-4 rounded-full bg-[#C5A15B] hover:bg-[#C5A15B] text-[#123D32] text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all active:scale-95 border border-[#C5A15B]"
               >
-                <WhatsAppIcon className="w-4 h-4 fill-[#0D1311]" size={16} />
+                <WhatsAppIcon className="w-4 h-4 fill-[#123D32]" size={16} />
                 <span>Chat On WhatsApp</span>
               </a>
-              <div className="text-[10px] text-center text-[#68726E] flex items-center justify-center gap-2 pt-1">
-                <a href="tel:+919414945457" className="hover:text-[#C29B38] font-semibold">
+              <div className="text-[10px] text-center text-[#6B7C73] flex items-center justify-center gap-2 pt-1">
+                <a href="tel:+919414945457" className="hover:text-[#C5A15B] font-semibold">
                   WA: +91 94149 45457
                 </a>
                 <span>&bull;</span>
-                <a href="tel:+919057355232" className="hover:text-[#C29B38] font-semibold">
+                <a href="tel:+919057355232" className="hover:text-[#C5A15B] font-semibold">
                   Call: +91 90573 55232
                 </a>
               </div>

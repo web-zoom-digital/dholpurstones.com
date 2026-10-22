@@ -253,7 +253,7 @@ function SpotlightProjectCard({
       <div
         onMouseMove={handleMouseMove}
         onClick={() => onOpenModal(project)}
-        className="group relative rounded-2xl overflow-hidden border border-black/8 hover:border-[#C29B38]/70 bg-[#FAF7F2] transition-all duration-400 hover:shadow-2xl cursor-pointer flex flex-col h-full gcl-card-glow"
+        className="group relative rounded-2xl overflow-hidden border border-black/8 hover:border-[#C5A15B]/70 bg-[#F7F4EB] transition-all duration-400 hover:shadow-2xl cursor-pointer flex flex-col h-full gcl-card-glow"
       >
         {/* Dynamic 3D Cursor Spotlight Effect */}
         <div
@@ -264,24 +264,24 @@ function SpotlightProjectCard({
         />
 
         {/* Shimmer Light Beam on Hover */}
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C29B38] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30" />
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C5A15B] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30" />
 
         {/* Architectural Precision Crosshair Markers */}
-        <span className="absolute top-2 left-2 text-[10px] text-[#C29B38] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
+        <span className="absolute top-2 left-2 text-[10px] text-[#C5A15B] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
           +
         </span>
-        <span className="absolute top-2 right-2 text-[10px] text-[#C29B38] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
+        <span className="absolute top-2 right-2 text-[10px] text-[#C5A15B] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
           +
         </span>
-        <span className="absolute bottom-2 left-2 text-[10px] text-[#C29B38] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
+        <span className="absolute bottom-2 left-2 text-[10px] text-[#C5A15B] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
           +
         </span>
-        <span className="absolute bottom-2 right-2 text-[10px] text-[#C29B38] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
+        <span className="absolute bottom-2 right-2 text-[10px] text-[#C5A15B] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
           +
         </span>
 
         {/* Image Container with Ken Burns Zoom & Live Location Beacon */}
-        <div className="relative w-full h-52 sm:h-64 md:h-72 overflow-hidden bg-[#EAE6DE] shrink-0">
+        <div className="relative w-full h-52 sm:h-64 md:h-72 overflow-hidden bg-[#F7F4EB] shrink-0">
           <Image
             src={project.image}
             alt={project.title}
@@ -294,28 +294,28 @@ function SpotlightProjectCard({
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
 
           {/* Category Tag with Gilded Sparkle */}
-          <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 bg-[#0D1311]/85 backdrop-blur-md px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full border border-white/15 z-20 shadow-md">
-            <span className="text-[8.5px] sm:text-[9px] font-bold text-[#C29B38] uppercase tracking-widest flex items-center gap-1.5">
-              <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#C29B38]" />
+          <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 bg-[#123D32]/85 backdrop-blur-md px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full border border-white/15 z-20 shadow-md">
+            <span className="text-[8.5px] sm:text-[9px] font-bold text-[#C5A15B] uppercase tracking-widest flex items-center gap-1.5">
+              <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#C5A15B]" />
               {project.categoryLabel}
             </span>
           </div>
 
           {/* Giant Watermark Project Index */}
-          <div className="absolute top-1 right-2.5 sm:right-3 font-['Cinzel',serif] text-4xl sm:text-5xl font-black text-white/30 select-none pointer-events-none z-10 group-hover:text-[#C29B38]/50 transition-colors">
+          <div className="absolute top-1 right-2.5 sm:right-3 font-['Cinzel',serif] text-4xl sm:text-5xl font-black text-white/30 select-none pointer-events-none z-10 group-hover:text-[#C5A15B]/50 transition-colors">
             {project.number}
           </div>
 
           {/* Expand Image Button */}
-          <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 bg-black/60 backdrop-blur-sm p-1.5 sm:p-2 rounded-full text-white opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 hover:bg-[#C29B38] hover:text-[#0D1311] shadow-lg">
+          <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 bg-black/60 backdrop-blur-sm p-1.5 sm:p-2 rounded-full text-white opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 hover:bg-[#C5A15B] hover:text-[#123D32] shadow-lg">
             <Maximize2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </div>
 
           {/* Pulsing Location Radar Beacon */}
-          <div className="absolute bottom-2.5 left-2.5 sm:bottom-3 sm:left-3 flex items-center gap-1.5 text-[10px] sm:text-[11px] font-medium text-white/95 bg-[#0D1311]/80 backdrop-blur-md px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md border border-white/10 z-20 shadow-md">
+          <div className="absolute bottom-2.5 left-2.5 sm:bottom-3 sm:left-3 flex items-center gap-1.5 text-[10px] sm:text-[11px] font-medium text-white/95 bg-[#123D32]/80 backdrop-blur-md px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md border border-white/10 z-20 shadow-md">
             <span className="relative flex h-2 w-2 mr-0.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C29B38] opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C29B38]" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C5A15B] opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C5A15B]" />
             </span>
             <span className="truncate max-w-[200px] sm:max-w-[220px]">{project.location}</span>
           </div>
@@ -324,11 +324,11 @@ function SpotlightProjectCard({
         {/* Card Content */}
         <div className="p-3.5 sm:p-5 md:p-6 flex flex-col flex-1 justify-between relative z-20">
           <div>
-            <h3 className="font-['Cinzel',serif] text-sm sm:text-base md:text-lg font-bold text-[#141A17] uppercase tracking-wider mb-1 group-hover:text-[#134e3f] transition-colors leading-snug">
+            <h3 className="font-['Cinzel',serif] text-sm sm:text-base md:text-lg font-bold text-[#1F2A24] uppercase tracking-wider mb-1 group-hover:text-[#123D32] transition-colors leading-snug">
               {project.title}
             </h3>
 
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] sm:text-xs text-[#C29B38] font-semibold mb-2.5">
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] sm:text-xs text-[#C5A15B] font-semibold mb-2.5">
               {project.subtitle}
             </p>
 
@@ -348,8 +348,8 @@ function SpotlightProjectCard({
                   onClick={() => setActiveCardTab(tab.id as "scope" | "materials" | "highlights")}
                   className={`flex-1 py-1 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider rounded-md transition-all cursor-pointer ${
                     activeCardTab === tab.id
-                      ? "bg-[#134e3f] text-white shadow-xs"
-                      : "text-[#68726E] hover:text-[#141A17]"
+                      ? "bg-[#123D32] text-white shadow-xs"
+                      : "text-[#6B7C73] hover:text-[#1F2A24]"
                   }`}
                 >
                   {tab.label}
@@ -360,27 +360,27 @@ function SpotlightProjectCard({
             {/* Dynamic Card Tab Content */}
             <div className="min-h-[72px]">
               {activeCardTab === "scope" && (
-                <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs text-[#68726E] leading-relaxed line-clamp-3">
+                <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs text-[#6B7C73] leading-relaxed line-clamp-3">
                   {project.scope}
                 </p>
               )}
 
               {activeCardTab === "materials" && (
                 <div className="p-2.5 rounded-lg bg-white border border-black/6 text-[11px] shadow-2xs">
-                  <span className="text-[#134e3f] font-bold block text-[10px] uppercase tracking-wider mb-0.5">
+                  <span className="text-[#123D32] font-bold block text-[10px] uppercase tracking-wider mb-0.5">
                     Quarry Strata:
                   </span>
-                  <span className="text-[#4A5550] line-clamp-2">
+                  <span className="text-[#6B7C73] line-clamp-2">
                     {project.stoneType}
                   </span>
                 </div>
               )}
 
               {activeCardTab === "highlights" && (
-                <ul className="space-y-1 text-[11px] text-[#4A5550]">
+                <ul className="space-y-1 text-[11px] text-[#6B7C73]">
                   {project.highlights.slice(0, 2).map((h, i) => (
                     <li key={i} className="flex items-center gap-1.5 truncate">
-                      <CheckCircle2 className="w-3 h-3 text-[#134e3f] shrink-0" />
+                      <CheckCircle2 className="w-3 h-3 text-[#123D32] shrink-0" />
                       <span className="truncate">{h}</span>
                     </li>
                   ))}
@@ -391,9 +391,9 @@ function SpotlightProjectCard({
 
           {/* Bottom Action Row */}
           <div className="pt-4 mt-2 border-t border-black/8 flex items-center justify-between">
-            <span className="text-xs font-bold text-[#134e3f] group-hover:text-[#C29B38] flex items-center gap-1 transition-colors">
+            <span className="text-xs font-bold text-[#123D32] group-hover:text-[#C5A15B] flex items-center gap-1 transition-colors">
               <span>Inspect Dossier</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-[#134e3f] group-hover:text-[#C29B38] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-[#123D32] group-hover:text-[#C5A15B] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </span>
 
             <a
@@ -401,7 +401,7 @@ function SpotlightProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#134e3f] hover:text-[#25D366] transition-colors p-1.5 rounded-lg hover:bg-black/5"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#123D32] hover:text-[#25D366] transition-colors p-1.5 rounded-lg hover:bg-black/5"
               title="Inquire about this project on WhatsApp"
             >
               <WhatsAppIcon className="w-4 h-4 fill-[#25D366]" size={16} />
@@ -449,21 +449,21 @@ export default function OurSignatureProjects() {
   return (
     <section
       id="signature-projects"
-      className="bg-white py-10 sm:py-20 border-b border-black/6 relative overflow-hidden"
+      className="bg-[#F7F4EB] py-10 sm:py-20 border-b border-black/6 relative overflow-hidden"
     >
       {/* =========================================================================
           MOTION GRAPHIC BACKGROUND: Geometric Blueprint Grid & Rotating Sacred Yantras
           ========================================================================= */}
       {/* Subtle Dotted Architectural Grid */}
-      <div className="absolute inset-0 bg-[radial-gradient(#C29B38_1.2px,transparent_1.2px)] [background-size:32px_32px] opacity-[0.06] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(#C5A15B_1.2px,transparent_1.2px)] [background-size:32px_32px] opacity-[0.06] pointer-events-none" />
 
       {/* Floating Animated Ambient Glow Orbs */}
-      <div className="absolute -top-24 right-10 w-[550px] h-[550px] bg-[#C29B38]/6 rounded-full blur-[140px] pointer-events-none animate-ambient-float-1" />
-      <div className="absolute -bottom-24 left-10 w-[500px] h-[500px] bg-[#134e3f]/6 rounded-full blur-[130px] pointer-events-none animate-ambient-float-2" />
+      <div className="absolute -top-24 right-10 w-[550px] h-[550px] bg-[#C5A15B]/6 rounded-full blur-[140px] pointer-events-none animate-ambient-float-1" />
+      <div className="absolute -bottom-24 left-10 w-[500px] h-[500px] bg-[#123D32]/6 rounded-full blur-[130px] pointer-events-none animate-ambient-float-2" />
 
       {/* Rotating Sacred Geometry Mandalas / Yantras in Background */}
       <div className="absolute -top-32 -left-32 w-[460px] h-[460px] opacity-[0.04] pointer-events-none animate-spin-slow">
-        <svg viewBox="0 0 200 200" className="w-full h-full fill-none stroke-[#C29B38]" strokeWidth="0.8">
+        <svg viewBox="0 0 200 200" className="w-full h-full fill-none stroke-[#C5A15B]" strokeWidth="0.8">
           <circle cx="100" cy="100" r="95" strokeDasharray="3 3" />
           <circle cx="100" cy="100" r="80" />
           <circle cx="100" cy="100" r="60" strokeDasharray="6 4" />
@@ -474,7 +474,7 @@ export default function OurSignatureProjects() {
       </div>
 
       <div className="absolute -bottom-40 -right-40 w-[520px] h-[520px] opacity-[0.035] pointer-events-none animate-spin-reverse">
-        <svg viewBox="0 0 200 200" className="w-full h-full fill-none stroke-[#134e3f]" strokeWidth="0.8">
+        <svg viewBox="0 0 200 200" className="w-full h-full fill-none stroke-[#123D32]" strokeWidth="0.8">
           <circle cx="100" cy="100" r="95" />
           <circle cx="100" cy="100" r="75" strokeDasharray="4 4" />
           <polygon points="100,5 180,175 20,175" />
@@ -487,22 +487,22 @@ export default function OurSignatureProjects() {
         {/* Section Header Label */}
         <AnimDiv className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-black/8 mb-6 sm:mb-8">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#C29B38] animate-pulse" />
-            <span className="font-['Cinzel',serif] text-[9.5px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.18em] text-[#141A17] uppercase">
+            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#C5A15B] animate-pulse" />
+            <span className="font-['Cinzel',serif] text-[9.5px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.18em] text-[#1F2A24] uppercase">
               DHOLPURESTONES.COM &bull; ARCHITECTURAL SHOWCASE
             </span>
           </div>
 
           <div className="flex items-center gap-2 sm:gap-3">
             {/* View Mode Toggle: Grid vs Spotlight */}
-            <div className="hidden sm:flex items-center p-1 bg-[#FAF7F2] rounded-lg border border-black/8 text-xs font-semibold text-[#141A17]">
+            <div className="hidden sm:flex items-center p-1 bg-[#F7F4EB] rounded-lg border border-black/8 text-xs font-semibold text-[#1F2A24]">
               <button
                 type="button"
                 onClick={() => setViewMode("grid")}
                 className={`flex items-center gap-1.5 px-3 py-1 rounded-md transition-all cursor-pointer ${
                   viewMode === "grid"
-                    ? "bg-[#134e3f] text-white shadow-xs"
-                    : "text-[#68726E] hover:text-[#141A17]"
+                    ? "bg-[#123D32] text-white shadow-xs"
+                    : "text-[#6B7C73] hover:text-[#1F2A24]"
                 }`}
                 title="Grid View (3x2)"
               >
@@ -514,8 +514,8 @@ export default function OurSignatureProjects() {
                 onClick={() => setViewMode("spotlight")}
                 className={`flex items-center gap-1.5 px-3 py-1 rounded-md transition-all cursor-pointer ${
                   viewMode === "spotlight"
-                    ? "bg-[#134e3f] text-white shadow-xs"
-                    : "text-[#68726E] hover:text-[#141A17]"
+                    ? "bg-[#123D32] text-white shadow-xs"
+                    : "text-[#6B7C73] hover:text-[#1F2A24]"
                 }`}
                 title="Cinematic Spotlight View"
               >
@@ -524,7 +524,7 @@ export default function OurSignatureProjects() {
               </button>
             </div>
 
-            <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C29B38] tracking-widest">
+            <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest">
               08
             </span>
           </div>
@@ -533,50 +533,50 @@ export default function OurSignatureProjects() {
         {/* Section Title & Metrics */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5 sm:gap-6 mb-6 sm:mb-9">
           <AnimDiv delay={0} className="max-w-2xl">
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-[#C29B38]/10 border border-[#C29B38]/25 text-[#C29B38] text-[9.5px] sm:text-[10px] font-bold uppercase tracking-[0.18em] mb-2 sm:mb-3">
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-[#C5A15B]/10 border border-[#C5A15B]/25 text-[#C5A15B] text-[9.5px] sm:text-[10px] font-bold uppercase tracking-[0.18em] mb-2 sm:mb-3">
               <Compass className="w-3 h-3 sm:w-3.5 sm:h-3.5 animate-spin-slow" />
               <span>Featured Projects: Demonstrating Our Expertise</span>
             </div>
-            <h2 className="font-['Cinzel',serif] text-xl sm:text-3xl lg:text-5xl font-bold text-[#141A17] uppercase tracking-wide mb-2 sm:mb-3 leading-snug">
+            <h2 className="font-['Cinzel',serif] text-xl sm:text-3xl lg:text-5xl font-bold text-[#1F2A24] uppercase tracking-wide mb-2 sm:mb-3 leading-snug">
               Our Signature Projects
             </h2>
-            <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#C29B38] via-[#E0BA55] to-transparent rounded-full mb-3 sm:mb-4" />
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#68726E] leading-relaxed">
+            <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#C5A15B] via-[#C5A15B] to-transparent rounded-full mb-3 sm:mb-4" />
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] leading-relaxed">
               From palatial private estates and monumental temples to royal heritage resorts and triple-height hotel atriums. Explore landmark architectural stone installations engineered with our own quarry strata and master carving craftsmanship.
             </p>
           </AnimDiv>
 
           {/* Key Metric Highlights with Gilded Accents */}
           <AnimDiv delay={100} className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 shrink-0 w-full lg:w-auto">
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-4 py-2 sm:py-2.5 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-xs sm:text-xl font-bold text-[#141A17]">
+            <div className="bg-[#F7F4EB] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-4 py-2 sm:py-2.5 shadow-xs hover:border-[#C5A15B]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-xs sm:text-xl font-bold text-[#1F2A24]">
                 70+ Years
               </span>
-              <span className="text-[8.5px] sm:text-[9px] text-[#68726E] font-semibold uppercase tracking-wider block">
+              <span className="text-[8.5px] sm:text-[9px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
                 Since 1953
               </span>
             </div>
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-4 py-2 sm:py-2.5 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-xs sm:text-xl font-bold text-[#C29B38]">
+            <div className="bg-[#F7F4EB] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-4 py-2 sm:py-2.5 shadow-xs hover:border-[#C5A15B]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-xs sm:text-xl font-bold text-[#C5A15B]">
                 300+ Designs
               </span>
-              <span className="text-[8.5px] sm:text-[9px] text-[#68726E] font-semibold uppercase tracking-wider block">
+              <span className="text-[8.5px] sm:text-[9px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
                 Govt. Awarded
               </span>
             </div>
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-4 py-2 sm:py-2.5 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-xs sm:text-xl font-bold text-[#134e3f]">
+            <div className="bg-[#F7F4EB] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-4 py-2 sm:py-2.5 shadow-xs hover:border-[#C5A15B]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-xs sm:text-xl font-bold text-[#123D32]">
                 Intl. Nominee
               </span>
-              <span className="text-[8.5px] sm:text-[9px] text-[#68726E] font-semibold uppercase tracking-wider block">
+              <span className="text-[8.5px] sm:text-[9px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
                 Business Excellence
               </span>
             </div>
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-4 py-2 sm:py-2.5 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-xs sm:text-xl font-bold text-[#141A17]">
+            <div className="bg-[#F7F4EB] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-4 py-2 sm:py-2.5 shadow-xs hover:border-[#C5A15B]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-xs sm:text-xl font-bold text-[#1F2A24]">
                 500+
               </span>
-              <span className="text-[8.5px] sm:text-[9px] text-[#68726E] font-semibold uppercase tracking-wider block">
+              <span className="text-[8.5px] sm:text-[9px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
                 Landmarks Worldwide
               </span>
             </div>
@@ -586,11 +586,11 @@ export default function OurSignatureProjects() {
         {/* =========================================================================
             MOTION GRAPHIC INFINITE MARQUEE TICKER (Live Architectural Strata Ribbon)
             ========================================================================= */}
-        <AnimDiv delay={120} className="mb-6 sm:mb-8 overflow-hidden rounded-xl bg-gradient-to-r from-[#FAF7F2] via-white to-[#FAF7F2] border border-black/8 py-2 sm:py-2.5 shadow-xs">
+        <AnimDiv delay={120} className="mb-6 sm:mb-8 overflow-hidden rounded-xl bg-gradient-to-r from-[#F7F4EB] via-white to-[#F7F4EB] border border-black/8 py-2 sm:py-2.5 shadow-xs">
           <div className="animate-marquee whitespace-nowrap flex items-center gap-6 sm:gap-8">
             {[...tickerHighlights, ...tickerHighlights].map((item, idx) => (
-              <div key={idx} className="inline-flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] font-bold text-[#141A17] uppercase tracking-wider shrink-0">
-                <span className="text-[#C29B38] text-xs">✦</span>
+              <div key={idx} className="inline-flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] font-bold text-[#1F2A24] uppercase tracking-wider shrink-0">
+                <span className="text-[#C5A15B] text-xs">✦</span>
                 <span>{item}</span>
               </div>
             ))}
@@ -610,8 +610,8 @@ export default function OurSignatureProjects() {
                 }}
                 className={`text-[11px] sm:text-xs font-bold uppercase tracking-wider px-3 sm:px-5 py-2 sm:py-2.5 rounded-full transition-all duration-300 border cursor-pointer ${
                   activeTab === tab.id
-                    ? "bg-[#134e3f] text-white border-[#134e3f] shadow-md shadow-[#134e3f]/25 scale-102"
-                    : "bg-[#FAF7F2] text-[#4A5550] border-black/8 hover:border-[#C29B38] hover:text-[#141A17] hover:bg-white"
+                    ? "bg-[#123D32] text-white border-[#123D32] shadow-md shadow-[#123D32]/25 scale-102"
+                    : "bg-[#F7F4EB] text-[#6B7C73] border-black/8 hover:border-[#C5A15B] hover:text-[#1F2A24] hover:bg-white"
                 }`}
               >
                 {tab.label}
@@ -619,7 +619,7 @@ export default function OurSignatureProjects() {
             ))}
           </div>
 
-          <span className="text-[11px] sm:text-xs text-[#68726E] font-semibold hidden md:inline shrink-0">
+          <span className="text-[11px] sm:text-xs text-[#6B7C73] font-semibold hidden md:inline shrink-0">
             Showing {filteredProjects.length} Architectural Landmarks
           </span>
         </AnimDiv>
@@ -645,7 +645,7 @@ export default function OurSignatureProjects() {
             ========================================================================= */}
         {viewMode === "spotlight" && activeSlideProject && (
           <AnimDiv delay={180} className="mb-12 sm:mb-16">
-            <div className="bg-[#FAF7F2] rounded-3xl overflow-hidden border border-black/8 shadow-2xl p-4 sm:p-8 relative">
+            <div className="bg-[#F7F4EB] rounded-3xl overflow-hidden border border-black/8 shadow-2xl p-4 sm:p-8 relative">
               {/* Giant Watermark Background Number */}
               <div className="absolute top-2 right-6 font-['Cinzel',serif] text-8xl font-black text-black/[0.04] select-none pointer-events-none">
                 {activeSlideProject.number}
@@ -655,7 +655,7 @@ export default function OurSignatureProjects() {
                 {/* Left: Cinematic Full-Res Display */}
                 <div
                   onClick={() => setActiveModal(activeSlideProject)}
-                  className="lg:col-span-7 relative h-80 sm:h-[460px] rounded-2xl overflow-hidden bg-[#0D1311] cursor-pointer group shadow-xl"
+                  className="lg:col-span-7 relative h-80 sm:h-[460px] rounded-2xl overflow-hidden bg-[#123D32] cursor-pointer group shadow-xl"
                 >
                   <Image
                     src={activeSlideProject.image}
@@ -667,19 +667,19 @@ export default function OurSignatureProjects() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
 
-                  <div className="absolute top-4 left-4 bg-[#0D1311]/85 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20">
-                    <span className="text-[10px] font-bold text-[#C29B38] uppercase tracking-widest flex items-center gap-1.5">
-                      <Sparkles className="w-3.5 h-3.5 text-[#C29B38]" />
+                  <div className="absolute top-4 left-4 bg-[#123D32]/85 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20">
+                    <span className="text-[10px] font-bold text-[#C5A15B] uppercase tracking-widest flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5 text-[#C5A15B]" />
                       {activeSlideProject.categoryLabel}
                     </span>
                   </div>
 
-                  <div className="absolute bottom-4 left-4 flex items-center gap-2 bg-[#0D1311]/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 text-white text-xs font-medium">
-                    <MapPin className="w-4 h-4 text-[#C29B38]" />
+                  <div className="absolute bottom-4 left-4 flex items-center gap-2 bg-[#123D32]/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 text-white text-xs font-medium">
+                    <MapPin className="w-4 h-4 text-[#C5A15B]" />
                     <span>{activeSlideProject.location}</span>
                   </div>
 
-                  <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm p-2 rounded-full text-white group-hover:bg-[#C29B38] group-hover:text-[#0D1311] transition-all">
+                  <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm p-2 rounded-full text-white group-hover:bg-[#C5A15B] group-hover:text-[#123D32] transition-all">
                     <Maximize2 className="w-4 h-4" />
                   </div>
                 </div>
@@ -688,14 +688,14 @@ export default function OurSignatureProjects() {
                 <div className="lg:col-span-5 flex flex-col justify-between">
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs font-bold text-[#C29B38] uppercase tracking-[0.2em]">
+                      <span className="text-xs font-bold text-[#C5A15B] uppercase tracking-[0.2em]">
                         Project Dossier &bull; {activeSlideProject.number} of 06
                       </span>
                       <div className="flex items-center gap-2">
                         <button
                           type="button"
                           onClick={prevSlide}
-                          className="w-8 h-8 rounded-full border border-black/10 bg-white hover:bg-[#134e3f] hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-xs"
+                          className="w-8 h-8 rounded-full border border-black/10 bg-white hover:bg-[#123D32] hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-xs"
                           aria-label="Previous Project"
                         >
                           <ChevronLeft className="w-4 h-4" />
@@ -703,7 +703,7 @@ export default function OurSignatureProjects() {
                         <button
                           type="button"
                           onClick={nextSlide}
-                          className="w-8 h-8 rounded-full border border-black/10 bg-white hover:bg-[#134e3f] hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-xs"
+                          className="w-8 h-8 rounded-full border border-black/10 bg-white hover:bg-[#123D32] hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-xs"
                           aria-label="Next Project"
                         >
                           <ChevronRight className="w-4 h-4" />
@@ -711,24 +711,24 @@ export default function OurSignatureProjects() {
                       </div>
                     </div>
 
-                    <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#141A17] uppercase tracking-wider mb-2">
+                    <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#1F2A24] uppercase tracking-wider mb-2">
                       {activeSlideProject.title}
                     </h3>
 
-                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold text-[#C29B38] mb-4">
+                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold text-[#C5A15B] mb-4">
                       {activeSlideProject.subtitle}
                     </p>
 
-                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#4A5550] leading-relaxed mb-5">
+                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] leading-relaxed mb-5">
                       {activeSlideProject.details}
                     </p>
 
                     {/* Sourced Quarry Stratum */}
                     <div className="p-3.5 rounded-xl bg-white border border-black/8 mb-5 shadow-2xs">
-                      <span className="text-[10px] font-bold text-[#134e3f] uppercase tracking-widest block mb-1">
+                      <span className="text-[10px] font-bold text-[#123D32] uppercase tracking-widest block mb-1">
                         Architectural Materials &amp; Stratum
                       </span>
-                      <p className="text-xs font-semibold text-[#141A17]">
+                      <p className="text-xs font-semibold text-[#1F2A24]">
                         {activeSlideProject.stoneType}
                       </p>
                     </div>
@@ -738,9 +738,9 @@ export default function OurSignatureProjects() {
                       {activeSlideProject.highlights.map((h, i) => (
                         <div
                           key={i}
-                          className="flex items-start gap-2 text-xs text-[#141A17] p-2 rounded-lg bg-white border border-black/5"
+                          className="flex items-start gap-2 text-xs text-[#1F2A24] p-2 rounded-lg bg-white border border-black/5"
                         >
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#134e3f] shrink-0 mt-0.5" />
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#123D32] shrink-0 mt-0.5" />
                           <span className="truncate">{h}</span>
                         </div>
                       ))}
@@ -752,7 +752,7 @@ export default function OurSignatureProjects() {
                     <button
                       type="button"
                       onClick={() => setActiveModal(activeSlideProject)}
-                      className="inline-flex items-center gap-2 text-xs font-bold text-white bg-[#134e3f] hover:bg-[#0e3b30] uppercase px-5 py-3 rounded-full transition-all shadow-md cursor-pointer"
+                      className="inline-flex items-center gap-2 text-xs font-bold text-white bg-[#123D32] hover:bg-[#123D32] uppercase px-5 py-3 rounded-full transition-all shadow-md cursor-pointer"
                     >
                       <Eye className="w-3.5 h-3.5" />
                       <span>Full Spec Blueprint</span>
@@ -762,7 +762,7 @@ export default function OurSignatureProjects() {
                       href={`https://wa.me/919414945457?text=${encodeURIComponent(activeSlideProject.waMsg)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-xs font-bold text-[#0D1311] bg-[#25D366] hover:bg-[#20ba59] hover:text-white uppercase px-5 py-3 rounded-full transition-all shadow-md"
+                      className="inline-flex items-center gap-2 text-xs font-bold text-[#123D32] bg-[#25D366] hover:bg-[#20ba59] hover:text-white uppercase px-5 py-3 rounded-full transition-all shadow-md"
                     >
                       <WhatsAppIcon className="w-4 h-4 fill-current" size={16} />
                       <span>WhatsApp Quote</span>
@@ -780,7 +780,7 @@ export default function OurSignatureProjects() {
                     onClick={() => setCurrentSlide(i)}
                     className={`relative w-20 h-14 rounded-xl overflow-hidden shrink-0 border-2 transition-all cursor-pointer ${
                       currentSlide === i
-                        ? "border-[#134e3f] scale-105 shadow-md"
+                        ? "border-[#123D32] scale-105 shadow-md"
                         : "border-transparent opacity-60 hover:opacity-100"
                     }`}
                   >
@@ -809,15 +809,15 @@ export default function OurSignatureProjects() {
             ADVANCED MOTION GRAPHIC CALLOUT: Turnkey Landmark Project Partnership
             ========================================================================= */}
         <AnimDiv delay={300}>
-          <div className="bg-gradient-to-br from-[#134e3f] via-[#0e3b30] to-[#0A261F] rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border border-[#C29B38]/40 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-5 sm:gap-6 relative overflow-hidden text-white group">
+          <div className="bg-gradient-to-br from-[#123D32] via-[#123D32] to-[#0A261F] rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border border-[#C5A15B]/40 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-5 sm:gap-6 relative overflow-hidden text-white group">
             {/* Ambient Background Gold Beam Sweep */}
-            <div className="absolute -inset-full bg-gradient-to-r from-transparent via-[#C29B38]/15 to-transparent animate-beam-sweep pointer-events-none" />
+            <div className="absolute -inset-full bg-gradient-to-r from-transparent via-[#C5A15B]/15 to-transparent animate-beam-sweep pointer-events-none" />
 
-            <div className="absolute -right-10 -bottom-10 w-72 h-72 bg-[#C29B38]/20 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -right-10 -bottom-10 w-72 h-72 bg-[#C5A15B]/20 rounded-full blur-3xl pointer-events-none" />
 
             <div className="max-w-2xl text-center lg:text-left relative z-10">
-              <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-[#C29B38]/20 border border-[#C29B38]/40 px-3 py-1 rounded-full text-[9px] sm:text-[10px] font-bold text-[#FAF7F2] uppercase tracking-widest mb-2.5 sm:mb-3 shadow-xs">
-                <Award className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#C29B38]" />
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-[#C5A15B]/20 border border-[#C5A15B]/40 px-3 py-1 rounded-full text-[9px] sm:text-[10px] font-bold text-[#F7F4EB] uppercase tracking-widest mb-2.5 sm:mb-3 shadow-xs">
+                <Award className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#C5A15B]" />
                 <span>Turnkey Architectural Execution</span>
               </div>
               <h3 className="font-['Cinzel',serif] text-lg sm:text-2xl lg:text-3xl font-bold text-white uppercase tracking-wider mb-2">
@@ -833,9 +833,9 @@ export default function OurSignatureProjects() {
                 href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20have%20an%20architectural%20project%20and%20would%20like%20to%20discuss%20turnkey%20stone%20supply%20and%20execution."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-[#0A0F0D] hover:bg-white font-bold text-xs uppercase px-5 sm:px-7 py-3 sm:py-3.5 rounded-full transition-all duration-300 shadow-xl active:scale-95"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-[#123D32] hover:bg-white font-bold text-xs uppercase px-5 sm:px-7 py-3 sm:py-3.5 rounded-full transition-all duration-300 shadow-xl active:scale-95"
               >
-                <WhatsAppIcon className="w-4 h-4 fill-[#0A0F0D]" size={16} />
+                <WhatsAppIcon className="w-4 h-4 fill-[#123D32]" size={16} />
                 <span>Consult On WhatsApp</span>
               </a>
 
@@ -861,21 +861,21 @@ export default function OurSignatureProjects() {
           onClick={() => setActiveModal(null)}
         >
           <div
-            className="bg-white border border-black/10 rounded-2xl sm:rounded-3xl max-w-4xl w-full max-h-[88vh] overflow-y-auto text-[#141A17] shadow-2xl relative scrollbar-none"
+            className="bg-white border border-black/10 rounded-2xl sm:rounded-3xl max-w-4xl w-full max-h-[88vh] overflow-y-auto text-[#1F2A24] shadow-2xl relative scrollbar-none"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               type="button"
               onClick={() => setActiveModal(null)}
-              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/60 hover:bg-[#141A17] text-white flex items-center justify-center transition-colors shadow-lg cursor-pointer"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/60 hover:bg-[#1F2A24] text-white flex items-center justify-center transition-colors shadow-lg cursor-pointer"
               aria-label="Close dialog"
             >
               <X className="w-4 h-4" />
             </button>
 
             {/* Modal Image Header */}
-            <div className="relative h-56 sm:h-80 md:h-[420px] w-full bg-[#0D1311]">
+            <div className="relative h-56 sm:h-80 md:h-[420px] w-full bg-[#123D32]">
               <Image
                 src={activeModal.image}
                 alt={activeModal.title}
@@ -887,14 +887,14 @@ export default function OurSignatureProjects() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
 
               <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-6 flex flex-wrap items-center gap-1.5 sm:gap-2">
-                <span className="bg-[#0D1311]/90 backdrop-blur-md px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] font-bold text-[#C29B38] border border-white/15 uppercase tracking-widest">
+                <span className="bg-[#123D32]/90 backdrop-blur-md px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] font-bold text-[#C5A15B] border border-white/15 uppercase tracking-widest">
                   {activeModal.categoryLabel}
                 </span>
                 <span className="bg-black/60 backdrop-blur-md px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-medium text-white flex items-center gap-1.5 border border-white/10">
-                  <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#C29B38]" />
+                  <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#C5A15B]" />
                   {activeModal.location}
                 </span>
-                <span className="bg-[#C29B38] text-[#0D1311] px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider font-mono">
+                <span className="bg-[#C5A15B] text-[#123D32] px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider font-mono">
                   ARCHIVE #{activeModal.number}
                 </span>
               </div>
@@ -902,39 +902,39 @@ export default function OurSignatureProjects() {
 
             {/* Modal Content */}
             <div className="p-4 sm:p-7 md:p-8">
-              <h3 className="font-['Cinzel',serif] text-lg sm:text-2xl lg:text-3xl font-bold text-[#141A17] uppercase tracking-wider mb-1">
+              <h3 className="font-['Cinzel',serif] text-lg sm:text-2xl lg:text-3xl font-bold text-[#1F2A24] uppercase tracking-wider mb-1">
                 {activeModal.title}
               </h3>
-              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#C29B38] font-semibold tracking-wide mb-3 sm:mb-4">
+              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#C5A15B] font-semibold tracking-wide mb-3 sm:mb-4">
                 {activeModal.subtitle}
               </p>
 
-              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#4A5550] leading-relaxed mb-4 sm:mb-6">
+              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] leading-relaxed mb-4 sm:mb-6">
                 {activeModal.details}
               </p>
 
               {/* Material & Execution Spec Box */}
-              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-[#FAF7F2] border border-black/8 mb-4 sm:mb-6">
-                <span className="text-[9.5px] sm:text-[10px] font-bold text-[#134e3f] uppercase tracking-widest block mb-1">
+              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-[#F7F4EB] border border-black/8 mb-4 sm:mb-6">
+                <span className="text-[9.5px] sm:text-[10px] font-bold text-[#123D32] uppercase tracking-widest block mb-1">
                   Architectural Materials &amp; Stratum
                 </span>
-                <p className="text-xs sm:text-sm text-[#141A17] font-semibold">
+                <p className="text-xs sm:text-sm text-[#1F2A24] font-semibold">
                   {activeModal.stoneType}
                 </p>
               </div>
 
               {/* Highlights Checklist */}
               <div className="mb-4 sm:mb-6">
-                <span className="text-[9.5px] sm:text-[10px] font-bold text-[#C29B38] uppercase tracking-widest block mb-2 sm:mb-3">
+                <span className="text-[9.5px] sm:text-[10px] font-bold text-[#C5A15B] uppercase tracking-widest block mb-2 sm:mb-3">
                   Key Architectural &amp; Engineering Highlights
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
                   {activeModal.highlights.map((h, i) => (
                     <div
                       key={i}
-                      className="flex items-start gap-2 text-xs text-[#141A17] p-2 sm:p-2.5 rounded-lg sm:rounded-xl bg-[#FAF7F2] border border-black/5"
+                      className="flex items-start gap-2 text-xs text-[#1F2A24] p-2 sm:p-2.5 rounded-lg sm:rounded-xl bg-[#F7F4EB] border border-black/5"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#134e3f] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#123D32] shrink-0 mt-0.5" />
                       <span>{h}</span>
                     </div>
                   ))}
@@ -944,10 +944,10 @@ export default function OurSignatureProjects() {
               {/* Actions Footer */}
               <div className="pt-4 sm:pt-5 border-t border-black/8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
                 <div className="text-center sm:text-left">
-                  <span className="text-[10.5px] sm:text-[11px] text-[#68726E] block font-medium">
+                  <span className="text-[10.5px] sm:text-[11px] text-[#6B7C73] block font-medium">
                     Direct Master Consultation &bull; Arvind Garg
                   </span>
-                  <span className="text-xs font-bold text-[#134e3f]">
+                  <span className="text-xs font-bold text-[#123D32]">
                     +91 94149 45457 &bull; DholpureStones.com
                   </span>
                 </div>

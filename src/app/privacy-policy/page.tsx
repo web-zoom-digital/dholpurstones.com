@@ -37,25 +37,25 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen bg-[#FAF7F2] text-[#141A17] selection:bg-[#C29B38] selection:text-black">
+    <main className="min-h-screen bg-[#F7F4EB] text-[#1F2A24] selection:bg-[#C5A15B] selection:text-[#123D32]">
       <Navbar />
 
       {/* Header Banner */}
-      <section className="bg-[#0D1311] text-white py-12 sm:py-16 border-b border-white/10 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C29B38]/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="bg-[#123D32] text-white py-12 sm:py-16 border-b border-white/10 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A15B]/10 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <nav className="flex items-center gap-2 text-xs text-white/60 mb-4" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-[#C29B38] flex items-center gap-1 transition-colors">
+            <Link href="/" className="hover:text-[#C5A15B] flex items-center gap-1 transition-colors">
               <HomeIcon className="w-3.5 h-3.5" />
               <span>Home</span>
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/40" />
-            <span className="text-[#C29B38] font-semibold">Privacy Policy</span>
+            <span className="text-[#C5A15B] font-semibold">Privacy Policy</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C29B38]/15 border border-[#C29B38]/30 mb-3">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#C29B38]" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C29B38] tracking-[0.2em] uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C5A15B]/15 border border-[#C5A15B]/30 mb-3">
+            <ShieldCheck className="w-3.5 h-3.5 text-[#C5A15B]" />
+            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase">
               DATA PRIVACY &amp; COMPLIANCE
             </span>
           </div>
@@ -70,18 +70,18 @@ export default function PrivacyPolicyPage() {
       </section>
 
       {/* Policy Content */}
-      <section className="max-w-[960px] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-10 text-sm sm:text-base leading-relaxed text-[#141A17]/85">
+      <section className="max-w-[960px] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-10 text-sm sm:text-base leading-relaxed text-[#1F2A24]/85">
         <div>
-          <h2 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#0D1311] mb-3">
+          <h2 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#123D32] mb-3">
             1. Corporate Identification &amp; Data Controller
           </h2>
           <p>
-            This website (<span className="font-semibold">Dholpurestones.com</span>) is operated by <strong>B P Garg &amp; Sons</strong> and <strong>Garg Corporation Ltd.</strong> (Estd. 1953), having registered manufacturing and mining operations near RAC line, Mothiyapura road, Sarmathura 328026, District Dholpur, Rajasthan, India. For inquiries regarding data practices, you may reach our administrative desk at <a href="mailto:gargcorporationltd@gmail.com" className="text-[#134e3f] underline font-semibold">gargcorporationltd@gmail.com</a>.
+            This website (<span className="font-semibold">Dholpurestones.com</span>) is operated by <strong>B P Garg &amp; Sons</strong> and <strong>Garg Corporation Ltd.</strong> (Estd. 1953), having registered manufacturing and mining operations near RAC line, Mothiyapura road, Sarmathura 328026, District Dholpur, Rajasthan, India. For inquiries regarding data practices, you may reach our administrative desk at <a href="mailto:gargcorporationltd@gmail.com" className="text-[#123D32] underline font-semibold">gargcorporationltd@gmail.com</a>.
           </p>
         </div>
 
         <div>
-          <h2 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#0D1311] mb-3">
+          <h2 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#123D32] mb-3">
             2. Personal Information Collected
           </h2>
           <p className="mb-3">
@@ -95,7 +95,7 @@ export default function PrivacyPolicyPage() {
         </div>
 
         <div>
-          <h2 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#0D1311] mb-3">
+          <h2 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#123D32] mb-3">
             3. Purpose of Data Processing
           </h2>
           <p className="mb-3">
@@ -110,7 +110,7 @@ export default function PrivacyPolicyPage() {
         </div>
 
         <div>
-          <h2 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#0D1311] mb-3">
+          <h2 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#123D32] mb-3">
             4. Non-Disclosure &amp; Information Security
           </h2>
           <p>
@@ -119,7 +119,7 @@ export default function PrivacyPolicyPage() {
         </div>
 
         <div>
-          <h2 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#0D1311] mb-3">
+          <h2 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#123D32] mb-3">
             5. Cookies and Web Analytics
           </h2>
           <p>
@@ -128,7 +128,7 @@ export default function PrivacyPolicyPage() {
         </div>
 
         <div>
-          <h2 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#0D1311] mb-3">
+          <h2 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#123D32] mb-3">
             6. Direct Communications &amp; Rights
           </h2>
           <p>

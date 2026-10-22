@@ -124,9 +124,9 @@ export default function BlogListClient() {
   };
 
   return (
-    <main className="min-h-screen bg-[#FAF7F2] text-[#141A17] selection:bg-[#C29B38] selection:text-black">
+    <main className="min-h-screen bg-[#F7F4EB] text-[#1F2A24] selection:bg-[#C5A15B] selection:text-[#123D32]">
       <Navbar />
-      <section className="relative min-h-[75vh] lg:min-h-[86vh] flex flex-col justify-between bg-[#0D1311] text-white border-b border-white/10 overflow-hidden">
+      <section className="relative min-h-[75vh] lg:min-h-[86vh] flex flex-col justify-between bg-[#123D32] text-white border-b border-white/10 overflow-hidden">
         {/* Background Ultrarealistic Architectural Image */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <Image
@@ -139,28 +139,28 @@ export default function BlogListClient() {
           />
           {/* Balanced translucent dark overlay for supreme image visibility + text legibility */}
           {/* <div className="absolute inset-0 bg-black/60 backdrop-blur-[1.5px]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0D1311] via-transparent to-[#0D1311]/70" /> */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#123D32] via-transparent to-[#123D32]/70" /> */}
         </div>
 
         {/* Ambient Glow Orbs */}
-        <div className="absolute top-10 right-10 w-96 h-96 bg-[#C29B38]/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-[#852233]/25 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-10 right-10 w-96 h-96 bg-[#C5A15B]/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-10 left-10 w-96 h-96 bg-[#1E5A46]/25 rounded-full blur-3xl pointer-events-none" />
 
         {/* Top Breadcrumbs & Accolade Ribbon */}
         <div className="relative z-10 max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           {/* Breadcrumbs */}
           <nav className="flex items-center gap-2 text-xs text-white/70" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-[#C29B38] flex items-center gap-1 transition-colors">
+            <Link href="/" className="hover:text-[#C5A15B] flex items-center gap-1 transition-colors">
               <HomeIcon className="w-3.5 h-3.5" />
               <span>Home</span>
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/40" />
-            <span className="text-[#C29B38] font-semibold">Blog</span>
+            <span className="text-[#C5A15B] font-semibold">Blog</span>
           </nav>
 
           {/* Govt & Intl Honors Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-black/60 border border-[#C29B38]/60 text-[#E0BA55] text-[10px] sm:text-xs font-bold uppercase tracking-wider backdrop-blur-md shadow-lg">
-            <Award className="w-3.5 h-3.5 text-[#C29B38] shrink-0" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-black/60 border border-[#C5A15B]/60 text-[#C5A15B] text-[10px] sm:text-xs font-bold uppercase tracking-wider backdrop-blur-md shadow-lg">
+            <Award className="w-3.5 h-3.5 text-[#C5A15B] shrink-0" />
             <span>Awarded by Govt. of India &bull; Nominated for Intl. Award</span>
           </div>
         </div>
@@ -168,9 +168,9 @@ export default function BlogListClient() {
         {/* Hero Central Content */}
         <div className="relative z-10 max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 flex-1 flex flex-col justify-center items-center text-center">
           {/* Eyebrow Tag */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C29B38]/20 border border-[#C29B38]/50 mb-4 backdrop-blur-md shadow-sm">
-            {/* <Sparkles className="w-3.5 h-3.5 text-[#C29B38]" /> */}
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#E0BA55] tracking-[0.22em] uppercase">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C5A15B]/20 border border-[#C5A15B]/50 mb-4 backdrop-blur-md shadow-sm">
+            {/* <Sparkles className="w-3.5 h-3.5 text-[#C5A15B]" /> */}
+            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.22em] uppercase">
               ARCHITECTURAL DOSSIER &bull; GEOTECHNICAL RESEARCH 
             </span>
           </div>
@@ -182,7 +182,7 @@ export default function BlogListClient() {
 
           {/* Subheading / Lineage */}
           <div className="mt-3 sm:mt-4">
-            <span className="font-['Cinzel',serif] font-bold text-[#C29B38] tracking-[0.16em] uppercase text-sm sm:text-lg lg:text-xl drop-shadow-[0_0_20px_rgba(194,155,56,0.6)]">
+            <span className="font-['Cinzel',serif] font-bold text-[#C5A15B] tracking-[0.16em] uppercase text-sm sm:text-lg lg:text-xl drop-shadow-[0_0_20px_rgba(194,155,56,0.6)]">
               Quarry Science &bull; Shilpa Shastra &bull; Facade Engineering
             </span>
           </div>        
@@ -192,19 +192,19 @@ export default function BlogListClient() {
         <div className="relative z-10 bg-black/70 backdrop-blur-md border-t border-white/10 py-4 px-4">
           <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             <div className="flex flex-col items-center">
-              <span className="font-['Cinzel',serif] text-base sm:text-xl font-bold text-[#C29B38]">20 In-Depth</span>
+              <span className="font-['Cinzel',serif] text-base sm:text-xl font-bold text-[#C5A15B]">20 In-Depth</span>
               <span className="text-[10px] sm:text-xs text-white/70 uppercase tracking-wider">Architectural Masterclasses</span>
             </div>
             <div className="flex flex-col items-center border-l border-white/10">
-              <span className="font-['Cinzel',serif] text-base sm:text-xl font-bold text-[#C29B38]">&gt; 68.4 MPa</span>
+              <span className="font-['Cinzel',serif] text-base sm:text-xl font-bold text-[#C5A15B]">&gt; 68.4 MPa</span>
               <span className="text-[10px] sm:text-xs text-white/70 uppercase tracking-wider">Compressive Strength</span>
             </div>
             <div className="flex flex-col items-center border-l border-white/10">
-              <span className="font-['Cinzel',serif] text-base sm:text-xl font-bold text-[#C29B38]">300+ Designs</span>
+              <span className="font-['Cinzel',serif] text-base sm:text-xl font-bold text-[#C5A15B]">300+ Designs</span>
               <span className="text-[10px] sm:text-xs text-white/70 uppercase tracking-wider">Front Elevation Portfolio</span>
             </div>
             <div className="flex flex-col items-center border-l border-white/10">
-              <span className="font-['Cinzel',serif] text-base sm:text-xl font-bold text-[#C29B38]">Since 1953</span>
+              <span className="font-['Cinzel',serif] text-base sm:text-xl font-bold text-[#C5A15B]">Since 1953</span>
               <span className="text-[10px] sm:text-xs text-white/70 uppercase tracking-wider">Direct Quarry Concession</span>
             </div>
           </div>
@@ -233,10 +233,10 @@ export default function BlogListClient() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent lg:hidden" />
                 <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
-                  <span className="bg-[#852233] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+                  <span className="bg-[#123D32] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
                     Featured Masterclass
                   </span>
-                  <span className="bg-black/60 backdrop-blur-md text-[#C29B38] text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-white/10">
+                  <span className="bg-black/60 backdrop-blur-md text-[#C5A15B] text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-white/10">
                     {featuredPost.category}
                   </span>
                 </div>
@@ -245,34 +245,34 @@ export default function BlogListClient() {
               {/* Text Side */}
               <div className="lg:col-span-5 p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-white">
                 <div>
-                  <div className="flex items-center gap-3 text-xs text-[#68726E] mb-3">
+                  <div className="flex items-center gap-3 text-xs text-[#6B7C73] mb-3">
                     <span className="flex items-center gap-1">
-                      <Calendar className="w-3.5 h-3.5 text-[#C29B38]" />
+                      <Calendar className="w-3.5 h-3.5 text-[#C5A15B]" />
                       {featuredPost.publishedDate}
                     </span>
                     <span>&bull;</span>
                     <span className="flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5 text-[#C29B38]" />
+                      <Clock className="w-3.5 h-3.5 text-[#C5A15B]" />
                       {featuredPost.readTime}
                     </span>
                   </div>
 
                   <h2
                     onClick={() => openArticle(featuredPost)}
-                    className="font-['Cinzel',serif] text-xl sm:text-2xl lg:text-3xl font-bold text-[#141A17] group-hover:text-[#852233] transition-colors leading-snug cursor-pointer"
+                    className="font-['Cinzel',serif] text-xl sm:text-2xl lg:text-3xl font-bold text-[#1F2A24] group-hover:text-[#123D32] transition-colors leading-snug cursor-pointer"
                   >
                     {featuredPost.title}
                   </h2>
 
-                  <p className="text-xs sm:text-sm text-[#4A5550] mt-3 sm:mt-4 leading-relaxed line-clamp-3 lg:line-clamp-4">
+                  <p className="text-xs sm:text-sm text-[#6B7C73] mt-3 sm:mt-4 leading-relaxed line-clamp-3 lg:line-clamp-4">
                     {featuredPost.excerpt}
                   </p>
 
                   {/* Key Takeaway Bullets Preview */}
                   <div className="mt-4 pt-4 border-t border-black/6 space-y-1.5 hidden sm:block">
                     {featuredPost.keyTakeaways.slice(0, 2).map((takeaway, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-xs text-[#4A5550]">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#C29B38] shrink-0 mt-0.5" />
+                      <div key={idx} className="flex items-start gap-2 text-xs text-[#6B7C73]">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#C5A15B] shrink-0 mt-0.5" />
                         <span className="line-clamp-1">{takeaway}</span>
                       </div>
                     ))}
@@ -281,7 +281,7 @@ export default function BlogListClient() {
 
                 <div className="mt-6 pt-5 border-t border-black/8 flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
-                    <div className="w-9 h-9 rounded-full overflow-hidden border border-[#C29B38] relative shrink-0">
+                    <div className="w-9 h-9 rounded-full overflow-hidden border border-[#C5A15B] relative shrink-0">
                       <Image
                         src={featuredPost.author.avatar}
                         alt={featuredPost.author.name}
@@ -290,10 +290,10 @@ export default function BlogListClient() {
                       />
                     </div>
                     <div>
-                      <span className="text-xs font-bold text-[#141A17] block leading-tight">
+                      <span className="text-xs font-bold text-[#1F2A24] block leading-tight">
                         {featuredPost.author.name}
                       </span>
-                      <span className="text-[10px] text-[#68726E]">
+                      <span className="text-[10px] text-[#6B7C73]">
                         {featuredPost.author.role}
                       </span>
                     </div>
@@ -311,10 +311,10 @@ export default function BlogListClient() {
       <section id="articles-section" className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 scroll-mt-28">
         {selectedCategory === "All" && searchQuery === "" && (
           <div className="flex items-center justify-between mb-8 pb-3 border-b border-black/8">
-            <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold uppercase tracking-wide text-[#141A17]">
+            <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold uppercase tracking-wide text-[#1F2A24]">
               All Architectural Guides &amp; Insights
             </h3>
-            <span className="text-xs text-[#68726E] font-medium">
+            <span className="text-xs text-[#6B7C73] font-medium">
               Showing {filteredPosts.length} Guides
             </span>
           </div>
@@ -322,11 +322,11 @@ export default function BlogListClient() {
 
         {filteredPosts.length === 0 ? (
           <div className="text-center py-16 bg-white rounded-3xl border border-black/8 p-8">
-            <BookOpen className="w-12 h-12 text-[#C29B38] mx-auto mb-3" />
-            <h4 className="font-['Cinzel',serif] text-lg font-bold text-[#141A17]">
+            <BookOpen className="w-12 h-12 text-[#C5A15B] mx-auto mb-3" />
+            <h4 className="font-['Cinzel',serif] text-lg font-bold text-[#1F2A24]">
               No articles found matching &quot;{searchQuery}&quot;
             </h4>
-            <p className="text-xs text-[#68726E] mt-1">
+            <p className="text-xs text-[#6B7C73] mt-1">
               Try searching for &quot;Dholpur Beige&quot;, &quot;Agra Red&quot;, &quot;Patio&quot;, or reset your category filter.
             </p>
             <button
@@ -335,7 +335,7 @@ export default function BlogListClient() {
                 setSelectedCategory("All");
                 setSearchQuery("");
               }}
-              className="mt-4 px-5 py-2 rounded-full bg-[#0D1311] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#C29B38] hover:text-black transition-colors cursor-pointer"
+              className="mt-4 px-5 py-2 rounded-full bg-[#123D32] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#C5A15B] hover:text-black transition-colors cursor-pointer"
             >
               Reset Filters
             </button>
@@ -362,7 +362,7 @@ export default function BlogListClient() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10">
-                      <span className="bg-black/75 backdrop-blur-md text-[#C29B38] border border-white/10 text-[9.5px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
+                      <span className="bg-black/75 backdrop-blur-md text-[#C5A15B] border border-white/10 text-[9.5px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
                         {post.category}
                       </span>
                     </div>
@@ -370,26 +370,26 @@ export default function BlogListClient() {
 
                   {/* Body Content */}
                   <div className="p-5 sm:p-6">
-                    <div className="flex items-center gap-3 text-[11px] text-[#68726E] mb-2.5">
+                    <div className="flex items-center gap-3 text-[11px] text-[#6B7C73] mb-2.5">
                       <span className="flex items-center gap-1">
-                        <Calendar className="w-3 h-3 text-[#C29B38]" />
+                        <Calendar className="w-3 h-3 text-[#C5A15B]" />
                         {post.publishedDate}
                       </span>
                       <span>&bull;</span>
                       <span className="flex items-center gap-1">
-                        <Clock className="w-3 h-3 text-[#C29B38]" />
+                        <Clock className="w-3 h-3 text-[#C5A15B]" />
                         {post.readTime}
                       </span>
                     </div>
 
                     <h3
                       onClick={() => openArticle(post)}
-                      className="font-['Cinzel',serif] text-base sm:text-lg font-bold text-[#141A17] group-hover:text-[#852233] transition-colors leading-snug line-clamp-2 cursor-pointer"
+                      className="font-['Cinzel',serif] text-base sm:text-lg font-bold text-[#1F2A24] group-hover:text-[#123D32] transition-colors leading-snug line-clamp-2 cursor-pointer"
                     >
                       {post.title}
                     </h3>
 
-                    <p className="text-xs text-[#4A5550] mt-2.5 leading-relaxed line-clamp-3">
+                    <p className="text-xs text-[#6B7C73] mt-2.5 leading-relaxed line-clamp-3">
                       {post.excerpt}
                     </p>
 
@@ -406,12 +406,12 @@ export default function BlogListClient() {
 
      
       <section className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16">
-        <div className="bg-gradient-to-r from-[#0D1311] via-[#141A17] to-[#0D1311] rounded-3xl p-8 sm:p-12 text-white border border-[#C29B38]/30 relative overflow-hidden shadow-xl">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-[#C29B38]/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="bg-gradient-to-r from-[#123D32] via-[#1F2A24] to-[#123D32] rounded-3xl p-8 sm:p-12 text-white border border-[#C5A15B]/30 relative overflow-hidden shadow-xl">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#C5A15B]/15 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8">
-              <div className="inline-flex items-center gap-1.5 text-[#C29B38] text-xs font-bold uppercase tracking-widest mb-2">
+              <div className="inline-flex items-center gap-1.5 text-[#C5A15B] text-xs font-bold uppercase tracking-widest mb-2">
                 <Sparkles className="w-4 h-4" />
                 <span>DIRECT QUARRY CONSULTATION &bull; SIKA  NDRA &bull; SARMATHURA</span>
               </div>
@@ -428,7 +428,7 @@ export default function BlogListClient() {
                 href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20am%20an%20architect/developer%20interested%20in%20natural%20sandstone%20technical%20specs"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#C29B38] hover:bg-[#d8ae42] text-black text-xs font-bold uppercase tracking-wider transition-all shadow-md text-center"
+                className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#C5A15B] hover:bg-[#C5A15B] text-black text-xs font-bold uppercase tracking-wider transition-all shadow-md text-center"
               >
                 <WhatsAppIcon className="w-4 h-4 fill-black" size={16} />
                 <span>WhatsApp Stone Advisory</span>
@@ -438,7 +438,7 @@ export default function BlogListClient() {
                 href="tel:+919414945457"
                 className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-bold uppercase tracking-wider transition-all text-center"
               >
-                <PhoneCall className="w-4 h-4 text-[#C29B38]" />
+                <PhoneCall className="w-4 h-4 text-[#C5A15B]" />
                 <span>Call: +91 94149 45457</span>
               </a>
             </div>
@@ -452,13 +452,13 @@ export default function BlogListClient() {
       {activeArticle && (
         <div className="fixed inset-0 z-[300] flex items-center justify-center bg-black/80 backdrop-blur-md overflow-y-auto p-2 sm:p-4 lg:p-6 animate-in fade-in duration-200">
           <div
-            className="relative w-full max-w-5xl bg-[#FAF7F2] text-[#141A17] rounded-3xl shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col border border-[#C29B38]/40"
+            className="relative w-full max-w-5xl bg-[#F7F4EB] text-[#1F2A24] rounded-3xl shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col border border-[#C5A15B]/40"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Sticky Header */}
-            <div className="sticky top-0 z-50 bg-[#0D1311] text-white p-4 sm:px-6 flex items-center justify-between border-b border-white/10 shrink-0">
+            <div className="sticky top-0 z-50 bg-[#123D32] text-white p-4 sm:px-6 flex items-center justify-between border-b border-white/10 shrink-0">
               <div className="flex items-center gap-2.5 truncate mr-3">
-                <span className="px-2.5 py-0.5 rounded-full bg-[#852233] text-white text-[10px] font-bold uppercase tracking-wider shrink-0">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#123D32] text-white text-[10px] font-bold uppercase tracking-wider shrink-0">
                   {activeArticle.category}
                 </span>
                 <span className="text-xs text-white/80 truncate font-['Cinzel',serif] hidden sm:inline">
@@ -471,7 +471,7 @@ export default function BlogListClient() {
                 <button
                   type="button"
                   onClick={handleCopyLink}
-                  className="p-2 rounded-full bg-white/10 hover:bg-[#C29B38] hover:text-black text-white text-xs transition-colors flex items-center gap-1 cursor-pointer"
+                  className="p-2 rounded-full bg-white/10 hover:bg-[#C5A15B] hover:text-black text-white text-xs transition-colors flex items-center gap-1 cursor-pointer"
                   title="Copy link to this article"
                 >
                   {copied ? (
@@ -488,7 +488,7 @@ export default function BlogListClient() {
                 <button
                   type="button"
                   onClick={closeArticle}
-                  className="p-2 rounded-full bg-white/10 hover:bg-[#852233] text-white transition-colors cursor-pointer"
+                  className="p-2 rounded-full bg-white/10 hover:bg-[#123D32] text-white transition-colors cursor-pointer"
                   aria-label="Close article modal"
                 >
                   <X className="w-5 h-5" />
@@ -518,44 +518,44 @@ export default function BlogListClient() {
 
               {/* Title & Meta */}
               <div>
-                <div className="flex flex-wrap items-center gap-3 text-xs text-[#68726E] mb-2.5">
-                  <span className="flex items-center gap-1 font-semibold text-[#852233]">
-                    <Sparkles className="w-3.5 h-3.5 text-[#C29B38]" />
+                <div className="flex flex-wrap items-center gap-3 text-xs text-[#6B7C73] mb-2.5">
+                  <span className="flex items-center gap-1 font-semibold text-[#123D32]">
+                    <Sparkles className="w-3.5 h-3.5 text-[#C5A15B]" />
                     {activeArticle.category}
                   </span>
                   <span>&bull;</span>
                   <span className="flex items-center gap-1">
-                    <Calendar className="w-3.5 h-3.5 text-[#C29B38]" />
+                    <Calendar className="w-3.5 h-3.5 text-[#C5A15B]" />
                     {activeArticle.publishedDate}
                   </span>
                   <span>&bull;</span>
                   <span className="flex items-center gap-1">
-                    <Clock className="w-3.5 h-3.5 text-[#C29B38]" />
+                    <Clock className="w-3.5 h-3.5 text-[#C5A15B]" />
                     {activeArticle.readTime}
                   </span>
                 </div>
 
-                <h1 className="font-['Cinzel',serif] text-2xl sm:text-3xl lg:text-4xl font-bold text-[#141A17] leading-tight">
+                <h1 className="font-['Cinzel',serif] text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1F2A24] leading-tight">
                   {activeArticle.title}
                 </h1>
-                <p className="text-xs sm:text-sm text-[#4A5550] mt-3 leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#6B7C73] mt-3 leading-relaxed">
                   {activeArticle.excerpt}
                 </p>
               </div>
 
               {/* Key Takeaways Highlight Box */}
-              <div className="bg-white border-2 border-[#C29B38]/40 p-5 sm:p-6 rounded-2xl shadow-sm relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-2 h-full bg-[#C29B38]" />
-                <div className="flex items-center gap-2 text-[#852233] mb-3">
-                  <Sparkles className="w-4 h-4 text-[#C29B38]" />
-                  <h3 className="font-['Cinzel',serif] text-sm sm:text-base font-bold uppercase tracking-wide text-[#141A17]">
+              <div className="bg-white border-2 border-[#C5A15B]/40 p-5 sm:p-6 rounded-2xl shadow-sm relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-2 h-full bg-[#C5A15B]" />
+                <div className="flex items-center gap-2 text-[#123D32] mb-3">
+                  <Sparkles className="w-4 h-4 text-[#C5A15B]" />
+                  <h3 className="font-['Cinzel',serif] text-sm sm:text-base font-bold uppercase tracking-wide text-[#1F2A24]">
                     Executive Summary &bull; Key Takeaways
                   </h3>
                 </div>
                 <ul className="space-y-2">
                   {activeArticle.keyTakeaways.map((takeaway, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-[#38433E]">
-                      <CheckCircle2 className="w-4 h-4 text-[#C29B38] shrink-0 mt-0.5" />
+                    <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-[#6B7C73]">
+                      <CheckCircle2 className="w-4 h-4 text-[#C5A15B] shrink-0 mt-0.5" />
                       <span>{takeaway}</span>
                     </li>
                   ))}
@@ -563,19 +563,19 @@ export default function BlogListClient() {
               </div>
 
               {/* Intro Text */}
-              <div className="text-xs sm:text-sm text-[#2E3632] leading-relaxed">
+              <div className="text-xs sm:text-sm text-[#6B7C73] leading-relaxed">
                 {activeArticle.content.intro}
               </div>
 
               {/* Full Content Sections */}
               {activeArticle.content.sections.map((section) => (
                 <section key={section.id} className="space-y-3 pt-4 border-t border-black/8">
-                  <h3 className="font-['Cinzel',serif] text-lg sm:text-xl font-bold text-[#141A17]">
+                  <h3 className="font-['Cinzel',serif] text-lg sm:text-xl font-bold text-[#1F2A24]">
                     {section.heading}
                   </h3>
 
                   {section.paragraphs.map((p, idx) => (
-                    <p key={idx} className="text-xs sm:text-sm text-[#4A5550] leading-relaxed">
+                    <p key={idx} className="text-xs sm:text-sm text-[#6B7C73] leading-relaxed">
                       {p}
                     </p>
                   ))}
@@ -585,10 +585,10 @@ export default function BlogListClient() {
                     <div
                       className={`p-4 rounded-xl border ${
                         section.callout.type === "quote"
-                          ? "bg-[#0D1311] text-white border-[#C29B38]/40 italic"
+                          ? "bg-[#123D32] text-white border-[#C5A15B]/40 italic"
                           : section.callout.type === "spec"
-                          ? "bg-[#134e3f]/10 text-[#134e3f] border-[#134e3f]/30"
-                          : "bg-[#852233]/10 text-[#852233] border-[#852233]/30"
+                          ? "bg-[#123D32]/10 text-[#123D32] border-[#123D32]/30"
+                          : "bg-[#123D32]/10 text-[#123D32] border-[#123D32]/30"
                       }`}
                     >
                       <span className="text-[10px] font-bold uppercase tracking-widest block mb-1">
@@ -605,12 +605,12 @@ export default function BlogListClient() {
                     <div className="overflow-x-auto my-4 bg-white rounded-xl border border-black/8 shadow-2xs">
                       <table className="w-full text-left text-xs">
                         {section.table.caption && (
-                          <caption className="p-2.5 text-left font-['Cinzel',serif] font-bold text-xs text-[#141A17] bg-[#FAF7F2] border-b border-black/6">
+                          <caption className="p-2.5 text-left font-['Cinzel',serif] font-bold text-xs text-[#1F2A24] bg-[#F7F4EB] border-b border-black/6">
                             {section.table.caption}
                           </caption>
                         )}
                         <thead>
-                          <tr className="bg-[#0D1311] text-white">
+                          <tr className="bg-[#123D32] text-white">
                             {section.table.headers.map((h, idx) => (
                               <th key={idx} className="p-2.5 font-semibold uppercase tracking-wider text-[10.5px]">
                                 {h}
@@ -620,11 +620,11 @@ export default function BlogListClient() {
                         </thead>
                         <tbody className="divide-y divide-black/6">
                           {section.table.rows.map((row, rIdx) => (
-                            <tr key={rIdx} className={rIdx % 2 === 0 ? "bg-white" : "bg-[#FAF7F2]/50"}>
+                            <tr key={rIdx} className={rIdx % 2 === 0 ? "bg-white" : "bg-[#F7F4EB]/50"}>
                               {row.map((cell, cIdx) => (
                                 <td
                                   key={cIdx}
-                                  className={`p-2.5 ${cIdx === 0 ? "font-bold text-[#141A17]" : "text-[#4A5550]"}`}
+                                  className={`p-2.5 ${cIdx === 0 ? "font-bold text-[#1F2A24]" : "text-[#6B7C73]"}`}
                                 >
                                   {cell}
                                 </td>
@@ -640,8 +640,8 @@ export default function BlogListClient() {
                   {section.bullets && (
                     <ul className="space-y-1.5 mt-2 pl-1">
                       {section.bullets.map((b, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-xs text-[#4A5550]">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#852233] mt-1.5 shrink-0" />
+                        <li key={idx} className="flex items-start gap-2 text-xs text-[#6B7C73]">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#C5A15B] mt-1.5 shrink-0" />
                           <span>{b}</span>
                         </li>
                       ))}
@@ -651,11 +651,11 @@ export default function BlogListClient() {
               ))}
 
               {/* Conclusion */}
-              <div className="bg-[#FAF7F2] border border-black/8 p-5 sm:p-6 rounded-2xl space-y-2">
-                <h4 className="font-['Cinzel',serif] text-base font-bold text-[#141A17] uppercase">
+              <div className="bg-[#F7F4EB] border border-black/8 p-5 sm:p-6 rounded-2xl space-y-2">
+                <h4 className="font-['Cinzel',serif] text-base font-bold text-[#1F2A24] uppercase">
                   Concluding Remarks
                 </h4>
-                <p className="text-xs sm:text-sm text-[#4A5550] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#6B7C73] leading-relaxed">
                   {activeArticle.content.conclusion}
                 </p>
               </div>
@@ -663,8 +663,8 @@ export default function BlogListClient() {
               {/* FAQs Accordion */}
               <div className="space-y-3 pt-4 border-t border-black/8">
                 <div className="flex items-center gap-2 mb-2">
-                  <HelpCircle className="w-4 h-4 text-[#C29B38]" />
-                  <h4 className="font-['Cinzel',serif] text-base sm:text-lg font-bold uppercase tracking-wide text-[#141A17]">
+                  <HelpCircle className="w-4 h-4 text-[#C5A15B]" />
+                  <h4 className="font-['Cinzel',serif] text-base sm:text-lg font-bold uppercase tracking-wide text-[#1F2A24]">
                     Frequently Asked Questions
                   </h4>
                 </div>
@@ -679,17 +679,17 @@ export default function BlogListClient() {
                       <button
                         type="button"
                         onClick={() => setOpenFaq(isOpen ? null : idx)}
-                        className="w-full flex items-center justify-between p-3.5 text-left font-['Cinzel',serif] text-xs font-bold text-[#141A17] hover:text-[#852233] cursor-pointer"
+                        className="w-full flex items-center justify-between p-3.5 text-left font-['Cinzel',serif] text-xs font-bold text-[#1F2A24] hover:text-[#123D32] cursor-pointer"
                       >
                         <span>{faq.question}</span>
                         <ChevronDown
-                          className={`w-4 h-4 text-[#C29B38] shrink-0 transition-transform ${
+                          className={`w-4 h-4 text-[#C5A15B] shrink-0 transition-transform ${
                             isOpen ? "rotate-180" : ""
                           }`}
                         />
                       </button>
                       {isOpen && (
-                        <div className="p-3.5 pt-0 text-xs text-[#4A5550] leading-relaxed border-t border-black/6 bg-[#FAF7F2]/40">
+                        <div className="p-3.5 pt-0 text-xs text-[#6B7C73] leading-relaxed border-t border-black/6 bg-[#F7F4EB]/40">
                           {faq.answer}
                         </div>
                       )}
@@ -699,9 +699,9 @@ export default function BlogListClient() {
               </div>
 
               {/* Author Card & Direct Inquiries */}
-              <div className="bg-gradient-to-r from-[#0D1311] to-[#1E2622] text-white p-6 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 border border-[#C29B38]/30">
+              <div className="bg-gradient-to-r from-[#123D32] to-[#1E5A46] text-white p-6 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 border border-[#C5A15B]/30">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full overflow-hidden border border-[#C29B38] relative shrink-0">
+                  <div className="w-12 h-12 rounded-full overflow-hidden border border-[#C5A15B] relative shrink-0">
                     <Image
                       src={activeArticle.author.avatar}
                       alt={activeArticle.author.name}
@@ -713,7 +713,7 @@ export default function BlogListClient() {
                     <span className="text-xs font-bold text-white block">
                       {activeArticle.author.name}
                     </span>
-                    <span className="text-[10px] text-[#C29B38]">
+                    <span className="text-[10px] text-[#C5A15B]">
                       {activeArticle.author.role} &bull; {activeArticle.author.experience}
                     </span>
                   </div>
@@ -724,7 +724,7 @@ export default function BlogListClient() {
                     href={`https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20am%20inquiring%20about%20${encodeURIComponent(activeArticle.title)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#C29B38] hover:bg-[#dfb54b] text-black text-xs font-bold uppercase tracking-wider transition-all"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#C5A15B] hover:bg-[#C5A15B] text-black text-xs font-bold uppercase tracking-wider transition-all"
                   >
                     <WhatsAppIcon className="w-4 h-4 fill-black" size={16} />
                     <span>Inquire on WhatsApp</span>

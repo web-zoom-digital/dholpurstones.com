@@ -273,40 +273,40 @@ export default function LandscapingSolutions() {
   return (
     <section
       id="landscaping"
-      className="bg-[#FAF7F2] py-14 sm:py-24 border-b border-black/8 relative overflow-hidden"
+      className="bg-[#F7F4EB] py-14 sm:py-24 border-b border-black/8 relative overflow-hidden"
     >
       {/* Decorative Background Subtleties */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#C29B38]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#134e3f]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#C5A15B]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#123D32]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Index Marker */}
         <AnimDiv className="flex items-center justify-between pb-3 border-b border-black/8 mb-8 sm:mb-10">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#C29B38]" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#141A17] uppercase">
+            <span className="w-2 h-2 rounded-full bg-[#C5A15B]" />
+            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#1F2A24] uppercase">
               DHOLPURESTONES &bull; HARDSCAPE &amp; PAVING DIVISION
             </span>
           </div>
-          <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C29B38] tracking-widest uppercase">
+          <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest uppercase">
             LANDSCAPE MASONRY
           </span>
         </AnimDiv>
 
         {/* Section Header */}
         <AnimDiv delay={40} className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#134e3f]/10 border border-[#134e3f]/20 mb-3.5 shadow-2xs">
-            <Ruler className="w-3.5 h-3.5 text-[#134e3f]" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#134e3f] tracking-[0.2em] uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#123D32]/10 border border-[#123D32]/20 mb-3.5 shadow-2xs">
+            <Ruler className="w-3.5 h-3.5 text-[#123D32]" />
+            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#123D32] tracking-[0.2em] uppercase">
               CALIBRATED PAVING, POOL DECKS &amp; HARDSCAPE MASONRY
             </span>
           </div>
 
-          <h2 className="font-['Cinzel',serif] font-bold text-[#141A17] uppercase tracking-[0.05em] leading-[1.18] text-2xl sm:text-3xl lg:text-4xl">
+          <h2 className="font-['Cinzel',serif] font-bold text-[#1F2A24] uppercase tracking-[0.05em] leading-[1.18] text-2xl sm:text-3xl lg:text-4xl">
             Architectural Sandstone Paving, Flagstones &amp; Landscape Hardscapes
           </h2>
 
-          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#4A5550] mt-3 sm:mt-4 leading-relaxed font-medium">
+          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] mt-3 sm:mt-4 leading-relaxed font-medium">
             Heavy-duty outdoor stone engineering for luxury villa courtyards, estate driveways, and swimming pool decks.
             Featuring Class R11 non-slip calibrated flagstones (+/-1mm), drop-face pool copings, monolithic stepped blocks,
             hand-chiseled cobblestones, and ornate garden gazebos direct from Sarmathura quarries.
@@ -325,11 +325,11 @@ export default function LandscapingSolutions() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 shrink-0 cursor-pointer ${
                   isActive
-                    ? "bg-[#134e3f] text-white shadow-md border border-[#C29B38]"
-                    : "bg-white text-[#4A5550] border border-black/8 hover:border-[#C29B38]/50 hover:bg-[#FAF7F2]"
+                    ? "bg-[#123D32] text-white shadow-md border border-[#C5A15B]"
+                    : "bg-white text-[#6B7C73] border border-black/8 hover:border-[#C5A15B]/50 hover:bg-[#F7F4EB]"
                 }`}
               >
-                <Icon className={`w-3.5 h-3.5 ${isActive ? "text-[#C29B38]" : "text-[#68726E]"}`} />
+                <Icon className={`w-3.5 h-3.5 ${isActive ? "text-[#C5A15B]" : "text-[#6B7C73]"}`} />
                 <span>{tab.label}</span>
               </button>
             );
@@ -342,12 +342,12 @@ export default function LandscapingSolutions() {
             <AnimDiv
               key={item.id}
               delay={100 + index * 50}
-              className="bg-white rounded-2xl border border-black/8 overflow-hidden shadow-sm hover:shadow-xl hover:border-[#C29B38]/60 transition-all duration-400 flex flex-col group"
+              className="bg-white rounded-2xl border border-black/8 overflow-hidden shadow-sm hover:shadow-xl hover:border-[#C5A15B]/60 transition-all duration-400 flex flex-col group"
             >
               {/* Media Card Preview */}
               <div
                 onClick={() => setActiveModal(item)}
-                className="relative aspect-[16/9.5] w-full overflow-hidden bg-[#141A17] cursor-pointer"
+                className="relative aspect-[16/9.5] w-full overflow-hidden bg-[#1F2A24] cursor-pointer"
               >
                 <Image
                   src={item.image}
@@ -360,8 +360,8 @@ export default function LandscapingSolutions() {
 
                 {/* Top Badge */}
                 <div className="absolute top-3 left-3 flex items-center gap-2">
-                  <span className="bg-[#134e3f]/90 backdrop-blur-xs text-[#FAF7F2] border border-[#C29B38]/60 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-sm flex items-center gap-1.5">
-                    <Sparkles className="w-3 h-3 text-[#C29B38]" />
+                  <span className="bg-[#123D32]/90 backdrop-blur-xs text-[#F7F4EB] border border-[#C5A15B]/60 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-sm flex items-center gap-1.5">
+                    <Sparkles className="w-3 h-3 text-[#C5A15B]" />
                     <span>{item.tag}</span>
                   </span>
                 </div>
@@ -375,7 +375,7 @@ export default function LandscapingSolutions() {
 
                 {/* Bottom Overlay Title on Image */}
                 <div className="absolute bottom-3 left-3 right-3 text-white">
-                  <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#E0BA55] block mb-0.5">
+                  <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#C5A15B] block mb-0.5">
                     {item.subtitle}
                   </span>
                   <h3 className="font-['Cinzel',serif] text-base sm:text-lg font-bold leading-snug drop-shadow-sm">
@@ -384,9 +384,9 @@ export default function LandscapingSolutions() {
                 </div>
 
                 {/* Hover Inspect Indicator */}
-                <div className="absolute inset-0 bg-[#0D1311]/50 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
-                  <div className="bg-[#134e3f] border border-[#C29B38] text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg">
-                    <ExternalLink className="w-3.5 h-3.5 text-[#C29B38]" />
+                <div className="absolute inset-0 bg-[#123D32]/50 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
+                  <div className="bg-[#123D32] border border-[#C5A15B] text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg">
+                    <ExternalLink className="w-3.5 h-3.5 text-[#C5A15B]" />
                     <span>Inspect Specs &amp; Gallery</span>
                   </div>
                 </div>
@@ -395,18 +395,18 @@ export default function LandscapingSolutions() {
               {/* Body Content */}
               <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <p className="text-xs sm:text-[13px] text-[#4A5550] leading-relaxed mb-4">
+                  <p className="text-xs sm:text-[13px] text-[#6B7C73] leading-relaxed mb-4">
                     {item.desc}
                   </p>
 
                   {/* Highlights Grid */}
                   <div className="grid grid-cols-2 gap-2 text-xs mb-4 pt-3 border-t border-black/6">
                     {item.specs.slice(0, 2).map((s, idx) => (
-                      <div key={idx} className="bg-[#FAF7F2] p-2.5 rounded-xl border border-black/5">
-                        <span className="text-[9px] uppercase font-bold tracking-wider text-[#68726E] block mb-0.5">
+                      <div key={idx} className="bg-[#F7F4EB] p-2.5 rounded-xl border border-black/5">
+                        <span className="text-[9px] uppercase font-bold tracking-wider text-[#6B7C73] block mb-0.5">
                           {s.label}
                         </span>
-                        <span className="font-bold text-[#141A17] text-[11px] leading-tight block">
+                        <span className="font-bold text-[#1F2A24] text-[11px] leading-tight block">
                           {s.value}
                         </span>
                       </div>
@@ -416,8 +416,8 @@ export default function LandscapingSolutions() {
                   {/* Key Feature Bullets */}
                   <ul className="space-y-1.5 mb-5">
                     {item.features.slice(0, 3).map((f, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-xs text-[#141A17]">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#134e3f] shrink-0 mt-0.5" />
+                      <li key={idx} className="flex items-start gap-2 text-xs text-[#1F2A24]">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#123D32] shrink-0 mt-0.5" />
                         <span>{f}</span>
                       </li>
                     ))}
@@ -429,7 +429,7 @@ export default function LandscapingSolutions() {
                   <button
                     type="button"
                     onClick={() => setActiveModal(item)}
-                    className="flex-1 py-2.5 px-3 rounded-xl bg-[#FAF7F2] hover:bg-[#134e3f] hover:text-white border border-black/10 text-xs font-bold text-[#141A17] uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer"
+                    className="flex-1 py-2.5 px-3 rounded-xl bg-[#F7F4EB] hover:bg-[#123D32] hover:text-white border border-black/10 text-xs font-bold text-[#1F2A24] uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer"
                   >
                     <span>Full Technical Specs</span>
                     <ChevronRight className="w-3.5 h-3.5" />
@@ -456,10 +456,10 @@ export default function LandscapingSolutions() {
             ========================================================================= */}
         <AnimDiv delay={150} className="mb-14 sm:mb-20">
           <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
-            <span className="text-[10px] font-bold text-[#C29B38] uppercase tracking-[0.22em] block mb-1">
+            <span className="text-[10px] font-bold text-[#C5A15B] uppercase tracking-[0.22em] block mb-1">
               ENGINEERED FOR LANDSCAPE PROFESSIONALS
             </span>
-            <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#141A17] uppercase tracking-wider">
+            <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#1F2A24] uppercase tracking-wider">
               Trusted by Architects, Builders &amp; Landscapers
             </h3>
           </div>
@@ -470,30 +470,30 @@ export default function LandscapingSolutions() {
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-2xl p-6 sm:p-7 border border-black/8 shadow-2xs hover:shadow-md hover:border-[#C29B38]/50 transition-all flex flex-col justify-between"
+                  className="bg-white rounded-2xl p-6 sm:p-7 border border-black/8 shadow-2xs hover:shadow-md hover:border-[#C5A15B]/50 transition-all flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-11 h-11 rounded-xl bg-[#134e3f]/10 border border-[#134e3f]/20 flex items-center justify-center text-[#134e3f]">
+                      <div className="w-11 h-11 rounded-xl bg-[#123D32]/10 border border-[#123D32]/20 flex items-center justify-center text-[#123D32]">
                         <Icon className="w-5 h-5" />
                       </div>
-                      <span className="text-[9px] font-bold uppercase tracking-widest text-[#C29B38] bg-[#FAF7F2] border border-black/5 px-2.5 py-1 rounded-full">
+                      <span className="text-[9px] font-bold uppercase tracking-widest text-[#C5A15B] bg-[#F7F4EB] border border-black/5 px-2.5 py-1 rounded-full">
                         {pillar.badge}
                       </span>
                     </div>
 
-                    <h4 className="font-['Cinzel',serif] text-base font-bold text-[#141A17] uppercase tracking-wider mb-2">
+                    <h4 className="font-['Cinzel',serif] text-base font-bold text-[#1F2A24] uppercase tracking-wider mb-2">
                       {pillar.title}
                     </h4>
 
-                    <p className="text-xs text-[#4A5550] leading-relaxed mb-5">
+                    <p className="text-xs text-[#6B7C73] leading-relaxed mb-5">
                       {pillar.desc}
                     </p>
 
                     <ul className="space-y-2 pt-4 border-t border-black/6">
                       {pillar.points.map((pt, pIdx) => (
-                        <li key={pIdx} className="flex items-start gap-2 text-xs text-[#141A17]">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#134e3f] shrink-0 mt-0.5" />
+                        <li key={pIdx} className="flex items-start gap-2 text-xs text-[#1F2A24]">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#123D32] shrink-0 mt-0.5" />
                           <span>{pt}</span>
                         </li>
                       ))}
@@ -510,15 +510,15 @@ export default function LandscapingSolutions() {
             ========================================================================= */}
         <AnimDiv
           delay={200}
-          className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-[#141A17] via-[#161D1A] to-[#0D1311] border border-[#C29B38]/30 p-6 sm:p-10 lg:p-12 shadow-xl text-white"
+          className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-[#1F2A24] via-[#1E5A46] to-[#123D32] border border-[#C5A15B]/30 p-6 sm:p-10 lg:p-12 shadow-xl text-white"
         >
           {/* Subtle Golden Ambient Ring */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-[#C29B38]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#C5A15B]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[#C29B38] text-[10px] font-bold uppercase tracking-wider mb-3">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#C29B38]" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[#C5A15B] text-[10px] font-bold uppercase tracking-wider mb-3">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#C5A15B]" />
                 <span>Direct Quarry Concessionaire Leases &bull; Sarmathura</span>
               </div>
               <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl lg:text-3xl font-bold uppercase tracking-wider text-white mb-3">
@@ -532,15 +532,15 @@ export default function LandscapingSolutions() {
 
               <div className="flex flex-wrap items-center gap-4 sm:gap-6 mt-6 text-xs text-white/90">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#C29B38]" />
+                  <CheckCircle2 className="w-4 h-4 text-[#C5A15B]" />
                   <span>Free Architectural Sample Boxes</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#C29B38]" />
+                  <CheckCircle2 className="w-4 h-4 text-[#C5A15B]" />
                   <span>CAD &amp; 3D Profiling Support</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#C29B38]" />
+                  <CheckCircle2 className="w-4 h-4 text-[#C5A15B]" />
                   <span>Direct Factory Wholesale Pricing</span>
                 </div>
               </div>
@@ -561,7 +561,7 @@ export default function LandscapingSolutions() {
                 href="tel:+919057355232"
                 className="flex-1 py-3 px-6 rounded-full bg-white/10 hover:bg-white/20 border border-white/25 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors"
               >
-                <Phone className="w-4 h-4 text-[#C29B38]" />
+                <Phone className="w-4 h-4 text-[#C5A15B]" />
                 <span>Call: +91 90573 55232</span>
               </a>
             </div>
@@ -578,11 +578,11 @@ export default function LandscapingSolutions() {
           onClick={() => setActiveModal(null)}
         >
           <div
-            className="bg-white rounded-3xl max-w-2xl w-full max-h-[92vh] overflow-y-auto border border-[#C29B38]/40 shadow-2xl relative"
+            className="bg-white rounded-3xl max-w-2xl w-full max-h-[92vh] overflow-y-auto border border-[#C5A15B]/40 shadow-2xl relative"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="relative aspect-[16/9] w-full bg-[#141A17]">
+            <div className="relative aspect-[16/9] w-full bg-[#1F2A24]">
               <Image
                 src={activeModal.image}
                 alt={activeModal.title}
@@ -602,7 +602,7 @@ export default function LandscapingSolutions() {
               </button>
 
               <div className="absolute bottom-4 left-5 right-5 text-white">
-                <span className="text-[10px] font-bold text-[#E0BA55] tracking-widest uppercase block mb-1">
+                <span className="text-[10px] font-bold text-[#C5A15B] tracking-widest uppercase block mb-1">
                   {activeModal.subtitle} &bull; {activeModal.provenance}
                 </span>
                 <h3 className="font-['Cinzel',serif] text-lg sm:text-2xl font-bold leading-tight">
@@ -614,36 +614,36 @@ export default function LandscapingSolutions() {
             {/* Modal Body */}
             <div className="p-5 sm:p-7 space-y-5">
               <div>
-                <span className="text-[10px] font-bold tracking-widest uppercase text-[#68726E] block mb-1">
+                <span className="text-[10px] font-bold tracking-widest uppercase text-[#6B7C73] block mb-1">
                   ARCHITECTURAL SUMMARY
                 </span>
-                <p className="text-xs sm:text-sm text-[#4A5550] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#6B7C73] leading-relaxed">
                   {activeModal.desc}
                 </p>
               </div>
 
               {/* Ideal Applications */}
-              <div className="p-3.5 rounded-xl bg-[#FAF7F2] border border-black/6">
-                <span className="text-[9px] uppercase font-bold tracking-widest text-[#134e3f] block mb-1">
+              <div className="p-3.5 rounded-xl bg-[#F7F4EB] border border-black/6">
+                <span className="text-[9px] uppercase font-bold tracking-widest text-[#123D32] block mb-1">
                   RECOMMENDED PROJECT TYPES
                 </span>
-                <p className="text-xs font-bold text-[#141A17]">
+                <p className="text-xs font-bold text-[#1F2A24]">
                   {activeModal.idealFor}
                 </p>
               </div>
 
               {/* Technical Specifications */}
               <div>
-                <span className="text-[10px] font-bold tracking-widest uppercase text-[#68726E] block mb-2.5">
+                <span className="text-[10px] font-bold tracking-widest uppercase text-[#6B7C73] block mb-2.5">
                   FACTORY TECHNICAL SPECIFICATIONS
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {activeModal.specs.map((s, idx) => (
                     <div key={idx} className="p-3 rounded-xl bg-white border border-black/8 shadow-2xs">
-                      <span className="text-[9px] uppercase font-bold text-[#68726E] block mb-0.5">
+                      <span className="text-[9px] uppercase font-bold text-[#6B7C73] block mb-0.5">
                         {s.label}
                       </span>
-                      <span className="text-xs font-bold text-[#141A17]">
+                      <span className="text-xs font-bold text-[#1F2A24]">
                         {s.value}
                       </span>
                     </div>
@@ -653,13 +653,13 @@ export default function LandscapingSolutions() {
 
               {/* Key Architectural Advantages */}
               <div>
-                <span className="text-[10px] font-bold tracking-widest uppercase text-[#68726E] block mb-2">
+                <span className="text-[10px] font-bold tracking-widest uppercase text-[#6B7C73] block mb-2">
                   KEY ADVANTAGES FOR CONTRACTORS
                 </span>
                 <ul className="space-y-2">
                   {activeModal.features.map((f, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-xs text-[#141A17]">
-                      <CheckCircle2 className="w-4 h-4 text-[#134e3f] shrink-0 mt-0.5" />
+                    <li key={idx} className="flex items-start gap-2.5 text-xs text-[#1F2A24]">
+                      <CheckCircle2 className="w-4 h-4 text-[#123D32] shrink-0 mt-0.5" />
                       <span>{f}</span>
                     </li>
                   ))}
@@ -681,7 +681,7 @@ export default function LandscapingSolutions() {
                 <button
                   type="button"
                   onClick={() => setActiveModal(null)}
-                  className="w-full sm:w-auto py-3 px-6 rounded-full bg-[#FAF7F2] hover:bg-black/5 text-[#141A17] text-xs font-bold uppercase tracking-wider border border-black/10 transition-colors cursor-pointer"
+                  className="w-full sm:w-auto py-3 px-6 rounded-full bg-[#F7F4EB] hover:bg-black/5 text-[#1F2A24] text-xs font-bold uppercase tracking-wider border border-black/10 transition-colors cursor-pointer"
                 >
                   Close
                 </button>

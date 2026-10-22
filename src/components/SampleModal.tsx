@@ -64,17 +64,17 @@ export default function SampleModal({ isOpen, onClose }: SampleModalProps) {
         onClick={onClose}
       />
 
-      <div className="relative z-10 w-full max-w-xl bg-[#18181b] border border-[#c29b38]/40 rounded-3xl shadow-2xl overflow-hidden my-8 p-6 sm:p-8">
+      <div className="relative z-10 w-full max-w-xl bg-[#1E5A46] border border-[#C5A15B]/40 rounded-3xl shadow-2xl overflow-hidden my-8 p-6 sm:p-8">
         <div className="flex items-center justify-between pb-4 border-b border-white/10">
           <div className="flex items-center gap-2.5">
-            <div className="p-2 rounded-xl bg-[#c29b38]/20 text-[#c29b38]">
+            <div className="p-2 rounded-xl bg-[#C5A15B]/20 text-[#C5A15B]">
               <Package className="w-5 h-5" />
             </div>
             <div>
               <h3 className="font-['Aboreto',serif] text-lg font-bold text-white uppercase tracking-wider">
                 ARCHITECTURAL SAMPLE BOX
               </h3>
-              <p className="text-[10px] text-[#c29b38] uppercase tracking-wider font-semibold">
+              <p className="text-[10px] text-[#C5A15B] uppercase tracking-wider font-semibold">
                 COMPLIMENTARY DISPATCH VIA DHL COURIER
               </p>
             </div>
@@ -95,12 +95,12 @@ export default function SampleModal({ isOpen, onClose }: SampleModalProps) {
             <h4 className="font-['Aboreto',serif] text-2xl font-bold text-white uppercase tracking-wider">
               SAMPLE BOX DISPATCH CONFIRMED
             </h4>
-            <p className="font-['EB_Garamond',serif] italic text-base text-[#f4efe6] max-w-sm mx-auto">
+            <p className="font-['EB_Garamond',serif] italic text-base text-[#F7F4EB] max-w-sm mx-auto">
               Your sample kit containing {formData.stones.length} stone specimens has been queued for packaging. A tracking number will be sent to {formData.email}.
             </p>
             <button
               onClick={onClose}
-              className="mt-6 font-['Aboreto',serif] text-xs uppercase tracking-widest px-8 py-3 rounded-full bg-[#c29b38] text-black font-bold"
+              className="mt-6 font-['Aboreto',serif] text-xs uppercase tracking-widest px-8 py-3 rounded-full bg-[#C5A15B] text-black font-bold"
             >
               Close
             </button>
@@ -118,7 +118,7 @@ export default function SampleModal({ isOpen, onClose }: SampleModalProps) {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="Ar. Name"
-                  className="w-full bg-[#121212] border border-white/10 focus:border-[#c29b38] rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-white/30 outline-none"
+                  className="w-full bg-[#123D32] border border-white/10 focus:border-[#C5A15B] rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-white/30 outline-none"
                 />
               </div>
               <div>
@@ -130,7 +130,7 @@ export default function SampleModal({ isOpen, onClose }: SampleModalProps) {
                   value={formData.firm}
                   onChange={(e) => setFormData({ ...formData, firm: e.target.value })}
                   placeholder="Design Firm"
-                  className="w-full bg-[#121212] border border-white/10 focus:border-[#c29b38] rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-white/30 outline-none"
+                  className="w-full bg-[#123D32] border border-white/10 focus:border-[#C5A15B] rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-white/30 outline-none"
                 />
               </div>
             </div>
@@ -146,7 +146,7 @@ export default function SampleModal({ isOpen, onClose }: SampleModalProps) {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="name@firm.com"
-                  className="w-full bg-[#121212] border border-white/10 focus:border-[#c29b38] rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-white/30 outline-none"
+                  className="w-full bg-[#123D32] border border-white/10 focus:border-[#C5A15B] rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-white/30 outline-none"
                 />
               </div>
               <div>
@@ -159,7 +159,7 @@ export default function SampleModal({ isOpen, onClose }: SampleModalProps) {
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder="+91..."
-                  className="w-full bg-[#121212] border border-white/10 focus:border-[#c29b38] rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-white/30 outline-none"
+                  className="w-full bg-[#123D32] border border-white/10 focus:border-[#C5A15B] rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-white/30 outline-none"
                 />
               </div>
             </div>
@@ -174,7 +174,7 @@ export default function SampleModal({ isOpen, onClose }: SampleModalProps) {
                 value={formData.address}
                 onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                 placeholder="Full studio street address, City, Postal Code, Country"
-                className="w-full bg-[#121212] border border-white/10 focus:border-[#c29b38] rounded-xl p-3 text-xs text-white placeholder-white/30 outline-none"
+                className="w-full bg-[#123D32] border border-white/10 focus:border-[#C5A15B] rounded-xl p-3 text-xs text-white placeholder-white/30 outline-none"
               />
             </div>
 
@@ -192,7 +192,7 @@ export default function SampleModal({ isOpen, onClose }: SampleModalProps) {
                       onClick={() => toggleStone(stone)}
                       className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
                         isSelected
-                          ? "bg-[#c29b38] text-black border-[#c29b38] font-semibold"
+                          ? "bg-[#C5A15B] text-black border-[#C5A15B] font-semibold"
                           : "bg-white/5 text-white/70 border-white/10 hover:border-white/30"
                       }`}
                     >
@@ -207,7 +207,7 @@ export default function SampleModal({ isOpen, onClose }: SampleModalProps) {
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full font-['Aboreto',serif] text-xs uppercase tracking-widest py-3.5 rounded-full bg-[#c29b38] text-black font-bold hover:bg-[#dfb54b] transition-all flex items-center justify-center gap-2"
+                className="w-full font-['Aboreto',serif] text-xs uppercase tracking-widest py-3.5 rounded-full bg-[#C5A15B] text-black font-bold hover:bg-[#C5A15B] transition-all flex items-center justify-center gap-2"
               >
                 <span>CONFIRM SAMPLE DISPATCH</span>
                 <Send className="w-3.5 h-3.5" />

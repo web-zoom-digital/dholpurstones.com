@@ -277,25 +277,25 @@ export default function GalleryClient() {
     activeTab === "all" ? galleryItems : galleryItems.filter((item) => item.category === activeTab);
 
   return (
-    <main className="min-h-screen bg-[#FAF7F2] text-[#141A17] selection:bg-[#852233] selection:text-white">
+    <main className="min-h-screen bg-[#F7F4EB] text-[#1F2A24] selection:bg-[#C5A15B] selection:text-[#123D32]">
       <Navbar />
 
       {/* Breadcrumb Header */}
-      <section className="bg-[#0D1311] text-white py-10 sm:py-14 border-b border-white/10 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#852233]/15 rounded-full blur-3xl pointer-events-none" />
+      <section className="bg-[#123D32] text-white py-10 sm:py-14 border-b border-white/10 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#1E5A46]/20 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <nav className="flex items-center gap-2 text-xs text-white/60 mb-4" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-[#C29B38] flex items-center gap-1 transition-colors">
+            <Link href="/" className="hover:text-[#C5A15B] flex items-center gap-1 transition-colors">
               <HomeIcon className="w-3.5 h-3.5" />
               <span>Home</span>
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/40" />
-            <span className="text-[#C29B38] font-semibold">Gallery</span>
+            <span className="text-[#C5A15B] font-semibold">Gallery</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#852233]/25 border border-[#C29B38]/40 mb-3">
-            <Camera className="w-3 h-3 text-[#E0BA55]" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#E0BA55] tracking-[0.2em] uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1E5A46]/25 border border-[#C5A15B]/40 mb-3">
+            <Camera className="w-3 h-3 text-[#C5A15B]" />
+            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase">
               VISUAL EVIDENCE &bull; MINES &bull; PROJECTS
             </span>
           </div>
@@ -317,8 +317,8 @@ export default function GalleryClient() {
             onClick={() => setActiveTab("photo")}
             className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all shrink-0 cursor-pointer ${
               activeTab === "photo"
-                ? "bg-[#852233] text-white shadow-md border border-[#852233]"
-                : "bg-white text-[#4A5550] border border-black/8 hover:border-[#852233]/40"
+                ? "bg-[#123D32] text-white shadow-md border border-[#123D32]"
+                : "bg-white text-[#6B7C73] border border-black/8 hover:border-[#123D32]/40"
             }`}
           >
             Photo Gallery
@@ -328,8 +328,8 @@ export default function GalleryClient() {
             onClick={() => setActiveTab("media")}
             className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all shrink-0 cursor-pointer ${
               activeTab === "media"
-                ? "bg-[#852233] text-white shadow-md border border-[#852233]"
-                : "bg-white text-[#4A5550] border border-black/8 hover:border-[#852233]/40"
+                ? "bg-[#123D32] text-white shadow-md border border-[#123D32]"
+                : "bg-white text-[#6B7C73] border border-black/8 hover:border-[#123D32]/40"
             }`}
           >
             Media &amp; Press
@@ -339,8 +339,8 @@ export default function GalleryClient() {
             onClick={() => setActiveTab("video")}
             className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all shrink-0 cursor-pointer ${
               activeTab === "video"
-                ? "bg-[#852233] text-white shadow-md border border-[#852233]"
-                : "bg-white text-[#4A5550] border border-black/8 hover:border-[#852233]/40"
+                ? "bg-[#123D32] text-white shadow-md border border-[#123D32]"
+                : "bg-white text-[#6B7C73] border border-black/8 hover:border-[#123D32]/40"
             }`}
           >
             Video Gallery
@@ -350,8 +350,8 @@ export default function GalleryClient() {
             onClick={() => setActiveTab("all")}
             className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all shrink-0 cursor-pointer ${
               activeTab === "all"
-                ? "bg-[#852233] text-white shadow-md border border-[#852233]"
-                : "bg-white text-[#4A5550] border border-black/8 hover:border-[#852233]/40"
+                ? "bg-[#123D32] text-white shadow-md border border-[#123D32]"
+                : "bg-white text-[#6B7C73] border border-black/8 hover:border-[#123D32]/40"
             }`}
           >
             All Archives
@@ -366,9 +366,9 @@ export default function GalleryClient() {
             <div
               key={item.id}
               onClick={() => setActivePreview(item)}
-              className="bg-white rounded-2xl border border-black/8 overflow-hidden shadow-2xs hover:shadow-xl hover:border-[#852233]/50 transition-all duration-300 flex flex-col cursor-pointer group"
+              className="bg-white rounded-2xl border border-black/8 overflow-hidden shadow-2xs hover:shadow-xl hover:border-[#123D32]/50 transition-all duration-300 flex flex-col cursor-pointer group"
             >
-              <div className="relative aspect-[16/10] w-full bg-[#141A17] overflow-hidden">
+              <div className="relative aspect-[16/10] w-full bg-[#1F2A24] overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -378,13 +378,13 @@ export default function GalleryClient() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
 
-                <span className="absolute top-3 left-3 bg-[#0D1311]/80 backdrop-blur-xs text-[#E0BA55] text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-white/10">
+                <span className="absolute top-3 left-3 bg-[#123D32]/80 backdrop-blur-xs text-[#C5A15B] text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-white/10">
                   {item.tag}
                 </span>
 
                 {item.category === "video" && (
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-[#852233]/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 rounded-full bg-[#123D32]/95 border border-[#C5A15B]/50 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                       <Play className="w-5 h-5 fill-white ml-0.5" />
                     </div>
                   </div>
@@ -399,15 +399,15 @@ export default function GalleryClient() {
 
               <div className="p-5 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="font-['Cinzel',serif] text-base sm:text-lg font-bold text-[#141A17] group-hover:text-[#852233] transition-colors leading-snug">
+                  <h3 className="font-['Cinzel',serif] text-base sm:text-lg font-bold text-[#1F2A24] group-hover:text-[#123D32] transition-colors leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-[#4A5550] mt-2 line-clamp-2 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#6B7C73] mt-2 line-clamp-2 leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-black/6 flex items-center justify-between text-xs font-semibold text-[#852233]">
+                <div className="pt-4 mt-4 border-t border-black/6 flex items-center justify-between text-xs font-semibold text-[#123D32]">
                   <span>Click to Inspect Full Artifact</span>
                   <span className="text-[10px] uppercase tracking-wider text-black/40 font-mono">
                     #{item.id}
@@ -452,15 +452,15 @@ export default function GalleryClient() {
 
             <div className="p-6 space-y-4">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#852233] bg-[#FAF7F2] px-2.5 py-1 rounded-md inline-block mb-2">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#123D32] bg-[#F7F4EB] px-2.5 py-1 rounded-md inline-block mb-2">
                   {activePreview.tag}
                 </span>
-                <h3 className="font-['Cinzel',serif] text-xl font-bold text-[#141A17]">
+                <h3 className="font-['Cinzel',serif] text-xl font-bold text-[#1F2A24]">
                   {activePreview.title}
                 </h3>
               </div>
 
-              <p className="text-xs sm:text-sm text-[#4A5550] leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#6B7C73] leading-relaxed">
                 {activePreview.desc}
               </p>
 
@@ -480,7 +480,7 @@ export default function GalleryClient() {
                 <button
                   type="button"
                   onClick={() => setActivePreview(null)}
-                  className="py-2.5 px-5 rounded-full bg-[#FAF7F2] hover:bg-black/5 text-[#141A17] text-xs font-bold uppercase tracking-wider border border-black/10 transition-colors cursor-pointer"
+                  className="py-2.5 px-5 rounded-full bg-[#F7F4EB] hover:bg-black/5 text-[#1F2A24] text-xs font-bold uppercase tracking-wider border border-black/10 transition-colors cursor-pointer"
                 >
                   Close
                 </button>
@@ -491,7 +491,7 @@ export default function GalleryClient() {
       )}
 
       {/* Bottom CTA Bar */}
-      <section className="bg-[#141A17] text-white py-12 border-t border-[#C29B38]/20">
+      <section className="bg-[#1F2A24] text-white py-12 border-t border-[#C5A15B]/20">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold">
@@ -504,7 +504,7 @@ export default function GalleryClient() {
           <div className="flex items-center gap-3 shrink-0">
             <Link
               href="/contact"
-              className="px-6 py-3 rounded-full bg-[#852233] hover:bg-[#a1283d] text-white text-xs font-bold uppercase tracking-wider transition-colors"
+              className="px-6 py-3 rounded-full bg-[#123D32] hover:bg-[#1E5A46] text-white border border-[#C5A15B]/40 text-xs font-bold uppercase tracking-wider transition-colors"
             >
               Request Sample Box
             </Link>

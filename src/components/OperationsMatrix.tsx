@@ -93,19 +93,19 @@ export default function OperationsMatrix() {
   ];
 
   return (
-    <section id="operations" className="py-20 sm:py-28 bg-[#18181b] relative overflow-hidden border-b border-white/10">
+    <section id="operations" className="py-20 sm:py-28 bg-[#1E5A46] relative overflow-hidden border-b border-white/10">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 text-[#c29b38] text-xs font-semibold tracking-[0.25em] uppercase mb-3">
+            <div className="inline-flex items-center gap-2 text-[#C5A15B] text-xs font-semibold tracking-[0.25em] uppercase mb-3">
               <Sparkles className="w-4 h-4" />
               INTEGRATED SUPPLY CHAIN • FROM RAJASTHAN TO THE WORLD
             </div>
             <h2 className="font-['Aboreto',serif] text-3xl sm:text-4xl md:text-5xl font-bold tracking-[0.1em] text-white uppercase leading-tight">
               MASTER OPERATIONS MATRIX
             </h2>
-            <p className="font-['EB_Garamond',serif] italic text-lg sm:text-xl text-[#a8a8a8] max-w-2xl mt-3">
+            <p className="font-['EB_Garamond',serif] italic text-lg sm:text-xl text-white/75 max-w-2xl mt-3">
               Zero dependence on third-party aggregators. We own the quarry, operate the processing mills, guide the artisan guild, and handle international seaworthy exports.
             </p>
           </div>
@@ -122,22 +122,22 @@ export default function OperationsMatrix() {
                 onClick={() => setActiveStep(index)}
                 className={`p-6 rounded-2xl cursor-pointer border transition-all duration-300 flex flex-col justify-between ${
                   isSelected
-                    ? "bg-[#5a1224] border-[#c29b38] shadow-[0_0_25px_rgba(194,155,56,0.25)] text-white scale-[1.02]"
-                    : "bg-[#121212] border-white/10 hover:border-[#c29b38]/50 text-white/70 hover:text-white"
+                    ? "bg-[#123D32] border-[#C5A15B] shadow-[0_0_25px_rgba(194,155,56,0.25)] text-white scale-[1.02]"
+                    : "bg-[#123D32] border-white/10 hover:border-[#C5A15B]/50 text-white/70 hover:text-white"
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span
                       className={`font-['Aboreto',serif] text-2xl font-bold tracking-wider ${
-                        isSelected ? "text-[#c29b38]" : "text-white/30"
+                        isSelected ? "text-[#C5A15B]" : "text-white/30"
                       }`}
                     >
                       {step.number}
                     </span>
                     <div
                       className={`p-2.5 rounded-xl ${
-                        isSelected ? "bg-[#c29b38] text-black" : "bg-white/5 text-[#c29b38]"
+                        isSelected ? "bg-[#C5A15B] text-black" : "bg-white/5 text-[#C5A15B]"
                       }`}
                     >
                       <Icon className="w-5 h-5" />
@@ -151,7 +151,7 @@ export default function OperationsMatrix() {
                   </p>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-white/10 text-[11px] font-semibold text-[#c29b38] flex items-center justify-between">
+                <div className="mt-4 pt-3 border-t border-white/10 text-[11px] font-semibold text-[#C5A15B] flex items-center justify-between">
                   <span>{isSelected ? "Active Stage" : "Inspect Stage"}</span>
                   <span>→</span>
                 </div>
@@ -161,20 +161,20 @@ export default function OperationsMatrix() {
         </div>
 
         {/* Active Stage Detailed Breakdown Box */}
-        <div className="bg-[#121212] rounded-3xl border border-[#c29b38]/30 p-8 sm:p-12 shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-[#5a1224]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="bg-[#123D32] rounded-3xl border border-[#C5A15B]/30 p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#123D32]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-10">
             {/* Left 2 Cols: Description and Points */}
             <div className="lg:col-span-2 space-y-6">
               <div>
-                <span className="text-xs uppercase tracking-[0.25em] text-[#c29b38] font-bold">
+                <span className="text-xs uppercase tracking-[0.25em] text-[#C5A15B] font-bold">
                   STAGE {steps[activeStep].number} • {steps[activeStep].location}
                 </span>
                 <h3 className="font-['Aboreto',serif] text-2xl sm:text-3xl font-bold text-white uppercase tracking-wider mt-1">
                   {steps[activeStep].title}
                 </h3>
-                <p className="font-['EB_Garamond',serif] italic text-base sm:text-xl text-[#f4efe6] mt-3 leading-relaxed">
+                <p className="font-['EB_Garamond',serif] italic text-base sm:text-xl text-[#F7F4EB] mt-3 leading-relaxed">
                   {steps[activeStep].lead}
                 </p>
               </div>
@@ -182,8 +182,8 @@ export default function OperationsMatrix() {
               <div className="space-y-3 pt-4 border-t border-white/10">
                 {steps[activeStep].details.map((point, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[#c29b38] shrink-0 mt-0.5" />
-                    <p className="text-sm text-[#d4d4d4] leading-relaxed">
+                    <CheckCircle2 className="w-5 h-5 text-[#C5A15B] shrink-0 mt-0.5" />
+                    <p className="text-sm text-white/80 leading-relaxed">
                       {point}
                     </p>
                   </div>
@@ -192,9 +192,9 @@ export default function OperationsMatrix() {
             </div>
 
             {/* Right 1 Col: Production & Engineering Metrics */}
-            <div className="bg-[#1a1a1a] p-6 sm:p-8 rounded-2xl border border-white/10 flex flex-col justify-between">
+            <div className="bg-[#1E5A46] p-6 sm:p-8 rounded-2xl border border-white/10 flex flex-col justify-between">
               <div>
-                <h4 className="text-xs uppercase tracking-widest text-[#c29b38] font-bold mb-4 pb-2 border-b border-white/10">
+                <h4 className="text-xs uppercase tracking-widest text-[#C5A15B] font-bold mb-4 pb-2 border-b border-white/10">
                   VERIFIED OPERATIONAL CAPACITY
                 </h4>
                 <div className="space-y-5">
@@ -214,7 +214,7 @@ export default function OperationsMatrix() {
               <div className="mt-8 pt-6 border-t border-white/10">
                 <a
                   href="#contact"
-                  className="w-full inline-block text-center font-['Aboreto',serif] text-xs uppercase tracking-widest py-3 rounded-full bg-[#c29b38] text-black font-bold hover:bg-[#dfb54b] transition-all"
+                  className="w-full inline-block text-center font-['Aboreto',serif] text-xs uppercase tracking-widest py-3 rounded-full bg-[#C5A15B] text-black font-bold hover:bg-[#C5A15B] transition-all"
                 >
                   SCHEDULE QUARRY VISIT
                 </a>

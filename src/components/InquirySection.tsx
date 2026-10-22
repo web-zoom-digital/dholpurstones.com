@@ -33,24 +33,24 @@ export default function InquirySection() {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-28 bg-[#121212] relative overflow-hidden border-b border-white/10">
+    <section id="contact" className="py-20 sm:py-28 bg-[#123D32] relative overflow-hidden border-b border-white/10">
       {/* Background Ambience */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#5a1224]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#c29b38]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#123D32]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#C5A15B]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Column (5 Cols): Direct Contacts & Sample Box Info */}
           <div className="lg:col-span-5 space-y-8">
             <div>
-              <div className="inline-flex items-center gap-2 text-[#c29b38] text-xs font-semibold tracking-[0.25em] uppercase mb-3">
+              <div className="inline-flex items-center gap-2 text-[#C5A15B] text-xs font-semibold tracking-[0.25em] uppercase mb-3">
                 <Sparkles className="w-4 h-4" />
                 DIRECT ARCHITECTURAL DESK • ESTD. 1953
               </div>
               <h2 className="font-['Aboreto',serif] text-3xl sm:text-4xl md:text-5xl font-bold tracking-[0.1em] text-white uppercase leading-tight">
                 LET US SCULPT YOUR VISION
               </h2>
-              <p className="font-['EB_Garamond',serif] italic text-lg sm:text-xl text-[#a8a8a8] mt-4 leading-relaxed">
+              <p className="font-['EB_Garamond',serif] italic text-lg sm:text-xl text-white/75 mt-4 leading-relaxed">
                 Connect directly with our senior quarry master and export directors for architectural bids, customized shop drawings, and physical stone sample kits.
               </p>
             </div>
@@ -61,7 +61,7 @@ export default function InquirySection() {
                 href="https://wa.me/919829012345?text=Hello%20Dholpur%20Stones,%20I%20would%20like%20to%20request%20an%20architectural%20stone%20consultation"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-5 rounded-2xl bg-[#18181b] border border-[#25D366]/30 hover:border-[#25D366] flex items-center justify-between group transition-all"
+                className="p-5 rounded-2xl bg-[#1E5A46] border border-[#25D366]/30 hover:border-[#25D366] flex items-center justify-between group transition-all"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-[#25D366]/10 text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white flex items-center justify-center transition-colors">
@@ -81,8 +81,8 @@ export default function InquirySection() {
                 </span>
               </a>
 
-              <div className="p-5 rounded-2xl bg-[#18181b] border border-white/10 flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#c29b38]/10 text-[#c29b38] flex items-center justify-center shrink-0">
+              <div className="p-5 rounded-2xl bg-[#1E5A46] border border-white/10 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[#C5A15B]/10 text-[#C5A15B] flex items-center justify-center shrink-0">
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
@@ -91,15 +91,15 @@ export default function InquirySection() {
                   </span>
                   <a
                     href="mailto:exports@dholpurstones.com"
-                    className="text-base font-bold text-white hover:text-[#c29b38] transition-colors"
+                    className="text-base font-bold text-white hover:text-[#C5A15B] transition-colors"
                   >
                     exports@dholpurstones.com
                   </a>
                 </div>
               </div>
 
-              <div className="p-5 rounded-2xl bg-[#18181b] border border-white/10 flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#5a1224]/30 text-[#f4efe6] flex items-center justify-center shrink-0">
+              <div className="p-5 rounded-2xl bg-[#1E5A46] border border-white/10 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[#123D32]/30 text-[#F7F4EB] flex items-center justify-center shrink-0">
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
@@ -116,10 +116,10 @@ export default function InquirySection() {
             </div>
 
             {/* Free Sample Box Callout */}
-            <div className="p-6 rounded-2xl bg-gradient-to-r from-[#470c1b] to-[#5a1224] border border-[#c29b38]/40 shadow-xl text-white">
+            <div className="p-6 rounded-2xl bg-gradient-to-r from-[#1E5A46] to-[#123D32] border border-[#C5A15B]/40 shadow-xl text-white">
               <div className="flex items-center gap-3 mb-2">
-                <Package className="w-5 h-5 text-[#c29b38]" />
-                <span className="text-xs font-bold uppercase tracking-widest text-[#c29b38]">
+                <Package className="w-5 h-5 text-[#C5A15B]" />
+                <span className="text-xs font-bold uppercase tracking-widest text-[#C5A15B]">
                   COMPLIMENTARY ARCHITECTURAL SPECIMEN BOX
                 </span>
               </div>
@@ -130,7 +130,7 @@ export default function InquirySection() {
           </div>
 
           {/* Right Column (7 Cols): Luxury Architectural RFQ Form */}
-          <div className="lg:col-span-7 bg-[#18181b] border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl relative">
+          <div className="lg:col-span-7 bg-[#1E5A46] border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl relative">
             <h3 className="font-['Aboreto',serif] text-2xl font-bold text-white uppercase tracking-wider mb-2">
               REQUEST ARCHITECTURAL BID & SAMPLES
             </h3>
@@ -146,12 +146,12 @@ export default function InquirySection() {
                 <h4 className="font-['Aboreto',serif] text-2xl font-bold text-white uppercase tracking-wider">
                   INQUIRY RECEIVED
                 </h4>
-                <p className="font-['EB_Garamond',serif] italic text-lg text-[#f4efe6] max-w-md mx-auto">
+                <p className="font-['EB_Garamond',serif] italic text-lg text-[#F7F4EB] max-w-md mx-auto">
                   Thank you, {formData.name}. Our Senior Stone Technical Director will review your specifications and contact you within 4 business hours.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-6 font-['Aboreto',serif] text-xs uppercase tracking-widest px-6 py-2.5 rounded-full border border-[#c29b38] text-[#c29b38] hover:bg-[#c29b38] hover:text-black transition-all"
+                  className="mt-6 font-['Aboreto',serif] text-xs uppercase tracking-widest px-6 py-2.5 rounded-full border border-[#C5A15B] text-[#C5A15B] hover:bg-[#C5A15B] hover:text-black transition-all"
                 >
                   Submit Another Inquiry
                 </button>
@@ -169,7 +169,7 @@ export default function InquirySection() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Ar. Vikramaditya Sharma"
-                      className="w-full bg-[#121212] border border-white/10 focus:border-[#c29b38] rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-colors"
+                      className="w-full bg-[#123D32] border border-white/10 focus:border-[#C5A15B] rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-colors"
                     />
                   </div>
                   <div>
@@ -181,7 +181,7 @@ export default function InquirySection() {
                       value={formData.firm}
                       onChange={(e) => setFormData({ ...formData, firm: e.target.value })}
                       placeholder="e.g. Studio Vista Architecture"
-                      className="w-full bg-[#121212] border border-white/10 focus:border-[#c29b38] rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-colors"
+                      className="w-full bg-[#123D32] border border-white/10 focus:border-[#C5A15B] rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-colors"
                     />
                   </div>
                 </div>
@@ -197,7 +197,7 @@ export default function InquirySection() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="e.g. contact@studiovista.com"
-                      className="w-full bg-[#121212] border border-white/10 focus:border-[#c29b38] rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-colors"
+                      className="w-full bg-[#123D32] border border-white/10 focus:border-[#C5A15B] rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-colors"
                     />
                   </div>
                   <div>
@@ -210,7 +210,7 @@ export default function InquirySection() {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="+91 98XXX XXXXX or Intl Code"
-                      className="w-full bg-[#121212] border border-white/10 focus:border-[#c29b38] rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-colors"
+                      className="w-full bg-[#123D32] border border-white/10 focus:border-[#C5A15B] rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-colors"
                     />
                   </div>
                 </div>
@@ -223,7 +223,7 @@ export default function InquirySection() {
                     <select
                       value={formData.material}
                       onChange={(e) => setFormData({ ...formData, material: e.target.value })}
-                      className="w-full bg-[#121212] border border-white/10 focus:border-[#c29b38] rounded-xl px-4 py-3 text-xs text-white outline-none"
+                      className="w-full bg-[#123D32] border border-white/10 focus:border-[#C5A15B] rounded-xl px-4 py-3 text-xs text-white outline-none"
                     >
                       <option value="Dholpur Sandstone">Dholpur Sandstone</option>
                       <option value="Makrana Marble">Makrana Pristine Marble</option>
@@ -240,7 +240,7 @@ export default function InquirySection() {
                     <select
                       value={formData.projectType}
                       onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                      className="w-full bg-[#121212] border border-white/10 focus:border-[#c29b38] rounded-xl px-4 py-3 text-xs text-white outline-none"
+                      className="w-full bg-[#123D32] border border-white/10 focus:border-[#C5A15B] rounded-xl px-4 py-3 text-xs text-white outline-none"
                     >
                       <option value="Government / Monumental">Government / Monumental</option>
                       <option value="Sacred Temple / Monument">Sacred Temple / Monument</option>
@@ -256,7 +256,7 @@ export default function InquirySection() {
                     <select
                       value={formData.quantity}
                       onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
-                      className="w-full bg-[#121212] border border-white/10 focus:border-[#c29b38] rounded-xl px-4 py-3 text-xs text-white outline-none"
+                      className="w-full bg-[#123D32] border border-white/10 focus:border-[#C5A15B] rounded-xl px-4 py-3 text-xs text-white outline-none"
                     >
                       <option value="1,000 - 5,000 Sq.Ft.">1,000 - 5,000 Sq.Ft.</option>
                       <option value="5,000 - 20,000 Sq.Ft.">5,000 - 20,000 Sq.Ft.</option>
@@ -275,14 +275,14 @@ export default function InquirySection() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Provide thickness (e.g. 30mm, 50mm), finish (honed, flamed, hand-chiseled), or specific architectural drawings requirements..."
-                    className="w-full bg-[#121212] border border-white/10 focus:border-[#c29b38] rounded-xl p-4 text-sm text-white placeholder-white/30 outline-none transition-colors"
+                    className="w-full bg-[#123D32] border border-white/10 focus:border-[#C5A15B] rounded-xl p-4 text-sm text-white placeholder-white/30 outline-none transition-colors"
                   />
                 </div>
 
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full font-['Aboreto',serif] text-xs sm:text-sm uppercase tracking-[0.18em] py-4 rounded-full bg-[#c29b38] text-black font-bold hover:bg-[#dfb54b] transition-all duration-300 shadow-[0_4px_25px_rgba(194,155,56,0.3)] active:scale-95 flex items-center justify-center gap-2 group"
+                    className="w-full font-['Aboreto',serif] text-xs sm:text-sm uppercase tracking-[0.18em] py-4 rounded-full bg-[#C5A15B] text-black font-bold hover:bg-[#C5A15B] transition-all duration-300 shadow-[0_4px_25px_rgba(194,155,56,0.3)] active:scale-95 flex items-center justify-center gap-2 group"
                   >
                     <span>SUBMIT SPECIFICATION & REQUEST BID</span>
                     <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

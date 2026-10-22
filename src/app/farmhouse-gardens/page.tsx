@@ -53,41 +53,41 @@ export const metadata: Metadata = {
 
 export default function FarmHouseGardensPage() {
   return (
-    <main style={{ overflow: "visible" }} className="min-h-screen bg-[#FAF7F2] text-[#141A17] selection:bg-[#C29B38] selection:text-black">
+    <main style={{ overflow: "visible" }} className="min-h-screen bg-[#F7F4EB] text-[#1F2A24] selection:bg-[#C5A15B] selection:text-[#123D32]">
       {/* 1. Global Navigation Bar */}
       <Navbar />
 
       {/* 2. Hero Breadcrumb & Header Banner */}
-      <section className="bg-[#0D1311] text-white py-12 sm:py-16 lg:py-20 border-b border-white/10 relative overflow-hidden">
+      <section className="bg-[#123D32] text-white py-12 sm:py-16 lg:py-20 border-b border-white/10 relative overflow-hidden">
         {/* Ambient Decorative Glows */}
-        <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-[#C29B38]/12 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#134e3f]/15 rounded-full blur-[130px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-[#C5A15B]/12 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#123D32]/15 rounded-full blur-[130px] pointer-events-none" />
 
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Breadcrumb Navigation */}
           <nav className="flex items-center gap-2 text-xs text-white/60 mb-5" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-[#C29B38] flex items-center gap-1.5 transition-colors">
+            <Link href="/" className="hover:text-[#C5A15B] flex items-center gap-1.5 transition-colors">
               <HomeIcon className="w-3.5 h-3.5" />
               <span>Home</span>
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/40" />
-            <span className="text-[#C29B38] font-semibold">Farm House &amp; Gardens</span>
+            <span className="text-[#C5A15B] font-semibold">Farm House &amp; Gardens</span>
           </nav>
 
           {/* Honors & Government Award Badges */}
           <div className="flex flex-wrap items-center gap-2.5 mb-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#134e3f]/40 border border-[#134e3f] text-[#25D366] text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-xs">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#123D32]/40 border border-[#123D32] text-[#25D366] text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-xs">
               <TreePine className="w-3.5 h-3.5 text-[#25D366]" />
               <span>Dedicated Specialty &bull; Farm Houses &amp; Gardens</span>
             </div>
 
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#C29B38]/15 border border-[#C29B38]/40 text-[#E0BA55] text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-xs">
-              <Award className="w-3.5 h-3.5 text-[#C29B38]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#C5A15B]/15 border border-[#C5A15B]/40 text-[#C5A15B] text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-xs">
+              <Award className="w-3.5 h-3.5 text-[#C5A15B]" />
               <span>Awarded by Govt. of India &bull; 300+ Elevation Designs</span>
             </div>
 
             <div className="hidden md:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/8 border border-white/15 text-white/80 text-[10px] sm:text-xs font-semibold uppercase tracking-wider">
-              <Sparkles className="w-3 h-3 text-[#C29B38]" />
+              <Sparkles className="w-3 h-3 text-[#C5A15B]" />
               <span>Nominated for Intl. Award (Business Excellence)</span>
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function FarmHouseGardensPage() {
           {/* Key Facts / Highlights Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-8 pt-8 border-t border-white/10 max-w-3xl">
             <div className="bg-white/5 backdrop-blur-xs rounded-xl p-3 border border-white/10">
-              <span className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#C29B38] block">300+</span>
+              <span className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#C5A15B] block">300+</span>
               <span className="text-[10px] sm:text-xs text-white/70 uppercase tracking-wider font-medium">Elevation Designs</span>
             </div>
             <div className="bg-white/5 backdrop-blur-xs rounded-xl p-3 border border-white/10">
@@ -112,7 +112,7 @@ export default function FarmHouseGardensPage() {
               <span className="text-[10px] sm:text-xs text-white/70 uppercase tracking-wider font-medium">Estate Specialties</span>
             </div>
             <div className="bg-white/5 backdrop-blur-xs rounded-xl p-3 border border-white/10">
-              <span className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#C29B38] block">70+ Yrs</span>
+              <span className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#C5A15B] block">70+ Yrs</span>
               <span className="text-[10px] sm:text-xs text-white/70 uppercase tracking-wider font-medium">Quarry Heritage</span>
             </div>
             <div className="bg-white/5 backdrop-blur-xs rounded-xl p-3 border border-white/10">
@@ -125,19 +125,19 @@ export default function FarmHouseGardensPage() {
           <div className="flex flex-wrap items-center gap-3 mt-8">
             <a
               href="#farmhouse-gardens"
-              className="inline-flex items-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-full bg-[#134e3f] hover:bg-[#0c3329] text-white border border-[#C29B38]/50 shadow-lg hover:shadow-xl transition-all active:scale-95"
+              className="inline-flex items-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-full bg-[#123D32] hover:bg-[#0A261F] text-white border border-[#C5A15B]/50 shadow-lg hover:shadow-xl transition-all active:scale-95"
             >
               <span>Explore All 8 Specialties</span>
-              <ChevronRight className="w-4 h-4 text-[#C29B38]" />
+              <ChevronRight className="w-4 h-4 text-[#C5A15B]" />
             </a>
 
             <a
               href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20am%20inquiring%20about%20complete%20Farm%20House%20%26%20Garden%20stone%20solutions."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-full bg-[#C29B38] hover:bg-[#dfb54b] text-[#0D1311] transition-all shadow-md active:scale-95 border border-[#C29B38]"
+              className="inline-flex items-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-full bg-[#C5A15B] hover:bg-[#C5A15B] text-[#123D32] transition-all shadow-md active:scale-95 border border-[#C5A15B]"
             >
-              <WhatsAppIcon className="w-4 h-4 fill-[#0D1311]" size={16} />
+              <WhatsAppIcon className="w-4 h-4 fill-[#123D32]" size={16} />
               <span>Direct WhatsApp Consultation</span>
             </a>
           </div>
@@ -151,12 +151,12 @@ export default function FarmHouseGardensPage() {
       <LandscapingSolutions />
 
       {/* 5. Bottom Architectural Tender & Quarry Direct Supply Banner */}
-      <section className="bg-[#141A17] text-white py-14 border-t border-[#C29B38]/20 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C29B38]/8 rounded-full blur-3xl pointer-events-none" />
+      <section className="bg-[#1F2A24] text-white py-14 border-t border-[#C5A15B]/20 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A15B]/8 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <div className="inline-flex items-center gap-2 text-[#C29B38] text-xs font-bold uppercase tracking-wider mb-2">
-              <ShieldCheck className="w-4 h-4 text-[#C29B38]" />
+            <div className="inline-flex items-center gap-2 text-[#C5A15B] text-xs font-bold uppercase tracking-wider mb-2">
+              <ShieldCheck className="w-4 h-4 text-[#C5A15B]" />
               <span>Direct Sarmathura Quarry Concessions &bull; Worldwide ISPM-15 Crating</span>
             </div>
             <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl font-bold uppercase text-white tracking-wide">
@@ -176,7 +176,7 @@ export default function FarmHouseGardensPage() {
             </Link>
             <Link
               href="/contact"
-              className="px-7 py-3.5 rounded-full bg-[#C29B38] hover:bg-[#dfb54b] text-[#0D1311] text-xs font-bold uppercase tracking-wider transition-all shadow-lg text-center"
+              className="px-7 py-3.5 rounded-full bg-[#C5A15B] hover:bg-[#C5A15B] text-[#123D32] text-xs font-bold uppercase tracking-wider transition-all shadow-lg text-center"
             >
               Get Turnkey Quotation
             </Link>

@@ -16,9 +16,9 @@ export default function FloatingActions({ onOpenStories }: FloatingActionsProps)
       {/* Stories Bio Quick Access Pill */}
       <button
         onClick={onOpenStories}
-        className="group flex items-center gap-2 bg-[#5a1224] hover:bg-[#731830] text-white border border-[#c29b38]/50 px-4 py-2.5 rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.5)] transition-all duration-300 hover:scale-105 active:scale-95"
+        className="group flex items-center gap-2 bg-[#123D32] hover:bg-[#1E5A46] text-white border border-[#C5A15B]/50 px-4 py-2.5 rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.5)] transition-all duration-300 hover:scale-105 active:scale-95"
       >
-        <div className="p-1 rounded-full bg-[#c29b38] text-black">
+        <div className="p-1 rounded-full bg-[#C5A15B] text-black">
           <Sparkles className="w-3.5 h-3.5" />
         </div>
         <span className="font-['Quicksand',sans-serif] text-xs font-bold tracking-wider uppercase pr-1">

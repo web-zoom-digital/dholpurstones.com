@@ -295,46 +295,46 @@ export default function FarmHouseGardenSpecialist({
   return (
     <section
       id="farmhouse-gardens"
-      className="bg-[#FAF7F2] scroll-mt-20 sm:scroll-mt-24 py-10 sm:py-20 border-b border-black/8 relative overflow-hidden"
+      className="bg-[#E5ECE4] scroll-mt-20 sm:scroll-mt-24 py-10 sm:py-20 border-b border-black/8 relative overflow-hidden"
     >
       {/* Subtle Background Glows */}
-      <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-[#C29B38]/6 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[550px] h-[550px] bg-[#134e3f]/6 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-[#C5A15B]/6 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[550px] h-[550px] bg-[#123D32]/6 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
         {/* Section Pre-Header Badge */}
         <AnimDiv className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-black/8 mb-6 sm:mb-10">
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#134e3f] animate-pulse" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.2em] text-[#141A17] uppercase">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#123D32] animate-pulse" />
+            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.2em] text-[#1F2A24] uppercase">
               DHOLPURESTONES &bull; FARM HOUSE &amp; GARDEN SPECIALIST
             </span>
           </div>
-          <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C29B38] tracking-widest">
+          <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest">
             ESTD. 1953
           </span>
         </AnimDiv>
 
         {/* Grand Headline Highlighting User Requirements */}
         <AnimDiv delay={40} className="text-center max-w-4xl mx-auto mb-8 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#134e3f]/10 border border-[#134e3f]/25 mb-3 sm:mb-4 shadow-2xs">
-            <TreePine className="w-3.5 h-3.5 text-[#134e3f]" />
-            <span className="font-['Cinzel',serif] text-[9.5px] sm:text-xs font-bold text-[#134e3f] tracking-[0.16em] sm:tracking-[0.2em] uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#123D32]/10 border border-[#123D32]/25 mb-3 sm:mb-4 shadow-2xs">
+            <TreePine className="w-3.5 h-3.5 text-[#123D32]" />
+            <span className="font-['Cinzel',serif] text-[9.5px] sm:text-xs font-bold text-[#123D32] tracking-[0.16em] sm:tracking-[0.2em] uppercase">
               SPECIALIZED IN LUXURY FARM HOUSES &amp; DESIGNER GARDEN LANDSCAPING
             </span>
           </div>
 
-          <h2 className="font-['Cinzel',serif] font-bold text-[#141A17] uppercase tracking-[0.03em] leading-snug sm:leading-[1.16] text-xl sm:text-4xl lg:text-5xl">
+          <h2 className="font-['Cinzel',serif] font-bold text-[#1F2A24] uppercase tracking-[0.03em] leading-snug sm:leading-[1.16] text-xl sm:text-4xl lg:text-5xl">
             Natural Sand Stone Solutions for Luxury Farm Houses &amp; Garden Landscapes
           </h2>
 
           <div className="mt-3 sm:mt-4 max-w-3xl mx-auto">
-            <p className="font-['EB_Garamond',serif] text-base sm:text-xl text-[#141A17]/90 leading-relaxed font-semibold">
+            <p className="font-['EB_Garamond',serif] text-base sm:text-xl text-[#1F2A24]/90 leading-relaxed font-semibold">
               Transforming vast private acreage, countryside retreats, and sprawling estate lawns into timeless royal sanctuaries with authentic Sarmathura natural sandstone.
             </p>
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#505D57] mt-2 sm:mt-2.5 leading-relaxed">
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] mt-2 sm:mt-2.5 leading-relaxed">
               We have made more than{" "}
-              <strong className="text-[#134e3f] font-bold underline decoration-[#C29B38]/60 underline-offset-4">
+              <strong className="text-[#123D32] font-bold underline decoration-[#C5A15B]/60 underline-offset-4">
                 300+ designs for front elevation in sandstone
               </strong>
               , for which we were awarded by the Government of India and nominated for the International Award for Business Excellence.
@@ -354,11 +354,11 @@ export default function FarmHouseGardenSpecialist({
                 onClick={() => setActiveTab(tab.id)}
                 className={`inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold tracking-wider uppercase transition-all duration-300 shrink-0 cursor-pointer ${
                   isActive
-                    ? "bg-[#134e3f] text-white shadow-md shadow-[#134e3f]/30 border border-[#134e3f] scale-[1.02]"
-                    : "bg-white text-[#4A5550] border border-black/8 hover:border-[#C29B38] hover:text-[#141A17]"
+                    ? "bg-[#123D32] text-white shadow-md shadow-[#123D32]/30 border border-[#123D32] scale-[1.02]"
+                    : "bg-white text-[#6B7C73] border border-black/8 hover:border-[#C5A15B] hover:text-[#1F2A24]"
                 }`}
               >
-                <Icon className={`w-3.5 h-3.5 ${isActive ? "text-[#C29B38]" : "text-[#68726E]"}`} />
+                <Icon className={`w-3.5 h-3.5 ${isActive ? "text-[#C5A15B]" : "text-[#6B7C73]"}`} />
                 <span>{tab.label}</span>
               </button>
             );
@@ -371,11 +371,11 @@ export default function FarmHouseGardenSpecialist({
             <AnimDiv key={item.id} delay={idx * 60}>
               <div
                 onClick={() => setActiveModal(item)}
-                className="bg-white rounded-2xl overflow-hidden border border-black/8 hover:border-[#C29B38]/70 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full group cursor-pointer"
+                className="bg-white rounded-2xl overflow-hidden border border-black/8 hover:border-[#C5A15B]/70 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full group cursor-pointer"
               >
                 <div>
                   {/* Image Container with Zoom & Badge */}
-                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#EAE4D7]">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F7F4EB]">
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -386,12 +386,12 @@ export default function FarmHouseGardenSpecialist({
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
 
                     {/* Number Badge */}
-                    <span className="absolute top-3 left-3 bg-[#134e3f] text-white font-['Cinzel',serif] text-xs font-bold px-2.5 py-1 rounded-md shadow-md">
+                    <span className="absolute top-3 left-3 bg-[#123D32] text-white font-['Cinzel',serif] text-xs font-bold px-2.5 py-1 rounded-md shadow-md">
                       {item.number}
                     </span>
 
                     {/* Category Label */}
-                    <span className="absolute top-3 right-3 bg-black/60 backdrop-blur-xs text-[#E0BA55] text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border border-[#C29B38]/40">
+                    <span className="absolute top-3 right-3 bg-black/60 backdrop-blur-xs text-[#C5A15B] text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border border-[#C5A15B]/40">
                       {item.categoryLabel}
                     </span>
 
@@ -405,11 +405,11 @@ export default function FarmHouseGardenSpecialist({
 
                   {/* Card Content */}
                   <div className="p-4 sm:p-5">
-                    <h3 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-[#141A17] uppercase tracking-wide group-hover:text-[#134e3f] transition-colors mb-1.5 sm:mb-2 leading-snug">
+                    <h3 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-[#1F2A24] uppercase tracking-wide group-hover:text-[#123D32] transition-colors mb-1.5 sm:mb-2 leading-snug">
                       {item.title}
                     </h3>
 
-                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] sm:text-xs text-[#505D57] leading-relaxed line-clamp-3 mb-3 sm:mb-4">
+                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] sm:text-xs text-[#6B7C73] leading-relaxed line-clamp-3 mb-3 sm:mb-4">
                       {item.desc}
                     </p>
 
@@ -417,8 +417,8 @@ export default function FarmHouseGardenSpecialist({
                     <div className="space-y-1.5 pt-2.5 sm:pt-3 border-t border-black/6">
                       {item.specs.slice(0, 2).map((s, i) => (
                         <div key={i} className="flex items-center justify-between text-[10.5px] sm:text-[11px]">
-                          <span className="text-[#68726E] font-medium">{s.label}:</span>
-                          <span className="text-[#141A17] font-bold text-right truncate max-w-[55%]">
+                          <span className="text-[#6B7C73] font-medium">{s.label}:</span>
+                          <span className="text-[#1F2A24] font-bold text-right truncate max-w-[55%]">
                             {s.value}
                           </span>
                         </div>
@@ -432,7 +432,7 @@ export default function FarmHouseGardenSpecialist({
                   <div className="pt-2.5 sm:pt-3 border-t border-black/6 flex items-center justify-between">
                     <button
                       type="button"
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#134e3f] group-hover:text-[#C29B38] uppercase tracking-wider transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#123D32] group-hover:text-[#C5A15B] uppercase tracking-wider transition-colors"
                     >
                       <span>View Specifications</span>
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -458,30 +458,30 @@ export default function FarmHouseGardenSpecialist({
         {/* View More Button for Homepage Preview */}
         {isHomePreview && (
           <AnimDiv delay={80} className="text-center mb-16 sm:mb-20">
-            <div className="bg-gradient-to-b from-[#134e3f]/8 via-white to-[#FAF7F2] p-6 sm:p-9 rounded-3xl border border-[#134e3f]/20 shadow-md max-w-2xl mx-auto flex flex-col items-center">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#134e3f]/10 text-[#134e3f] text-xs font-bold uppercase tracking-wider mb-3.5 shadow-2xs">
-                <Sparkles className="w-3.5 h-3.5 text-[#C29B38]" />
+            <div className="bg-gradient-to-b from-[#123D32]/8 via-white to-[#F7F4EB] p-6 sm:p-9 rounded-3xl border border-[#123D32]/20 shadow-md max-w-2xl mx-auto flex flex-col items-center">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#123D32]/10 text-[#123D32] text-xs font-bold uppercase tracking-wider mb-3.5 shadow-2xs">
+                <Sparkles className="w-3.5 h-3.5 text-[#C5A15B]" />
                 <span>Showing 4 of 8 Master Solutions</span>
               </div>
-              <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#141A17] mb-2 uppercase tracking-wide">
+              <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#1F2A24] mb-2 uppercase tracking-wide">
                 View All Farm House &amp; Garden Solutions
               </h3>
-              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#505D57] max-w-lg mb-6 leading-relaxed">
+              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] max-w-lg mb-6 leading-relaxed">
                 Explore our full spectrum of specialized estate masonry — including Cobblestone Carriage Driveways, Natural Cleft Lawn Walkways, Anti-Slip Pool Copings, and Ambient Stone Lanterns.
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto">
                 <Link
                   href="/farmhouse-gardens"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm font-bold uppercase tracking-wider px-8 py-4 rounded-full bg-[#134e3f] hover:bg-[#0c3329] text-white shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 border border-[#C29B38]/40 group"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm font-bold uppercase tracking-wider px-8 py-4 rounded-full bg-[#123D32] hover:bg-[#0A261F] text-white shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 border border-[#C5A15B]/40 group"
                 >
                   <span>View More (All 8 Designs)</span>
-                  <ArrowRight className="w-4 h-4 text-[#C29B38] transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="w-4 h-4 text-[#C5A15B] transition-transform group-hover:translate-x-1" />
                 </Link>
                 <a
                   href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20explore%20all%208%20Farm%20House%20%26%20Garden%20stone%20solutions."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm font-bold uppercase tracking-wider px-6 py-4 rounded-full bg-white hover:bg-[#FAF7F2] text-[#141A17] border border-black/10 transition-colors shadow-2xs active:scale-95"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm font-bold uppercase tracking-wider px-6 py-4 rounded-full bg-white hover:bg-[#F7F4EB] text-[#1F2A24] border border-black/10 transition-colors shadow-2xs active:scale-95"
                 >
                   <WhatsAppIcon className="w-4 h-4 fill-[#25D366]" size={16} />
                   <span>Enquire on WhatsApp</span>
@@ -493,11 +493,11 @@ export default function FarmHouseGardenSpecialist({
 
         {/* 4 Pillars: Why Natural Sandstone Is Essential for Farm Houses & Gardens */}
         <AnimDiv delay={100} className="mb-14 sm:mb-18">
-          <div className="bg-[#161D1A] rounded-3xl p-6 sm:p-10 text-white border border-white/10 shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-80 h-80 bg-[#C29B38]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="bg-[#1E5A46] rounded-3xl p-6 sm:p-10 text-white border border-white/10 shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-80 h-80 bg-[#C5A15B]/10 rounded-full blur-3xl pointer-events-none" />
 
             <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 relative z-10">
-              <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C29B38] tracking-[0.2em] uppercase block mb-1">
+              <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase block mb-1">
                 ESTATE OWNER ADVANTAGE
               </span>
               <h3 className="font-['Cinzel',serif] text-xl sm:text-3xl font-bold uppercase tracking-wider text-white">
@@ -509,8 +509,8 @@ export default function FarmHouseGardenSpecialist({
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-5 relative z-10">
-              <div className="bg-white/5 border border-white/8 rounded-xl sm:rounded-2xl p-3 sm:p-5 hover:border-[#C29B38]/50 transition-colors">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#C29B38]/15 flex items-center justify-center text-[#C29B38] mb-2 sm:mb-3">
+              <div className="bg-white/5 border border-white/8 rounded-xl sm:rounded-2xl p-3 sm:p-5 hover:border-[#C5A15B]/50 transition-colors">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#C5A15B]/15 flex items-center justify-center text-[#C5A15B] mb-2 sm:mb-3">
                   <Sun className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <h4 className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-white uppercase tracking-wider mb-1 sm:mb-2 leading-tight">
@@ -521,8 +521,8 @@ export default function FarmHouseGardenSpecialist({
                 </p>
               </div>
 
-              <div className="bg-white/5 border border-white/8 rounded-xl sm:rounded-2xl p-3 sm:p-5 hover:border-[#C29B38]/50 transition-colors">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#C29B38]/15 flex items-center justify-center text-[#C29B38] mb-2 sm:mb-3">
+              <div className="bg-white/5 border border-white/8 rounded-xl sm:rounded-2xl p-3 sm:p-5 hover:border-[#C5A15B]/50 transition-colors">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#C5A15B]/15 flex items-center justify-center text-[#C5A15B] mb-2 sm:mb-3">
                   <Droplets className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <h4 className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-white uppercase tracking-wider mb-1 sm:mb-2 leading-tight">
@@ -533,8 +533,8 @@ export default function FarmHouseGardenSpecialist({
                 </p>
               </div>
 
-              <div className="bg-white/5 border border-white/8 rounded-xl sm:rounded-2xl p-3 sm:p-5 hover:border-[#C29B38]/50 transition-colors">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#C29B38]/15 flex items-center justify-center text-[#C29B38] mb-2 sm:mb-3">
+              <div className="bg-white/5 border border-white/8 rounded-xl sm:rounded-2xl p-3 sm:p-5 hover:border-[#C5A15B]/50 transition-colors">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#C5A15B]/15 flex items-center justify-center text-[#C5A15B] mb-2 sm:mb-3">
                   <Award className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <h4 className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-white uppercase tracking-wider mb-1 sm:mb-2 leading-tight">
@@ -545,8 +545,8 @@ export default function FarmHouseGardenSpecialist({
                 </p>
               </div>
 
-              <div className="bg-white/5 border border-white/8 rounded-xl sm:rounded-2xl p-3 sm:p-5 hover:border-[#C29B38]/50 transition-colors">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#C29B38]/15 flex items-center justify-center text-[#C29B38] mb-2 sm:mb-3">
+              <div className="bg-white/5 border border-white/8 rounded-xl sm:rounded-2xl p-3 sm:p-5 hover:border-[#C5A15B]/50 transition-colors">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#C5A15B]/15 flex items-center justify-center text-[#C5A15B] mb-2 sm:mb-3">
                   <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <h4 className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-white uppercase tracking-wider mb-1 sm:mb-2 leading-tight">
@@ -561,9 +561,9 @@ export default function FarmHouseGardenSpecialist({
         </AnimDiv>
 
         {/* Bottom Turnkey Consultation CTA Bar */}
-        <AnimDiv delay={120} className="bg-gradient-to-r from-[#134e3f] via-[#1a5f4e] to-[#134e3f] rounded-2xl p-6 sm:p-8 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <AnimDiv delay={120} className="bg-gradient-to-r from-[#123D32] via-[#1E5A46] to-[#123D32] rounded-2xl p-6 sm:p-8 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div className="max-w-xl">
-            <span className="text-[10px] font-bold text-[#E0BA55] uppercase tracking-[0.2em] block mb-1">
+            <span className="text-[10px] font-bold text-[#C5A15B] uppercase tracking-[0.2em] block mb-1">
               TURNKEY ARCHITECTURAL STONE ESTIMATION
             </span>
             <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold uppercase tracking-wide">
@@ -581,9 +581,9 @@ export default function FarmHouseGardenSpecialist({
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-[#0D1311] font-bold text-xs uppercase px-6 py-3.5 rounded-full transition-all shadow-lg active:scale-95"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-[#123D32] font-bold text-xs uppercase px-6 py-3.5 rounded-full transition-all shadow-lg active:scale-95"
             >
-              <WhatsAppIcon className="w-4 h-4 fill-[#0D1311]" size={16} />
+              <WhatsAppIcon className="w-4 h-4 fill-[#123D32]" size={16} />
               <span>WhatsApp Arvind Garg Directly</span>
             </a>
 
@@ -591,7 +591,7 @@ export default function FarmHouseGardenSpecialist({
               href="tel:+919414945457"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/25 text-white font-bold text-xs uppercase px-6 py-3.5 rounded-full transition-all active:scale-95"
             >
-              <Phone className="w-4 h-4 text-[#C29B38]" />
+              <Phone className="w-4 h-4 text-[#C5A15B]" />
               <span>Call +91 94149 45457</span>
             </a>
           </div>
@@ -614,24 +614,24 @@ export default function FarmHouseGardenSpecialist({
             <button
               type="button"
               onClick={() => setActiveModal(null)}
-              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#FAF7F2] hover:bg-black/10 flex items-center justify-center text-[#141A17] transition-colors"
+              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#F7F4EB] hover:bg-black/10 flex items-center justify-center text-[#1F2A24] transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
 
             <div className="flex items-center gap-2 mb-2">
-              <span className="text-[10px] font-bold text-[#134e3f] bg-[#134e3f]/10 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+              <span className="text-[10px] font-bold text-[#123D32] bg-[#123D32]/10 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                 {activeModal.categoryLabel}
               </span>
-              <span className="text-xs text-[#68726E] font-mono">#{activeModal.number}</span>
+              <span className="text-xs text-[#6B7C73] font-mono">#{activeModal.number}</span>
             </div>
 
-            <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#141A17] uppercase tracking-wide mb-1">
+            <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#1F2A24] uppercase tracking-wide mb-1">
               {activeModal.title}
             </h3>
-            <p className="text-xs font-semibold text-[#C29B38] mb-4">{activeModal.subtitle}</p>
+            <p className="text-xs font-semibold text-[#C5A15B] mb-4">{activeModal.subtitle}</p>
 
-            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-[#FAF7F2] mb-5">
+            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-[#F7F4EB] mb-5">
               <Image
                 src={activeModal.image}
                 alt={activeModal.title}
@@ -640,31 +640,31 @@ export default function FarmHouseGardenSpecialist({
               />
             </div>
 
-            <p className="text-xs sm:text-sm text-[#4A5550] leading-relaxed mb-5 font-['Plus_Jakarta_Sans',sans-serif]">
+            <p className="text-xs sm:text-sm text-[#6B7C73] leading-relaxed mb-5 font-['Plus_Jakarta_Sans',sans-serif]">
               {activeModal.desc}
             </p>
 
             {/* Detailed Specs Table */}
-            <div className="bg-[#FAF7F2] rounded-2xl p-4 sm:p-5 border border-black/6 mb-5 space-y-2">
-              <span className="text-[10px] font-bold text-[#141A17] uppercase tracking-wider block mb-2">
+            <div className="bg-[#F7F4EB] rounded-2xl p-4 sm:p-5 border border-black/6 mb-5 space-y-2">
+              <span className="text-[10px] font-bold text-[#1F2A24] uppercase tracking-wider block mb-2">
                 Technical Specifications &amp; Crafting
               </span>
               {activeModal.specs.map((s, i) => (
                 <div key={i} className="flex items-center justify-between text-xs py-1 border-b border-black/5 last:border-0">
-                  <span className="text-[#68726E] font-medium">{s.label}:</span>
-                  <span className="text-[#141A17] font-bold text-right">{s.value}</span>
+                  <span className="text-[#6B7C73] font-medium">{s.label}:</span>
+                  <span className="text-[#1F2A24] font-bold text-right">{s.value}</span>
                 </div>
               ))}
             </div>
 
             {/* Features Bullet List */}
             <div className="mb-6 space-y-2">
-              <span className="text-[10px] font-bold text-[#141A17] uppercase tracking-wider block mb-1">
+              <span className="text-[10px] font-bold text-[#1F2A24] uppercase tracking-wider block mb-1">
                 Key Architectural Features:
               </span>
               {activeModal.features.map((f, i) => (
-                <div key={i} className="flex items-start gap-2 text-xs text-[#4A5550]">
-                  <CheckCircle2 className="w-4 h-4 text-[#134e3f] shrink-0 mt-0.5" />
+                <div key={i} className="flex items-start gap-2 text-xs text-[#6B7C73]">
+                  <CheckCircle2 className="w-4 h-4 text-[#123D32] shrink-0 mt-0.5" />
                   <span>{f}</span>
                 </div>
               ))}
@@ -685,7 +685,7 @@ export default function FarmHouseGardenSpecialist({
               <button
                 type="button"
                 onClick={() => setActiveModal(null)}
-                className="w-full sm:w-auto px-6 py-3.5 rounded-full border border-black/15 text-xs font-bold text-[#4A5550] hover:bg-black/5 transition-colors"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-full border border-black/15 text-xs font-bold text-[#6B7C73] hover:bg-black/5 transition-colors"
               >
                 Close
               </button>

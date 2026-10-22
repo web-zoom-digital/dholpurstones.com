@@ -480,7 +480,7 @@ function SpotlightProductCard({
       <div
         onMouseMove={handleMouseMove}
         onClick={() => onOpenModal(product)}
-        className="group relative rounded-2xl overflow-hidden border border-black/8 hover:border-[#C29B38]/70 bg-[#FAF7F2] transition-all duration-400 hover:shadow-2xl cursor-pointer flex flex-col h-full gcl-card-glow"
+        className="group relative rounded-2xl overflow-hidden border border-black/8 hover:border-[#C5A15B]/70 bg-[#F7F4EB] transition-all duration-400 hover:shadow-2xl cursor-pointer flex flex-col h-full gcl-card-glow"
       >
         {/* Dynamic 3D Cursor Spotlight Effect */}
         <div
@@ -491,24 +491,24 @@ function SpotlightProductCard({
         />
 
         {/* Shimmer Light Beam on Hover */}
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C29B38] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30" />
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C5A15B] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30" />
 
         {/* Architectural Precision Crosshair Markers */}
-        <span className="absolute top-2 left-2 text-[10px] text-[#C29B38] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
+        <span className="absolute top-2 left-2 text-[10px] text-[#C5A15B] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
           +
         </span>
-        <span className="absolute top-2 right-2 text-[10px] text-[#C29B38] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
+        <span className="absolute top-2 right-2 text-[10px] text-[#C5A15B] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
           +
         </span>
-        <span className="absolute bottom-2 left-2 text-[10px] text-[#C29B38] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
+        <span className="absolute bottom-2 left-2 text-[10px] text-[#C5A15B] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
           +
         </span>
-        <span className="absolute bottom-2 right-2 text-[10px] text-[#C29B38] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
+        <span className="absolute bottom-2 right-2 text-[10px] text-[#C5A15B] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
           +
         </span>
 
         {/* Image Container with Ken Burns Zoom & Live Provenance Beacon */}
-        <div className="relative w-full h-56 sm:h-72 overflow-hidden bg-[#EAE6DE] shrink-0">
+        <div className="relative w-full h-56 sm:h-72 overflow-hidden bg-[#F7F4EB] shrink-0">
           <Image
             src={product.image}
             alt={product.title}
@@ -521,28 +521,28 @@ function SpotlightProductCard({
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
 
           {/* Category Tag with Gilded Sparkle */}
-          <div className="absolute top-3 left-3 bg-[#0D1311]/85 backdrop-blur-md px-2.5 sm:px-3 py-1 rounded-full border border-white/15 z-20 shadow-md">
-            <span className="text-[9px] font-bold text-[#C29B38] uppercase tracking-widest flex items-center gap-1.5">
-              <Sparkles className="w-3 h-3 text-[#C29B38]" />
+          <div className="absolute top-3 left-3 bg-[#123D32]/85 backdrop-blur-md px-2.5 sm:px-3 py-1 rounded-full border border-white/15 z-20 shadow-md">
+            <span className="text-[9px] font-bold text-[#C5A15B] uppercase tracking-widest flex items-center gap-1.5">
+              <Sparkles className="w-3 h-3 text-[#C5A15B]" />
               {product.categoryLabel}
             </span>
           </div>
 
           {/* Giant Watermark Product Index */}
-          <div className="absolute top-1 right-3 font-['Cinzel',serif] text-4xl sm:text-5xl font-black text-white/30 select-none pointer-events-none z-10 group-hover:text-[#C29B38]/50 transition-colors">
+          <div className="absolute top-1 right-3 font-['Cinzel',serif] text-4xl sm:text-5xl font-black text-white/30 select-none pointer-events-none z-10 group-hover:text-[#C5A15B]/50 transition-colors">
             {product.number}
           </div>
 
           {/* Expand Image Button */}
-          <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-sm p-1.5 sm:p-2 rounded-full text-white opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 hover:bg-[#C29B38] hover:text-[#0D1311] shadow-lg">
+          <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-sm p-1.5 sm:p-2 rounded-full text-white opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 hover:bg-[#C5A15B] hover:text-[#123D32] shadow-lg">
             <Maximize2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </div>
 
           {/* Pulsing Location / Provenance Radar Beacon */}
-          <div className="absolute bottom-2.5 left-2.5 sm:bottom-3 sm:left-3 flex items-center gap-1.5 text-[10px] sm:text-[11px] font-medium text-white/95 bg-[#0D1311]/80 backdrop-blur-md px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md border border-white/10 z-20 shadow-md">
+          <div className="absolute bottom-2.5 left-2.5 sm:bottom-3 sm:left-3 flex items-center gap-1.5 text-[10px] sm:text-[11px] font-medium text-white/95 bg-[#123D32]/80 backdrop-blur-md px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md border border-white/10 z-20 shadow-md">
             <span className="relative flex h-2 w-2 mr-0.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C29B38] opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C29B38]" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C5A15B] opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C5A15B]" />
             </span>
             <span className="truncate max-w-[200px] sm:max-w-[220px]">{product.provenance}</span>
           </div>
@@ -551,11 +551,11 @@ function SpotlightProductCard({
         {/* Card Content */}
         <div className="p-4 sm:p-6 flex flex-col flex-1 justify-between relative z-20">
           <div>
-            <h3 className="font-['Cinzel',serif] text-sm sm:text-lg font-bold text-[#141A17] uppercase tracking-wider mb-1 sm:mb-1.5 group-hover:text-[#134e3f] transition-colors leading-snug">
+            <h3 className="font-['Cinzel',serif] text-sm sm:text-lg font-bold text-[#1F2A24] uppercase tracking-wider mb-1 sm:mb-1.5 group-hover:text-[#123D32] transition-colors leading-snug">
               {product.title}
             </h3>
 
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs text-[#C29B38] font-semibold mb-3">
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs text-[#C5A15B] font-semibold mb-3">
               {product.subtitle}
             </p>
 
@@ -575,8 +575,8 @@ function SpotlightProductCard({
                   onClick={() => setActiveCardTab(tab.id as "specs" | "finishes" | "applications")}
                   className={`flex-1 py-1 text-[10px] font-bold uppercase tracking-wider rounded-md transition-all cursor-pointer ${
                     activeCardTab === tab.id
-                      ? "bg-[#134e3f] text-white shadow-xs"
-                      : "text-[#68726E] hover:text-[#141A17]"
+                      ? "bg-[#123D32] text-white shadow-xs"
+                      : "text-[#6B7C73] hover:text-[#1F2A24]"
                   }`}
                 >
                   {tab.label}
@@ -589,20 +589,20 @@ function SpotlightProductCard({
               {activeCardTab === "specs" && (
                 <div className="space-y-1.5 text-[11px] p-2.5 rounded-lg bg-white border border-black/6 shadow-2xs">
                   <div className="flex items-start justify-between gap-1">
-                    <span className="text-[#68726E] font-medium shrink-0">Strength:</span>
-                    <span className="text-[#134e3f] font-bold font-mono text-right truncate">
+                    <span className="text-[#6B7C73] font-medium shrink-0">Strength:</span>
+                    <span className="text-[#123D32] font-bold font-mono text-right truncate">
                       {product.compressiveStrength}
                     </span>
                   </div>
                   <div className="flex items-start justify-between gap-1">
-                    <span className="text-[#68726E] font-medium shrink-0">Absorption:</span>
-                    <span className="text-[#141A17] font-semibold font-mono text-right">
+                    <span className="text-[#6B7C73] font-medium shrink-0">Absorption:</span>
+                    <span className="text-[#1F2A24] font-semibold font-mono text-right">
                       {product.waterAbsorption}
                     </span>
                   </div>
                   <div className="flex items-start justify-between gap-1">
-                    <span className="text-[#68726E] font-medium shrink-0">Sizes:</span>
-                    <span className="text-[#141A17] font-semibold text-right truncate">
+                    <span className="text-[#6B7C73] font-medium shrink-0">Sizes:</span>
+                    <span className="text-[#1F2A24] font-semibold text-right truncate">
                       {product.dimensions}
                     </span>
                   </div>
@@ -610,10 +610,10 @@ function SpotlightProductCard({
               )}
 
               {activeCardTab === "finishes" && (
-                <ul className="space-y-1 text-[11px] text-[#4A5550]">
+                <ul className="space-y-1 text-[11px] text-[#6B7C73]">
                   {product.finishes.slice(0, 3).map((f, i) => (
                     <li key={i} className="flex items-center gap-1.5 truncate">
-                      <CheckCircle2 className="w-3 h-3 text-[#134e3f] shrink-0" />
+                      <CheckCircle2 className="w-3 h-3 text-[#123D32] shrink-0" />
                       <span className="truncate">{f}</span>
                     </li>
                   ))}
@@ -621,10 +621,10 @@ function SpotlightProductCard({
               )}
 
               {activeCardTab === "applications" && (
-                <ul className="space-y-1 text-[11px] text-[#4A5550]">
+                <ul className="space-y-1 text-[11px] text-[#6B7C73]">
                   {product.applications.slice(0, 3).map((app, i) => (
                     <li key={i} className="flex items-center gap-1.5 truncate">
-                      <CheckCircle2 className="w-3 h-3 text-[#C29B38] shrink-0" />
+                      <CheckCircle2 className="w-3 h-3 text-[#C5A15B] shrink-0" />
                       <span className="truncate">{app}</span>
                     </li>
                   ))}
@@ -635,9 +635,9 @@ function SpotlightProductCard({
 
           {/* Bottom Action Row */}
           <div className="pt-4 mt-2 border-t border-black/8 flex items-center justify-between">
-            <span className="text-xs font-bold text-[#134e3f] group-hover:text-[#C29B38] flex items-center gap-1 transition-colors">
+            <span className="text-xs font-bold text-[#123D32] group-hover:text-[#C5A15B] flex items-center gap-1 transition-colors">
               <span>Inspect Dossier</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-[#134e3f] group-hover:text-[#C29B38] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-[#123D32] group-hover:text-[#C5A15B] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </span>
 
             <a
@@ -645,7 +645,7 @@ function SpotlightProductCard({
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#134e3f] hover:text-[#25D366] transition-colors p-1.5 rounded-lg hover:bg-black/5"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#123D32] hover:text-[#25D366] transition-colors p-1.5 rounded-lg hover:bg-black/5"
               title="Inquire about this product on WhatsApp"
             >
               <WhatsAppIcon className="w-4 h-4 fill-[#25D366]" size={16} />
@@ -693,21 +693,21 @@ export default function OurProducts() {
   return (
     <section
       id="products"
-      className="bg-white py-10 sm:py-20 border-b border-black/6 relative overflow-hidden scroll-mt-20 sm:scroll-mt-24"
+      className="bg-[#F7F4EB] py-10 sm:py-20 border-b border-black/6 relative overflow-hidden scroll-mt-20 sm:scroll-mt-24"
     >
       {/* =========================================================================
           MOTION GRAPHIC BACKGROUND: Geometric Blueprint Grid & Rotating Sacred Yantras
           ========================================================================= */}
       {/* Subtle Dotted Architectural Grid */}
-      <div className="absolute inset-0 bg-[radial-gradient(#C29B38_1.2px,transparent_1.2px)] [background-size:32px_32px] opacity-[0.06] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(#C5A15B_1.2px,transparent_1.2px)] [background-size:32px_32px] opacity-[0.06] pointer-events-none" />
 
       {/* Floating Animated Ambient Glow Orbs */}
-      <div className="absolute -top-24 right-10 w-[550px] h-[550px] bg-[#C29B38]/6 rounded-full blur-[140px] pointer-events-none animate-ambient-float-1" />
-      <div className="absolute -bottom-24 left-10 w-[500px] h-[500px] bg-[#134e3f]/6 rounded-full blur-[130px] pointer-events-none animate-ambient-float-2" />
+      <div className="absolute -top-24 right-10 w-[550px] h-[550px] bg-[#C5A15B]/6 rounded-full blur-[140px] pointer-events-none animate-ambient-float-1" />
+      <div className="absolute -bottom-24 left-10 w-[500px] h-[500px] bg-[#123D32]/6 rounded-full blur-[130px] pointer-events-none animate-ambient-float-2" />
 
       {/* Rotating Sacred Geometry Mandalas / Yantras in Background */}
       <div className="absolute -top-32 -left-32 w-[460px] h-[460px] opacity-[0.04] pointer-events-none animate-spin-slow">
-        <svg viewBox="0 0 200 200" className="w-full h-full fill-none stroke-[#C29B38]" strokeWidth="0.8">
+        <svg viewBox="0 0 200 200" className="w-full h-full fill-none stroke-[#C5A15B]" strokeWidth="0.8">
           <circle cx="100" cy="100" r="95" strokeDasharray="3 3" />
           <circle cx="100" cy="100" r="80" />
           <circle cx="100" cy="100" r="60" strokeDasharray="6 4" />
@@ -718,7 +718,7 @@ export default function OurProducts() {
       </div>
 
       <div className="absolute -bottom-40 -right-40 w-[520px] h-[520px] opacity-[0.035] pointer-events-none animate-spin-reverse">
-        <svg viewBox="0 0 200 200" className="w-full h-full fill-none stroke-[#134e3f]" strokeWidth="0.8">
+        <svg viewBox="0 0 200 200" className="w-full h-full fill-none stroke-[#123D32]" strokeWidth="0.8">
           <circle cx="100" cy="100" r="95" />
           <circle cx="100" cy="100" r="75" strokeDasharray="4 4" />
           <polygon points="100,5 180,175 20,175" />
@@ -731,22 +731,22 @@ export default function OurProducts() {
         {/* Section Header Label */}
         <AnimDiv className="flex items-center justify-between pb-3 border-b border-black/8 mb-8 sm:mb-10">
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#C29B38] animate-pulse" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.18em] text-[#141A17] uppercase">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#C5A15B] animate-pulse" />
+            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.18em] text-[#1F2A24] uppercase">
               DHOLPURESTONES.COM &bull; CORE PRODUCTION &bull; ESTD. 1953
             </span>
           </div>
 
           <div className="flex items-center gap-3">
             {/* View Mode Toggle: Grid vs Spotlight */}
-            <div className="hidden sm:flex items-center p-1 bg-[#FAF7F2] rounded-lg border border-black/8 text-xs font-semibold text-[#141A17]">
+            <div className="hidden sm:flex items-center p-1 bg-[#F7F4EB] rounded-lg border border-black/8 text-xs font-semibold text-[#1F2A24]">
               <button
                 type="button"
                 onClick={() => setViewMode("grid")}
                 className={`flex items-center gap-1.5 px-3 py-1 rounded-md transition-all cursor-pointer ${
                   viewMode === "grid"
-                    ? "bg-[#134e3f] text-white shadow-xs"
-                    : "text-[#68726E] hover:text-[#141A17]"
+                    ? "bg-[#123D32] text-white shadow-xs"
+                    : "text-[#6B7C73] hover:text-[#1F2A24]"
                 }`}
                 title="Grid View (3x2)"
               >
@@ -758,8 +758,8 @@ export default function OurProducts() {
                 onClick={() => setViewMode("spotlight")}
                 className={`flex items-center gap-1.5 px-3 py-1 rounded-md transition-all cursor-pointer ${
                   viewMode === "spotlight"
-                    ? "bg-[#134e3f] text-white shadow-xs"
-                    : "text-[#68726E] hover:text-[#141A17]"
+                    ? "bg-[#123D32] text-white shadow-xs"
+                    : "text-[#6B7C73] hover:text-[#1F2A24]"
                 }`}
                 title="Cinematic Spotlight View"
               >
@@ -768,7 +768,7 @@ export default function OurProducts() {
               </button>
             </div>
 
-            <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C29B38] tracking-widest">
+            <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest">
               05
             </span>
           </div>
@@ -777,45 +777,45 @@ export default function OurProducts() {
         {/* Section Title & Description from User */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 sm:mb-10">
           <AnimDiv delay={0} className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C29B38]/10 border border-[#C29B38]/25 text-[#C29B38] text-[10px] font-bold uppercase tracking-[0.2em] mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C5A15B]/10 border border-[#C5A15B]/25 text-[#C5A15B] text-[10px] font-bold uppercase tracking-[0.2em] mb-3">
               <Compass className="w-3.5 h-3.5 animate-spin-slow" />
               <span>Direct Mine Extraction &amp; Factory Processing</span>
             </div>
-            <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl lg:text-5xl font-bold text-[#141A17] uppercase tracking-wide mb-3">
+            <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl lg:text-5xl font-bold text-[#1F2A24] uppercase tracking-wide mb-3">
               Our Products
             </h2>
-            <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl lg:text-3xl font-bold text-[#C29B38] uppercase tracking-wider mb-3">
+            <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl lg:text-3xl font-bold text-[#C5A15B] uppercase tracking-wider mb-3">
               Your Trusted Sandstone Manufacturer, Supplier &amp; Exporter
             </h3>
-            <div className="w-16 h-1 bg-gradient-to-r from-[#C29B38] via-[#E0BA55] to-transparent rounded-full mb-4" />
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#4A5550] leading-relaxed">
+            <div className="w-16 h-1 bg-gradient-to-r from-[#C5A15B] via-[#C5A15B] to-transparent rounded-full mb-4" />
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] leading-relaxed">
               We are one of the leading manufacturers and supplier of optimum quality Natural Sandstones. These products are renowned in the market for their elegant design and color combination. Our products are available in a wide range of attractive color, shade and dimension.
             </p>
           </AnimDiv>
 
           {/* Key Metric Highlights with Gilded Accents */}
           <AnimDiv delay={100} className="grid grid-cols-3 gap-2 sm:gap-4 shrink-0 w-full lg:w-auto">
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2.5 sm:py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
+            <div className="bg-[#F7F4EB] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2.5 sm:py-3 shadow-xs hover:border-[#C5A15B]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#1F2A24]">
                 70+ Years
               </span>
-              <span className="text-[9px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
+              <span className="text-[9px] sm:text-[10px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
                 Since 1953
               </span>
             </div>
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2.5 sm:py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
+            <div className="bg-[#F7F4EB] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2.5 sm:py-3 shadow-xs hover:border-[#C5A15B]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#1F2A24]">
                 500k+
               </span>
-              <span className="text-[9px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
+              <span className="text-[9px] sm:text-[10px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
                 Sq.Ft / Mo
               </span>
             </div>
-            <div className="bg-[#FAF7F2] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2.5 sm:py-3 shadow-xs hover:border-[#C29B38]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#141A17]">
+            <div className="bg-[#F7F4EB] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2.5 sm:py-3 shadow-xs hover:border-[#C5A15B]/60 transition-colors text-center sm:text-left">
+              <span className="block font-['Cinzel',serif] text-base sm:text-2xl font-bold text-[#1F2A24]">
                 IS:3620
               </span>
-              <span className="text-[9px] sm:text-[10px] text-[#68726E] font-semibold uppercase tracking-wider block">
+              <span className="text-[9px] sm:text-[10px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
                 Certified
               </span>
             </div>
@@ -825,11 +825,11 @@ export default function OurProducts() {
         {/* =========================================================================
             MOTION GRAPHIC INFINITE MARQUEE TICKER (Live Architectural Strata Ribbon)
             ========================================================================= */}
-        <AnimDiv delay={120} className="mb-8 overflow-hidden rounded-xl bg-gradient-to-r from-[#FAF7F2] via-white to-[#FAF7F2] border border-black/8 py-2.5 shadow-xs">
+        <AnimDiv delay={120} className="mb-8 overflow-hidden rounded-xl bg-gradient-to-r from-[#F7F4EB] via-white to-[#F7F4EB] border border-black/8 py-2.5 shadow-xs">
           <div className="animate-marquee whitespace-nowrap flex items-center gap-8">
             {[...tickerHighlights, ...tickerHighlights].map((item, idx) => (
-              <div key={idx} className="inline-flex items-center gap-2 text-[11px] font-bold text-[#141A17] uppercase tracking-wider shrink-0">
-                <span className="text-[#C29B38] text-xs">✦</span>
+              <div key={idx} className="inline-flex items-center gap-2 text-[11px] font-bold text-[#1F2A24] uppercase tracking-wider shrink-0">
+                <span className="text-[#C5A15B] text-xs">✦</span>
                 <span>{item}</span>
               </div>
             ))}
@@ -850,8 +850,8 @@ export default function OurProducts() {
                   }}
                   className={`text-[11px] sm:text-xs font-bold uppercase tracking-wider px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full transition-all duration-300 border cursor-pointer whitespace-nowrap shrink-0 ${
                     activeTab === tab.id
-                      ? "bg-[#134e3f] text-white border-[#134e3f] shadow-md shadow-[#134e3f]/25"
-                      : "bg-[#FAF7F2] text-[#4A5550] border-black/8 hover:border-[#C29B38] hover:text-[#141A17] hover:bg-white"
+                      ? "bg-[#123D32] text-white border-[#123D32] shadow-md shadow-[#123D32]/25"
+                      : "bg-[#F7F4EB] text-[#6B7C73] border-black/8 hover:border-[#C5A15B] hover:text-[#1F2A24] hover:bg-white"
                   }`}
                 >
                   {tab.label}
@@ -859,7 +859,7 @@ export default function OurProducts() {
               ))}
             </div>
 
-            <span className="text-xs text-[#68726E] font-semibold hidden md:inline shrink-0">
+            <span className="text-xs text-[#6B7C73] font-semibold hidden md:inline shrink-0">
               Showing {filteredProducts.length} Factory &amp; Quarry Products
             </span>
           </div>
@@ -886,7 +886,7 @@ export default function OurProducts() {
             ========================================================================= */}
         {viewMode === "spotlight" && activeSlideProduct && (
           <AnimDiv delay={180} className="mb-12 sm:mb-16">
-            <div className="bg-[#FAF7F2] rounded-3xl overflow-hidden border border-black/8 shadow-2xl p-4 sm:p-8 relative">
+            <div className="bg-[#F7F4EB] rounded-3xl overflow-hidden border border-black/8 shadow-2xl p-4 sm:p-8 relative">
               {/* Giant Watermark Background Number */}
               <div className="absolute top-2 right-6 font-['Cinzel',serif] text-8xl font-black text-black/[0.04] select-none pointer-events-none">
                 {activeSlideProduct.number}
@@ -896,7 +896,7 @@ export default function OurProducts() {
                 {/* Left: Cinematic Full-Res Display */}
                 <div
                   onClick={() => setActiveModal(activeSlideProduct)}
-                  className="lg:col-span-7 relative h-80 sm:h-[460px] rounded-2xl overflow-hidden bg-[#0D1311] cursor-pointer group shadow-xl"
+                  className="lg:col-span-7 relative h-80 sm:h-[460px] rounded-2xl overflow-hidden bg-[#123D32] cursor-pointer group shadow-xl"
                 >
                   <Image
                     src={activeSlideProduct.image}
@@ -908,22 +908,22 @@ export default function OurProducts() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
 
-                  <div className="absolute top-4 left-4 bg-[#0D1311]/85 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20">
-                    <span className="text-[10px] font-bold text-[#C29B38] uppercase tracking-widest flex items-center gap-1.5">
-                      <Sparkles className="w-3.5 h-3.5 text-[#C29B38]" />
+                  <div className="absolute top-4 left-4 bg-[#123D32]/85 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20">
+                    <span className="text-[10px] font-bold text-[#C5A15B] uppercase tracking-widest flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5 text-[#C5A15B]" />
                       {activeSlideProduct.categoryLabel}
                     </span>
                   </div>
 
-                  <div className="absolute bottom-4 left-4 flex items-center gap-2 bg-[#0D1311]/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 text-white text-xs font-medium">
+                  <div className="absolute bottom-4 left-4 flex items-center gap-2 bg-[#123D32]/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 text-white text-xs font-medium">
                     <span className="relative flex h-2 w-2 mr-0.5">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C29B38] opacity-75" />
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C29B38]" />
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C5A15B] opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C5A15B]" />
                     </span>
                     <span>{activeSlideProduct.provenance}</span>
                   </div>
 
-                  <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm p-2 rounded-full text-white group-hover:bg-[#C29B38] group-hover:text-[#0D1311] transition-all">
+                  <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm p-2 rounded-full text-white group-hover:bg-[#C5A15B] group-hover:text-[#123D32] transition-all">
                     <Maximize2 className="w-4 h-4" />
                   </div>
                 </div>
@@ -939,7 +939,7 @@ export default function OurProducts() {
                         <button
                           type="button"
                           onClick={prevSlide}
-                          className="w-8 h-8 rounded-full border border-black/10 bg-white hover:bg-[#134e3f] hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-xs"
+                          className="w-8 h-8 rounded-full border border-black/10 bg-white hover:bg-[#123D32] hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-xs"
                           aria-label="Previous Product"
                         >
                           <ChevronLeft className="w-4 h-4" />
@@ -947,7 +947,7 @@ export default function OurProducts() {
                         <button
                           type="button"
                           onClick={nextSlide}
-                          className="w-8 h-8 rounded-full border border-black/10 bg-white hover:bg-[#134e3f] hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-xs"
+                          className="w-8 h-8 rounded-full border border-black/10 bg-white hover:bg-[#123D32] hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-xs"
                           aria-label="Next Product"
                         >
                           <ChevronRight className="w-4 h-4" />
@@ -955,38 +955,38 @@ export default function OurProducts() {
                       </div>
                     </div>
 
-                    <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#141A17] uppercase tracking-wider mb-2">
+                    <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#1F2A24] uppercase tracking-wider mb-2">
                       {activeSlideProduct.title}
                     </h3>
 
-                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold text-[#C29B38] mb-4">
+                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold text-[#C5A15B] mb-4">
                       {activeSlideProduct.subtitle}
                     </p>
 
-                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#4A5550] leading-relaxed mb-5">
+                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] leading-relaxed mb-5">
                       {activeSlideProduct.longDetails}
                     </p>
 
                     {/* Laboratory Test Specifications */}
                     <div className="p-3.5 rounded-xl bg-white border border-black/8 mb-5 shadow-2xs">
-                      <span className="text-[10px] font-bold text-[#134e3f] uppercase tracking-widest block mb-1">
+                      <span className="text-[10px] font-bold text-[#123D32] uppercase tracking-widest block mb-1">
                         Laboratory Tested Physical Specifications
                       </span>
-                      <div className="grid grid-cols-2 gap-2 text-xs font-mono font-medium text-[#141A17] mt-1">
+                      <div className="grid grid-cols-2 gap-2 text-xs font-mono font-medium text-[#1F2A24] mt-1">
                         <div>
-                          <span className="text-[#68726E] text-[10px] block">Compressive:</span>
-                          <span className="font-bold text-[#134e3f]">{activeSlideProduct.compressiveStrength}</span>
+                          <span className="text-[#6B7C73] text-[10px] block">Compressive:</span>
+                          <span className="font-bold text-[#123D32]">{activeSlideProduct.compressiveStrength}</span>
                         </div>
                         <div>
-                          <span className="text-[#68726E] text-[10px] block">Water Absorption:</span>
+                          <span className="text-[#6B7C73] text-[10px] block">Water Absorption:</span>
                           <span className="font-bold">{activeSlideProduct.waterAbsorption}</span>
                         </div>
                         <div>
-                          <span className="text-[#68726E] text-[10px] block">Density:</span>
+                          <span className="text-[#6B7C73] text-[10px] block">Density:</span>
                           <span>{activeSlideProduct.density}</span>
                         </div>
                         <div>
-                          <span className="text-[#68726E] text-[10px] block">Modulus of Rupture:</span>
+                          <span className="text-[#6B7C73] text-[10px] block">Modulus of Rupture:</span>
                           <span>{activeSlideProduct.modulusOfRupture}</span>
                         </div>
                       </div>
@@ -997,9 +997,9 @@ export default function OurProducts() {
                       {activeSlideProduct.highlights.map((h, i) => (
                         <div
                           key={i}
-                          className="flex items-start gap-2 text-xs text-[#141A17] p-2 rounded-lg bg-white border border-black/5"
+                          className="flex items-start gap-2 text-xs text-[#1F2A24] p-2 rounded-lg bg-white border border-black/5"
                         >
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#134e3f] shrink-0 mt-0.5" />
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#123D32] shrink-0 mt-0.5" />
                           <span className="truncate">{h}</span>
                         </div>
                       ))}
@@ -1011,7 +1011,7 @@ export default function OurProducts() {
                     <button
                       type="button"
                       onClick={() => setActiveModal(activeSlideProduct)}
-                      className="inline-flex items-center gap-2 text-xs font-bold text-white bg-[#134e3f] hover:bg-[#0e3b30] uppercase px-5 py-3 rounded-full transition-all shadow-md cursor-pointer"
+                      className="inline-flex items-center gap-2 text-xs font-bold text-white bg-[#123D32] hover:bg-[#123D32] uppercase px-5 py-3 rounded-full transition-all shadow-md cursor-pointer"
                     >
                       <Eye className="w-3.5 h-3.5" />
                       <span>Full Technical Blueprint</span>
@@ -1021,7 +1021,7 @@ export default function OurProducts() {
                       href={`https://wa.me/919414945457?text=${encodeURIComponent(activeSlideProduct.waMsg)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-xs font-bold text-[#0D1311] bg-[#25D366] hover:bg-[#20ba59] hover:text-white uppercase px-5 py-3 rounded-full transition-all shadow-md"
+                      className="inline-flex items-center gap-2 text-xs font-bold text-[#123D32] bg-[#25D366] hover:bg-[#20ba59] hover:text-white uppercase px-5 py-3 rounded-full transition-all shadow-md"
                     >
                       <WhatsAppIcon className="w-4 h-4 fill-current" size={16} />
                       <span>WhatsApp Quote</span>
@@ -1039,7 +1039,7 @@ export default function OurProducts() {
                     onClick={() => setCurrentSlide(i)}
                     className={`relative w-20 h-14 rounded-xl overflow-hidden shrink-0 border-2 transition-all cursor-pointer ${
                       currentSlide === i
-                        ? "border-[#134e3f] scale-105 shadow-md"
+                        ? "border-[#123D32] scale-105 shadow-md"
                         : "border-transparent opacity-60 hover:opacity-100"
                     }`}
                   >
@@ -1065,14 +1065,14 @@ export default function OurProducts() {
             ADVANCED MOTION GRAPHIC CALLOUT: Custom Quarry Slabs & Sample Kit
             ========================================================================= */}
         <AnimDiv delay={300}>
-          <div className="bg-gradient-to-br from-[#134e3f] via-[#0e3b30] to-[#0A261F] rounded-3xl p-6 sm:p-10 border border-[#C29B38]/40 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6 relative overflow-hidden text-white group">
+          <div className="bg-gradient-to-br from-[#123D32] via-[#123D32] to-[#0A261F] rounded-3xl p-6 sm:p-10 border border-[#C5A15B]/40 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6 relative overflow-hidden text-white group">
             {/* Ambient Background Gold Beam Sweep */}
-            <div className="absolute -inset-full bg-gradient-to-r from-transparent via-[#C29B38]/15 to-transparent animate-beam-sweep pointer-events-none" />
-            <div className="absolute -right-10 -bottom-10 w-72 h-72 bg-[#C29B38]/20 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -inset-full bg-gradient-to-r from-transparent via-[#C5A15B]/15 to-transparent animate-beam-sweep pointer-events-none" />
+            <div className="absolute -right-10 -bottom-10 w-72 h-72 bg-[#C5A15B]/20 rounded-full blur-3xl pointer-events-none" />
 
             <div className="max-w-2xl text-center lg:text-left relative z-10">
-              <div className="inline-flex items-center gap-2 bg-[#C29B38]/20 border border-[#C29B38]/40 px-3.5 py-1 rounded-full text-[10px] font-bold text-[#FAF7F2] uppercase tracking-widest mb-3 shadow-xs">
-                <Flame className="w-3.5 h-3.5 text-[#C29B38]" />
+              <div className="inline-flex items-center gap-2 bg-[#C5A15B]/20 border border-[#C5A15B]/40 px-3.5 py-1 rounded-full text-[10px] font-bold text-[#F7F4EB] uppercase tracking-widest mb-3 shadow-xs">
+                <Flame className="w-3.5 h-3.5 text-[#C5A15B]" />
                 <span>Custom Fabrication &bull; Free Swatch Box Box</span>
               </div>
               <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl lg:text-3xl font-bold text-white uppercase tracking-wider mb-2">
@@ -1088,9 +1088,9 @@ export default function OurProducts() {
                 href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20discuss%20custom%20sandstone%20orders%20and%20request%20samples."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-[#0A0F0D] hover:bg-white font-bold text-xs uppercase px-7 py-3.5 rounded-full transition-all duration-300 shadow-xl active:scale-95"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-[#123D32] hover:bg-white font-bold text-xs uppercase px-7 py-3.5 rounded-full transition-all duration-300 shadow-xl active:scale-95"
               >
-                <WhatsAppIcon className="w-4 h-4 fill-[#0A0F0D]" size={16} />
+                <WhatsAppIcon className="w-4 h-4 fill-[#123D32]" size={16} />
                 <span>Request Custom Quote &amp; Samples</span>
               </a>
 
@@ -1105,9 +1105,9 @@ export default function OurProducts() {
         </AnimDiv>
 
         {/* Running Bottom Bar */}
-        <div className="mt-8 pt-4 border-t border-black/8 flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] sm:text-[11px] font-semibold text-[#68726E] uppercase tracking-wider text-center sm:text-left">
+        <div className="mt-8 pt-4 border-t border-black/8 flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] sm:text-[11px] font-semibold text-[#6B7C73] uppercase tracking-wider text-center sm:text-left">
           <span>Natural Sandstones &bull; Mines &bull; Manufacturing &bull; Export &bull; Contracting</span>
-          <span className="font-['Cinzel',serif] text-[#141A17]">DHOLPURESTONES.COM</span>
+          <span className="font-['Cinzel',serif] text-[#1F2A24]">DHOLPURESTONES.COM</span>
         </div>
       </div>
 
@@ -1122,21 +1122,21 @@ export default function OurProducts() {
           onClick={() => setActiveModal(null)}
         >
           <div
-            className="bg-[#161D1A] border border-white/10 rounded-3xl max-w-3xl w-full max-h-[92vh] overflow-y-auto text-white shadow-2xl relative scrollbar-none"
+            className="bg-[#1E5A46] border border-white/10 rounded-3xl max-w-3xl w-full max-h-[92vh] overflow-y-auto text-white shadow-2xl relative scrollbar-none"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               type="button"
               onClick={() => setActiveModal(null)}
-              className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/70 hover:bg-[#C29B38] text-white flex items-center justify-center transition-colors"
+              className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/70 hover:bg-[#C5A15B] text-white flex items-center justify-center transition-colors"
               aria-label="Close Product Details"
             >
               <X className="w-4 h-4" />
             </button>
 
             {/* Modal Image Header */}
-            <div className="relative h-56 sm:h-80 w-full bg-[#0D1311]">
+            <div className="relative h-56 sm:h-80 w-full bg-[#123D32]">
               <Image
                 src={activeModal.image}
                 alt={activeModal.title}
@@ -1144,10 +1144,10 @@ export default function OurProducts() {
                 sizes="(max-width:768px) 100vw, 768px"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#161D1A] via-transparent to-black/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1E5A46] via-transparent to-black/30" />
 
               <div className="absolute bottom-3 left-4 right-4 sm:bottom-4 sm:left-6 sm:right-6">
-                <span className="text-[9.5px] sm:text-[10px] font-bold text-[#C29B38] uppercase tracking-[0.2em] bg-black/60 px-2.5 py-0.5 rounded-md backdrop-blur-sm border border-white/10 inline-block mb-1">
+                <span className="text-[9.5px] sm:text-[10px] font-bold text-[#C5A15B] uppercase tracking-[0.2em] bg-black/60 px-2.5 py-0.5 rounded-md backdrop-blur-sm border border-white/10 inline-block mb-1">
                   {activeModal.categoryLabel} &bull; {activeModal.number}
                 </span>
                 <h3 className="font-['Cinzel',serif] text-base sm:text-2xl font-bold text-white uppercase tracking-wider leading-snug">
@@ -1165,25 +1165,25 @@ export default function OurProducts() {
               {/* Technical Specifications Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-4 rounded-2xl bg-white/5 border border-white/10 text-xs">
                 <div className="p-2.5 rounded-xl bg-white/5">
-                  <span className="text-[#C29B38] font-bold text-[10px] uppercase tracking-wider block mb-1">
+                  <span className="text-[#C5A15B] font-bold text-[10px] uppercase tracking-wider block mb-1">
                     Color &amp; Natural Tones:
                   </span>
                   <span className="text-white font-medium">{activeModal.shades}</span>
                 </div>
                 <div className="p-2.5 rounded-xl bg-white/5">
-                  <span className="text-[#C29B38] font-bold text-[10px] uppercase tracking-wider block mb-1">
+                  <span className="text-[#C5A15B] font-bold text-[10px] uppercase tracking-wider block mb-1">
                     Surface Finishes Available:
                   </span>
                   <span className="text-white font-medium">{activeModal.finishes.join(", ")}</span>
                 </div>
                 <div className="p-2.5 rounded-xl bg-white/5">
-                  <span className="text-[#C29B38] font-bold text-[10px] uppercase tracking-wider block mb-1">
+                  <span className="text-[#C5A15B] font-bold text-[10px] uppercase tracking-wider block mb-1">
                     Standard &amp; Custom Sizes:
                   </span>
                   <span className="text-white font-mono">{activeModal.dimensions}</span>
                 </div>
                 <div className="p-2.5 rounded-xl bg-white/5">
-                  <span className="text-[#C29B38] font-bold text-[10px] uppercase tracking-wider block mb-1">
+                  <span className="text-[#C5A15B] font-bold text-[10px] uppercase tracking-wider block mb-1">
                     Compressive Strength &amp; Density:
                   </span>
                   <span className="text-white font-mono">
@@ -1191,7 +1191,7 @@ export default function OurProducts() {
                   </span>
                 </div>
                 <div className="p-2.5 rounded-xl bg-white/5 sm:col-span-2">
-                  <span className="text-[#C29B38] font-bold text-[10px] uppercase tracking-wider block mb-1">
+                  <span className="text-[#C5A15B] font-bold text-[10px] uppercase tracking-wider block mb-1">
                     Recommended Architectural Typologies:
                   </span>
                   <span className="text-white font-medium">{activeModal.applications.join(" • ")}</span>
@@ -1200,13 +1200,13 @@ export default function OurProducts() {
 
               {/* Highlights */}
               <div>
-                <span className="text-[10px] font-bold text-[#C29B38] uppercase tracking-widest block mb-2">
+                <span className="text-[10px] font-bold text-[#C5A15B] uppercase tracking-widest block mb-2">
                   Key Technical Advantages:
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {activeModal.highlights.map((h, i) => (
                     <div key={i} className="flex items-center gap-2 text-xs text-white/90">
-                      <ShieldCheck className="w-3.5 h-3.5 text-[#C29B38] shrink-0" />
+                      <ShieldCheck className="w-3.5 h-3.5 text-[#C5A15B] shrink-0" />
                       <span>{h}</span>
                     </div>
                   ))}
@@ -1219,7 +1219,7 @@ export default function OurProducts() {
                   <span className="text-[11px] text-white/60 block">
                     Direct Mine Provenance &bull; Arvind Garg
                   </span>
-                  <span className="text-xs font-bold text-[#C29B38]">
+                  <span className="text-xs font-bold text-[#C5A15B]">
                     +91 94149 45457 &bull; Wholesale Factory Quotation
                   </span>
                 </div>
@@ -1227,9 +1227,9 @@ export default function OurProducts() {
                   href={`https://wa.me/919414945457?text=${encodeURIComponent(activeModal.waMsg)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-[#0A0F0D] font-bold text-xs uppercase px-6 py-3 rounded-full hover:bg-white transition-all duration-300 shadow-lg active:scale-95"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-[#123D32] font-bold text-xs uppercase px-6 py-3 rounded-full hover:bg-white transition-all duration-300 shadow-lg active:scale-95"
                 >
-                  <WhatsAppIcon className="w-4 h-4 fill-[#0A0F0D]" size={16} />
+                  <WhatsAppIcon className="w-4 h-4 fill-[#123D32]" size={16} />
                   <span>Request Product Quote</span>
                 </a>
               </div>

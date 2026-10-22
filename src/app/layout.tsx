@@ -18,7 +18,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0D1311",
+  themeColor: "#123D32",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -53,10 +53,10 @@ export const metadata: Metadata = {
       "Mines Owner • Manufacturer • Exporter • Contractor. Quarrying and crafting natural sandstone, marble, granite and hand-carved heritage articles for iconic national & international landmarks.",
     images: [
       {
-        url: "https://dholpurestones.com/assets/garg/hero_peacock_widescreen_2k.jpg",
-        width: 1920,
-        height: 1080,
-        alt: "Dholpurestones.com - Hand Carved Peacock Sandstone Sculpture",
+        url: "https://dholpurestones.com/assets/garg/luxurious_marble_lobby_vignettes.jpg",
+        width: 1024,
+        height: 576,
+        alt: "Dholpurestones.com – Luxurious Architectural Marble, Sandstone Front Elevation & Farm House Landscaping Since 1953",
       },
     ],
   },
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     title: "Dholpurestones.com (Estd. 1953) | Natural Stone Conglomerate",
     description:
       "Quarry Owner, Manufacturer, Exporter & Contractor. Sandstone, Marble, Granite, Semi-Precious Stones & Heritage Sculptures.",
-    images: ["https://dholpurestones.com/assets/garg/hero_peacock_widescreen_2k.jpg"],
+    images: ["https://dholpurestones.com/assets/garg/luxurious_marble_lobby_vignettes.jpg"],
   },
   icons: {
     icon: [
@@ -348,7 +348,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
         />
       </head>
-      <body className="bg-[#FAF7F2] text-[#141A17] antialiased selection:bg-[#C29B38] selection:text-black">
+      <body className="bg-[#F7F4EB] text-[#1F2A24] antialiased selection:bg-[#C5A15B] selection:text-[#123D32]">
         {/* Google tag (gtag.js) */}
         <Script
           strategy="afterInteractive"

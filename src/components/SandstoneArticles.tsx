@@ -96,32 +96,32 @@ export default function SandstoneArticles() {
   }, [activeModal]);
 
   return (
-    <section id="articles" className="bg-[#FAF7F2] py-10 sm:py-20 border-b border-black/6 scroll-mt-20 sm:scroll-mt-24">
+    <section id="articles" className="bg-[#E5ECE4] py-10 sm:py-20 border-b border-black/6 scroll-mt-20 sm:scroll-mt-24">
       <div className="max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-8">
         {/* Section Header Label */}
         <AnimDiv className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-black/8 mb-6 sm:mb-10">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#C29B38]" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#141A17] uppercase">
+            <span className="w-2 h-2 rounded-full bg-[#C5A15B]" />
+            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#1F2A24] uppercase">
               DHOLPURESTONES.COM
             </span>
           </div>
-          <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C29B38] tracking-widest">
+          <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest">
             04
           </span>
         </AnimDiv>
 
         {/* Section Title */}
         <AnimDiv delay={0} className="mb-6 sm:mb-10">
-          <span className="text-[10px] sm:text-xs font-bold text-[#C29B38] uppercase tracking-[0.18em] block mb-1.5 sm:mb-2">
+          <span className="text-[10px] sm:text-xs font-bold text-[#C5A15B] uppercase tracking-[0.18em] block mb-1.5 sm:mb-2">
             Artisanal Heritage
           </span>
-          <h2 className="font-['Cinzel',serif] text-xl sm:text-3xl lg:text-4xl font-bold text-[#141A17] uppercase tracking-wide mb-2 sm:mb-3">
+          <h2 className="font-['Cinzel',serif] text-xl sm:text-3xl lg:text-4xl font-bold text-[#1F2A24] uppercase tracking-wide mb-2 sm:mb-3">
             Sandstone Articles
           </h2>
-          <div className="w-10 sm:w-12 h-1 bg-[#C29B38] rounded-full mb-2.5 sm:mb-3" />
-          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#68726E] max-w-2xl">
-            Decorative sandstone articles, architectural elements and authentic stone varieties for premium residences, hotels, gardens, temples and landmark projects.
+          <div className="w-10 sm:w-12 h-1 bg-[#C5A15B] rounded-full mb-2.5 sm:mb-3" />
+          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] max-w-2xl">
+            Decorative sandstone articles and architectural elements for premium residences, hotels, gardens, temples and landmark projects.
           </p>
         </AnimDiv>
 
@@ -129,11 +129,11 @@ export default function SandstoneArticles() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {articles.map((a, i) => (
             <AnimDiv key={a.id} delay={i * 100}>
-              <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-black/8 hover:border-[#C29B38]/60 hover:shadow-xl transition-all duration-300 group flex flex-col h-full">
+              <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-black/8 hover:border-[#C5A15B]/60 hover:shadow-xl transition-all duration-300 group flex flex-col h-full">
                 {/* Image */}
                 <div
                   onClick={() => setActiveModal(a)}
-                  className="relative aspect-square w-full overflow-hidden bg-[#F5F2EC] shrink-0 cursor-pointer"
+                  className="relative aspect-square w-full overflow-hidden bg-[#F7F4EB] shrink-0 cursor-pointer"
                 >
                   <Image
                     src={a.image}
@@ -142,23 +142,23 @@ export default function SandstoneArticles() {
                     sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw"
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-3 left-3 bg-[#0D1311]/85 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
-                    <span className="text-[9px] font-bold text-[#C29B38] uppercase tracking-widest">
+                  <div className="absolute top-3 left-3 bg-[#123D32]/85 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+                    <span className="text-[9px] font-bold text-[#C5A15B] uppercase tracking-widest">
                       {a.tag}
                     </span>
                   </div>
                   <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm p-1.5 rounded-full text-white/90 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Maximize2 className="w-3.5 h-3.5 text-[#C29B38]" />
+                    <Maximize2 className="w-3.5 h-3.5 text-[#C5A15B]" />
                   </div>
                 </div>
 
                 {/* Card Content */}
                 <div className="flex flex-col flex-1 p-4 sm:p-5 justify-between">
                   <div>
-                    <h3 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-[#141A17] uppercase tracking-wider mb-2 group-hover:text-[#134e3f] transition-colors">
+                    <h3 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-[#1F2A24] uppercase tracking-wider mb-2 group-hover:text-[#123D32] transition-colors">
                       {a.title}
                     </h3>
-                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs text-[#68726E] leading-relaxed mb-4">
+                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs text-[#6B7C73] leading-relaxed mb-4">
                       {a.desc}
                     </p>
                   </div>
@@ -169,12 +169,12 @@ export default function SandstoneArticles() {
                       href={`https://wa.me/919414945457?text=${encodeURIComponent(a.waMsg)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#134e3f] hover:text-[#25D366] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#123D32] hover:text-[#25D366] transition-colors"
                     >
                       <WhatsAppIcon className="w-3.5 h-3.5 fill-[#25D366]" size={14} />
                       <span>Inquire on WhatsApp</span>
                     </a>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#C29B38] group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-3.5 h-3.5 text-[#C5A15B] group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               </div>
@@ -186,13 +186,13 @@ export default function SandstoneArticles() {
         <AnimDiv delay={250}>
           <div className="bg-white rounded-2xl p-6 sm:p-8 border border-black/8 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex-1">
-              <span className="font-['Cinzel',serif] text-[10px] font-bold text-[#C29B38] tracking-[0.2em] uppercase block mb-1">
+              <span className="font-['Cinzel',serif] text-[10px] font-bold text-[#C5A15B] tracking-[0.2em] uppercase block mb-1">
                 Custom Architectural Carving
               </span>
-              <h3 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-[#141A17] uppercase tracking-wider mb-1">
+              <h3 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-[#1F2A24] uppercase tracking-wider mb-1">
                 Natural Stone Craftsmanship
               </h3>
-              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs text-[#68726E] leading-relaxed max-w-2xl">
+              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs text-[#6B7C73] leading-relaxed max-w-2xl">
                 The supplied references showcase carved stone work for entrances, gardens, temples, hospitality spaces and landmark architectural projects.
               </p>
             </div>
@@ -200,18 +200,18 @@ export default function SandstoneArticles() {
               href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20discuss%20custom%20stone%20craftsmanship"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#25D366] text-[#0D1311] hover:bg-white font-bold text-xs uppercase px-5 py-2.5 rounded-full transition-colors shrink-0 shadow-md"
+              className="inline-flex items-center gap-2 bg-[#25D366] text-[#123D32] hover:bg-white font-bold text-xs uppercase px-5 py-2.5 rounded-full transition-colors shrink-0 shadow-md"
             >
-              <WhatsAppIcon className="w-4 h-4 fill-[#0D1311]" size={16} />
+              <WhatsAppIcon className="w-4 h-4 fill-[#123D32]" size={16} />
               <span>Commission Custom Work</span>
             </a>
           </div>
         </AnimDiv>
 
         {/* Running Footer Bar */}
-        <div className="mt-10 sm:mt-12 pt-4 border-t border-black/8 flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] sm:text-[11px] font-semibold text-[#68726E] uppercase tracking-wider text-center sm:text-left">
+        <div className="mt-10 sm:mt-12 pt-4 border-t border-black/8 flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] sm:text-[11px] font-semibold text-[#6B7C73] uppercase tracking-wider text-center sm:text-left">
           <span>Natural Stone &bull; Mines &bull; Manufacturing &bull; Export &bull; Contracting</span>
-          <span className="font-['Cinzel',serif] text-[#141A17]">DHOLPURESTONES.COM</span>
+          <span className="font-['Cinzel',serif] text-[#1F2A24]">DHOLPURESTONES.COM</span>
         </div>
       </div>
 
@@ -224,7 +224,7 @@ export default function SandstoneArticles() {
           onClick={() => setActiveModal(null)}
         >
           <div
-            className="bg-[#161D1A] border border-white/10 rounded-2xl max-w-2xl w-full max-h-[88vh] overflow-y-auto text-white shadow-2xl relative scrollbar-none"
+            className="bg-[#1E5A46] border border-white/10 rounded-2xl max-w-2xl w-full max-h-[88vh] overflow-y-auto text-white shadow-2xl relative scrollbar-none"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
@@ -237,7 +237,7 @@ export default function SandstoneArticles() {
             </button>
 
             {/* Modal Image */}
-            <div className="relative h-60 sm:h-96 w-full bg-[#0D1311]">
+            <div className="relative h-60 sm:h-96 w-full bg-[#123D32]">
               <Image
                 src={activeModal.image}
                 alt={activeModal.title}
@@ -250,8 +250,8 @@ export default function SandstoneArticles() {
             {/* Modal Content */}
             <div className="p-4 sm:p-6">
               <div className="flex items-center gap-2 mb-2">
-                <Sparkles className="w-3.5 h-3.5 text-[#C29B38]" />
-                <span className="text-[10px] font-bold text-[#C29B38] uppercase tracking-[0.2em]">
+                <Sparkles className="w-3.5 h-3.5 text-[#C5A15B]" />
+                <span className="text-[10px] font-bold text-[#C5A15B] uppercase tracking-[0.2em]">
                   {activeModal.tag}
                 </span>
               </div>
@@ -270,9 +270,9 @@ export default function SandstoneArticles() {
                   href={`https://wa.me/919414945457?text=${encodeURIComponent(activeModal.waMsg)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-[#0D1311] font-bold text-xs uppercase px-5 py-2.5 rounded-full hover:bg-white transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-[#123D32] font-bold text-xs uppercase px-5 py-2.5 rounded-full hover:bg-white transition-colors"
                 >
-                  <WhatsAppIcon className="w-4 h-4 fill-[#0D1311]" size={16} />
+                  <WhatsAppIcon className="w-4 h-4 fill-[#123D32]" size={16} />
                   <span>Request Custom Quote</span>
                 </a>
               </div>
