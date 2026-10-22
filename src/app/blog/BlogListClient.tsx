@@ -157,12 +157,6 @@ export default function BlogListClient() {
             <ChevronRight className="w-3.5 h-3.5 text-white/40" />
             <span className="text-[#C5A15B] font-semibold">Blog</span>
           </nav>
-
-          {/* Govt & Intl Honors Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-black/60 border border-[#C5A15B]/60 text-[#C5A15B] text-[10px] sm:text-xs font-bold uppercase tracking-wider backdrop-blur-md shadow-lg">
-            <Award className="w-3.5 h-3.5 text-[#C5A15B] shrink-0" />
-            <span>Awarded by Govt. of India &bull; Nominated for Intl. Award</span>
-          </div>
         </div>
 
         {/* Hero Central Content */}

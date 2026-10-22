@@ -80,16 +80,6 @@ export default function FarmHouseGardensPage() {
               <TreePine className="w-3.5 h-3.5 text-[#25D366]" />
               <span>Dedicated Specialty &bull; Farm Houses &amp; Gardens</span>
             </div>
-
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#C5A15B]/15 border border-[#C5A15B]/40 text-[#C5A15B] text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-xs">
-              <Award className="w-3.5 h-3.5 text-[#C5A15B]" />
-              <span>Awarded by Govt. of India &bull; 300+ Elevation Designs</span>
-            </div>
-
-            <div className="hidden md:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/8 border border-white/15 text-white/80 text-[10px] sm:text-xs font-semibold uppercase tracking-wider">
-              <Sparkles className="w-3 h-3 text-[#C5A15B]" />
-              <span>Nominated for Intl. Award (Business Excellence)</span>
-            </div>
           </div>
 
           {/* Main Page Title */}

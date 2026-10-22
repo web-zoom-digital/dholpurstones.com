@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import BurgundyBand from "@/components/BurgundyBand";
 import AboutUs from "@/components/AboutUs";
 import OurStrength from "@/components/OurStrength";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -25,9 +24,6 @@ export default function Home() {
 
       {/* 2. Hero Section (Page 1 of PDF - A Legacy of Natural Stone Since 1953) */}
       <Hero />
-
-      {/* 2B. Front Elevation (300+ Designs) & Farm House Excellence Award Banner */}
-      <BurgundyBand />
 
       {/* 3. About Us (Page 2 of PDF - 1953 Legacy, Lion & Lantern Articles) */}
       <AboutUs />

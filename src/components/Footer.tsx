@@ -47,19 +47,6 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#123D32] text-white border-t border-white/10 relative overflow-hidden font-['Plus_Jakarta_Sans',sans-serif]">
-      {/* Top Accolades & Recognition Ribbon */}
-      <div className="bg-[#1F2A24] border-b border-white/10 py-2.5 sm:py-3.5 px-4">
-        <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row items-center justify-between gap-1.5 sm:gap-2.5 text-center md:text-left">
-          <div className="flex items-center justify-center gap-1.5 sm:gap-2 text-[#C5A15B] font-bold tracking-wider uppercase text-[9.5px] sm:text-xs">
-            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#C5A15B] shrink-0" />
-            <span>Awarded by Govt. of India &bull; Nominated for International Award for Business Excellence</span>
-          </div>
-          <div className="text-white/75 text-[10px] sm:text-[11px] tracking-wide font-medium">
-            300+ Sandstone Front Elevation Designs &bull; Luxury Farm Houses &amp; Designer Gardens
-          </div>
-        </div>
-      </div>
-
       {/* 1. TOP SECTION: 4 COLUMNS (Products, Quick Links, Useful Links, Newsletter) */}
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8 sm:pt-12 sm:pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
