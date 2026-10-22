@@ -11,11 +11,11 @@ import {
 } from "react-icons/lu";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Dholpurestones.com (B P Garg & Sons)",
+  title: "Privacy Policy",
   description:
     "Official Privacy Policy of Dholpurestones.com. Explains how architectural inquiries, quotations, client contact data, and cookies are managed under DPDP Act & international standards.",
   alternates: {
-    canonical: "https://dholpurestones.com/privacy-policy",
+    canonical: "/privacy-policy",
   },
   robots: {
     index: true,
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: "Privacy Policy | Dholpurestones.com",
     description:
       "Privacy policy and data protection governance for Dholpurestones.com (B P Garg & Sons).",
-    url: "https://dholpurestones.com/privacy-policy",
+    url: "/privacy-policy",
     siteName: "Dholpurestones",
   },
   twitter: {
@@ -55,7 +55,7 @@ export default function PrivacyPolicyPage() {
 
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C5A15B]/15 border border-[#C5A15B]/30 mb-3">
             <ShieldCheck className="w-3.5 h-3.5 text-[#C5A15B]" />
-            <span className="font-heading text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase">
+            <span className="font-heading text-[11px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase">
               DATA PRIVACY &amp; COMPLIANCE
             </span>
           </div>

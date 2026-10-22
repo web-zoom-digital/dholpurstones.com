@@ -1,5 +1,11 @@
 import React from "react";
 import type { Metadata } from "next";
+import CtaBand from "@/components/ui/CtaBand";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbLd, itemListLd, faqLd } from "@/lib/schema";
+import FaqSection from "@/components/FaqSection";
+import { marbleFaqs } from "@/data/faqs";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -16,11 +22,11 @@ export const metadata: Metadata = {
   title: "Marble – Beige, White & Grey Marble Slabs and Tiles",
   description:
     "Beige marble, white marble and grey marble in slabs and tiles — Botticino, Elmali Beige, Statuario, Carrara, Pearl White and more, supplied by Dholpurestones.com (Estd. 1953).",
-  alternates: { canonical: "https://dholpurestones.com/marble" },
+  alternates: { canonical: "/marble" },
   openGraph: {
     title: "Beige, White & Grey Marble",
     description: "Marble slabs and tiles in three colour families, direct from Dholpurestones.com.",
-    url: "https://dholpurestones.com/marble",
+    url: "/marble",
     siteName: "Dholpurestones.com",
   },
 };
@@ -75,28 +81,10 @@ export default function MarblePage() {
         </section>
       ))}
 
-      <section className="mx-2 mb-2 rounded-[2rem] bg-forest section-y bg-stone-grain sm:mx-4 sm:mb-4 sm:rounded-[3rem]">
-        <div className="container-x text-center">
-          <SectionHeader
-            tone="dark"
-            eyebrow="Can't Find Your Shade?"
-            title="We Source To Order"
-            subtitle="Tell us the colour, finish and quantity — we will share slab photos and a quote."
-          />
-          <Reveal className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button
-              href={waLink("Hello Dholpurestones.com, I need help choosing marble for my project.")}
-              variant="whatsapp"
-              size="lg"
-            >
-              Chat on WhatsApp
-            </Button>
-            <Button href="/exclusive-imported" variant="outline-light" size="lg">
-              See Exclusive &amp; Imported
-            </Button>
-          </Reveal>
-        </div>
-      </section>
+      <FaqSection faqs={marbleFaqs} title="Marble Questions" tone="white" />
+      <CtaBand title="Get Marble Slab Photos & A Quote" text="Tell us the variety or colour you like — we will send slab photos and pricing." topic="marble" cta="Marble bottom band" />
+      <JsonLd data={[breadcrumbLd([{ name: "Products", path: "/products" }, { name: "Marble", path: "/marble" }]), itemListLd("Marble collections", marbleSubs.flatMap((m) => m.varieties.map((v) => ({ name: `${v.name} marble`, image: v.image })))), faqLd(marbleFaqs)]} />
+
 
       <Footer />
       <FloatingWhatsApp />

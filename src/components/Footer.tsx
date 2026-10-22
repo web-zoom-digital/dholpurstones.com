@@ -69,7 +69,7 @@ export default function Footer() {
               </span>
               <span className="leading-tight">
                 <span className="block font-heading text-lg font-bold uppercase tracking-[0.08em]">Dholpurestones</span>
-                <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+                <span className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-gold">
                   Natural Stone &bull; Since 1953
                 </span>
               </span>

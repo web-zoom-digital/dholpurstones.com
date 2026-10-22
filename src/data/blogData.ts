@@ -2,7 +2,16 @@ export interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
-  category: "Architectural Facades" | "Heritage Architecture" | "Landscape Design" | "Artisanal Craftsmanship" | "Front Elevation";
+  category:
+    | "Architectural Facades"
+    | "Heritage Architecture"
+    | "Landscape Design"
+    | "Artisanal Craftsmanship"
+    | "Front Elevation"
+    | "Buying Guides"
+    | "Care & Maintenance"
+    | "Export & Business"
+    | "Marble & Gemstones";
   readTime: string;
   publishedDate: string;
   lastUpdated: string;
@@ -111,7 +120,7 @@ export const BLOG_POSTS: BlogPost[] = [
           id: "technical-comparison",
           heading: "2. Technical Performance: Sandstone vs Engineered Cladding",
           paragraphs: [
-            "Laboratory testing according to Indian Standards (IS:3620) and American Society for Testing and Materials (ASTM C616) confirms that authentic Dholpur Beige possesses physical characteristics engineered by nature to survive extreme climatic fluctuations.",
+            "Laboratory testing according to Indian Standards (IS 3622) and American Society for Testing and Materials (ASTM C616) confirms that authentic Dholpur Beige possesses physical characteristics engineered by nature to survive extreme climatic fluctuations.",
             "Below is a direct comparison between calibrated natural Dholpur Beige sandstone and standard engineered composite facade panels:",
           ],
           table: {
@@ -164,7 +173,7 @@ export const BLOG_POSTS: BlogPost[] = [
         },
       ],
       conclusion:
-        "Architectural cladding is the permanent face of a building. Choosing authentic natural Dholpur Beige sandstone is not merely an aesthetic choice—it is an investment in permanent geological stability, fireproof safety, thermal efficiency, and timeless heritage prestige. Contact the engineering desk at Dholpurestones to request calibrated physical samples and IS:3620 test certificates for your project.",
+        "Architectural cladding is the permanent face of a building. Choosing authentic natural Dholpur Beige sandstone is not merely an aesthetic choice—it is an investment in permanent geological stability, fireproof safety, thermal efficiency, and timeless heritage prestige. Contact the engineering desk at Dholpurestones to request calibrated physical samples and IS 3622 test certificates for your project.",
     },
   },
   {
@@ -1161,7 +1170,7 @@ export const BLOG_POSTS: BlogPost[] = [
           id: "port-to-site",
           heading: "5. Inland ICD Transport & Global Customs Clearance",
           paragraphs: [
-            "Consignments are cleared through Inland Container Depots (ICD Kanakpura / Jaipur) and transported via dedicated rail corridors to gateway deep-water seaports (Mundra and Nhava Sheva). We provide complete shipping documentation suites including Bill of Lading, Certificate of Origin, IS:3620 Test Certificates, and commercial packing lists.",
+            "Consignments are cleared through Inland Container Depots (ICD Kanakpura / Jaipur) and transported via dedicated rail corridors to gateway deep-water seaports (Mundra and Nhava Sheva). We provide complete shipping documentation suites including Bill of Lading, Certificate of Origin, IS 3622 Test Certificates, and commercial packing lists.",
           ],
         },
       ],
@@ -2326,10 +2335,15 @@ export const BLOG_POSTS: BlogPost[] = [
   },
 ];
 
+import { LEAD_GUIDE_POSTS } from "./blogPostsGuides";
+
+/** Every post, newest first. */
+export const ALL_BLOG_POSTS: BlogPost[] = [...LEAD_GUIDE_POSTS, ...BLOG_POSTS];
+
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
-  return BLOG_POSTS.find((p) => p.slug === slug);
+  return ALL_BLOG_POSTS.find((p) => p.slug === slug);
 }
 
 export function getAllBlogSlugs(): string[] {
-  return BLOG_POSTS.map((p) => p.slug);
+  return ALL_BLOG_POSTS.map((p) => p.slug);
 }

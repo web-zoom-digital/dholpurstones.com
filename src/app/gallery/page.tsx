@@ -3,21 +3,21 @@ import type { Metadata } from "next";
 import GalleryClient from "./GalleryClient";
 
 export const metadata: Metadata = {
-  title: "Visual Gallery & Craftsmanship Archive | Dholpurestones (Estd. 1953)",
+  title: "Photo & Video Gallery – Dholpur Quarry, Sandstone Carving & Projects",
   description:
     "High-resolution visual archives of Dholpur quarry benches, master sculptor ateliers in Sikandra, CNC fluted cladding panels, calibrated sandstone yard, and monumental landmark installations.",
   alternates: {
-    canonical: "https://dholpurestones.com/gallery",
+    canonical: "/gallery",
   },
   openGraph: {
     title: "Visual Gallery & Craftsmanship Archive | Dholpurestones.com",
     description:
       "Inspect high-resolution imagery and video footage of authentic Dholpur Sandstone extraction, hand-carved heritage sculptures, and finished architectural facades.",
-    url: "https://dholpurestones.com/gallery",
+    url: "/gallery",
     siteName: "Dholpurestones",
     images: [
       {
-        url: "https://dholpurestones.com/assets/garg/clean_peacock_hero.jpg",
+        url: "/assets/garg/clean_peacock_hero.jpg",
         width: 1200,
         height: 630,
         alt: "Dholpurestones Quarry & Artisanal Gallery",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Visual Gallery & Craftsmanship Archive | Dholpurestones",
     description:
       "Dholpur sandstone mines, generational stone sculptors, and monumental project execution photography.",
-    images: ["https://dholpurestones.com/assets/garg/clean_peacock_hero.jpg"],
+    images: ["/assets/garg/clean_peacock_hero.jpg"],
   },
 };
 

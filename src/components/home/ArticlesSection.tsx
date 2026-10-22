@@ -2,6 +2,7 @@ import React from "react";
 import SectionHeader from "../ui/SectionHeader";
 import ImageCard from "../ui/ImageCard";
 import Button from "../ui/Button";
+import EnquiryButton from "../ui/EnquiryButton";
 import Carousel from "../ui/Carousel";
 import { Reveal } from "../ui/Reveal";
 import { articleSubs } from "@/data/catalog";
@@ -33,11 +34,12 @@ export default function ArticlesSection() {
             ))}
           </Carousel>
         </Reveal>
-        <Reveal className="mt-9 flex justify-center">
+        <Reveal className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button href="/articles" variant="forest" size="lg">
             View All Articles
             <ArrowRight className="h-4 w-4" />
           </Button>
+          <EnquiryButton variant="outline" size="lg" product="Hand-carved stone article" cta="Home articles">Get a Quote</EnquiryButton>
         </Reveal>
       </div>
     </section>

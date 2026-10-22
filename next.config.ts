@@ -34,6 +34,16 @@ const nextConfig: NextConfig = {
         destination: "/farmhouse-gardens",
         permanent: true,
       },
+      {
+        source: "/white-series-dolphur-color",
+        destination: "/products/white-series-dolphur-color",
+        permanent: true,
+      },
+      {
+        source: "/llms.md",
+        destination: "/llms.txt",
+        permanent: true,
+      },
     ];
   },
 

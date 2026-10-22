@@ -5,6 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import Button from "@/components/ui/Button";
+import CtaBand from "@/components/ui/CtaBand";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbLd, itemListLd, faqLd } from "@/lib/schema";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -82,7 +86,7 @@ export default function PreciousGemSurfacePage() {
                 </div>
 
                 {/* Related Images Counter Badge */}
-                <span className="absolute bottom-2 right-2 bg-[#123D32]/90 text-white text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded-md shadow-md backdrop-blur-xs border border-white/10">
+                <span className="absolute bottom-2 right-2 bg-[#123D32]/90 text-white text-[11px] sm:text-[11px] font-bold px-2 py-0.5 rounded-md shadow-md backdrop-blur-xs border border-white/10">
                   {product.images.length} Photos
                 </span>
               </div>
@@ -104,6 +108,8 @@ export default function PreciousGemSurfacePage() {
         onClose={() => setSelectedProduct(null)}
       />
 
+      <CtaBand title="Create A One-Of-A-Kind Surface" text="Tell us the piece and stone — we will share photos and a quote." topic="precious gem surfaces" cta="Gem surface bottom band" />
+      <JsonLd data={breadcrumbLd([{ name: "Exclusive & Imported", path: "/exclusive-imported" }, { name: "Precious Gem Surfaces", path: "/precious-gem-surface" }])} />
       <Footer />
       <FloatingWhatsApp />
     </main>

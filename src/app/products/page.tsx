@@ -2,6 +2,12 @@ import React from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import CtaBand from "@/components/ui/CtaBand";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbLd, itemListLd, faqLd } from "@/lib/schema";
+import FaqSection from "@/components/FaqSection";
+import { generalFaqs } from "@/data/faqs";
+
 import Navbar from "@/components/Navbar";
 import StoneTechnicalSpecsTable from "@/components/StoneTechnicalSpecsTable";
 import Footer from "@/components/Footer";
@@ -18,17 +24,17 @@ export const metadata: Metadata = {
   description:
     "Explore Dholpurestones.com collections: Dholpur sandstone (Agra Red, Beige, Pink, Chocolate), beige, white and grey marble, farm house & garden stonework, hand-carved stone articles, semi-precious stones and exclusive imported stones.",
   alternates: {
-    canonical: "https://dholpurestones.com/products",
+    canonical: "/products",
   },
   openGraph: {
     title: "Natural Stone Products & Collections",
     description:
       "Sandstone, marble, garden stonework, stone articles, semi-precious and imported stones — direct from the mine owner.",
-    url: "https://dholpurestones.com/products",
+    url: "/products",
     siteName: "Dholpurestones.com",
     images: [
       {
-        url: "https://dholpurestones.com/assets/material-sandstone.jpg",
+        url: "/assets/material-sandstone.jpg",
         width: 1200,
         height: 630,
         alt: "Dholpur sandstone products",
@@ -85,7 +91,7 @@ export default function ProductsPage() {
                       sizes="(max-width: 768px) 100vw, 42vw"
                       className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
                     />
-                    <span className="absolute left-4 top-4 rounded-full bg-forest-deep/80 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-gold backdrop-blur">
+                    <span className="absolute left-4 top-4 rounded-full bg-forest-deep/80 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-gold backdrop-blur">
                       {cat.badge}
                     </span>
                   </Link>
@@ -122,6 +128,9 @@ export default function ProductsPage() {
 
       <StoneTechnicalSpecsTable />
 
+      <FaqSection faqs={generalFaqs} tone="white" />
+      <CtaBand title="Not Sure Which Stone Is Right?" text="Describe your project and we will recommend the best stone, finish and size." topic="natural stone for my project" cta="Products bottom band" />
+      <JsonLd data={[breadcrumbLd([{ name: "Products", path: "/products" }]), faqLd(generalFaqs)]} />
       <Footer />
       <FloatingWhatsApp />
     </main>

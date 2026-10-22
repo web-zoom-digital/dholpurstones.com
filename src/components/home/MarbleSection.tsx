@@ -2,6 +2,7 @@ import React from "react";
 import SectionHeader from "../ui/SectionHeader";
 import ImageCard from "../ui/ImageCard";
 import Button from "../ui/Button";
+import EnquiryButton from "../ui/EnquiryButton";
 import { Stagger, StaggerItem, Reveal } from "../ui/Reveal";
 import { marbleSubs } from "@/data/catalog";
 import { LuArrowRight as ArrowRight } from "react-icons/lu";
@@ -31,11 +32,12 @@ export default function MarbleSection() {
             </StaggerItem>
           ))}
         </Stagger>
-        <Reveal className="mt-9 flex justify-center">
+        <Reveal className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button href="/marble" variant="forest" size="lg">
             View All Marble
             <ArrowRight className="h-4 w-4" />
           </Button>
+          <EnquiryButton variant="outline" size="lg" product="Marble" cta="Home marble">Get a Quote</EnquiryButton>
         </Reveal>
       </div>
     </section>

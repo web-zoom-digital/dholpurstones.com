@@ -15,6 +15,7 @@ import {
 } from "react-icons/lu";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { waLink, WHATSAPP_NUMBER, PHONE_PRIMARY } from "@/data/catalog";
+import { openEnquiry } from "@/lib/leads";
 
 const tabs = [
   { label: "Home", href: "/", icon: Home, match: (p: string) => p === "/" },
@@ -94,6 +95,16 @@ export default function MobileBottomNav() {
                     <ChevronRight className="h-4 w-4 shrink-0 text-gold-deep" />
                   </a>
                 ))}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSheetOpen(false);
+                    openEnquiry({ cta: "Mobile quick sheet" });
+                  }}
+                  className="w-full rounded-full bg-gold py-3 text-[13px] font-bold text-forest active:scale-[0.97] transition-transform"
+                >
+                  Send an Enquiry Form
+                </button>
                 <div className="grid grid-cols-2 gap-2 pt-1">
                   <a
                     href={`https://wa.me/${WHATSAPP_NUMBER}`}
@@ -172,7 +183,7 @@ export default function MobileBottomNav() {
                   strokeWidth={active ? 2.3 : 1.9}
                 />
                 <span
-                  className={`relative text-[10.5px] font-semibold tracking-wide transition-colors ${active ? "text-gold" : "text-white/60"}`}
+                  className={`relative text-[11px] font-semibold tracking-wide transition-colors ${active ? "text-gold" : "text-white/60"}`}
                 >
                   {tab.label}
                 </span>

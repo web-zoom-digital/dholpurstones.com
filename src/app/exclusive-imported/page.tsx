@@ -2,6 +2,12 @@ import React from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import CtaBand from "@/components/ui/CtaBand";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbLd, itemListLd, faqLd } from "@/lib/schema";
+import FaqSection from "@/components/FaqSection";
+import { exportFaqs } from "@/data/faqs";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -19,7 +25,7 @@ export const metadata: Metadata = {
   title: "Exclusive & Imported Stones – Precious Gem Surfaces & Exotic Marble",
   description:
     "Exclusive imported exotic marbles and precious gem surfaces — Calacatta Viola, Bianco Fire, Golden Michael, backlit gemstone slabs and more, made to order by Dholpurestones.com.",
-  alternates: { canonical: "https://dholpurestones.com/exclusive-imported" },
+  alternates: { canonical: "/exclusive-imported" },
 };
 
 const gems = preciousGemProducts.slice(0, 8);
@@ -101,25 +107,10 @@ export default function ExclusiveImportedPage() {
         </div>
       </section>
 
-      <section className="mx-2 mb-2 rounded-[2rem] bg-forest section-y bg-stone-grain sm:mx-4 sm:mb-4 sm:rounded-[3rem]">
-        <div className="container-x text-center">
-          <SectionHeader
-            tone="dark"
-            eyebrow="Made To Order"
-            title="Tell Us What You Need"
-            subtitle="Share your size, colour and finish — we will source it and send photos and a quote."
-          />
-          <Reveal className="flex justify-center">
-            <Button
-              href={waLink("Hello Dholpurestones.com, I would like to enquire about exclusive / imported stones.")}
-              variant="whatsapp"
-              size="lg"
-            >
-              Chat on WhatsApp
-            </Button>
-          </Reveal>
-        </div>
-      </section>
+      <FaqSection faqs={exportFaqs} title="Ordering & Export" tone="white" />
+      <CtaBand title="Tell Us What You Need" text="Share size, colour and finish — we will source it and send photos and a quote." topic="exclusive / imported stones" cta="Exclusive bottom band" />
+      <JsonLd data={[breadcrumbLd([{ name: "Exclusive & Imported", path: "/exclusive-imported" }]), faqLd(exportFaqs)]} />
+
 
       <Footer />
       <FloatingWhatsApp />

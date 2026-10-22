@@ -3,21 +3,21 @@ import type { Metadata } from "next";
 import ResourcesClient from "./ResourcesClient";
 
 export const metadata: Metadata = {
-  title: "Technical Specifications, Quality Control & Stone Resources | Dholpurestones",
+  title: "Stone Quality, Technical Specifications & Export Packaging",
   description:
     "Engineering technical data, ASTM C616 physical properties, IS:3622 test criteria, ISO compliance, 8-axis CNC fabrication, ISPM-15 export crating, and stone industry insights.",
   alternates: {
-    canonical: "https://dholpurestones.com/resources",
+    canonical: "/resources",
   },
   openGraph: {
     title: "Technical Specifications, Quality Control & Stone Resources | Dholpurestones",
     description:
       "Access certified laboratory test reports (compressive strength >68 MPa, water absorption <1.15%), CNC profiling machinery standards, and export packaging specifications.",
-    url: "https://dholpurestones.com/resources",
+    url: "/resources",
     siteName: "Dholpurestones",
     images: [
       {
-        url: "https://dholpurestones.com/assets/products/real_dholpur_beige_tiles_quarry_yard.jpg",
+        url: "/assets/products/real_dholpur_beige_tiles_quarry_yard.jpg",
         width: 1200,
         height: 630,
         alt: "Dholpurestones Technical Testing and Factory Quality Control Yard",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Technical Specifications & Stone Testing Standards | Dholpurestones",
     description:
       "ASTM C616 & IS:3622 certified laboratory test criteria, 8-axis CNC fabrication tolerances, and ISPM-15 export crating.",
-    images: ["https://dholpurestones.com/assets/products/real_dholpur_beige_tiles_quarry_yard.jpg"],
+    images: ["/assets/products/real_dholpur_beige_tiles_quarry_yard.jpg"],
   },
 };
 

@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import CtaBand from "@/components/ui/CtaBand";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -61,7 +63,7 @@ export default function ResourcesClient() {
   ];
 
   const qualityPoints = [
-    { label: "IS:3620 Indian Standard", desc: "Exceeds all statutory physical criteria for natural building stone." },
+    { label: "IS 3622 Indian Standard", desc: "Exceeds all statutory physical criteria for natural building stone." },
     { label: "Compressive Strength", desc: "Tested between 68.4 MPa to 72.8 MPa, ensuring heavy structural load bearing." },
     { label: "Water Absorption", desc: "Under 1.15%, preventing moisture penetration, efflorescence and moss degradation." },
     { label: "Specific Density", desc: "2.42 to 2.52 g/cm³ mineral density featuring ultra-fine quartz strata grains." },
@@ -132,7 +134,7 @@ export default function ResourcesClient() {
 
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1E5A46]/25 border border-[#C5A15B]/40 mb-3">
             <BookOpen className="w-3 h-3 text-[#C5A15B]" />
-            <span className="font-heading text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase">
+            <span className="font-heading text-[11px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase">
               KNOWLEDGE &bull; TESTING &bull; MACHINERY
             </span>
           </div>
@@ -202,8 +204,8 @@ export default function ResourcesClient() {
         {activeTab === "quality" && (
           <div id="quality" className="space-y-8 animate-fade-in scroll-mt-20 sm:scroll-mt-24">
             <div className="max-w-2xl">
-              <span className="text-[10px] font-bold text-[#123D32] uppercase tracking-[0.2em] block mb-1">
-                IS:3620 LABORATORY ASSURANCE
+              <span className="text-[11px] font-bold text-[#123D32] uppercase tracking-[0.2em] block mb-1">
+                IS 3622 LABORATORY ASSURANCE
               </span>
               <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[#1F2A24] uppercase">
                 Geotechnical &amp; Quality Control Protocols
@@ -237,7 +239,7 @@ export default function ResourcesClient() {
         {activeTab === "packaging" && (
           <div id="packaging" className="space-y-8 animate-fade-in scroll-mt-20 sm:scroll-mt-24">
             <div className="max-w-2xl">
-              <span className="text-[10px] font-bold text-[#123D32] uppercase tracking-[0.2em] block mb-1">
+              <span className="text-[11px] font-bold text-[#123D32] uppercase tracking-[0.2em] block mb-1">
                 STATE-OF-THE-ART FABRICATION
               </span>
               <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[#1F2A24] uppercase">
@@ -256,7 +258,7 @@ export default function ResourcesClient() {
                     <h3 className="font-heading text-base font-bold text-[#1F2A24]">{item.title}</h3>
                     <Cpu className="w-4 h-4 text-[#123D32]" />
                   </div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#123D32] bg-[#F7F4EB] px-2.5 py-1 rounded-md mb-3 inline-block">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#123D32] bg-[#F7F4EB] px-2.5 py-1 rounded-md mb-3 inline-block">
                     {item.spec}
                   </span>
                   <p className="text-xs text-[#6B7C73] leading-relaxed">{item.desc}</p>
@@ -270,7 +272,7 @@ export default function ResourcesClient() {
         {activeTab === "exhibition" && (
           <div id="exhibition" className="space-y-8 animate-fade-in scroll-mt-20 sm:scroll-mt-24">
             <div className="max-w-2xl">
-              <span className="text-[10px] font-bold text-[#123D32] uppercase tracking-[0.2em] block mb-1">
+              <span className="text-[11px] font-bold text-[#123D32] uppercase tracking-[0.2em] block mb-1">
                 GLOBAL NATURAL STONE CONVENTIONS
               </span>
               <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[#1F2A24] uppercase">
@@ -286,7 +288,7 @@ export default function ResourcesClient() {
               {exhibitions.map((expo, idx) => (
                 <div key={idx} className="bg-white p-6 rounded-2xl border border-black/8 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between">
                   <div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#C5A15B] block mb-1">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#C5A15B] block mb-1">
                       {expo.location}
                     </span>
                     <h3 className="font-heading text-base font-bold text-[#1F2A24] mb-2">{expo.name}</h3>
@@ -303,7 +305,7 @@ export default function ResourcesClient() {
         {activeTab === "blog" && (
           <div id="blog" className="space-y-8 animate-fade-in scroll-mt-20 sm:scroll-mt-24">
             <div className="max-w-2xl">
-              <span className="text-[10px] font-bold text-[#123D32] uppercase tracking-[0.2em] block mb-1">
+              <span className="text-[11px] font-bold text-[#123D32] uppercase tracking-[0.2em] block mb-1">
                 INDUSTRY KNOWLEDGE &amp; ARTICLES
               </span>
               <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[#1F2A24] uppercase">
@@ -318,7 +320,7 @@ export default function ResourcesClient() {
               {blogPosts.map((post, idx) => (
                 <div key={idx} className="bg-white p-6 rounded-2xl border border-black/8 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group">
                   <div>
-                    <div className="flex items-center justify-between text-[10px] text-[#6B7C73] mb-3">
+                    <div className="flex items-center justify-between text-[11px] text-[#6B7C73] mb-3">
                       <span className="bg-[#F7F4EB] text-[#123D32] font-bold px-2 py-0.5 rounded-md border border-black/5">
                         {post.tag}
                       </span>
@@ -341,26 +343,8 @@ export default function ResourcesClient() {
       </section>
 
       {/* Bottom CTA Bar */}
-      <section className="bg-forest-deep text-white py-12 border-t border-[#C5A15B]/20">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="font-heading text-xl sm:text-2xl font-bold">
-              Require Certified Laboratory Test Certificates or BOQ Support?
-            </h3>
-            <p className="text-xs sm:text-sm text-white/70 mt-1 max-w-xl">
-              Connect directly with our engineering team for IS:3620 test reports and technical consultation.
-            </p>
-          </div>
-          <div className="flex items-center gap-3 shrink-0">
-            <Link
-              href="/contact"
-              className="px-6 py-3 rounded-full bg-[#123D32] hover:bg-[#1E5A46] text-white border border-[#C5A15B]/40 text-xs font-bold uppercase tracking-wider transition-colors"
-            >
-              Contact Engineering
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CtaBand title="Like What You See?" text="Tell us about your project — we reply with options, samples and a quote." topic="stone quality and export" cta="Resources bottom band" />
+
 
       <Footer />
       <FloatingWhatsApp />

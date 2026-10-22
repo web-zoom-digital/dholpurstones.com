@@ -6,6 +6,14 @@ import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import Button from "@/components/ui/Button";
+import CtaBand from "@/components/ui/CtaBand";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbLd, itemListLd, faqLd } from "@/lib/schema";
+import FaqSection from "@/components/FaqSection";
+import { sandstoneFaqs } from "@/data/faqs";
+import { sandstoneSubs } from "@/data/catalog";
+
+import EnquiryButton from "@/components/ui/EnquiryButton";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -195,7 +203,7 @@ export default function SandstonePage() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <AnimDiv delay={0}>
-            <span className="text-[10px] sm:text-xs font-bold text-[#C5A15B] uppercase tracking-[0.2em] block mb-2">
+            <span className="text-[11px] sm:text-xs font-bold text-[#C5A15B] uppercase tracking-[0.2em] block mb-2">
               QUARRY-DIRECT INVENTORY
             </span>
             <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-wide text-[#1F2A24] leading-tight mb-3">
@@ -230,7 +238,7 @@ export default function SandstonePage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-20 transition-opacity" />
 
                     {/* Category Label Pill */}
-                    <span className="absolute top-3 left-3 bg-[#123D32] text-white font-heading text-[9.5px] font-bold tracking-wider px-2.5 py-1 rounded-md shadow-md">
+                    <span className="absolute top-3 left-3 bg-[#123D32] text-white font-heading text-[11px] font-bold tracking-wider px-2.5 py-1 rounded-md shadow-md">
                       {stone.categoryLabel}
                     </span>
 
@@ -242,7 +250,7 @@ export default function SandstonePage() {
 
                   {/* Heading With Name (as requested) */}
                   <div className="p-5">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#C5A15B] block mb-1">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#C5A15B] block mb-1">
                       {stone.provenance}
                     </span>
 
@@ -278,7 +286,7 @@ export default function SandstonePage() {
       <section className="bg-white py-14 sm:py-20 border-y border-black/6">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <AnimDiv className="text-center max-w-3xl mx-auto mb-12">
-            <span className="text-[10px] sm:text-xs font-bold text-[#C5A15B] uppercase tracking-[0.2em] block mb-2">
+            <span className="text-[11px] sm:text-xs font-bold text-[#C5A15B] uppercase tracking-[0.2em] block mb-2">
               THE DHOLPURESTONES ADVANTAGE
             </span>
             <h2 className="font-heading text-2xl sm:text-3xl font-bold uppercase tracking-wide text-[#1F2A24]">
@@ -338,7 +346,7 @@ export default function SandstonePage() {
           <AnimDiv>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 mb-4">
               <Sparkles className="w-3.5 h-3.5 text-[#C5A15B]" />
-              <span className="font-heading text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-widest uppercase">
+              <span className="font-heading text-[11px] sm:text-xs font-bold text-[#C5A15B] tracking-widest uppercase">
                 ARCHITECTURAL SPECIFICATIONS &amp; BOQ
               </span>
             </div>
@@ -412,13 +420,13 @@ export default function SandstonePage() {
                     sizes="(max-width: 768px) 100vw, 400px"
                     className="object-cover"
                   />
-                  <span className="absolute bottom-3 left-3 bg-[#123D32] text-white text-[9.5px] font-bold px-2.5 py-1 rounded-md">
+                  <span className="absolute bottom-3 left-3 bg-[#123D32] text-white text-[11px] font-bold px-2.5 py-1 rounded-md">
                     {activeModal.color}
                   </span>
                 </div>
 
                 <div className="mt-4 p-4 rounded-xl bg-[#F7F4EB] border border-black/6">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#6B7C73] block mb-1">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#6B7C73] block mb-1">
                     Provenance / Source
                   </span>
                   <p className="font-heading text-xs font-bold text-[#1F2A24]">
@@ -465,6 +473,7 @@ export default function SandstonePage() {
                 </ul>
 
                 {/* Direct Action */}
+                <EnquiryButton variant="gold" className="mb-2.5 w-full" product={activeModal.name} cta="Sandstone detail modal">Get a Free Quote</EnquiryButton>
                 <a
                   href={`https://wa.me/919414945457?text=${encodeURIComponent(activeModal.waMsg)}`}
                   target="_blank"
@@ -480,6 +489,9 @@ export default function SandstonePage() {
         </div>
       )}
 
+      <FaqSection faqs={sandstoneFaqs} title="Sandstone Questions" tone="white" />
+      <CtaBand title="Get Dholpur Sandstone For Your Project" text="Tell us the colour, size and quantity — we quote directly from the mine." topic="Dholpur sandstone" cta="Sandstone bottom band" />
+      <JsonLd data={[breadcrumbLd([{ name: "Products", path: "/products" }, { name: "Sandstone", path: "/sandstone" }]), itemListLd("Dholpur sandstone colours", sandstoneSubs.map((s) => ({ name: `${s.name} Sandstone`, description: s.note, image: s.image, path: s.href }))), faqLd(sandstoneFaqs)]} />
       <Footer />
       <FloatingWhatsApp />
     </main>

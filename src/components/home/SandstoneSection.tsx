@@ -2,6 +2,7 @@ import React from "react";
 import SectionHeader from "../ui/SectionHeader";
 import ImageCard from "../ui/ImageCard";
 import Button from "../ui/Button";
+import EnquiryButton from "../ui/EnquiryButton";
 import { Stagger, StaggerItem, Reveal } from "../ui/Reveal";
 import { sandstoneSubs } from "@/data/catalog";
 import { LuArrowRight as ArrowRight } from "react-icons/lu";
@@ -30,11 +31,12 @@ export default function SandstoneSection() {
             </StaggerItem>
           ))}
         </Stagger>
-        <Reveal className="mt-9 flex justify-center">
+        <Reveal className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button href="/sandstone" variant="forest" size="lg">
             View Sandstone Range
             <ArrowRight className="h-4 w-4" />
           </Button>
+          <EnquiryButton variant="outline" size="lg" product="Dholpur sandstone" cta="Home sandstone">Get a Quote</EnquiryButton>
         </Reveal>
       </div>
     </section>

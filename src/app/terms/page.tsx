@@ -11,11 +11,11 @@ import {
 } from "react-icons/lu";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | Dholpurestones.com (B P Garg & Sons)",
+  title: "Terms & Conditions",
   description:
     "Official Terms and Conditions of supply, quotation validity, dimensional tolerances, export packaging, and commercial terms for Dholpurestones.com natural stone products.",
   alternates: {
-    canonical: "https://dholpurestones.com/terms",
+    canonical: "/terms",
   },
   robots: {
     index: true,
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: "Terms & Conditions | Dholpurestones.com",
     description:
       "Official Terms and Conditions of supply, quotation validity, dimensional tolerances, and commercial terms for Dholpurestones.com.",
-    url: "https://dholpurestones.com/terms",
+    url: "/terms",
     siteName: "Dholpurestones",
   },
   twitter: {
@@ -55,7 +55,7 @@ export default function TermsPage() {
 
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C5A15B]/15 border border-[#C5A15B]/30 mb-3">
             <FileText className="w-3.5 h-3.5 text-[#C5A15B]" />
-            <span className="font-heading text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase">
+            <span className="font-heading text-[11px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase">
               COMMERCIAL TERMS &bull; SUPPLY STANDARDS
             </span>
           </div>

@@ -214,16 +214,16 @@ function SpotlightProjectCard({
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C5A15B] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30" />
 
         {/* Architectural Precision Crosshair Markers */}
-        <span className="absolute top-2 left-2 text-[10px] text-[#C5A15B] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
+        <span className="absolute top-2 left-2 text-[11px] text-[#C5A15B] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
           +
         </span>
-        <span className="absolute top-2 right-2 text-[10px] text-[#C5A15B] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
+        <span className="absolute top-2 right-2 text-[11px] text-[#C5A15B] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
           +
         </span>
-        <span className="absolute bottom-2 left-2 text-[10px] text-[#C5A15B] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
+        <span className="absolute bottom-2 left-2 text-[11px] text-[#C5A15B] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
           +
         </span>
-        <span className="absolute bottom-2 right-2 text-[10px] text-[#C5A15B] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
+        <span className="absolute bottom-2 right-2 text-[11px] text-[#C5A15B] font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
           +
         </span>
 
@@ -242,7 +242,7 @@ function SpotlightProjectCard({
 
           {/* Category Tag with Gilded Sparkle */}
           <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 bg-[#123D32]/85 backdrop-blur-md px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full border border-white/15 z-20 shadow-md">
-            <span className="text-[8.5px] sm:text-[9px] font-bold text-[#C5A15B] uppercase tracking-widest flex items-center gap-1.5">
+            <span className="text-[11px] sm:text-[11px] font-bold text-[#C5A15B] uppercase tracking-widest flex items-center gap-1.5">
               <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#C5A15B]" />
               {project.categoryLabel}
             </span>
@@ -259,7 +259,7 @@ function SpotlightProjectCard({
           </div>
 
           {/* Pulsing Location Radar Beacon */}
-          <div className="absolute bottom-2.5 left-2.5 sm:bottom-3 sm:left-3 flex items-center gap-1.5 text-[10px] sm:text-[11px] font-medium text-white/95 bg-[#123D32]/80 backdrop-blur-md px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md border border-white/10 z-20 shadow-md">
+          <div className="absolute bottom-2.5 left-2.5 sm:bottom-3 sm:left-3 flex items-center gap-1.5 text-[11px] sm:text-[11px] font-medium text-white/95 bg-[#123D32]/80 backdrop-blur-md px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md border border-white/10 z-20 shadow-md">
             <span className="relative flex h-2 w-2 mr-0.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C5A15B] opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C5A15B]" />
@@ -293,7 +293,7 @@ function SpotlightProjectCard({
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveCardTab(tab.id as "scope" | "materials" | "highlights")}
-                  className={`flex-1 py-1 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider rounded-md transition-all cursor-pointer ${
+                  className={`flex-1 py-1 text-[11px] sm:text-[11px] font-bold uppercase tracking-wider rounded-md transition-all cursor-pointer ${
                     activeCardTab === tab.id
                       ? "bg-[#123D32] text-white shadow-xs"
                       : "text-[#6B7C73] hover:text-[#1F2A24]"
@@ -314,7 +314,7 @@ function SpotlightProjectCard({
 
               {activeCardTab === "materials" && (
                 <div className="p-2.5 rounded-lg bg-white border border-black/6 text-[11px] shadow-2xs">
-                  <span className="text-[#123D32] font-bold block text-[10px] uppercase tracking-wider mb-0.5">
+                  <span className="text-[#123D32] font-bold block text-[11px] uppercase tracking-wider mb-0.5">
                     Quarry Strata:
                   </span>
                   <span className="text-[#6B7C73] line-clamp-2">
@@ -435,7 +435,7 @@ export default function OurSignatureProjects() {
         <AnimDiv className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-black/8 mb-6 sm:mb-8">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#C5A15B] animate-pulse" />
-            <span className="font-heading text-[9.5px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.18em] text-[#1F2A24] uppercase">
+            <span className="font-heading text-[11px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.18em] text-[#1F2A24] uppercase">
               DHOLPURESTONES.COM &bull; ARCHITECTURAL SHOWCASE
             </span>
           </div>
@@ -480,7 +480,7 @@ export default function OurSignatureProjects() {
         {/* Section Title & Metrics */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5 sm:gap-6 mb-6 sm:mb-9">
           <AnimDiv delay={0} className="max-w-2xl">
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-[#C5A15B]/10 border border-[#C5A15B]/25 text-[#C5A15B] text-[9.5px] sm:text-[10px] font-bold uppercase tracking-[0.18em] mb-2 sm:mb-3">
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-[#C5A15B]/10 border border-[#C5A15B]/25 text-[#C5A15B] text-[11px] sm:text-[11px] font-bold uppercase tracking-[0.18em] mb-2 sm:mb-3">
               <Compass className="w-3 h-3 sm:w-3.5 sm:h-3.5 animate-spin-slow" />
               <span>Featured Projects: Demonstrating Our Expertise</span>
             </div>
@@ -499,7 +499,7 @@ export default function OurSignatureProjects() {
               <span className="block font-heading text-xs sm:text-xl font-bold text-[#1F2A24]">
                 70+ Years
               </span>
-              <span className="text-[8.5px] sm:text-[9px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
+              <span className="text-[11px] sm:text-[11px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
                 Since 1953
               </span>
             </div>
@@ -507,7 +507,7 @@ export default function OurSignatureProjects() {
               <span className="block font-heading text-xs sm:text-xl font-bold text-[#C5A15B]">
                 300+ Designs
               </span>
-              <span className="text-[8.5px] sm:text-[9px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
+              <span className="text-[11px] sm:text-[11px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
                 Govt. Awarded
               </span>
             </div>
@@ -515,7 +515,7 @@ export default function OurSignatureProjects() {
               <span className="block font-heading text-xs sm:text-xl font-bold text-[#123D32]">
                 Intl. Nominee
               </span>
-              <span className="text-[8.5px] sm:text-[9px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
+              <span className="text-[11px] sm:text-[11px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
                 Business Excellence
               </span>
             </div>
@@ -523,7 +523,7 @@ export default function OurSignatureProjects() {
               <span className="block font-heading text-xs sm:text-xl font-bold text-[#1F2A24]">
                 500+
               </span>
-              <span className="text-[8.5px] sm:text-[9px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
+              <span className="text-[11px] sm:text-[11px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
                 Landmarks Worldwide
               </span>
             </div>
@@ -536,7 +536,7 @@ export default function OurSignatureProjects() {
         <AnimDiv delay={120} className="mb-6 sm:mb-8 overflow-hidden rounded-xl bg-gradient-to-r from-[#F7F4EB] via-white to-[#F7F4EB] border border-black/8 py-2 sm:py-2.5 shadow-xs">
           <div className="animate-marquee whitespace-nowrap flex items-center gap-6 sm:gap-8">
             {[...tickerHighlights, ...tickerHighlights].map((item, idx) => (
-              <div key={idx} className="inline-flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] font-bold text-[#1F2A24] uppercase tracking-wider shrink-0">
+              <div key={idx} className="inline-flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-[11px] font-bold text-[#1F2A24] uppercase tracking-wider shrink-0">
                 <span className="text-[#C5A15B] text-xs">✦</span>
                 <span>{item}</span>
               </div>
@@ -615,7 +615,7 @@ export default function OurSignatureProjects() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
 
                   <div className="absolute top-4 left-4 bg-[#123D32]/85 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20">
-                    <span className="text-[10px] font-bold text-[#C5A15B] uppercase tracking-widest flex items-center gap-1.5">
+                    <span className="text-[11px] font-bold text-[#C5A15B] uppercase tracking-widest flex items-center gap-1.5">
                       <Sparkles className="w-3.5 h-3.5 text-[#C5A15B]" />
                       {activeSlideProject.categoryLabel}
                     </span>
@@ -672,7 +672,7 @@ export default function OurSignatureProjects() {
 
                     {/* Sourced Quarry Stratum */}
                     <div className="p-3.5 rounded-xl bg-white border border-black/8 mb-5 shadow-2xs">
-                      <span className="text-[10px] font-bold text-[#123D32] uppercase tracking-widest block mb-1">
+                      <span className="text-[11px] font-bold text-[#123D32] uppercase tracking-widest block mb-1">
                         Architectural Materials &amp; Stratum
                       </span>
                       <p className="text-xs font-semibold text-[#1F2A24]">
@@ -739,7 +739,7 @@ export default function OurSignatureProjects() {
                       className="object-cover"
                     />
                     <div className="absolute inset-0 bg-black/20" />
-                    <span className="absolute bottom-1 right-1 text-[9px] font-bold text-white bg-black/70 px-1 rounded">
+                    <span className="absolute bottom-1 right-1 text-[11px] font-bold text-white bg-black/70 px-1 rounded">
                       {proj.number}
                     </span>
                   </button>
@@ -763,7 +763,7 @@ export default function OurSignatureProjects() {
             <div className="absolute -right-10 -bottom-10 w-72 h-72 bg-[#C5A15B]/20 rounded-full blur-3xl pointer-events-none" />
 
             <div className="max-w-2xl text-center lg:text-left relative z-10">
-              <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-[#C5A15B]/20 border border-[#C5A15B]/40 px-3 py-1 rounded-full text-[9px] sm:text-[10px] font-bold text-[#F7F4EB] uppercase tracking-widest mb-2.5 sm:mb-3 shadow-xs">
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-[#C5A15B]/20 border border-[#C5A15B]/40 px-3 py-1 rounded-full text-[11px] sm:text-[11px] font-bold text-[#F7F4EB] uppercase tracking-widest mb-2.5 sm:mb-3 shadow-xs">
                 <Award className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#C5A15B]" />
                 <span>Turnkey Architectural Execution</span>
               </div>
@@ -834,14 +834,14 @@ export default function OurSignatureProjects() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
 
               <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-6 flex flex-wrap items-center gap-1.5 sm:gap-2">
-                <span className="bg-[#123D32]/90 backdrop-blur-md px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] font-bold text-[#C5A15B] border border-white/15 uppercase tracking-widest">
+                <span className="bg-[#123D32]/90 backdrop-blur-md px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[11px] sm:text-[11px] font-bold text-[#C5A15B] border border-white/15 uppercase tracking-widest">
                   {activeModal.categoryLabel}
                 </span>
-                <span className="bg-black/60 backdrop-blur-md px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-medium text-white flex items-center gap-1.5 border border-white/10">
+                <span className="bg-black/60 backdrop-blur-md px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[11px] sm:text-[11px] font-medium text-white flex items-center gap-1.5 border border-white/10">
                   <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#C5A15B]" />
                   {activeModal.location}
                 </span>
-                <span className="bg-[#C5A15B] text-[#123D32] px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider font-mono">
+                <span className="bg-[#C5A15B] text-[#123D32] px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[11px] sm:text-[11px] font-bold uppercase tracking-wider font-mono">
                   ARCHIVE #{activeModal.number}
                 </span>
               </div>
@@ -862,7 +862,7 @@ export default function OurSignatureProjects() {
 
               {/* Material & Execution Spec Box */}
               <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-[#F7F4EB] border border-black/8 mb-4 sm:mb-6">
-                <span className="text-[9.5px] sm:text-[10px] font-bold text-[#123D32] uppercase tracking-widest block mb-1">
+                <span className="text-[11px] sm:text-[11px] font-bold text-[#123D32] uppercase tracking-widest block mb-1">
                   Architectural Materials &amp; Stratum
                 </span>
                 <p className="text-xs sm:text-sm text-[#1F2A24] font-semibold">
@@ -872,7 +872,7 @@ export default function OurSignatureProjects() {
 
               {/* Highlights Checklist */}
               <div className="mb-4 sm:mb-6">
-                <span className="text-[9.5px] sm:text-[10px] font-bold text-[#C5A15B] uppercase tracking-widest block mb-2 sm:mb-3">
+                <span className="text-[11px] sm:text-[11px] font-bold text-[#C5A15B] uppercase tracking-widest block mb-2 sm:mb-3">
                   Key Architectural &amp; Engineering Highlights
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
@@ -891,7 +891,7 @@ export default function OurSignatureProjects() {
               {/* Actions Footer */}
               <div className="pt-4 sm:pt-5 border-t border-black/8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
                 <div className="text-center sm:text-left">
-                  <span className="text-[10.5px] sm:text-[11px] text-[#6B7C73] block font-medium">
+                  <span className="text-[11px] sm:text-[11px] text-[#6B7C73] block font-medium">
                     Direct Master Consultation &bull; Arvind Garg
                   </span>
                   <span className="text-xs font-bold text-[#123D32]">

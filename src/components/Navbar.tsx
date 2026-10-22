@@ -20,6 +20,7 @@ import {
   LuMapPin as MapPin,
 } from "react-icons/lu";
 import WhatsAppIcon from "./WhatsAppIcon";
+import EnquiryButton from "./ui/EnquiryButton";
 import { categories, waLink, EMAIL, type CategoryId } from "@/data/catalog";
 
 const categoryIcons: Record<CategoryId, React.ComponentType<{ className?: string }>> = {
@@ -206,7 +207,7 @@ export default function Navbar() {
               <span className="font-heading text-[15px] sm:text-lg font-bold uppercase tracking-[0.07em] text-ink group-hover:text-forest-soft transition-colors">
                 Dholpurestones
               </span>
-              <span className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.16em] text-muted">
+              <span className="text-[11px] sm:text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
                 Natural Stone &bull; Since 1953
               </span>
             </span>
@@ -376,17 +377,12 @@ export default function Navbar() {
 
           {/* Right actions */}
           <div className="flex items-center gap-2.5">
-            <motion.a
-              href={waHeader}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileTap={{ scale: 0.95 }}
-              whileHover={{ y: -2 }}
-              className="hidden xl:inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-[13px] font-bold text-forest shadow-[0_8px_22px_-8px_rgba(197,161,91,0.8)]"
-            >
-              <WhatsAppIcon className="h-4 w-4 fill-forest" size={16} />
-              Get a Quote
-            </motion.a>
+            <span className="hidden xl:block">
+              <EnquiryButton variant="gold" cta="Header quote button">
+                <WhatsAppIcon className="h-4 w-4 fill-forest" size={16} />
+                Get a Quote
+              </EnquiryButton>
+            </span>
 
             <button
               type="button"
@@ -427,7 +423,7 @@ export default function Navbar() {
                     <span className="block font-heading text-[15px] font-bold uppercase tracking-wider text-white">
                       Dholpurestones
                     </span>
-                    <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+                    <span className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-gold">
                       Estd. 1953
                     </span>
                   </span>

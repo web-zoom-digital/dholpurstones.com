@@ -6,6 +6,14 @@ import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import Button from "@/components/ui/Button";
+import CtaBand from "@/components/ui/CtaBand";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbLd, itemListLd, faqLd } from "@/lib/schema";
+import FaqSection from "@/components/FaqSection";
+import { semiPreciousFaqs } from "@/data/faqs";
+import { semiPreciousSubs } from "@/data/catalog";
+
+import EnquiryButton from "@/components/ui/EnquiryButton";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -326,7 +334,7 @@ export default function SemiPreciousPage() {
                   {item.icon}
                 </div>
                 <span className="font-bold text-sm text-white">{item.label}</span>
-                <span className="text-[10px] text-white/60 leading-tight">{item.sub}</span>
+                <span className="text-[11px] text-white/60 leading-tight">{item.sub}</span>
               </div>
             ))}
           </div>
@@ -343,7 +351,7 @@ export default function SemiPreciousPage() {
           <AnimDiv className="flex items-center justify-between pb-3 border-b border-black/8 mb-10">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#C5A15B]" />
-              <span className="font-heading text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#1F2A24] uppercase">
+              <span className="font-heading text-[11px] sm:text-xs font-bold tracking-[0.16em] text-[#1F2A24] uppercase">
                 DHOLPURESTONES &bull; LAPIDARY COLLECTION
               </span>
             </div>
@@ -353,7 +361,7 @@ export default function SemiPreciousPage() {
           </AnimDiv>
 
           <AnimDiv delay={40} className="mb-10 sm:mb-14 text-center max-w-3xl mx-auto">
-            <span className="text-[10px] sm:text-xs font-bold text-[#C5A15B] uppercase tracking-[0.2em] block mb-2">
+            <span className="text-[11px] sm:text-xs font-bold text-[#C5A15B] uppercase tracking-[0.2em] block mb-2">
               Exclusive Lapidary Gemstone Inventory
             </span>
             <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1F2A24] uppercase tracking-wide mb-3 leading-snug">
@@ -399,7 +407,7 @@ export default function SemiPreciousPage() {
 
                     {/* Bottom title overlay */}
                     <div className="absolute bottom-3 left-3 right-3 text-white">
-                      <span className="text-[9px] uppercase font-bold tracking-[0.2em] text-[#C5A15B] block mb-0.5">
+                      <span className="text-[11px] uppercase font-bold tracking-[0.2em] text-[#C5A15B] block mb-0.5">
                         {stone.subtitle}
                       </span>
                       <h3 className="font-heading text-base sm:text-lg font-bold leading-snug drop-shadow-sm">
@@ -439,7 +447,7 @@ export default function SemiPreciousPage() {
       <section className="py-14 sm:py-20 bg-white border-t border-b border-black/6">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <AnimDiv delay={0} className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
-            <span className="text-[10px] font-bold text-[#C5A15B] uppercase tracking-[0.22em] block mb-2">
+            <span className="text-[11px] font-bold text-[#C5A15B] uppercase tracking-[0.22em] block mb-2">
               WHERE GEMSTONES BELONG
             </span>
             <h2 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-[#1F2A24] uppercase tracking-wider">
@@ -476,7 +484,7 @@ export default function SemiPreciousPage() {
 
               <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-8">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[#C5A15B] text-[10px] font-bold uppercase tracking-wider mb-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[#C5A15B] text-[11px] font-bold uppercase tracking-wider mb-4">
                     <ShieldCheck className="w-3.5 h-3.5" />
                     <span>Authentic Gemstone Sourcing &bull; Custom Bespoke Orders</span>
                   </div>
@@ -530,6 +538,9 @@ export default function SemiPreciousPage() {
         </div>
       </section>
 
+      <FaqSection faqs={semiPreciousFaqs} title="Semi-Precious Questions" tone="white" />
+      <CtaBand title="Add Gemstone Glamour To Your Space" text="Share your size and stone choice for a quote." topic="semi-precious stone slabs" cta="Semi-precious bottom band" />
+      <JsonLd data={[breadcrumbLd([{ name: "Products", path: "/products" }, { name: "Semi-Precious Stones", path: "/semi-precious" }]), itemListLd("Semi-precious stone slabs", semiPreciousSubs.map((s) => ({ name: s.name, description: s.note, image: s.image }))), faqLd(semiPreciousFaqs)]} />
       <Footer />
       <FloatingWhatsApp />
 
@@ -569,7 +580,7 @@ export default function SemiPreciousPage() {
 
               {/* Title overlay */}
               <div className="absolute bottom-4 left-5 right-14 text-white">
-                <span className="text-[9px] uppercase font-bold text-[#C5A15B] tracking-widest block mb-1">
+                <span className="text-[11px] uppercase font-bold text-[#C5A15B] tracking-widest block mb-1">
                   {activeModal.category} &bull; {activeModal.color}
                 </span>
                 <h3 className="font-heading text-xl sm:text-2xl font-bold leading-tight">
@@ -584,6 +595,7 @@ export default function SemiPreciousPage() {
 
               {/* Action buttons */}
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                <EnquiryButton variant="gold" className="mb-2.5 w-full" product={activeModal.name} cta="Semi-precious detail modal">Get a Free Quote</EnquiryButton>
                 <a
                   href={`https://wa.me/919414945457?text=${encodeURIComponent(activeModal.waMsg)}`}
                   target="_blank"

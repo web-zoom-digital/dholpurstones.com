@@ -1,94 +1,62 @@
 import React from "react";
 import type { Metadata } from "next";
-import BlogListClient from "./BlogListClient";
-import { BLOG_POSTS } from "@/data/blogData";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import JsonLd from "@/components/JsonLd";
+import PageHero from "@/components/ui/PageHero";
+import SectionHeader from "@/components/ui/SectionHeader";
+import CtaBand from "@/components/ui/CtaBand";
+import BlogIndex from "@/components/blog/BlogIndex";
+import { ALL_BLOG_POSTS } from "@/data/blogData";
+import { breadcrumbLd, plainListLd, webPageLd } from "@/lib/schema";
+import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Architectural Sandstone Blog & Technical Insights | Dholpurestones (Estd. 1953)",
+  title: "Stone Guides & Blog – Dholpur Sandstone, Marble, Farm House Stonework",
   description:
-    "Expert architectural guides, geotechnical test reports, Shilpa Shastra stone carving treatises, and facade engineering insights on authentic Dholpur and Agra sandstone.",
-  alternates: {
-    canonical: "https://dholpurestones.com/blog",
-  },
+    "Buying guides, comparisons and how-tos on Dholpur sandstone, marble, semi-precious stones, farm house and garden stonework, sculptures and stone export — from Dholpurestones.com, mine owners since 1953.",
+  keywords: ["Dholpur stone blog", "sandstone buying guide", "marble colour guide", "farm house stone guide", "stone export from India"],
+  alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Architectural Sandstone Blog & Insights | Dholpurestones.com",
-    description:
-      "Comprehensive architectural guides on Dholpur Beige, Agra Red, luxury farmhouse paving, monolithic Shilpa Shastra carvings, and 300+ front elevation concepts.",
-    url: "https://dholpurestones.com/blog",
-    siteName: "Dholpurestones",
-    images: [
-      {
-        url: "https://dholpurestones.com/assets/blog/dholpur-beige-facade.jpg",
-        width: 1200,
-        height: 675,
-        alt: "Dholpurestones Architectural Sandstone Blog & Facade Engineering Guides",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Architectural Sandstone Blog | Dholpurestones",
-    description:
-      "Geotechnical guides, quarry technical reports, and luxury estate stone carving documentation.",
-    images: ["https://dholpurestones.com/assets/blog/dholpur-beige-facade.jpg"],
+    title: "Stone Guides & Blog | Dholpurestones.com",
+    description: "Practical guides on sandstone, marble, farm house stonework and stone export.",
+    url: "/blog",
+    images: [{ url: "/assets/blog/dholpur-beige-facade.jpg", width: 1200, height: 675, alt: "Dholpur sandstone facade" }],
   },
 };
 
 export default function BlogPage() {
   return (
-    <>
-      {/* Structured Data: CollectionPage + ItemList */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "CollectionPage",
-                "@id": "https://dholpurestones.com/blog#webpage",
-                "url": "https://dholpurestones.com/blog",
-                "name": "Natural Sandstone Architecture & Engineering Blog",
-                "description":
-                  "Architectural guides, quarry technical reports, and facade engineering insights on authentic Rajasthan sandstone.",
-                "isPartOf": {
-                  "@id": "https://dholpurestones.com/#website",
-                },
-                "breadcrumb": {
-                  "@type": "BreadcrumbList",
-                  "itemListElement": [
-                    {
-                      "@type": "ListItem",
-                      "position": 1,
-                      "name": "Home",
-                      "item": "https://dholpurestones.com",
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": 2,
-                      "name": "Architectural Blog",
-                      "item": "https://dholpurestones.com/blog",
-                    },
-                  ],
-                },
-              },
-              {
-                "@type": "ItemList",
-                "@id": "https://dholpurestones.com/blog#itemlist",
-                "itemListElement": BLOG_POSTS.map((post, index) => ({
-                  "@type": "ListItem",
-                  "position": index + 1,
-                  "url": `https://dholpurestones.com/blog#${post.slug}`,
-                  "name": post.title,
-                  "description": post.excerpt,
-                  "image": `https://dholpurestones.com${post.featuredImage}`,
-                })),
-              },
-            ],
-          }),
-        }}
+    <main className="min-h-screen bg-ivory text-ink selection:bg-gold selection:text-forest">
+      <Navbar />
+      <PageHero
+        eyebrow="Learn Before You Buy"
+        title="Stone Guides &"
+        accent="Insights"
+        description="Plain-language guides on sandstone, marble, farm house stonework, carving and export — written by a stone business running since 1953."
+        image="/assets/blog/dholpur-beige-facade.jpg"
+        crumbs={[{ label: "Blog" }]}
       />
-      <BlogListClient />
-    </>
+      <section className="section-y">
+        <div className="container-x">
+          <SectionHeader eyebrow={`${ALL_BLOG_POSTS.length} Articles`} title="Read & Plan Your Project" subtitle="Filter by topic to find the guide you need." />
+          <BlogIndex posts={ALL_BLOG_POSTS} />
+        </div>
+      </section>
+      <CtaBand title="Have A Question We Haven't Answered?" text="Ask our team — we reply with advice, samples and a quote." topic="stone for my project" cta="Blog index bottom band" />
+      <JsonLd
+        data={[
+          webPageLd({ name: "Stone Guides & Blog", description: "Guides on sandstone, marble and stonework", path: "/blog", type: "CollectionPage" }),
+          breadcrumbLd([{ name: "Blog", path: "/blog" }]),
+          {
+            ...plainListLd("Dholpurestones.com articles", ALL_BLOG_POSTS.map((p) => ({ name: p.title, description: p.excerpt, image: p.featuredImage }))),
+            itemListElement: ALL_BLOG_POSTS.map((p, i) => ({ "@type": "ListItem", position: i + 1, url: absoluteUrl(`/blog/${p.slug}`), name: p.title })),
+          },
+        ]}
+      />
+      <Footer />
+      <FloatingWhatsApp />
+    </main>
   );
 }

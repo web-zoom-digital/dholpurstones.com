@@ -1,131 +1,95 @@
 import React from "react";
 import type { Metadata } from "next";
-import Link from "next/link";
-import PageHero from "@/components/ui/PageHero";
 import Navbar from "@/components/Navbar";
-import OurSignatureProjects from "@/components/OurSignatureProjects";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import {
-  LuChevronRight as ChevronRight,
-  LuHouse as HomeIcon,
-  LuAward as Award,
-  LuShieldCheck as ShieldCheck
-} from "react-icons/lu";
+import JsonLd from "@/components/JsonLd";
+import PageHero from "@/components/ui/PageHero";
+import SectionHeader from "@/components/ui/SectionHeader";
+import CtaBand from "@/components/ui/CtaBand";
+import EnquiryButton from "@/components/ui/EnquiryButton";
+import ProjectsGrid from "@/components/projects/ProjectsGrid";
+import CountUp from "@/components/ui/CountUp";
+import { Reveal } from "@/components/ui/Reveal";
+import { projects } from "@/data/catalog";
+import { breadcrumbLd, plainListLd, webPageLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Featured Landmark Projects & Execution Portfolio | Dholpurestones",
+  title: "Landmark Stone Projects – Parliament House, Akshardham, AIIMS & Embassies",
   description:
-    "Explore our portfolio of monumental natural stone execution across India and global capitals: New Delhi Parliament House, Akshardham Temple, Adani House, AIIMS Bhopal, and Indian Embassies.",
-  alternates: {
-    canonical: "https://dholpurestones.com/projects",
-  },
+    "Natural stone supplied and crafted for Parliament House and Akshardham in New Delhi, Adani House, AIIMS Bhopal, Indian Embassies in Berlin and Kathmandu, and 50+ ISKCON temples — by Dholpurestones.com (Estd. 1953).",
+  keywords: ["Dholpur stone projects", "sandstone contractor India", "Parliament House sandstone", "Akshardham stone supplier", "temple stone supplier India"],
+  alternates: { canonical: "/projects" },
   openGraph: {
-    title: "Signature Natural Stone Projects Across India & Global Capitals",
-    description:
-      "Selected landmark turnkey executions across government institutions, world-renowned spiritual temples, and luxury residential estates.",
-    url: "https://dholpurestones.com/projects",
-    siteName: "Dholpurestones",
-    images: [
-      {
-        url: "https://dholpurestones.com/assets/projects/project-parliament.jpg",
-        width: 1200,
-        height: 630,
-        alt: "New Delhi Parliament House Sandstone Supply by Dholpurestones",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Signature Natural Stone Landmark Projects | Dholpurestones",
-    description:
-      "Turnkey executions across New Delhi Parliament House, Akshardham Temple, Adani House, and embassies worldwide.",
-    images: ["https://dholpurestones.com/assets/projects/project-parliament.jpg"],
+    title: "Landmark Stone Projects | Dholpurestones.com",
+    description: "Parliament House, Akshardham, AIIMS, Indian Embassies and 50+ ISKCON temples — stone by Dholpurestones.",
+    url: "/projects",
+    images: [{ url: "/assets/project-parliament.jpg", width: 1376, height: 768, alt: "Parliament House New Delhi — sandstone by Dholpurestones" }],
   },
 };
 
+const stats = [
+  { value: 10, suffix: "", label: "Landmark projects" },
+  { value: 50, suffix: "+", label: "ISKCON temples" },
+  { value: 3, suffix: "", label: "Countries" },
+  { value: 70, suffix: "+", label: "Years of trust" },
+];
+
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-[#F7F4EB] text-[#1F2A24] selection:bg-[#C5A15B] selection:text-[#123D32]">
+    <main className="min-h-screen bg-ivory text-ink selection:bg-gold selection:text-forest">
       <Navbar />
-
-      {/* Breadcrumb Header */}
       <PageHero
         eyebrow="Our Track Record"
-        title="Signature"
+        title="Landmark"
         accent="Projects"
-        description="Parliamentary landmarks, pilgrimage temples, embassies and luxury private estates — stone supplied and crafted by Dholpurestones."
+        description="Parliament, temples, embassies, hospitals and estates — natural stone supplied and crafted by Dholpurestones for India's most visible buildings."
         image="/assets/project-parliament.jpg"
         crumbs={[{ label: "Projects" }]}
-      />
+      >
+        <EnquiryButton variant="gold" size="lg" cta="Projects hero" product="A landmark / institutional project">
+          Discuss Your Project
+        </EnquiryButton>
+      </PageHero>
 
-      {/* Core Component */}
-      <OurSignatureProjects />
-
-      {/* Bottom CTA Bar */}
-      <section className="bg-forest-deep text-white py-12 border-t border-[#C5A15B]/20">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <div className="inline-flex items-center gap-2 text-[#C5A15B] text-xs font-bold uppercase tracking-wider mb-1">
-              <ShieldCheck className="w-4 h-4" />
-              <span>Institutional &amp; Global Contractor</span>
+      <div className="container-x relative z-10 -mt-8">
+        <Reveal className="grid grid-cols-2 gap-px overflow-hidden rounded-[1.5rem] border border-gold/25 bg-gold/20 shadow-[0_24px_50px_-24px_rgba(11,42,34,0.5)] lg:grid-cols-4">
+          {stats.map((s) => (
+            <div key={s.label} className="bg-white px-4 py-5 text-center">
+              <p className="font-heading text-3xl font-bold text-forest">
+                <CountUp to={s.value} suffix={s.suffix} />
+              </p>
+              <p className="mt-1 text-[13px] font-semibold text-muted">{s.label}</p>
             </div>
-            <h3 className="font-heading text-xl sm:text-2xl font-bold">
-              Planning a Landmark Architectural Project?
-            </h3>
-            <p className="text-xs sm:text-sm text-white/70 mt-1 max-w-xl">
-              Consult directly with Director Mr. Arvind Garg (Awarded by Govt. of India) for turnkey stone supply and engineering.
-            </p>
-          </div>
-          <div className="flex items-center gap-3 w-full sm:w-auto shrink-0">
-            <Link
-              href="/contact"
-              className="w-full sm:w-auto text-center px-6 py-3 rounded-full bg-[#C5A15B] hover:bg-[#C5A15B] text-black text-xs font-bold uppercase tracking-wider transition-colors"
-            >
-              Consult Director
-            </Link>
-          </div>
+          ))}
+        </Reveal>
+      </div>
+
+      <section className="section-y">
+        <div className="container-x">
+          <SectionHeader
+            eyebrow="Portfolio"
+            title="Where Our Stone Stands"
+            subtitle="Filter by type to see government, spiritual, corporate, diplomatic and residential work."
+          />
+          <ProjectsGrid />
         </div>
       </section>
 
-      {/* Breadcrumb & Projects Collection Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "CollectionPage",
-                "@id": "https://dholpurestones.com/projects#webpage",
-                "url": "https://dholpurestones.com/projects",
-                "name": "Landmark Turnkey Stone Projects Portfolio",
-                "isPartOf": {
-                  "@id": "https://dholpurestones.com/#website"
-                },
-                "breadcrumb": {
-                  "@type": "BreadcrumbList",
-                  "itemListElement": [
-                    {
-                      "@type": "ListItem",
-                      "position": 1,
-                      "name": "Home",
-                      "item": "https://dholpurestones.com"
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": 2,
-                      "name": "Signature Projects",
-                      "item": "https://dholpurestones.com/projects"
-                    }
-                  ]
-                }
-              }
-            ]
-          }),
-        }}
+      <CtaBand
+        title="Planning A Landmark Project?"
+        text="Speak directly with Mr. Arvind Garg's team for turnkey stone supply, samples and engineering support."
+        topic="a landmark / institutional stone project"
+        cta="Projects bottom band"
       />
 
+      <JsonLd
+        data={[
+          webPageLd({ name: "Landmark Stone Projects", description: "Portfolio of landmark natural stone projects by Dholpurestones.com", path: "/projects", type: "CollectionPage" }),
+          breadcrumbLd([{ name: "Projects", path: "/projects" }]),
+          plainListLd("Landmark projects executed by Dholpurestones.com", projects.map((p) => ({ name: `${p.name}, ${p.place}`, description: p.scope, image: p.image }))),
+        ]}
+      />
       <Footer />
       <FloatingWhatsApp />
     </main>

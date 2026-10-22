@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import CtaBand from "@/components/ui/CtaBand";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -76,12 +78,12 @@ export default function GalleryClient() {
       desc: "Historic royal crimson-red natural sandstone mined from Rajasthan strata, renowned for monumental strength, zero weathering, and landmark architectural applications.",
     },
     {
-      id: "sandstone-mint",
+      id: "sandstone-chocolate",
       category: "photo",
-      title: "Mint Sandstone",
+      title: "Dholpur Chocolate Sandstone",
       tag: "Sandstone Collection",
-      image: "/sandstone/mint-sandstone.jpeg",
-      desc: "Natural cleft Mint Sandstone featuring subtle earthy undertones, non-slip textured finish, and excellent durability for luxury patios, pool surrounds, and landscaping.",
+      image: "/assets/products/dholpur_chocolate_teakwood.jpg",
+      desc: "Rich chocolate-brown Dholpur sandstone with natural teak-wood graining, ideal for feature walls, cladding, pool surrounds and garden accents.",
     },
 
     // --- Semi-Precious Gemstones (/semi-precious) ---
@@ -295,7 +297,7 @@ export default function GalleryClient() {
 
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1E5A46]/25 border border-[#C5A15B]/40 mb-3">
             <Camera className="w-3 h-3 text-[#C5A15B]" />
-            <span className="font-heading text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase">
+            <span className="font-heading text-[11px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase">
               VISUAL EVIDENCE &bull; MINES &bull; PROJECTS
             </span>
           </div>
@@ -378,7 +380,7 @@ export default function GalleryClient() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
 
-                <span className="absolute top-3 left-3 bg-[#123D32]/80 backdrop-blur-xs text-[#C5A15B] text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-white/10">
+                <span className="absolute top-3 left-3 bg-[#123D32]/80 backdrop-blur-xs text-[#C5A15B] text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-white/10">
                   {item.tag}
                 </span>
 
@@ -409,7 +411,7 @@ export default function GalleryClient() {
 
                 <div className="pt-4 mt-4 border-t border-black/6 flex items-center justify-between text-xs font-semibold text-[#123D32]">
                   <span>Click to Inspect Full Artifact</span>
-                  <span className="text-[10px] uppercase tracking-wider text-black/40 font-mono">
+                  <span className="text-[11px] uppercase tracking-wider text-black/40 font-mono">
                     #{item.id}
                   </span>
                 </div>
@@ -452,7 +454,7 @@ export default function GalleryClient() {
 
             <div className="p-6 space-y-4">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#123D32] bg-[#F7F4EB] px-2.5 py-1 rounded-md inline-block mb-2">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#123D32] bg-[#F7F4EB] px-2.5 py-1 rounded-md inline-block mb-2">
                   {activePreview.tag}
                 </span>
                 <h3 className="font-heading text-xl font-bold text-[#1F2A24]">
@@ -491,26 +493,8 @@ export default function GalleryClient() {
       )}
 
       {/* Bottom CTA Bar */}
-      <section className="bg-forest-deep text-white py-12 border-t border-[#C5A15B]/20">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="font-heading text-xl sm:text-2xl font-bold">
-              Looking for High-Resolution Project Swatches &amp; CAD References?
-            </h3>
-            <p className="text-xs sm:text-sm text-white/70 mt-1 max-w-xl">
-              We ship physical sample boxes directly to architectural firms and developer offices worldwide.
-            </p>
-          </div>
-          <div className="flex items-center gap-3 shrink-0">
-            <Link
-              href="/contact"
-              className="px-6 py-3 rounded-full bg-[#123D32] hover:bg-[#1E5A46] text-white border border-[#C5A15B]/40 text-xs font-bold uppercase tracking-wider transition-colors"
-            >
-              Request Sample Box
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CtaBand title="Like What You See?" text="Tell us about your project — we reply with options, samples and a quote." topic="natural stone for my project" cta="Gallery bottom band" />
+
 
       <Footer />
       <FloatingWhatsApp />

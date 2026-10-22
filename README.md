@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dholpurestones.com
 
-## Getting Started
-
-First, run the development server:
+Next.js (App Router) website for Dholpurestones.com — Dholpur sandstone, marble, semi-precious stones, stone articles and farm house & garden stonework.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where to edit content
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| What | File |
+| --- | --- |
+| Categories, sub-categories, images, projects | `src/data/catalog.ts` |
+| FAQs (also used for FAQ schema) | `src/data/faqs.ts` |
+| Blog posts | `src/data/blogData.ts` (older), `src/data/blogPostsGuides.ts` (new guides) |
+| Domain, keywords | `src/lib/site.ts` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Adding a blog post: add an object with `guide({...})` in `blogPostsGuides.ts`. It gets its own URL (`/blog/<slug>`), schema, sitemap entry and `llms.txt` entry automatically.
 
-## Learn More
+## Enquiries and lead tracking
 
-To learn more about Next.js, take a look at the following resources:
+Every enquiry form, quote button and WhatsApp link is tracked:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Forms post to `/api/contact` with the **page**, **button**, first-visit **landing page**, **referrer** and **UTM / gclid**.
+- WhatsApp messages get `[Page: /path]` appended, so you can see where each chat started.
+- GA4 events: `generate_lead`, `whatsapp_click`, `phone_click`, `email_click`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Set these in the hosting environment (see `.env.example`) so leads reach you — otherwise they only appear in server logs:
 
-## Deploy on Vercel
+- `RESEND_API_KEY` + `LEAD_TO_EMAIL` — email each lead, or
+- `LEAD_WEBHOOK_URL` — send to Google Sheets (Apps Script), Zapier, Make or a CRM.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## SEO / AI search
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Canonical domain: `NEXT_PUBLIC_SITE_URL` (default `https://dholpurestones.com`).
+- `/sitemap.xml`, `/robots.txt` (search + AI crawlers allowed), `/llms.txt`, `/llms-full.txt` are generated from the data files.
+- JSON-LD: Organization, LocalBusiness, WebSite (root); BreadcrumbList, ItemList, FAQPage, BlogPosting on pages.
+- **IndexNow (Bing, Yandex…)**: key file is served at `/<key>.txt`. After each deploy run `SITE_URL=https://yourdomain.com npm run indexnow`, or `POST /api/indexnow` with `Authorization: Bearer $INDEXNOW_SECRET`.
+- Add the Bing Webmaster verification code as `NEXT_PUBLIC_BING_VERIFICATION`, then submit `/sitemap.xml` in Google Search Console and Bing Webmaster Tools.

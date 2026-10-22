@@ -330,3 +330,93 @@ export const landmarkProjects = [
   { name: "AIIMS", place: "Bhopal", image: "/assets/project-aiims.jpg" },
   { name: "Indian Embassy", place: "Berlin, Germany", image: "/assets/project-embassy-berlin.jpg" },
 ];
+
+/* ───────────────────────── Full project portfolio ───────────────────────── */
+export type ProjectType = "Government" | "Spiritual" | "Corporate" | "Diplomatic" | "Public & Residential";
+
+export interface Project {
+  id: string;
+  name: string;
+  place: string;
+  type: ProjectType;
+  scope: string;
+  image?: string;
+}
+
+export const projects: Project[] = [
+  {
+    id: "parliament-house",
+    name: "Parliament House",
+    place: "New Delhi, India",
+    type: "Government",
+    scope: "Monumental sandstone contractor and cladding supplier.",
+    image: "/assets/project-parliament.jpg",
+  },
+  {
+    id: "akshardham",
+    name: "Akshardham Temple",
+    place: "New Delhi, India",
+    type: "Spiritual",
+    scope: "Intricate spiritual stone carvings, temple pillars and artisanal masonry.",
+    image: "/assets/project-akshardham.jpg",
+  },
+  {
+    id: "adani-house",
+    name: "Adani Corporate Headquarters",
+    place: "Ahmedabad, India",
+    type: "Corporate",
+    scope: "High-specification monolithic architectural facade stone.",
+    image: "/assets/project-adani.jpg",
+  },
+  {
+    id: "aiims-bhopal",
+    name: "AIIMS Medical Institute",
+    place: "Bhopal, India",
+    type: "Government",
+    scope: "Institutional natural stone facade and paving.",
+    image: "/assets/project-aiims.jpg",
+  },
+  {
+    id: "embassy-berlin",
+    name: "Indian Embassy",
+    place: "Berlin, Germany",
+    type: "Diplomatic",
+    scope: "Diplomatic mission exterior natural sandstone supply.",
+    image: "/assets/project-embassy-berlin.jpg",
+  },
+  {
+    id: "embassy-kathmandu",
+    name: "Indian Embassy",
+    place: "Kathmandu, Nepal",
+    type: "Diplomatic",
+    scope: "Turnkey diplomatic mission architectural stone execution.",
+  },
+  {
+    id: "iskcon-temples",
+    name: "ISKCON Temples (50+ locations)",
+    place: "India & worldwide",
+    type: "Spiritual",
+    scope: "Sacred stone shikharas, carved pillars and courtyard paving.",
+  },
+  {
+    id: "kashiram-garden",
+    name: "Kashiram Monumental Gardens",
+    place: "Lucknow, India",
+    type: "Public & Residential",
+    scope: "Heritage civic stonework and monolithic boundary screens.",
+  },
+  {
+    id: "nappa-velly",
+    name: "Nappa Velly Residential Estates",
+    place: "Bengaluru, India",
+    type: "Public & Residential",
+    scope: "Luxury private villa sandstone elevations.",
+  },
+  {
+    id: "omega-bearing",
+    name: "Omega Bearing Industrial Complex",
+    place: "Bhopal, India",
+    type: "Corporate",
+    scope: "Monolithic structural stone facades.",
+  },
+];

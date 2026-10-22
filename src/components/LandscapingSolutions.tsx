@@ -254,7 +254,7 @@ export default function LandscapingSolutions() {
         <AnimDiv className="flex items-center justify-between pb-3 border-b border-black/8 mb-8 sm:mb-10">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#C5A15B]" />
-            <span className="font-heading text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#1F2A24] uppercase">
+            <span className="font-heading text-[11px] sm:text-xs font-bold tracking-[0.16em] text-[#1F2A24] uppercase">
               DHOLPURESTONES &bull; HARDSCAPE &amp; PAVING DIVISION
             </span>
           </div>
@@ -267,7 +267,7 @@ export default function LandscapingSolutions() {
         <AnimDiv delay={40} className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#123D32]/10 border border-[#123D32]/20 mb-3.5 shadow-2xs">
             <Ruler className="w-3.5 h-3.5 text-[#123D32]" />
-            <span className="font-heading text-[10px] sm:text-xs font-bold text-[#123D32] tracking-[0.2em] uppercase">
+            <span className="font-heading text-[11px] sm:text-xs font-bold text-[#123D32] tracking-[0.2em] uppercase">
               CALIBRATED PAVING, POOL DECKS &amp; HARDSCAPE MASONRY
             </span>
           </div>
@@ -330,7 +330,7 @@ export default function LandscapingSolutions() {
 
                 {/* Top Badge */}
                 <div className="absolute top-3 left-3 flex items-center gap-2">
-                  <span className="bg-[#123D32]/90 backdrop-blur-xs text-[#F7F4EB] border border-[#C5A15B]/60 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-sm flex items-center gap-1.5">
+                  <span className="bg-[#123D32]/90 backdrop-blur-xs text-[#F7F4EB] border border-[#C5A15B]/60 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-sm flex items-center gap-1.5">
                     <Sparkles className="w-3 h-3 text-[#C5A15B]" />
                     <span>{item.tag}</span>
                   </span>
@@ -338,14 +338,14 @@ export default function LandscapingSolutions() {
 
                 {/* Provenance Pill */}
                 <div className="absolute top-3 right-3">
-                  <span className="bg-black/60 backdrop-blur-xs text-white/90 px-2.5 py-1 rounded-md text-[10px] font-medium tracking-wide border border-white/10">
+                  <span className="bg-black/60 backdrop-blur-xs text-white/90 px-2.5 py-1 rounded-md text-[11px] font-medium tracking-wide border border-white/10">
                     {item.provenance}
                   </span>
                 </div>
 
                 {/* Bottom Overlay Title on Image */}
                 <div className="absolute bottom-3 left-3 right-3 text-white">
-                  <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#C5A15B] block mb-0.5">
+                  <span className="text-[11px] uppercase font-bold tracking-[0.2em] text-[#C5A15B] block mb-0.5">
                     {item.subtitle}
                   </span>
                   <h3 className="font-heading text-base sm:text-lg font-bold leading-snug drop-shadow-sm">
@@ -373,7 +373,7 @@ export default function LandscapingSolutions() {
                   <div className="grid grid-cols-2 gap-2 text-xs mb-4 pt-3 border-t border-black/6">
                     {item.specs.slice(0, 2).map((s, idx) => (
                       <div key={idx} className="bg-[#F7F4EB] p-2.5 rounded-xl border border-black/5">
-                        <span className="text-[9px] uppercase font-bold tracking-wider text-[#6B7C73] block mb-0.5">
+                        <span className="text-[11px] uppercase font-bold tracking-wider text-[#6B7C73] block mb-0.5">
                           {s.label}
                         </span>
                         <span className="font-bold text-[#1F2A24] text-[11px] leading-tight block">
@@ -426,7 +426,7 @@ export default function LandscapingSolutions() {
             ========================================================================= */}
         <AnimDiv delay={150} className="mb-14 sm:mb-20">
           <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
-            <span className="text-[10px] font-bold text-[#C5A15B] uppercase tracking-[0.22em] block mb-1">
+            <span className="text-[11px] font-bold text-[#C5A15B] uppercase tracking-[0.22em] block mb-1">
               ENGINEERED FOR LANDSCAPE PROFESSIONALS
             </span>
             <h3 className="font-heading text-xl sm:text-2xl font-bold text-[#1F2A24] uppercase tracking-wider">
@@ -447,7 +447,7 @@ export default function LandscapingSolutions() {
                       <div className="w-11 h-11 rounded-xl bg-[#123D32]/10 border border-[#123D32]/20 flex items-center justify-center text-[#123D32]">
                         <Icon className="w-5 h-5" />
                       </div>
-                      <span className="text-[9px] font-bold uppercase tracking-widest text-[#C5A15B] bg-[#F7F4EB] border border-black/5 px-2.5 py-1 rounded-full">
+                      <span className="text-[11px] font-bold uppercase tracking-widest text-[#C5A15B] bg-[#F7F4EB] border border-black/5 px-2.5 py-1 rounded-full">
                         {pillar.badge}
                       </span>
                     </div>
@@ -487,7 +487,7 @@ export default function LandscapingSolutions() {
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[#C5A15B] text-[10px] font-bold uppercase tracking-wider mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[#C5A15B] text-[11px] font-bold uppercase tracking-wider mb-3">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#C5A15B]" />
                 <span>Direct Quarry Concessionaire Leases &bull; Dholpur</span>
               </div>
@@ -572,7 +572,7 @@ export default function LandscapingSolutions() {
               </button>
 
               <div className="absolute bottom-4 left-5 right-5 text-white">
-                <span className="text-[10px] font-bold text-[#C5A15B] tracking-widest uppercase block mb-1">
+                <span className="text-[11px] font-bold text-[#C5A15B] tracking-widest uppercase block mb-1">
                   {activeModal.subtitle} &bull; {activeModal.provenance}
                 </span>
                 <h3 className="font-heading text-lg sm:text-2xl font-bold leading-tight">
@@ -584,7 +584,7 @@ export default function LandscapingSolutions() {
             {/* Modal Body */}
             <div className="p-5 sm:p-7 space-y-5">
               <div>
-                <span className="text-[10px] font-bold tracking-widest uppercase text-[#6B7C73] block mb-1">
+                <span className="text-[11px] font-bold tracking-widest uppercase text-[#6B7C73] block mb-1">
                   ARCHITECTURAL SUMMARY
                 </span>
                 <p className="text-xs sm:text-sm text-[#6B7C73] leading-relaxed">
@@ -594,7 +594,7 @@ export default function LandscapingSolutions() {
 
               {/* Ideal Applications */}
               <div className="p-3.5 rounded-xl bg-[#F7F4EB] border border-black/6">
-                <span className="text-[9px] uppercase font-bold tracking-widest text-[#123D32] block mb-1">
+                <span className="text-[11px] uppercase font-bold tracking-widest text-[#123D32] block mb-1">
                   RECOMMENDED PROJECT TYPES
                 </span>
                 <p className="text-xs font-bold text-[#1F2A24]">
@@ -604,13 +604,13 @@ export default function LandscapingSolutions() {
 
               {/* Technical Specifications */}
               <div>
-                <span className="text-[10px] font-bold tracking-widest uppercase text-[#6B7C73] block mb-2.5">
+                <span className="text-[11px] font-bold tracking-widest uppercase text-[#6B7C73] block mb-2.5">
                   FACTORY TECHNICAL SPECIFICATIONS
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {activeModal.specs.map((s, idx) => (
                     <div key={idx} className="p-3 rounded-xl bg-white border border-black/8 shadow-2xs">
-                      <span className="text-[9px] uppercase font-bold text-[#6B7C73] block mb-0.5">
+                      <span className="text-[11px] uppercase font-bold text-[#6B7C73] block mb-0.5">
                         {s.label}
                       </span>
                       <span className="text-xs font-bold text-[#1F2A24]">
@@ -623,7 +623,7 @@ export default function LandscapingSolutions() {
 
               {/* Key Architectural Advantages */}
               <div>
-                <span className="text-[10px] font-bold tracking-widest uppercase text-[#6B7C73] block mb-2">
+                <span className="text-[11px] font-bold tracking-widest uppercase text-[#6B7C73] block mb-2">
                   KEY ADVANTAGES FOR CONTRACTORS
                 </span>
                 <ul className="space-y-2">

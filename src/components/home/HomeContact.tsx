@@ -1,47 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 import {
   LuMail as Mail,
   LuMapPin as MapPin,
   LuPhone as Phone,
-  LuSend as Send,
-  LuCircleCheck as Check,
 } from "react-icons/lu";
 import WhatsAppIcon from "../WhatsAppIcon";
+import EnquiryForm from "../EnquiryForm";
 import { Reveal } from "../ui/Reveal";
-import { categories, waLink, EMAIL, PHONE_PRIMARY, PHONE_SECONDARY } from "@/data/catalog";
-
-const fieldCls =
-  "w-full rounded-xl border border-white/15 bg-white/[0.07] px-4 py-3 text-[15px] text-white placeholder:text-white/45 outline-none transition focus:border-gold focus:bg-white/10";
+import { waLink, EMAIL, PHONE_PRIMARY, PHONE_SECONDARY } from "@/data/catalog";
 
 export default function HomeContact() {
-  const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
-  const [message, setMessage] = useState("");
-
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
-    setStatus("sending");
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      const json = await res.json();
-      if (!res.ok) throw new Error(json.error || "Failed");
-      setMessage(json.message);
-      setStatus("done");
-      form.reset();
-    } catch (err) {
-      setMessage(err instanceof Error ? err.message : "Something went wrong. Please try WhatsApp.");
-      setStatus("error");
-    }
-  }
-
   return (
     <section
       id="contact"
@@ -127,56 +97,10 @@ export default function HomeContact() {
         </Reveal>
 
         <Reveal delay={0.12}>
-          <form
-            onSubmit={onSubmit}
-            className="rounded-[1.75rem] border border-white/12 bg-forest-deep/60 p-5 backdrop-blur sm:p-8"
-          >
-            <h3 className="font-heading text-lg font-bold uppercase tracking-wide text-white">Quick Enquiry</h3>
-            <div className="mt-5 grid gap-3.5">
-              <input type="text" name="honeypot" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
-              <input name="name" required minLength={2} placeholder="Your name" className={fieldCls} autoComplete="name" />
-              <input
-                name="phone"
-                required
-                minLength={7}
-                inputMode="tel"
-                placeholder="Phone / WhatsApp number"
-                className={fieldCls}
-                autoComplete="tel"
-              />
-              <input name="email" type="email" placeholder="Email (optional)" className={fieldCls} autoComplete="email" />
-              <select name="stoneType" defaultValue="" className={`${fieldCls} appearance-none`}>
-                <option value="" className="text-ink">I am interested in…</option>
-                {categories.map((c) => (
-                  <option key={c.id} value={c.name} className="text-ink">
-                    {c.name}
-                  </option>
-                ))}
-              </select>
-              <textarea name="message" rows={3} placeholder="Tell us about your project" className={fieldCls} />
-            </div>
-
-            <motion.button
-              type="submit"
-              disabled={status === "sending"}
-              whileTap={{ scale: 0.97 }}
-              className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-gold py-3.5 text-sm font-bold text-forest shadow-[0_10px_26px_-8px_rgba(197,161,91,0.8)] transition-opacity disabled:opacity-60"
-            >
-              {status === "sending" ? "Sending…" : (<>Send Enquiry <Send className="h-4 w-4" /></>)}
-            </motion.button>
-
-            {status === "done" && (
-              <p className="mt-4 flex items-start gap-2 text-sm text-[#7dedaa]" role="status">
-                <Check className="mt-0.5 h-4 w-4 shrink-0" />
-                {message}
-              </p>
-            )}
-            {status === "error" && (
-              <p className="mt-4 text-sm text-[#ffb4a6]" role="alert">
-                {message}
-              </p>
-            )}
-          </form>
+          <div className="rounded-[1.75rem] border border-white/12 bg-forest-deep/60 p-5 backdrop-blur sm:p-8">
+            <h3 className="mb-5 font-heading text-lg font-bold uppercase tracking-wide text-white">Quick Enquiry</h3>
+            <EnquiryForm cta="Homepage contact form" />
+          </div>
         </Reveal>
       </div>
     </section>

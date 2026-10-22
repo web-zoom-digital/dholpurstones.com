@@ -3,39 +3,30 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { LuPlus as Plus } from "react-icons/lu";
-import SectionHeader from "../ui/SectionHeader";
-import { Reveal } from "../ui/Reveal";
+import SectionHeader from "./ui/SectionHeader";
+import { Reveal } from "./ui/Reveal";
+import type { Faq } from "@/data/faqs";
 
-const faqs = [
-  {
-    q: "Which stones does Dholpurestones supply?",
-    a: "Dholpur sandstone (Agra Red, Dholpur Beige, Dholpur Pink and Chocolate), beige, white and grey marble, semi-precious gemstone slabs, hand-carved stone articles, plus exclusive imported marble and precious gem surfaces.",
-  },
-  {
-    q: "Do you own the mines?",
-    a: "Yes. Our proprietary quarries are in Dholpur, Rajasthan, with carving and processing at Sikandra and Kishangarh — so you buy direct, without middlemen.",
-  },
-  {
-    q: "Can you work on a farm house or garden project?",
-    a: "Farm house and garden stonework is our speciality — driveways, patios, pool coping, gazebos, steps, retaining walls and fountains, supplied and installed.",
-  },
-  {
-    q: "Do you export, and can I get samples?",
-    a: "We export worldwide with seaworthy fumigated crating, and have an overseas office in Canada. Sample pieces can be arranged on request — message us on WhatsApp.",
-  },
-  {
-    q: "Which landmark projects have you supplied?",
-    a: "Parliament House and Akshardham in New Delhi, Adani House in Ahmedabad, AIIMS Bhopal, the Indian Embassies in Berlin and Kathmandu, and over 50 ISKCON temples.",
-  },
-];
-
-export default function HomeFAQ() {
+/** Accordion FAQ. Pair with <JsonLd data={faqLd(faqs)} /> on the page for rich results. */
+export default function FaqSection({
+  faqs,
+  title = "Frequently Asked Questions",
+  eyebrow = "Good To Know",
+  id = "faq",
+  tone = "ivory",
+}: {
+  faqs: Faq[];
+  title?: string;
+  eyebrow?: string;
+  id?: string;
+  tone?: "ivory" | "white";
+}) {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="section-y bg-ivory">
+    <section id={id} className={`section-y ${tone === "white" ? "bg-white" : "bg-ivory"}`}>
       <div className="container-x">
-        <SectionHeader eyebrow="Good To Know" title="Frequently Asked Questions" />
+        <SectionHeader eyebrow={eyebrow} title={title} />
         <Reveal className="mx-auto max-w-3xl space-y-3">
           {faqs.map((f, i) => {
             const isOpen = open === i;
@@ -52,7 +43,7 @@ export default function HomeFAQ() {
                   className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-[15px] font-bold text-ink sm:text-base">{f.q}</span>
+                  <h3 className="text-[15px] font-bold text-ink sm:text-base">{f.q}</h3>
                   <motion.span
                     animate={{ rotate: isOpen ? 45 : 0 }}
                     className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-forest text-gold"

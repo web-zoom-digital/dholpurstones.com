@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-type Variant = "gold" | "forest" | "outline" | "outline-light" | "whatsapp" | "ghost";
+export type Variant = "gold" | "forest" | "outline" | "outline-light" | "whatsapp" | "ghost";
 
 const styles: Record<Variant, string> = {
   gold: "bg-gold text-forest hover:bg-[#d4b574] shadow-[0_6px_20px_-6px_rgba(197,161,91,0.7)]",
@@ -14,6 +14,12 @@ const styles: Record<Variant, string> = {
   whatsapp: "bg-[#25D366] text-white hover:bg-[#1fb957] shadow-[0_6px_20px_-6px_rgba(37,211,102,0.6)]",
   ghost: "bg-transparent text-forest hover:bg-forest/8",
 };
+
+export function buttonClasses(variant: Variant = "gold", size: "md" | "lg" = "md", extra = "") {
+  return `inline-flex items-center justify-center gap-2 rounded-full font-bold tracking-wide whitespace-nowrap transition-colors duration-300 ${
+    size === "lg" ? "px-7 py-3.5 text-sm" : "px-5 py-3 text-[13px]"
+  } ${styles[variant]} ${extra}`;
+}
 
 interface ButtonProps {
   href: string;
@@ -37,9 +43,7 @@ export default function Button({
   className = "",
   onClick,
 }: ButtonProps) {
-  const cls = `inline-flex items-center justify-center gap-2 rounded-full font-bold tracking-wide whitespace-nowrap transition-colors duration-300 ${
-    size === "lg" ? "px-7 py-3.5 text-sm" : "px-5 py-3 text-[13px]"
-  } ${styles[variant]} ${className}`;
+  const cls = buttonClasses(variant, size, className);
 
   if (external || /^(https?:|tel:|mailto:)/.test(href)) {
     return (

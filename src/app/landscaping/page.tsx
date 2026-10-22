@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://dholpurestones.com/farmhouse-gardens",
+    canonical: "/farmhouse-gardens",
   },
 };
 

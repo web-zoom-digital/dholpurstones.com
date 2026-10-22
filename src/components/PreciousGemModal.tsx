@@ -94,7 +94,7 @@ export default function PreciousGemModal({ product, onClose }: PreciousGemModalP
                 </div>
                 <div className="pt-2.5 pb-0.5 px-1 flex items-center justify-between text-[11px] text-[#6B7C73]">
                   <span className="font-semibold text-[#1F2A24] truncate mr-2">{product.name}</span>
-                  <span className="font-mono text-[10px] text-[#C5A15B] font-bold">#{idx + 1}</span>
+                  <span className="font-mono text-[11px] text-[#C5A15B] font-bold">#{idx + 1}</span>
                 </div>
               </div>
             ))}

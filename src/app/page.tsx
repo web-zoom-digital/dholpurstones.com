@@ -11,7 +11,10 @@ import SemiPreciousSection from "@/components/home/SemiPreciousSection";
 import ExclusiveSection from "@/components/home/ExclusiveSection";
 import WhyUs from "@/components/home/WhyUs";
 import ProjectsSection from "@/components/home/ProjectsSection";
-import HomeFAQ from "@/components/home/HomeFAQ";
+import FaqSection from "@/components/FaqSection";
+import JsonLd from "@/components/JsonLd";
+import { generalFaqs } from "@/data/faqs";
+import { faqLd } from "@/lib/schema";
 import HomeContact from "@/components/home/HomeContact";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -31,7 +34,8 @@ export default function Home() {
       <ExclusiveSection />
       <WhyUs />
       <ProjectsSection />
-      <HomeFAQ />
+      <FaqSection faqs={generalFaqs} />
+      <JsonLd data={faqLd(generalFaqs)} />
       <HomeContact />
       <Footer />
       <FloatingWhatsApp />

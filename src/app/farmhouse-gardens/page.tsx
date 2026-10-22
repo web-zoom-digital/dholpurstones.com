@@ -1,6 +1,12 @@
 import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
+import CtaBand from "@/components/ui/CtaBand";
+import JsonLd from "@/components/JsonLd";
+import FaqSection from "@/components/FaqSection";
+import { gardenFaqs } from "@/data/faqs";
+import { gardenSubs } from "@/data/catalog";
+import { breadcrumbLd, itemListLd, faqLd } from "@/lib/schema";
 import Navbar from "@/components/Navbar";
 import PageHero from "@/components/ui/PageHero";
 import Button from "@/components/ui/Button";
@@ -21,22 +27,22 @@ import {
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export const metadata: Metadata = {
-  title: "Luxury Farm House & Garden Landscaping Stone Solutions | Dholpurestones",
+  title: "Farm House & Garden Stonework – Driveways, Patios, Pool Decks, Gazebos",
   description:
     "Turnkey Natural Sandstone Solutions for Luxury Farm Houses, Private Country Estates, and Designer Garden Landscapes. Over 300+ front elevation designs in sandstone awarded by Govt. of India & nominated for International Award for Business Excellence. Cobblestone carriage driveways, monumental entrance gates, carved gazebos, and poolside coping direct from Dholpur quarries.",
   alternates: {
-    canonical: "https://dholpurestones.com/farmhouse-gardens",
+    canonical: "/farmhouse-gardens",
   },
   openGraph: {
     title: "Luxury Farm House & Garden Landscaping Stone Solutions | Dholpurestones",
     description:
       "Specialized in luxury farm houses & designer garden landscapes. Over 300+ front elevation designs awarded by Govt. of India & nominated for International Award for Business Excellence. Direct quarry extraction from Dholpur and Sikandra.",
-    url: "https://dholpurestones.com/farmhouse-gardens",
+    url: "/farmhouse-gardens",
     siteName: "Dholpurestones",
     type: "website",
     images: [
       {
-        url: "https://dholpurestones.com/assets/garg/hero_peacock_widescreen_2k.jpg",
+        url: "/assets/garg/hero_peacock_widescreen_2k.jpg",
         width: 1920,
         height: 1080,
         alt: "Luxury Farm House & Garden Landscaping Stone Solutions - Dholpurestones",
@@ -48,7 +54,7 @@ export const metadata: Metadata = {
     title: "Luxury Farm House & Garden Stone Solutions | Dholpurestones",
     description:
       "Turnkey natural sandstone solutions for country estates, 300+ front elevation designs, cobblestone driveways, and carved pavilions.",
-    images: ["https://dholpurestones.com/assets/garg/hero_peacock_widescreen_2k.jpg"],
+    images: ["/assets/garg/hero_peacock_widescreen_2k.jpg"],
   },
 };
 
@@ -78,39 +84,9 @@ export default function FarmHouseGardensPage() {
       {/* Garden & farm house work — landscape photography only */}
       <LandscapingSolutions />
 
-      {/* 5. Bottom Architectural Tender & Quarry Direct Supply Banner */}
-      <section className="bg-forest-deep text-white py-14 border-t border-[#C5A15B]/20 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A15B]/8 rounded-full blur-3xl pointer-events-none" />
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div>
-            <div className="inline-flex items-center gap-2 text-[#C5A15B] text-xs font-bold uppercase tracking-wider mb-2">
-              <ShieldCheck className="w-4 h-4 text-[#C5A15B]" />
-              <span>Direct Dholpur Quarry Concessions &bull; Worldwide ISPM-15 Crating</span>
-            </div>
-            <h2 className="font-heading text-2xl sm:text-3xl font-bold uppercase text-white tracking-wide">
-              Planning a Luxury Farm House, Villa Estate, or Resort Landscape?
-            </h2>
-            <p className="font-body text-xs sm:text-sm text-white/75 mt-2 max-w-2xl leading-relaxed">
-              Our master stone carvers and CNC stonework engineers provide custom cutting lists, CAD drafting assistance, site delivery, and bespoke quarry pricing for landmark residential and hospitality estates.
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto shrink-0 text-center">
-            <Link
-              href="/articles"
-              className="px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-bold uppercase tracking-wider transition-colors text-white text-center"
-            >
-              Stone Articles &amp; Sculptures
-            </Link>
-            <Link
-              href="/contact"
-              className="px-7 py-3.5 rounded-full bg-[#C5A15B] hover:bg-[#C5A15B] text-[#123D32] text-xs font-bold uppercase tracking-wider transition-all shadow-lg text-center"
-            >
-              Get Turnkey Quotation
-            </Link>
-          </div>
-        </div>
-      </section>
+      <FaqSection faqs={gardenFaqs} title="Farm House & Garden Questions" tone="white" />
+      <CtaBand title="Planning A Farm House Or Garden?" text="Share your layout and areas — we recommend stone, finishes and quantities, and quote the full job." topic="farm house and garden stonework" cta="Farmhouse bottom band" />
+      <JsonLd data={[breadcrumbLd([{ name: "Farm House & Gardens", path: "/farmhouse-gardens" }]), itemListLd("Farm house & garden stonework", gardenSubs.map((g) => ({ name: g.name, description: g.note, image: g.image }))), faqLd(gardenFaqs)]} />
 
       {/* Farmhouse & Landscaping Schema */}
       <script

@@ -57,7 +57,7 @@ export default function ImageCard({
             className={`${fit === "contain" ? "object-contain" : "object-cover"} transition-transform duration-700 ease-out group-hover:scale-[1.06]`}
           />
           {badge && (
-            <span className="absolute left-3 top-3 rounded-full bg-forest-deep/80 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-gold backdrop-blur">
+            <span className="absolute left-3 top-3 rounded-full bg-forest-deep/80 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-gold backdrop-blur">
               {badge}
             </span>
           )}
@@ -95,7 +95,7 @@ export default function ImageCard({
       />
       <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/90 via-forest-deep/25 to-transparent" />
       {badge && (
-        <span className="absolute left-3 top-3 rounded-full bg-forest-deep/75 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-gold backdrop-blur-md border border-gold/30">
+        <span className="absolute left-3 top-3 rounded-full bg-forest-deep/75 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-gold backdrop-blur-md border border-gold/30">
           {badge}
         </span>
       )}
