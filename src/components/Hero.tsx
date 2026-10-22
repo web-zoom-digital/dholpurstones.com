@@ -12,7 +12,7 @@ import WhatsAppIcon from "./WhatsAppIcon";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[85vh] sm:min-h-[90vh] lg:min-h-screen flex flex-col justify-between bg-[#123D32]">
+    <section className="relative min-h-screen flex flex-col justify-between bg-[#123D32]">
       {/* Background Hero Image */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Mobile image — shown below sm */}

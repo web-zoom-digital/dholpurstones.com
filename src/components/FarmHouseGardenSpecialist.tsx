@@ -364,29 +364,7 @@ export default function FarmHouseGardenSpecialist({
           </div>
         </AnimDiv>
 
-        {/* Filter Navigation Tabs */}
-        <AnimDiv delay={80} className="flex items-center sm:justify-center gap-1.5 sm:gap-2 overflow-x-auto pb-2 mb-8 sm:mb-12 scrollbar-none w-full -mx-1 px-1">
-          {tabs.map((tab) => {
-            const Icon = tab.icon;
-            const isActive = activeTab === tab.id;
-            return (
-              <button
-                key={tab.id}
-                type="button"
-                onClick={() => setActiveTab(tab.id)}
-                className={`inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold tracking-wider uppercase transition-all duration-300 shrink-0 cursor-pointer ${
-                  isActive
-                    ? "bg-[#123D32] text-white shadow-md shadow-[#123D32]/30 border border-[#123D32] scale-[1.02]"
-                    : "bg-white text-[#6B7C73] border border-black/8 hover:border-[#C5A15B] hover:text-[#1F2A24]"
-                }`}
-              >
-                <Icon className={`w-3.5 h-3.5 ${isActive ? "text-[#C5A15B]" : "text-[#6B7C73]"}`} />
-                <span>{tab.label}</span>
-              </button>
-            );
-          })}
-        </AnimDiv>
-
+    
         {/* Farm House & Garden Masonry Solutions Grid (4 on Home Preview, 8 on Dedicated Page) */}
         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 ${isHomePreview ? "mb-8 sm:mb-12" : "mb-12 sm:mb-20"}`}>
           {displayItems.map((item, idx) => (
@@ -427,31 +405,19 @@ export default function FarmHouseGardenSpecialist({
 
                   {/* Card Content */}
                   <div className="p-4 sm:p-5">
-                    <h3 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-[#1F2A24] uppercase tracking-wide group-hover:text-[#123D32] transition-colors mb-1.5 sm:mb-2 leading-snug">
+                    <h3 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-[#1F2A24] uppercase tracking-wide group-hover:text-[#123D32] transition-colors  leading-snug">
                       {item.title}
                     </h3>
 
-                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] sm:text-xs text-[#6B7C73] leading-relaxed line-clamp-3 mb-3 sm:mb-4">
-                      {item.desc}
-                    </p>
+                    
 
-                    {/* Quick Specs Snippet */}
-                    <div className="space-y-1.5 pt-2.5 sm:pt-3 border-t border-black/6">
-                      {item.specs.slice(0, 2).map((s, i) => (
-                        <div key={i} className="flex items-center justify-between text-[10.5px] sm:text-[11px]">
-                          <span className="text-[#6B7C73] font-medium">{s.label}:</span>
-                          <span className="text-[#1F2A24] font-bold text-right truncate max-w-[55%]">
-                            {s.value}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
+                    
                   </div>
                 </div>
 
                 {/* Card Footer Actions */}
                 <div className="p-4 sm:p-5 pt-0">
-                  <div className="pt-2.5 sm:pt-3 border-t border-black/6 flex items-center justify-between">
+                  <div className="  flex items-center justify-between">
                     <button
                       type="button"
                       className="inline-flex items-center gap-1.5 text-xs font-bold text-[#123D32] group-hover:text-[#C5A15B] uppercase tracking-wider transition-colors"

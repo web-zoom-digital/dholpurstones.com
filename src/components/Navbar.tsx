@@ -25,7 +25,8 @@ import {
   LuPlay as Play,
   LuFileText as FileText,
   LuGem as Gem,
-  LuPalette as Palette
+  LuPalette as Palette,
+  LuSparkles as Sparkles
 } from "react-icons/lu";
 import WhatsAppIcon from "./WhatsAppIcon";
 
@@ -153,6 +154,13 @@ export default function Navbar() {
           desc: "Hand-carved peacocks, lanterns & jalis",
           icon: Gem,
           badge: "Sikandra",
+        },
+        {
+          label: "Semi Precious Stone",
+          href: "/semi-precious",
+          desc: "Agate, Lapis Lazuli, Tiger's Eye & Jasper slabs",
+          icon: Sparkles,
+          badge: "Exclusive",
         },
       ],
     },

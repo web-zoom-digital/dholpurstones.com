@@ -102,40 +102,36 @@ export default function AboutUs() {
           </AnimDiv>
         </div>
 
-        {/* Architectural Image Cards */}
+        {/* Architectural Image Cards - 2 Column Grid (2-2 Rows) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
           {[
             {
-              src: "/assets/garg/crop_lion.jpg",
-              alt: "Sandstone Sculptural Articles – Lion Sculpture",
-              title: "Sandstone Sculptural Articles",
-              sub: "Hand-carved lion sculpture & monumental masonry",
+              src: "/assets/garg/horse_marble_image.jpeg",
+              alt: "Sandstone Sculptural Articles – Horse & Lion Sculpture",
             },
             {
-              src: "/assets/garg/crop_lantern.jpg",
-              alt: "Architectural & Landscape Elements – Stone Lantern",
-              title: "Architectural & Landscape Elements",
-              sub: "Intricate perforated sandstone lighting & outdoor decor",
+              src: "/assets/garg/fountain_image.jpeg",
+              alt: "Architectural & Landscape Elements – Stone Fountain",
+            },
+            {
+              src: "/assets/garg/peacock_image.jpeg",
+              alt: "Hand-Carved Sandstone Peacock Sculpture",
+            },
+            {
+              src: "/assets/garg/elephant_image.jpeg",
+              alt: "Hand-Carved Sandstone Elephant Sculpture",
             },
           ].map((item, i) => (
-            <AnimDiv key={item.title} delay={i * 120}>
+            <AnimDiv key={item.src} delay={i * 80}>
               <div className="bg-white rounded-2xl overflow-hidden border border-black/8 shadow-sm hover:shadow-xl hover:border-[#C5A15B]/50 transition-all duration-300 group">
-                <div className="w-full bg-[#F7F4EB] rounded-t-2xl overflow-hidden">
+                <div className="relative aspect-[4/3] w-full bg-[#F7F4EB] overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={item.src}
                     alt={item.alt}
-                    className="w-full h-auto block group-hover:scale-[1.02] transition-transform duration-500"
+                    className="w-full h-full object-cover scale-[1.05] group-hover:scale-[1.15] cursor-pointer transition-transform duration-500"
                     loading={i === 0 ? "eager" : "lazy"}
                   />
-                </div>
-                <div className="p-4 sm:p-5">
-                  <h3 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-[#1F2A24] uppercase tracking-wider group-hover:text-[#123D32] transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs text-[#6B7C73] mt-1 font-['Plus_Jakarta_Sans',sans-serif]">
-                    {item.sub}
-                  </p>
                 </div>
               </div>
             </AnimDiv>

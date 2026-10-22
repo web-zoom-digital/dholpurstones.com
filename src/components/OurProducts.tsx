@@ -314,125 +314,7 @@ const products: ProductItem[] = [
     waMsg:
       "Hello Dholpurestones.com, I would like to inquire about Dholpur Red Sandstone Blocks & Gangsaw Slabs.",
   },
-  {
-    id: "white-series-slabs",
-    number: "07",
-    title: "White Series Premium Marble & Stone Slabs",
-    subtitle: "Luminous Royal White & Statuario for Palatial Luxury Interiors",
-    category: "exotic",
-    categoryLabel: "WHITE SERIES COLLECTION",
-    provenance: "Kishangarh Natural Stone Hub",
-    image: "/white-series-dolphur-color/royal-white.png",
-    shortDesc:
-      "Pristine white marble and stone slabs featuring luminous crystallization and dramatic veining for bookmatched interior feature walls and palatial flooring.",
-    longDetails:
-      "Part of our premier White Series collection, featuring high-purity calcite and quartz formations. Finished to mirror-polish sheen or velvet matte honed. Celebrated by world-renowned interior architects for grand hotel lobbies, master suites, and luxury villas.",
-    shades: "Pure Royal White, Statuario Veined, Carrara Mist",
-    finishes: [
-      "High Gloss Mirror Polish",
-      "Bookmatched Polished Pair",
-      "Velvet Satin Honed",
-      "Leathered Antique",
-    ],
-    dimensions: "Gangsaw Slabs up to 3200x1800mm (18mm, 20mm, 30mm Thickness)",
-    applications: [
-      "Palatial Interior Flooring",
-      "Bookmatched Accent Feature Walls",
-      "Master Bathroom Vanities",
-      "Luxury Hotel Lobbies",
-    ],
-    compressiveStrength: "92.0 MPa (Dry) / 84.5 MPa (Wet)",
-    waterAbsorption: "< 0.25% by weight",
-    density: "2.68 - 2.72 g/cm³",
-    modulusOfRupture: "14.8 N/mm²",
-    highlights: [
-      "Selected from highest-purity white stone blocks",
-      "Bookmatched vein symmetry available for dramatic walls",
-      "Exceptional mirror reflectivity and surface hardness",
-      "Non-porous crystalline structure resisting stains",
-    ],
-    waMsg:
-      "Hello Dholpurestones.com, I would like to inquire about White Series Premium Marble & Stone Slabs.",
-  },
-  {
-    id: "semi-precious-agate",
-    number: "08",
-    title: "Semi-Precious Gemstone Backlit Feature Slabs",
-    subtitle: "Rare Hand-Assembled Royal Blue Agate for Luxury Backlit Statements",
-    category: "exotic",
-    categoryLabel: "SEMI-PRECIOUS GEMSTONES",
-    provenance: "Bespoke Lapidary Gemstone Studio",
-    image: "/semi-precious/blue-agate.jpeg",
-    shortDesc:
-      "Exquisite hand-assembled natural agate gemstone slabs with translucent crystalline depth, engineered for ambient backlighting and royal luxury surfaces.",
-    longDetails:
-      "Master artisans individually hand-select and assemble authentic agate mineral geodes within high-clarity resin. When illuminated from behind, the concentric bands radiate an ethereal glow, transforming bar counters, feature walls, and vanity counters into captivating geological art.",
-    shades: "Royal Blue Agate, Black Agate, Fire Agate, Lapis Lazuli",
-    finishes: [
-      "Translucent Backlit Mirror Polish",
-      "Seamless Epoxy Gemstone Matrix",
-      "Chamfered Edge Profiling",
-    ],
-    dimensions: "Custom Architectural Slabs up to 2800x1500mm (15mm - 20mm Thickness)",
-    applications: [
-      "Backlit Bar Counters & Cocktail Lounges",
-      "Luxury Reception Backdrops",
-      "Master Powder Room Vanities",
-      "Pietra Dura Inlay Art Panels",
-    ],
-    compressiveStrength: "115.0 MPa (Dry) / 108.0 MPa (Wet)",
-    waterAbsorption: "< 0.08% by weight",
-    density: "2.60 - 2.65 g/cm³",
-    modulusOfRupture: "18.5 N/mm²",
-    highlights: [
-      "100% genuine semi-precious agate mineral geodes",
-      "Spectacular light transmission for LED backlighting systems",
-      "Chemical and scratch resistant mirror-polished surface",
-      "Bespoke sizing engineered to exact architectural BOQ",
-    ],
-    waMsg:
-      "Hello Dholpurestones.com, I would like to inquire about Semi-Precious Gemstone Backlit Feature Slabs.",
-  },
-  {
-    id: "sandstone-bulk-exports",
-    number: "09",
-    title: "Industrial Crated Bundles & Containerized Exports",
-    subtitle: "Global Sea-Worthy ISPM-15 Timber Packaging for Wholesale Supply",
-    category: "export",
-    categoryLabel: "ISPM-15 EXPORT CRATING",
-    provenance: "Central Export Logistics Hub & Mundra Port",
-    image: "/semi-precious/green-agate.jpeg",
-    shortDesc:
-      "Industrial-scale inventory of project-calibrated sandstone bundles packed into heavy-duty ISPM-15 fumigated timber crates for global transit.",
-    longDetails:
-      "Maintained under certified storage and processing yards. Each container load is inspected for squareness, uniform thickness, and surface consistency before being packed into ISPM-15 certified seaworthy fumigated wooden crates with moisture-barrier wrapping and corner guards for worldwide shipping.",
-    shades: "Full Quarry Assortment (Red, Beige, White, Chocolate, Teakwood)",
-    finishes: [
-      "Customized to Project Specifications",
-      "Sawn, Honed, Flamed, Shot-Blasted",
-      "Barcoded & Pallet-Sorted",
-      "Moisture-Sealed Timber Crated",
-    ],
-    dimensions: "Standard Bundles, 20ft Container Loads, Custom Project Pallets",
-    applications: [
-      "International Natural Stone Wholesalers",
-      "Turnkey Monumental Overseas Consignments",
-      "Large-Scale Commercial Infrastructure",
-      "Architectural Specification Projects",
-    ],
-    compressiveStrength: "IS:3620 Certified Prior to Dispatch",
-    waterAbsorption: "Lab Tested Quality Documentation",
-    density: "Heavy Quartz Structural Grade",
-    modulusOfRupture: "Strict Batch Quality Clearance",
-    highlights: [
-      "ISPM-15 heat-treated, fumigated timber crates with steel strapping",
-      "Foam cushion spacers and corner edge protectors on all pieces",
-      "Barcode tagging with itemized digital packing lists per container",
-      "Direct logistics network to Mundra & Kandla seaports and door delivery",
-    ],
-    waMsg:
-      "Hello Dholpurestones.com, I would like to inquire about Industrial Crated Bundles & Bulk Container Exports.",
-  },
+  
 ];
 
 const categoryTabs = [
@@ -584,29 +466,8 @@ function SpotlightProductCard({
             </div>
 
             {/* Dynamic Card Tab Content */}
-            <div className="min-h-[76px]">
-              {activeCardTab === "specs" && (
-                <div className="space-y-1.5 text-[11px] p-2.5 rounded-lg bg-white border border-black/6 shadow-2xs">
-                  <div className="flex items-start justify-between gap-1">
-                    <span className="text-[#6B7C73] font-medium shrink-0">Strength:</span>
-                    <span className="text-[#123D32] font-bold font-mono text-right truncate">
-                      {product.compressiveStrength}
-                    </span>
-                  </div>
-                  <div className="flex items-start justify-between gap-1">
-                    <span className="text-[#6B7C73] font-medium shrink-0">Absorption:</span>
-                    <span className="text-[#1F2A24] font-semibold font-mono text-right">
-                      {product.waterAbsorption}
-                    </span>
-                  </div>
-                  <div className="flex items-start justify-between gap-1">
-                    <span className="text-[#6B7C73] font-medium shrink-0">Sizes:</span>
-                    <span className="text-[#1F2A24] font-semibold text-right truncate">
-                      {product.dimensions}
-                    </span>
-                  </div>
-                </div>
-              )}
+            <div>
+              
 
               {activeCardTab === "finishes" && (
                 <ul className="space-y-1 text-[11px] text-[#6B7C73]">
@@ -633,7 +494,7 @@ function SpotlightProductCard({
           </div>
 
           {/* Bottom Action Row */}
-          <div className="pt-4 mt-2 border-t border-black/8 flex items-center justify-between">
+          <div className="pt-4 mt-2  flex items-center justify-between">
             <span className="text-xs font-bold text-[#123D32] group-hover:text-[#C5A15B] flex items-center gap-1 transition-colors">
               <span>Inspect Dossier</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-[#123D32] group-hover:text-[#C5A15B] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

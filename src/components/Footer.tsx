@@ -95,6 +95,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/semi-precious" className="hover:text-[#C5A15B] transition-colors">
+                  Semi Precious Stone
+                </Link>
+              </li>
+              <li>
                 <Link href="/articles" className="hover:text-[#C5A15B] transition-colors">
                   Hand-Carved Sculptures &amp; Articles
                 </Link>

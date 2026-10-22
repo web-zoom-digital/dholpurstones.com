@@ -10,6 +10,7 @@ import SandstoneArticles from "@/components/SandstoneArticles";
 import OurProducts from "@/components/OurProducts";
 import FarmHouseGardenSpecialist from "@/components/FarmHouseGardenSpecialist";
 import StoneCollection from "@/components/StoneCollection";
+import SemiPreciousPreview from "@/components/SemiPreciousPreview";
 import Applications from "@/components/Applications";
 import OurSignatureProjects from "@/components/OurSignatureProjects";
 import FAQSection from "@/components/FAQSection";
@@ -52,6 +53,9 @@ export default function Home() {
 
       {/* 7. Natural Stone Collection (Page 5 of PDF - Botticino, Black Granite, Semi-Precious, Elmali Beige) */}
       <StoneCollection />
+
+      {/* 7B. Semi-Precious Gemstone Collection Preview (Agate, Lapis, Tiger's Eye, Jasper) */}
+      <SemiPreciousPreview />
 
       {/* 8. Applications (Page 6 of PDF - 6 Typologies & 'From Nature To Iconic Landmarks' Banner) */}
       <Applications />
