@@ -75,8 +75,168 @@ export interface ProductItem {
 
 const products: ProductItem[] = [
   {
-    id: "cnc-grooved-panels",
+    id: "dholpur-pink-sandstone",
     number: "01",
+    title: "Dholpur Pink Sandstone Architectural Slabs",
+    subtitle: "Fine-Grained Pink Quartzite for Grand Elevations & Exterior Facades",
+    category: "cladding",
+    categoryLabel: "DHOLPUR QUARRY SPECIALTY",
+    provenance: "Direct Sarmathura Mines, Rajasthan",
+    image: "/sandstone/dholpur-pink-sandstone.jpeg",
+    shortDesc:
+      "Quarry-extracted authentic Dholpur Pink Sandstone, master-crafted for grand elevations, palatial facades, and high load-bearing architectural masonry.",
+    longDetails:
+      "Directly mined from the historic Sarmathura geological strata in Rajasthan. Dholpur Pink Sandstone features fine-grained quartz crystals with remarkable compressive load capacity and natural weather resistance, retaining its royal pink hue across decades of harsh climate.",
+    shades: "Natural Dholpur Pink / Soft Rose Quartz Hue",
+    finishes: [
+      "Precision Wire Sawn",
+      "Fine Satin Honed",
+      "Natural Cleft Split",
+      "Antique Brushed",
+    ],
+    dimensions: "Gangsaw Slabs up to 3000x1500mm (20mm - 80mm Thickness)",
+    applications: [
+      "Exterior Elevation Facades",
+      "Grand Porticos & Columns",
+      "Boundary Wall Architectural Panels",
+      "Courtyard Landscaping & Paving",
+    ],
+    compressiveStrength: "69.4 MPa (Dry) / 63.2 MPa (Wet)",
+    waterAbsorption: "< 1.10% by weight",
+    density: "2.44 - 2.48 g/cm³",
+    modulusOfRupture: "12.1 N/mm²",
+    highlights: [
+      "Authentic quarry-direct pink sandstone from Sarmathura",
+      "High thermal insulation and zero flaking across weather cycles",
+      "Uniform coloration and flawless grain texture",
+      "Cut to precision architectural tolerances",
+    ],
+    waMsg:
+      "Hello Dholpurestones.com, I would like to inquire about Dholpur Pink Sandstone Architectural Slabs.",
+  },
+  {
+    id: "dholpur-beige-tiles",
+    number: "02",
+    title: "Dholpur Beige Natural Sandstone Tiles",
+    subtitle: "Precision Sawn Paving, Pool Decks & Courtyard Flooring Tiles",
+    category: "paving",
+    categoryLabel: "AUTHENTIC DHOLPUR BEIGE",
+    provenance: "Sikandra Calibration Plant",
+    image: "/sandstone/dolpur-beige-sandstone.jpeg",
+    shortDesc:
+      "Even-toned Dholpur Beige sandstone tiles with sharp chamfered calibration, naturally staying cool under intense sun.",
+    longDetails:
+      "Processed with rigorous ±0.5mm thickness tolerances for seamless zero-lippage paving installations. Naturally thermally insulating with high reflectance, staying pleasantly cool under barefoot traffic even in peak summer heat. Highly favored for luxury resort pool surrounds, palatial courtyards, estate walkways, and facade cladding.",
+    shades: "Warm Cream Beige, Light Biscuit & Ivory White",
+    finishes: [
+      "Natural Cleft Split Textured",
+      "Fine Diamond Sawn",
+      "Velvet Satin Honed",
+      "Shot-Blasted Anti-Slip (R11)",
+    ],
+    dimensions: "300x300, 600x300, 600x600, 900x600mm (20mm - 40mm Thickness)",
+    applications: [
+      "Palatial Courtyards & Atriums",
+      "Resort Swimming Pool Decks",
+      "Estate Garden Walkways & Patios",
+      "Exterior Verandas & Cladding",
+    ],
+    compressiveStrength: "66.8 MPa (Dry) / 61.0 MPa (Wet)",
+    waterAbsorption: "< 1.10% by weight",
+    density: "2.44 - 2.48 g/cm³",
+    modulusOfRupture: "11.5 N/mm²",
+    highlights: [
+      "High solar reflectance index — stays comfortably cool underfoot",
+      "Non-slip wet traction rating ideal for poolside paving",
+      "Strict sorting by color tones — zero unsightly batch variation",
+      "Precision chamfered edges for razor-sharp modern joint lines",
+    ],
+    waMsg:
+      "Hello Dholpurestones.com, I would like to inquire about Dholpur Beige Sandstone Calibrated Tiles.",
+  },
+  {
+    id: "dholpur-red-slabs",
+    number: "03",
+    title: "Agra Red Sandstone Architectural Paving",
+    subtitle: "Heavy-Duty Civic Plazas, Temple Mandapams & Driveway Copings",
+    category: "paving",
+    categoryLabel: "HISTORIC ROYAL RED",
+    provenance: "Sarmathura & Sikandra Yards",
+    image: "/sandstone/agra-red-sandstone.jpeg",
+    shortDesc:
+      "Heavy-duty precision-cut Red Sandstone paving slabs built to endure harsh climate cycles and continuous heavy footfall without degradation.",
+    longDetails:
+      "Engineered from homogeneous Dholpur and Agra Red sandstone strata. Demonstrates exceptional compressive strength, minimal water absorption, and a slip-resistant natural matte surface. Extensively used in civic plazas, temple mandapams, and luxury estate driveways.",
+    shades: "Deep Royal Dholpur Red with Uniform Hue",
+    finishes: [
+      "Smooth Diamond Sawn",
+      "Fine Antique Honed",
+      "Thermal Flamed Anti-Skid",
+      "Antique Tumbled & Brushed",
+    ],
+    dimensions: "600x600, 600x900, 1200x600mm (25mm to 60mm Thickness)",
+    applications: [
+      "Civic Public Plazas & Pedestrian Boulevards",
+      "Temple Mandapas & Parikrama Pathways",
+      "High-Traffic Estate Driveways & Ramps",
+      "Massive Boundary Copings & Bullnosed Steps",
+    ],
+    compressiveStrength: "70.4 MPa (Dry) / 63.8 MPa (Wet)",
+    waterAbsorption: "< 1.05% by weight",
+    density: "2.47 - 2.51 g/cm³",
+    modulusOfRupture: "12.6 N/mm²",
+    highlights: [
+      "Heavy load-bearing capacity suitable for vehicular driveways",
+      "High silica quartz density naturally resisting oil & stain absorption",
+      "Slip-resistant R12 textured surface for all-weather public safety",
+      "Precision calibrated thickness for uniform sand or mortar bed laying",
+    ],
+    waMsg:
+      "Hello Dholpurestones.com, I would like to inquire about Agra Red Sandstone Architectural Paving Slabs.",
+  },
+  {
+    id: "mint-sandstone-paving",
+    number: "04",
+    title: "Mint Sandstone Calibrated Paving Tiles",
+    subtitle: "Subtle Earthy Cleft Texture, Non-Slip Patio & Poolside Coping",
+    category: "paving",
+    categoryLabel: "PREMIUM NATURAL CLEFT",
+    provenance: "Rajasthan Cleft Processing Plant",
+    image: "/sandstone/mint-sandstone.jpeg",
+    shortDesc:
+      "Naturally textured Mint Sandstone featuring subtle earthy undertones, non-slip textured finish, and durability for luxury patios and landscaping.",
+    longDetails:
+      "Mint Sandstone is prized globally for its gentle warm greenish-yellow earthy hues and naturally slip-resistant cleft surface. Ideal for exterior landscaping, garden pathways, swimming pool copings, and patio paving in luxury residential and hospitality projects.",
+    shades: "Mint Green, Soft Earthy Yellow & Warm Buff",
+    finishes: [
+      "Natural Cleft Split",
+      "Calibrated Sawn Edge",
+      "Tumbled Antiqued",
+      "Honed Smooth",
+    ],
+    dimensions: "600x600, 600x900, 900x900mm (20mm - 35mm Calibrated)",
+    applications: [
+      "Swimming Pool Decks & Copings",
+      "Estate Garden Patios",
+      "Outdoor Verandas",
+      "Walkways & Stepping Stones",
+    ],
+    compressiveStrength: "67.8 MPa (Dry) / 61.5 MPa (Wet)",
+    waterAbsorption: "< 1.15% by weight",
+    density: "2.43 - 2.47 g/cm³",
+    modulusOfRupture: "11.6 N/mm²",
+    highlights: [
+      "Naturally anti-skid surface even when completely wet",
+      "Stays cool under direct summer sunlight",
+      "Uniform thickness calibration for fast and level laying",
+      "Superior resistance to outdoor algae and mildew formation",
+    ],
+    waMsg:
+      "Hello Dholpurestones.com, I would like to inquire about Mint Sandstone Calibrated Paving Tiles.",
+  },
+  {
+    id: "cnc-grooved-panels",
+    number: "05",
     title: "CNC Grooved & 3D Carved Sandstone Panels",
     subtitle: "Precision Diamond Fluted Cladding & Dynamic Geometric Relief",
     category: "cladding",
@@ -116,13 +276,13 @@ const products: ProductItem[] = [
   },
   {
     id: "dholpur-red-blocks",
-    number: "02",
+    number: "06",
     title: "Dholpur Red Sandstone Blocks & Gangsaw Slabs",
     subtitle: "Quarry Monoliths, Structural Columns & Heavy Calibrated Slabs",
     category: "blocks",
     categoryLabel: "QUARRY MONOLITHS & SLABS",
-    provenance: "Direct Dholpur, Rajasthan",
-    image: "/assets/products/dholpur_red_quarry_blocks.jpg",
+    provenance: "Direct Sarmathura Mines, Rajasthan",
+    image: "/sandstone/dolpur-beige-sandstone.jpeg",
     shortDesc:
       "Direct quarry-extracted monolithic Dholpur Red sandstone blocks cut with precision diamond wire saws, offering centuries of structural longevity.",
     longDetails:
@@ -155,54 +315,93 @@ const products: ProductItem[] = [
       "Hello Dholpurestones.com, I would like to inquire about Dholpur Red Sandstone Blocks & Gangsaw Slabs.",
   },
   {
-    id: "dholpur-beige-tiles",
-    number: "03",
-    title: "Dholpur Beige & White Calibrated Tiles",
-    subtitle: "Precision Sawn Paving, Pool Decks & Courtyard Flooring Tiles",
-    category: "paving",
-    categoryLabel: "CALIBRATED PAVING & TILES",
-    provenance: "Dholpur Sandstone Mines",
-    image: "/assets/products/real_dholpur_beige_tiles_quarry_yard.jpg",
+    id: "white-series-slabs",
+    number: "07",
+    title: "White Series Premium Marble & Stone Slabs",
+    subtitle: "Luminous Royal White & Statuario for Palatial Luxury Interiors",
+    category: "exotic",
+    categoryLabel: "WHITE SERIES COLLECTION",
+    provenance: "Kishangarh Natural Stone Hub",
+    image: "/white-series-dolphur-color/royal-white.png",
     shortDesc:
-      "Even-toned Dholpur Beige and Ivory White sandstone tiles with sharp chamfered calibration, naturally staying cool under intense sun.",
+      "Pristine white marble and stone slabs featuring luminous crystallization and dramatic veining for bookmatched interior feature walls and palatial flooring.",
     longDetails:
-      "Processed with rigorous ±0.5mm thickness tolerances for seamless zero-lippage paving installations. Naturally thermally insulating with high reflectance, staying pleasantly cool under barefoot traffic even in peak summer heat. Highly favored for luxury resort pool surrounds, palatial courtyards, estate walkways, and facade cladding.",
-    shades: "Warm Cream Beige, Mint & Ivory White",
+      "Part of our premier White Series collection, featuring high-purity calcite and quartz formations. Finished to mirror-polish sheen or velvet matte honed. Celebrated by world-renowned interior architects for grand hotel lobbies, master suites, and luxury villas.",
+    shades: "Pure Royal White, Statuario Veined, Carrara Mist",
     finishes: [
-      "Natural Cleft Split Textured",
-      "Fine Diamond Sawn",
+      "High Gloss Mirror Polish",
+      "Bookmatched Polished Pair",
       "Velvet Satin Honed",
-      "Shot-Blasted Anti-Slip (R11)",
+      "Leathered Antique",
     ],
-    dimensions: "300x300, 600x300, 600x600, 900x600mm (20mm - 40mm Thickness)",
+    dimensions: "Gangsaw Slabs up to 3200x1800mm (18mm, 20mm, 30mm Thickness)",
     applications: [
-      "Palatial Courtyards & Atriums",
-      "Resort Swimming Pool Decks",
-      "Estate Garden Walkways & Patios",
-      "Exterior Verandas & Cladding",
+      "Palatial Interior Flooring",
+      "Bookmatched Accent Feature Walls",
+      "Master Bathroom Vanities",
+      "Luxury Hotel Lobbies",
     ],
-    compressiveStrength: "66.8 MPa (Dry) / 61.0 MPa (Wet)",
-    waterAbsorption: "< 1.10% by weight",
-    density: "2.44 - 2.48 g/cm³",
-    modulusOfRupture: "11.5 N/mm²",
+    compressiveStrength: "92.0 MPa (Dry) / 84.5 MPa (Wet)",
+    waterAbsorption: "< 0.25% by weight",
+    density: "2.68 - 2.72 g/cm³",
+    modulusOfRupture: "14.8 N/mm²",
     highlights: [
-      "High solar reflectance index — stays comfortably cool underfoot",
-      "Non-slip wet traction rating ideal for poolside paving",
-      "Strict sorting by color tones — zero unsightly batch variation",
-      "Precision chamfered edges for razor-sharp modern joint lines",
+      "Selected from highest-purity white stone blocks",
+      "Bookmatched vein symmetry available for dramatic walls",
+      "Exceptional mirror reflectivity and surface hardness",
+      "Non-porous crystalline structure resisting stains",
     ],
     waMsg:
-      "Hello Dholpurestones.com, I would like to inquire about Dholpur Beige & White Calibrated Tiles.",
+      "Hello Dholpurestones.com, I would like to inquire about White Series Premium Marble & Stone Slabs.",
+  },
+  {
+    id: "semi-precious-agate",
+    number: "08",
+    title: "Semi-Precious Gemstone Backlit Feature Slabs",
+    subtitle: "Rare Hand-Assembled Royal Blue Agate for Luxury Backlit Statements",
+    category: "exotic",
+    categoryLabel: "SEMI-PRECIOUS GEMSTONES",
+    provenance: "Bespoke Lapidary Gemstone Studio",
+    image: "/semi-precious/blue-agate.jpeg",
+    shortDesc:
+      "Exquisite hand-assembled natural agate gemstone slabs with translucent crystalline depth, engineered for ambient backlighting and royal luxury surfaces.",
+    longDetails:
+      "Master artisans individually hand-select and assemble authentic agate mineral geodes within high-clarity resin. When illuminated from behind, the concentric bands radiate an ethereal glow, transforming bar counters, feature walls, and vanity counters into captivating geological art.",
+    shades: "Royal Blue Agate, Black Agate, Fire Agate, Lapis Lazuli",
+    finishes: [
+      "Translucent Backlit Mirror Polish",
+      "Seamless Epoxy Gemstone Matrix",
+      "Chamfered Edge Profiling",
+    ],
+    dimensions: "Custom Architectural Slabs up to 2800x1500mm (15mm - 20mm Thickness)",
+    applications: [
+      "Backlit Bar Counters & Cocktail Lounges",
+      "Luxury Reception Backdrops",
+      "Master Powder Room Vanities",
+      "Pietra Dura Inlay Art Panels",
+    ],
+    compressiveStrength: "115.0 MPa (Dry) / 108.0 MPa (Wet)",
+    waterAbsorption: "< 0.08% by weight",
+    density: "2.60 - 2.65 g/cm³",
+    modulusOfRupture: "18.5 N/mm²",
+    highlights: [
+      "100% genuine semi-precious agate mineral geodes",
+      "Spectacular light transmission for LED backlighting systems",
+      "Chemical and scratch resistant mirror-polished surface",
+      "Bespoke sizing engineered to exact architectural BOQ",
+    ],
+    waMsg:
+      "Hello Dholpurestones.com, I would like to inquire about Semi-Precious Gemstone Backlit Feature Slabs.",
   },
   {
     id: "sandstone-bulk-exports",
-    number: "04",
+    number: "09",
     title: "Industrial Crated Bundles & Containerized Exports",
     subtitle: "Global Sea-Worthy ISPM-15 Timber Packaging for Wholesale Supply",
     category: "export",
     categoryLabel: "ISPM-15 EXPORT CRATING",
     provenance: "Central Export Logistics Hub & Mundra Port",
-    image: "/assets/products/real_sandstone_export_crating_yard.jpg",
+    image: "/semi-precious/green-agate.jpeg",
     shortDesc:
       "Industrial-scale inventory of project-calibrated sandstone bundles packed into heavy-duty ISPM-15 fumigated timber crates for global transit.",
     longDetails:
@@ -239,8 +438,9 @@ const products: ProductItem[] = [
 const categoryTabs = [
   { id: "all", label: "All Products" },
   { id: "cladding", label: "3D CNC & Elevation" },
-  { id: "blocks", label: "Quarry Blocks & Slabs" },
   { id: "paving", label: "Paving & Tiles" },
+  { id: "blocks", label: "Quarry Blocks & Monoliths" },
+  { id: "exotic", label: "Exotic & Luxury Collections" },
   { id: "export", label: "Global Export Crates" },
 ];
 
@@ -373,11 +573,10 @@ function SpotlightProductCard({
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveCardTab(tab.id as "specs" | "finishes" | "applications")}
-                  className={`flex-1 py-1 text-[10px] font-bold uppercase tracking-wider rounded-md transition-all cursor-pointer ${
-                    activeCardTab === tab.id
+                  className={`flex-1 py-1 text-[10px] font-bold uppercase tracking-wider rounded-md transition-all cursor-pointer ${activeCardTab === tab.id
                       ? "bg-[#123D32] text-white shadow-xs"
                       : "text-[#6B7C73] hover:text-[#1F2A24]"
-                  }`}
+                    }`}
                 >
                   {tab.label}
                 </button>
@@ -543,11 +742,10 @@ export default function OurProducts() {
               <button
                 type="button"
                 onClick={() => setViewMode("grid")}
-                className={`flex items-center gap-1.5 px-3 py-1 rounded-md transition-all cursor-pointer ${
-                  viewMode === "grid"
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-md transition-all cursor-pointer ${viewMode === "grid"
                     ? "bg-[#123D32] text-white shadow-xs"
                     : "text-[#6B7C73] hover:text-[#1F2A24]"
-                }`}
+                  }`}
                 title="Grid View (3x2)"
               >
                 <LayoutGrid className="w-3.5 h-3.5" />
@@ -556,11 +754,10 @@ export default function OurProducts() {
               <button
                 type="button"
                 onClick={() => setViewMode("spotlight")}
-                className={`flex items-center gap-1.5 px-3 py-1 rounded-md transition-all cursor-pointer ${
-                  viewMode === "spotlight"
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-md transition-all cursor-pointer ${viewMode === "spotlight"
                     ? "bg-[#123D32] text-white shadow-xs"
                     : "text-[#6B7C73] hover:text-[#1F2A24]"
-                }`}
+                  }`}
                 title="Cinematic Spotlight View"
               >
                 <Eye className="w-3.5 h-3.5" />
@@ -648,11 +845,10 @@ export default function OurProducts() {
                     setActiveTab(tab.id);
                     setCurrentSlide(0);
                   }}
-                  className={`text-[11px] sm:text-xs font-bold uppercase tracking-wider px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full transition-all duration-300 border cursor-pointer whitespace-nowrap shrink-0 ${
-                    activeTab === tab.id
+                  className={`text-[11px] sm:text-xs font-bold uppercase tracking-wider px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full transition-all duration-300 border cursor-pointer whitespace-nowrap shrink-0 ${activeTab === tab.id
                       ? "bg-[#123D32] text-white border-[#123D32] shadow-md shadow-[#123D32]/25"
                       : "bg-[#F7F4EB] text-[#6B7C73] border-black/8 hover:border-[#C5A15B] hover:text-[#1F2A24] hover:bg-white"
-                  }`}
+                    }`}
                 >
                   {tab.label}
                 </button>
@@ -732,8 +928,8 @@ export default function OurProducts() {
                 <div className="lg:col-span-5 flex flex-col justify-between">
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs font-bold text-[#C5A15B] uppercase tracking-[0.2em]">
-                        Product Dossier &bull; {activeSlideProduct.number} of 06
+                      <span className="text-xs font-bold text-[#C29B38] uppercase tracking-[0.2em]">
+                        Product Dossier &bull; {activeSlideProduct.number} of {products.length < 10 ? `0${products.length}` : products.length}
                       </span>
                       <div className="flex items-center gap-2">
                         <button
@@ -837,11 +1033,10 @@ export default function OurProducts() {
                     key={prod.id}
                     type="button"
                     onClick={() => setCurrentSlide(i)}
-                    className={`relative w-20 h-14 rounded-xl overflow-hidden shrink-0 border-2 transition-all cursor-pointer ${
-                      currentSlide === i
+                    className={`relative w-20 h-14 rounded-xl overflow-hidden shrink-0 border-2 transition-all cursor-pointer ${currentSlide === i
                         ? "border-[#123D32] scale-105 shadow-md"
                         : "border-transparent opacity-60 hover:opacity-100"
-                    }`}
+                      }`}
                   >
                     <Image
                       src={prod.image}

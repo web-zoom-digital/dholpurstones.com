@@ -38,7 +38,7 @@ export default function MaterialShowcase() {
       name: "Dholpur Sandstone",
       category: "HERITAGE QUARRY PILLAR",
       tagline: "India’s Iconic Architectural Building Stone",
-      image: "/assets/material-sandstone.jpg",
+      image: "/sandstone/dholpur-pink-sandstone.jpeg",
       description:
         "Extracted directly from our captive quarries in Dholpur, Rajasthan. Characterized by uniform fine grain, high load-bearing capacity, and outstanding thermal insulation. Resistant to saline conditions and weathering across centuries.",
       varieties: ["Dholpur Beige / Cream", "Dholpur Red / Pink", "Teakwood Sandstone", "Rainbow Sandstone", "Chocolate Sandstone"],
@@ -56,7 +56,7 @@ export default function MaterialShowcase() {
       name: "Makrana Pristine Marble",
       category: "ROYAL HERITAGE MARBLE",
       tagline: "99% Pure Calcite Crystalline Splendor",
-      image: "/assets/material-marble.jpg",
+      image: "/white-series-dolpur-color/royal-white.png",
       description:
         "The identical historical quarry formation that sculpted the Taj Mahal, Victoria Memorial, and the Dilwara Temples. Impervious to water seepage, permanent white crystalline lustre that never yellows.",
       varieties: ["Makrana Pure White", "Makrana Albeta (Brown Veined)", "Makrana Dungri", "Makrana Kumari", "Makrana Pink"],
@@ -92,7 +92,7 @@ export default function MaterialShowcase() {
       name: "Semi-Precious Inlays",
       category: "BESPOKE LAPIDARY ART",
       tagline: "Backlit Gemstone Luxury Surfaces",
-      image: "/assets/material-agate.jpg",
+      image: "/semi-precious/blue-agate.jpeg",
       description:
         "Masterfully bound slices of authentic semi-precious quartz, agate, jasper, and tiger eye crafted by royal lapidary craftsmen. Translucent crystalline structures allow magnificent ambient LED backlighting.",
       varieties: ["Blue & Wild Agate", "Golden Jasper & Petrified Wood", "Green Onyx & Malachite", "Amethyst & Crystal Quartz"],

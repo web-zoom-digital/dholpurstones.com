@@ -44,31 +44,40 @@ function AnimDiv({
 
 const articles = [
   {
-    id: "peacock",
-    title: "PEACOCK SCULPTURE",
-    desc: "Intricately detailed hand-carved natural sandstone sculpture for grand entrances, courtyards & luxury estate gardens.",
-    tag: "CUSTOM / PROJECT-SPECIFIC WORK",
-    image: "/assets/garg/peacock_sculpture.jpg",
-    waMsg: "Hello Dholpurestones.com, I would like to inquire about the Hand-Carved Peacock Sandstone Sculpture.",
-    details: "Masterfully hand-carved twin peacocks with elaborate plumage perched upon a blooming lotus pedestal, crafted from premium weather-resistant Dholpur sandstone.",
+    id: "sandstone-pink",
+    title: "DHOLPUR PINK SANDSTONE",
+    desc: "Quarry-extracted authentic Dholpur Pink Sandstone, master-crafted for architectural articles, facades, courtyards and palatial garden landscaping.",
+    tag: "DHOLPUR QUARRY SPECIALTY",
+    image: "/sandstone/dholpur-pink-sandstone.jpeg",
+    waMsg: "Hello Dholpurestones.com, I would like to inquire about Dholpur Pink Sandstone articles and architectural work.",
+    details: "Authentic quarry-extracted Dholpur Pink Sandstone with fine-grained texture, high load-bearing capacity, and timeless natural pink aesthetics for grand facades, custom carvings, and paving.",
   },
   {
-    id: "lantern",
-    title: "STONE LANTERN",
-    desc: "Decorative carved sandstone lantern lamp post with traditional jali lattice work for ambient estate and landscape illumination.",
-    tag: "CUSTOM / PROJECT-SPECIFIC WORK",
-    image: "/assets/garg/stone_lantern.jpg",
-    waMsg: "Hello Dholpurestones.com, I would like to inquire about the Decorative Sandstone Lanterns & Lamp Posts.",
-    details: "Monolithic vertical sandstone lighting post with perforated geometric jali patterns, engineered for integrated warm ambient lighting along grand walkways and gardens.",
+    id: "sandstone-beige",
+    title: "DHOLPUR BEIGE SANDSTONE",
+    desc: "Even-toned natural Dholpur Beige Sandstone, renowned for uniform coloration, thermal insulation, and intricate hand-carved architectural articles.",
+    tag: "AUTHENTIC DHOLPUR BEIGE",
+    image: "/sandstone/dolpur-beige-sandstone.jpeg",
+    waMsg: "Hello Dholpurestones.com, I would like to inquire about Dholpur Beige Sandstone articles and architectural work.",
+    details: "Even-toned Dholpur Beige Sandstone, celebrated for uniform coloration and exceptional thermal insulation, ideal for palatial flooring, courtyards, ornamental carvings, and wall cladding.",
   },
   {
-    id: "lion",
-    title: "LION SCULPTURE",
-    desc: "Majestic monumental sandstone guardian lion sculpture carved from monolithic stone blocks for prestige gates and institutions.",
-    tag: "CUSTOM / PROJECT-SPECIFIC WORK",
-    image: "/assets/garg/lion_sculpture.jpg",
-    waMsg: "Hello Dholpurestones.com, I would like to inquire about the Monumental Sandstone Lion Sculpture.",
-    details: "Regal guardian lion perched upon a floral relief carved pedestal, symbolizing power, protection and architectural permanence.",
+    id: "sandstone-agra-red",
+    title: "AGRA RED SANDSTONE",
+    desc: "Historic royal crimson-red sandstone mined from Rajasthan strata, renowned for monumental strength, zero weathering, and landmark architectural applications.",
+    tag: "HERITAGE ROYAL RED",
+    image: "/sandstone/agra-red-sandstone.jpeg",
+    waMsg: "Hello Dholpurestones.com, I would like to inquire about Agra Red Sandstone articles and architectural work.",
+    details: "Historic royal crimson-red natural sandstone mined from Rajasthan strata, renowned for monumental strength, zero weathering, and landmark architectural applications and monumental articles.",
+  },
+  {
+    id: "sandstone-mint",
+    title: "MINT SANDSTONE",
+    desc: "Natural cleft Mint Sandstone featuring subtle earthy undertones, non-slip textured finish, and excellent durability for luxury patios, pool surrounds, and landscape articles.",
+    tag: "PREMIUM NATURAL CLEFT",
+    image: "/sandstone/mint-sandstone.jpeg",
+    waMsg: "Hello Dholpurestones.com, I would like to inquire about Mint Sandstone articles and architectural work.",
+    details: "Natural cleft Mint Sandstone featuring subtle earthy undertones, non-slip textured finish, and excellent durability for luxury patios, pool surrounds, and bespoke landscape articles.",
   },
 ];
 
@@ -116,8 +125,8 @@ export default function SandstoneArticles() {
           </p>
         </AnimDiv>
 
-        {/* 3-Column Product Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
+        {/* 4-Column Product Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {articles.map((a, i) => (
             <AnimDiv key={a.id} delay={i * 100}>
               <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-black/8 hover:border-[#C5A15B]/60 hover:shadow-xl transition-all duration-300 group flex flex-col h-full">
@@ -130,7 +139,7 @@ export default function SandstoneArticles() {
                     src={a.image}
                     alt={a.title}
                     fill
-                    sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
+                    sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw"
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-3 left-3 bg-[#123D32]/85 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
