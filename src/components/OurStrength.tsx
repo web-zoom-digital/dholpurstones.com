@@ -157,7 +157,7 @@ export default function OurStrength() {
 
                 <div className="grid grid-cols-2 gap-2 sm:gap-4">
                   {[
-                    { name: "Sarmathura", role: "Mines, Dholpur" },
+                    { name: "Dholpur", role: "Quarries & Works" },
                     { name: "Sikandra", role: "Carving Works" },
                     { name: "Kishangarh", role: "Trading Hub" },
                     { name: "Canada", role: "Overseas Office", gold: true },

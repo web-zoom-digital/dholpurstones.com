@@ -80,10 +80,10 @@ const faqs: FAQItem[] = [
     id: "quarries",
     number: "03",
     q: "Where are your quarry leases, manufacturing plants, and overseas offices situated?",
-    a: "Our primary sandstone quarries operate over contiguous strata concessions in Sarmathura (District Dholpur, Rajasthan). We run automated gangsaw and CNC processing facilities in Sikandra and Kishangarh (Rajasthan), and maintain a North American liaison office in Canada to seamlessly coordinate direct container shipments for global architects.",
+    a: "Our primary sandstone quarries operate over contiguous strata concessions in Dholpur (Rajasthan). We run automated gangsaw and CNC processing facilities in Sikandra and Kishangarh (Rajasthan), and maintain a North American liaison office in Canada to seamlessly coordinate direct container shipments for global architects.",
     category: "quarries",
     categoryLabel: "QUARRIES & INFRASTRUCTURE",
-    highlights: ["Sarmathura Quarry Concessions", "Sikandra 8-Axis CNC Hub", "Canadian Corporate Office"],
+    highlights: ["Dholpur Quarry Concessions", "Sikandra 8-Axis CNC Hub", "Canadian Corporate Office"],
   },
   {
     id: "landmarks",
@@ -98,7 +98,7 @@ const faqs: FAQItem[] = [
     id: "standards",
     number: "05",
     q: "Do your natural stones comply with IS:3620 and international physical standards?",
-    a: "Yes. All sandstone mined from our Sarmathura strata undergoes physical laboratory testing and exceeds IS:3620 standards. We guarantee compressive strength above 68 MPa (up to 72 MPa for Dholpur Red), ultra-low water absorption under 1.15%, density between 2.42–2.52 g/cm³, and complete frost and thermal shock resistance across centuries.",
+    a: "Yes. All sandstone mined from our Dholpur strata undergoes physical laboratory testing and exceeds IS:3620 standards. We guarantee compressive strength above 68 MPa (up to 72 MPa for Dholpur Red), ultra-low water absorption under 1.15%, density between 2.42–2.52 g/cm³, and complete frost and thermal shock resistance across centuries.",
     category: "materials",
     categoryLabel: "LAB TESTED DENSITY",
     highlights: ["Compressive Strength >68 MPa", "Water Absorption <1.15%", "Zero Efflorescence Guarantee"],
@@ -107,7 +107,7 @@ const faqs: FAQItem[] = [
     id: "custom-carving",
     number: "06",
     q: "Do you undertake bespoke architectural stone carving and temple shikhara engineering?",
-    a: "Yes. Our Sikandra and Sarmathura ateliers house hereditary Shilpa Shastra stone sculptors working alongside 8-axis CNC profiling saws. We engineer monolithic fluted columns, ornate floral jali screens, cantilevered Jharokhas, multi-tiered Nagara shikharas, and mortarless dry-joint interlocking stone assemblies.",
+    a: "Yes. Our Sikandra and Dholpur ateliers house hereditary Shilpa Shastra stone sculptors working alongside 8-axis CNC profiling saws. We engineer monolithic fluted columns, ornate floral jali screens, cantilevered Jharokhas, multi-tiered Nagara shikharas, and mortarless dry-joint interlocking stone assemblies.",
     category: "landmarks",
     categoryLabel: "SHILPA SHASTRA MASONRY",
     highlights: ["Hereditary Temple Guild", "±0.5mm Precision Tolerances", "Mortarless Dry-Joint Carving"],
@@ -153,7 +153,7 @@ const tickerHighlights = [
   "WE HAVE MADE MORE THAN 300+ DESIGNS FOR FRONT ELEVATION IN SANDSTONE (AWARDED BY GOVT. OF INDIA)",
   "NOMINATED FOR INTERNATIONAL AWARD FOR BUSINESS EXCELLENCE",
   "SPECIALIZED IN LUXURY FARM HOUSES & DESIGNER GARDEN LANDSCAPING",
-  "100% OWN QUARRY CONCESSIONS IN SARMATHURA & SIKANDRA",
+  "100% OWN QUARRY CONCESSIONS IN DHOLPUR & SIKANDRA",
   "HISTORIC DIRECT SUPPLIER TO NEW DELHI PARLIAMENT HOUSE",
   "OVER 50+ ISKCON & MONUMENTAL TEMPLES BUILT WORLDWIDE",
   "IS:3620 LABORATORY TESTED COMPRESSIVE STRENGTH >68 MPA",
@@ -378,7 +378,7 @@ export default function FAQSection() {
                 100% Direct
               </span>
               <span className="text-[8.5px] sm:text-[10px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
-                Sarmathura
+                Dholpur
               </span>
             </div>
             <div className="bg-[#F7F4EB] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2 sm:py-3 shadow-xs hover:border-[#C5A15B]/60 transition-colors text-center sm:text-left">

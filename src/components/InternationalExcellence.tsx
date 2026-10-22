@@ -81,7 +81,7 @@ const excellencePillars = [
     number: "04",
     badge: "100% OWN QUARRIES",
     title: "Proprietary Mines & Direct Export Processing",
-    desc: "Direct extraction from our captive quarry leases in Sarmathura & Sikandra with in-house 8-axis CNC fabrication and an established corporate overseas office in Canada.",
+    desc: "Direct extraction from our captive quarry leases in Dholpur & Sikandra with in-house 8-axis CNC fabrication and an established corporate overseas office in Canada.",
     stats: "Since 1953",
     statsLabel: "3 Generations of Direct Mining",
   },
@@ -132,11 +132,11 @@ export default function InternationalExcellence() {
             </h2>
 
             <p className="font-['EB_Garamond',serif] text-lg sm:text-xl text-[#C5A15B]/90 leading-relaxed mb-4">
-              Celebrating seven decades of uncompromising natural stone quarrying, award-winning front elevation designs, and global architectural contracting under Garg Corporation Ltd. and Saroj Stone Industries.
+              Celebrating seven decades of uncompromising natural stone quarrying, award-winning front elevation designs, and global architectural contracting under Garg Corporation Ltd.
             </p>
 
             <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/75 leading-relaxed max-w-3xl">
-              From our captive mines in Sarmathura, Rajasthan to prestigious overseas landmarks — including Indian Embassies, landmark spiritual sanctuaries, and luxury country farm houses — our commitment to engineering perfection, ethical mining, and high-precision CNC craftsmanship has established Dholpurestones.com as an internationally nominated enterprise for business excellence.
+              From our captive mines in Dholpur, Rajasthan to prestigious overseas landmarks — including Indian Embassies, landmark spiritual sanctuaries, and luxury country farm houses — our commitment to engineering perfection, ethical mining, and high-precision CNC craftsmanship has established Dholpurestones.com as an internationally nominated enterprise for business excellence.
             </p>
           </AnimDiv>
 

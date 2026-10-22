@@ -241,7 +241,7 @@ const products: ProductItem[] = [
     subtitle: "Precision Diamond Fluted Cladding & Dynamic Geometric Relief",
     category: "cladding",
     categoryLabel: "3D ELEVATION CLADDING",
-    provenance: "Sikandra 8-Axis CNC Facility",
+    provenance: "Dholpur Sandstone Mines",
     image: "/assets/products/cnc_grooved_sandstone_panel.jpg",
     shortDesc:
       "Precision-machined geometric fluted and diamond groove sandstone panels for luxury exterior elevation facades, porticos, and accent walls.",
@@ -286,7 +286,7 @@ const products: ProductItem[] = [
     shortDesc:
       "Direct quarry-extracted monolithic Dholpur Red sandstone blocks cut with precision diamond wire saws, offering centuries of structural longevity.",
     longDetails:
-      "Extracted directly from our proprietary quarry concessions in Sarmathura, Rajasthan. These massive monolithic red blocks feature ultra-fine quartz grains bound by siliceous cement. Demonstrates zero weathering, flaking, or efflorescence even after decades of exposure to extreme frost, desert heat, and torrential monsoon cycles.",
+      "Extracted directly from our proprietary quarry concessions in Dholpur, Rajasthan. These massive monolithic red blocks feature ultra-fine quartz grains bound by siliceous cement. Demonstrates zero weathering, flaking, or efflorescence even after decades of exposure to extreme frost, desert heat, and torrential monsoon cycles.",
     shades: "Rich Royal Terracotta Red / Agra Crimson",
     finishes: [
       "Quarry Dressed Rough Block",
@@ -447,7 +447,7 @@ const categoryTabs = [
 const tickerHighlights = [
   "500,000+ SQ.FT MONTHLY QUARRY SAWN CAPACITY",
   "IS:3620 CERTIFIED COMPRESSIVE STRENGTH >68 MPA",
-  "100% DIRECT QUARRY EXTRACTION FROM SARMATHURA & SIKANDRA",
+  "100% DIRECT QUARRY EXTRACTION FROM DHOLPUR & SIKANDRA",
   "8-AXIS HIGH PRECISION CNC FLUTING & 3D RELIEF (±0.5MM)",
   "20+ NATURAL STONE COLOURS & WEATHERPROOF FINISHES",
   "ISPM-15 EXPORT CERTIFIED CRATING TO 40+ PORTS GLOBALLY",
@@ -573,11 +573,10 @@ function SpotlightProductCard({
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveCardTab(tab.id as "specs" | "finishes" | "applications")}
-                  className={`flex-1 py-1 text-[10px] font-bold uppercase tracking-wider rounded-md transition-all cursor-pointer ${
-                    activeCardTab === tab.id
+                  className={`flex-1 py-1 text-[10px] font-bold uppercase tracking-wider rounded-md transition-all cursor-pointer ${activeCardTab === tab.id
                       ? "bg-[#123D32] text-white shadow-xs"
                       : "text-[#6B7C73] hover:text-[#1F2A24]"
-                  }`}
+                    }`}
                 >
                   {tab.label}
                 </button>
@@ -743,11 +742,10 @@ export default function OurProducts() {
               <button
                 type="button"
                 onClick={() => setViewMode("grid")}
-                className={`flex items-center gap-1.5 px-3 py-1 rounded-md transition-all cursor-pointer ${
-                  viewMode === "grid"
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-md transition-all cursor-pointer ${viewMode === "grid"
                     ? "bg-[#123D32] text-white shadow-xs"
                     : "text-[#6B7C73] hover:text-[#1F2A24]"
-                }`}
+                  }`}
                 title="Grid View (3x2)"
               >
                 <LayoutGrid className="w-3.5 h-3.5" />
@@ -756,11 +754,10 @@ export default function OurProducts() {
               <button
                 type="button"
                 onClick={() => setViewMode("spotlight")}
-                className={`flex items-center gap-1.5 px-3 py-1 rounded-md transition-all cursor-pointer ${
-                  viewMode === "spotlight"
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-md transition-all cursor-pointer ${viewMode === "spotlight"
                     ? "bg-[#123D32] text-white shadow-xs"
                     : "text-[#6B7C73] hover:text-[#1F2A24]"
-                }`}
+                  }`}
                 title="Cinematic Spotlight View"
               >
                 <Eye className="w-3.5 h-3.5" />
@@ -848,11 +845,10 @@ export default function OurProducts() {
                     setActiveTab(tab.id);
                     setCurrentSlide(0);
                   }}
-                  className={`text-[11px] sm:text-xs font-bold uppercase tracking-wider px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full transition-all duration-300 border cursor-pointer whitespace-nowrap shrink-0 ${
-                    activeTab === tab.id
+                  className={`text-[11px] sm:text-xs font-bold uppercase tracking-wider px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full transition-all duration-300 border cursor-pointer whitespace-nowrap shrink-0 ${activeTab === tab.id
                       ? "bg-[#123D32] text-white border-[#123D32] shadow-md shadow-[#123D32]/25"
                       : "bg-[#F7F4EB] text-[#6B7C73] border-black/8 hover:border-[#C5A15B] hover:text-[#1F2A24] hover:bg-white"
-                  }`}
+                    }`}
                 >
                   {tab.label}
                 </button>
@@ -1037,11 +1033,10 @@ export default function OurProducts() {
                     key={prod.id}
                     type="button"
                     onClick={() => setCurrentSlide(i)}
-                    className={`relative w-20 h-14 rounded-xl overflow-hidden shrink-0 border-2 transition-all cursor-pointer ${
-                      currentSlide === i
+                    className={`relative w-20 h-14 rounded-xl overflow-hidden shrink-0 border-2 transition-all cursor-pointer ${currentSlide === i
                         ? "border-[#123D32] scale-105 shadow-md"
                         : "border-transparent opacity-60 hover:opacity-100"
-                    }`}
+                      }`}
                   >
                     <Image
                       src={prod.image}
@@ -1079,7 +1074,7 @@ export default function OurProducts() {
                 Need Custom Sawn Slabs, Architectural Cladding, or Bulk Container Loads?
               </h3>
               <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/80 leading-relaxed">
-                Direct quarry extraction from our Sarmathura mines and cutting-edge 8-axis CNC processing allow us to fulfill any custom color, thickness calibration, or surface finish requirement for landmark projects.
+                Direct quarry extraction from our Dholpur mines and cutting-edge 8-axis CNC processing allow us to fulfill any custom color, thickness calibration, or surface finish requirement for landmark projects.
               </p>
             </div>
 

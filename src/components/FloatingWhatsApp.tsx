@@ -14,7 +14,7 @@ export default function FloatingWhatsApp() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-3 right-3 sm:bottom-6 sm:right-6 z-50 pointer-events-auto">
+    <div className="hidden sm:block fixed sm:bottom-6 sm:right-6 z-50 pointer-events-auto">
       {/* WhatsApp Floating Button */}
       <a
         href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20inquire%20about%20natural%20stone%20and%20architectural%20articles"

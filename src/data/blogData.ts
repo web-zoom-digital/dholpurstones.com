@@ -224,7 +224,7 @@ export const BLOG_POSTS: BlogPost[] = [
           id: "geological-legacy",
           heading: "1. The Geological Lineage of Red Sandstone",
           paragraphs: [
-            "Extracted primarily from the Sarmathura and Bari quarry zones in Rajasthan, Agra Red sandstone is an arenaceous sedimentary stone composed of ultra-fine quartz grains bonded by a dense siliceous cement. Its characteristic deep terracotta-to-crimson coloration is the result of micro-crystalline hematite (Fe2O3) naturally coated over each quartz particle during sedimentary deposition in prehistoric shallow sea beds.",
+            "Extracted primarily from the Dholpur and Bari quarry zones in Rajasthan, Agra Red sandstone is an arenaceous sedimentary stone composed of ultra-fine quartz grains bonded by a dense siliceous cement. Its characteristic deep terracotta-to-crimson coloration is the result of micro-crystalline hematite (Fe2O3) naturally coated over each quartz particle during sedimentary deposition in prehistoric shallow sea beds.",
             "This natural ferric mineralization gives the stone its warm, light-refracting quality: in early dawn light, the stone glows with soft amber warmth; by noon, it radiates deep rust terracotta; and at dusk, it settles into an opulent imperial crimson.",
           ],
         },
@@ -257,7 +257,7 @@ export const BLOG_POSTS: BlogPost[] = [
           id: "finishes-textures",
           heading: "4. Surface Finishes: Honed, Shotblasted & Rock-Faced",
           paragraphs: [
-            "The versatility of Agra Red stone lies in the diverse spectrum of textures that can be achieved through artisanal and machine processing at our Sarmathura workshops:",
+            "The versatility of Agra Red stone lies in the diverse spectrum of textures that can be achieved through artisanal and machine processing at our Dholpur workshops:",
           ],
           bullets: [
             "Honed Finish: Silky-smooth matte surface with zero gloss; highlights the subtle grain striations, ideal for interior wall paneling and covered verandas.",
@@ -397,7 +397,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "shilpa-shastra-hand-carved-stone-sculptures-jalis",
     title: "The Lost Art of Shilpa Shastra: Hand-Carving Monolithic Sculptures & Temple Jalis",
     excerpt:
-      "Step inside our Sikandra and Sarmathura ateliers where multi-generational Sompura artisans practice ancient Vedic carving traditions. Learn how raw sandstone blocks are transformed into monolithic peacocks, regal lanterns, and jali screens.",
+      "Step inside our Sikandra and Dholpur ateliers where multi-generational Sompura artisans practice ancient Vedic carving traditions. Learn how raw sandstone blocks are transformed into monolithic peacocks, regal lanterns, and jali screens.",
     category: "Artisanal Craftsmanship",
     readTime: "6 min read",
     publishedDate: "October 06, 2026",
@@ -444,7 +444,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     content: {
       intro:
-        "In an era dominated by rapid mass manufacturing and artificial 3D printing, the centuries-old art of stone sculpting remains one of the last bastions of pure human craft. In the historic stone carving belts of Sikandra and Sarmathura in Rajasthan, hereditary master artisans continue a sacred lineage dating back over thirty generations. Guided by the ancient Sanskrit shlokas of the Shilpa Shastra, these craftsmen transform unyielding multi-tonne quarry boulders into lifelike feathers, delicate floral arabesques, and ethereal pierced jalis that play with sunlight and breeze.",
+        "In an era dominated by rapid mass manufacturing and artificial 3D printing, the centuries-old art of stone sculpting remains one of the last bastions of pure human craft. In the historic stone carving belts of Sikandra and Dholpur in Rajasthan, hereditary master artisans continue a sacred lineage dating back over thirty generations. Guided by the ancient Sanskrit shlokas of the Shilpa Shastra, these craftsmen transform unyielding multi-tonne quarry boulders into lifelike feathers, delicate floral arabesques, and ethereal pierced jalis that play with sunlight and breeze.",
       sections: [
         {
           id: "sacred-lineage",
@@ -547,7 +547,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         question: "What is the typical lead time for a 300+ design front elevation package?",
         answer:
-          "For standard calibrated and CNC profiled sandstone packages (such as 3,000 to 10,000 sq ft), factory fabrication takes approximately 3 to 4 weeks at our Sarmathura plant, followed by secure seaworthy or inland timber-crated dispatch.",
+          "For standard calibrated and CNC profiled sandstone packages (such as 3,000 to 10,000 sq ft), factory fabrication takes approximately 3 to 4 weeks at our Dholpur plant, followed by secure seaworthy or inland timber-crated dispatch.",
       },
     ],
     content: {
@@ -777,7 +777,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         question: "Can Chocolate Teakwood sandstone be bookmatched?",
         answer:
-          "Because the concentric 'wood rings' and mineral swirls occur organically across quarry blocks, skilled sawyers at our Sarmathura plant can cut consecutive slab pairs to achieve stunning open-book symmetry for luxury feature walls.",
+          "Because the concentric 'wood rings' and mineral swirls occur organically across quarry blocks, skilled sawyers at our Dholpur plant can cut consecutive slab pairs to achieve stunning open-book symmetry for luxury feature walls.",
       },
       {
         question: "Does the dark chocolate color fade when used outdoors?",
@@ -853,7 +853,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "monolithic-sandstone-quarry-extraction-techniques",
     title: "Raw Monolithic Quarry Extraction: How 30-Tonne Sandstone Benches Are Mined Without Micro-Fracturing",
     excerpt:
-      "Inside our proprietary Sarmathura quarries: how diamond multi-wire saws and non-explosive hydraulic wedging preserve the internal structural integrity of raw natural sandstone blocks.",
+      "Inside our proprietary Dholpur quarries: how diamond multi-wire saws and non-explosive hydraulic wedging preserve the internal structural integrity of raw natural sandstone blocks.",
     category: "Heritage Architecture",
     readTime: "7 min read",
     publishedDate: "October 16, 2026",
@@ -865,11 +865,11 @@ export const BLOG_POSTS: BlogPost[] = [
       avatar: "/assets/crest-1953.jpg",
     },
     featuredImage: "/assets/products/dholpur_red_quarry_blocks.jpg",
-    imageAlt: "Massive monolithic Dholpur Red and Beige sandstone blocks stacked at Sarmathura quarry extraction yard",
-    tags: ["Quarry Mining", "Diamond Wire Saw", "Block Extraction", "Sarmathura Mines", "Geotechnical Quality"],
+    imageAlt: "Massive monolithic Dholpur Red and Beige sandstone blocks stacked at Dholpur quarry extraction yard",
+    tags: ["Quarry Mining", "Diamond Wire Saw", "Block Extraction", "Dholpur", "Geotechnical Quality"],
     keyTakeaways: [
       "Explosive blasting in stone quarries causes invisible micro-shattering that leads to catastrophic hairline cracking years later under atmospheric weathering.",
-      "At our Sarmathura concession, we employ zero-blast mechanical extraction using continuous diamond wire saws and non-explosive hydraulic expanding jacks.",
+      "At our Dholpur concession, we employ zero-blast mechanical extraction using continuous diamond wire saws and non-explosive hydraulic expanding jacks.",
       "Ultrasonic pulse velocity testing on freshly extracted blocks verifies uniform internal density (2.45–2.52 g/cm³) before blocks are released for gangsaw slicing.",
       "Monolithic 30-tonne blocks are dressed with automated squaring machines to ensure maximum yield and zero-stress planar slabs.",
     ],
@@ -895,12 +895,12 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         question: "Can architects and project teams inspect raw blocks at the quarry?",
         answer:
-          "Yes. We welcome architects, structural engineers, and private clients to our Sarmathura and Sikandra quarries to inspect raw block benches, perform acoustic resonance checks, and hand-tag specific block consignments for their projects.",
+          "Yes. We welcome architects, structural engineers, and private clients to our Dholpur and Sikandra quarries to inspect raw block benches, perform acoustic resonance checks, and hand-tag specific block consignments for their projects.",
       },
     ],
     content: {
       intro:
-        "The longevity of a natural stone facade or temple pillar is not determined in the architect's studio or at the construction site—it is decided at the quarry face. In an industry where rogue miners frequently use explosive dynamite to blast stone rapidly from the earth, Garg Corporation Ltd. has maintained a strict zero-blasting mandate since 1953. In this technical exposé, we take you deep into our Sarmathura concession to reveal the surgical precision behind modern monolithic stone extraction.",
+        "The longevity of a natural stone facade or temple pillar is not determined in the architect's studio or at the construction site—it is decided at the quarry face. In an industry where rogue miners frequently use explosive dynamite to blast stone rapidly from the earth, Garg Corporation Ltd. has maintained a strict zero-blasting mandate since 1953. In this technical exposé, we take you deep into our Dholpur concession to reveal the surgical precision behind modern monolithic stone extraction.",
       sections: [
         {
           id: "blast-vs-wire",
@@ -914,7 +914,7 @@ export const BLOG_POSTS: BlogPost[] = [
           id: "diamond-wire-tech",
           heading: "2. Diamond Wire Sawing & Hydro-Bag Separation",
           paragraphs: [
-            "At our Sarmathura quarry benches, we extract stone through gentle, mechanical slicing:",
+            "At our Dholpur quarry benches, we extract stone through gentle, mechanical slicing:",
           ],
           bullets: [
             "Core Drilling & Wire Threading: Perpendicular intersecting holes are diamond-drilled into the bedrock to thread a continuous loop of high-tensile steel wire studded with synthetic diamond beads.",
@@ -1120,7 +1120,7 @@ export const BLOG_POSTS: BlogPost[] = [
           heading: "1. The ISPM-15 Phytosanitary Standard Explained",
           paragraphs: [
             "All solid wood packaging material exported across international borders is subject to strict phytosanitary regulations under the International Plant Protection Convention (IPPC). Untreated timber can harbor wood-boring beetles and fungal pathogens that threaten global forestry ecosystems.",
-            "Every export crate constructed at our Sarmathura and Sikandra dispatch hubs is built exclusively from certified kiln-dried pine wood heat-treated to a minimum core temperature of 56°C for at least 30 minutes. Each crate is indelibly branded with our government-registered ISPM-15 certification stamp, ensuring smooth clearance through international customs without fumigation delays.",
+            "Every export crate constructed at our Dholpur and Sikandra dispatch hubs is built exclusively from certified kiln-dried pine wood heat-treated to a minimum core temperature of 56°C for at least 30 minutes. Each crate is indelibly branded with our government-registered ISPM-15 certification stamp, ensuring smooth clearance through international customs without fumigation delays.",
           ],
         },
         {
@@ -1166,7 +1166,7 @@ export const BLOG_POSTS: BlogPost[] = [
         },
       ],
       conclusion:
-        "From the bedrock of Sarmathura to the architectural job sites of the world, Garg Corporation Ltd. ensures that every piece of natural sandstone arrives in flawless pristine condition. Contact our export desk to discuss FOB or CIF containerized shipping rates for your international project.",
+        "From the bedrock of Dholpur to the architectural job sites of the world, Garg Corporation Ltd. ensures that every piece of natural sandstone arrives in flawless pristine condition. Contact our export desk to discuss FOB or CIF containerized shipping rates for your international project.",
     },
   },
   {

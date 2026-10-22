@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dholpur Sandstone Products & Natural Stone Collections",
     description:
-      "Direct quarry extraction from Sarmathura and Sikandra. Calibrated tiles, CNC architectural panels, monolithic blocks, and containerized export supplies.",
+      "Direct quarry extraction from Dholpur and Sikandra. Calibrated tiles, CNC architectural panels, monolithic blocks, and containerized export supplies.",
     url: "https://dholpurestones.com/products",
     siteName: "Dholpurestones.com",
     images: [

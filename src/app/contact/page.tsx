@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: "Contact Us & Official Works | B P Garg & Sons | Dholpurestones",
   description:
-    "Direct connect with Mr. Arvind Garg (Awarded by Govt. of India). WhatsApp: +91 94149 45457, Call: +91 90573 55232. Works: B P Garg & Sons, Near RAC line, Mothiyapura road, Sarmathura 328026 Dholpur, Rajasthan, India.",
+    "Direct connect with Mr. Arvind Garg (Awarded by Govt. of India). WhatsApp: +91 94149 45457, Call: +91 90573 55232. Works: B P Garg & Sons, Near RAC line, Mothiyapura road, Dholpur 328026 Dholpur, Rajasthan, India.",
   alternates: {
     canonical: "https://dholpurestones.com/contact",
   },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         url: "https://dholpurestones.com/assets/quarry_mining_operations.jpg",
         width: 1200,
         height: 630,
-        alt: "Dholpurestones Sarmathura Works and Quarry Contact",
+        alt: "Dholpurestones Dholpur Works and Quarry Contact",
       },
     ],
   },

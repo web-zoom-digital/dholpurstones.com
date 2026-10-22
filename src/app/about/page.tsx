@@ -17,14 +17,14 @@ import {
 export const metadata: Metadata = {
   title: "About Us | Dholpurestones (Estd. 1953) - Sandstone Quarry & Heritage",
   description:
-    "Discover Dholpurestones (Estd. 1953). Over 70+ years of continuous natural stone quarrying, mining concessions in Sarmathura, automated CNC hubs, and global contracting under Garg Corporation Ltd. and Saroj Stone Industries.",
+    "Discover Dholpurestones (Estd. 1953). Over 70+ years of continuous natural stone quarrying, mining concessions in Dholpur, automated CNC hubs, and global contracting under Garg Corporation Ltd. and Saroj Stone Industries.",
   alternates: {
     canonical: "https://dholpurestones.com/about",
   },
   openGraph: {
     title: "About Us | Dholpurestones - 70+ Years Quarry Heritage",
     description:
-      "Direct quarry concessions in Sarmathura, Rajasthan. Founded in 1953, supplying authentic sandstone to iconic national landmarks and global capitals.",
+      "Direct quarry concessions in Dholpur, Rajasthan. Founded in 1953, supplying authentic sandstone to iconic national landmarks and global capitals.",
     url: "https://dholpurestones.com/about",
     siteName: "Dholpurestones.com",
     images: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "About Us | Dholpurestones (Estd. 1953)",
-    description: "70+ Years of authentic natural sandstone quarrying in Sarmathura, Rajasthan.",
+    description: "70+ Years of authentic natural sandstone quarrying in Dholpur, Rajasthan.",
     images: ["https://dholpurestones.com/assets/crest-1953.jpg"],
   },
 };
@@ -74,7 +74,7 @@ export default function AboutPage() {
             Heritage, Quarrying &amp; Infrastructure
           </h1>
           <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/70 max-w-2xl mt-3 leading-relaxed">
-            The pioneer name in natural stone since 1953. Awarded by the Government of India for 300+ front elevation designs in sandstone and nominated for the prestigious International Award for Business Excellence. Operating continuous proprietary quarry concessions in Sarmathura, Rajasthan with global export capabilities.
+            The pioneer name in natural stone since 1953. Awarded by the Government of India for 300+ front elevation designs in sandstone and nominated for the prestigious International Award for Business Excellence. Operating continuous proprietary quarry concessions in Dholpur, Rajasthan with global export capabilities.
           </p>
         </div>
       </section>
@@ -96,7 +96,7 @@ export default function AboutPage() {
               Looking for Authentic Dholpur Sandstone Supply?
             </h3>
             <p className="text-xs sm:text-sm text-white/70 mt-1 max-w-xl">
-              Inspect live quarry benches in Sarmathura or request complimentary physical architectural sample boxes.
+              Inspect live quarry benches in Dholpur or request complimentary physical architectural sample boxes.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto shrink-0 text-center">

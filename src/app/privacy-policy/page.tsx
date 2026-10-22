@@ -76,7 +76,7 @@ export default function PrivacyPolicyPage() {
             1. Corporate Identification &amp; Data Controller
           </h2>
           <p>
-            This website (<span className="font-semibold">Dholpurestones.com</span>) is operated by <strong>B P Garg &amp; Sons</strong> and <strong>Garg Corporation Ltd.</strong> (Estd. 1953), having registered manufacturing and mining operations near RAC line, Mothiyapura road, Sarmathura 328026, District Dholpur, Rajasthan, India. For inquiries regarding data practices, you may reach our administrative desk at <a href="mailto:gargcorporationltd@gmail.com" className="text-[#123D32] underline font-semibold">gargcorporationltd@gmail.com</a>.
+            This website (<span className="font-semibold">Dholpurestones.com</span>) is operated by <strong>B P Garg &amp; Sons</strong> and <strong>Garg Corporation Ltd.</strong> (Estd. 1953), having registered manufacturing and mining operations near RAC line, Mothiyapura road, Dholpur 328026, Rajasthan, India. For inquiries regarding data practices, you may reach our administrative desk at <a href="mailto:gargcorporationltd@gmail.com" className="text-[#123D32] underline font-semibold">gargcorporationltd@gmail.com</a>.
           </p>
         </div>
 

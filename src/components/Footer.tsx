@@ -91,7 +91,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/products" className="hover:text-[#C5A15B] transition-colors">
-                  Botticino &amp; Italian Marble
+                  Exclusive Imported Marble
                 </Link>
               </li>
               <li>
@@ -278,12 +278,6 @@ export default function Footer() {
                 >
                   gargcorporationltd@gmail.com
                 </a>
-                <a
-                  href="mailto:kamala_stone@yahoo.co.in"
-                  className="text-white/80 hover:text-[#C5A15B] font-medium block truncate transition-colors"
-                >
-                  kamala_stone@yahoo.co.in
-                </a>
               </div>
             </div>
 
@@ -300,7 +294,7 @@ export default function Footer() {
                   B P Garg &amp; Sons
                 </p>
                 <p className="text-white/80 text-[10.5px] sm:text-xs leading-relaxed">
-                  Near RAC line, Mothiyapura road, Sarmathura 328026 Dholpur, Raj. INDIA
+                  Near RAC line, Mothiyapura road, Dholpur 328026, Raj. INDIA
                 </p>
               </div>
             </div>
@@ -372,7 +366,7 @@ export default function Footer() {
       <div className="bg-[#123D32] border-t border-white/5 py-3.5 px-4 text-center">
         <div className="max-w-[1280px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] sm:text-xs text-white/60 tracking-wide">
           <p>
-            Copyright &copy; 2026 | All Rights Reserved | Dholpurestones.com (Garg Corporation Ltd. &amp; Sarmathura Stone Company)
+            Copyright &copy; 2026 | All Rights Reserved | Dholpurestones.com (Garg Corporation Ltd. &amp; Dholpur Stone Company)
           </p>
           <div className="flex items-center gap-3 font-medium">
             <Link href="/sitemap" className="hover:text-[#C5A15B] transition-colors">

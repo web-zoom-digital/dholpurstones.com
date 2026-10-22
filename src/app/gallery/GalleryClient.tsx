@@ -258,7 +258,7 @@ export default function GalleryClient() {
     {
       id: "v1",
       category: "video",
-      title: "Sarmathura Quarry Mining & Block Extraction Tour",
+      title: "Dholpur Quarry Mining & Block Extraction Tour",
       tag: "Video Showcase",
       image: "/sandstone/agra-red-sandstone.jpeg",
       desc: "High-definition video overview of wire-saw extraction, diamond cutting, and block transport from our active mine lease.",
@@ -304,7 +304,7 @@ export default function GalleryClient() {
             Media, Photo &amp; Video Gallery
           </h1>
           <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/70 max-w-2xl mt-3 leading-relaxed">
-            High-resolution visual archives of active Sarmathura quarry benches, factory fabrication yards, master sculptor ateliers, and national monumental projects.
+            High-resolution visual archives of active Dholpur quarry benches, factory fabrication yards, master sculptor ateliers, and national monumental projects.
           </p>
         </div>
       </section>

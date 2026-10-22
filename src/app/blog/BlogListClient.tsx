@@ -413,7 +413,7 @@ export default function BlogListClient() {
             <div className="lg:col-span-8">
               <div className="inline-flex items-center gap-1.5 text-[#C5A15B] text-xs font-bold uppercase tracking-widest mb-2">
                 <Sparkles className="w-4 h-4" />
-                <span>DIRECT QUARRY CONSULTATION &bull; SIKA  NDRA &bull; SARMATHURA</span>
+                <span>DIRECT QUARRY CONSULTATION &bull; SIKA  NDRA &bull; DHOLPUR</span>
               </div>
               <h3 className="font-['Cinzel',serif] text-2xl sm:text-3xl font-bold leading-tight">
                 Specifying Natural Sandstone for Your Next Architectural Project?

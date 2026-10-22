@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Cinzel, Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import MobileStickyBar from "@/components/MobileStickyBar";
 
 const cinzel = Cinzel({
   subsets: ["latin"],
@@ -82,7 +83,7 @@ export const metadata: Metadata = {
   other: {
     "google-site-verification": "7od_sKJ0gYxX_2uddj6D5RCZtt-OEHYcio17B-4IXkA",
     "geo.region": "IN-RJ",
-    "geo.placename": "Sarmathura, Dholpur, Rajasthan, India",
+    "geo.placename": "Dholpur, Rajasthan, India",
     "geo.position": "26.5492;77.2917",
     "ICBM": "26.5492, 77.2917",
     "distribution": "Global",
@@ -108,7 +109,7 @@ const jsonLdData = {
       "@type": ["Organization", "Corporation"],
       "@id": "https://dholpurestones.com/#organization",
       "name": "Dholpurestones.com",
-      "alternateName": ["Dholpur Stones", "Garg Corporation Ltd.", "GCL", "B P Garg & Sons", "Saroj Stone Industries", "Sarmathura Stone Company"],
+      "alternateName": ["Dholpur Stones", "Garg Corporation Ltd.", "GCL", "B P Garg & Sons", "Saroj Stone Industries", "Dholpur Stone Company"],
       "url": "https://dholpurestones.com",
       "logo": {
         "@type": "ImageObject",
@@ -117,7 +118,7 @@ const jsonLdData = {
       },
       "foundingDate": "1953",
       "description":
-        "Established natural-stone conglomerate since 1953 with proprietary quarries in Sarmathura, Rajasthan. Full capabilities across mining, calibrated tile manufacturing, 8-axis CNC cladding, global container export, and turnkey monumental contracting.",
+        "Established natural-stone conglomerate since 1953 with proprietary quarries in Dholpur, Rajasthan. Full capabilities across mining, calibrated tile manufacturing, 8-axis CNC cladding, global container export, and turnkey monumental contracting.",
       "founder": {
         "@type": "Person",
         "name": "Arvind Garg",
@@ -133,14 +134,14 @@ const jsonLdData = {
         "@type": "PostalAddress",
         "name": "B P Garg & Sons Works",
         "streetAddress": "Near RAC line, Mothiyapura road",
-        "addressLocality": "Sarmathura",
+        "addressLocality": "Dholpur",
         "addressRegion": "Rajasthan",
         "postalCode": "328026",
         "addressCountry": "IN"
       },
       "sameAs": [
         "https://gargcorporationltd.com",
-        "https://sarmathurastone.com"
+        "___DHOLPUR_URL_PLACEHOLDER___"
       ],
       "knowsAbout": [
         {
@@ -165,7 +166,7 @@ const jsonLdData = {
         },
         {
           "@type": "Place",
-          "name": "Sarmathura",
+          "name": "Dholpur",
           "sameAs": "https://www.wikidata.org/wiki/Q2726359"
         }
       ],
@@ -201,7 +202,7 @@ const jsonLdData = {
         "@type": "PostalAddress",
         "name": "B P Garg & Sons",
         "streetAddress": "Near RAC line, Mothiyapura road",
-        "addressLocality": "Sarmathura",
+        "addressLocality": "Dholpur",
         "addressRegion": "Rajasthan",
         "postalCode": "328026",
         "addressCountry": "IN"
@@ -315,7 +316,7 @@ const jsonLdData = {
           "name": "Where are Dholpurestones quarries and production facilities located?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The company's primary proprietary quarries and works are situated in Sarmathura (Dist. Dholpur, Rajasthan). It maintains processing and artisanal carving ateliers in Sikandra and Kishangarh (Rajasthan), and has an established international export presence in Canada."
+            "text": "The company's primary proprietary quarries and works are situated in Dholpur (Rajasthan). It maintains processing and artisanal carving ateliers in Sikandra and Kishangarh (Rajasthan), and has an established international export presence in Canada."
           }
         },
         {
@@ -323,7 +324,7 @@ const jsonLdData = {
           "name": "How can I contact Dholpurestones for architectural inquiries or sample boxes?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "You can connect directly with Managing Director Mr. Arvind Garg (Awarded by Govt. of India) via WhatsApp at +91 94149 45457, phone at +91 90573 55232, or email at gargcorporationltd@gmail.com and kamala_stone@yahoo.co.in."
+            "text": "You can connect directly with Managing Director Mr. Arvind Garg (Awarded by Govt. of India) via WhatsApp at +91 94149 45457, phone at +91 90573 55232, or email at gargcorporationltd@gmail.com."
           }
         }
       ]
@@ -368,6 +369,7 @@ export default function RootLayout({
         />
 
         {children}
+        <MobileStickyBar />
       </body>
     </html>
   );
