@@ -268,7 +268,7 @@ export default function ContactSection() {
                           Mr. Arvind Garg
                         </span>
                         <span className="text-[10px] text-[#123D32] font-semibold">
-                          Awarded by Govt. of India &bull; Nominated for Intl. Award
+                          Managing Director
                         </span>
                       </div>
                       <a

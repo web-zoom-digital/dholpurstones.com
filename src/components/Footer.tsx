@@ -47,8 +47,6 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#123D32] text-white border-t border-white/10 relative overflow-hidden font-['Plus_Jakarta_Sans',sans-serif]">
-      {/* Top Accolades & Recognition Ribbon */}
-      
       {/* 1. TOP SECTION: 4 COLUMNS (Products, Quick Links, Useful Links, Newsletter) */}
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8 sm:pt-12 sm:pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">

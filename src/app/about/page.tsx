@@ -63,13 +63,6 @@ export default function AboutPage() {
             <span className="text-[#C5A15B] font-semibold">About Us</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C5A15B]/15 border border-[#C5A15B]/30 mb-3 flex-wrap">
-            <Award className="w-3 h-3 text-[#C5A15B] shrink-0" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.14em] uppercase">
-              GOVT. OF INDIA AWARDED &bull; NOMINATED FOR INTERNATIONAL AWARD FOR BUSINESS EXCELLENCE
-            </span>
-          </div>
-
           <h1 className="font-['Cinzel',serif] text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wider text-white">
             Heritage, Quarrying &amp; Infrastructure
           </h1>
