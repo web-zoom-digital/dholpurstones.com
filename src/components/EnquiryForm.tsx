@@ -5,8 +5,9 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { LuSend as Send, LuCircleCheck as Check } from "react-icons/lu";
 import WhatsAppIcon from "./WhatsAppIcon";
-import { categories, waLink } from "@/data/catalog";
+import { categories } from "@/data/catalog";
 import { getAttribution, trackEvent } from "@/lib/leads";
+import { enquiryWhatsAppLink } from "@/lib/whatsapp";
 
 const fieldCls =
   "w-full rounded-xl border border-white/15 bg-white/[0.07] px-4 py-3 text-[15px] text-white placeholder:text-white/45 outline-none transition focus:border-gold focus:bg-white/10";
@@ -25,13 +26,32 @@ export default function EnquiryForm({ cta, product, interest, compact, onDone }:
   const pathname = usePathname();
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   const [message, setMessage] = useState("");
+  const [waUrl, setWaUrl] = useState("");
+  const [waOpened, setWaOpened] = useState(false);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
-    const fields = Object.fromEntries(new FormData(form));
+    const fields = Object.fromEntries(new FormData(form)) as Record<string, string>;
     const attr = getAttribution();
+
+    // Open the WhatsApp tab inside the click gesture so browsers do not block it.
+    const win = window.open("", "_blank");
+    if (win) win.document.write("<p style='font-family:sans-serif;padding:24px'>Opening WhatsApp…</p>");
+
+    const link = enquiryWhatsAppLink({
+      name: fields.name,
+      phone: fields.phone,
+      email: fields.email,
+      location: fields.location,
+      interest: fields.interest || interest,
+      product,
+      message: fields.message,
+      page: pathname,
+    });
+
     setStatus("sending");
+    let note = "Thank you! Your enquiry has reached Mr. Arvind Garg's desk.";
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -51,16 +71,31 @@ export default function EnquiryForm({ cta, product, interest, compact, onDone }:
         }),
       });
       const json = await res.json();
-      if (!res.ok) throw new Error(json.error || "Failed");
-      setMessage(json.message);
-      setStatus("done");
-      trackEvent("generate_lead", { page_path: pathname, cta, interest: String(fields.interest || interest || "") });
-      form.reset();
-      onDone?.();
-    } catch (err) {
-      setMessage(err instanceof Error ? err.message : "Something went wrong. Please try WhatsApp.");
-      setStatus("error");
+      if (!res.ok) {
+        if (res.status === 422) {
+          win?.close();
+          setMessage(json.error || "Please check your details.");
+          setStatus("error");
+          return;
+        }
+        throw new Error(json.error || "Failed");
+      }
+      note = json.message || note;
+    } catch {
+      // Server unreachable — the WhatsApp message below still delivers the enquiry.
+      note = "We could not reach our server, but your enquiry is ready to send on WhatsApp.";
     }
+
+    trackEvent("generate_lead", { page_path: pathname, cta, interest: String(fields.interest || interest || "") });
+    setWaUrl(link);
+    if (win) {
+      win.location.href = link;
+      setWaOpened(true);
+    }
+    setMessage(note);
+    setStatus("done");
+    form.reset();
+    onDone?.();
   }
 
   if (status === "done") {
@@ -71,14 +106,17 @@ export default function EnquiryForm({ cta, product, interest, compact, onDone }:
         </span>
         <p className="mt-4 text-base font-bold text-white">Enquiry sent!</p>
         <p className="mt-1.5 text-sm text-white/75">{message}</p>
+        <p className="mt-3 text-sm font-semibold text-gold">
+          {waOpened ? "WhatsApp has opened with your details — just tap Send." : "One last step: tap the button below and press Send in WhatsApp."}
+        </p>
         <a
-          href={waLink(`Hello Dholpurestones.com, I just submitted an enquiry${product ? ` about ${product}` : ""} on your website.`)}
+          href={waUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-[13px] font-bold text-white"
+          className="mt-4 inline-flex min-h-[48px] items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-[15px] font-bold text-white shadow-lg"
         >
-          <WhatsAppIcon className="h-4 w-4 fill-white" size={16} />
-          Get a faster reply on WhatsApp
+          <WhatsAppIcon className="h-5 w-5 fill-white" size={20} />
+          {waOpened ? "Open WhatsApp again" : "Send on WhatsApp"}
         </a>
       </div>
     );
@@ -132,7 +170,7 @@ export default function EnquiryForm({ cta, product, interest, compact, onDone }:
           "Sending…"
         ) : (
           <>
-            Send Enquiry <Send className="h-4 w-4" />
+            Send Enquiry via WhatsApp <Send className="h-4 w-4" />
           </>
         )}
       </motion.button>
@@ -141,7 +179,7 @@ export default function EnquiryForm({ cta, product, interest, compact, onDone }:
           {message}
         </p>
       )}
-      <p className="text-center text-[12px] text-white/50">We reply within working hours. Your details are never shared.</p>
+      <p className="text-center text-[12px] text-white/50">Your enquiry is sent to us and opens in WhatsApp so we can reply fast.</p>
     </form>
   );
 }

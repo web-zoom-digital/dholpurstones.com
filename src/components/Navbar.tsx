@@ -11,7 +11,6 @@ import {
   LuChevronDown as ChevronDown,
   LuArrowRight as ArrowRight,
   LuMountain as Mountain,
-  LuLayers as Layers,
   LuTreePine as TreePine,
   LuHammer as Hammer,
   LuGem as Gem,
@@ -25,7 +24,6 @@ import { categories, waLink, EMAIL, type CategoryId } from "@/data/catalog";
 
 const categoryIcons: Record<CategoryId, React.ComponentType<{ className?: string }>> = {
   sandstone: Mountain,
-  marble: Layers,
   "farmhouse-gardens": TreePine,
   "stone-articles": Hammer,
   "semi-precious": Gem,
@@ -71,7 +69,7 @@ const navItems: NavItem[] = [
   { label: "Contact", href: "/contact" },
 ];
 
-const waHeader = waLink("Hello Dholpurestones.com, I would like to inquire about natural stone.");
+const waHeader = waLink("Hello Dholpurstones.com, I would like to inquire about natural stone.");
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -199,13 +197,13 @@ export default function Navbar() {
       >
         <div className="container-x relative flex items-center justify-between gap-4 py-2.5 lg:py-3">
           {/* Brand */}
-          <Link href="/" className="group flex items-center gap-2.5 shrink-0" aria-label="Dholpurestones home">
+          <Link href="/" className="group flex items-center gap-2.5 shrink-0" aria-label="Dholpurstones home">
             <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-forest border border-gold/70 shadow-md transition-transform duration-300 group-hover:scale-105 group-hover:rotate-[-4deg]">
               <span className="font-heading text-sm font-extrabold text-gold">DS</span>
             </span>
             <span className="flex flex-col leading-tight">
               <span className="font-heading text-[15px] sm:text-lg font-bold uppercase tracking-[0.07em] text-ink group-hover:text-forest-soft transition-colors">
-                Dholpurestones
+                Dholpurstones
               </span>
               <span className="text-[11px] sm:text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
                 Natural Stone &bull; Since 1953
@@ -305,6 +303,16 @@ export default function Navbar() {
                                   </div>
                                 );
                               })}
+                              <div className="flex flex-col justify-center rounded-2xl bg-forest p-4 text-white bg-stone-grain">
+                                <p className="font-heading text-[13px] font-bold uppercase tracking-wide">Not sure what to choose?</p>
+                                <p className="mt-1.5 text-[13px] text-white/75">Tell us your project — we recommend the right stone.</p>
+                                <Link
+                                  href="/contact"
+                                  className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-gold px-4 py-2 text-[12.5px] font-bold text-forest"
+                                >
+                                  Get free advice <ArrowRight className="h-3.5 w-3.5" />
+                                </Link>
+                              </div>
                             </div>
                             <div className="flex items-center justify-between gap-4 border-t border-black/[0.06] bg-forest px-6 py-3.5">
                               <p className="text-[13px] text-white/80">
@@ -421,7 +429,7 @@ export default function Navbar() {
                   </span>
                   <span className="leading-tight">
                     <span className="block font-heading text-[15px] font-bold uppercase tracking-wider text-white">
-                      Dholpurestones
+                      Dholpurstones
                     </span>
                     <span className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-gold">
                       Estd. 1953
@@ -486,12 +494,14 @@ export default function Navbar() {
                           >
                             {item.mega ? (
                               <div className="grid grid-cols-2 gap-2 px-3 pb-3">
-                                {categories.map((cat) => (
+                                {categories.map((cat, ci) => (
                                   <Link
                                     key={cat.id}
                                     href={cat.href}
                                     onClick={(e) => handleLinkClick(e, cat.href)}
-                                    className="group relative block overflow-hidden rounded-2xl aspect-[4/3] bg-forest active:scale-[0.97] transition-transform"
+                                    className={`group relative block overflow-hidden rounded-2xl bg-forest active:scale-[0.97] transition-transform ${
+                                      ci === categories.length - 1 && categories.length % 2 === 1 ? "col-span-2 aspect-[8/3]" : "aspect-[4/3]"
+                                    }`}
                                   >
                                     <Image
                                       src={cat.image}

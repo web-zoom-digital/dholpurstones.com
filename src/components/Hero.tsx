@@ -3,7 +3,15 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { LuArrowRight as ArrowRight, LuAward as Award, LuMapPin as MapPin } from "react-icons/lu";
+import Link from "next/link";
+import {
+  LuArrowRight as ArrowRight,
+  LuAward as Award,
+  LuMapPin as MapPin,
+  LuPhone,
+  LuMessageSquareText,
+} from "react-icons/lu";
+import EnquiryButton from "./ui/EnquiryButton";
 import WhatsAppIcon from "./WhatsAppIcon";
 import Button from "./ui/Button";
 import { waLink } from "@/data/catalog";
@@ -18,7 +26,7 @@ const rise = (delay: number) => ({
 
 export default function Hero() {
   return (
-    <section className="relative isolate overflow-hidden rounded-b-[2rem] sm:rounded-b-[3.5rem] bg-forest-deep">
+    <section className="pattern-jali relative isolate overflow-hidden rounded-b-[2rem] sm:rounded-b-[3.5rem] bg-forest-deep">
       {/* Background — slow Ken Burns zoom */}
       <motion.div
         className="absolute inset-0 -z-10"
@@ -28,7 +36,7 @@ export default function Hero() {
       >
         <Image
           src="/assets/garg/dholpur-stones-mobile-hero.jpg"
-          alt="Dholpurestones.com – luxury marble, sandstone elevation and farm house stonework"
+          alt="Dholpurstones.com – luxury marble, sandstone elevation and farm house stonework"
           fill
           priority
           sizes="100vw"
@@ -36,7 +44,7 @@ export default function Hero() {
         />
         <Image
           src="/assets/garg/dholpur-stones-hero-preview.jpg"
-          alt="Dholpurestones.com – luxury marble, sandstone elevation and farm house stonework"
+          alt="Dholpurstones.com – luxury marble, sandstone elevation and farm house stonework"
           fill
           priority
           sizes="100vw"
@@ -72,19 +80,33 @@ export default function Hero() {
             Sandstone, marble and semi-precious stones from our own mines — plus luxury farm house and garden stonework. Serving India and the world since 1953.
           </motion.p>
 
-          <motion.div {...rise(0.44)} className="mt-6 flex w-full flex-col gap-3 sm:mt-8 sm:w-auto sm:flex-row">
-            <Button href="/products" variant="gold" size="lg">
-              Explore Products
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-            <Button
-              href={waLink("Hello Dholpurestones.com, I would like to get a quote for natural stone.")}
-              variant="outline-light"
-              size="lg"
+          <motion.div {...rise(0.44)} className="mt-6 w-full max-w-md sm:mt-8 sm:max-w-none">
+            <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
+              <EnquiryButton variant="gold" size="lg" cta="Homepage hero" className="col-span-2 w-full sm:w-auto">
+                <LuMessageSquareText className="h-[18px] w-[18px]" />
+                Get a Free Quote
+              </EnquiryButton>
+              <Button
+                href={waLink("Hello Dholpurstones.com, I would like to get a quote for natural stone.")}
+                variant="whatsapp"
+                size="lg"
+                className="w-full sm:w-auto"
+              >
+                <WhatsAppIcon className="h-[18px] w-[18px] fill-current" size={18} />
+                WhatsApp
+              </Button>
+              <Button href="tel:+919057355232" variant="outline-light" size="lg" className="w-full sm:w-auto">
+                <LuPhone className="h-[18px] w-[18px]" />
+                Call Now
+              </Button>
+            </div>
+            <Link
+              href="/products"
+              className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-bold text-gold transition-colors hover:text-white"
             >
-              <WhatsAppIcon className="h-4 w-4 fill-current" size={16} />
-              WhatsApp Us
-            </Button>
+              Explore our collections
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </motion.div>
 
           <motion.p

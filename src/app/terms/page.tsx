@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "Terms & Conditions",
   description:
-    "Official Terms and Conditions of supply, quotation validity, dimensional tolerances, export packaging, and commercial terms for Dholpurestones.com natural stone products.",
+    "Official Terms and Conditions of supply, quotation validity, dimensional tolerances, export packaging, and commercial terms for Dholpurstones.com natural stone products.",
   alternates: {
     canonical: "/terms",
   },
@@ -22,16 +22,16 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Terms & Conditions | Dholpurestones.com",
+    title: "Terms & Conditions | Dholpurstones.com",
     description:
-      "Official Terms and Conditions of supply, quotation validity, dimensional tolerances, and commercial terms for Dholpurestones.com.",
+      "Official Terms and Conditions of supply, quotation validity, dimensional tolerances, and commercial terms for Dholpurstones.com.",
     url: "/terms",
-    siteName: "Dholpurestones",
+    siteName: "Dholpurstones",
   },
   twitter: {
     card: "summary",
-    title: "Terms & Conditions | Dholpurestones.com",
-    description: "Commercial terms and supply conditions of Dholpurestones.com (B P Garg & Sons).",
+    title: "Terms & Conditions | Dholpurstones.com",
+    description: "Commercial terms and supply conditions of Dholpurstones.com (B P Garg & Sons).",
   },
 };
 
@@ -64,7 +64,7 @@ export default function TermsPage() {
             Terms &amp; Conditions
           </h1>
           <p className="font-body text-xs sm:text-sm text-white/70 max-w-2xl mt-3 leading-relaxed">
-            Effective Date: October 21, 2026. These commercial terms govern all architectural stone supply agreements, quarry quotations, sample dispatches, and turnkey contracting undertaken by Dholpurestones.com.
+            Effective Date: October 21, 2026. These commercial terms govern all architectural stone supply agreements, quarry quotations, sample dispatches, and turnkey contracting undertaken by Dholpurstones.com.
           </p>
         </div>
       </section>

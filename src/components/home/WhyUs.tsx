@@ -21,14 +21,14 @@ const points = [
 
 export default function WhyUs() {
   return (
-    <section id="about" className="section-y bg-ivory">
+    <section id="about" className="section-y relative overflow-hidden bg-ivory pattern-dots">
       <div className="container-x">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <Reveal x={-30} y={0} className="relative">
             <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-[0_30px_60px_-28px_rgba(11,42,34,0.6)] sm:rounded-[2.5rem]">
               <Image
                 src="/assets/quarry_mining_operations.jpg"
-                alt="Dholpurestones quarry operations in Dholpur, Rajasthan"
+                alt="Dholpurstones quarry operations in Dholpur, Rajasthan"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -55,7 +55,7 @@ export default function WhyUs() {
           <div className="mt-6 lg:mt-0">
             <SectionHeader
               align="left"
-              eyebrow="About Dholpurestones"
+              eyebrow="About Dholpurstones"
               title="Three Generations of Stone"
               subtitle="Awarded by the Government of India for 300+ sandstone front elevation designs and nominated for an International Award for Business Excellence. We handle everything from mining to finished installation."
               className="!mb-7"

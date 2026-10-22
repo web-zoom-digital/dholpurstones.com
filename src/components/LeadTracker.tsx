@@ -29,7 +29,7 @@ export default function LeadTracker() {
       if (href.startsWith("https://wa.me/")) {
         try {
           const url = new URL(href);
-          const text = url.searchParams.get("text") || "Hello Dholpurestones.com";
+          const text = url.searchParams.get("text") || "Hello Dholpurstones.com";
           if (!text.includes("[Page:")) {
             url.searchParams.set("text", `${text}\n\n[Page: ${page}]`);
             a.setAttribute("href", url.toString());

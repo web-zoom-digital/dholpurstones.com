@@ -42,9 +42,17 @@ export default function SectionHeader({
       >
         {title}
       </h2>
+      <span
+        aria-hidden
+        className={`mt-4 flex items-center gap-2 ${center ? "justify-center" : ""} ${tone === "dark" ? "text-gold" : "text-gold-deep"}`}
+      >
+        <span className="h-px w-10 bg-gradient-to-r from-transparent to-current opacity-70" />
+        <span className="h-1.5 w-1.5 rotate-45 bg-current" />
+        <span className="h-px w-10 bg-gradient-to-l from-transparent to-current opacity-70" />
+      </span>
       {subtitle && (
         <p
-          className={`mt-3.5 text-[15px] sm:text-base leading-relaxed ${
+          className={`mt-4 text-[15px] sm:text-base leading-relaxed ${
             tone === "dark" ? "text-white/70" : "text-muted"
           } ${center ? "mx-auto" : ""} max-w-2xl`}
         >

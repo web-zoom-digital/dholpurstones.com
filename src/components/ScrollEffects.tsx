@@ -34,7 +34,7 @@ export default function ScrollEffects() {
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.92 }}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="fixed bottom-24 right-6 z-40 hidden h-11 w-11 items-center justify-center rounded-full border border-gold/50 bg-forest text-gold shadow-xl sm:flex"
+            className="fixed bottom-6 left-6 z-40 hidden h-11 w-11 items-center justify-center rounded-full border border-gold/50 bg-forest text-gold shadow-xl sm:flex"
             aria-label="Back to top"
           >
             <ArrowUp className="h-5 w-5" />

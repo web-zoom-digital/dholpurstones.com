@@ -10,11 +10,11 @@ export const generalFaqs: Faq[] = [
     a: "Dholpur stone is a fine-grained natural sandstone quarried around Dholpur in Rajasthan, India. It is known for its beige, pink, red and chocolate tones, high strength and low water absorption, and is widely used for monuments, temples, front elevations, flooring and landscaping.",
   },
   {
-    q: "Who is Dholpurestones.com?",
-    a: "Dholpurestones.com is the online home of B P Garg & Sons (Garg Corporation Ltd.), a natural stone business established in 1953. It is a mine owner, manufacturer, exporter and contractor of sandstone, marble and semi-precious stones, with works in Dholpur, carving in Sikandra, trading in Kishangarh and an overseas office in Canada.",
+    q: "Who is Dholpurstones.com?",
+    a: "Dholpurstones.com is the online home of B P Garg & Sons (Garg Corporation Ltd.), a natural stone business established in 1953. It is a mine owner, manufacturer, exporter and contractor of sandstone, marble and semi-precious stones, with works in Dholpur, carving in Sikandra, trading in Kishangarh and an overseas office in Canada.",
   },
   {
-    q: "Which stones does Dholpurestones supply?",
+    q: "Which stones does Dholpurstones supply?",
     a: "Dholpur sandstone (Agra Red, Dholpur Beige, Dholpur Pink and Dholpur Chocolate), beige, white and grey marble, semi-precious gemstone slabs, hand-carved sandstone articles, plus exclusive imported marble and precious gem surfaces.",
   },
   {

@@ -183,7 +183,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   <p className="mt-1.5 text-sm text-white/75">Send your requirement and get a free quote with samples.</p>
                   <div className="mt-4 flex flex-col gap-3 sm:flex-row">
                     <EnquiryButton variant="gold" cta={`Blog inline: ${post.slug}`} product={post.title}>Get a Free Quote</EnquiryButton>
-                    <Button href={waLink(`Hello Dholpurestones.com, I read "${post.title}" and would like to enquire.`)} variant="whatsapp">
+                    <Button href={waLink(`Hello Dholpurstones.com, I read "${post.title}" and would like to enquire.`)} variant="whatsapp">
                       <WhatsAppIcon className="h-4 w-4 fill-current" size={16} />WhatsApp Us
                     </Button>
                   </div>
@@ -224,7 +224,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <p className="mt-1.5 text-sm text-white/75">Mine-direct pricing for {topic.toLowerCase()} and more.</p>
               <div className="mt-4 grid gap-2.5">
                 <EnquiryButton variant="gold" className="w-full" cta={`Blog sidebar: ${post.slug}`} product={post.title}>Request a Quote</EnquiryButton>
-                <Button href={waLink(`Hello Dholpurestones.com, I would like to enquire about ${topic}.`)} variant="whatsapp" className="w-full">
+                <Button href={waLink(`Hello Dholpurstones.com, I would like to enquire about ${topic}.`)} variant="whatsapp" className="w-full">
                   <WhatsAppIcon className="h-4 w-4 fill-current" size={16} />WhatsApp Us
                 </Button>
               </div>

@@ -19,7 +19,7 @@ export default function VarietyGrid({ items, kind }: { items: Variety[]; kind: s
       {items.map((v) => (
         <StaggerItem key={v.name}>
           <motion.a
-            href={waLink(`Hello Dholpurestones.com, I would like to enquire about ${v.name} ${kind}.`)}
+            href={waLink(`Hello Dholpurstones.com, I would like to enquire about ${v.name} ${kind}.`)}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ y: -6 }}

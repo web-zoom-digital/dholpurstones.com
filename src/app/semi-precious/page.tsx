@@ -1,39 +1,33 @@
-"use client";
-
-import React, { useState, useEffect, useRef } from "react";
-import AnimDiv from "@/components/ui/AnimDiv";
-import Image from "next/image";
-import Link from "next/link";
-import PageHero from "@/components/ui/PageHero";
-import Button from "@/components/ui/Button";
-import CtaBand from "@/components/ui/CtaBand";
-import JsonLd from "@/components/JsonLd";
-import { breadcrumbLd, itemListLd, faqLd } from "@/lib/schema";
-import FaqSection from "@/components/FaqSection";
-import { semiPreciousFaqs } from "@/data/faqs";
-import { semiPreciousSubs } from "@/data/catalog";
-
-import EnquiryButton from "@/components/ui/EnquiryButton";
+import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import JsonLd from "@/components/JsonLd";
+import FaqSection from "@/components/FaqSection";
+import CtaBand from "@/components/ui/CtaBand";
+import PageHero from "@/components/ui/PageHero";
+import FeatureStrip from "@/components/ui/FeatureStrip";
+import SectionHeader from "@/components/ui/SectionHeader";
+import ContactActions from "@/components/ui/ContactActions";
+import CatalogGrid, { type CatalogItem } from "@/components/catalog/CatalogGrid";
+import { Stagger, StaggerItem } from "@/components/ui/Reveal";
+import { semiPreciousFaqs } from "@/data/faqs";
+import { semiPreciousSubs } from "@/data/catalog";
+import { breadcrumbLd, itemListLd, faqLd } from "@/lib/schema";
 import {
-  LuHouse as HomeIcon,
-  LuChevronRight as ChevronRight,
   LuGem as Gem,
-  LuX as X,
-  LuSparkles as Sparkles,
   LuShieldCheck as ShieldCheck,
-  LuArrowRight as ArrowRight,
-  LuZoomIn as ZoomIn,
-  LuCircleCheck as CheckCircle,
-  LuPhone as Phone,
+  LuLightbulb as Light,
+  LuScissors as Cut,
+  LuSofa as Sofa,
+  LuWine as Bar,
+  LuBath as Bath,
+  LuStore as Store,
+  LuBuilding2 as Building,
+  LuFrame as Frame,
 } from "react-icons/lu";
-import WhatsAppIcon from "@/components/WhatsAppIcon";
 
-/* ─── Animation Helper ──────────────────────────────────────────────────── */
-
-/* ─── Stone Data ─────────────────────────────────────────────────────────── */
+/* ─── Semi-precious stone data ─────────────────────────────────────────── */
 const stones = [
   {
     id: "blue-agate",
@@ -56,7 +50,7 @@ const stones = [
       "Superior luminosity under warm LED backlighting",
       "Suitable for vertical feature installations",
     ],
-    waMsg: "Hello Dholpurestones.com, I am interested in Royal Blue Agate backlit slabs for my luxury project.",
+    waMsg: "Hello Dholpurstones.com, I am interested in Royal Blue Agate backlit slabs for my luxury project.",
   },
   {
     id: "black-agate",
@@ -79,7 +73,7 @@ const stones = [
       "Unique mineral inclusions in every slab — exclusive origin",
       "Polished to a flawless gemstone mirror surface",
     ],
-    waMsg: "Hello Dholpurestones.com, I would like pricing for Black Agate gemstone slabs.",
+    waMsg: "Hello Dholpurstones.com, I would like pricing for Black Agate gemstone slabs.",
   },
   {
     id: "fire-agate",
@@ -102,7 +96,7 @@ const stones = [
       "Creates a natural warmth — perfect near fireplaces",
       "Mineral-rich gemstone core stabilized in crystal resin",
     ],
-    waMsg: "Hello Dholpurestones.com, I am inquiring about Fire Agate gemstone slabs for a luxury project.",
+    waMsg: "Hello Dholpurstones.com, I am inquiring about Fire Agate gemstone slabs for a luxury project.",
   },
   {
     id: "green-agate",
@@ -125,7 +119,7 @@ const stones = [
       "Natural jade-like mineral texture — zero artificial coloring",
       "Available in sequential matched slabs for seamless book-match",
     ],
-    waMsg: "Hello Dholpurestones.com, I need Green Agate panels for a wellness spa installation.",
+    waMsg: "Hello Dholpurstones.com, I need Green Agate panels for a wellness spa installation.",
   },
   {
     id: "lapis-lazuli",
@@ -148,7 +142,7 @@ const stones = [
       "Intense royal blue hue from lazurite mineral composition",
       "Cut and supplied as tiles, medallions, slabs and custom shapes",
     ],
-    waMsg: "Hello Dholpurestones.com, I would like to know more about Lapis Lazuli for Pietra Dura or architectural panels.",
+    waMsg: "Hello Dholpurstones.com, I would like to know more about Lapis Lazuli for Pietra Dura or architectural panels.",
   },
   {
     id: "line-agate",
@@ -171,7 +165,7 @@ const stones = [
       "Excellent book-match capability for symmetrical installations",
       "Beautifully translucent under warm ambient lighting",
     ],
-    waMsg: "Hello Dholpurestones.com, I am interested in Line Agate gemstone slabs for interior design.",
+    waMsg: "Hello Dholpurstones.com, I am interested in Line Agate gemstone slabs for interior design.",
   },
   {
     id: "natural-agate",
@@ -194,7 +188,7 @@ const stones = [
       "Available with natural geode edges preserved for art display",
       "Unique collector-grade pieces with certification of origin",
     ],
-    waMsg: "Hello Dholpurestones.com, I am looking for Natural Agate slabs for a luxury interior art installation.",
+    waMsg: "Hello Dholpurstones.com, I am looking for Natural Agate slabs for a luxury interior art installation.",
   },
   {
     id: "red-jasper",
@@ -217,7 +211,7 @@ const stones = [
       "Works beautifully as a strong accent beside neutral marbles",
       "Available polished, honed or raw textured finishes",
     ],
-    waMsg: "Hello Dholpurestones.com, I need Red Jasper gemstone tiles or slabs for a commercial project.",
+    waMsg: "Hello Dholpurstones.com, I need Red Jasper gemstone tiles or slabs for a commercial project.",
   },
   {
     id: "tiger-eyes",
@@ -240,66 +234,37 @@ const stones = [
       "Available in directional orientation for maximum impact",
       "Exceptional for luxury brand flagship store interiors",
     ],
-    waMsg: "Hello Dholpurestones.com, I want to inquire about Tiger's Eye gemstone panels for a luxury space.",
+    waMsg: "Hello Dholpurstones.com, I want to inquire about Tiger's Eye gemstone panels for a luxury space.",
   },
 ];
+
+
+const items: CatalogItem[] = stones.map((s) => ({
+  id: s.id,
+  name: s.name,
+  badge: s.category,
+  meta: s.color,
+  subtitle: s.subtitle,
+  image: s.image,
+  desc: s.desc,
+  specs: s.specs,
+  highlights: s.highlights,
+  waMsg: s.waMsg,
+}));
 
 const useCases = [
-  {
-    icon: "🏨",
-    title: "Luxury Hotel Lobbies",
-    desc: "Backlit agate reception walls and tiger's eye elevator interiors for 5-star hospitality environments.",
-  },
-  {
-    icon: "🍸",
-    title: "Premium Bar Counters",
-    desc: "Translucent blue and fire agate bar tops that glow radiantly under LED backlighting.",
-  },
-  {
-    icon: "🧘",
-    title: "Wellness & Spa Centers",
-    desc: "Green agate and natural agate panels for serene biophilic wellness room installations.",
-  },
-  {
-    icon: "🏢",
-    title: "Corporate Boardrooms",
-    desc: "Black agate and lapis lazuli feature walls commanding authority and prestige.",
-  },
-  {
-    icon: "🎨",
-    title: "Pietra Dura Art Inlays",
-    desc: "Lapis lazuli and jasper cut to custom shapes for Mughal-inspired architectural mosaic art.",
-  },
-  {
-    icon: "🛍️",
-    title: "Luxury Retail Flagships",
-    desc: "Tiger's eye and line agate cladding for premier brand flagship store interiors.",
-  },
+  { icon: Sofa, title: "Feature Walls", desc: "A glowing backdrop behind a sofa, bed or reception." },
+  { icon: Bar, title: "Bars & Counters", desc: "Backlit bar fronts and counter tops that stop conversations." },
+  { icon: Frame, title: "Tabletops & Décor", desc: "Dining, console and coffee tables made from a single slab." },
+  { icon: Bath, title: "Wash Basins & Vanities", desc: "Statement basins and vanity tops for luxury bathrooms." },
+  { icon: Store, title: "Retail & Showrooms", desc: "Eye-catching display walls and counters for brands." },
+  { icon: Building, title: "Hotels & Lounges", desc: "VIP lounge and lobby installations with ambient lighting." },
 ];
 
-/* ─── Main Page Component ────────────────────────────────────────────────── */
 export default function SemiPreciousPage() {
-  const [activeModal, setActiveModal] = useState<(typeof stones)[0] | null>(null);
-  const [hoveredId, setHoveredId] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (activeModal) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [activeModal]);
-
   return (
-    <main className="min-h-screen bg-[#F7F4EB] text-[#1F2A24] selection:bg-[#C5A15B] selection:text-[#123D32]">
+    <main className="min-h-screen bg-ivory text-ink selection:bg-gold selection:text-forest">
       <Navbar />
-
-      {/* ═══════════════════════════════════════════════════════════════
-          HERO SECTION (Full window size)
-      ═══════════════════════════════════════════════════════════════ */}
       <PageHero
         eyebrow="Natural Gemstone Slabs"
         title="Semi-Precious"
@@ -307,234 +272,49 @@ export default function SemiPreciousPage() {
         description="Agate, lapis lazuli, jasper and tiger's eye — translucent slabs and feature panels that glow when backlit."
         image="/semi-precious/blue-agate.jpeg"
         crumbs={[{ label: "Products", href: "/products" }, { label: "Semi-Precious Stones" }]}
-        stats={[
-          { value: "9", label: "Gemstones" },
-          { value: "100%", label: "Natural" },
-          { value: "Custom", label: "Sizes" },
-        ]}
       >
-        <Button href="#collection" variant="gold" size="lg">View Collection</Button>
-        <Button href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20a%20quote%20for%20semi-precious%20stones." variant="outline-light" size="lg">Get a Quote</Button>
+        <ContactActions cta="Semi-precious hero" topic="semi-precious stone slabs" size="lg" layout="row" className="sm:justify-start" />
       </PageHero>
 
-      {/* ═══════════════════════════════════════════════════════════════
-          INTRO STRIP
-      ═══════════════════════════════════════════════════════════════ */}
-      <section className="bg-[#123D32] py-8 sm:py-10">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center text-white">
-            {[
-              { icon: <Gem className="w-5 h-5" />, label: "9 Gemstone Types", sub: "Agate, Jasper, Tiger's Eye, Lapis" },
-              { icon: <ShieldCheck className="w-5 h-5" />, label: "100% Natural Origin", sub: "No synthetic or dyed stones" },
-              { icon: <Sparkles className="w-5 h-5" />, label: "Backlit Ready", sub: "High translucency for LED illumination" },
-              { icon: <CheckCircle className="w-5 h-5" />, label: "Custom Sizing", sub: "Bespoke cut-to-size available" },
-            ].map((item, i) => (
-              <div key={i} className="flex flex-col items-center gap-2">
-                <div className="w-10 h-10 rounded-xl bg-[#C5A15B]/15 border border-[#C5A15B]/30 flex items-center justify-center text-[#C5A15B]">
-                  {item.icon}
-                </div>
-                <span className="font-bold text-sm text-white">{item.label}</span>
-                <span className="text-[11px] text-white/60 leading-tight">{item.sub}</span>
-              </div>
-            ))}
-          </div>
+      <FeatureStrip
+        items={[
+          { icon: Gem, title: "9 Gemstones", text: "Agate, lapis, jasper, tiger's eye" },
+          { icon: ShieldCheck, title: "100% Natural", text: "No synthetic or dyed stones" },
+          { icon: Light, title: "Backlit Ready", text: "High translucency for LED" },
+          { icon: Cut, title: "Cut To Size", text: "Custom panels and finishes" },
+        ]}
+      />
+
+      <section id="collection" className="section-y relative overflow-hidden bg-ivory pattern-dots">
+        <div className="container-x relative">
+          <SectionHeader
+            eyebrow="The Collection"
+            title="Gemstone Slabs"
+            subtitle="Tap a stone for details — then enquire, WhatsApp or call us for slab photos and pricing."
+          />
+          <CatalogGrid items={items} ctaPrefix="Semi-precious" />
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════════
-          STONE COLLECTION GRID
-      ═══════════════════════════════════════════════════════════════ */}
-      <section id="collection" className="py-14 sm:py-24 bg-[#F7F4EB]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-
-          {/* Section header */}
-          <AnimDiv className="flex items-center justify-between pb-3 border-b border-black/8 mb-10">
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#C5A15B]" />
-              <span className="font-heading text-[11px] sm:text-xs font-bold tracking-[0.16em] text-[#1F2A24] uppercase">
-                DHOLPURESTONES &bull; LAPIDARY COLLECTION
-              </span>
-            </div>
-            <span className="font-heading text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest uppercase">
-              Gemstones
-            </span>
-          </AnimDiv>
-
-          <AnimDiv delay={40} className="mb-10 sm:mb-14 text-center max-w-3xl mx-auto">
-            <span className="text-[11px] sm:text-xs font-bold text-[#C5A15B] uppercase tracking-[0.2em] block mb-2">
-              Exclusive Lapidary Gemstone Inventory
-            </span>
-            <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1F2A24] uppercase tracking-wide mb-3 leading-snug">
-              Our Semi-Precious Stone Collection
-            </h2>
-            <div className="w-12 h-1 bg-[#C5A15B] rounded-full mx-auto mb-4" />
-            <p className="font-body text-xs sm:text-sm text-[#6B7C73] leading-relaxed">
-              Every slab is individually hand-assembled from authentic mineral specimens, stabilized in premium optical resin,
-              and polished to a flawless mirror surface. Click any gemstone to inspect its technical specifications.
-            </p>
-          </AnimDiv>
-
-          {/* 3-column stone grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-            {stones.map((stone, i) => (
-              <AnimDiv key={stone.id} delay={i * 70}>
-                <div
-                  className="group bg-white rounded-2xl border border-black/8 overflow-hidden shadow-sm hover:shadow-2xl hover:border-[#C5A15B]/60 transition-all duration-400 cursor-pointer flex flex-col"
-                  onMouseEnter={() => setHoveredId(stone.id)}
-                  onMouseLeave={() => setHoveredId(null)}
-                  onClick={() => setActiveModal(stone)}
-                >
-                  {/* Image */}
-                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-forest-deep">
-                    <Image
-                      src={stone.image}
-                      alt={stone.name}
-                      fill
-                      sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
-                      className={`object-cover transition-transform duration-700 ${hoveredId === stone.id ? "scale-110" : "scale-100"}`}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-
-
-
-                    {/* Hover inspect overlay */}
-                    <div className={`absolute inset-0 bg-[#123D32]/50 backdrop-blur-[2px] flex items-center justify-center transition-opacity duration-300 ${hoveredId === stone.id ? "opacity-100" : "opacity-0"}`}>
-                      <div className="bg-[#123D32] border border-[#C5A15B] text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-xl">
-                        <ZoomIn className="w-3.5 h-3.5 text-[#C5A15B]" />
-                        Inspect Gemstone
-                      </div>
-                    </div>
-
-                    {/* Bottom title overlay */}
-                    <div className="absolute bottom-3 left-3 right-3 text-white">
-                      <span className="text-[11px] uppercase font-bold tracking-[0.2em] text-[#C5A15B] block mb-0.5">
-                        {stone.subtitle}
-                      </span>
-                      <h3 className="font-heading text-base sm:text-lg font-bold leading-snug drop-shadow-sm">
-                        {stone.name}
-                      </h3>
-                    </div>
+      <section className="section-y relative overflow-hidden bg-forest bg-stone-grain pattern-jali">
+        <div className="container-x relative">
+          <SectionHeader tone="dark" eyebrow="Design Ideas" title="Where Gemstones Shine" subtitle="Small areas, big impact." />
+          <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {useCases.map((u) => {
+              const Icon = u.icon;
+              return (
+                <StaggerItem key={u.title}>
+                  <div className="h-full rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-5 backdrop-blur transition-colors hover:border-gold/50 sm:p-6">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold text-forest">
+                      <Icon className="h-6 w-6" />
+                    </span>
+                    <h3 className="mt-4 font-heading text-[15px] font-bold uppercase tracking-wide text-white">{u.title}</h3>
+                    <p className="mt-1.5 text-[14px] leading-relaxed text-white/70">{u.desc}</p>
                   </div>
-
-                  {/* Card body */}
-                  <div className="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                     
-                      <p className="text-xs sm:text-[13px] text-[#6B7C73] leading-relaxed line-clamp-3">
-                        {stone.desc}
-                      </p>
-                    </div>
-
-                    <div className="mt-4 pt-3.5 border-t border-black/6 flex items-center justify-between">
-                      <span className="text-xs font-bold text-[#C5A15B] group-hover:text-[#123D32] transition-colors">
-                        View Specifications
-                      </span>
-                      <div className="w-7 h-7 rounded-full bg-[#F7F4EB] border border-black/8 flex items-center justify-center group-hover:bg-[#123D32] group-hover:border-[#123D32] transition-all">
-                        <ArrowRight className="w-3.5 h-3.5 text-[#6B7C73] group-hover:text-white group-hover:translate-x-0.5 transition-all" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </AnimDiv>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════
-          USE CASES
-      ═══════════════════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-20 bg-white border-t border-b border-black/6">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimDiv delay={0} className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
-            <span className="text-[11px] font-bold text-[#C5A15B] uppercase tracking-[0.22em] block mb-2">
-              WHERE GEMSTONES BELONG
-            </span>
-            <h2 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-[#1F2A24] uppercase tracking-wider">
-              Signature Applications
-            </h2>
-            <div className="w-10 h-1 bg-[#C5A15B] rounded-full mx-auto mt-3" />
-          </AnimDiv>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {useCases.map((uc, i) => (
-              <AnimDiv key={i} delay={i * 80}>
-                <div className="bg-[#F7F4EB] rounded-2xl border border-black/6 p-6 hover:border-[#C5A15B]/50 hover:shadow-md transition-all duration-300">
-                  <span className="text-3xl block mb-3">{uc.icon}</span>
-                  <h3 className="font-heading text-sm font-bold text-[#1F2A24] uppercase tracking-wider mb-2">
-                    {uc.title}
-                  </h3>
-                  <p className="text-xs text-[#6B7C73] leading-relaxed">{uc.desc}</p>
-                </div>
-              </AnimDiv>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════
-          CTA BANNER
-      ═══════════════════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-20 bg-[#F7F4EB]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimDiv delay={0}>
-            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-[#1F2A24] via-[#1E5A46] to-[#123D32] border border-[#C5A15B]/30 p-8 sm:p-12 lg:p-14 shadow-2xl text-white">
-              <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A15B]/10 rounded-full blur-3xl pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#C5A15B]/5 rounded-full blur-3xl pointer-events-none" />
-
-              <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-8">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[#C5A15B] text-[11px] font-bold uppercase tracking-wider mb-4">
-                    <ShieldCheck className="w-3.5 h-3.5" />
-                    <span>Authentic Gemstone Sourcing &bull; Custom Bespoke Orders</span>
-                  </div>
-                  <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-wider text-white mb-3">
-                    Commission Your Gemstone Installation
-                  </h2>
-                  <p className="text-xs sm:text-sm text-white/75 max-w-xl leading-relaxed">
-                    Our lapidary specialists handpick, cut and assemble every gemstone slab to your exact architectural requirements. Request a physical sample box or a custom quotation for your luxury project.
-                  </p>
-                  <div className="flex flex-wrap items-center gap-4 mt-6 text-xs text-white/90">
-                    {[
-                      "Free Physical Sample Box",
-                      "Custom Cut-to-Size",
-                      "Book-Match Sequential Slabs",
-                    ].map((item) => (
-                      <div key={item} className="flex items-center gap-1.5">
-                        <CheckCircle className="w-4 h-4 text-[#C5A15B]" />
-                        <span>{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="lg:col-span-4 flex flex-col gap-3">
-                  <a
-                    href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com%2C%20I%20would%20like%20to%20request%20a%20Semi-Precious%20Gemstone%20sample%20box%20and%20quotation."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-[#C5A15B] hover:bg-[#d4b574] text-[#123D32] font-bold text-xs uppercase tracking-wider shadow-lg transition-all active:scale-95"
-                  >
-                    <WhatsAppIcon className="w-4 h-4 fill-[#123D32]" size={16} />
-                    <span>WhatsApp Us Now</span>
-                  </a>
-                  <a
-                    href="tel:+919057355232"
-                    className="flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs uppercase tracking-wider transition-colors"
-                  >
-                    <Phone className="w-4 h-4 text-[#C5A15B]" />
-                    <span>Call: +91 90573 55232</span>
-                  </a>
-                  <Link
-                    href="/contact"
-                    className="flex items-center justify-center gap-2 py-3 px-6 rounded-full bg-transparent hover:bg-white/10 border border-white/20 text-white/80 font-bold text-xs uppercase tracking-wider transition-colors"
-                  >
-                    <span>Send Detailed Enquiry</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </AnimDiv>
+                </StaggerItem>
+              );
+            })}
+          </Stagger>
         </div>
       </section>
 
@@ -543,80 +323,6 @@ export default function SemiPreciousPage() {
       <JsonLd data={[breadcrumbLd([{ name: "Products", path: "/products" }, { name: "Semi-Precious Stones", path: "/semi-precious" }]), itemListLd("Semi-precious stone slabs", semiPreciousSubs.map((s) => ({ name: s.name, description: s.note, image: s.image }))), faqLd(semiPreciousFaqs)]} />
       <Footer />
       <FloatingWhatsApp />
-
-      {/* ═══════════════════════════════════════════════════════════════
-          STONE DETAIL MODAL
-      ═══════════════════════════════════════════════════════════════ */}
-      {activeModal && (
-        <div
-          className="fixed inset-0 z-[300] flex items-center justify-center p-3 sm:p-5"
-          onClick={() => setActiveModal(null)}
-        >
-          <div className="fixed inset-0 bg-black/80 backdrop-blur-md" />
-          <div
-            className="relative z-10 w-full max-w-2xl bg-forest-deep rounded-3xl shadow-2xl overflow-hidden max-h-[92vh] flex flex-col border border-[#C5A15B]/30"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Modal image header */}
-            <div className="relative aspect-[16/9] w-full shrink-0 bg-[#123D32]">
-              <Image
-                src={activeModal.image}
-                alt={activeModal.name}
-                fill
-                sizes="700px"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1F2A24]/90 via-[#1F2A24]/30 to-transparent" />
-
-              {/* Close */}
-              <button
-                type="button"
-                onClick={() => setActiveModal(null)}
-                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-black/90 transition-colors cursor-pointer"
-                aria-label="Close modal"
-              >
-                <X className="w-4 h-4" />
-              </button>
-
-              {/* Title overlay */}
-              <div className="absolute bottom-4 left-5 right-14 text-white">
-                <span className="text-[11px] uppercase font-bold text-[#C5A15B] tracking-widest block mb-1">
-                  {activeModal.category} &bull; {activeModal.color}
-                </span>
-                <h3 className="font-heading text-xl sm:text-2xl font-bold leading-tight">
-                  {activeModal.name}
-                </h3>
-                <p className="text-xs text-white/70 mt-0.5">{activeModal.subtitle}</p>
-              </div>
-            </div>
-
-            {/* Modal body */}
-            <div className="p-5 sm:p-7 overflow-y-auto space-y-5 text-white">
-
-              {/* Action buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <EnquiryButton variant="gold" className="mb-2.5 w-full" product={activeModal.name} cta="Semi-precious detail modal">Get a Free Quote</EnquiryButton>
-                <a
-                  href={`https://wa.me/919414945457?text=${encodeURIComponent(activeModal.waMsg)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-full bg-[#C5A15B] hover:bg-[#d4b574] text-[#123D32] font-bold text-xs uppercase tracking-wider transition-all active:scale-95 cursor-pointer"
-                >
-                  <WhatsAppIcon className="w-4 h-4 fill-[#123D32]" size={16} />
-                  Enquire on WhatsApp
-                </a>
-                <button
-                  type="button"
-                  onClick={() => setActiveModal(null)}
-                  className="sm:w-auto py-3 px-6 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </main>
   );
 }

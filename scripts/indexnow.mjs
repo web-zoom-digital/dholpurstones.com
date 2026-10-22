@@ -4,7 +4,7 @@
  */
 import { readFileSync } from "node:fs";
 
-const site = (process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || "https://dholpurestones.com").replace(/\/$/, "");
+const site = (process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || "https://www.dholpurstones.com").replace(/\/$/, "");
 const keySource = readFileSync(new URL("../src/lib/indexnow.ts", import.meta.url), "utf8");
 const key = keySource.match(/INDEXNOW_KEY = "([a-f0-9]+)"/)?.[1];
 if (!key) throw new Error("IndexNow key not found in src/lib/indexnow.ts");

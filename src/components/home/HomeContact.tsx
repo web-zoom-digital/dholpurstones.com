@@ -15,7 +15,7 @@ export default function HomeContact() {
   return (
     <section
       id="contact"
-      className="relative mx-2 mb-2 overflow-hidden rounded-[2rem] bg-forest section-y sm:mx-4 sm:mb-4 sm:rounded-[3rem] bg-stone-grain"
+      className="relative mx-2 mb-2 overflow-hidden rounded-[2rem] bg-forest section-y sm:mx-4 sm:mb-4 sm:rounded-[3rem] bg-stone-grain pattern-jali"
     >
       <div className="container-x relative grid gap-10 lg:grid-cols-2 lg:gap-14">
         <Reveal>
@@ -33,7 +33,7 @@ export default function HomeContact() {
           <ul className="mt-7 space-y-3">
             <li>
               <a
-                href={waLink("Hello Dholpurestones.com, I would like to connect regarding natural stone.")}
+                href={waLink("Hello Dholpurstones.com, I would like to connect regarding natural stone.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.06] p-4 transition-colors hover:border-[#25D366]/60"

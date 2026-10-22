@@ -12,7 +12,7 @@ export default function GardenSection() {
   return (
     <section
       id="farmhouse-gardens"
-      className="relative mx-2 overflow-hidden rounded-[2rem] bg-forest section-y sm:mx-4 sm:rounded-[3rem] bg-stone-grain"
+      className="relative mx-2 overflow-hidden rounded-[2rem] bg-forest section-y sm:mx-4 sm:rounded-[3rem] bg-stone-grain pattern-jali"
     >
       <div className="container-x relative">
         <SectionHeader
@@ -41,7 +41,7 @@ export default function GardenSection() {
             <ArrowRight className="h-4 w-4" />
           </Button>
           <Button
-            href={waLink("Hello Dholpurestones.com, I am planning a farm house / garden and need stone options.")}
+            href={waLink("Hello Dholpurstones.com, I am planning a farm house / garden and need stone options.")}
             variant="outline-light"
             size="lg"
           >

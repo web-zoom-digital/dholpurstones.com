@@ -10,7 +10,7 @@ import { LuArrowRight as ArrowRight } from "react-icons/lu";
 
 export default function SemiPreciousSection() {
   return (
-    <section id="semi-precious" className="section-y bg-white">
+    <section id="semi-precious" className="section-y relative overflow-hidden bg-white pattern-dots">
       <div className="container-x">
         <SectionHeader
           eyebrow="Natural Gemstone Slabs"

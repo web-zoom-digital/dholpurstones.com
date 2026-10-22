@@ -22,7 +22,6 @@ export interface SubCategory {
 
 export type CategoryId =
   | "sandstone"
-  | "marble"
   | "farmhouse-gardens"
   | "stone-articles"
   | "semi-precious"
@@ -82,7 +81,7 @@ export const marbleSubs: (SubCategory & { varieties: MarbleVariety[] })[] = [
     name: "Beige Marble",
     note: "Warm, creamy tones for flooring, wall cladding and interiors.",
     image: "/assets/garg/botticino_marble.jpg",
-    href: "/marble#beige-marble",
+    href: "/exclusive-imported#beige-marble",
     varieties: [
       { name: "Botticino Classico", image: "/assets/garg/botticino_marble.jpg" },
       { name: "Elmali Beige", image: "/assets/garg/elmali_beige.jpg" },
@@ -99,7 +98,7 @@ export const marbleSubs: (SubCategory & { varieties: MarbleVariety[] })[] = [
     name: "White Marble",
     note: "Classic whites with fine veining — Statuario, Carrara and more.",
     image: "/white-series-dolphur-color/statuario.png",
-    href: "/marble#white-marble",
+    href: "/exclusive-imported#white-marble",
     varieties: [
       { name: "Statuario", image: "/white-series-dolphur-color/statuario.png" },
       { name: "Carrara White", image: "/white-series-dolphur-color/carrara-white.png" },
@@ -116,7 +115,7 @@ export const marbleSubs: (SubCategory & { varieties: MarbleVariety[] })[] = [
     name: "Grey Marble",
     note: "Cool grey and smoky veined marbles for modern, dramatic spaces.",
     image: "/white-series-dolphur-color/blue-wave.png",
-    href: "/marble#grey-marble",
+    href: "/exclusive-imported#grey-marble",
     varieties: [
       { name: "Pearl White", image: "/white-series-dolphur-color/pearl-white.png" },
       { name: "Blue Wave", image: "/white-series-dolphur-color/blue-wave.png" },
@@ -155,25 +154,41 @@ export const gardenSubs: SubCategory[] = [
   },
   {
     id: "gazebo",
-    name: "Garden Gazebos",
-    note: "Carved sandstone chhatris and baradaris for the lawn.",
-    image: "/assets/landscaping/landscape_sandstone_gazebo.jpg",
+    name: "Chhatris & Gazebos",
+    note: "Hand-carved sandstone chhatris and pavilions for the lawn.",
+    image: "/garden-stonework/carved-sandstone-chhatri-pavilion.jpg",
     href: "/farmhouse-gardens",
   },
   {
-    id: "steps",
-    name: "Steps & Retaining Walls",
-    note: "Terraced steps and natural stone walling for sloped gardens.",
-    image: "/assets/landscaping/landscape_steps_walling.jpg",
+    id: "lanterns",
+    name: "Garden Lanterns & Lamp Posts",
+    note: "Carved jali lamp posts that light paths, lawns and entrances.",
+    image: "/garden-stonework/sandstone-lantern-lamp-post-lawn.jpg",
     href: "/farmhouse-gardens",
   },
   {
     id: "fountains",
     name: "Water Fountains",
-    note: "Tiered carved fountains that anchor courtyards and gardens.",
-    image: "/assets/landscaping/landscape_water_fountain.jpg",
+    note: "Carved bowl and pot fountains that anchor courtyards and gardens.",
+    image: "/garden-stonework/sandstone-bowl-water-fountains.jpg",
     href: "/farmhouse-gardens",
   },
+];
+
+/** Every farm house & garden photo, used by the gallery on /farmhouse-gardens. */
+export const gardenGallery: { src: string; alt: string }[] = [
+  { src: "/garden-stonework/carved-sandstone-chhatri-pavilion.jpg", alt: "Hand-carved sandstone chhatri pavilion with arched brackets and fluted columns" },
+  { src: "/garden-stonework/sandstone-bowl-water-fountains.jpg", alt: "Sandstone bowl water fountains in a lawn garden" },
+  { src: "/garden-stonework/sandstone-pot-water-fountain.jpg", alt: "Sandstone pot and pillar water fountain in a garden" },
+  { src: "/garden-stonework/sandstone-lantern-lamp-post-lawn.jpg", alt: "Carved sandstone lantern lamp post on a garden lawn" },
+  { src: "/garden-stonework/lotus-sandstone-lantern-post.jpg", alt: "Lotus-carved sandstone lantern post with jali panel" },
+  { src: "/garden-stonework/red-sandstone-lantern-posts-pathway.jpg", alt: "Red sandstone jali lantern posts along a garden pathway" },
+  { src: "/garden-stonework/marble-lantern-lamp-post.jpg", alt: "White stone lantern lamp post beside a garden planter" },
+  { src: "/garden-stonework/fluted-sandstone-column.jpg", alt: "Fluted sandstone column with carved capital" },
+  { src: "/assets/landscaping/landscape_pool_coping.jpg", alt: "Sandstone pool coping and deck beside a farm house pool" },
+  { src: "/assets/landscaping/landscape_cobblestone_driveway.jpg", alt: "Cobblestone sandstone driveway and portico of a farm house" },
+  { src: "/assets/landscaping/landscape_patio_paving.jpg", alt: "Sandstone patio paving and lawn terrace" },
+  { src: "/assets/landscaping/landscape_steps_walling.jpg", alt: "Terraced garden with sandstone steps and retaining walls" },
 ];
 
 /* ───────────────────────── Stone Articles (hand-crafted) ───────────────────────── */
@@ -181,8 +196,36 @@ export const articleSubs: SubCategory[] = [
   {
     id: "peacock",
     name: "Peacock Sculptures",
-    note: "Hand-carved filigree peacocks for gardens and entrances.",
-    image: "/stone-articles/user_peacock_clean.jpg",
+    note: "Hand-carved peacock pairs for gardens, gates and entrances.",
+    image: "/stone-articles/carved-sandstone-peacock-pair.jpg",
+    href: "/articles",
+  },
+  {
+    id: "elephant",
+    name: "Elephant Statues",
+    note: "Caparisoned elephants carved from a single sandstone block.",
+    image: "/stone-articles/carved-sandstone-elephant.jpg",
+    href: "/articles",
+  },
+  {
+    id: "statues",
+    name: "Figure Statues",
+    note: "Traditional Rajasthani figures carved in sandstone.",
+    image: "/stone-articles/sandstone-soldier-statue.jpg",
+    href: "/articles",
+  },
+  {
+    id: "mandir",
+    name: "Temple Mandirs",
+    note: "Carved jali mandirs and shrines in natural stone.",
+    image: "/stone-articles/carved-sandstone-temple-mandir.jpg",
+    href: "/articles",
+  },
+  {
+    id: "jali-lamps",
+    name: "Jali Lamps & Urns",
+    note: "Pierced-jali lamps and urns, including Om and floral patterns.",
+    image: "/stone-articles/om-jali-sandstone-lamp.jpg",
     href: "/articles",
   },
   {
@@ -192,34 +235,23 @@ export const articleSubs: SubCategory[] = [
     image: "/stone-articles/user_lion_clean.jpg",
     href: "/articles",
   },
-  {
-    id: "lantern",
-    name: "Stone Lanterns",
-    note: "Pierced-jali lanterns that glow warmly after dusk.",
-    image: "/stone-articles/stone_lantern.jpg",
-    href: "/articles",
-  },
-  {
-    id: "elephant",
-    name: "Elephant Statues",
-    note: "Caparisoned elephants carved from a single sandstone block.",
-    image: "/stone-articles/elephant_image.jpeg",
-    href: "/articles",
-  },
-  {
-    id: "fountain",
-    name: "Carved Fountains",
-    note: "Multi-tier fountains hand-chiselled by Sikandra artisans.",
-    image: "/stone-articles/fountain_image.jpeg",
-    href: "/articles",
-  },
-  {
-    id: "relief",
-    name: "Relief Panels",
-    note: "Galloping-horse and heritage relief wall panels.",
-    image: "/stone-articles/horse_marble_image.jpeg",
-    href: "/articles",
-  },
+];
+
+/** Every hand-carved article photo, used by the gallery on /articles. */
+export const articleGallery: { src: string; alt: string }[] = [
+  { src: "/stone-articles/carved-sandstone-peacock-pair.jpg", alt: "Pair of hand-carved sandstone peacock sculptures on carved plinths" },
+  { src: "/stone-articles/carved-sandstone-elephant.jpg", alt: "Hand-carved sandstone elephant with decorated headpiece" },
+  { src: "/stone-articles/sandstone-soldier-statue.jpg", alt: "Sandstone statue of a Rajasthani guard holding a staff" },
+  { src: "/stone-articles/carved-sandstone-temple-mandir.jpg", alt: "Carved sandstone temple mandir with jali walls and lotus columns" },
+  { src: "/stone-articles/om-jali-sandstone-lamp.jpg", alt: "Sandstone jali lamp with Om symbol cut-outs" },
+  { src: "/stone-articles/pink-sandstone-jali-urn-lamp.jpg", alt: "Pink sandstone jali urn lamp with lid" },
+  { src: "/stone-articles/user_lion_clean.jpg", alt: "Sandstone guardian lion sculpture on carved plinth" },
+  { src: "/garden-stonework/sandstone-lantern-lamp-post-lawn.jpg", alt: "Carved sandstone lantern lamp post" },
+  { src: "/garden-stonework/lotus-sandstone-lantern-post.jpg", alt: "Lotus-carved sandstone lantern post" },
+  { src: "/garden-stonework/red-sandstone-lantern-posts-pathway.jpg", alt: "Red sandstone jali lantern posts" },
+  { src: "/garden-stonework/sandstone-pot-water-fountain.jpg", alt: "Sandstone pot water fountain" },
+  { src: "/garden-stonework/fluted-sandstone-column.jpg", alt: "Fluted sandstone column with carved capital" },
+  { src: "/stone-articles/horse_marble_image.jpeg", alt: "Galloping horses relief panel carved in stone" },
 ];
 
 /* ───────────────────────── Semi-Precious ───────────────────────── */
@@ -234,19 +266,23 @@ export const semiPreciousSubs: SubCategory[] = [
 
 /* ───────────────────────── Exclusive & Imported ───────────────────────── */
 export const exclusiveSubs: SubCategory[] = [
-  {
-    id: "gem-surface",
-    name: "Precious Gem Surfaces",
-    note: "Backlit gemstone slabs, tabletops, basins and décor.",
-    image: "/precious-gem-surface/page_062_BLACK_OBSIDIAN_image_02.jpeg",
-    href: "/precious-gem-surface",
-  },
+  ...marbleSubs.map(({ varieties, ...sub }) => {
+    void varieties;
+    return sub;
+  }),
   {
     id: "exotic-marble",
     name: "Imported Exotic Marble",
     note: "Calacatta Viola, Bianco Fire, Golden Michael and rare Italian-style slabs.",
     image: "/white-series-dolphur-color/calacatta-viola.png",
     href: "/exclusive-imported#imported-marble",
+  },
+  {
+    id: "gem-surface",
+    name: "Precious Gem Surfaces",
+    note: "Backlit gemstone slabs, tabletops, basins and décor.",
+    image: "/precious-gem-surface/page_062_BLACK_OBSIDIAN_image_02.jpeg",
+    href: "/precious-gem-surface",
   },
 ];
 
@@ -271,15 +307,6 @@ export const categories: Category[] = [
     image: "/sandstone/agra-red-sandstone.jpeg",
     badge: "Our Own Mines",
     subs: sandstoneSubs,
-  },
-  {
-    id: "marble",
-    name: "Marble",
-    href: "/marble",
-    blurb: "Beige, white and grey marble — slabs and tiles in 20+ varieties.",
-    image: "/white-series-dolphur-color/statuario.png",
-    badge: "3 Collections",
-    subs: marbleSubs,
   },
   {
     id: "farmhouse-gardens",
@@ -312,9 +339,9 @@ export const categories: Category[] = [
     id: "exclusive-imported",
     name: "Exclusive & Imported",
     href: "/exclusive-imported",
-    blurb: "Rare imported marbles and precious gem surfaces, made to order.",
-    image: "/white-series-dolphur-color/calacatta-viola.png",
-    badge: "By Request",
+    blurb: "All our marble — beige, white and grey — plus imported exotic slabs and precious gem surfaces.",
+    image: "/white-series-dolphur-color/statuario.png",
+    badge: "Marble & Imports",
     subs: exclusiveSubs,
   },
 ];

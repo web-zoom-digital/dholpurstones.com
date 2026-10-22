@@ -68,7 +68,7 @@ export default function Footer() {
                 <span className="font-heading text-sm font-extrabold text-gold">DS</span>
               </span>
               <span className="leading-tight">
-                <span className="block font-heading text-lg font-bold uppercase tracking-[0.08em]">Dholpurestones</span>
+                <span className="block font-heading text-lg font-bold uppercase tracking-[0.08em]">Dholpurstones</span>
                 <span className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-gold">
                   Natural Stone &bull; Since 1953
                 </span>
@@ -88,7 +88,7 @@ export default function Footer() {
               <li className="flex gap-3">
                 <WhatsAppIcon className="mt-0.5 h-4 w-4 shrink-0 fill-[#25D366]" size={16} />
                 <a
-                  href={waLink("Hello Dholpurestones.com, I would like to inquire about natural stone.")}
+                  href={waLink("Hello Dholpurstones.com, I would like to inquire about natural stone.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/75 transition-colors hover:text-gold"
@@ -189,11 +189,22 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-2 border-t border-white/10 pt-6 text-center text-[12.5px] text-white/50 sm:flex-row sm:text-left">
           <p>
-            &copy; {new Date().getFullYear()} Dholpurestones.com &mdash; B P Garg &amp; Sons / Garg Corporation Ltd. All
+            &copy; {new Date().getFullYear()} Dholpurstones.com &mdash; B P Garg &amp; Sons / Garg Corporation Ltd. All
             rights reserved.
           </p>
           <p>Awarded by Govt. of India &bull; Estd. 1953</p>
         </div>
+        <p className="mt-4 text-center text-[12px] text-white/40">
+          Designed &amp; Developed by{" "}
+          <a
+            href="https://www.zoomdigital.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-white/60 underline-offset-2 transition-colors hover:text-gold hover:underline"
+          >
+            Zoom Digital
+          </a>
+        </p>
       </div>
     </footer>
   );

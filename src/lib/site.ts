@@ -2,8 +2,8 @@
  * Central site config. Set NEXT_PUBLIC_SITE_URL in the hosting environment to
  * switch the canonical domain everywhere (metadata, sitemap, schema, IndexNow).
  */
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://dholpurestones.com").replace(/\/$/, "");
-export const SITE_NAME = "Dholpurestones.com";
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.dholpurstones.com").replace(/\/$/, "");
+export const SITE_NAME = "Dholpurstones.com";
 export const LEGAL_NAME = "B P Garg & Sons (Garg Corporation Ltd.)";
 export const FOUNDING_YEAR = 1953;
 
@@ -28,5 +28,6 @@ export const CORE_KEYWORDS = [
   "marble supplier Rajasthan",
   "semi precious stone slabs",
   "natural stone manufacturer",
+  "Dholpurstones",
   "Dholpurestones",
 ];

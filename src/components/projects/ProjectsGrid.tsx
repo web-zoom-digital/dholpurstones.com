@@ -53,7 +53,7 @@ export default function ProjectsGrid() {
                 {p.image ? (
                   <Image
                     src={p.image}
-                    alt={`${p.name}, ${p.place} — natural stone by Dholpurestones`}
+                    alt={`${p.name}, ${p.place} — natural stone by Dholpurstones`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"

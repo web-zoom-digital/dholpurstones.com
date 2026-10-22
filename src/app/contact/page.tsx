@@ -17,16 +17,16 @@ import { breadcrumbLd, faqLd, webPageLd } from "@/lib/schema";
 import { LuMail as Mail, LuMapPin as MapPin, LuPhone as Phone, LuClock as Clock } from "react-icons/lu";
 
 export const metadata: Metadata = {
-  title: "Contact Dholpurestones – Get a Free Quote for Sandstone, Marble & Stone Work",
+  title: "Contact Dholpurstones – Get a Free Quote for Sandstone, Marble & Stone Work",
   description:
-    "Contact Dholpurestones.com (B P Garg & Sons) in Dholpur, Rajasthan. WhatsApp +91 94149 45457, call +91 90573 55232 or send an enquiry for sandstone, marble, farm house stonework and exports. Mon–Sat, 9 am–7 pm IST.",
+    "Contact Dholpurstones.com (B P Garg & Sons) in Dholpur, Rajasthan. WhatsApp +91 94149 45457, call +91 90573 55232 or send an enquiry for sandstone, marble, farm house stonework and exports. Mon–Sat, 9 am–7 pm IST.",
   keywords: ["Dholpur stone contact", "Dholpur sandstone supplier phone number", "sandstone manufacturer Dholpur address", "B P Garg & Sons Dholpur"],
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact Dholpurestones.com — Free Quote",
+    title: "Contact Dholpurstones.com — Free Quote",
     description: "WhatsApp, call or send an enquiry. Mine owner, manufacturer and exporter since 1953.",
     url: "/contact",
-    images: [{ url: "/assets/quarry_mining_operations.jpg", width: 1376, height: 768, alt: "Dholpurestones quarry and works, Dholpur" }],
+    images: [{ url: "/assets/quarry_mining_operations.jpg", width: 1376, height: 768, alt: "Dholpurstones quarry and works, Dholpur" }],
   },
 };
 
@@ -35,7 +35,7 @@ const cards = [
     icon: WhatsAppIcon,
     label: "WhatsApp",
     value: PHONE_PRIMARY,
-    href: waLink("Hello Dholpurestones.com, I would like to enquire about natural stone."),
+    href: waLink("Hello Dholpurstones.com, I would like to enquire about natural stone."),
     note: "Fastest reply",
     green: true,
   },
@@ -126,7 +126,7 @@ export default function ContactPage() {
 
               <div className="overflow-hidden rounded-[1.75rem] border border-black/[0.06] bg-white">
                 <iframe
-                  title="Dholpurestones works location map"
+                  title="Dholpurstones works location map"
                   src="https://maps.google.com/maps?q=26.5492,77.2917&hl=en&z=13&output=embed"
                   className="h-64 w-full border-0"
                   loading="lazy"
@@ -137,7 +137,7 @@ export default function ContactPage() {
               <div className="grid grid-cols-2 gap-3">
                 {["/assets/garg/card_gcl.jpg", "/assets/garg/card_saroj.jpg"].map((src) => (
                   <div key={src} className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-black/[0.06] bg-white">
-                    <Image src={src} alt="Dholpurestones visiting card" fill sizes="25vw" className="object-contain p-1" />
+                    <Image src={src} alt="Dholpurstones visiting card" fill sizes="25vw" className="object-contain p-1" />
                   </div>
                 ))}
               </div>
@@ -150,7 +150,7 @@ export default function ContactPage() {
 
       <JsonLd
         data={[
-          webPageLd({ name: "Contact Dholpurestones.com", description: "Contact details, enquiry form and location of Dholpurestones.com", path: "/contact", type: "ContactPage" }),
+          webPageLd({ name: "Contact Dholpurstones.com", description: "Contact details, enquiry form and location of Dholpurstones.com", path: "/contact", type: "ContactPage" }),
           breadcrumbLd([{ name: "Contact", path: "/contact" }]),
           faqLd(generalFaqs),
         ]}

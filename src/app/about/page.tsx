@@ -17,30 +17,30 @@ import {
 } from "react-icons/lu";
 
 export const metadata: Metadata = {
-  title: "About Dholpurestones – Dholpur Sandstone Mine Owner Since 1953",
+  title: "About Dholpurstones – Dholpur Sandstone Mine Owner Since 1953",
   description:
-    "Discover Dholpurestones (Estd. 1953). Over 70+ years of continuous natural stone quarrying, mining concessions in Dholpur, automated CNC hubs, and global contracting under Garg Corporation Ltd. and Saroj Stone Industries.",
+    "Discover Dholpurstones (Estd. 1953). Over 70+ years of continuous natural stone quarrying, mining concessions in Dholpur, automated CNC hubs, and global contracting under Garg Corporation Ltd. and Saroj Stone Industries.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
-    title: "About Us | Dholpurestones - 70+ Years Quarry Heritage",
+    title: "About Us | Dholpurstones - 70+ Years Quarry Heritage",
     description:
       "Direct quarry concessions in Dholpur, Rajasthan. Founded in 1953, supplying authentic sandstone to iconic national landmarks and global capitals.",
     url: "/about",
-    siteName: "Dholpurestones.com",
+    siteName: "Dholpurstones.com",
     images: [
       {
         url: "/assets/crest-1953.jpg",
         width: 1200,
         height: 630,
-        alt: "Dholpurestones Established 1953 Quarry Lineage",
+        alt: "Dholpurstones Established 1953 Quarry Lineage",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Us | Dholpurestones (Estd. 1953)",
+    title: "About Us | Dholpurstones (Estd. 1953)",
     description: "70+ Years of authentic natural sandstone quarrying in Dholpur, Rajasthan.",
     images: ["/assets/crest-1953.jpg"],
   },
@@ -80,11 +80,11 @@ export default function AboutPage() {
             "@graph": [
               {
                 "@type": "AboutPage",
-                "@id": "https://dholpurestones.com/about#webpage",
-                "url": "https://dholpurestones.com/about",
-                "name": "About Dholpurestones (B P Garg & Sons / Garg Corporation Ltd.)",
+                "@id": "https://www.dholpurstones.com/about#webpage",
+                "url": "https://www.dholpurstones.com/about",
+                "name": "About Dholpurstones (B P Garg & Sons / Garg Corporation Ltd.)",
                 "isPartOf": {
-                  "@id": "https://dholpurestones.com/#website"
+                  "@id": "https://www.dholpurstones.com/#website"
                 },
                 "breadcrumb": {
                   "@type": "BreadcrumbList",
@@ -93,13 +93,13 @@ export default function AboutPage() {
                       "@type": "ListItem",
                       "position": 1,
                       "name": "Home",
-                      "item": "https://dholpurestones.com"
+                      "item": "https://www.dholpurstones.com"
                     },
                     {
                       "@type": "ListItem",
                       "position": 2,
                       "name": "About Us",
-                      "item": "https://dholpurestones.com/about"
+                      "item": "https://www.dholpurstones.com/about"
                     }
                   ]
                 }

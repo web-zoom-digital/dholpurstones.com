@@ -71,11 +71,45 @@ async function deliver(lead: LeadRecord) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: process.env.LEAD_FROM_EMAIL || "Dholpurestones Leads <onboarding@resend.dev>",
+          from: process.env.LEAD_FROM_EMAIL || "Dholpurstones Leads <onboarding@resend.dev>",
           to: process.env.LEAD_TO_EMAIL.split(",").map((e) => e.trim()),
           subject: `New enquiry: ${lead.name} — ${lead.interest || "General"} (${s.page})`,
           text,
         }),
+      })
+    );
+  }
+
+  // 3) WhatsApp Cloud API (Meta) — message straight to the owner's WhatsApp
+  if (process.env.WHATSAPP_CLOUD_TOKEN && process.env.WHATSAPP_PHONE_NUMBER_ID && process.env.LEAD_WHATSAPP_TO) {
+    const s = lead.source;
+    const body = [
+      `New website enquiry — ${lead.interest || "General"}${lead.product ? ` / ${lead.product}` : ""}`,
+      `Name: ${lead.name}`,
+      `Phone: ${lead.phone}`,
+      lead.email && `Email: ${lead.email}`,
+      lead.location && `Location: ${lead.location}`,
+      lead.message && `Details: ${lead.message}`,
+      `Page: ${s.page}${s.cta ? ` (${s.cta})` : ""}`,
+      s.utm_source && `Source: ${s.utm_source}${s.utm_medium ? ` / ${s.utm_medium}` : ""}`,
+    ]
+      .filter(Boolean)
+      .join("\n");
+    const template = process.env.WHATSAPP_TEMPLATE_NAME;
+    jobs.push(
+      fetch(`https://graph.facebook.com/v21.0/${process.env.WHATSAPP_PHONE_NUMBER_ID}/messages`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${process.env.WHATSAPP_CLOUD_TOKEN}`, "Content-Type": "application/json" },
+        body: JSON.stringify(
+          template
+            ? {
+                messaging_product: "whatsapp",
+                to: process.env.LEAD_WHATSAPP_TO,
+                type: "template",
+                template: { name: template, language: { code: "en" }, components: [{ type: "body", parameters: [{ type: "text", text: body.slice(0, 900) }] }] },
+              }
+            : { messaging_product: "whatsapp", to: process.env.LEAD_WHATSAPP_TO, type: "text", text: { body } }
+        ),
       })
     );
   }

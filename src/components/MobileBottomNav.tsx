@@ -7,7 +7,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
   LuHouse as Home,
   LuLayoutGrid as Grid,
-  LuLandmark as Landmark,
   LuMessageSquareText as Contact,
   LuX as X,
   LuPhone as Phone,
@@ -24,11 +23,11 @@ const tabs = [
     href: "/products",
     icon: Grid,
     match: (p: string) =>
-      ["/products", "/sandstone", "/marble", "/farmhouse-gardens", "/articles", "/semi-precious", "/exclusive-imported", "/precious-gem-surface"].some((r) => p.startsWith(r)),
+      ["/products", "/sandstone", "/farmhouse-gardens", "/articles", "/semi-precious", "/exclusive-imported", "/precious-gem-surface"].some((r) => p.startsWith(r)),
   },
   null, // WhatsApp FAB slot
-  { label: "Projects", href: "/projects", icon: Landmark, match: (p: string) => p.startsWith("/projects") },
-  { label: "Contact", href: "/contact", icon: Contact, match: (p: string) => p.startsWith("/contact") },
+  { label: "Call", href: "tel:+919057355232", icon: Phone, match: () => false },
+  { label: "Enquiry", href: "#enquiry", icon: Contact, match: (p: string) => p.startsWith("/contact") },
 ] as const;
 
 const quickMessages = [
@@ -67,7 +66,7 @@ export default function MobileBottomNav() {
                     <WhatsAppIcon className="h-5 w-5 fill-white" size={20} />
                   </span>
                   <div className="leading-tight">
-                    <p className="text-sm font-bold text-white">Chat with Dholpurestones</p>
+                    <p className="text-sm font-bold text-white">Chat with Dholpurstones</p>
                     <p className="text-[11px] font-medium text-[#7dedaa]">Replies within working hours</p>
                   </div>
                 </div>
@@ -85,7 +84,7 @@ export default function MobileBottomNav() {
                 {quickMessages.map((msg) => (
                   <a
                     key={msg}
-                    href={waLink(`Hello Dholpurestones.com, ${msg}.`)}
+                    href={waLink(`Hello Dholpurstones.com, ${msg}.`)}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setSheetOpen(false)}
@@ -163,14 +162,8 @@ export default function MobileBottomNav() {
             }
             const Icon = tab.icon;
             const active = tab.match(pathname);
-            return (
-              <Link
-                key={tab.label}
-                href={tab.href}
-                onClick={() => setSheetOpen(false)}
-                className="relative flex flex-col items-center gap-0.5 rounded-2xl py-1.5 active:scale-90 transition-transform"
-                aria-current={active ? "page" : undefined}
-              >
+            const inner = (
+              <>
                 {active && (
                   <motion.span
                     layoutId="tab-pill"
@@ -179,14 +172,46 @@ export default function MobileBottomNav() {
                   />
                 )}
                 <Icon
-                  className={`relative h-[21px] w-[21px] transition-colors ${active ? "text-gold" : "text-white/60"}`}
+                  className={`relative h-[21px] w-[21px] transition-colors ${active ? "text-gold" : "text-white/70"}`}
                   strokeWidth={active ? 2.3 : 1.9}
                 />
-                <span
-                  className={`relative text-[11px] font-semibold tracking-wide transition-colors ${active ? "text-gold" : "text-white/60"}`}
-                >
+                <span className={`relative text-[11px] font-semibold tracking-wide transition-colors ${active ? "text-gold" : "text-white/70"}`}>
                   {tab.label}
                 </span>
+              </>
+            );
+            const cls = "relative flex flex-col items-center gap-0.5 rounded-2xl py-1.5 active:scale-90 transition-transform";
+            if (tab.label === "Enquiry") {
+              return (
+                <button
+                  key={tab.label}
+                  type="button"
+                  onClick={() => {
+                    setSheetOpen(false);
+                    openEnquiry({ cta: "Mobile bottom bar" });
+                  }}
+                  className={cls}
+                >
+                  {inner}
+                </button>
+              );
+            }
+            if (tab.href.startsWith("tel:")) {
+              return (
+                <a key={tab.label} href={tab.href} className={cls} aria-label={`Call ${PHONE_PRIMARY}`}>
+                  {inner}
+                </a>
+              );
+            }
+            return (
+              <Link
+                key={tab.label}
+                href={tab.href}
+                onClick={() => setSheetOpen(false)}
+                className={cls}
+                aria-current={active ? "page" : undefined}
+              >
+                {inner}
               </Link>
             );
           })}

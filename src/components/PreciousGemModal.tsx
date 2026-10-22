@@ -5,6 +5,8 @@ import Image from "next/image";
 import { LuX as X, LuZoomIn as ZoomIn } from "react-icons/lu";
 import type { PreciousGemProduct } from "@/data/preciousGemData";
 
+import ContactActions from "./ui/ContactActions";
+
 interface PreciousGemModalProps {
   product: PreciousGemProduct | null;
   onClose: () => void;
@@ -101,10 +103,14 @@ export default function PreciousGemModal({ product, onClose }: PreciousGemModalP
           </div>
         </div>
 
+        <div className="border-t border-black/8 bg-white px-5 py-4">
+          <ContactActions tone="light" size="md" layout="row" cta="Gem surface modal" product={`${product.name} gem surface`} />
+        </div>
+
         {/* Modal Footer */}
         <div className="px-6 py-3.5 bg-[#F7F4EB] border-t border-black/8 flex items-center justify-between text-xs text-[#6B7C73]">
           <span className="font-medium text-[11px] uppercase tracking-wider text-[#123D32]">
-            Precious Gem Surface Collection &bull; Dholpurestones
+            Precious Gem Surface Collection &bull; Dholpurstones
           </span>
           <button
             type="button"

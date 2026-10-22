@@ -15,11 +15,11 @@ import { absoluteUrl } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Stone Guides & Blog – Dholpur Sandstone, Marble, Farm House Stonework",
   description:
-    "Buying guides, comparisons and how-tos on Dholpur sandstone, marble, semi-precious stones, farm house and garden stonework, sculptures and stone export — from Dholpurestones.com, mine owners since 1953.",
+    "Buying guides, comparisons and how-tos on Dholpur sandstone, marble, semi-precious stones, farm house and garden stonework, sculptures and stone export — from Dholpurstones.com, mine owners since 1953.",
   keywords: ["Dholpur stone blog", "sandstone buying guide", "marble colour guide", "farm house stone guide", "stone export from India"],
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Stone Guides & Blog | Dholpurestones.com",
+    title: "Stone Guides & Blog | Dholpurstones.com",
     description: "Practical guides on sandstone, marble, farm house stonework and stone export.",
     url: "/blog",
     images: [{ url: "/assets/blog/dholpur-beige-facade.jpg", width: 1200, height: 675, alt: "Dholpur sandstone facade" }],
@@ -50,7 +50,7 @@ export default function BlogPage() {
           webPageLd({ name: "Stone Guides & Blog", description: "Guides on sandstone, marble and stonework", path: "/blog", type: "CollectionPage" }),
           breadcrumbLd([{ name: "Blog", path: "/blog" }]),
           {
-            ...plainListLd("Dholpurestones.com articles", ALL_BLOG_POSTS.map((p) => ({ name: p.title, description: p.excerpt, image: p.featuredImage }))),
+            ...plainListLd("Dholpurstones.com articles", ALL_BLOG_POSTS.map((p) => ({ name: p.title, description: p.excerpt, image: p.featuredImage }))),
             itemListElement: ALL_BLOG_POSTS.map((p, i) => ({ "@type": "ListItem", position: i + 1, url: absoluteUrl(`/blog/${p.slug}`), name: p.title })),
           },
         ]}

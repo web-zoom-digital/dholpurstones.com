@@ -9,7 +9,7 @@ import { LuArrowRight as ArrowRight } from "react-icons/lu";
 
 export default function SandstoneSection() {
   return (
-    <section id="sandstone" className="section-y bg-white">
+    <section id="sandstone" className="section-y relative overflow-hidden bg-white pattern-dots">
       <div className="container-x">
         <SectionHeader
           eyebrow="Direct From Our Mines"

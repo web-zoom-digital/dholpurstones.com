@@ -4,7 +4,6 @@ import Hero from "@/components/Hero";
 import TrustStrip from "@/components/home/TrustStrip";
 import Collections from "@/components/home/Collections";
 import SandstoneSection from "@/components/home/SandstoneSection";
-import MarbleSection from "@/components/home/MarbleSection";
 import GardenSection from "@/components/home/GardenSection";
 import ArticlesSection from "@/components/home/ArticlesSection";
 import SemiPreciousSection from "@/components/home/SemiPreciousSection";
@@ -27,7 +26,6 @@ export default function Home() {
       <TrustStrip />
       <Collections />
       <SandstoneSection />
-      <MarbleSection />
       <GardenSection />
       <ArticlesSection />
       <SemiPreciousSection />

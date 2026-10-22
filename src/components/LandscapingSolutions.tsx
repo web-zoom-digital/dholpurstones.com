@@ -1,31 +1,19 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
-import AnimDiv from "@/components/ui/AnimDiv";
-import Image from "next/image";
+import React from "react";
 import {
-  LuSparkles as Sparkles,
-  LuTreePine as TreePine,
-  LuLayers as Layers,
   LuCompass as Compass,
-  LuCircleCheck as CheckCircle2,
-  LuExternalLink as ExternalLink,
-  LuChevronRight as ChevronRight,
-  LuShieldCheck as ShieldCheck,
-  LuRuler as Ruler,
-  LuSun as Sun,
-  LuDroplets as Droplets,
   LuHardHat as HardHat,
-  LuX as X,
-  LuPhone as Phone,
-  LuLandmark as Landmark
+  LuSun as Sun,
+  LuCircleCheck as Check,
 } from "react-icons/lu";
-import WhatsAppIcon from "./WhatsAppIcon";
-
+import SectionHeader from "./ui/SectionHeader";
+import CatalogGrid, { type CatalogItem } from "./catalog/CatalogGrid";
+import { Stagger, StaggerItem } from "./ui/Reveal";
 
 interface LandscapeItem {
   id: string;
-  category: "all" | "farmhouse" | "gazebos" | "flagstones" | "pool" | "steps" | "fountains";
+  category: string;
   title: string;
   tag: string;
   subtitle: string;
@@ -61,7 +49,7 @@ const landscapeSolutions: LandscapeItem[] = [
       "Permeable joints support natural rainwater drainage and eco-friendly groundwater recharge",
       "Rich natural mineral patina that looks more regal with every passing decade",
     ],
-    waMsg: "Hello Dholpurestones.com, I would like to inquire about Sandstone Cobblestones & Driveway Paving for an estate project.",
+    waMsg: "Hello Dholpurstones.com, I would like to inquire about Sandstone Cobblestones & Driveway Paving for an estate project.",
   },
   {
     id: "patio-paving",
@@ -85,7 +73,7 @@ const landscapeSolutions: LandscapeItem[] = [
       "Factory thickness calibration (+/-1mm) for rapid, zero-lippage laying",
       "Immune to efflorescence, moss erosion, and desert temperature swings",
     ],
-    waMsg: "Hello Dholpurestones.com, I would like to inquire about Calibrated Sandstone Flagstones & Paving for a landscaping project.",
+    waMsg: "Hello Dholpurstones.com, I would like to inquire about Calibrated Sandstone Flagstones & Paving for a landscaping project.",
   },
   {
     id: "pool-coping",
@@ -109,7 +97,7 @@ const landscapeSolutions: LandscapeItem[] = [
       "Will not heat up like granite or synthetic tiles under midday sun",
       "Custom curved pieces engineered for freeform and kidney swimming pools",
     ],
-    waMsg: "Hello Dholpurestones.com, I would like to inquire about Sandstone Pool Copings & Non-Slip Decks.",
+    waMsg: "Hello Dholpurstones.com, I would like to inquire about Sandstone Pool Copings & Non-Slip Decks.",
   },
   {
     id: "steps-walling",
@@ -133,7 +121,7 @@ const landscapeSolutions: LandscapeItem[] = [
       "Permeable dry-stone retaining allows natural root breathing and drainage",
       "Harmonizes naturally with outdoor plants, creeping groundcovers & lighting",
     ],
-    waMsg: "Hello Dholpurestones.com, I would like to inquire about Monolithic Steps & Dry Stone Walling for landscape terracing.",
+    waMsg: "Hello Dholpurstones.com, I would like to inquire about Monolithic Steps & Dry Stone Walling for landscape terracing.",
   },
   {
     id: "water-fountains",
@@ -141,7 +129,7 @@ const landscapeSolutions: LandscapeItem[] = [
     title: "Hand-Carved Stone Fountains & Cascades",
     tag: "Master Artisan Craftsmanship",
     subtitle: "Regal Tiered Water Features & Lotus Stone Basins",
-    image: "/assets/landscaping/landscape_water_fountain.jpg",
+    image: "/garden-stonework/sandstone-bowl-water-fountains.jpg",
     provenance: "Sikandra Heritage Sculpting Ateliers",
     desc: "Monumental tiered sandstone fountains, spillway bowls, and lotus flower water basins carved by generational master stone sculptors. Pre-drilled for concealed plumbing conduits, creating an acoustic water focal point for prestigious estates.",
     idealFor: "Palatial Courtyards, Estate Driveway Rotundas, Civic Plazas, Luxury Hotel Entrances",
@@ -157,7 +145,7 @@ const landscapeSolutions: LandscapeItem[] = [
       "Modular inter-locking ring construction for effortless on-site assembly",
       "Direct quarry master artisans can execute custom drawings or CAD 3D files",
     ],
-    waMsg: "Hello Dholpurestones.com, I would like to inquire about Hand-Carved Sandstone Water Fountains & Garden Basins.",
+    waMsg: "Hello Dholpurstones.com, I would like to inquire about Hand-Carved Sandstone Water Fountains & Garden Basins.",
   },
   {
     id: "sandstone-gazebos",
@@ -165,7 +153,7 @@ const landscapeSolutions: LandscapeItem[] = [
     title: "Hand-Carved Gazebos, Pergolas & Garden Baradaris",
     tag: "Royal Heritage Pavilions & Chhatris",
     subtitle: "Fluted Sandstone Columns, Stone Canopies & Baradaris",
-    image: "/assets/landscaping/landscape_sandstone_gazebo.jpg",
+    image: "/garden-stonework/carved-sandstone-chhatri-pavilion.jpg",
     provenance: "Sikandra Ateliers & Dholpur",
     desc: "Bespoke hand-carved natural sandstone gazebos, garden baradaris, and open-air pergolas crafted for luxury farm house lawns, meditation courtyards, and palatial garden estates. Features hand-chiseled fluted columns, ornate brackets, carved domed chhatri canopies, and integrated perimeter stone bench seating.",
     idealFor: "Luxury Farm Houses, Expansive Estate Lawns, Central Courtyards, Heritage Resort Gardens",
@@ -181,18 +169,32 @@ const landscapeSolutions: LandscapeItem[] = [
       "Concealed internal electrical channels for evening ambient LED chandelier and pillar downlighting",
       "Available from compact 10ft x 10ft garden gazebos to grand 32ft monumental octagonal baradaris",
     ],
-    waMsg: "Hello Dholpurestones.com, I would like to inquire about Hand-Carved Sandstone Gazebos, Pergolas & Garden Baradaris for a Farm House project.",
+    waMsg: "Hello Dholpurstones.com, I would like to inquire about Hand-Carved Sandstone Gazebos, Pergolas & Garden Baradaris for a Farm House project.",
   },
-];
-
-const categoryTabs = [
-  { id: "all", label: "All Hardscapes", icon: Layers },
-  { id: "farmhouse", label: "Driveways & Cobbles", icon: HardHat },
-  { id: "flagstones", label: "Patios & Paving", icon: Ruler },
-  { id: "pool", label: "Pool Coping & Decks", icon: Droplets },
-  { id: "steps", label: "Steps & Walling", icon: Layers },
-  { id: "gazebos", label: "Gazebos & Baradaris", icon: Landmark },
-  { id: "fountains", label: "Fountains & Cascades", icon: Sparkles },
+  {
+    id: "garden-lanterns",
+    category: "lanterns",
+    title: "Carved Garden Lanterns & Lamp Posts",
+    tag: "Pathway & Lawn Lighting",
+    subtitle: "Jali Lantern Posts in Beige, Red and Pink Sandstone",
+    image: "/garden-stonework/sandstone-lantern-lamp-post-lawn.jpg",
+    provenance: "Sikandra Ateliers & Dholpur",
+    desc: "Hand-carved sandstone lantern posts with pierced jali panels, lotus-carved shafts and finial tops, made to line driveways, pathways, lawns and entrances. Each post is cut to your height and fitted for an LED lamp.",
+    idealFor: "Farm House Pathways, Driveway Edges, Lawn Borders, Entrance Gates, Resort Gardens",
+    specs: [
+      { label: "Stone Options", value: "Dholpur Beige, Agra Red, Dholpur Pink" },
+      { label: "Heights", value: "Made to order — share your requirement" },
+      { label: "Design", value: "Floral and geometric jali, lotus shaft, finial top" },
+      { label: "Finish", value: "Hand-chiselled and honed" },
+    ],
+    features: [
+      "Carved by hand in matching sets for a uniform pathway",
+      "Pierced jali panel lets lamp light glow softly after dusk",
+      "Natural sandstone weathers gracefully outdoors",
+      "Custom heights, patterns and colours available",
+    ],
+    waMsg: "Hello Dholpurstones.com, I would like to inquire about Carved Garden Lanterns & Lamp Posts for my farm house / garden.",
+  },
 ];
 
 const stakeholderPillars = [
@@ -231,435 +233,72 @@ const stakeholderPillars = [
   },
 ];
 
+
+const items: CatalogItem[] = landscapeSolutions.map((l) => ({
+  id: l.id,
+  name: l.title,
+  badge: l.tag,
+  meta: l.subtitle,
+  image: l.image,
+  desc: `${l.desc} Ideal for: ${l.idealFor}.`,
+  specs: l.specs,
+  highlights: l.features,
+  waMsg: l.waMsg,
+}));
+
 export default function LandscapingSolutions() {
-  const [activeTab, setActiveTab] = useState<string>("all");
-  const [activeModal, setActiveModal] = useState<LandscapeItem | null>(null);
-
-  const filteredItems =
-    activeTab === "all"
-      ? landscapeSolutions
-      : landscapeSolutions.filter((item) => item.category === activeTab);
-
   return (
-    <section
-      id="landscaping"
-      className="bg-[#F7F4EB] py-14 sm:py-24 border-b border-black/8 relative overflow-hidden"
-    >
-      {/* Decorative Background Subtleties */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#C5A15B]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#123D32]/5 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Index Marker */}
-        <AnimDiv className="flex items-center justify-between pb-3 border-b border-black/8 mb-8 sm:mb-10">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#C5A15B]" />
-            <span className="font-heading text-[11px] sm:text-xs font-bold tracking-[0.16em] text-[#1F2A24] uppercase">
-              DHOLPURESTONES &bull; HARDSCAPE &amp; PAVING DIVISION
-            </span>
-          </div>
-          <span className="font-heading text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest uppercase">
-            LANDSCAPE MASONRY
-          </span>
-        </AnimDiv>
-
-        {/* Section Header */}
-        <AnimDiv delay={40} className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#123D32]/10 border border-[#123D32]/20 mb-3.5 shadow-2xs">
-            <Ruler className="w-3.5 h-3.5 text-[#123D32]" />
-            <span className="font-heading text-[11px] sm:text-xs font-bold text-[#123D32] tracking-[0.2em] uppercase">
-              CALIBRATED PAVING, POOL DECKS &amp; HARDSCAPE MASONRY
-            </span>
-          </div>
-
-          <h2 className="font-heading font-bold text-[#1F2A24] uppercase tracking-[0.05em] leading-[1.18] text-2xl sm:text-3xl lg:text-4xl">
-            Architectural Sandstone Paving, Flagstones &amp; Landscape Hardscapes
-          </h2>
-
-          <p className="font-body text-xs sm:text-sm text-[#6B7C73] mt-3 sm:mt-4 leading-relaxed font-medium">
-            Heavy-duty outdoor stone engineering for luxury villa courtyards, estate driveways, and swimming pool decks.
-            Featuring Class R11 non-slip calibrated flagstones (+/-1mm), drop-face pool copings, monolithic stepped blocks,
-            hand-chiseled cobblestones, and ornate garden gazebos direct from Dholpur quarries.
-          </p>
-        </AnimDiv>
-
-        {/* Category Navigation Pills — horizontal scroll on mobile */}
-        <AnimDiv delay={80} className="flex items-center sm:justify-center gap-2 overflow-x-auto pb-2 mb-8 sm:mb-12 scrollbar-none w-full">
-          {categoryTabs.map((tab) => {
-            const Icon = tab.icon;
-            const isActive = activeTab === tab.id;
-            return (
-              <button
-                key={tab.id}
-                type="button"
-                onClick={() => setActiveTab(tab.id)}
-                className={`inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 shrink-0 cursor-pointer ${
-                  isActive
-                    ? "bg-[#123D32] text-white shadow-md border border-[#C5A15B]"
-                    : "bg-white text-[#6B7C73] border border-black/8 hover:border-[#C5A15B]/50 hover:bg-[#F7F4EB]"
-                }`}
-              >
-                <Icon className={`w-3.5 h-3.5 ${isActive ? "text-[#C5A15B]" : "text-[#6B7C73]"}`} />
-                <span>{tab.label}</span>
-              </button>
-            );
-          })}
-        </AnimDiv>
-
-        {/* Showcase Grid of 6 Core Landscaping Solutions */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 sm:mb-20">
-          {filteredItems.map((item, index) => (
-            <AnimDiv
-              key={item.id}
-              delay={100 + index * 50}
-              className="bg-white rounded-2xl border border-black/8 overflow-hidden shadow-sm hover:shadow-xl hover:border-[#C5A15B]/60 transition-all duration-400 flex flex-col group"
-            >
-              {/* Media Card Preview */}
-              <div
-                onClick={() => setActiveModal(item)}
-                className="relative aspect-[16/9.5] w-full overflow-hidden bg-forest-deep cursor-pointer"
-              >
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  sizes="(max-width:768px) 100vw, (max-width:1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-                {/* Top Badge */}
-                <div className="absolute top-3 left-3 flex items-center gap-2">
-                  <span className="bg-[#123D32]/90 backdrop-blur-xs text-[#F7F4EB] border border-[#C5A15B]/60 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-sm flex items-center gap-1.5">
-                    <Sparkles className="w-3 h-3 text-[#C5A15B]" />
-                    <span>{item.tag}</span>
-                  </span>
-                </div>
-
-                {/* Provenance Pill */}
-                <div className="absolute top-3 right-3">
-                  <span className="bg-black/60 backdrop-blur-xs text-white/90 px-2.5 py-1 rounded-md text-[11px] font-medium tracking-wide border border-white/10">
-                    {item.provenance}
-                  </span>
-                </div>
-
-                {/* Bottom Overlay Title on Image */}
-                <div className="absolute bottom-3 left-3 right-3 text-white">
-                  <span className="text-[11px] uppercase font-bold tracking-[0.2em] text-[#C5A15B] block mb-0.5">
-                    {item.subtitle}
-                  </span>
-                  <h3 className="font-heading text-base sm:text-lg font-bold leading-snug drop-shadow-sm">
-                    {item.title}
-                  </h3>
-                </div>
-
-                {/* Hover Inspect Indicator */}
-                <div className="absolute inset-0 bg-[#123D32]/50 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
-                  <div className="bg-[#123D32] border border-[#C5A15B] text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg">
-                    <ExternalLink className="w-3.5 h-3.5 text-[#C5A15B]" />
-                    <span>Inspect Specs &amp; Gallery</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Body Content */}
-              <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
-                <div>
-                  <p className="text-xs sm:text-[13px] text-[#6B7C73] leading-relaxed mb-4">
-                    {item.desc}
-                  </p>
-
-                  {/* Highlights Grid */}
-                  <div className="grid grid-cols-2 gap-2 text-xs mb-4 pt-3 border-t border-black/6">
-                    {item.specs.slice(0, 2).map((s, idx) => (
-                      <div key={idx} className="bg-[#F7F4EB] p-2.5 rounded-xl border border-black/5">
-                        <span className="text-[11px] uppercase font-bold tracking-wider text-[#6B7C73] block mb-0.5">
-                          {s.label}
-                        </span>
-                        <span className="font-bold text-[#1F2A24] text-[11px] leading-tight block">
-                          {s.value}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Key Feature Bullets */}
-                  <ul className="space-y-1.5 mb-5">
-                    {item.features.slice(0, 3).map((f, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-xs text-[#1F2A24]">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#123D32] shrink-0 mt-0.5" />
-                        <span>{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Footer Action Bar */}
-                <div className="pt-4 border-t border-black/6 flex items-center gap-3">
-                  <button
-                    type="button"
-                    onClick={() => setActiveModal(item)}
-                    className="flex-1 py-2.5 px-3 rounded-xl bg-[#F7F4EB] hover:bg-[#123D32] hover:text-white border border-black/10 text-xs font-bold text-[#1F2A24] uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer"
-                  >
-                    <span>Full Technical Specs</span>
-                    <ChevronRight className="w-3.5 h-3.5" />
-                  </button>
-
-                  <a
-                    href={`https://wa.me/919414945457?text=${encodeURIComponent(item.waMsg)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="py-2.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#1fb957] text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all shadow-xs active:scale-95"
-                    title="Inquire on WhatsApp"
-                  >
-                    <WhatsAppIcon className="w-4 h-4 fill-white" size={16} />
-                    <span className="hidden sm:inline">Quotation</span>
-                  </a>
-                </div>
-              </div>
-            </AnimDiv>
-          ))}
+    <>
+      <section id="landscaping" className="section-y relative overflow-hidden bg-ivory pattern-dots">
+        <div className="container-x relative">
+          <SectionHeader
+            eyebrow="Our Speciality"
+            title="Farm House & Garden Stonework"
+            subtitle="Driveways, patios, pool decks, steps, chhatris, lantern posts and fountains — tap any item for details, then enquire, WhatsApp or call us."
+          />
+          <CatalogGrid items={items} ctaPrefix="Farm house & garden" />
         </div>
+      </section>
 
-        {/* =========================================================================
-            PROFESSIONAL ARCHITECT & BUILDER SPECIFICATION PILLARS
-            ========================================================================= */}
-        <AnimDiv delay={150} className="mb-14 sm:mb-20">
-          <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
-            <span className="text-[11px] font-bold text-[#C5A15B] uppercase tracking-[0.22em] block mb-1">
-              ENGINEERED FOR LANDSCAPE PROFESSIONALS
-            </span>
-            <h3 className="font-heading text-xl sm:text-2xl font-bold text-[#1F2A24] uppercase tracking-wider">
-              Trusted by Architects, Builders &amp; Landscapers
-            </h3>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {stakeholderPillars.map((pillar, idx) => {
-              const Icon = pillar.icon;
+      <section className="section-y relative overflow-hidden bg-forest bg-stone-grain pattern-jali">
+        <div className="container-x relative">
+          <SectionHeader
+            tone="dark"
+            eyebrow="Who We Work With"
+            title="Built Around Your Project"
+            subtitle="Architects, builders and estate owners all get the same direct-from-mine support."
+          />
+          <Stagger className="grid gap-4 lg:grid-cols-3">
+            {stakeholderPillars.map((p) => {
+              const Icon = p.icon;
               return (
-                <div
-                  key={idx}
-                  className="bg-white rounded-2xl p-6 sm:p-7 border border-black/8 shadow-2xs hover:shadow-md hover:border-[#C5A15B]/50 transition-all flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-11 h-11 rounded-xl bg-[#123D32]/10 border border-[#123D32]/20 flex items-center justify-center text-[#123D32]">
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <span className="text-[11px] font-bold uppercase tracking-widest text-[#C5A15B] bg-[#F7F4EB] border border-black/5 px-2.5 py-1 rounded-full">
-                        {pillar.badge}
+                <StaggerItem key={p.title}>
+                  <div className="h-full rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-5 backdrop-blur transition-colors hover:border-gold/50 sm:p-6">
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold text-forest">
+                        <Icon className="h-6 w-6" />
                       </span>
+                      <div>
+                        <p className="text-[11px] font-bold uppercase tracking-wider text-gold">{p.badge}</p>
+                        <h3 className="font-heading text-[15px] font-bold uppercase tracking-wide text-white">{p.title}</h3>
+                      </div>
                     </div>
-
-                    <h4 className="font-heading text-base font-bold text-[#1F2A24] uppercase tracking-wider mb-2">
-                      {pillar.title}
-                    </h4>
-
-                    <p className="text-xs text-[#6B7C73] leading-relaxed mb-5">
-                      {pillar.desc}
-                    </p>
-
-                    <ul className="space-y-2 pt-4 border-t border-black/6">
-                      {pillar.points.map((pt, pIdx) => (
-                        <li key={pIdx} className="flex items-start gap-2 text-xs text-[#1F2A24]">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#123D32] shrink-0 mt-0.5" />
-                          <span>{pt}</span>
+                    <p className="mt-3 text-[14px] leading-relaxed text-white/70">{p.desc}</p>
+                    <ul className="mt-3 space-y-2">
+                      {p.points.map((pt) => (
+                        <li key={pt} className="flex gap-2.5 text-[13.5px] leading-snug text-white/80">
+                          <Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                          {pt}
                         </li>
                       ))}
                     </ul>
                   </div>
-                </div>
+                </StaggerItem>
               );
             })}
-          </div>
-        </AnimDiv>
-
-        {/* =========================================================================
-            CALL TO ACTION BANNER FOR LANDSCAPE TENDERS
-            ========================================================================= */}
-        <AnimDiv
-          delay={200}
-          className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-[#1F2A24] via-[#1E5A46] to-[#123D32] border border-[#C5A15B]/30 p-6 sm:p-10 lg:p-12 shadow-xl text-white"
-        >
-          {/* Subtle Golden Ambient Ring */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-[#C5A15B]/10 rounded-full blur-3xl pointer-events-none" />
-
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[#C5A15B] text-[11px] font-bold uppercase tracking-wider mb-3">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#C5A15B]" />
-                <span>Direct Quarry Concessionaire Leases &bull; Dholpur</span>
-              </div>
-              <h3 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold uppercase tracking-wider text-white mb-3">
-                Have a Commercial or Private Landscaping Project?
-              </h3>
-              <p className="font-body text-xs sm:text-sm text-white/80 leading-relaxed max-w-2xl">
-                Send your landscape architectural drawings, BOQ, or CAD files directly to our factory.
-                We provide custom thickness calibration, bespoke radial coping stone, monolithic garden
-                steps, and insured containerized shipments worldwide.
-              </p>
-
-              <div className="flex flex-wrap items-center gap-4 sm:gap-6 mt-6 text-xs text-white/90">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#C5A15B]" />
-                  <span>Free Architectural Sample Boxes</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#C5A15B]" />
-                  <span>CAD &amp; 3D Profiling Support</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#C5A15B]" />
-                  <span>Direct Factory Wholesale Pricing</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
-              <a
-                href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20have%20a%20landscaping%20project%20and%20would%20like%20to%20request%20factory%20quotation%20and%20stone%20samples."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 py-3.5 px-6 rounded-full bg-[#25D366] hover:bg-[#1fb957] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-lg transition-transform active:scale-95"
-              >
-                <WhatsAppIcon className="w-4 h-4 fill-white" size={18} />
-                <span>WhatsApp Stone Inquiry</span>
-              </a>
-
-              <a
-                href="tel:+919057355232"
-                className="flex-1 py-3 px-6 rounded-full bg-white/10 hover:bg-white/20 border border-white/25 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors"
-              >
-                <Phone className="w-4 h-4 text-[#C5A15B]" />
-                <span>Call: +91 90573 55232</span>
-              </a>
-            </div>
-          </div>
-        </AnimDiv>
-      </div>
-
-      {/* =========================================================================
-          DETAILED SPECIFICATION MODAL
-          ========================================================================= */}
-      {activeModal && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-black/80 backdrop-blur-sm animate-fade-in"
-          onClick={() => setActiveModal(null)}
-        >
-          <div
-            className="bg-white rounded-3xl max-w-2xl w-full max-h-[92vh] overflow-y-auto border border-[#C5A15B]/40 shadow-2xl relative"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Modal Header */}
-            <div className="relative aspect-[16/9] w-full bg-forest-deep">
-              <Image
-                src={activeModal.image}
-                alt={activeModal.title}
-                fill
-                sizes="700px"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-
-              <button
-                type="button"
-                onClick={() => setActiveModal(null)}
-                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center transition-colors cursor-pointer border border-white/20"
-                title="Close Window"
-              >
-                <X className="w-4 h-4" />
-              </button>
-
-              <div className="absolute bottom-4 left-5 right-5 text-white">
-                <span className="text-[11px] font-bold text-[#C5A15B] tracking-widest uppercase block mb-1">
-                  {activeModal.subtitle} &bull; {activeModal.provenance}
-                </span>
-                <h3 className="font-heading text-lg sm:text-2xl font-bold leading-tight">
-                  {activeModal.title}
-                </h3>
-              </div>
-            </div>
-
-            {/* Modal Body */}
-            <div className="p-5 sm:p-7 space-y-5">
-              <div>
-                <span className="text-[11px] font-bold tracking-widest uppercase text-[#6B7C73] block mb-1">
-                  ARCHITECTURAL SUMMARY
-                </span>
-                <p className="text-xs sm:text-sm text-[#6B7C73] leading-relaxed">
-                  {activeModal.desc}
-                </p>
-              </div>
-
-              {/* Ideal Applications */}
-              <div className="p-3.5 rounded-xl bg-[#F7F4EB] border border-black/6">
-                <span className="text-[11px] uppercase font-bold tracking-widest text-[#123D32] block mb-1">
-                  RECOMMENDED PROJECT TYPES
-                </span>
-                <p className="text-xs font-bold text-[#1F2A24]">
-                  {activeModal.idealFor}
-                </p>
-              </div>
-
-              {/* Technical Specifications */}
-              <div>
-                <span className="text-[11px] font-bold tracking-widest uppercase text-[#6B7C73] block mb-2.5">
-                  FACTORY TECHNICAL SPECIFICATIONS
-                </span>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  {activeModal.specs.map((s, idx) => (
-                    <div key={idx} className="p-3 rounded-xl bg-white border border-black/8 shadow-2xs">
-                      <span className="text-[11px] uppercase font-bold text-[#6B7C73] block mb-0.5">
-                        {s.label}
-                      </span>
-                      <span className="text-xs font-bold text-[#1F2A24]">
-                        {s.value}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Key Architectural Advantages */}
-              <div>
-                <span className="text-[11px] font-bold tracking-widest uppercase text-[#6B7C73] block mb-2">
-                  KEY ADVANTAGES FOR CONTRACTORS
-                </span>
-                <ul className="space-y-2">
-                  {activeModal.features.map((f, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-xs text-[#1F2A24]">
-                      <CheckCircle2 className="w-4 h-4 text-[#123D32] shrink-0 mt-0.5" />
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Modal Actions */}
-              <div className="pt-4 border-t border-black/8 flex flex-col sm:flex-row items-center gap-3">
-                <a
-                  href={`https://wa.me/919414945457?text=${encodeURIComponent(activeModal.waMsg)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:flex-1 py-3 px-5 rounded-full bg-[#25D366] hover:bg-[#1fb957] text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all active:scale-95"
-                >
-                  <WhatsAppIcon className="w-4 h-4 fill-white" size={16} />
-                  <span>Inquire on WhatsApp (+91 94149 45457)</span>
-                </a>
-
-                <button
-                  type="button"
-                  onClick={() => setActiveModal(null)}
-                  className="w-full sm:w-auto py-3 px-6 rounded-full bg-[#F7F4EB] hover:bg-black/5 text-[#1F2A24] text-xs font-bold uppercase tracking-wider border border-black/10 transition-colors cursor-pointer"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
+          </Stagger>
         </div>
-      )}
-    </section>
+      </section>
+    </>
   );
 }

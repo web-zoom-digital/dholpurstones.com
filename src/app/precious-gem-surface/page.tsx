@@ -42,7 +42,7 @@ export default function PreciousGemSurfacePage() {
         image="/precious-gem-surface/page_062_BLACK_OBSIDIAN_image_02.jpeg"
         crumbs={[{ label: "Products", href: "/products" }, { label: "Exclusive & Imported", href: "/exclusive-imported" }, { label: "Precious Gem Surfaces" }]}
       >
-        <Button href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20a%20quote%20for%20precious%20gem%20surfaces." variant="gold" size="lg">Get a Quote</Button>
+        <Button href="https://wa.me/919414945457?text=Hello%20Dholpurstones.com,%20I%20would%20like%20a%20quote%20for%20precious%20gem%20surfaces." variant="gold" size="lg">Get a Quote</Button>
       </PageHero>
 
       {/* ═══════════════════════════════════════════════════════════════
@@ -78,7 +78,7 @@ export default function PreciousGemSurfacePage() {
                       e.stopPropagation();
                       setSelectedProduct(product);
                     }}
-                    className="inline-flex items-center gap-1.5 px-4 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#123D32]/95 hover:bg-[#123D32] text-[#C5A15B] hover:text-white border border-[#C5A15B]/60 text-[11px] sm:text-xs font-bold uppercase tracking-wider shadow-2xl transition-all duration-300 cursor-pointer backdrop-blur-md active:scale-95"
+                    className="inline-flex min-h-[44px] items-center gap-2 px-5 py-2 rounded-full bg-[#123D32]/95 hover:bg-[#123D32] text-[#C5A15B] hover:text-white border border-[#C5A15B]/60 text-[11px] sm:text-xs font-bold uppercase tracking-wider shadow-2xl transition-all duration-300 cursor-pointer backdrop-blur-md active:scale-95"
                   >
                     <Eye className="w-3.5 h-3.5 text-[#C5A15B]" />
                     <span>View</span>

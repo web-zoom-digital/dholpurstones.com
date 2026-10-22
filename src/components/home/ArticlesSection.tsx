@@ -11,7 +11,7 @@ import { LuArrowRight as ArrowRight } from "react-icons/lu";
 /** Only hand-crafted items — sculptures, lanterns, fountains, reliefs. */
 export default function ArticlesSection() {
   return (
-    <section id="stone-articles" className="section-y bg-ivory">
+    <section id="stone-articles" className="section-y relative overflow-hidden bg-ivory pattern-dots">
       <div className="container-x">
         <SectionHeader
           eyebrow="Hand Crafted In Sikandra"

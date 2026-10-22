@@ -5,6 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import CtaBand from "@/components/ui/CtaBand";
 
+import ContactActions from "@/components/ui/ContactActions";
+import PageHero from "@/components/ui/PageHero";
+import SectionHeader from "@/components/ui/SectionHeader";
+import PhotoGallery from "@/components/ui/PhotoGallery";
+import { semiPreciousSlabPhotos, gemstoneInteriorPhotos } from "@/data/gemGallery";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -282,34 +287,14 @@ export default function GalleryClient() {
     <main className="min-h-screen bg-[#F7F4EB] text-[#1F2A24] selection:bg-[#C5A15B] selection:text-[#123D32]">
       <Navbar />
 
-      {/* Breadcrumb Header */}
-      <section className="bg-[#123D32] text-white py-10 sm:py-14 border-b border-white/10 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#1E5A46]/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <nav className="flex items-center gap-2 text-xs text-white/60 mb-4" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-[#C5A15B] flex items-center gap-1 transition-colors">
-              <HomeIcon className="w-3.5 h-3.5" />
-              <span>Home</span>
-            </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-white/40" />
-            <span className="text-[#C5A15B] font-semibold">Gallery</span>
-          </nav>
-
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1E5A46]/25 border border-[#C5A15B]/40 mb-3">
-            <Camera className="w-3 h-3 text-[#C5A15B]" />
-            <span className="font-heading text-[11px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase">
-              VISUAL EVIDENCE &bull; MINES &bull; PROJECTS
-            </span>
-          </div>
-
-          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wider text-white">
-            Media, Photo &amp; Video Gallery
-          </h1>
-          <p className="font-body text-xs sm:text-sm text-white/70 max-w-2xl mt-3 leading-relaxed">
-            High-resolution visual archives of active Dholpur quarry benches, factory fabrication yards, master sculptor ateliers, and national monumental projects.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Mines • Craft • Projects"
+        title="Photo & Video"
+        accent="Gallery"
+        description="Quarry benches, factory yards, master carvers, finished projects and gemstone surfaces — tap any photo to see it larger."
+        image="/assets/quarry_mining_operations.jpg"
+        crumbs={[{ label: "Gallery" }]}
+      />
 
       {/* Category Tabs — horizontal scroll on mobile */}
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-12">
@@ -466,23 +451,12 @@ export default function GalleryClient() {
                 {activePreview.desc}
               </p>
 
-              <div className="pt-4 border-t border-black/8 flex items-center justify-between">
-                <a
-                  href={`https://wa.me/919414945457?text=${encodeURIComponent(
-                    `Hello Dholpurestones.com, I am inquiring regarding gallery item: ${activePreview.title}`
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="py-2.5 px-5 rounded-full bg-[#25D366] hover:bg-[#1fb957] text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-sm transition-transform active:scale-95"
-                >
-                  <WhatsAppIcon className="w-4 h-4 fill-white" size={16} />
-                  <span>Inquire via WhatsApp</span>
-                </a>
-
+              <div className="border-t border-black/8 pt-4">
+                <ContactActions tone="light" size="md" layout="row" cta="Gallery preview" product={activePreview.title} className="sm:justify-start" />
                 <button
                   type="button"
                   onClick={() => setActivePreview(null)}
-                  className="py-2.5 px-5 rounded-full bg-[#F7F4EB] hover:bg-black/5 text-[#1F2A24] text-xs font-bold uppercase tracking-wider border border-black/10 transition-colors cursor-pointer"
+                  className="mt-3 min-h-[46px] w-full rounded-full border border-black/10 bg-ivory px-6 text-[14px] font-bold text-ink transition-colors hover:bg-black/5"
                 >
                   Close
                 </button>
@@ -491,6 +465,28 @@ export default function GalleryClient() {
           </div>
         </div>
       )}
+
+      <section id="semi-precious-gallery" className="section-y relative overflow-hidden bg-white pattern-dots">
+        <div className="container-x relative">
+          <SectionHeader
+            eyebrow="Natural Gemstones"
+            title="Semi-Precious Stone Slabs"
+            subtitle="Clear, full-resolution photos of our semi-precious slabs — agate, lapis lazuli, jasper and tiger's eye."
+          />
+          <PhotoGallery photos={semiPreciousSlabPhotos} />
+        </div>
+      </section>
+
+      <section id="gemstone-interiors" className="section-y relative overflow-hidden bg-ivory pattern-dots">
+        <div className="container-x relative">
+          <SectionHeader
+            eyebrow="Design Inspiration"
+            title="Gemstone Surfaces In Interiors"
+            subtitle="Feature walls, bars, tabletops and vanities in agate, quartz, malachite, jasper and more."
+          />
+          <PhotoGallery photos={gemstoneInteriorPhotos} />
+        </div>
+      </section>
 
       {/* Bottom CTA Bar */}
       <CtaBand title="Like What You See?" text="Tell us about your project — we reply with options, samples and a quote." topic="natural stone for my project" cta="Gallery bottom band" />

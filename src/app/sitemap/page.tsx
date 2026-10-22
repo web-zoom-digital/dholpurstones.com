@@ -12,7 +12,7 @@ import { breadcrumbLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Sitemap – All Pages",
-  description: "Find every page on Dholpurestones.com — products, projects, farm house & garden stonework, blog and contact.",
+  description: "Find every page on Dholpurstones.com — products, projects, farm house & garden stonework, blog and contact.",
   alternates: { canonical: "/sitemap" },
 };
 
@@ -56,7 +56,7 @@ export default function SitemapPage() {
         eyebrow="Find Your Way"
         title="Site"
         accent="Map"
-        description="Every page on Dholpurestones.com in one place."
+        description="Every page on Dholpurstones.com in one place."
         image="/assets/hero-quarry.jpg"
         crumbs={[{ label: "Sitemap" }]}
       />

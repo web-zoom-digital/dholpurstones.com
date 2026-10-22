@@ -17,14 +17,14 @@ import { breadcrumbLd, plainListLd, webPageLd } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Landmark Stone Projects – Parliament House, Akshardham, AIIMS & Embassies",
   description:
-    "Natural stone supplied and crafted for Parliament House and Akshardham in New Delhi, Adani House, AIIMS Bhopal, Indian Embassies in Berlin and Kathmandu, and 50+ ISKCON temples — by Dholpurestones.com (Estd. 1953).",
+    "Natural stone supplied and crafted for Parliament House and Akshardham in New Delhi, Adani House, AIIMS Bhopal, Indian Embassies in Berlin and Kathmandu, and 50+ ISKCON temples — by Dholpurstones.com (Estd. 1953).",
   keywords: ["Dholpur stone projects", "sandstone contractor India", "Parliament House sandstone", "Akshardham stone supplier", "temple stone supplier India"],
   alternates: { canonical: "/projects" },
   openGraph: {
-    title: "Landmark Stone Projects | Dholpurestones.com",
-    description: "Parliament House, Akshardham, AIIMS, Indian Embassies and 50+ ISKCON temples — stone by Dholpurestones.",
+    title: "Landmark Stone Projects | Dholpurstones.com",
+    description: "Parliament House, Akshardham, AIIMS, Indian Embassies and 50+ ISKCON temples — stone by Dholpurstones.",
     url: "/projects",
-    images: [{ url: "/assets/project-parliament.jpg", width: 1376, height: 768, alt: "Parliament House New Delhi — sandstone by Dholpurestones" }],
+    images: [{ url: "/assets/project-parliament.jpg", width: 1376, height: 768, alt: "Parliament House New Delhi — sandstone by Dholpurstones" }],
   },
 };
 
@@ -43,7 +43,7 @@ export default function ProjectsPage() {
         eyebrow="Our Track Record"
         title="Landmark"
         accent="Projects"
-        description="Parliament, temples, embassies, hospitals and estates — natural stone supplied and crafted by Dholpurestones for India's most visible buildings."
+        description="Parliament, temples, embassies, hospitals and estates — natural stone supplied and crafted by Dholpurstones for India's most visible buildings."
         image="/assets/project-parliament.jpg"
         crumbs={[{ label: "Projects" }]}
       >
@@ -85,9 +85,9 @@ export default function ProjectsPage() {
 
       <JsonLd
         data={[
-          webPageLd({ name: "Landmark Stone Projects", description: "Portfolio of landmark natural stone projects by Dholpurestones.com", path: "/projects", type: "CollectionPage" }),
+          webPageLd({ name: "Landmark Stone Projects", description: "Portfolio of landmark natural stone projects by Dholpurstones.com", path: "/projects", type: "CollectionPage" }),
           breadcrumbLd([{ name: "Projects", path: "/projects" }]),
-          plainListLd("Landmark projects executed by Dholpurestones.com", projects.map((p) => ({ name: `${p.name}, ${p.place}`, description: p.scope, image: p.image }))),
+          plainListLd("Landmark projects executed by Dholpurstones.com", projects.map((p) => ({ name: `${p.name}, ${p.place}`, description: p.scope, image: p.image }))),
         ]}
       />
       <Footer />

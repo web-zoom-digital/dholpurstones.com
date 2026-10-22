@@ -173,7 +173,7 @@ export const BLOG_POSTS: BlogPost[] = [
         },
       ],
       conclusion:
-        "Architectural cladding is the permanent face of a building. Choosing authentic natural Dholpur Beige sandstone is not merely an aesthetic choice—it is an investment in permanent geological stability, fireproof safety, thermal efficiency, and timeless heritage prestige. Contact the engineering desk at Dholpurestones to request calibrated physical samples and IS 3622 test certificates for your project.",
+        "Architectural cladding is the permanent face of a building. Choosing authentic natural Dholpur Beige sandstone is not merely an aesthetic choice—it is an investment in permanent geological stability, fireproof safety, thermal efficiency, and timeless heritage prestige. Contact the engineering desk at Dholpurstones to request calibrated physical samples and IS 3622 test certificates for your project.",
     },
   },
   {
@@ -392,7 +392,7 @@ export const BLOG_POSTS: BlogPost[] = [
           id: "patio-patterns",
           heading: "5. Paving Patterns: Roman Opus, Random Flags & Linear Planks",
           paragraphs: [
-            "The format in which sandstone is laid dramatically shapes the estate's visual ambiance. Dholpurestones supplies pre-cut modular project packs tailored to several timeless layout patterns:",
+            "The format in which sandstone is laid dramatically shapes the estate's visual ambiance. Dholpurstones supplies pre-cut modular project packs tailored to several timeless layout patterns:",
             "Roman Opus (French Versailles Pattern): A four-size interlocking layout (e.g., 900x600, 600x600, 600x290, and 290x290mm) that eliminates continuous joint lines and exudes classic European estate charm.",
             "Contemporary Linear Planking: Long, calibrated rectangular formats (e.g., 1000x300mm or 1200x400mm) laid in broken bond to elongate narrow garden courtyards and accentuate modern minimalist architecture.",
           ],
@@ -561,7 +561,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     content: {
       intro:
-        "The front elevation is the definitive public face of any architectural structure. It communicates wealth, cultural sophistication, and architectural intentionality before a visitor ever crosses the threshold. Over the past decade, architects have moved decisively away from flat plastered walls, painted finishes, and short-lived synthetic ACP sheets toward the enduring sculptural majesty of natural sandstone. With over 300 turnkey elevation design configurations executed across India and abroad, Dholpurestones shares the vital design and structural principles every architect should know.",
+        "The front elevation is the definitive public face of any architectural structure. It communicates wealth, cultural sophistication, and architectural intentionality before a visitor ever crosses the threshold. Over the past decade, architects have moved decisively away from flat plastered walls, painted finishes, and short-lived synthetic ACP sheets toward the enduring sculptural majesty of natural sandstone. With over 300 turnkey elevation design configurations executed across India and abroad, Dholpurstones shares the vital design and structural principles every architect should know.",
       sections: [
         {
           id: "elevation-identity",
@@ -675,7 +675,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     content: {
       intro:
-        "Contemporary luxury architecture thrives on tactile materiality. Flat, unembellished curtain walls are increasingly giving way to sculptural building envelopes that celebrate light, depth, and shadow. By harnessing cutting-edge 8-axis laser-guided CNC profiling centers at our fabrication facilities, Dholpurestones transforms heavy, raw quarry blocks into precision 3D architectural panels that marry classical stone permanence with futuristic parametric design.",
+        "Contemporary luxury architecture thrives on tactile materiality. Flat, unembellished curtain walls are increasingly giving way to sculptural building envelopes that celebrate light, depth, and shadow. By harnessing cutting-edge 8-axis laser-guided CNC profiling centers at our fabrication facilities, Dholpurstones transforms heavy, raw quarry blocks into precision 3D architectural panels that marry classical stone permanence with futuristic parametric design.",
       sections: [
         {
           id: "cnc-revolution",
@@ -742,7 +742,7 @@ export const BLOG_POSTS: BlogPost[] = [
         },
       ],
       conclusion:
-        "Precision 3D CNC grooved sandstone bridges ancient geology and avant-garde parametric architecture. Connect with our engineering desk at Dholpurestones to request custom CNC sample panels or submit your 3D CAD files for rapid prototype fabrication.",
+        "Precision 3D CNC grooved sandstone bridges ancient geology and avant-garde parametric architecture. Connect with our engineering desk at Dholpurstones to request custom CNC sample panels or submit your 3D CAD files for rapid prototype fabrication.",
     },
   },
   {
@@ -935,7 +935,7 @@ export const BLOG_POSTS: BlogPost[] = [
           id: "bench-geology",
           heading: "3. Selecting Virgin Strata: Top Benches vs Deep Sound Rock",
           paragraphs: [
-            "Surface stone exposed to centuries of atmospheric weathering often exhibits porous, soft layers. At Dholpurestones, top overburden rock is set aside for secondary civil road base aggregate.",
+            "Surface stone exposed to centuries of atmospheric weathering often exhibits porous, soft layers. At Dholpurstones, top overburden rock is set aside for secondary civil road base aggregate.",
             "Our architectural grade blocks are extracted exclusively from deep, unweathered virgin strata located 15 to 30 meters beneath the surface, where the natural Vindhyan sandstone achieves maximum quartz density (2.48–2.52 g/cm³) and minimum water absorption (< 1.15%).",
           ],
           callout: {
@@ -1016,7 +1016,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     content: {
       intro:
-        "For decades, architects and landscape contractors struggled with the inherent thickness variability of natural sandstone. Traditional hand-split paving flagstones fluctuate widely in gauge—often ranging from 18mm to 38mm on the very same pallet. The result? Frustrated masons spending hours adjusting mortar thickness under every individual slab, persistent tripping hazards, and hollow sound echoes underfoot. Today, automated continuous calibration lines at Dholpurestones have revolutionized natural stone installation.",
+        "For decades, architects and landscape contractors struggled with the inherent thickness variability of natural sandstone. Traditional hand-split paving flagstones fluctuate widely in gauge—often ranging from 18mm to 38mm on the very same pallet. The result? Frustrated masons spending hours adjusting mortar thickness under every individual slab, persistent tripping hazards, and hollow sound echoes underfoot. Today, automated continuous calibration lines at Dholpurstones have revolutionized natural stone installation.",
       sections: [
         {
           id: "what-is-calibration",
@@ -1193,7 +1193,7 @@ export const BLOG_POSTS: BlogPost[] = [
       experience: "28+ Years Hardscape Engineering & Luxury Estates",
       avatar: "/assets/crest-1953.jpg",
     },
-    featuredImage: "/landscaping/landscape_cobblestone_driveway.jpg",
+    featuredImage: "/assets/landscaping/landscape_cobblestone_driveway.jpg",
     imageAlt: "Majestic luxury estate driveway paved with natural sandstone cobblestones arranged in fan arc interlocking pattern surrounded by manicured landscaping",
     tags: ["Cobblestones", "Driveway Pavers", "Landscape Design", "Load Bearing", "Interlocking Pavers", "Permeable Paving"],
     keyTakeaways: [
@@ -1313,7 +1313,7 @@ export const BLOG_POSTS: BlogPost[] = [
       experience: "22+ Years Luxury Hardscapes & Commercial Developments",
       avatar: "/assets/crest-1953.jpg",
     },
-    featuredImage: "/landscaping/landscape_patio_paving.jpg",
+    featuredImage: "/assets/landscaping/landscape_patio_paving.jpg",
     imageAlt: "Sprawling luxury farmhouse garden patio paved with calibrated natural sandstone flagstones with outdoor lounge furniture and evening ambient lighting",
     tags: ["Farmhouse Patio", "Sandstone Paving", "Outdoor Living", "Thermal Comfort", "Landscape Architecture", "Al-Fresco Patios"],
     keyTakeaways: [
@@ -1432,7 +1432,7 @@ export const BLOG_POSTS: BlogPost[] = [
       experience: "18+ Years Material Characterization & ASTM Compliance",
       avatar: "/assets/crest-1953.jpg",
     },
-    featuredImage: "/landscaping/landscape_pool_coping.jpg",
+    featuredImage: "/assets/landscaping/landscape_pool_coping.jpg",
     imageAlt: "Crystal clear resort swimming pool flanked by hand-honed Dholpur sandstone pool coping and non-slip wet deck surrounds",
     tags: ["Pool Coping", "Wet Deck Paving", "Swimming Pool Design", "Anti-Slip Stone", "Salt Resistance", "Bullnose Edges"],
     keyTakeaways: [
@@ -1550,7 +1550,7 @@ export const BLOG_POSTS: BlogPost[] = [
       experience: "28+ Years Hardscape Engineering & Luxury Estates",
       avatar: "/assets/crest-1953.jpg",
     },
-    featuredImage: "/landscaping/landscape_steps_walling.jpg",
+    featuredImage: "/assets/landscaping/landscape_steps_walling.jpg",
     imageAlt: "Magnificent multi-level garden terracing featuring solid natural sandstone step blocks flanked by rustic dry-stone retaining walls and lush flowering plants",
     tags: ["Stone Steps", "Landscape Terracing", "Retaining Walls", "Dry Stone Walling", "Garden Grading", "Solid Step Treads"],
     keyTakeaways: [
@@ -1664,7 +1664,7 @@ export const BLOG_POSTS: BlogPost[] = [
       experience: "42+ Years Shilpa Shastra & Monumental Carving",
       avatar: "/assets/crest-1953.jpg",
     },
-    featuredImage: "/landscaping/landscape_water_fountain.jpg",
+    featuredImage: "/assets/landscaping/landscape_water_fountain.jpg",
     imageAlt: "Grand multi-tiered classical hand-carved sandstone water fountain cascading into a circular reflecting pool in a grand palace courtyard garden",
     tags: ["Water Fountains", "Garden Water Features", "Artisan Carving", "Hydraulic Engineering", "Shilpa Shastra", "Sikandra Stone Craft"],
     keyTakeaways: [

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   DHOLPURESTONES (B P GARG & SONS / GCL) - ESTD. 1953
+   DHOLPURSTONES (B P GARG & SONS / GCL) - ESTD. 1953
    Luxury Architectural Stone Design System
    Mobile-First Optimised v2
    ========================================================================== */
@@ -328,3 +328,52 @@ img {
 
 /* Anchored sections land below the sticky header */
 [id] { scroll-margin-top: 7rem; }
+
+/* ============================================================
+   PREMIUM BACKGROUND DETAILS
+   ============================================================ */
+/* Fine stone-dot texture for light sections */
+.pattern-dots {
+  background-image:
+    radial-gradient(circle at 12% 0%, rgba(197, 161, 91, 0.10), transparent 38%),
+    radial-gradient(circle at 92% 100%, rgba(18, 61, 50, 0.07), transparent 42%),
+    radial-gradient(rgba(18, 61, 50, 0.075) 1px, transparent 1.5px);
+  background-size: auto, auto, 24px 24px;
+}
+
+/* Carved-jali lattice for dark sections (sits behind content) */
+.pattern-jali {
+  position: relative;
+  isolation: isolate;
+}
+.pattern-jali::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88' viewBox='0 0 88 88'%3E%3Cg fill='none' stroke='%23C5A15B' stroke-opacity='0.16' stroke-width='1'%3E%3Cpath d='M44 0 88 44 44 88 0 44Z'/%3E%3Cpath d='M44 15 73 44 44 73 15 44Z'/%3E%3Ccircle cx='44' cy='44' r='9'/%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 45%, #000 20%, transparent 75%);
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 45%, #000 20%, transparent 75%);
+}
+.pattern-jali::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: -8rem;
+  bottom: -8rem;
+  width: 26rem;
+  height: 26rem;
+  border-radius: 9999px;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(197, 161, 91, 0.22), transparent 65%);
+}
+
+/* Large faint gold ring used as a corner ornament */
+.ornament-ring {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  border: 1px solid rgba(197, 161, 91, 0.22);
+  box-shadow: 0 0 0 28px rgba(197, 161, 91, 0.05), 0 0 0 56px rgba(197, 161, 91, 0.03);
+}

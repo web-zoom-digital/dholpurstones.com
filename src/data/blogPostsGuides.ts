@@ -116,12 +116,12 @@ export const LEAD_GUIDE_POSTS: BlogPost[] = [
           id: "buy-direct",
           heading: "Why buy direct from a mine owner",
           paragraphs: [
-            "A mine owner controls extraction, cutting and grading, so colour variation is managed at source and there is no extra margin from traders. Dholpurestones.com has quarried stone since 1953 and supplies projects ranging from private farm houses to national landmarks.",
+            "A mine owner controls extraction, cutting and grading, so colour variation is managed at source and there is no extra margin from traders. Dholpurstones.com has quarried stone since 1953 and supplies projects ranging from private farm houses to national landmarks.",
           ],
         },
       ],
       conclusion:
-        "Pick the colour for the look you want, the finish for how the surface will be used, and send complete details for a quote. To see samples or get pricing, request a free quote from Dholpurestones.com.",
+        "Pick the colour for the look you want, the finish for how the surface will be used, and send complete details for a quote. To see samples or get pricing, request a free quote from Dholpurstones.com.",
     },
   }),
 
@@ -197,7 +197,7 @@ export const LEAD_GUIDE_POSTS: BlogPost[] = [
         },
       ],
       conclusion:
-        "Match the stone to the space: sandstone outdoors and for rustic warmth, marble indoors for polish, Kota for budget coverage. Dholpurestones.com supplies sandstone and marble — send your floor plan or requirement for a free quote.",
+        "Match the stone to the space: sandstone outdoors and for rustic warmth, marble indoors for polish, Kota for budget coverage. Dholpurstones.com supplies sandstone and marble — send your floor plan or requirement for a free quote.",
     },
   }),
 
@@ -221,7 +221,7 @@ export const LEAD_GUIDE_POSTS: BlogPost[] = [
     faqs: [
       { question: "Which stone is best for a farm house driveway?", answer: "Hand-split or heavy-duty sandstone in thicker sections is a common choice because it handles vehicle loads and weather. Your installer should confirm the sub-base." },
       { question: "What finish is safest around a pool?", answer: "A natural, riven or flamed finish with bullnosed coping gives good grip and a comfortable edge." },
-      { question: "Do you supply and install?", answer: "Dholpurestones.com supplies and executes farm house and garden stonework. Share your project location to discuss the scope." },
+      { question: "Do you supply and install?", answer: "Dholpurstones.com supplies and executes farm house and garden stonework. Share your project location to discuss the scope." },
     ],
     content: {
       intro:
@@ -350,7 +350,7 @@ export const LEAD_GUIDE_POSTS: BlogPost[] = [
         },
       ],
       conclusion:
-        "Measure, add wastage, confirm thickness and order from one batch. Send your dimensions to Dholpurestones.com and we will help estimate quantity and quote the order.",
+        "Measure, add wastage, confirm thickness and order from one batch. Send your dimensions to Dholpurstones.com and we will help estimate quantity and quote the order.",
     },
   }),
 
@@ -422,7 +422,7 @@ export const LEAD_GUIDE_POSTS: BlogPost[] = [
         },
       ],
       conclusion:
-        "Light, regular cleaning and sensible sealing keep sandstone beautiful for decades. For product advice for your stone and finish, ask the Dholpurestones.com team.",
+        "Light, regular cleaning and sensible sealing keep sandstone beautiful for decades. For product advice for your stone and finish, ask the Dholpurstones.com team.",
     },
   }),
 
@@ -446,7 +446,7 @@ export const LEAD_GUIDE_POSTS: BlogPost[] = [
     faqs: [
       { question: "Which marble colour is easiest to maintain?", answer: "Beige and mid-grey marbles tend to hide dust and marks better than pure white, though all marbles need quick spill cleanup." },
       { question: "What is the difference between Statuario and Carrara?", answer: "Statuario is a premium type of white marble from the Carrara area of Tuscany with bold grey veining on a bright white base; standard Carrara is typically softer in tone with finer grey veining." },
-      { question: "Where can I see slab photos?", answer: "Browse our beige, white and grey marble collections, or message us on WhatsApp with the variety name and we will share slab photos." },
+      { question: "Where can I see slab photos?", answer: "Browse our exclusive beige, white and grey marble collections, or message us on WhatsApp with the variety name and we will share slab photos." },
     ],
     content: {
       intro: "Marble is chosen with the eyes, so the best decisions come from seeing full slabs in the light your room will have. These pointers help narrow the options first.",
@@ -487,7 +487,7 @@ export const LEAD_GUIDE_POSTS: BlogPost[] = [
         },
       ],
       conclusion:
-        "Choose a mood, shortlist varieties and decide from full-slab photos. Browse our marble collection or WhatsApp us the variety you like for photos and a quote.",
+        "Choose a mood, shortlist varieties and decide from full-slab photos. Browse our exclusive marble collection or WhatsApp us the variety you like for photos and a quote.",
     },
   }),
 
@@ -560,7 +560,7 @@ export const LEAD_GUIDE_POSTS: BlogPost[] = [
         },
       ],
       conclusion:
-        "Standards and test reports turn a stone choice into a specification. Ask for them — and if you want ours, contact Dholpurestones.com.",
+        "Standards and test reports turn a stone choice into a specification. Ask for them — and if you want ours, contact Dholpurstones.com.",
     },
   }),
 
@@ -582,7 +582,7 @@ export const LEAD_GUIDE_POSTS: BlogPost[] = [
       "Agree samples, finish, tolerances and Incoterms before production starts.",
     ],
     faqs: [
-      { question: "Do you export sandstone and marble?", answer: "Yes. Dholpurestones.com exports natural stone and stone articles worldwide and has an overseas office in Canada." },
+      { question: "Do you export sandstone and marble?", answer: "Yes. Dholpurstones.com exports natural stone and stone articles worldwide and has an overseas office in Canada." },
       { question: "What documents are needed?", answer: "Typically a commercial invoice, packing list, bill of lading or airway bill, and insurance. Some countries also ask for a certificate of origin — check with your customs broker." },
       { question: "How is stone packed for sea freight?", answer: "In sturdy wooden crates treated to ISPM-15 standards, with protection between slabs and secure blocking inside the container." },
     ],

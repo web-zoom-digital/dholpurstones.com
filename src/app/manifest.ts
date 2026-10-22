@@ -2,8 +2,8 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Dholpurestones.com – Natural Stone Since 1953",
-    short_name: "Dholpurestones",
+    name: "Dholpurstones.com – Natural Stone Since 1953",
+    short_name: "Dholpurstones",
     description: "Dholpur sandstone, marble and semi-precious stones — mine owner, manufacturer and exporter since 1953.",
     start_url: "/",
     display: "standalone",

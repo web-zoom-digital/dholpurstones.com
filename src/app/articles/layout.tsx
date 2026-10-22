@@ -8,11 +8,11 @@ export const metadata: Metadata = {
     canonical: "/articles",
   },
   openGraph: {
-    title: "Hand-Carved Sandstone Sculptures & Heritage Articles | Dholpurestones",
+    title: "Hand-Carved Sandstone Sculptures & Heritage Articles | Dholpurstones",
     description:
       "Handcrafted master stone carvings from authentic Rajasthan quarries. Monolithic peacock sculptures, garden lanterns, and ornamental temple art.",
     url: "/articles",
-    siteName: "Dholpurestones.com",
+    siteName: "Dholpurstones.com",
     images: [
       {
         url: "/stone-articles/temple_sanctum_pillars.jpg",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hand-Carved Sandstone Sculptures | Dholpurestones",
+    title: "Hand-Carved Sandstone Sculptures | Dholpurstones",
     description: "Monolithic peacocks, regal lanterns, and sacred temple carvings from Rajasthan quarries.",
     images: ["/stone-articles/temple_sanctum_pillars.jpg"],
   },

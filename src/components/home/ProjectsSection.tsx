@@ -9,12 +9,12 @@ import { LuArrowRight as ArrowRight, LuMapPin as MapPin } from "react-icons/lu";
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="section-y bg-white">
+    <section id="projects" className="section-y relative overflow-hidden bg-white pattern-dots">
       <div className="container-x">
         <SectionHeader
           eyebrow="Our Track Record"
           title="Trusted For Landmark Projects"
-          subtitle="National monuments, embassies and global temples — stone supplied and crafted by Dholpurestones."
+          subtitle="National monuments, embassies and global temples — stone supplied and crafted by Dholpurstones."
         />
         <Reveal>
           <Carousel cols="md:grid-cols-3 lg:grid-cols-5" itemWidth="w-[62%]">

@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Official Privacy Policy of Dholpurestones.com. Explains how architectural inquiries, quotations, client contact data, and cookies are managed under DPDP Act & international standards.",
+    "Official Privacy Policy of Dholpurstones.com. Explains how architectural inquiries, quotations, client contact data, and cookies are managed under DPDP Act & international standards.",
   alternates: {
     canonical: "/privacy-policy",
   },
@@ -22,16 +22,16 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Privacy Policy | Dholpurestones.com",
+    title: "Privacy Policy | Dholpurstones.com",
     description:
-      "Privacy policy and data protection governance for Dholpurestones.com (B P Garg & Sons).",
+      "Privacy policy and data protection governance for Dholpurstones.com (B P Garg & Sons).",
     url: "/privacy-policy",
-    siteName: "Dholpurestones",
+    siteName: "Dholpurstones",
   },
   twitter: {
     card: "summary",
-    title: "Privacy Policy | Dholpurestones.com",
-    description: "Official Privacy Policy of Dholpurestones.com (B P Garg & Sons).",
+    title: "Privacy Policy | Dholpurstones.com",
+    description: "Official Privacy Policy of Dholpurstones.com (B P Garg & Sons).",
   },
 };
 
@@ -64,7 +64,7 @@ export default function PrivacyPolicyPage() {
             Privacy Policy
           </h1>
           <p className="font-body text-xs sm:text-sm text-white/70 max-w-2xl mt-3 leading-relaxed">
-            Effective Date: October 21, 2026. This policy governs how Dholpurestones.com collects, processes, and protects personal data provided by visitors, architects, project contractors, and international stone importers.
+            Effective Date: October 21, 2026. This policy governs how Dholpurstones.com collects, processes, and protects personal data provided by visitors, architects, project contractors, and international stone importers.
           </p>
         </div>
       </section>
@@ -76,7 +76,7 @@ export default function PrivacyPolicyPage() {
             1. Corporate Identification &amp; Data Controller
           </h2>
           <p>
-            This website (<span className="font-semibold">Dholpurestones.com</span>) is operated by <strong>B P Garg &amp; Sons</strong> and <strong>Garg Corporation Ltd.</strong> (Estd. 1953), having registered manufacturing and mining operations near RAC line, Mothiyapura road, Dholpur 328026, Rajasthan, India. For inquiries regarding data practices, you may reach our administrative desk at <a href="mailto:gargcorporationltd@gmail.com" className="text-[#123D32] underline font-semibold">gargcorporationltd@gmail.com</a>.
+            This website (<span className="font-semibold">Dholpurstones.com</span>) is operated by <strong>B P Garg &amp; Sons</strong> and <strong>Garg Corporation Ltd.</strong> (Estd. 1953), having registered manufacturing and mining operations near RAC line, Mothiyapura road, Dholpur 328026, Rajasthan, India. For inquiries regarding data practices, you may reach our administrative desk at <a href="mailto:gargcorporationltd@gmail.com" className="text-[#123D32] underline font-semibold">gargcorporationltd@gmail.com</a>.
           </p>
         </div>
 
@@ -123,7 +123,7 @@ export default function PrivacyPolicyPage() {
             5. Cookies and Web Analytics
           </h2>
           <p>
-            Dholpurestones.com utilizes minimal necessary cookies to preserve UI preferences and gather aggregated, non-personally identifiable metrics. You may choose to disable cookies in your browser settings without impacting your ability to browse our stone collections.
+            Dholpurstones.com utilizes minimal necessary cookies to preserve UI preferences and gather aggregated, non-personally identifiable metrics. You may choose to disable cookies in your browser settings without impacting your ability to browse our stone collections.
           </p>
         </div>
 

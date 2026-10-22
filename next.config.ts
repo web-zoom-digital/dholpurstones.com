@@ -29,6 +29,13 @@ const nextConfig: NextConfig = {
   /* Permanent 301 redirects to eliminate cannibalization */
   async redirects() {
     return [
+      // Canonical host: apex domain -> www
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "dholpurstones.com" }],
+        destination: "https://www.dholpurstones.com/:path*",
+        permanent: true,
+      },
       {
         source: "/landscaping",
         destination: "/farmhouse-gardens",
@@ -36,7 +43,17 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/white-series-dolphur-color",
-        destination: "/products/white-series-dolphur-color",
+        destination: "/exclusive-imported/white-marble",
+        permanent: true,
+      },
+      {
+        source: "/products/white-series-dolphur-color",
+        destination: "/exclusive-imported/white-marble",
+        permanent: true,
+      },
+      {
+        source: "/marble",
+        destination: "/exclusive-imported",
         permanent: true,
       },
       {

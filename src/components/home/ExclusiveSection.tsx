@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SectionHeader from "../ui/SectionHeader";
 import { Reveal } from "../ui/Reveal";
-import { exoticMarbleVarieties } from "@/data/catalog";
+import { exoticMarbleVarieties, marbleSubs } from "@/data/catalog";
 import { preciousGemProducts } from "@/data/preciousGemData";
 import { LuArrowRight as ArrowRight } from "react-icons/lu";
 
@@ -13,6 +13,24 @@ const gemThumbs = ["malachite", "lapiz-lazuli", "labradorite"]
 
 const cards = [
   {
+    id: "marble",
+    href: "/exclusive-imported#beige-marble",
+    title: "Exclusive Marble",
+    note: "All our marble in three colour families — beige, white and grey — in slabs and tiles.",
+    image: "/white-series-dolphur-color/statuario.png",
+    thumbs: marbleSubs.map((m) => ({ name: m.name, image: m.image })),
+    cta: "Explore Marble",
+  },
+  {
+    id: "imported",
+    href: "/exclusive-imported#imported-marble",
+    title: "Imported Exotic Marble",
+    note: "Rare imported slabs — Calacatta Viola, Bianco Fire, Golden Michael and more.",
+    image: "/white-series-dolphur-color/calacatta-viola.png",
+    thumbs: exoticMarbleVarieties.slice(1, 4),
+    cta: "Explore Imported Marble",
+  },
+  {
     id: "gem",
     href: "/precious-gem-surface",
     title: "Precious Gem Surfaces",
@@ -21,31 +39,22 @@ const cards = [
     thumbs: gemThumbs.map((g) => ({ name: g.name, image: g.coverImage })),
     cta: "Explore Gem Surfaces",
   },
-  {
-    id: "marble",
-    href: "/exclusive-imported#imported-marble",
-    title: "Imported Exotic Marble",
-    note: "Rare imported slabs — Calacatta Viola, Bianco Fire, Golden Michael and more.",
-    image: "/white-series-dolphur-color/calacatta-viola.png",
-    thumbs: exoticMarbleVarieties.slice(1, 4),
-    cta: "Explore Imported Marble",
-  },
 ];
 
 export default function ExclusiveSection() {
   return (
     <section
       id="exclusive-imported"
-      className="relative mx-2 overflow-hidden rounded-[2rem] bg-forest-deep section-y sm:mx-4 sm:rounded-[3rem] bg-stone-grain"
+      className="relative mx-2 overflow-hidden rounded-[2rem] bg-forest-deep section-y sm:mx-4 sm:rounded-[3rem] bg-stone-grain pattern-jali"
     >
       <div className="container-x relative">
         <SectionHeader
           tone="dark"
-          eyebrow="By Request"
+          eyebrow="Marble & Imports"
           title="Exclusive & Imported"
-          subtitle="One-of-a-kind surfaces sourced from around the world for statement spaces."
+          subtitle="All our marble, imported exotic slabs and precious gem surfaces — in one place."
         />
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-3">
           {cards.map((c, i) => (
             <Reveal key={c.id} delay={i * 0.1}>
               <Link

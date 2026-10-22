@@ -153,7 +153,7 @@ export default function StoneTechnicalSpecsTable() {
                     Physical Property
                   </th>
                   <th scope="col" className="py-4 px-4 sm:px-6 font-bold border-b border-white/10 text-[#C5A15B]">
-                    Dholpurestones Test Value
+                    Dholpurstones Test Value
                   </th>
                   <th scope="col" className="py-4 px-4 sm:px-6 font-bold border-b border-white/10">
                     ASTM C616 Requirement

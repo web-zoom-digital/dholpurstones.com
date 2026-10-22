@@ -10,23 +10,23 @@ export const metadata: Metadata = {
     canonical: "/gallery",
   },
   openGraph: {
-    title: "Visual Gallery & Craftsmanship Archive | Dholpurestones.com",
+    title: "Visual Gallery & Craftsmanship Archive | Dholpurstones.com",
     description:
       "Inspect high-resolution imagery and video footage of authentic Dholpur Sandstone extraction, hand-carved heritage sculptures, and finished architectural facades.",
     url: "/gallery",
-    siteName: "Dholpurestones",
+    siteName: "Dholpurstones",
     images: [
       {
         url: "/assets/garg/clean_peacock_hero.jpg",
         width: 1200,
         height: 630,
-        alt: "Dholpurestones Quarry & Artisanal Gallery",
+        alt: "Dholpurstones Quarry & Artisanal Gallery",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Visual Gallery & Craftsmanship Archive | Dholpurestones",
+    title: "Visual Gallery & Craftsmanship Archive | Dholpurstones",
     description:
       "Dholpur sandstone mines, generational stone sculptors, and monumental project execution photography.",
     images: ["/assets/garg/clean_peacock_hero.jpg"],
@@ -43,24 +43,24 @@ const galleryJsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://dholpurestones.com"
+          "item": "https://www.dholpurstones.com"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Gallery",
-          "item": "https://dholpurestones.com/gallery"
+          "item": "https://www.dholpurstones.com/gallery"
         }
       ]
     },
     {
       "@type": "CollectionPage",
-      "@id": "https://dholpurestones.com/gallery#webpage",
-      "url": "https://dholpurestones.com/gallery",
-      "name": "Dholpurestones Visual Gallery & Architectural Showcase",
+      "@id": "https://www.dholpurstones.com/gallery#webpage",
+      "url": "https://www.dholpurstones.com/gallery",
+      "name": "Dholpurstones Visual Gallery & Architectural Showcase",
       "description": "Visual archive of quarry operations, master stone masons, and monumental landmark stone installations.",
       "publisher": {
-        "@id": "https://dholpurestones.com/#organization"
+        "@id": "https://www.dholpurstones.com/#organization"
       }
     }
   ]

@@ -22,7 +22,7 @@ import { LuArrowRight as ArrowRight } from "react-icons/lu";
 export const metadata: Metadata = {
   title: "Products – Sandstone, Marble, Stone Articles, Semi-Precious & Imported Stones",
   description:
-    "Explore Dholpurestones.com collections: Dholpur sandstone (Agra Red, Beige, Pink, Chocolate), beige, white and grey marble, farm house & garden stonework, hand-carved stone articles, semi-precious stones and exclusive imported stones.",
+    "Explore Dholpurstones.com collections: Dholpur sandstone (Agra Red, Beige, Pink, Chocolate), beige, white and grey marble, farm house & garden stonework, hand-carved stone articles, semi-precious stones and exclusive imported stones.",
   alternates: {
     canonical: "/products",
   },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description:
       "Sandstone, marble, garden stonework, stone articles, semi-precious and imported stones — direct from the mine owner.",
     url: "/products",
-    siteName: "Dholpurestones.com",
+    siteName: "Dholpurstones.com",
     images: [
       {
         url: "/assets/material-sandstone.jpg",
@@ -52,12 +52,12 @@ export default function ProductsPage() {
         eyebrow="Mine To Export"
         title="Our Products &"
         accent="Collections"
-        description="Six collections, one trusted source. Choose a category to see colours, varieties and details."
+        description="Five collections, one trusted source. Choose a category to see colours, varieties and details."
         image="/assets/hero-quarry.jpg"
         crumbs={[{ label: "Products" }]}
       >
         <Button
-          href={waLink("Hello Dholpurestones.com, I would like a quote for natural stone.")}
+          href={waLink("Hello Dholpurstones.com, I would like a quote for natural stone.")}
           variant="gold"
           size="lg"
         >

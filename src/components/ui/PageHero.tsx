@@ -36,7 +36,7 @@ export default function PageHero({
   children,
 }: PageHeroProps) {
   return (
-    <section className="relative isolate overflow-hidden rounded-b-[2rem] bg-forest-deep sm:rounded-b-[3rem]">
+    <section className="pattern-jali relative isolate overflow-hidden rounded-b-[2rem] bg-forest-deep sm:rounded-b-[3rem]">
       <motion.div
         className="absolute inset-0 -z-10"
         initial={{ scale: 1.1 }}
@@ -47,7 +47,7 @@ export default function PageHero({
       </motion.div>
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-forest-deep/80 via-forest-deep/70 to-forest-deep/95" />
 
-      <div className="container-x py-12 sm:py-20 lg:py-24">
+      <div className="container-x pb-16 pt-12 sm:pb-24 sm:pt-20 lg:pb-28 lg:pt-24">
         <motion.nav
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}

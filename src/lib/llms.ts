@@ -5,13 +5,13 @@ import { SITE_URL } from "./site";
 
 const u = (p: string) => `${SITE_URL}${p}`;
 
-const header = `# Dholpurestones.com (B P Garg & Sons / Garg Corporation Ltd.)
+const header = `# Dholpurstones.com (B P Garg & Sons / Garg Corporation Ltd.)
 > Dholpur stone, sandstone, marble and semi-precious stone manufacturer, mine owner and exporter in Dholpur, Rajasthan, India — established 1953. Specialists in Dholpur sandstone (Agra Red, Dholpur Beige, Dholpur Pink, Dholpur Chocolate), marble (beige, white, grey), hand-carved stone articles, semi-precious stone slabs, exclusive imported stones, and luxury farm house & garden stonework. Awarded by the Government of India for 300+ sandstone front elevation designs; nominated for an International Award for Business Excellence.
 
-Also searched as: Dholpur stone, Dholpur stones, Dholpur sandstone, Dholpurestones, Dholpur stone manufacturer, Dholpur red stone, Agra red sandstone supplier, sandstone exporter India, farm house stone work, front elevation sandstone designs.
+Also searched as: Dholpur stone, Dholpur stones, Dholpur sandstone, Dholpurstones, Dholpurestones, Dholpur stone manufacturer, Dholpur red stone, Agra red sandstone supplier, sandstone exporter India, farm house stone work, front elevation sandstone designs.
 
 ## Business facts
-- Legal names: Dholpurestones.com, B P Garg & Sons, Garg Corporation Ltd. (GCL), Saroj Stone Industries
+- Legal names: Dholpurstones.com, B P Garg & Sons, Garg Corporation Ltd. (GCL), Saroj Stone Industries
 - Founded: 1953 (three generations)
 - Managing Director & mine owner: Mr. Arvind Garg
 - Works & address: B P Garg & Sons, Near RAC line, Mothiyapura Road, Dholpur 328026, Rajasthan, India (26.5492 N, 77.2917 E)

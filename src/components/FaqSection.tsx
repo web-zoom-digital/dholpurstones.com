@@ -24,7 +24,7 @@ export default function FaqSection({
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id={id} className={`section-y ${tone === "white" ? "bg-white" : "bg-ivory"}`}>
+    <section id={id} className={`section-y relative overflow-hidden pattern-dots ${tone === "white" ? "bg-white" : "bg-ivory"}`}>
       <div className="container-x">
         <SectionHeader eyebrow={eyebrow} title={title} />
         <Reveal className="mx-auto max-w-3xl space-y-3">
