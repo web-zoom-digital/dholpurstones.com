@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import {
   LuX as X,
   LuMaximize2 as Maximize2,
@@ -518,7 +519,40 @@ function SpotlightProductCard({
   );
 }
 
-export default function OurProducts() {
+const homeCategoryData = {
+  sandstone: [
+    { src: "/sandstone/dholpur-pink-sandstone.jpeg", name: "Dholpur Pink Sandstone", alt: "Dholpur Pink Sandstone" },
+    { src: "/sandstone/dolpur-beige-sandstone.jpeg", name: "Dholpur Beige Sandstone", alt: "Dholpur Beige Sandstone" },
+    { src: "/sandstone/agra-red-sandstone.jpeg", name: "Agra Red Sandstone", alt: "Agra Red Sandstone" },
+    { src: "/sandstone/mint-sandstone.jpeg", name: "Mint Sandstone", alt: "Mint Sandstone" },
+  ],
+  "precious-gem": [
+    { src: "/precious-gem-surface/page_027_MALACHITE_image_01.jpeg", name: "Malachite Surface", alt: "Malachite Surface" },
+    { src: "/precious-gem-surface/page_030_LAPIZ_LAZULI_image_02.jpeg", name: "Lapis Lazuli Surface", alt: "Lapis Lazuli Surface" },
+    { src: "/precious-gem-surface/page_031_LABRADORITE_image_02.jpeg", name: "Labradorite Surface", alt: "Labradorite Surface" },
+    { src: "/precious-gem-surface/page_032_TIGER_EYE_BLUE_image_02.jpeg", name: "Blue Tiger Eye Surface", alt: "Blue Tiger Eye Surface" },
+  ],
+  "semi-precious": [
+    { src: "/semi-precious/blue-agate.jpeg", name: "Blue Agate", alt: "Blue Agate" },
+    { src: "/semi-precious/black-agate.jpeg", name: "Black Agate", alt: "Black Agate" },
+    { src: "/semi-precious/fire-agate.jpeg", name: "Fire Agate", alt: "Fire Agate" },
+    { src: "/semi-precious/tiger-eyes.jpeg", name: "Tiger's Eye", alt: "Tiger's Eye" },
+  ],
+} as const;
+
+type HomeCategoryKey = keyof typeof homeCategoryData;
+
+const homeCategoryButtons: { id: HomeCategoryKey; label: string }[] = [
+  { id: "sandstone", label: "Sandstone" },
+  { id: "precious-gem", label: "Precious Gem" },
+  { id: "semi-precious", label: "Semi-Precious" },
+];
+
+export default function OurProducts({ isHome }: { isHome?: boolean } = {}) {
+  const pathname = usePathname();
+  const isHomePage = isHome !== undefined ? isHome : (pathname === "/" || pathname === "");
+
+  const [activeHomeCategory, setActiveHomeCategory] = useState<HomeCategoryKey>("sandstone");
   const [activeTab, setActiveTab] = useState<string>("all");
   const [activeModal, setActiveModal] = useState<ProductItem | null>(null);
   const [viewMode, setViewMode] = useState<"grid" | "spotlight">("grid");
@@ -549,6 +583,90 @@ export default function OurProducts() {
   };
 
   const activeSlideProduct = filteredProducts[currentSlide] || filteredProducts[0];
+
+  if (isHomePage) {
+    const currentImages = homeCategoryData[activeHomeCategory];
+
+    return (
+      <section
+        id="products"
+        className="bg-[#F7F4EB] py-12 sm:py-20 border-b border-black/6 relative overflow-hidden scroll-mt-20 sm:scroll-mt-24"
+      >
+        {/* Subtle Dotted Architectural Grid */}
+        <div className="absolute inset-0 bg-[radial-gradient(#C5A15B_1.2px,transparent_1.2px)] [background-size:32px_32px] opacity-[0.06] pointer-events-none" />
+
+        {/* Floating Animated Ambient Glow Orbs */}
+        <div className="absolute -top-24 right-10 w-[550px] h-[550px] bg-[#C5A15B]/6 rounded-full blur-[140px] pointer-events-none animate-ambient-float-1" />
+        <div className="absolute -bottom-24 left-10 w-[500px] h-[500px] bg-[#123D32]/6 rounded-full blur-[130px] pointer-events-none animate-ambient-float-2" />
+
+        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Centered Heading & Professional 2-Line Subtitle */}
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+            <span className="inline-block text-[10px] sm:text-xs font-bold uppercase tracking-[0.25em] text-[#C5A15B] mb-2 font-['Cinzel',serif]">
+              Architectural Stone &bull; Heritage Quarry Collection
+            </span>
+            <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl lg:text-5xl font-bold text-[#1F2A24] uppercase tracking-wide">
+              Our Products
+            </h2>
+            <div className="w-16 h-1 bg-[#C5A15B] rounded-full mx-auto my-3" />
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] leading-relaxed">
+              Mined directly from our certified Indian quarries and masterfully calibrated for landmark architectural projects.
+              <br className="hidden sm:inline" /> Explore our signature natural sandstones, rare precious surfaces, and custom semi-precious stone collections.
+            </p>
+          </div>
+
+          {/* Three Centered Category Buttons */}
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-10">
+            {homeCategoryButtons.map((cat) => {
+              const isActive = activeHomeCategory === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  type="button"
+                  onClick={() => setActiveHomeCategory(cat.id)}
+                  className={`text-xs sm:text-sm font-bold uppercase tracking-wider px-5 sm:px-7 py-2.5 sm:py-3 rounded-full transition-all duration-300 border cursor-pointer whitespace-nowrap ${
+                    isActive
+                      ? "bg-[#123D32] text-white border-[#123D32] shadow-md shadow-[#123D32]/25 scale-105"
+                      : "bg-[#F7F4EB] text-[#6B7C73] border-black/8 hover:border-[#C5A15B] hover:text-[#1F2A24] hover:bg-white"
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Four Images with Names in Responsive Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+            {currentImages.map((img, idx) => (
+              <div
+                key={`${activeHomeCategory}-${idx}-${img.src}`}
+                className="group relative bg-[#FDFBF7] rounded-2xl overflow-hidden border border-black/8 hover:border-[#C5A15B] transition-all duration-500 shadow-sm hover:shadow-xl hover:-translate-y-1"
+              >
+                <div className="relative h-64 sm:h-72 lg:h-80 w-full overflow-hidden bg-black/5">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+
+                {/* Product Name Below Image */}
+                <div className="p-3.5 sm:p-4 text-center bg-white border-t border-black/6">
+                  <h3 className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#1F2A24] uppercase tracking-wider group-hover:text-[#C5A15B] transition-colors line-clamp-1">
+                    {img.name}
+                  </h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section

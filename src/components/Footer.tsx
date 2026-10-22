@@ -62,23 +62,23 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="hover:text-[#C5A15B] transition-colors">
-                  Dholpur Beige Stone
+                <Link href="/sandstone" className="hover:text-[#C5A15B] transition-colors">
+                  Natural Sandstone Collection
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="hover:text-[#C5A15B] transition-colors">
-                  Chocolate Stone
+                <Link href="/sandstone" className="hover:text-[#C5A15B] transition-colors">
+                  Dholpur Beige &amp; Pink Stone
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="hover:text-[#C5A15B] transition-colors">
-                  Bansi Pink Stone
+                <Link href="/sandstone" className="hover:text-[#C5A15B] transition-colors">
+                  Agra Red &amp; Mint Sandstone
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="hover:text-[#C5A15B] transition-colors">
-                  Exclusive Imported Marble
+                <Link href="/products/white-series-dolphur-color" className="hover:text-[#C5A15B] transition-colors">
+                  White Series – Dholpur Color
                 </Link>
               </li>
               <li>

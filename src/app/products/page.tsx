@@ -1,6 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import OurProducts from "@/components/OurProducts";
 import StoneCollection from "@/components/StoneCollection";
@@ -81,7 +82,56 @@ export default function ProductsPage() {
       </section>
 
       {/* Core Product Components */}
-      <OurProducts />
+      <OurProducts isHome={false} />
+
+      {/* Precious Gem Surface Collection Entry */}
+      <section className="bg-[#F7F4EB] py-8 sm:py-12 border-b border-black/8">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between pb-3 border-b border-black/8 mb-6">
+            <div className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#C5A15B]" />
+              <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.18em] text-[#1F2A24] uppercase">
+                EXQUISITE COLLECTION ENTRY
+              </span>
+            </div>
+            <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest">
+              EXCLUSIVE
+            </span>
+          </div>
+
+          <Link
+            href="/precious-gem-surface"
+            className="group block rounded-2xl overflow-hidden border border-black/8 hover:border-[#C5A15B]/70 bg-white transition-all duration-300 hover:shadow-2xl"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-12 items-center">
+              <div className="relative h-64 md:h-72 md:col-span-7 overflow-hidden bg-[#123D32]">
+                <Image
+                  src="/precious-gem-surface/page_062_BLACK_OBSIDIAN_image_02.jpeg"
+                  alt="Precious Gem Surface"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 60vw"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:to-black/30" />
+              </div>
+
+              <div className="p-6 md:p-10 md:col-span-5 flex flex-col justify-between">
+                <div>
+                  <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl font-bold uppercase tracking-wide text-[#1F2A24] group-hover:text-[#123D32] transition-colors mb-4">
+                    Precious Gem Surface
+                  </h2>
+                </div>
+
+                <div className="inline-flex items-center gap-2 self-start px-5 py-2.5 rounded-full bg-[#123D32] text-[#C5A15B] group-hover:bg-[#C5A15B] group-hover:text-[#123D32] text-xs font-bold uppercase tracking-wider transition-all duration-300">
+                  <span>View Gallery</span>
+                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       <StoneCollection />
       <StoneTechnicalSpecsTable />
       <Applications />
