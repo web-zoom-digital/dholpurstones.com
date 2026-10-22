@@ -45,12 +45,12 @@ function AnimDiv({
 const stones = [
   {
     id: "botticino",
-    name: "BOTTICINO MARBLE",
-    category: "IMPORTED & LUXURY MARBLE",
-    desc: "Premium Italian/imported marble with subtle golden-beige hues and elegant natural veining, ideal for palatial flooring and luxury interiors.",
-    image: "/assets/garg/botticino_marble.jpg",
+    name: "ROYAL WHITE & STATUARIO",
+    category: "WHITE SERIES LUXURY COLLECTION",
+    desc: "Premium White Series natural stone slab with luminous crystalline matrix and elegant veining, ideal for palatial flooring and luxury interiors.",
+    image: "/white-series-dolphur-color/royal-white.png",
     specs: {
-      origin: "Imported Block Processing & Sawn Slabs",
+      origin: "White Series Collection & Sawn Slabs",
       finish: "Mirror Polish, Silky Honed, Antique Brushed",
       application: "Grand Lobbies, Luxury Living Rooms, Internal Flooring, Feature Cladding",
       thickness: "18mm, 20mm, 30mm Calibrated Slabs",
@@ -74,7 +74,7 @@ const stones = [
     name: "SEMI-PRECIOUS STONE",
     category: "EXCLUSIVE LAPIDARY GEMSTONE",
     desc: "Rare hand-assembled translucent blue agate and quartz gemstone slabs for breathtaking backlit statement walls and royal Pietra Dura inlays.",
-    image: "/assets/garg/semi_precious.jpg",
+    image: "/semi-precious/blue-agate.jpeg",
     specs: {
       origin: "Royal Blue Agate, Lapis Lazuli & Quartz Matrix",
       finish: "Backlit Mirror Polished, Epoxy Gemstone Fusion",

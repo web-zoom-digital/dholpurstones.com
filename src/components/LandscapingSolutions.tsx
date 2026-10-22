@@ -99,7 +99,7 @@ const landscapeSolutions: LandscapeItem[] = [
     title: "Calibrated Sandstone Flagstones & Paving",
     tag: "High Footfall & Anti-Slip",
     subtitle: "Natural Cleft & Flamed Finish Patio Pavers",
-    image: "/assets/landscaping/landscape_patio_paving.jpg",
+    image: "/sandstone/mint-sandstone.jpeg",
     provenance: "Direct Sarmathura Quarry Leases",
     desc: "Naturally slip-resistant sandstone flagstones with hand-dressed or machine-sawn edges, tailored for expansive villa patios, garden walkways, open-air courtyards, and palatial terraces. Retains a pleasant cool surface even under intense summer sunlight.",
     idealFor: "Luxury Villa Patios, Hotel Walkways, Heritage Courtyards, Terrace Gardens",

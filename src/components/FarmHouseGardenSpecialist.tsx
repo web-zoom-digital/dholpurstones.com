@@ -179,7 +179,7 @@ const farmhouseSolutions: FarmhouseItem[] = [
     categoryLabel: "GARDEN WALKWAYS",
     title: "Natural Cleft Garden Walkways & Lawn Stepping Stones",
     subtitle: "Heat-Reflective, Barefoot-Friendly Anti-Slip Flagstones",
-    image: "/assets/landscaping/landscape_patio_paving.jpg",
+    image: "/sandstone/mint-sandstone.jpeg",
     desc: "Wind through lush lawn grasses with natural cleft sandstone stepping stones and expansive patio flaggings. High-tactile grip prevents slipping during morning dew or monsoon downpours, while natural thermal dissipation keeps the stones delightfully cool under bare feet.",
     specs: [
       { label: "Format Options", value: "Crazy Paving, Sawn Organic Steppers & Precision Tiles" },
