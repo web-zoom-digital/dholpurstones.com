@@ -300,10 +300,6 @@ img {
   @media (min-width: 1024px) { padding-block: 6rem; }
 }
 
-/* Native-app feel on phones: room for the bottom tab bar */
-@media (max-width: 639px) {
-  body { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
-}
 
 /* Soft stone-grain texture used on dark sections */
 .bg-stone-grain {
@@ -317,14 +313,6 @@ img {
   outline-offset: 2px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
 
 /* Anchored sections land below the sticky header */
 [id] { scroll-margin-top: 7rem; }

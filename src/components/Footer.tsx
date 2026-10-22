@@ -58,7 +58,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-forest-deep text-white">
+    <footer className="bg-forest-deep pb-[calc(76px+env(safe-area-inset-bottom))] text-white sm:pb-0">
       <div className="container-x pt-14 pb-8 sm:pt-20">
         <div className="grid gap-10 lg:grid-cols-12">
           {/* Brand */}
