@@ -75,16 +75,16 @@ const signatureProjects: SignatureProject[] = [
     category: "estates",
     categoryLabel: "LUXURY PRIVATE PALACE",
     location: "South Delhi / DLF Golf Links Estate",
-    stoneType: "Italian Botticino Marble, Composite Inlays & Semi-Precious Accents",
+    stoneType: "Exclusive Imported Marble, Composite Inlays & Semi-Precious Accents",
     scope:
       "Curved dual imperial staircase with concealed warm LED under-step illumination, custom hand-forged brass filigree balustrade, and intricate floral Pietra Dura waterjet marble medallion floor carpet.",
     details:
-      "A masterpiece of high-precision residential stonework. Every marble riser and tread was CNC-milled with integrated light channels for floating ambient radiance. The grand hall floor features a custom 8-axis waterjet floral medallion carpet in Italian Botticino marble accented with imported dark stone and semi-precious stone inlays.",
+      "A masterpiece of high-precision residential stonework. Every marble riser and tread was CNC-milled with integrated light channels for floating ambient radiance. The grand hall floor features a custom 8-axis waterjet floral medallion carpet in exclusive imported marble accented with imported dark stone and semi-precious stone inlays.",
     highlights: [
       "Concealed warm LED under-tread illumination",
       "Hand-crafted forged brass filigree balustrade",
       "Bespoke Pietra Dura waterjet floral medallion carpet",
-      "Mirror-polished Italian Botticino marble flooring",
+      "Mirror-polished exclusive imported marble flooring",
     ],
     image: "/assets/projects/signature_staircase_inlay.jpg",
     waMsg:
@@ -102,7 +102,7 @@ const signatureProjects: SignatureProject[] = [
     scope:
       "Monumental palace facade spanning over 40,000 sq.ft of hand-carved Dholpur Beige sandstone, monolithic pillars with elephant friezes, ornamental chhatri pavilions, and mirror water reflection pool.",
     details:
-      "Engineered from our own Sarmathura quarries, this luxury royal resort blends Rajputana architectural grandeur with contemporary structural engineering. Handcrafted jali lattice screens filter desert sunlight into intricate lace-like shadows across palatial corridors.",
+      "Engineered from our own Dholpur quarries, this luxury royal resort blends Rajputana architectural grandeur with contemporary structural engineering. Handcrafted jali lattice screens filter desert sunlight into intricate lace-like shadows across palatial corridors.",
     highlights: [
       "Monolithic elephant-carved sandstone columns",
       "Perforated floral and geometric jali screens",
@@ -160,43 +160,20 @@ const signatureProjects: SignatureProject[] = [
       "Hello Dholpurestones.com, I would like to inquire about the Neoclassical Heritage Facade & Colonnade project.",
   },
   {
-    id: "estate-fountain",
-    number: "05",
-    title: "Estate Landscape Courtyard & Tiered Sandstone Fountain",
-    subtitle: "Multi-Tier Lotus Water Cascade with Illuminated Sandstone Lanterns",
-    category: "estates",
-    categoryLabel: "LANDSCAPE & ROYAL COURTYARD",
-    location: "Lutyens Bungalow Zone / Royal Garden Estate",
-    scope:
-      "Central multi-tiered lotus fountain carved from monolithic Dholpur sandstone, surrounded by calibrated flagstone patio tiles, carved balustrades, and integrated ambient sandstone lanterns.",
-    details:
-      "An idyllic European-meets-Indian neoclassical garden courtyard. Features a recirculating water cascade over hand-carved acanthus stone tiers. The surrounding grounds are paved with calibrated, thermal-resistant Dholpur sandstone pavers with antique-brushed borders.",
-    stoneType: "Calibrated Dholpur Beige Sawn Paving, Monolithic Carved Fountain",
-    highlights: [
-      "3-tier hand-carved lotus water cascade",
-      "Precision-calibrated non-slip sandstone patio paving",
-      "Ambient warm-lit sandstone garden lantern posts",
-      "Monolithic stone balustrades with floral piers",
-    ],
-    image: "/assets/projects/signature_estate_fountain.jpg",
-    waMsg:
-      "Hello Dholpurestones.com, I would like to inquire about the Estate Landscape Courtyard & Tiered Fountain project.",
-  },
-  {
     id: "atrium-cladding",
-    number: "06",
+    number: "05",
     title: "5-Star Hotel Grand Atrium & Bookmatched Stone Cladding",
-    subtitle: "Triple-Height Botticino Marble Panels & CNC Grooved Sandstone Walls",
+    subtitle: "Triple-Height Exclusive Imported Marble Panels & CNC Grooved Sandstone Walls",
     category: "commercial",
     categoryLabel: "5-STAR LUXURY HOSPITALITY",
     location: "Mumbai BKC / New Delhi Aerocity",
-    stoneType: "Bookmatched Italian Botticino Marble, CNC Grooved Beige Sandstone",
+    stoneType: "Bookmatched Exclusive Imported Marble, CNC Grooved Beige Sandstone",
     scope:
-      "Triple-height lobby atrium cladded with continuous bookmatched Italian Botticino marble panels seamlessly paired with precision CNC-grooved beige sandstone acoustic feature walls and monolithic stone reception.",
+      "Triple-height lobby atrium cladded with continuous bookmatched exclusive imported marble panels seamlessly paired with precision CNC-grooved beige sandstone acoustic feature walls and monolithic stone reception.",
     details:
       "The pinnacle of contemporary luxury hospitality design. Large-format bookmatched marble panels create continuous butterfly natural veins up to 9 meters high, counterbalanced by tactile geometric grooved sandstone textures and warm architectural backlighting.",
     highlights: [
-      "Triple-height bookmatched Italian marble wall cladding",
+      "Triple-height bookmatched exclusive imported marble wall cladding",
       "Precision CNC linear grooved acoustic sandstone textures",
       "Monolithic stone reception desk with halo LED plinth",
       "Mirror-polished floor reflection under crystal chandeliers",
@@ -220,7 +197,7 @@ const tickerHighlights = [
   "AWARDED BY GOVT. OF INDIA FOR 300+ FRONT ELEVATION DESIGNS",
   "SPECIALIZED IN LUXURY FARM HOUSES & DESIGNER GARDENS",
   "500+ MONUMENTAL LANDMARKS EXECUTED GLOBALLY",
-  "100% DIRECT QUARRY SOURCING FROM SARMATHURA & SIKANDRA",
+  "100% DIRECT QUARRY SOURCING FROM DHOLPUR & SIKANDRA",
   "8-AXIS HIGH PRECISION CNC WATERJET CUTTING (±0.1MM)",
   "TIMELESS MONOLITHIC DRY-JOINT INTERLOCKING STONE",
   "3RD GENERATION MASTER ARTISANS & STONEMASONS",

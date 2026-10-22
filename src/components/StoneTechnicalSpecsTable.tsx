@@ -81,7 +81,7 @@ export default function StoneTechnicalSpecsTable() {
             Technical Properties &amp; Comparative Engineering Specs
           </h2>
           <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] mt-2 sm:mt-3 leading-relaxed">
-            Authentic Dholpur sandstone extracted from our Sarmathura quarries consistently exceeds both Indian Standards (IS 3622) and American Society for Testing and Materials (ASTM C616) requirements.
+            Authentic Dholpur sandstone extracted from our Dholpur quarries consistently exceeds both Indian Standards (IS 3622) and American Society for Testing and Materials (ASTM C616) requirements.
           </p>
         </div>
 

@@ -10,14 +10,11 @@ import {
   LuLayers as Layers,
   LuSparkles as Sparkles,
   LuBadgeCheck as BadgeCheck,
-  LuFlame as Flame,
   LuAward as Award,
   LuCircleCheck as CheckCircle2,
-  LuFileText as FileText,
   LuCompass as Compass,
   LuArrowRight as ArrowRight
 } from "react-icons/lu";
-import WhatsAppIcon from "./WhatsAppIcon";
 
 function AnimDiv({
   children,
@@ -79,7 +76,7 @@ const reasons = [
     icon: Mountain,
     badge: "100% OWN MINES",
     title: "Direct Mine Ownership & Zero Middlemen",
-    desc: "Direct extraction from our proprietary quarry concessions in Sarmathura, Rajasthan. We control the complete custody chain from deep underground strata blasting to wire-cut block extraction, delivering genuine quarry-direct wholesale rates with zero middleman markups.",
+    desc: "Direct extraction from our proprietary quarry concessions in Dholpur, Rajasthan. We control the complete custody chain from deep underground strata blasting to wire-cut block extraction, delivering genuine quarry-direct wholesale rates with zero middleman markups.",
     stat: "100%",
     statLabel: "Mine Direct Provenance",
     highlight: false,
@@ -180,7 +177,7 @@ export default function WhyChooseUs() {
             </h2>
 
             <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] max-w-3xl mx-auto leading-relaxed mt-2 sm:mt-3">
-              We own and operate proprietary sandstone quarry concessions in Sarmathura, Rajasthan. By eliminating all commercial middlemen, we guarantee homogeneous mineral strata, certified geotechnical strength, and direct quarry pricing for world-class architectural and landscape projects.
+              We own and operate proprietary sandstone quarry concessions in Dholpur, Rajasthan. By eliminating all commercial middlemen, we guarantee homogeneous mineral strata, certified geotechnical strength, and direct quarry pricing for world-class architectural and landscape projects.
             </p>
           </AnimDiv>
 
@@ -326,7 +323,7 @@ export default function WhyChooseUs() {
               Verified Quarry Infrastructure &amp; Technical Specifications
             </h3>
             <p className="text-xs sm:text-sm text-[#6B7C73] mt-2">
-              Inspect our live quarry concessions in Sarmathura and certified laboratory test reports adhering strictly to IS:3620 and ASTM C616 standards.
+              Inspect our live quarry concessions in Dholpur and certified laboratory test reports adhering strictly to IS:3620 and ASTM C616 standards.
             </p>
           </AnimDiv>
 
@@ -338,7 +335,7 @@ export default function WhyChooseUs() {
                 <div className="relative h-full min-h-[280px] w-full overflow-hidden">
                   <Image
                     src="/assets/quarry_mining_operations.jpg"
-                    alt="Sarmathura Sandstone Quarry Operations"
+                    alt="Dholpur Sandstone Quarry Operations"
                     fill
                     sizes="(max-width:1024px) 100vw, 50vw"
                     className="object-cover group-hover:scale-106 transition-transform duration-700 ease-out"
@@ -352,7 +349,7 @@ export default function WhyChooseUs() {
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-[#25D366]" />
                     </span>
                     <span className="text-[10px] font-bold text-white uppercase tracking-widest">
-                      Active Mine Lease &bull; Sarmathura
+                      Active Mine Lease &bull; Dholpur
                     </span>
                   </div>
 
@@ -443,75 +440,10 @@ export default function WhyChooseUs() {
                     ))}
                   </div>
                 </div>
-
-                {/* Provenance Assurance Seal */}
-                <div className="mt-5 pt-4 border-t border-black/8 flex items-center justify-between bg-[#F7F4EB] p-3.5 rounded-2xl">
-                  <div className="flex items-center gap-2.5">
-                    <FileText className="w-4 h-4 text-[#C5A15B] shrink-0" />
-                    <div>
-                      <span className="text-[10.5px] font-bold text-[#1F2A24] uppercase tracking-wider block">
-                        Official Quarry Provenance Guarantee
-                      </span>
-                      <span className="text-[9.5px] text-[#6B7C73]">
-                        Sarmathura Leases &bull; Garg Corporation Ltd. (Estd. 1953)
-                      </span>
-                    </div>
-                  </div>
-                  <a
-                    href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20please%20share%20official%20Geotechnical%20Lab%20Test%20Reports%20for%20Dholpur%20Sandstone."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[10px] font-bold text-[#123D32] bg-white border border-black/10 px-3 py-1.5 rounded-full hover:bg-[#123D32] hover:text-white transition-colors shrink-0"
-                  >
-                    Request Lab PDF
-                  </a>
-                </div>
               </div>
             </AnimDiv>
           </div>
         </div>
-
-        {/* =========================================================================
-            STAGE 3: BOTTOM CALLOUT: Schedule Quarry Visit & WhatsApp Consultation
-            ========================================================================= */}
-        <AnimDiv delay={200}>
-          <div id="mines" className="scroll-mt-20 sm:scroll-mt-24 bg-gradient-to-br from-[#123D32] via-[#123D32] to-[#0A261F] rounded-3xl p-6 sm:p-10 border border-[#C5A15B]/40 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6 relative overflow-hidden text-white">
-            <div className="absolute -inset-full bg-gradient-to-r from-transparent via-[#C5A15B]/15 to-transparent animate-beam-sweep pointer-events-none" />
-            <div className="absolute -right-10 -bottom-10 w-72 h-72 bg-[#C5A15B]/20 rounded-full blur-3xl pointer-events-none" />
-
-            <div className="max-w-2xl text-center lg:text-left relative z-10">
-              <div className="inline-flex items-center gap-2 bg-[#C5A15B]/20 border border-[#C5A15B]/40 px-3.5 py-1 rounded-full text-[10px] font-bold text-[#F7F4EB] uppercase tracking-widest mb-3 shadow-xs">
-                <Flame className="w-3.5 h-3.5 text-[#C5A15B]" />
-                <span>Visit Our Mines &amp; Processing Yards</span>
-              </div>
-              <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl lg:text-3xl font-bold text-white uppercase tracking-wider mb-2">
-                Inspect Raw Strata Directly At Our Mines
-              </h3>
-              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/80 leading-relaxed">
-                Architects, developers, and estate owners are warmly invited to inspect live quarry benches in Sarmathura and select custom monolithic blocks for their landmark projects.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto shrink-0 relative z-10">
-              <a
-                href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20inquire%20about%20authentic%20sandstone%20directly%20mined%20from%20your%20Sarmathura%20quarries."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#C5A15B] hover:bg-[#C5A15B] text-[#123D32] font-bold text-xs uppercase px-7 py-3.5 rounded-full transition-all duration-300 shadow-xl active:scale-95 border border-[#C5A15B]"
-              >
-                <WhatsAppIcon className="w-4 h-4 fill-[#123D32]" size={16} />
-                <span>Direct Quarry Consultation</span>
-              </a>
-
-              <a
-                href="#contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center font-['Plus_Jakarta_Sans',sans-serif] text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all duration-300 active:scale-95 shadow-md"
-              >
-                <span>Schedule Quarry Tour</span>
-              </a>
-            </div>
-          </div>
-        </AnimDiv>
       </div>
     </section>
   );

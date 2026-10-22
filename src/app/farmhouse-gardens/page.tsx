@@ -22,14 +22,14 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 export const metadata: Metadata = {
   title: "Luxury Farm House & Garden Landscaping Stone Solutions | Dholpurestones",
   description:
-    "Turnkey Natural Sandstone Solutions for Luxury Farm Houses, Private Country Estates, and Designer Garden Landscapes. Over 300+ front elevation designs in sandstone awarded by Govt. of India & nominated for International Award for Business Excellence. Cobblestone carriage driveways, monumental entrance gates, carved gazebos, tiered fountains, and poolside coping direct from Sarmathura quarries.",
+    "Turnkey Natural Sandstone Solutions for Luxury Farm Houses, Private Country Estates, and Designer Garden Landscapes. Over 300+ front elevation designs in sandstone awarded by Govt. of India & nominated for International Award for Business Excellence. Cobblestone carriage driveways, monumental entrance gates, carved gazebos, and poolside coping direct from Dholpur quarries.",
   alternates: {
     canonical: "https://dholpurestones.com/farmhouse-gardens",
   },
   openGraph: {
     title: "Luxury Farm House & Garden Landscaping Stone Solutions | Dholpurestones",
     description:
-      "Specialized in luxury farm houses & designer garden landscapes. Over 300+ front elevation designs awarded by Govt. of India & nominated for International Award for Business Excellence. Direct quarry extraction from Sarmathura and Sikandra.",
+      "Specialized in luxury farm houses & designer garden landscapes. Over 300+ front elevation designs awarded by Govt. of India & nominated for International Award for Business Excellence. Direct quarry extraction from Dholpur and Sikandra.",
     url: "https://dholpurestones.com/farmhouse-gardens",
     siteName: "Dholpurestones",
     type: "website",
@@ -117,7 +117,7 @@ export default function FarmHouseGardensPage() {
             </div>
             <div className="bg-white/5 backdrop-blur-xs rounded-xl p-3 border border-white/10">
               <span className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-white block">100%</span>
-              <span className="text-[10px] sm:text-xs text-white/70 uppercase tracking-wider font-medium">Sarmathura Stone</span>
+              <span className="text-[10px] sm:text-xs text-white/70 uppercase tracking-wider font-medium">Dholpur Stone</span>
             </div>
           </div>
 
@@ -157,7 +157,7 @@ export default function FarmHouseGardensPage() {
           <div>
             <div className="inline-flex items-center gap-2 text-[#C5A15B] text-xs font-bold uppercase tracking-wider mb-2">
               <ShieldCheck className="w-4 h-4 text-[#C5A15B]" />
-              <span>Direct Sarmathura Quarry Concessions &bull; Worldwide ISPM-15 Crating</span>
+              <span>Direct Dholpur Quarry Concessions &bull; Worldwide ISPM-15 Crating</span>
             </div>
             <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl font-bold uppercase text-white tracking-wide">
               Planning a Luxury Farm House, Villa Estate, or Resort Landscape?
@@ -200,7 +200,7 @@ export default function FarmHouseGardensPage() {
                   "@id": "https://dholpurestones.com/#organization"
                 },
                 "areaServed": ["IN", "CA", "US", "DE", "AE", "GB"],
-                "description": "Turnkey natural sandstone supply and artisanal carving for luxury farmhouses, cobblestone driveways, grand entrance portals, tiered fountains, and gazebo structures."
+                "description": "Turnkey natural sandstone supply and artisanal carving for luxury farmhouses, cobblestone driveways, grand entrance portals, and gazebo structures."
               },
               {
                 "@type": "BreadcrumbList",
@@ -235,8 +235,8 @@ export default function FarmHouseGardensPage() {
                   {
                     "@type": "HowToStep",
                     "position": 2,
-                    "name": "Sarmathura Quarry Strata Selection",
-                    "text": "Direct monolithic block quarrying in Sarmathura matching your required color uniformity across Dholpur Beige, Red, or Chocolate tones.",
+                    "name": "Dholpur Quarry Strata Selection",
+                    "text": "Direct monolithic block quarrying in Dholpur matching your required color uniformity across Dholpur Beige, Red, or Chocolate tones.",
                     "url": "https://dholpurestones.com/farmhouse-gardens#quarry-selection"
                   },
                   {

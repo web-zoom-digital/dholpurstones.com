@@ -5,7 +5,7 @@ import GalleryClient from "./GalleryClient";
 export const metadata: Metadata = {
   title: "Visual Gallery & Craftsmanship Archive | Dholpurestones (Estd. 1953)",
   description:
-    "High-resolution visual archives of Sarmathura quarry benches, master sculptor ateliers in Sikandra, CNC fluted cladding panels, calibrated sandstone yard, and monumental landmark installations.",
+    "High-resolution visual archives of Dholpur quarry benches, master sculptor ateliers in Sikandra, CNC fluted cladding panels, calibrated sandstone yard, and monumental landmark installations.",
   alternates: {
     canonical: "https://dholpurestones.com/gallery",
   },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Visual Gallery & Craftsmanship Archive | Dholpurestones",
     description:
-      "Sarmathura sandstone mines, generational stone sculptors, and monumental project execution photography.",
+      "Dholpur sandstone mines, generational stone sculptors, and monumental project execution photography.",
     images: ["https://dholpurestones.com/assets/garg/clean_peacock_hero.jpg"],
   },
 };

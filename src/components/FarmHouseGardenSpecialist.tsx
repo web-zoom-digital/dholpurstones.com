@@ -69,7 +69,7 @@ export interface FarmhouseItem {
   id: string;
   number: string;
   title: string;
-  category: "all" | "elevation" | "entrance" | "lawns" | "water" | "pool";
+  category: "all" | "elevation" | "entrance" | "lawns" | "pool";
   categoryLabel: string;
   subtitle: string;
   image: string;
@@ -91,7 +91,7 @@ const farmhouseSolutions: FarmhouseItem[] = [
     desc: "Complete architectural sandstone front elevation engineering for palatial farm houses and countryside villas. Over 300+ bespoke designs awarded by the Government of India, featuring fluted monolithic pillars, carved jharokhas, ornate balconies, decorative stone brackets, and heritage cornice friezes.",
     specs: [
       { label: "Design Range", value: "300+ Classical, Colonial & Modern Elevation Blueprints" },
-      { label: "Stone Types", value: "Sarmathura Dholpur Red, Beige, Chocolate & Pink Sandstone" },
+      { label: "Stone Types", value: "Dholpur Red, Beige, Chocolate & Pink Sandstone" },
       { label: "Carving Precision", value: "Hand-Crafted by 3rd Gen Artisans & 8-Axis CNC Cutting" },
       { label: "Recognition", value: "Awarded by Govt. of India for Design Excellence" },
     ],
@@ -150,31 +150,8 @@ const farmhouseSolutions: FarmhouseItem[] = [
     waMsg: "Hello Dholpurestones.com, I want to inquire about a Hand-Carved Sandstone Garden Gazebo / Baradari for my Farm House lawn.",
   },
   {
-    id: "fountains-cascades",
-    number: "04",
-    category: "water",
-    categoryLabel: "WATER FEATURES",
-    title: "Monumental Garden Water Fountains & Lotus Pools",
-    subtitle: "Regal Multi-Tiered Acoustic Centerpieces for Driveway Rotundas",
-    image: "/assets/projects/signature_estate_fountain.jpg",
-    desc: "Nothing elevates a luxury farm house garden quite like the sound of cascading water over hand-chiseled natural stone. Multi-tiered fountains, blooming lotus flower basins, and pool centerpieces carved from single monolithic blocks of Sarmathura sandstone.",
-    specs: [
-      { label: "Diameter Range", value: "4 feet to 20 feet Tiered Basins & Custom Radial Pools" },
-      { label: "Height Options", value: "3-Tier, 4-Tier, and 5-Tier Fountains up to 18ft Tall" },
-      { label: "Internal Plumbing", value: "Precision Pre-Cored Copper/PVC Water Conduit Lines" },
-      { label: "Acoustics", value: "Engineered Scalloped Edge Lips for Gentle Water Splash" },
-    ],
-    features: [
-      "Traditional lion-mouth spouts, lotus petals, and ornate urn fountains",
-      "Supplied with watertight modular pond surround copings with curved radius stones",
-      "Dense siliceous stone naturally immune to constant algae erosion and mineral stains",
-      "Perfect acoustic centerpiece for main driveway rotunda or central lawn plaza",
-    ],
-    waMsg: "Hello Dholpurestones.com, I am interested in a Multi-Tier Sandstone Water Fountain for my Farm House garden.",
-  },
-  {
     id: "patio-walkways",
-    number: "05",
+    number: "04",
     category: "lawns",
     categoryLabel: "GARDEN WALKWAYS",
     title: "Natural Cleft Garden Walkways & Lawn Stepping Stones",
@@ -197,7 +174,7 @@ const farmhouseSolutions: FarmhouseItem[] = [
   },
   {
     id: "cobblestone-driveways",
-    number: "06",
+    number: "05",
     category: "entrance",
     categoryLabel: "DRIVEWAYS & COURTYARDS",
     title: "Cobblestone Carriage Driveways & Portico Courtyards",
@@ -220,7 +197,7 @@ const farmhouseSolutions: FarmhouseItem[] = [
   },
   {
     id: "poolside-surrounds",
-    number: "07",
+    number: "06",
     category: "pool",
     categoryLabel: "POOL & SUN DECKS",
     title: "Farm House Poolside Copings & Sunken Lounge Decks",
@@ -243,7 +220,7 @@ const farmhouseSolutions: FarmhouseItem[] = [
   },
   {
     id: "stone-lanterns-planters",
-    number: "08",
+    number: "07",
     category: "lawns",
     categoryLabel: "OUTDOOR DECOR",
     title: "Perforated Sandstone Lanterns, Lamp Posts & Planters",
@@ -267,11 +244,10 @@ const farmhouseSolutions: FarmhouseItem[] = [
 ];
 
 const tabs = [
-  { id: "all", label: "All Solutions (8)", icon: Layers },
+  { id: "all", label: "All Solutions (7)", icon: Layers },
   { id: "elevation", label: "Front Elevation", icon: Home },
   { id: "entrance", label: "Gates & Driveways", icon: Ruler },
   { id: "lawns", label: "Lawns & Gazebos", icon: TreePine },
-  { id: "water", label: "Water Fountains", icon: Sparkles },
   { id: "pool", label: "Poolside Coping", icon: Droplets },
 ];
 
@@ -330,7 +306,7 @@ export default function FarmHouseGardenSpecialist({
 
           <div className="mt-3 sm:mt-4 max-w-3xl mx-auto">
             <p className="font-['EB_Garamond',serif] text-base sm:text-xl text-[#1F2A24]/90 leading-relaxed font-semibold">
-              Transforming vast private acreage, countryside retreats, and sprawling estate lawns into timeless royal sanctuaries with authentic Sarmathura natural sandstone.
+              Transforming vast private acreage, countryside retreats, and sprawling estate lawns into timeless royal sanctuaries with authentic Dholpur natural sandstone.
             </p>
             <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] mt-2 sm:mt-2.5 leading-relaxed">
               We have made more than{" "}
@@ -501,10 +477,10 @@ export default function FarmHouseGardenSpecialist({
                 ESTATE OWNER ADVANTAGE
               </span>
               <h3 className="font-['Cinzel',serif] text-xl sm:text-3xl font-bold uppercase tracking-wider text-white">
-                Why Sarmathura Sandstone is the Definitive Choice for Farm Houses
+                Why Dholpur Sandstone is the Definitive Choice for Farm Houses
               </h3>
               <p className="text-xs sm:text-sm text-white/75 mt-2.5 leading-relaxed">
-                Direct extraction from our proprietary quarries in Sarmathura, Rajasthan ensures your private estate receives uniform, high-density silica stone built to endure generations.
+                Direct extraction from our proprietary quarries in Dholpur, Rajasthan ensures your private estate receives uniform, high-density silica stone built to endure generations.
               </p>
             </div>
 
@@ -553,7 +529,7 @@ export default function FarmHouseGardenSpecialist({
                   Zero Middlemen Pricing
                 </h4>
                 <p className="text-[10px] sm:text-xs text-white/70 leading-relaxed line-clamp-3 sm:line-clamp-none">
-                  Direct mine-to-site delivery from our own quarry leases in Sarmathura and Sikandra, saving estate owners substantial costs on large acreage.
+                  Direct mine-to-site delivery from our own quarry leases in Dholpur and Sikandra, saving estate owners substantial costs on large acreage.
                 </p>
               </div>
             </div>

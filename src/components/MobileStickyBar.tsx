@@ -54,7 +54,7 @@ export default function MobileStickyBar() {
               {[
                 "Inquiry about Front Elevation Sandstone designs",
                 "Inquiry about Luxury Farm House & Garden Landscaping",
-                "I want to visit your mines in Sarmathura",
+                "I want to visit your mines in Dholpur",
                 "Request a stone sample box",
               ].map((msg) => (
                 <a

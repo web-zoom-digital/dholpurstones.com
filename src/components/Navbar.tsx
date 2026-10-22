@@ -161,7 +161,7 @@ export default function Navbar() {
       label: "Company",
       headerTag: "HERITAGE & QUARRY OPERATIONS",
       // footerNote: {
-      //   text: "Sarmathura, Sikandra & Kishangarh mining hubs • Estd. 1953",
+      //   text: "Dholpur, Sikandra & Kishangarh mining hubs • Estd. 1953",
       //   href: "/about",
       // },
       children: [
@@ -193,7 +193,7 @@ export default function Navbar() {
         {
           label: "Our Mines",
           href: "/about#mines",
-          desc: "Active Sarmathura & Bari quarry strata",
+          desc: "Active Dholpur & Bari quarry strata",
           icon: Mountain,
           badge: "Proprietary",
         },

@@ -81,7 +81,7 @@ const products: ProductItem[] = [
     subtitle: "Precision Diamond Fluted Cladding & Dynamic Geometric Relief",
     category: "cladding",
     categoryLabel: "3D ELEVATION CLADDING",
-    provenance: "Sikandra 8-Axis CNC Facility",
+    provenance: "Dholpur Sandstone Mines",
     image: "/assets/products/cnc_grooved_sandstone_panel.jpg",
     shortDesc:
       "Precision-machined geometric fluted and diamond groove sandstone panels for luxury exterior elevation facades, porticos, and accent walls.",
@@ -121,12 +121,12 @@ const products: ProductItem[] = [
     subtitle: "Quarry Monoliths, Structural Columns & Heavy Calibrated Slabs",
     category: "blocks",
     categoryLabel: "QUARRY MONOLITHS & SLABS",
-    provenance: "Direct Sarmathura Mines, Rajasthan",
+    provenance: "Direct Dholpur, Rajasthan",
     image: "/assets/products/dholpur_red_quarry_blocks.jpg",
     shortDesc:
       "Direct quarry-extracted monolithic Dholpur Red sandstone blocks cut with precision diamond wire saws, offering centuries of structural longevity.",
     longDetails:
-      "Extracted directly from our proprietary quarry concessions in Sarmathura, Rajasthan. These massive monolithic red blocks feature ultra-fine quartz grains bound by siliceous cement. Demonstrates zero weathering, flaking, or efflorescence even after decades of exposure to extreme frost, desert heat, and torrential monsoon cycles.",
+      "Extracted directly from our proprietary quarry concessions in Dholpur, Rajasthan. These massive monolithic red blocks feature ultra-fine quartz grains bound by siliceous cement. Demonstrates zero weathering, flaking, or efflorescence even after decades of exposure to extreme frost, desert heat, and torrential monsoon cycles.",
     shades: "Rich Royal Terracotta Red / Agra Crimson",
     finishes: [
       "Quarry Dressed Rough Block",
@@ -161,7 +161,7 @@ const products: ProductItem[] = [
     subtitle: "Precision Sawn Paving, Pool Decks & Courtyard Flooring Tiles",
     category: "paving",
     categoryLabel: "CALIBRATED PAVING & TILES",
-    provenance: "Sikandra Calibrated Plant",
+    provenance: "Dholpur Sandstone Mines",
     image: "/assets/products/real_dholpur_beige_tiles_quarry_yard.jpg",
     shortDesc:
       "Even-toned Dholpur Beige and Ivory White sandstone tiles with sharp chamfered calibration, naturally staying cool under intense sun.",
@@ -195,88 +195,8 @@ const products: ProductItem[] = [
       "Hello Dholpurestones.com, I would like to inquire about Dholpur Beige & White Calibrated Tiles.",
   },
   {
-    id: "dholpur-red-slabs",
-    number: "04",
-    title: "Calibrated Red Sandstone Architectural Paving",
-    subtitle: "Heavy-Duty Civic Plazas, Temple Mandapams & Driveway Copings",
-    category: "paving",
-    categoryLabel: "HIGH-TRAFFIC CIVIC PAVING",
-    provenance: "Sarmathura & Sikandra Yards",
-    image: "/assets/products/dholpur_red_sandstone_slabs.jpg",
-    shortDesc:
-      "Heavy-duty precision-cut Red Sandstone paving slabs built to endure harsh climate cycles and continuous heavy footfall without degradation.",
-    longDetails:
-      "Engineered from homogeneous Dholpur Red sandstone strata. Demonstrates exceptional compressive strength, minimal water absorption, and a slip-resistant natural matte surface. Extensively used in civic plazas, temple mandapams, and luxury estate driveways.",
-    shades: "Deep Royal Dholpur Red with Uniform Hue",
-    finishes: [
-      "Smooth Diamond Sawn",
-      "Fine Antique Honed",
-      "Thermal Flamed Anti-Skid",
-      "Antique Tumbled & Brushed",
-    ],
-    dimensions: "600x600, 600x900, 1200x600mm (25mm to 60mm Thickness)",
-    applications: [
-      "Civic Public Plazas & Pedestrian Boulevards",
-      "Temple Mandapas & Parikrama Pathways",
-      "High-Traffic Estate Driveways & Ramps",
-      "Massive Boundary Copings & Bullnosed Steps",
-    ],
-    compressiveStrength: "70.4 MPa (Dry) / 63.8 MPa (Wet)",
-    waterAbsorption: "< 1.05% by weight",
-    density: "2.47 - 2.51 g/cm³",
-    modulusOfRupture: "12.6 N/mm²",
-    highlights: [
-      "Heavy load-bearing capacity suitable for vehicular driveways",
-      "High silica quartz density naturally resisting oil & stain absorption",
-      "Slip-resistant R12 textured surface for all-weather public safety",
-      "Precision calibrated thickness for uniform sand or mortar bed laying",
-    ],
-    waMsg:
-      "Hello Dholpurestones.com, I would like to inquire about Calibrated Red Sandstone Architectural Paving Slabs.",
-  },
-  {
-    id: "dholpur-chocolate-teakwood",
-    number: "05",
-    title: "Dholpur Chocolate & Teakwood Sandstone",
-    subtitle: "Organic Woodgrain Ripples & Rich Earthy Tones for Statement Surfaces",
-    category: "exotic",
-    categoryLabel: "EXOTIC VEINED QUARTZITE",
-    provenance: "Special Quarry Vein Concession",
-    image: "/assets/products/dholpur_chocolate_teakwood.jpg",
-    shortDesc:
-      "Exquisite natural sandstone featuring flowing organic woodgrain ripple veining and rich chocolate earth tones for statement surfaces.",
-    longDetails:
-      "A prized geological anomaly mined from select quarry strata. The natural undulating swirls mimic rich teak timber grain while delivering the indestructible durability of dense silica quartz. An architect's favorite for luxury fireplace surrounds, master bathroom feature walls, and interior portals.",
-    shades: "Natural Teakwood Grain, Warm Chocolate & Earth Brown",
-    finishes: [
-      "Velvet Satin Honed",
-      "Precision Smooth Sawn",
-      "Brushed Antique Leathered",
-      "Bookmatched Polished Pair",
-    ],
-    dimensions: "Calibrated Tiles & Gangsaw Slabs (20mm - 30mm), Custom Modules",
-    applications: [
-      "Luxury Accent Walls & Feature Panels",
-      "Palatial Fireplace Mantels & Surrounds",
-      "Master Bathroom & Spa Stone Cladding",
-      "Custom Vanities & Hospitality Countertops",
-    ],
-    compressiveStrength: "67.5 MPa (Dry) / 61.2 MPa (Wet)",
-    waterAbsorption: "< 1.12% by weight",
-    density: "2.45 - 2.49 g/cm³",
-    modulusOfRupture: "11.7 N/mm²",
-    highlights: [
-      "Authentic natural woodgrain veining — no two slabs are ever identical",
-      "Velvety tactile finish that resists staining and moisture penetration",
-      "High flexural strength suitable for large-format vertical installations",
-      "Bespoke bookmatched pairs available upon request",
-    ],
-    waMsg:
-      "Hello Dholpurestones.com, I would like to inquire about Dholpur Chocolate & Teakwood Sandstone.",
-  },
-  {
     id: "sandstone-bulk-exports",
-    number: "06",
+    number: "04",
     title: "Industrial Crated Bundles & Containerized Exports",
     subtitle: "Global Sea-Worthy ISPM-15 Timber Packaging for Wholesale Supply",
     category: "export",
@@ -321,14 +241,13 @@ const categoryTabs = [
   { id: "cladding", label: "3D CNC & Elevation" },
   { id: "blocks", label: "Quarry Blocks & Slabs" },
   { id: "paving", label: "Paving & Tiles" },
-  { id: "exotic", label: "Exotic Teakwood" },
   { id: "export", label: "Global Export Crates" },
 ];
 
 const tickerHighlights = [
   "500,000+ SQ.FT MONTHLY QUARRY SAWN CAPACITY",
   "IS:3620 CERTIFIED COMPRESSIVE STRENGTH >68 MPA",
-  "100% DIRECT QUARRY EXTRACTION FROM SARMATHURA & SIKANDRA",
+  "100% DIRECT QUARRY EXTRACTION FROM DHOLPUR & SIKANDRA",
   "8-AXIS HIGH PRECISION CNC FLUTING & 3D RELIEF (±0.5MM)",
   "20+ NATURAL STONE COLOURS & WEATHERPROOF FINISHES",
   "ISPM-15 EXPORT CERTIFIED CRATING TO 40+ PORTS GLOBALLY",
@@ -960,7 +879,7 @@ export default function OurProducts() {
                 Need Custom Sawn Slabs, Architectural Cladding, or Bulk Container Loads?
               </h3>
               <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/80 leading-relaxed">
-                Direct quarry extraction from our Sarmathura mines and cutting-edge 8-axis CNC processing allow us to fulfill any custom color, thickness calibration, or surface finish requirement for landmark projects.
+                Direct quarry extraction from our Dholpur mines and cutting-edge 8-axis CNC processing allow us to fulfill any custom color, thickness calibration, or surface finish requirement for landmark projects.
               </p>
             </div>
 

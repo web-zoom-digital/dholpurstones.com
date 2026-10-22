@@ -50,7 +50,7 @@ export default function BurgundyBand() {
           <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/80 mt-2 sm:mt-2.5 leading-relaxed">
             From regal farm house entrance gates, poolside bullnose coping, and cobblestone driveways to
             hand-carved garden water fountains and multi-tiered stone landscaping — we transform vast outdoor
-            properties into timeless heritage retreats using authentic Sarmathura sandstone.
+            properties into timeless heritage retreats using authentic Dholpur sandstone.
           </p>
         </div>
 

@@ -127,7 +127,7 @@ const sitemapData: SitemapGroup[] = [
     description: "Direct connection with quarry ownership, dispatch yards, and quotation desks.",
     links: [
       {
-        title: "Contact Us & Official Sarmathura Works",
+        title: "Contact Us & Official Dholpur Works",
         href: "/contact",
         description: "Direct WhatsApp (+91 94149 45457), phone lines, sample box requests, and GPS factory coordinates.",
         badge: "Direct Factory Connect",

@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: "Hand-Carved Sandstone Sculptures & Architectural Articles | Dholpurestones",
   description:
-    "Exquisite hand-carved natural sandstone peacock sculptures, regal stone lanterns, lions, jali screens, and temple pillars chiseled by hereditary Shilpa Shastra master artisans in Sikandra & Sarmathura.",
+    "Exquisite hand-carved natural sandstone peacock sculptures, regal stone lanterns, lions, jali screens, and temple pillars chiseled by hereditary Shilpa Shastra master artisans in Sikandra & Dholpur.",
   alternates: {
     canonical: "https://dholpurestones.com/articles",
   },

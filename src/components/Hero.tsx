@@ -122,7 +122,7 @@ export default function Hero() {
         <div className="max-w-[1280px] mx-auto flex flex-wrap items-center justify-center gap-x-3 sm:gap-x-6 gap-y-1 text-[10px] sm:text-xs text-white/75 font-medium tracking-wider">
           <span className="flex items-center gap-1.5 text-[#C5A15B] font-semibold">
             <MapPin className="w-3.5 h-3.5 shrink-0" />
-            Sarmathura (Mines)
+            Dholpur
           </span>
           <span className="text-white/25">&bull;</span>
           <span>Sikandra (Crafting)</span>

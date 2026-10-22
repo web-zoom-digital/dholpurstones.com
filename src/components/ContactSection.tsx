@@ -175,7 +175,7 @@ export default function ContactSection() {
             <div className="w-20 h-1 bg-gradient-to-r from-transparent via-[#C5A15B] to-transparent rounded-full mx-auto my-3" />
 
             <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] max-w-2xl mx-auto leading-relaxed">
-              Official statutory lineage incorporating <span className="font-semibold text-[#1F2A24]">Saroj Stone Industries</span> (Pioneer Entity Estd. 1953) and <span className="font-semibold text-[#1F2A24]">Garg Corporation Ltd.</span> (Govt. Awarded Director Arvind Garg), operating proprietary Sarmathura quarries, automated CNC hubs, and turnkey global export infrastructure.
+              Official statutory lineage incorporating <span className="font-semibold text-[#1F2A24]">Saroj Stone Industries</span> (Pioneer Entity Estd. 1953) and <span className="font-semibold text-[#1F2A24]">Garg Corporation Ltd.</span> (Govt. Awarded Director Arvind Garg), operating proprietary Dholpur quarries, automated CNC hubs, and turnkey global export infrastructure.
             </p>
           </AnimDiv>
 
@@ -221,10 +221,10 @@ export default function ContactSection() {
                         phone: "+91 94149 45457 / +91 90573 55232",
                         email: "gargcorporationltd@gmail.com",
                         details: [
-                          "Works: B P Garg & Sons, Near RAC line, Mothiyapura road, Sarmathura 328026 Dholpur, Raj. INDIA",
+                          "Works: B P Garg & Sons, Near RAC line, Mothiyapura road, Dholpur 328026, Raj. INDIA",
                           "Director Mr. Arvind Garg awarded by Govt. of India & nominated for International Award for Business Excellence",
                           "Over 300+ custom sandstone front elevation designs engineered for luxury farm houses & estates",
-                          "Direct quarry concessions in Sarmathura & Sikandra (Dholpur, Rajasthan)",
+                          "Direct quarry concessions in Dholpur & Sikandra (Rajasthan)",
                           "Automated 8-axis CNC processing & international ISPM-15 seaworthy crated logistics",
                         ],
                       })
@@ -393,12 +393,11 @@ export default function ContactSection() {
                         subtitle: "The Pioneer Company of Natural Stone (Estd. 1953)",
                         entity: "Original Quarry Leaseholder & Landmark Contractor",
                         phone: "+91 94149 45457 / +91 90573 55232",
-                        email: "kamala_stone@yahoo.co.in",
+                        email: "gargcorporationltd@gmail.com",
                         details: [
-                          "Works: B P Garg & Sons, Near RAC line, Mothiyapura road, Sarmathura 328026 Dholpur, Raj. INDIA",
+                          "Works: B P Garg & Sons, Near RAC line, Mothiyapura road, Dholpur 328026, Raj. INDIA",
                           "Established in 1953 — Pioneer in authentic Dholpur Sandstone quarrying for 70+ years",
                           "Historical direct supplier to New Delhi Parliament House & national monumental projects",
-                          "Associated stone processing and export arm: Kamala Stone",
                           "Mines Owner • Manufacturer • Contractor for Natural Stones Across The Globe",
                         ],
                       })
@@ -454,7 +453,7 @@ export default function ContactSection() {
                             B P Garg &amp; Sons
                           </span>
                           <span className="text-[10px] text-[#6B7C73] block truncate">
-                            Sarmathura, Dholpur (Raj.)
+                            Dholpur (Raj.)
                           </span>
                         </div>
                       </div>
@@ -463,12 +462,12 @@ export default function ContactSection() {
                         <div className="flex items-center gap-2 overflow-hidden">
                           <Mail className="w-3.5 h-3.5 text-[#C5A15B] shrink-0" />
                           <span className="font-semibold text-[#1F2A24] text-[11px] truncate">
-                            kamala_stone@yahoo.co.in
+                            gargcorporationltd@gmail.com
                           </span>
                         </div>
                         <button
                           type="button"
-                          onClick={() => handleCopy("kamala_stone@yahoo.co.in", "saroj-email")}
+                          onClick={() => handleCopy("gargcorporationltd@gmail.com", "saroj-email")}
                           className="text-[10px] font-bold text-[#123D32] hover:text-[#C5A15B] p-1 shrink-0 cursor-pointer"
                           title="Copy Email"
                         >
@@ -487,7 +486,7 @@ export default function ContactSection() {
                         New Delhi Parliament Supplier
                       </span>
                       <span className="text-[10px] bg-[#F7F4EB] text-[#123D32] font-bold px-2.5 py-1 rounded-md border border-black/6">
-                        Kamala Stone Export Arm
+                        Direct Global Exports
                       </span>
                       <span className="text-[10px] bg-[#F7F4EB] text-[#123D32] font-bold px-2.5 py-1 rounded-md border border-black/6">
                         Raw Block Mining
@@ -522,7 +521,7 @@ export default function ContactSection() {
                   </span>
                 </div>
                 <p className="text-[11px] text-[#6B7C73] leading-snug">
-                  Over 70+ years across 3 generations of continuous direct quarry leaseholding in Sarmathura.
+                  Over 70+ years across 3 generations of continuous direct quarry leaseholding in Dholpur.
                 </p>
               </div>
 
@@ -609,19 +608,6 @@ export default function ContactSection() {
                     </a>
                   </div>
 
-                  {/* Associated Unit Email */}
-                  <div>
-                    <span className="text-[9px] uppercase font-bold tracking-widest text-[#6B7C73] block mb-0.5">
-                      ASSOCIATED UNIT EMAIL
-                    </span>
-                    <a
-                      href="mailto:kamala_stone@yahoo.co.in"
-                      className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-[#1F2A24] hover:text-[#C5A15B] transition-colors"
-                    >
-                      <Mail className="w-3.5 h-3.5 text-[#C5A15B] shrink-0" />
-                      <span>kamala_stone@yahoo.co.in</span>
-                    </a>
-                  </div>
 
                   {/* Registered Works Address */}
                   <div>
@@ -632,7 +618,7 @@ export default function ContactSection() {
                       <MapPin className="w-3.5 h-3.5 text-[#C5A15B] shrink-0 mt-0.5" />
                       <div>
                         <span className="font-bold text-[#1F2A24] block">B P Garg &amp; Sons</span>
-                        <span>Near RAC line, Mothiyapura road, Sarmathura 328026 Dholpur, Raj. INDIA</span>
+                        <span>Near RAC line, Mothiyapura road, Dholpur 328026, Raj. INDIA</span>
                       </div>
                     </div>
                   </div>
@@ -644,7 +630,7 @@ export default function ContactSection() {
                         INDIA OFFICES
                       </span>
                       <span className="text-[11px] sm:text-xs font-bold text-[#1F2A24] leading-tight block">
-                        Sarmathura &bull; Sikandra &bull; Kishangarh
+                        Dholpur &bull; Sikandra &bull; Kishangarh
                       </span>
                     </div>
                     <div className="bg-[#F7F4EB] p-2.5 sm:p-3 rounded-xl border border-black/5">
@@ -858,10 +844,10 @@ export default function ContactSection() {
                   </span>
                 </div>
                 <h3 className="font-['Cinzel',serif] text-lg sm:text-2xl font-bold text-[#1F2A24] uppercase tracking-wide">
-                  Sarmathura Quarry Works &amp; Factory Site
+                  Dholpur Quarry Works &amp; Factory Site
                 </h3>
                 <p className="text-xs text-[#6B7C73] mt-1 max-w-xl">
-                  B P Garg &amp; Sons &bull; Near RAC line, Mothiyapura road, Sarmathura 328026, Dist. Dholpur, Rajasthan, India
+                  B P Garg &amp; Sons &bull; Near RAC line, Mothiyapura road, Dholpur 328026, Rajasthan, India
                 </p>
               </div>
               <div className="flex flex-wrap items-center gap-2">
@@ -883,7 +869,7 @@ export default function ContactSection() {
             {/* Google Map Embed */}
             <div className="relative w-full h-64 sm:h-80 md:h-96 bg-[#F7F4EB]">
               <iframe
-                title="B P Garg & Sons Sarmathura Works Location Map"
+                title="B P Garg & Sons Dholpur Works Location Map"
                 src="https://maps.google.com/maps?q=26.5492,77.2917&hl=en&z=13&output=embed"
                 width="100%"
                 height="100%"
@@ -901,7 +887,7 @@ export default function ContactSection() {
               </div>
               <div className="flex items-center gap-2 text-[#6B7C73]">
                 <ShieldCheck className="w-4 h-4 text-[#123D32] shrink-0" />
-                <span><strong>Rail / Logistics Siding:</strong> Sarmathura Broad Gauge Rail Head</span>
+                <span><strong>Rail / Logistics Siding:</strong> Dholpur Broad Gauge Rail Head</span>
               </div>
               <div className="flex items-center gap-2 text-[#6B7C73]">
                 <Globe className="w-4 h-4 text-[#123D32] shrink-0" />

@@ -32,7 +32,7 @@ export default function Home() {
       {/* 3. About Us (Page 2 of PDF - 1953 Legacy, Lion & Lantern Articles) */}
       <AboutUs />
 
-      {/* 4. Our Strength (Page 3 of PDF - 6 Strengths & Offices in Sarmathura, Sikandra, Kishangarh, Canada) */}
+      {/* 4. Our Strength (Page 3 of PDF - 6 Strengths & Offices in Dholpur, Sikandra, Kishangarh, Canada) */}
       <OurStrength />
 
       {/* 4B. Why Choose Authentic Sandstone - Direct Quarry Mining Advantage */}

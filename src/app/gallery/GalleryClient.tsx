@@ -53,10 +53,10 @@ export default function GalleryClient() {
     {
       id: "p1",
       category: "photo",
-      title: "Sarmathura Proprietary Quarry Benches",
+      title: "Dholpur Proprietary Quarry Benches",
       tag: "Live Quarry Strata",
       image: "/assets/quarry_mining_operations.jpg",
-      desc: "Massive solid sandstone bedrock extraction at our proprietary mines in Sarmathura, Rajasthan. Producing uniform, crack-free raw monolithic blocks.",
+      desc: "Massive solid sandstone bedrock extraction at our proprietary mines in Dholpur, Rajasthan. Producing uniform, crack-free raw monolithic blocks.",
     },
     {
       id: "p2",
@@ -117,7 +117,7 @@ export default function GalleryClient() {
     {
       id: "v1",
       category: "video",
-      title: "Sarmathura Quarry Mining & Block Extraction Tour",
+      title: "Dholpur Quarry Mining & Block Extraction Tour",
       tag: "Video Showcase",
       image: "/assets/quarry_mining_operations.jpg",
       desc: "High-definition video overview of wire-saw extraction, diamond cutting, and block transport from our active mine lease.",
@@ -163,7 +163,7 @@ export default function GalleryClient() {
             Media, Photo &amp; Video Gallery
           </h1>
           <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/70 max-w-2xl mt-3 leading-relaxed">
-            High-resolution visual archives of active Sarmathura quarry benches, factory fabrication yards, master sculptor ateliers, and national monumental projects.
+            High-resolution visual archives of active Dholpur quarry benches, factory fabrication yards, master sculptor ateliers, and national monumental projects.
           </p>
         </div>
       </section>

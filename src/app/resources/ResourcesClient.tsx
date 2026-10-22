@@ -74,7 +74,7 @@ export default function ResourcesClient() {
       name: "STONA International Stone Fair",
       location: "Bengaluru, India",
       role: "Exhibitor & Natural Sandstone Concessionaire",
-      highlight: "Showcasing raw Sarmathura monolithic blocks, 8-axis CNC sculpted panels, and architectural calibrated flagstones.",
+      highlight: "Showcasing raw Dholpur monolithic blocks, 8-axis CNC sculpted panels, and architectural calibrated flagstones.",
     },
     {
       name: "Marmomac World Stone Fair",

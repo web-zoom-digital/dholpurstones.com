@@ -76,14 +76,14 @@ const landscapeSolutions: LandscapeItem[] = [
     tag: "Heavy-Duty Vehicle Paving",
     subtitle: "Hand-Split Sandstone Cobbles for Axle-Load Entrance Roads",
     image: "/assets/landscaping/landscape_cobblestone_driveway.jpg",
-    provenance: "Direct Sarmathura Sandstone Strata",
+    provenance: "Direct Dholpur Sandstone Strata",
     desc: "Engineered specifically for heavy vehicular traffic — from luxury SUVs to estate service vehicles. Hand-dressed natural sandstone cobblestones laid in fan, herringbone, or linear patterns, creating an aristocratic European manor or royal haveli arrival experience.",
     idealFor: "Estate Driveways, Farm House Porticos, Luxury Hotel Forecourts, Valet Courtyards",
     specs: [
       { label: "Standard Formats", value: "100x100x50mm, 140x140x60mm & 100x200mm" },
       { label: "Crushing Strength", value: "68–72 MPa (Extreme Axle Load Bearing)" },
       { label: "Jointing Type", value: "Permeable Eco-Grout or Traditional Sand" },
-      { label: "Quarry Source", value: "Direct from Sarmathura Heavy Strata" },
+      { label: "Quarry Source", value: "Direct from Dholpur Heavy Strata" },
     ],
     features: [
       "Extreme compressive resistance handles heavy vehicle traffic without sinking or cracking",
@@ -100,7 +100,7 @@ const landscapeSolutions: LandscapeItem[] = [
     tag: "High Footfall & Anti-Slip",
     subtitle: "Natural Cleft & Flamed Finish Patio Pavers",
     image: "/assets/landscaping/landscape_patio_paving.jpg",
-    provenance: "Direct Sarmathura Quarry Leases",
+    provenance: "Direct Dholpur Quarry Leases",
     desc: "Naturally slip-resistant sandstone flagstones with hand-dressed or machine-sawn edges, tailored for expansive villa patios, garden walkways, open-air courtyards, and palatial terraces. Retains a pleasant cool surface even under intense summer sunlight.",
     idealFor: "Luxury Villa Patios, Hotel Walkways, Heritage Courtyards, Terrace Gardens",
     specs: [
@@ -148,7 +148,7 @@ const landscapeSolutions: LandscapeItem[] = [
     tag: "Structural Grade & Rustic Heritage",
     subtitle: "Solid Block Treads & Rustic Terracing Walling",
     image: "/assets/landscaping/landscape_steps_walling.jpg",
-    provenance: "Sarmathura Heavy Bed Quarries",
+    provenance: "Dholpur Heavy Bed Quarries",
     desc: "Massive solid sandstone step treads with rock-faced front edges matched with dry-stacked retaining walling blocks. Engineered to absorb soil lateral pressure on terraced hill slopes while creating lush multi-level landscape architecture.",
     idealFor: "Terraced Estate Gardens, Hillside Villa Transitions, Botanical Parks, Amphitheaters",
     specs: [
@@ -196,7 +196,7 @@ const landscapeSolutions: LandscapeItem[] = [
     tag: "Royal Heritage Pavilions & Chhatris",
     subtitle: "Fluted Sandstone Columns, Stone Canopies & Baradaris",
     image: "/assets/landscaping/landscape_sandstone_gazebo.jpg",
-    provenance: "Sikandra Ateliers & Sarmathura Mines",
+    provenance: "Sikandra Ateliers & Dholpur",
     desc: "Bespoke hand-carved natural sandstone gazebos, garden baradaris, and open-air pergolas crafted for luxury farm house lawns, meditation courtyards, and palatial garden estates. Features hand-chiseled fluted columns, ornate brackets, carved domed chhatri canopies, and integrated perimeter stone bench seating.",
     idealFor: "Luxury Farm Houses, Expansive Estate Lawns, Central Courtyards, Heritage Resort Gardens",
     specs: [
@@ -309,7 +309,7 @@ export default function LandscapingSolutions() {
           <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] mt-3 sm:mt-4 leading-relaxed font-medium">
             Heavy-duty outdoor stone engineering for luxury villa courtyards, estate driveways, and swimming pool decks.
             Featuring Class R11 non-slip calibrated flagstones (+/-1mm), drop-face pool copings, monolithic stepped blocks,
-            hand-chiseled cobblestones, and ornate garden gazebos direct from Sarmathura quarries.
+            hand-chiseled cobblestones, and ornate garden gazebos direct from Dholpur quarries.
           </p>
         </AnimDiv>
 
@@ -519,7 +519,7 @@ export default function LandscapingSolutions() {
             <div className="lg:col-span-8">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[#C5A15B] text-[10px] font-bold uppercase tracking-wider mb-3">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#C5A15B]" />
-                <span>Direct Quarry Concessionaire Leases &bull; Sarmathura</span>
+                <span>Direct Quarry Concessionaire Leases &bull; Dholpur</span>
               </div>
               <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl lg:text-3xl font-bold uppercase tracking-wider text-white mb-3">
                 Have a Commercial or Private Landscaping Project?
