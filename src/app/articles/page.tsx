@@ -1,8 +1,11 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import AnimDiv from "@/components/ui/AnimDiv";
 import Image from "next/image";
 import Link from "next/link";
+import PageHero from "@/components/ui/PageHero";
+import Button from "@/components/ui/Button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -22,37 +25,6 @@ import {
 } from "react-icons/lu";
 
 /* ─── Intersection Animation Helper ─────────────────────────────────────── */
-function AnimDiv({
-  children,
-  className = "",
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) {
-          setTimeout(() => el.classList.add("gcl-visible"), delay);
-          obs.unobserve(el);
-        }
-      },
-      { threshold: 0.07 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [delay]);
-  return (
-    <div ref={ref} className={`gcl-animate ${className}`}>
-      {children}
-    </div>
-  );
-}
 
 /* ─── Stone Articles Data (Exclusively from /stone-articles) ────────────── */
 const articles = [
@@ -78,6 +50,29 @@ const articles = [
       "Custom monolithic pedestals and inscribed plinths available",
     ],
     waMsg: "Hello Dholpurestones.com, I am interested in commissioning Royal Guardian Lion Sandstone Sculptures for my project.",
+  },
+  {
+    id: "caparisoned-elephant",
+    name: "Caparisoned Elephant Statue",
+    subtitle: "Ornately Carved Sandstone Elephant on Plinth",
+    image: "/stone-articles/elephant_image.jpeg",
+    category: "AUSPICIOUS HERITAGE SCULPTURE",
+    material: "Authentic Dholpur Pink & Red Sandstone",
+    desc: "Richly caparisoned sandstone elephant with intricate floral blanket carving and a carved plinth, an auspicious symbol for gateways and gardens. Masterfully chiseled from single quarry blocks for palatial entryways, grand porticos, and monumental estate gateways.",
+    specs: [
+      { label: "Stone Material", value: "Natural Dholpur Sandstone (Sarmathura Quarry)" },
+      { label: "Carving Technique", value: "100% Traditional Hand Chisel & Mallet Sculpture" },
+      { label: "Standard Heights", value: "3 Ft, 4.5 Ft, 6 Ft & Life-Size Bespoke" },
+      { label: "Surface Finish", value: "Hand-Honed Antique / Fine Chiseled Texture" },
+      { label: "Durability", value: "High Compressive Strength (>68 MPa), 100% Weatherproof" },
+    ],
+    highlights: [
+      "Carved from single monolithic block with zero joints",
+      "Immune to frost, intense sun, acid rain and weathering",
+      "Available in matched mirror-facing gateway pairs",
+      "Custom monolithic pedestals and inscribed plinths available",
+    ],
+    waMsg: "Hello Dholpurestones.com, I am interested in commissioning Sandstone Elephant Statues for my project.",
   },
   {
     id: "master-heritage-peacock",
@@ -172,29 +167,6 @@ const articles = [
     waMsg: "Hello Dholpurestones.com, I am inquiring about the Multi-Tier Acanthus Leaf Sandstone Water Fountain.",
   },
   {
-    id: "temple-sanctum-pillars",
-    name: "Sacred Temple Sanctum Pillars & Jalis",
-    subtitle: "Shilpa Shastra Proportion Mandap Columns & Wall Screens",
-    image: "/stone-articles/temple_sanctum_pillars.jpg",
-    category: "SACRED TEMPLE ARCHITECTURE",
-    material: "Sacred Bansi Paharpur & Dholpur Pink Stone",
-    desc: "Intricately carved temple columns, kalash capitals, and sanctum wall reliefs sculpted in strict accordance with classical Indian Shilpa Shastra treatise. Adorned with floral rosettes, deity alcoves, and ornate fluted shafts for spiritual landmarks.",
-    specs: [
-      { label: "Stone Material", value: "Authentic Bansi Paharpur / Dholpur Pink Sandstone" },
-      { label: "Relief Depth", value: "30mm to 75mm Deep 3D Architectural Relief" },
-      { label: "Column Dimensions", value: "8 Ft to 16 Ft Height (Modular Interlocking Sections)" },
-      { label: "Structural Rating", value: "High Load-Bearing Monolithic Core (>70 MPa)" },
-      { label: "Applications", value: "Private Mandirs, Heritage Temples, Classical Haveli Porticos" },
-    ],
-    highlights: [
-      "Consecrated stone carving conforming to sacred architectural proportions",
-      "Hand-chiseled by hereditary temple artisans with generational lineage",
-      "Compatible with hidden structural steel dowels for seismic safety",
-      "Complete assembly drawings and numbering provided for rapid installation",
-    ],
-    waMsg: "Hello Dholpurestones.com, I need information on Sacred Temple Pillars and Sanctum Stone Carvings.",
-  },
-  {
     id: "crested-garden-peacock",
     name: "Rajasthani Crested Garden Peacock Statue",
     subtitle: "Graceful Pedestal Bird Sculpture with Lotus Base",
@@ -216,29 +188,6 @@ const articles = [
       "Supplied with protective foam casing inside export wooden crate",
     ],
     waMsg: "Hello Dholpurestones.com, I would like to purchase the Rajasthani Crested Garden Peacock Statue.",
-  },
-  {
-    id: "embassy-heritage-facade",
-    name: "Diplomatic Embassy Facade Carvings & Cornices",
-    subtitle: "Monumental Friezes, Jalis & Pierced Balustrades",
-    image: "/stone-articles/project_embassy_nepal.jpg",
-    category: "DIPLOMATIC & MONUMENTAL COMMISSIONS",
-    material: "Government-Certified Structural Dholpur Stone",
-    desc: "Grand architectural sandstone carvings, monumental cornices, pierced jali screens, and ornamental capitals executed for international embassies and state institutions, representing the pinnacle of Indian stone craft on the world stage.",
-    specs: [
-      { label: "Stone Material", value: "IS:3620 Certified Grade-A Natural Sandstone" },
-      { label: "Tolerances", value: "±1.0mm Laser-Calibrated Joint Tolerances" },
-      { label: "Scope", value: "Continuous Cornices, Pierced Screens, Monolithic Columns" },
-      { label: "Testing", value: "ASTM / IS Certified Compressive & Flexural Strengths" },
-      { label: "Execution", value: "Direct Mine Extraction to Finished Architectural BOQ Delivery" },
-    ],
-    highlights: [
-      "Executed for Indian and international diplomatic missions globally",
-      "Full BOQ engineering support with factory pre-assembly testing",
-      "ISPM-15 certified containerized sea export to 40+ countries",
-      "Includes comprehensive installation drawings and anchor hardware specs",
-    ],
-    waMsg: "Hello Dholpurestones.com, I am inquiring about Monumental Embassy and Institutional Stone Carving projects.",
   },
 ];
 
@@ -299,96 +248,22 @@ export default function ArticlesPage() {
       {/* ═══════════════════════════════════════════════════════════════
           HERO SECTION (Full window size matching Semi-Precious style)
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden">
-        {/* Background Image from /stone-articles */}
-        <div className="absolute inset-0">
-          <Image
-            src="/stone-articles/temple_sanctum_pillars.jpg"
-            alt="Hand-Carved Stone Sculptures & Articles – Dholpurestones"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-          {/* Multi-layer overlay for text legibility */}
-          <div className="absolute inset-0 bg-black/55 bg-gradient-to-t from-[#0D1A14]/90 via-[#0D1A14]/45 to-[#0D1A14]/35" />
-        </div>
-
-        {/* Floating ambient particles */}
-        <div className="absolute top-20 left-20 w-3 h-3 rounded-full bg-[#C5A15B]/40 animate-pulse" />
-        <div
-          className="absolute top-40 right-32 w-2 h-2 rounded-full bg-[#C5A15B]/30 animate-pulse"
-          style={{ animationDelay: "0.8s" }}
-        />
-        <div
-          className="absolute bottom-48 right-16 w-4 h-4 rounded-full bg-[#C5A15B]/20 animate-pulse"
-          style={{ animationDelay: "1.4s" }}
-        />
-
-        {/* Hero content - Centered */}
-        <div className="relative z-10 max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col items-center text-center">
-          {/* Breadcrumb Navigation */}
-          <nav
-            className="inline-flex items-center gap-2 text-xs text-white/70 mb-6 bg-black/30 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10"
-            aria-label="Breadcrumb"
-          >
-            <Link href="/" className="hover:text-[#C5A15B] flex items-center gap-1 transition-colors">
-              <HomeIcon className="w-3.5 h-3.5" />
-              <span>Home</span>
-            </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-white/40" />
-            <Link href="/products" className="hover:text-[#C5A15B] transition-colors">
-              Products
-            </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-white/40" />
-            <span className="text-[#C5A15B] font-semibold">Stone Articles</span>
-          </nav>
-
-          {/* Category pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C5A15B]/20 border border-[#C5A15B]/40 backdrop-blur-sm mb-5">
-            <Sparkles className="w-3.5 h-3.5 text-[#C5A15B]" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.22em] uppercase">
-              HEREDITARY SIKANDRA ATELIERS &bull; SHILPA SHASTRA LEGACY
-            </span>
-          </div>
-
-          <h1 className="font-['Cinzel',serif] text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-wide text-white mb-5 leading-[1.1] text-center">
-            Hand-Carved Stone<br />
-            <span className="text-[#C5A15B]">Articles &amp; Sculptures</span>
-          </h1>
-
-          <p className="font-['EB_Garamond',serif] text-lg sm:text-2xl text-white/85 max-w-2xl leading-relaxed mb-8 font-medium text-center mx-auto">
-            Monolithic peacock sculptures, royal guardian lions, carved fountains, heritage stone lanterns, and sacred temple pillars chiseled by hereditary master artisans from authentic Rajasthan sandstone.
-          </p>
-
-          {/* Hero stat pills */}
-          <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
-            {[
-              { val: "8+", label: "Master Sculptures" },
-              { val: "100%", label: "Hand-Carved" },
-              { val: "ISPM-15", label: "Global Crating" },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2"
-              >
-                <span className="font-['Cinzel',serif] text-base font-bold text-[#C5A15B]">
-                  {stat.val}
-                </span>
-                <span className="text-[11px] text-white/70 font-semibold uppercase tracking-wider">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom curve separator */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-16 bg-[#F7F4EB]"
-          style={{ clipPath: "ellipse(55% 100% at 50% 100%)" }}
-        />
-      </section>
+      <PageHero
+        eyebrow="Hand Crafted In Sikandra"
+        title="Sandstone"
+        accent="Articles"
+        description="Sculptures, lanterns, fountains and relief panels hand-carved by hereditary master artisans — made to your size and design."
+        image="/assets/garg/hero_peacock_widescreen.jpg"
+        crumbs={[{ label: "Products", href: "/products" }, { label: "Stone Articles" }]}
+        stats={[
+          { value: "100%", label: "Hand carved" },
+          { value: "Custom", label: "Sizes & designs" },
+          { value: "Export", label: "Crated worldwide" },
+        ]}
+      >
+        <Button href="#articles-collection" variant="gold" size="lg">View Articles</Button>
+        <Button href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20commission%20a%20stone%20article." variant="outline-light" size="lg">Commission a Piece</Button>
+      </PageHero>
 
       {/* ═══════════════════════════════════════════════════════════════
           INTRO STRIP (Matching Semi-Precious style)
@@ -423,11 +298,11 @@ export default function ArticlesPage() {
           <AnimDiv className="flex items-center justify-between pb-3 border-b border-black/8 mb-10">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#C5A15B]" />
-              <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#1F2A24] uppercase">
+              <span className="font-heading text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#1F2A24] uppercase">
                 DHOLPURESTONES &bull; STONE ARTICLES INVENTORY
               </span>
             </div>
-            <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest uppercase">
+            <span className="font-heading text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest uppercase">
               Articles &bull; 04
             </span>
           </AnimDiv>
@@ -436,11 +311,11 @@ export default function ArticlesPage() {
             <span className="text-[10px] sm:text-xs font-bold text-[#C5A15B] uppercase tracking-[0.2em] block mb-2">
               Master Craftsmanship &bull; Sikandra Hub
             </span>
-            <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1F2A24] uppercase tracking-wide mb-3 leading-snug">
+            <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1F2A24] uppercase tracking-wide mb-3 leading-snug">
               Hand-Carved Stone Articles Collection
             </h2>
             <div className="w-12 h-1 bg-[#C5A15B] rounded-full mx-auto mb-4" />
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] leading-relaxed">
+            <p className="font-body text-xs sm:text-sm text-[#6B7C73] leading-relaxed">
               Every sculpture is individually hand-chiseled from authentic Rajasthan natural sandstone blocks by hereditary artisans. Click any article to inspect detailed specifications and dimensions.
             </p>
           </AnimDiv>
@@ -491,7 +366,7 @@ export default function ArticlesPage() {
                   {/* Card body below image */}
                   <div className="pt-3.5 pb-1 px-1 flex-1 flex flex-col justify-between">
                     <div>
-                      <h3 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-[#1F2A24] uppercase tracking-wide group-hover:text-[#123D32] transition-colors leading-snug mb-1.5">
+                      <h3 className="font-heading text-sm sm:text-base font-bold text-[#1F2A24] uppercase tracking-wide group-hover:text-[#123D32] transition-colors leading-snug mb-1.5">
                         {item.name}
                       </h3>
                       <p className="text-xs text-[#6B7C73] leading-relaxed line-clamp-2">
@@ -524,7 +399,7 @@ export default function ArticlesPage() {
             <span className="text-[10px] font-bold text-[#C5A15B] uppercase tracking-[0.22em] block mb-2">
               HERITAGE ARCHITECTURE
             </span>
-            <h2 className="font-['Cinzel',serif] text-xl sm:text-2xl lg:text-3xl font-bold text-[#1F2A24] uppercase tracking-wider">
+            <h2 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-[#1F2A24] uppercase tracking-wider">
               Signature Applications
             </h2>
             <div className="w-10 h-1 bg-[#C5A15B] rounded-full mx-auto mt-3" />
@@ -535,7 +410,7 @@ export default function ArticlesPage() {
               <AnimDiv key={i} delay={i * 80}>
                 <div className="bg-[#F7F4EB] rounded-2xl border border-black/6 p-6 hover:border-[#C5A15B]/50 hover:shadow-md transition-all duration-300">
                   <span className="text-3xl block mb-3">{uc.icon}</span>
-                  <h3 className="font-['Cinzel',serif] text-sm font-bold text-[#1F2A24] uppercase tracking-wider mb-2">
+                  <h3 className="font-heading text-sm font-bold text-[#1F2A24] uppercase tracking-wider mb-2">
                     {uc.title}
                   </h3>
                   <p className="text-xs text-[#6B7C73] leading-relaxed">{uc.desc}</p>
@@ -562,7 +437,7 @@ export default function ArticlesPage() {
                     <ShieldCheck className="w-3.5 h-3.5" />
                     <span>Direct Mine Extraction &bull; Custom Scale Sculptures</span>
                   </div>
-                  <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-wider text-white mb-3">
+                  <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-wider text-white mb-3">
                     Commission a Custom Stone Sculpture
                   </h2>
                   <p className="text-xs sm:text-sm text-white/75 max-w-xl leading-relaxed">
@@ -586,7 +461,7 @@ export default function ArticlesPage() {
                     href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com%2C%20I%20would%20like%20to%20commission%20a%20custom%20stone%20sculpture%20or%20architectural%20article."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-[#C5A15B] hover:bg-[#d4b06a] text-[#123D32] font-bold text-xs uppercase tracking-wider shadow-lg transition-all active:scale-95"
+                    className="flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-[#C5A15B] hover:bg-[#d4b574] text-[#123D32] font-bold text-xs uppercase tracking-wider shadow-lg transition-all active:scale-95"
                   >
                     <WhatsAppIcon className="w-4 h-4 fill-[#123D32]" size={16} />
                     <span>WhatsApp Us Now</span>
@@ -622,11 +497,11 @@ export default function ArticlesPage() {
         >
           <div className="fixed inset-0 bg-black/80 backdrop-blur-md" />
           <div
-            className="relative z-10 w-full max-w-2xl bg-[#1F2A24] rounded-3xl shadow-2xl overflow-hidden max-h-[92vh] flex flex-col border border-[#C5A15B]/30"
+            className="relative z-10 w-full max-w-2xl bg-forest-deep rounded-3xl shadow-2xl overflow-hidden max-h-[92vh] flex flex-col border border-[#C5A15B]/30"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal image header */}
-            <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full shrink-0 bg-[#0D1A14]">
+            <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full shrink-0 bg-[#0B2A22]">
               <Image
                 src={activeModal.image}
                 alt={activeModal.name}
@@ -651,7 +526,7 @@ export default function ArticlesPage() {
                 <span className="text-[9px] uppercase font-bold text-[#C5A15B] tracking-widest block mb-1">
                   {activeModal.category} &bull; {activeModal.material}
                 </span>
-                <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold leading-tight">
+                <h3 className="font-heading text-xl sm:text-2xl font-bold leading-tight">
                   {activeModal.name}
                 </h3>
                 <p className="text-xs text-white/70 mt-0.5">{activeModal.subtitle}</p>
@@ -662,7 +537,7 @@ export default function ArticlesPage() {
             <div className="p-5 sm:p-7 overflow-y-auto space-y-5 text-white">
               {/* Description */}
               <div>
-                <h4 className="font-['Cinzel',serif] text-xs font-bold text-[#C5A15B] uppercase tracking-wider mb-2">
+                <h4 className="font-heading text-xs font-bold text-[#C5A15B] uppercase tracking-wider mb-2">
                   Artisan Overview
                 </h4>
                 <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
@@ -672,7 +547,7 @@ export default function ArticlesPage() {
 
               {/* Specifications Table */}
               <div>
-                <h4 className="font-['Cinzel',serif] text-xs font-bold text-[#C5A15B] uppercase tracking-wider mb-2">
+                <h4 className="font-heading text-xs font-bold text-[#C5A15B] uppercase tracking-wider mb-2">
                   Technical Specifications
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
@@ -689,7 +564,7 @@ export default function ArticlesPage() {
 
               {/* Highlights */}
               <div>
-                <h4 className="font-['Cinzel',serif] text-xs font-bold text-[#C5A15B] uppercase tracking-wider mb-2">
+                <h4 className="font-heading text-xs font-bold text-[#C5A15B] uppercase tracking-wider mb-2">
                   Craftsmanship Highlights
                 </h4>
                 <ul className="space-y-1.5 text-xs text-white/80">
@@ -708,7 +583,7 @@ export default function ArticlesPage() {
                   href={`https://wa.me/919414945457?text=${encodeURIComponent(activeModal.waMsg)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-full bg-[#C5A15B] hover:bg-[#d4b06a] text-[#123D32] font-bold text-xs uppercase tracking-wider transition-all active:scale-95 cursor-pointer"
+                  className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-full bg-[#C5A15B] hover:bg-[#d4b574] text-[#123D32] font-bold text-xs uppercase tracking-wider transition-all active:scale-95 cursor-pointer"
                 >
                   <WhatsAppIcon className="w-4 h-4 fill-[#123D32]" size={16} />
                   Inquire on WhatsApp

@@ -2,7 +2,8 @@ import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import FarmHouseGardenSpecialist from "@/components/FarmHouseGardenSpecialist";
+import PageHero from "@/components/ui/PageHero";
+import Button from "@/components/ui/Button";
 import LandscapingSolutions from "@/components/LandscapingSolutions";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -57,91 +58,28 @@ export default function FarmHouseGardensPage() {
       {/* 1. Global Navigation Bar */}
       <Navbar />
 
-      {/* 2. Hero Breadcrumb & Header Banner */}
-      <section className="bg-[#123D32] text-white py-12 sm:py-16 lg:py-20 border-b border-white/10 relative overflow-hidden">
-        {/* Ambient Decorative Glows */}
-        <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-[#C5A15B]/12 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#123D32]/15 rounded-full blur-[130px] pointer-events-none" />
+      <PageHero
+        eyebrow="Our Speciality"
+        title="Farm House &"
+        accent="Garden Stonework"
+        description="Turnkey natural-stone work for farm houses, estates and gardens — driveways, patios, pool decks, gazebos, steps, retaining walls and fountains."
+        image="/assets/landscaping/landscape_pool_coping.jpg"
+        crumbs={[{ label: "Farm House & Gardens" }]}
+        stats={[
+          { value: "6", label: "Specialities" },
+          { value: "70+", label: "Years of craft" },
+          { value: "100%", label: "Natural stone" },
+        ]}
+      >
+        <Button href="#landscaping" variant="gold" size="lg">Explore Specialities</Button>
+        <Button href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20am%20inquiring%20about%20Farm%20House%20%26%20Garden%20stone%20solutions." variant="outline-light" size="lg">Discuss My Project</Button>
+      </PageHero>
 
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Breadcrumb Navigation */}
-          <nav className="flex items-center gap-2 text-xs text-white/60 mb-5" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-[#C5A15B] flex items-center gap-1.5 transition-colors">
-              <HomeIcon className="w-3.5 h-3.5" />
-              <span>Home</span>
-            </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-white/40" />
-            <span className="text-[#C5A15B] font-semibold">Farm House &amp; Gardens</span>
-          </nav>
-
-          {/* Honors & Government Award Badges */}
-          <div className="flex flex-wrap items-center gap-2.5 mb-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#123D32]/40 border border-[#123D32] text-[#25D366] text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-xs">
-              <TreePine className="w-3.5 h-3.5 text-[#25D366]" />
-              <span>Dedicated Specialty &bull; Farm Houses &amp; Gardens</span>
-            </div>
-          </div>
-
-          {/* Main Page Title */}
-          <h1 className="font-['Cinzel',serif] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight text-white leading-[1.12] max-w-4xl">
-            Natural Sand Stone Solutions for Luxury Farm Houses &amp; Designer Gardens
-          </h1>
-
-          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-sm sm:text-base text-white/80 max-w-3xl mt-4 leading-relaxed font-light">
-            We specialize in executing turnkey architectural and landscape stone masonry for sprawling country farm houses, private family estates, and luxury retreats. From heavy-duty axle load-bearing cobblestone carriage driveways and monumental entrance portals to hand-chiseled sandstone baradaris, tiered water cascades, and non-slip pool decks.
-          </p>
-
-          {/* Key Facts / Highlights Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-8 pt-8 border-t border-white/10 max-w-3xl">
-            <div className="bg-white/5 backdrop-blur-xs rounded-xl p-3 border border-white/10">
-              <span className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#C5A15B] block">300+</span>
-              <span className="text-[10px] sm:text-xs text-white/70 uppercase tracking-wider font-medium">Elevation Designs</span>
-            </div>
-            <div className="bg-white/5 backdrop-blur-xs rounded-xl p-3 border border-white/10">
-              <span className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#25D366] block">8 Master</span>
-              <span className="text-[10px] sm:text-xs text-white/70 uppercase tracking-wider font-medium">Estate Specialties</span>
-            </div>
-            <div className="bg-white/5 backdrop-blur-xs rounded-xl p-3 border border-white/10">
-              <span className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#C5A15B] block">70+ Yrs</span>
-              <span className="text-[10px] sm:text-xs text-white/70 uppercase tracking-wider font-medium">Quarry Heritage</span>
-            </div>
-            <div className="bg-white/5 backdrop-blur-xs rounded-xl p-3 border border-white/10">
-              <span className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-white block">100%</span>
-              <span className="text-[10px] sm:text-xs text-white/70 uppercase tracking-wider font-medium">Dholpur Stone</span>
-            </div>
-          </div>
-
-          {/* Quick Action Buttons */}
-          <div className="flex flex-wrap items-center gap-3 mt-8">
-            <a
-              href="#farmhouse-gardens"
-              className="inline-flex items-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-full bg-[#123D32] hover:bg-[#0A261F] text-white border border-[#C5A15B]/50 shadow-lg hover:shadow-xl transition-all active:scale-95"
-            >
-              <span>Explore All 8 Specialties</span>
-              <ChevronRight className="w-4 h-4 text-[#C5A15B]" />
-            </a>
-
-            <a
-              href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20am%20inquiring%20about%20complete%20Farm%20House%20%26%20Garden%20stone%20solutions."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-full bg-[#C5A15B] hover:bg-[#C5A15B] text-[#123D32] transition-all shadow-md active:scale-95 border border-[#C5A15B]"
-            >
-              <WhatsAppIcon className="w-4 h-4 fill-[#123D32]" size={16} />
-              <span>Direct WhatsApp Consultation</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Dedicated Luxury Farm House & Garden Masonry Specialist (All 8 Solutions Full Grid) */}
-      <FarmHouseGardenSpecialist isHomePreview={false} />
-
-      {/* 4. Complementary Calibrated Landscaping Solutions (Flagstones, Paving, Step Treads) */}
+      {/* Garden & farm house work — landscape photography only */}
       <LandscapingSolutions />
 
       {/* 5. Bottom Architectural Tender & Quarry Direct Supply Banner */}
-      <section className="bg-[#1F2A24] text-white py-14 border-t border-[#C5A15B]/20 relative overflow-hidden">
+      <section className="bg-forest-deep text-white py-14 border-t border-[#C5A15B]/20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A15B]/8 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
@@ -149,10 +87,10 @@ export default function FarmHouseGardensPage() {
               <ShieldCheck className="w-4 h-4 text-[#C5A15B]" />
               <span>Direct Dholpur Quarry Concessions &bull; Worldwide ISPM-15 Crating</span>
             </div>
-            <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl font-bold uppercase text-white tracking-wide">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold uppercase text-white tracking-wide">
               Planning a Luxury Farm House, Villa Estate, or Resort Landscape?
             </h2>
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/75 mt-2 max-w-2xl leading-relaxed">
+            <p className="font-body text-xs sm:text-sm text-white/75 mt-2 max-w-2xl leading-relaxed">
               Our master stone carvers and CNC stonework engineers provide custom cutting lists, CAD drafting assistance, site delivery, and bespoke quarry pricing for landmark residential and hospitality estates.
             </p>
           </div>

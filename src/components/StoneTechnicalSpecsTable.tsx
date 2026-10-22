@@ -72,15 +72,15 @@ export default function StoneTechnicalSpecsTable() {
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14">
           <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 rounded-full bg-[#123D32]/15 border border-[#123D32]/30 mb-2.5 sm:mb-3 text-[#123D32]">
             <Award className="w-3.5 h-3.5" />
-            <span className="font-['Cinzel',serif] text-[9.5px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] uppercase">
+            <span className="font-heading text-[9.5px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] uppercase">
               CERTIFIED LABORATORY METRICS &bull; ASTM C616 / IS 3622
             </span>
           </div>
 
-          <h2 className="font-['Cinzel',serif] text-xl sm:text-3xl lg:text-4xl font-bold uppercase text-[#123D32] tracking-wide leading-snug sm:leading-tight">
+          <h2 className="font-heading text-xl sm:text-3xl lg:text-4xl font-bold uppercase text-[#123D32] tracking-wide leading-snug sm:leading-tight">
             Technical Properties &amp; Comparative Engineering Specs
           </h2>
-          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] mt-2 sm:mt-3 leading-relaxed">
+          <p className="font-body text-xs sm:text-sm text-[#6B7C73] mt-2 sm:mt-3 leading-relaxed">
             Authentic Dholpur sandstone extracted from our Dholpur quarries consistently exceeds both Indian Standards (IS 3622) and American Society for Testing and Materials (ASTM C616) requirements.
           </p>
         </div>
@@ -91,7 +91,7 @@ export default function StoneTechnicalSpecsTable() {
             <span className="text-[10px] sm:text-[11px] font-bold text-[#C5A15B] uppercase tracking-wider block mb-1">
               Compressive Strength
             </span>
-            <div className="text-xl sm:text-3xl font-bold font-['Cinzel',serif] text-[#123D32]">
+            <div className="text-xl sm:text-3xl font-bold font-heading text-[#123D32]">
               72.8 MPa
             </div>
             <p className="text-[10.5px] sm:text-xs text-[#6B7C73] mt-1 sm:mt-1.5 leading-snug">
@@ -103,7 +103,7 @@ export default function StoneTechnicalSpecsTable() {
             <span className="text-[10px] sm:text-[11px] font-bold text-[#C5A15B] uppercase tracking-wider block mb-1">
               Water Absorption
             </span>
-            <div className="text-xl sm:text-3xl font-bold font-['Cinzel',serif] text-[#123D32]">
+            <div className="text-xl sm:text-3xl font-bold font-heading text-[#123D32]">
               1.10% Max
             </div>
             <p className="text-[10.5px] sm:text-xs text-[#6B7C73] mt-1 sm:mt-1.5 leading-snug">
@@ -115,7 +115,7 @@ export default function StoneTechnicalSpecsTable() {
             <span className="text-[10px] sm:text-[11px] font-bold text-[#C5A15B] uppercase tracking-wider block mb-1">
               Wet Slip Rating
             </span>
-            <div className="text-xl sm:text-3xl font-bold font-['Cinzel',serif] text-[#123D32]">
+            <div className="text-xl sm:text-3xl font-bold font-heading text-[#123D32]">
               R11 / R12
             </div>
             <p className="text-[10.5px] sm:text-xs text-[#6B7C73] mt-1 sm:mt-1.5 leading-snug">
@@ -127,7 +127,7 @@ export default function StoneTechnicalSpecsTable() {
             <span className="text-[10px] sm:text-[11px] font-bold text-[#C5A15B] uppercase tracking-wider block mb-1">
               Mineral Density
             </span>
-            <div className="text-xl sm:text-3xl font-bold font-['Cinzel',serif] text-[#123D32]">
+            <div className="text-xl sm:text-3xl font-bold font-heading text-[#123D32]">
               2.52 g/cm³
             </div>
             <p className="text-[10.5px] sm:text-xs text-[#6B7C73] mt-1 sm:mt-1.5 leading-snug">
@@ -148,7 +148,7 @@ export default function StoneTechnicalSpecsTable() {
                 Laboratory physical test metrics for Dholpur sandstone compared against ASTM C616 and IS 3622
               </caption>
               <thead>
-                <tr className="bg-[#123D32] text-white font-['Cinzel',serif] uppercase tracking-wider text-[11px] sm:text-xs">
+                <tr className="bg-[#123D32] text-white font-heading uppercase tracking-wider text-[11px] sm:text-xs">
                   <th scope="col" className="py-4 px-4 sm:px-6 font-bold border-b border-white/10">
                     Physical Property
                   </th>

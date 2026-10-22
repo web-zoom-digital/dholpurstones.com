@@ -132,15 +132,15 @@ export default function ResourcesClient() {
 
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1E5A46]/25 border border-[#C5A15B]/40 mb-3">
             <BookOpen className="w-3 h-3 text-[#C5A15B]" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase">
+            <span className="font-heading text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase">
               KNOWLEDGE &bull; TESTING &bull; MACHINERY
             </span>
           </div>
 
-          <h1 className="font-['Cinzel',serif] text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wider text-white">
+          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wider text-white">
             Resources &amp; Technical Specifications
           </h1>
-          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/70 max-w-2xl mt-3 leading-relaxed">
+          <p className="font-body text-xs sm:text-sm text-white/70 max-w-2xl mt-3 leading-relaxed">
             In-depth engineering documentation, laboratory test certifications, machinery protocols, and architectural stone insights.
           </p>
         </div>
@@ -205,7 +205,7 @@ export default function ResourcesClient() {
               <span className="text-[10px] font-bold text-[#123D32] uppercase tracking-[0.2em] block mb-1">
                 IS:3620 LABORATORY ASSURANCE
               </span>
-              <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl font-bold text-[#1F2A24] uppercase">
+              <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[#1F2A24] uppercase">
                 Geotechnical &amp; Quality Control Protocols
               </h2>
               <p className="text-xs sm:text-sm text-[#6B7C73] mt-2 leading-relaxed">
@@ -219,7 +219,7 @@ export default function ResourcesClient() {
                 <div key={idx} className="bg-white p-6 rounded-2xl border border-black/8 shadow-2xs hover:shadow-md transition-all">
                   <div className="flex items-center gap-2 mb-3 text-[#123D32]">
                     <ShieldCheck className="w-5 h-5 text-[#123D32]" />
-                    <span className="font-['Cinzel',serif] text-sm font-bold text-[#1F2A24]">{item.label}</span>
+                    <span className="font-heading text-sm font-bold text-[#1F2A24]">{item.label}</span>
                   </div>
                   <p className="text-xs text-[#6B7C73] leading-relaxed">{item.desc}</p>
                 </div>
@@ -240,7 +240,7 @@ export default function ResourcesClient() {
               <span className="text-[10px] font-bold text-[#123D32] uppercase tracking-[0.2em] block mb-1">
                 STATE-OF-THE-ART FABRICATION
               </span>
-              <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl font-bold text-[#1F2A24] uppercase">
+              <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[#1F2A24] uppercase">
                 Packaging Protocol &amp; Automated Machinery
               </h2>
               <p className="text-xs sm:text-sm text-[#6B7C73] mt-2 leading-relaxed">
@@ -253,7 +253,7 @@ export default function ResourcesClient() {
               {machineryItems.map((item, idx) => (
                 <div key={idx} className="bg-white p-6 rounded-2xl border border-black/8 shadow-2xs hover:shadow-md transition-all">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="font-['Cinzel',serif] text-base font-bold text-[#1F2A24]">{item.title}</h3>
+                    <h3 className="font-heading text-base font-bold text-[#1F2A24]">{item.title}</h3>
                     <Cpu className="w-4 h-4 text-[#123D32]" />
                   </div>
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#123D32] bg-[#F7F4EB] px-2.5 py-1 rounded-md mb-3 inline-block">
@@ -273,7 +273,7 @@ export default function ResourcesClient() {
               <span className="text-[10px] font-bold text-[#123D32] uppercase tracking-[0.2em] block mb-1">
                 GLOBAL NATURAL STONE CONVENTIONS
               </span>
-              <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl font-bold text-[#1F2A24] uppercase">
+              <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[#1F2A24] uppercase">
                 International Stone Trade Exhibitions
               </h2>
               <p className="text-xs sm:text-sm text-[#6B7C73] mt-2 leading-relaxed">
@@ -289,7 +289,7 @@ export default function ResourcesClient() {
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#C5A15B] block mb-1">
                       {expo.location}
                     </span>
-                    <h3 className="font-['Cinzel',serif] text-base font-bold text-[#1F2A24] mb-2">{expo.name}</h3>
+                    <h3 className="font-heading text-base font-bold text-[#1F2A24] mb-2">{expo.name}</h3>
                     <span className="text-[11px] font-semibold text-[#123D32] block mb-3">{expo.role}</span>
                     <p className="text-xs text-[#6B7C73] leading-relaxed">{expo.highlight}</p>
                   </div>
@@ -306,7 +306,7 @@ export default function ResourcesClient() {
               <span className="text-[10px] font-bold text-[#123D32] uppercase tracking-[0.2em] block mb-1">
                 INDUSTRY KNOWLEDGE &amp; ARTICLES
               </span>
-              <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl font-bold text-[#1F2A24] uppercase">
+              <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[#1F2A24] uppercase">
                 Architectural Sandstone Blog
               </h2>
               <p className="text-xs sm:text-sm text-[#6B7C73] mt-2 leading-relaxed">
@@ -324,7 +324,7 @@ export default function ResourcesClient() {
                       </span>
                       <span>{post.readTime}</span>
                     </div>
-                    <h3 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-[#1F2A24] group-hover:text-[#123D32] transition-colors mb-3 leading-snug">
+                    <h3 className="font-heading text-sm sm:text-base font-bold text-[#1F2A24] group-hover:text-[#123D32] transition-colors mb-3 leading-snug">
                       {post.title}
                     </h3>
                     <p className="text-xs text-[#6B7C73] leading-relaxed mb-4">{post.desc}</p>
@@ -341,10 +341,10 @@ export default function ResourcesClient() {
       </section>
 
       {/* Bottom CTA Bar */}
-      <section className="bg-[#1F2A24] text-white py-12 border-t border-[#C5A15B]/20">
+      <section className="bg-forest-deep text-white py-12 border-t border-[#C5A15B]/20">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold">
+            <h3 className="font-heading text-xl sm:text-2xl font-bold">
               Require Certified Laboratory Test Certificates or BOQ Support?
             </h3>
             <p className="text-xs sm:text-sm text-white/70 mt-1 max-w-xl">

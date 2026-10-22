@@ -164,19 +164,19 @@ export default function BlogListClient() {
           {/* Eyebrow Tag */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C5A15B]/20 border border-[#C5A15B]/50 mb-4 backdrop-blur-md shadow-sm">
             {/* <Sparkles className="w-3.5 h-3.5 text-[#C5A15B]" /> */}
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.22em] uppercase">
+            <span className="font-heading text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.22em] uppercase">
               ARCHITECTURAL DOSSIER &bull; GEOTECHNICAL RESEARCH 
             </span>
           </div>
 
           {/* Main Hero Headline */}
-          <h1 className="font-['Cinzel',serif] text-3xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-wide text-white leading-[1.1] max-w-4xl drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]">
+          <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-wide text-white leading-[1.1] max-w-4xl drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]">
             The Natural Sandstone Journal
           </h1>
 
           {/* Subheading / Lineage */}
           <div className="mt-3 sm:mt-4">
-            <span className="font-['Cinzel',serif] font-bold text-[#C5A15B] tracking-[0.16em] uppercase text-sm sm:text-lg lg:text-xl drop-shadow-[0_0_20px_rgba(194,155,56,0.6)]">
+            <span className="font-heading font-bold text-[#C5A15B] tracking-[0.16em] uppercase text-sm sm:text-lg lg:text-xl drop-shadow-[0_0_20px_rgba(194,155,56,0.6)]">
               Quarry Science &bull; Shilpa Shastra &bull; Facade Engineering
             </span>
           </div>        
@@ -186,19 +186,19 @@ export default function BlogListClient() {
         <div className="relative z-10 bg-black/70 backdrop-blur-md border-t border-white/10 py-4 px-4">
           <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             <div className="flex flex-col items-center">
-              <span className="font-['Cinzel',serif] text-base sm:text-xl font-bold text-[#C5A15B]">20 In-Depth</span>
+              <span className="font-heading text-base sm:text-xl font-bold text-[#C5A15B]">20 In-Depth</span>
               <span className="text-[10px] sm:text-xs text-white/70 uppercase tracking-wider">Architectural Masterclasses</span>
             </div>
             <div className="flex flex-col items-center border-l border-white/10">
-              <span className="font-['Cinzel',serif] text-base sm:text-xl font-bold text-[#C5A15B]">&gt; 68.4 MPa</span>
+              <span className="font-heading text-base sm:text-xl font-bold text-[#C5A15B]">&gt; 68.4 MPa</span>
               <span className="text-[10px] sm:text-xs text-white/70 uppercase tracking-wider">Compressive Strength</span>
             </div>
             <div className="flex flex-col items-center border-l border-white/10">
-              <span className="font-['Cinzel',serif] text-base sm:text-xl font-bold text-[#C5A15B]">300+ Designs</span>
+              <span className="font-heading text-base sm:text-xl font-bold text-[#C5A15B]">300+ Designs</span>
               <span className="text-[10px] sm:text-xs text-white/70 uppercase tracking-wider">Front Elevation Portfolio</span>
             </div>
             <div className="flex flex-col items-center border-l border-white/10">
-              <span className="font-['Cinzel',serif] text-base sm:text-xl font-bold text-[#C5A15B]">Since 1953</span>
+              <span className="font-heading text-base sm:text-xl font-bold text-[#C5A15B]">Since 1953</span>
               <span className="text-[10px] sm:text-xs text-white/70 uppercase tracking-wider">Direct Quarry Concession</span>
             </div>
           </div>
@@ -253,7 +253,7 @@ export default function BlogListClient() {
 
                   <h2
                     onClick={() => openArticle(featuredPost)}
-                    className="font-['Cinzel',serif] text-xl sm:text-2xl lg:text-3xl font-bold text-[#1F2A24] group-hover:text-[#123D32] transition-colors leading-snug cursor-pointer"
+                    className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-[#1F2A24] group-hover:text-[#123D32] transition-colors leading-snug cursor-pointer"
                   >
                     {featuredPost.title}
                   </h2>
@@ -305,7 +305,7 @@ export default function BlogListClient() {
       <section id="articles-section" className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 scroll-mt-28">
         {selectedCategory === "All" && searchQuery === "" && (
           <div className="flex items-center justify-between mb-8 pb-3 border-b border-black/8">
-            <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold uppercase tracking-wide text-[#1F2A24]">
+            <h3 className="font-heading text-xl sm:text-2xl font-bold uppercase tracking-wide text-[#1F2A24]">
               All Architectural Guides &amp; Insights
             </h3>
             <span className="text-xs text-[#6B7C73] font-medium">
@@ -317,7 +317,7 @@ export default function BlogListClient() {
         {filteredPosts.length === 0 ? (
           <div className="text-center py-16 bg-white rounded-3xl border border-black/8 p-8">
             <BookOpen className="w-12 h-12 text-[#C5A15B] mx-auto mb-3" />
-            <h4 className="font-['Cinzel',serif] text-lg font-bold text-[#1F2A24]">
+            <h4 className="font-heading text-lg font-bold text-[#1F2A24]">
               No articles found matching &quot;{searchQuery}&quot;
             </h4>
             <p className="text-xs text-[#6B7C73] mt-1">
@@ -378,7 +378,7 @@ export default function BlogListClient() {
 
                     <h3
                       onClick={() => openArticle(post)}
-                      className="font-['Cinzel',serif] text-base sm:text-lg font-bold text-[#1F2A24] group-hover:text-[#123D32] transition-colors leading-snug line-clamp-2 cursor-pointer"
+                      className="font-heading text-base sm:text-lg font-bold text-[#1F2A24] group-hover:text-[#123D32] transition-colors leading-snug line-clamp-2 cursor-pointer"
                     >
                       {post.title}
                     </h3>
@@ -409,7 +409,7 @@ export default function BlogListClient() {
                 <Sparkles className="w-4 h-4" />
                 <span>DIRECT QUARRY CONSULTATION &bull; SIKA  NDRA &bull; DHOLPUR</span>
               </div>
-              <h3 className="font-['Cinzel',serif] text-2xl sm:text-3xl font-bold leading-tight">
+              <h3 className="font-heading text-2xl sm:text-3xl font-bold leading-tight">
                 Specifying Natural Sandstone for Your Next Architectural Project?
               </h3>
               <p className="text-xs sm:text-sm text-white/70 mt-2 max-w-2xl leading-relaxed">
@@ -455,7 +455,7 @@ export default function BlogListClient() {
                 <span className="px-2.5 py-0.5 rounded-full bg-[#123D32] text-white text-[10px] font-bold uppercase tracking-wider shrink-0">
                   {activeArticle.category}
                 </span>
-                <span className="text-xs text-white/80 truncate font-['Cinzel',serif] hidden sm:inline">
+                <span className="text-xs text-white/80 truncate font-heading hidden sm:inline">
                   {activeArticle.title}
                 </span>
               </div>
@@ -529,7 +529,7 @@ export default function BlogListClient() {
                   </span>
                 </div>
 
-                <h1 className="font-['Cinzel',serif] text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1F2A24] leading-tight">
+                <h1 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1F2A24] leading-tight">
                   {activeArticle.title}
                 </h1>
                 <p className="text-xs sm:text-sm text-[#6B7C73] mt-3 leading-relaxed">
@@ -542,7 +542,7 @@ export default function BlogListClient() {
                 <div className="absolute top-0 left-0 w-2 h-full bg-[#C5A15B]" />
                 <div className="flex items-center gap-2 text-[#123D32] mb-3">
                   <Sparkles className="w-4 h-4 text-[#C5A15B]" />
-                  <h3 className="font-['Cinzel',serif] text-sm sm:text-base font-bold uppercase tracking-wide text-[#1F2A24]">
+                  <h3 className="font-heading text-sm sm:text-base font-bold uppercase tracking-wide text-[#1F2A24]">
                     Executive Summary &bull; Key Takeaways
                   </h3>
                 </div>
@@ -564,7 +564,7 @@ export default function BlogListClient() {
               {/* Full Content Sections */}
               {activeArticle.content.sections.map((section) => (
                 <section key={section.id} className="space-y-3 pt-4 border-t border-black/8">
-                  <h3 className="font-['Cinzel',serif] text-lg sm:text-xl font-bold text-[#1F2A24]">
+                  <h3 className="font-heading text-lg sm:text-xl font-bold text-[#1F2A24]">
                     {section.heading}
                   </h3>
 
@@ -599,7 +599,7 @@ export default function BlogListClient() {
                     <div className="overflow-x-auto my-4 bg-white rounded-xl border border-black/8 shadow-2xs">
                       <table className="w-full text-left text-xs">
                         {section.table.caption && (
-                          <caption className="p-2.5 text-left font-['Cinzel',serif] font-bold text-xs text-[#1F2A24] bg-[#F7F4EB] border-b border-black/6">
+                          <caption className="p-2.5 text-left font-heading font-bold text-xs text-[#1F2A24] bg-[#F7F4EB] border-b border-black/6">
                             {section.table.caption}
                           </caption>
                         )}
@@ -646,7 +646,7 @@ export default function BlogListClient() {
 
               {/* Conclusion */}
               <div className="bg-[#F7F4EB] border border-black/8 p-5 sm:p-6 rounded-2xl space-y-2">
-                <h4 className="font-['Cinzel',serif] text-base font-bold text-[#1F2A24] uppercase">
+                <h4 className="font-heading text-base font-bold text-[#1F2A24] uppercase">
                   Concluding Remarks
                 </h4>
                 <p className="text-xs sm:text-sm text-[#6B7C73] leading-relaxed">
@@ -658,7 +658,7 @@ export default function BlogListClient() {
               <div className="space-y-3 pt-4 border-t border-black/8">
                 <div className="flex items-center gap-2 mb-2">
                   <HelpCircle className="w-4 h-4 text-[#C5A15B]" />
-                  <h4 className="font-['Cinzel',serif] text-base sm:text-lg font-bold uppercase tracking-wide text-[#1F2A24]">
+                  <h4 className="font-heading text-base sm:text-lg font-bold uppercase tracking-wide text-[#1F2A24]">
                     Frequently Asked Questions
                   </h4>
                 </div>
@@ -673,7 +673,7 @@ export default function BlogListClient() {
                       <button
                         type="button"
                         onClick={() => setOpenFaq(isOpen ? null : idx)}
-                        className="w-full flex items-center justify-between p-3.5 text-left font-['Cinzel',serif] text-xs font-bold text-[#1F2A24] hover:text-[#123D32] cursor-pointer"
+                        className="w-full flex items-center justify-between p-3.5 text-left font-heading text-xs font-bold text-[#1F2A24] hover:text-[#123D32] cursor-pointer"
                       >
                         <span>{faq.question}</span>
                         <ChevronDown

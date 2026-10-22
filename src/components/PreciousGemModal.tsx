@@ -51,7 +51,7 @@ export default function PreciousGemModal({ product, onClose }: PreciousGemModalP
         <div className="sticky top-0 bg-white/95 backdrop-blur-md px-6 py-4 border-b border-black/8 flex items-center justify-between z-20">
           <div className="flex items-center gap-2.5">
             <span className="w-2.5 h-2.5 rounded-full bg-[#C5A15B]" />
-            <h3 className="font-['Cinzel',serif] text-base sm:text-lg font-bold uppercase tracking-wider text-[#1F2A24]">
+            <h3 className="font-heading text-base sm:text-lg font-bold uppercase tracking-wider text-[#1F2A24]">
               {product.name}
             </h3>
             <span className="hidden sm:inline-block text-[11px] font-semibold text-[#6B7C73] bg-[#F7F4EB] px-2.5 py-0.5 rounded-full border border-black/6">

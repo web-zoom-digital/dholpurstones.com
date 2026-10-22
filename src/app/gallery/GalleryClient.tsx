@@ -295,15 +295,15 @@ export default function GalleryClient() {
 
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1E5A46]/25 border border-[#C5A15B]/40 mb-3">
             <Camera className="w-3 h-3 text-[#C5A15B]" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase">
+            <span className="font-heading text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase">
               VISUAL EVIDENCE &bull; MINES &bull; PROJECTS
             </span>
           </div>
 
-          <h1 className="font-['Cinzel',serif] text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wider text-white">
+          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wider text-white">
             Media, Photo &amp; Video Gallery
           </h1>
-          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/70 max-w-2xl mt-3 leading-relaxed">
+          <p className="font-body text-xs sm:text-sm text-white/70 max-w-2xl mt-3 leading-relaxed">
             High-resolution visual archives of active Dholpur quarry benches, factory fabrication yards, master sculptor ateliers, and national monumental projects.
           </p>
         </div>
@@ -368,7 +368,7 @@ export default function GalleryClient() {
               onClick={() => setActivePreview(item)}
               className="bg-white rounded-2xl border border-black/8 overflow-hidden shadow-2xs hover:shadow-xl hover:border-[#123D32]/50 transition-all duration-300 flex flex-col cursor-pointer group"
             >
-              <div className="relative aspect-[16/10] w-full bg-[#1F2A24] overflow-hidden">
+              <div className="relative aspect-[16/10] w-full bg-forest-deep overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -399,7 +399,7 @@ export default function GalleryClient() {
 
               <div className="p-5 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="font-['Cinzel',serif] text-base sm:text-lg font-bold text-[#1F2A24] group-hover:text-[#123D32] transition-colors leading-snug">
+                  <h3 className="font-heading text-base sm:text-lg font-bold text-[#1F2A24] group-hover:text-[#123D32] transition-colors leading-snug">
                     {item.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-[#6B7C73] mt-2 line-clamp-2 leading-relaxed">
@@ -455,7 +455,7 @@ export default function GalleryClient() {
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#123D32] bg-[#F7F4EB] px-2.5 py-1 rounded-md inline-block mb-2">
                   {activePreview.tag}
                 </span>
-                <h3 className="font-['Cinzel',serif] text-xl font-bold text-[#1F2A24]">
+                <h3 className="font-heading text-xl font-bold text-[#1F2A24]">
                   {activePreview.title}
                 </h3>
               </div>
@@ -471,7 +471,7 @@ export default function GalleryClient() {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-2.5 px-5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-sm transition-transform active:scale-95"
+                  className="py-2.5 px-5 rounded-full bg-[#25D366] hover:bg-[#1fb957] text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-sm transition-transform active:scale-95"
                 >
                   <WhatsAppIcon className="w-4 h-4 fill-white" size={16} />
                   <span>Inquire via WhatsApp</span>
@@ -491,10 +491,10 @@ export default function GalleryClient() {
       )}
 
       {/* Bottom CTA Bar */}
-      <section className="bg-[#1F2A24] text-white py-12 border-t border-[#C5A15B]/20">
+      <section className="bg-forest-deep text-white py-12 border-t border-[#C5A15B]/20">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold">
+            <h3 className="font-heading text-xl sm:text-2xl font-bold">
               Looking for High-Resolution Project Swatches &amp; CAD References?
             </h3>
             <p className="text-xs sm:text-sm text-white/70 mt-1 max-w-xl">

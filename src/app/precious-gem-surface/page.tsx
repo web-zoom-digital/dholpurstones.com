@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import PageHero from "@/components/ui/PageHero";
+import Button from "@/components/ui/Button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -28,79 +30,16 @@ export default function PreciousGemSurfacePage() {
       {/* ═══════════════════════════════════════════════════════════════
           HERO SECTION (Matching Semi-Precious Stone Style)
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden">
-        {/* Hero background image from /precious-gem-surface */}
-        <div className="absolute inset-0">
-          <Image
-            src="/precious-gem-surface/page_062_BLACK_OBSIDIAN_image_02.jpeg"
-            alt="Precious Gem Surface Collection – Dholpurestones"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-          {/* Multi-layer overlay for text legibility */}
-        </div>
-
-        {/* Floating ambient particles */}
-        <div className="absolute top-20 left-20 w-3 h-3 rounded-full bg-[#C5A15B]/40 animate-pulse" />
-        <div
-          className="absolute top-40 right-32 w-2 h-2 rounded-full bg-[#C5A15B]/30 animate-pulse"
-          style={{ animationDelay: "0.8s" }}
-        />
-        <div
-          className="absolute bottom-48 right-16 w-4 h-4 rounded-full bg-[#C5A15B]/20 animate-pulse"
-          style={{ animationDelay: "1.4s" }}
-        />
-
-        {/* Hero content - Centered */}
-        <div className="relative z-10 max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col items-center text-center">
-
-          {/* Category pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C5A15B]/20 border border-[#C5A15B]/40 backdrop-blur-sm mb-5">
-            <Gem className="w-3.5 h-3.5 text-[#C5A15B]" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.22em] uppercase">
-              EXCLUSIVE LAPIDARY GEMSTONE COLLECTION
-            </span>
-          </div>
-
-          <h1 className="font-['Cinzel',serif] text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-wide text-white mb-5 leading-[1.1] text-center">
-            Precious Gem<br />
-            <span className="text-[#C5A15B]">Surface Gallery</span>
-          </h1>
-
-          <p className="font-['EB_Garamond',serif] text-lg sm:text-2xl text-white/85 max-w-2xl leading-relaxed mb-8 font-medium text-center mx-auto">
-            Rare hand-assembled agate, lapis lazuli, obsidian, malachite and quartz gemstone slabs for extraordinary backlit feature walls, luxury counters, and bespoke architectural installations.
-          </p>
-
-          {/* Hero stat pills */}
-          <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
-            {[
-              { val: `${preciousGemProducts.length}`, label: "Gemstone Varieties" },
-              { val: "400+", label: "Collection Photos" },
-              { val: "100%", label: "Natural Origin" },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2"
-              >
-                <span className="font-['Cinzel',serif] text-base font-bold text-[#C5A15B]">
-                  {stat.val}
-                </span>
-                <span className="text-[11px] text-white/70 font-semibold uppercase tracking-wider">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom curve separator */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-16 bg-[#F7F4EB]"
-          style={{ clipPath: "ellipse(55% 100% at 50% 100%)" }}
-        />
-      </section>
+      <PageHero
+        eyebrow="Exclusive Collection"
+        title="Precious Gem"
+        accent="Surfaces"
+        description="Backlit gemstone slabs, tabletops, basins and décor — each piece crafted to order."
+        image="/precious-gem-surface/page_062_BLACK_OBSIDIAN_image_02.jpeg"
+        crumbs={[{ label: "Products", href: "/products" }, { label: "Exclusive & Imported", href: "/exclusive-imported" }, { label: "Precious Gem Surfaces" }]}
+      >
+        <Button href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20a%20quote%20for%20precious%20gem%20surfaces." variant="gold" size="lg">Get a Quote</Button>
+      </PageHero>
 
       {/* ═══════════════════════════════════════════════════════════════
           GALLERY GRID: EXACTLY 3 PRODUCT CARDS PER ROW ON DESKTOP
@@ -150,7 +89,7 @@ export default function PreciousGemSurfacePage() {
 
               {/* Product Name as Heading */}
               <div className="pt-2.5 pb-0.5 px-1 text-center">
-                <h3 className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#1F2A24] uppercase tracking-wide group-hover:text-[#123D32] transition-colors line-clamp-1">
+                <h3 className="font-heading text-xs sm:text-sm font-bold text-[#1F2A24] uppercase tracking-wide group-hover:text-[#123D32] transition-colors line-clamp-1">
                   {product.name}
                 </h3>
               </div>

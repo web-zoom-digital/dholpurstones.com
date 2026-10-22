@@ -55,15 +55,15 @@ export default function PrivacyPolicyPage() {
 
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C5A15B]/15 border border-[#C5A15B]/30 mb-3">
             <ShieldCheck className="w-3.5 h-3.5 text-[#C5A15B]" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase">
+            <span className="font-heading text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase">
               DATA PRIVACY &amp; COMPLIANCE
             </span>
           </div>
 
-          <h1 className="font-['Cinzel',serif] text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wider text-white">
+          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wider text-white">
             Privacy Policy
           </h1>
-          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/70 max-w-2xl mt-3 leading-relaxed">
+          <p className="font-body text-xs sm:text-sm text-white/70 max-w-2xl mt-3 leading-relaxed">
             Effective Date: October 21, 2026. This policy governs how Dholpurestones.com collects, processes, and protects personal data provided by visitors, architects, project contractors, and international stone importers.
           </p>
         </div>
@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
       {/* Policy Content */}
       <section className="max-w-[960px] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-10 text-sm sm:text-base leading-relaxed text-[#1F2A24]/85">
         <div>
-          <h2 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#123D32] mb-3">
+          <h2 className="font-heading text-xl sm:text-2xl font-bold text-[#123D32] mb-3">
             1. Corporate Identification &amp; Data Controller
           </h2>
           <p>
@@ -81,7 +81,7 @@ export default function PrivacyPolicyPage() {
         </div>
 
         <div>
-          <h2 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#123D32] mb-3">
+          <h2 className="font-heading text-xl sm:text-2xl font-bold text-[#123D32] mb-3">
             2. Personal Information Collected
           </h2>
           <p className="mb-3">
@@ -95,7 +95,7 @@ export default function PrivacyPolicyPage() {
         </div>
 
         <div>
-          <h2 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#123D32] mb-3">
+          <h2 className="font-heading text-xl sm:text-2xl font-bold text-[#123D32] mb-3">
             3. Purpose of Data Processing
           </h2>
           <p className="mb-3">
@@ -110,7 +110,7 @@ export default function PrivacyPolicyPage() {
         </div>
 
         <div>
-          <h2 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#123D32] mb-3">
+          <h2 className="font-heading text-xl sm:text-2xl font-bold text-[#123D32] mb-3">
             4. Non-Disclosure &amp; Information Security
           </h2>
           <p>
@@ -119,7 +119,7 @@ export default function PrivacyPolicyPage() {
         </div>
 
         <div>
-          <h2 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#123D32] mb-3">
+          <h2 className="font-heading text-xl sm:text-2xl font-bold text-[#123D32] mb-3">
             5. Cookies and Web Analytics
           </h2>
           <p>
@@ -128,7 +128,7 @@ export default function PrivacyPolicyPage() {
         </div>
 
         <div>
-          <h2 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#123D32] mb-3">
+          <h2 className="font-heading text-xl sm:text-2xl font-bold text-[#123D32] mb-3">
             6. Direct Communications &amp; Rights
           </h2>
           <p>

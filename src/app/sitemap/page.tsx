@@ -77,6 +77,11 @@ const sitemapData: SitemapGroup[] = [
         description: "Dholpur Sandstone (Red, Pink, Beige, Chocolate), calibrated paving tiles, CNC 3D panels, imported marble, and granite.",
         badge: "Direct Quarry Owner",
       },
+      { title: "Dholpur Sandstone", href: "/sandstone", description: "Agra Red, Dholpur Beige, Dholpur Pink and Dholpur Chocolate sandstone." },
+      { title: "Marble Collection", href: "/marble", description: "Beige marble, white marble and grey marble in slabs and tiles." },
+      { title: "Stone Articles", href: "/articles", description: "Hand-carved sculptures, lanterns, fountains and relief panels." },
+      { title: "Semi-Precious Stones", href: "/semi-precious", description: "Agate, lapis lazuli, jasper and tiger's eye slabs." },
+      { title: "Exclusive & Imported", href: "/exclusive-imported", description: "Imported exotic marble and precious gem surfaces." },
     ],
   },
   {
@@ -222,15 +227,15 @@ export default function SitemapPage() {
 
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C5A15B]/15 border border-[#C5A15B]/30 mb-3">
               <Compass className="w-3 h-3 text-[#C5A15B]" />
-              <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase">
+              <span className="font-heading text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase">
                 COMPLETE SITE DIRECTORY &bull; CRAWLER INDEX
               </span>
             </div>
 
-            <h1 className="font-['Cinzel',serif] text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wider text-white">
+            <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wider text-white">
               Website Index &amp; Directory
             </h1>
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/70 max-w-2xl mt-3 leading-relaxed">
+            <p className="font-body text-xs sm:text-sm text-white/70 max-w-2xl mt-3 leading-relaxed">
               Explore the entire architecture of Dholpurestones.com. Access material catalogs, landmark portfolios,
               laboratory test reports, contact points, and machine-readable data feeds.
             </p>
@@ -252,7 +257,7 @@ export default function SitemapPage() {
                       <div className="w-9 h-9 rounded-xl bg-[#F7F4EB] border border-black/6 flex items-center justify-center text-[#123D32]">
                         <IconComp className="w-4 h-4 text-[#C5A15B]" />
                       </div>
-                      <h2 className="font-['Cinzel',serif] text-lg sm:text-xl font-bold text-[#1F2A24] uppercase tracking-wide">
+                      <h2 className="font-heading text-lg sm:text-xl font-bold text-[#1F2A24] uppercase tracking-wide">
                         {group.category}
                       </h2>
                     </div>
@@ -268,7 +273,7 @@ export default function SitemapPage() {
                             className="group block"
                           >
                             <div className="flex items-center justify-between gap-2">
-                              <span className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-[#1F2A24] group-hover:text-[#123D32] transition-colors">
+                              <span className="font-heading text-sm sm:text-base font-bold text-[#1F2A24] group-hover:text-[#123D32] transition-colors">
                                 {link.title}
                               </span>
                               {link.badge && (

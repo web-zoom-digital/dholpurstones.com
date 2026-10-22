@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import AnimDiv from "@/components/ui/AnimDiv";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -11,37 +12,6 @@ import {
   LuX as X,
 } from "react-icons/lu";
 
-function AnimDiv({
-  children,
-  className = "",
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) {
-          setTimeout(() => el.classList.add("gcl-visible"), delay);
-          obs.unobserve(el);
-        }
-      },
-      { threshold: 0.06 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [delay]);
-  return (
-    <div ref={ref} className={`gcl-animate ${className}`}>
-      {children}
-    </div>
-  );
-}
 
 const whiteSeriesImages = [
   { id: "affilento-white", name: "Affilento White", src: "/white-series-dolphur-color/affilento-white.png" },
@@ -116,7 +86,7 @@ export default function WhiteSeriesProductPage() {
             className="object-cover object-center"
           />
           {/* Multi-layer overlay for text legibility */}
-          <div className="absolute inset-0 bg-black/45 bg-gradient-to-t from-[#0D1A14]/90 via-[#0D1A14]/40 to-[#0D1A14]/30" />
+          <div className="absolute inset-0 bg-black/45 bg-gradient-to-t from-[#0B2A22]/90 via-[#0B2A22]/40 to-[#0B2A22]/30" />
         </div>
 
         {/* Floating ambient particles */}
@@ -135,17 +105,17 @@ export default function WhiteSeriesProductPage() {
           {/* Category pill */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C5A15B]/20 border border-[#C5A15B]/40 backdrop-blur-sm mb-5">
             <Sparkles className="w-3.5 h-3.5 text-[#C5A15B]" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.22em] uppercase">
+            <span className="font-heading text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.22em] uppercase">
               EXCLUSIVE WHITE SERIES COLLECTION
             </span>
           </div>
 
-          <h1 className="font-['Cinzel',serif] text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-wide text-white mb-5 leading-[1.1] text-center">
+          <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-wide text-white mb-5 leading-[1.1] text-center">
             White Series<br />
             <span className="text-[#C5A15B]">Dholpur Color</span>
           </h1>
 
-          <p className="font-['EB_Garamond',serif] text-lg sm:text-2xl text-white/85 max-w-2xl leading-relaxed mb-8 font-medium text-center mx-auto">
+          <p className="font-body text-lg sm:text-2xl text-white/85 max-w-2xl leading-relaxed mb-8 font-medium text-center mx-auto">
             Luminous natural white marble, statuario, and crystalline quartz slabs for palatial interiors, bookmatched feature walls, and luxury architectural statements.
           </p>
 
@@ -160,7 +130,7 @@ export default function WhiteSeriesProductPage() {
                 key={stat.label}
                 className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2"
               >
-                <span className="font-['Cinzel',serif] text-base font-bold text-[#C5A15B]">
+                <span className="font-heading text-base font-bold text-[#C5A15B]">
                   {stat.val}
                 </span>
                 <span className="text-[11px] text-white/70 font-semibold uppercase tracking-wider">
@@ -240,7 +210,7 @@ export default function WhiteSeriesProductPage() {
             <div className="bg-white/95 px-5 py-3.5 border-b border-black/8 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#C5A15B]" />
-                <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold uppercase tracking-wider text-[#1F2A24]">
+                <span className="font-heading text-xs sm:text-sm font-bold uppercase tracking-wider text-[#1F2A24]">
                   {selectedImage.name}
                 </span>
               </div>

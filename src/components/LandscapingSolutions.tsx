@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import AnimDiv from "@/components/ui/AnimDiv";
 import Image from "next/image";
 import {
   LuSparkles as Sparkles,
@@ -21,37 +22,6 @@ import {
 } from "react-icons/lu";
 import WhatsAppIcon from "./WhatsAppIcon";
 
-function AnimDiv({
-  children,
-  className = "",
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) {
-          setTimeout(() => el.classList.add("gcl-visible"), delay);
-          obs.unobserve(el);
-        }
-      },
-      { threshold: 0.08 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [delay]);
-  return (
-    <div ref={ref} className={`gcl-animate ${className}`}>
-      {children}
-    </div>
-  );
-}
 
 interface LandscapeItem {
   id: string;
@@ -99,7 +69,7 @@ const landscapeSolutions: LandscapeItem[] = [
     title: "Calibrated Sandstone Flagstones & Paving",
     tag: "High Footfall & Anti-Slip",
     subtitle: "Natural Cleft & Flamed Finish Patio Pavers",
-    image: "/sandstone/mint-sandstone.jpeg",
+    image: "/assets/landscaping/landscape_patio_paving.jpg",
     provenance: "Direct Sarmathura Quarry Leases",
     desc: "Naturally slip-resistant sandstone flagstones with hand-dressed or machine-sawn edges, tailored for expansive villa patios, garden walkways, open-air courtyards, and palatial terraces. Retains a pleasant cool surface even under intense summer sunlight.",
     idealFor: "Luxury Villa Patios, Hotel Walkways, Heritage Courtyards, Terrace Gardens",
@@ -284,11 +254,11 @@ export default function LandscapingSolutions() {
         <AnimDiv className="flex items-center justify-between pb-3 border-b border-black/8 mb-8 sm:mb-10">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#C5A15B]" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#1F2A24] uppercase">
+            <span className="font-heading text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#1F2A24] uppercase">
               DHOLPURESTONES &bull; HARDSCAPE &amp; PAVING DIVISION
             </span>
           </div>
-          <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest uppercase">
+          <span className="font-heading text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest uppercase">
             LANDSCAPE MASONRY
           </span>
         </AnimDiv>
@@ -297,16 +267,16 @@ export default function LandscapingSolutions() {
         <AnimDiv delay={40} className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#123D32]/10 border border-[#123D32]/20 mb-3.5 shadow-2xs">
             <Ruler className="w-3.5 h-3.5 text-[#123D32]" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#123D32] tracking-[0.2em] uppercase">
+            <span className="font-heading text-[10px] sm:text-xs font-bold text-[#123D32] tracking-[0.2em] uppercase">
               CALIBRATED PAVING, POOL DECKS &amp; HARDSCAPE MASONRY
             </span>
           </div>
 
-          <h2 className="font-['Cinzel',serif] font-bold text-[#1F2A24] uppercase tracking-[0.05em] leading-[1.18] text-2xl sm:text-3xl lg:text-4xl">
+          <h2 className="font-heading font-bold text-[#1F2A24] uppercase tracking-[0.05em] leading-[1.18] text-2xl sm:text-3xl lg:text-4xl">
             Architectural Sandstone Paving, Flagstones &amp; Landscape Hardscapes
           </h2>
 
-          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] mt-3 sm:mt-4 leading-relaxed font-medium">
+          <p className="font-body text-xs sm:text-sm text-[#6B7C73] mt-3 sm:mt-4 leading-relaxed font-medium">
             Heavy-duty outdoor stone engineering for luxury villa courtyards, estate driveways, and swimming pool decks.
             Featuring Class R11 non-slip calibrated flagstones (+/-1mm), drop-face pool copings, monolithic stepped blocks,
             hand-chiseled cobblestones, and ornate garden gazebos direct from Dholpur quarries.
@@ -347,7 +317,7 @@ export default function LandscapingSolutions() {
               {/* Media Card Preview */}
               <div
                 onClick={() => setActiveModal(item)}
-                className="relative aspect-[16/9.5] w-full overflow-hidden bg-[#1F2A24] cursor-pointer"
+                className="relative aspect-[16/9.5] w-full overflow-hidden bg-forest-deep cursor-pointer"
               >
                 <Image
                   src={item.image}
@@ -378,7 +348,7 @@ export default function LandscapingSolutions() {
                   <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#C5A15B] block mb-0.5">
                     {item.subtitle}
                   </span>
-                  <h3 className="font-['Cinzel',serif] text-base sm:text-lg font-bold leading-snug drop-shadow-sm">
+                  <h3 className="font-heading text-base sm:text-lg font-bold leading-snug drop-shadow-sm">
                     {item.title}
                   </h3>
                 </div>
@@ -439,7 +409,7 @@ export default function LandscapingSolutions() {
                     href={`https://wa.me/919414945457?text=${encodeURIComponent(item.waMsg)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="py-2.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all shadow-xs active:scale-95"
+                    className="py-2.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#1fb957] text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all shadow-xs active:scale-95"
                     title="Inquire on WhatsApp"
                   >
                     <WhatsAppIcon className="w-4 h-4 fill-white" size={16} />
@@ -459,7 +429,7 @@ export default function LandscapingSolutions() {
             <span className="text-[10px] font-bold text-[#C5A15B] uppercase tracking-[0.22em] block mb-1">
               ENGINEERED FOR LANDSCAPE PROFESSIONALS
             </span>
-            <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#1F2A24] uppercase tracking-wider">
+            <h3 className="font-heading text-xl sm:text-2xl font-bold text-[#1F2A24] uppercase tracking-wider">
               Trusted by Architects, Builders &amp; Landscapers
             </h3>
           </div>
@@ -482,7 +452,7 @@ export default function LandscapingSolutions() {
                       </span>
                     </div>
 
-                    <h4 className="font-['Cinzel',serif] text-base font-bold text-[#1F2A24] uppercase tracking-wider mb-2">
+                    <h4 className="font-heading text-base font-bold text-[#1F2A24] uppercase tracking-wider mb-2">
                       {pillar.title}
                     </h4>
 
@@ -521,10 +491,10 @@ export default function LandscapingSolutions() {
                 <ShieldCheck className="w-3.5 h-3.5 text-[#C5A15B]" />
                 <span>Direct Quarry Concessionaire Leases &bull; Dholpur</span>
               </div>
-              <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl lg:text-3xl font-bold uppercase tracking-wider text-white mb-3">
+              <h3 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold uppercase tracking-wider text-white mb-3">
                 Have a Commercial or Private Landscaping Project?
               </h3>
-              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/80 leading-relaxed max-w-2xl">
+              <p className="font-body text-xs sm:text-sm text-white/80 leading-relaxed max-w-2xl">
                 Send your landscape architectural drawings, BOQ, or CAD files directly to our factory.
                 We provide custom thickness calibration, bespoke radial coping stone, monolithic garden
                 steps, and insured containerized shipments worldwide.
@@ -551,7 +521,7 @@ export default function LandscapingSolutions() {
                 href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20have%20a%20landscaping%20project%20and%20would%20like%20to%20request%20factory%20quotation%20and%20stone%20samples."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-3.5 px-6 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-lg transition-transform active:scale-95"
+                className="flex-1 py-3.5 px-6 rounded-full bg-[#25D366] hover:bg-[#1fb957] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-lg transition-transform active:scale-95"
               >
                 <WhatsAppIcon className="w-4 h-4 fill-white" size={18} />
                 <span>WhatsApp Stone Inquiry</span>
@@ -582,7 +552,7 @@ export default function LandscapingSolutions() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="relative aspect-[16/9] w-full bg-[#1F2A24]">
+            <div className="relative aspect-[16/9] w-full bg-forest-deep">
               <Image
                 src={activeModal.image}
                 alt={activeModal.title}
@@ -605,7 +575,7 @@ export default function LandscapingSolutions() {
                 <span className="text-[10px] font-bold text-[#C5A15B] tracking-widest uppercase block mb-1">
                   {activeModal.subtitle} &bull; {activeModal.provenance}
                 </span>
-                <h3 className="font-['Cinzel',serif] text-lg sm:text-2xl font-bold leading-tight">
+                <h3 className="font-heading text-lg sm:text-2xl font-bold leading-tight">
                   {activeModal.title}
                 </h3>
               </div>
@@ -672,7 +642,7 @@ export default function LandscapingSolutions() {
                   href={`https://wa.me/919414945457?text=${encodeURIComponent(activeModal.waMsg)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:flex-1 py-3 px-5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all active:scale-95"
+                  className="w-full sm:flex-1 py-3 px-5 rounded-full bg-[#25D366] hover:bg-[#1fb957] text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all active:scale-95"
                 >
                   <WhatsAppIcon className="w-4 h-4 fill-white" size={16} />
                   <span>Inquire on WhatsApp (+91 94149 45457)</span>

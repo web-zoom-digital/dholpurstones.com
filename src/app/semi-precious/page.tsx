@@ -1,8 +1,11 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import AnimDiv from "@/components/ui/AnimDiv";
 import Image from "next/image";
 import Link from "next/link";
+import PageHero from "@/components/ui/PageHero";
+import Button from "@/components/ui/Button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -21,37 +24,6 @@ import {
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 /* ─── Animation Helper ──────────────────────────────────────────────────── */
-function AnimDiv({
-  children,
-  className = "",
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) {
-          setTimeout(() => el.classList.add("gcl-visible"), delay);
-          obs.unobserve(el);
-        }
-      },
-      { threshold: 0.07 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [delay]);
-  return (
-    <div ref={ref} className={`gcl-animate ${className}`}>
-      {children}
-    </div>
-  );
-}
 
 /* ─── Stone Data ─────────────────────────────────────────────────────────── */
 const stones = [
@@ -320,66 +292,22 @@ export default function SemiPreciousPage() {
       {/* ═══════════════════════════════════════════════════════════════
           HERO SECTION (Full window size)
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden">
-        {/* Hero background image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/semi-precious/tiger-eyes.jpeg"
-            alt="Semi Precious Gemstone Slabs – Dholpurestones"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-          {/* Multi-layer overlay for text legibility */}
-          <div className="absolute inset-0 bg-black/45 bg-gradient-to-t from-[#0D1A14]/90 via-[#0D1A14]/40 to-[#0D1A14]/30" />
-        </div>
-
-        {/* Floating ambient particles */}
-        <div className="absolute top-20 left-20 w-3 h-3 rounded-full bg-[#C5A15B]/40 animate-pulse" />
-        <div className="absolute top-40 right-32 w-2 h-2 rounded-full bg-[#C5A15B]/30 animate-pulse" style={{ animationDelay: "0.8s" }} />
-        <div className="absolute bottom-48 right-16 w-4 h-4 rounded-full bg-[#C5A15B]/20 animate-pulse" style={{ animationDelay: "1.4s" }} />
-
-        {/* Hero content - Centered */}
-        <div className="relative z-10 max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col items-center text-center">
-          {/* Category pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C5A15B]/20 border border-[#C5A15B]/40 backdrop-blur-sm mb-5">
-            <Gem className="w-3.5 h-3.5 text-[#C5A15B]" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.22em] uppercase">
-              EXCLUSIVE LAPIDARY GEMSTONE COLLECTION
-            </span>
-          </div>
-
-          <h1 className="font-['Cinzel',serif] text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-wide text-white mb-5 leading-[1.1] text-center">
-            Semi-Precious<br />
-            <span className="text-[#C5A15B]">Gemstone Slabs</span>
-          </h1>
-
-          <p className="font-['EB_Garamond',serif] text-lg sm:text-2xl text-white/85 max-w-2xl leading-relaxed mb-8 font-medium text-center mx-auto">
-            Rare hand-assembled agate, lapis lazuli, jasper and tiger&apos;s eye gemstone slabs for extraordinary backlit feature walls, luxury counters, and Pietra Dura art installations.
-          </p>
-
-          {/* Hero stat pills */}
-          <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
-            {[
-              { val: "9", label: "Gemstone Varieties" },
-              { val: "4K", label: "Photo Quality" },
-              { val: "100%", label: "Natural Origin" },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2"
-              >
-                <span className="font-['Cinzel',serif] text-base font-bold text-[#C5A15B]">{stat.val}</span>
-                <span className="text-[11px] text-white/70 font-semibold uppercase tracking-wider">{stat.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom curve separator */}
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-[#F7F4EB]" style={{ clipPath: "ellipse(55% 100% at 50% 100%)" }} />
-      </section>
+      <PageHero
+        eyebrow="Natural Gemstone Slabs"
+        title="Semi-Precious"
+        accent="Stones"
+        description="Agate, lapis lazuli, jasper and tiger's eye — translucent slabs and feature panels that glow when backlit."
+        image="/semi-precious/blue-agate.jpeg"
+        crumbs={[{ label: "Products", href: "/products" }, { label: "Semi-Precious Stones" }]}
+        stats={[
+          { value: "9", label: "Gemstones" },
+          { value: "100%", label: "Natural" },
+          { value: "Custom", label: "Sizes" },
+        ]}
+      >
+        <Button href="#collection" variant="gold" size="lg">View Collection</Button>
+        <Button href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20a%20quote%20for%20semi-precious%20stones." variant="outline-light" size="lg">Get a Quote</Button>
+      </PageHero>
 
       {/* ═══════════════════════════════════════════════════════════════
           INTRO STRIP
@@ -415,11 +343,11 @@ export default function SemiPreciousPage() {
           <AnimDiv className="flex items-center justify-between pb-3 border-b border-black/8 mb-10">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#C5A15B]" />
-              <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#1F2A24] uppercase">
+              <span className="font-heading text-[10px] sm:text-xs font-bold tracking-[0.16em] text-[#1F2A24] uppercase">
                 DHOLPURESTONES &bull; LAPIDARY COLLECTION
               </span>
             </div>
-            <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest uppercase">
+            <span className="font-heading text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest uppercase">
               Gemstones
             </span>
           </AnimDiv>
@@ -428,11 +356,11 @@ export default function SemiPreciousPage() {
             <span className="text-[10px] sm:text-xs font-bold text-[#C5A15B] uppercase tracking-[0.2em] block mb-2">
               Exclusive Lapidary Gemstone Inventory
             </span>
-            <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1F2A24] uppercase tracking-wide mb-3 leading-snug">
+            <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1F2A24] uppercase tracking-wide mb-3 leading-snug">
               Our Semi-Precious Stone Collection
             </h2>
             <div className="w-12 h-1 bg-[#C5A15B] rounded-full mx-auto mb-4" />
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] leading-relaxed">
+            <p className="font-body text-xs sm:text-sm text-[#6B7C73] leading-relaxed">
               Every slab is individually hand-assembled from authentic mineral specimens, stabilized in premium optical resin,
               and polished to a flawless mirror surface. Click any gemstone to inspect its technical specifications.
             </p>
@@ -449,7 +377,7 @@ export default function SemiPreciousPage() {
                   onClick={() => setActiveModal(stone)}
                 >
                   {/* Image */}
-                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#1F2A24]">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-forest-deep">
                     <Image
                       src={stone.image}
                       alt={stone.name}
@@ -474,7 +402,7 @@ export default function SemiPreciousPage() {
                       <span className="text-[9px] uppercase font-bold tracking-[0.2em] text-[#C5A15B] block mb-0.5">
                         {stone.subtitle}
                       </span>
-                      <h3 className="font-['Cinzel',serif] text-base sm:text-lg font-bold leading-snug drop-shadow-sm">
+                      <h3 className="font-heading text-base sm:text-lg font-bold leading-snug drop-shadow-sm">
                         {stone.name}
                       </h3>
                     </div>
@@ -514,7 +442,7 @@ export default function SemiPreciousPage() {
             <span className="text-[10px] font-bold text-[#C5A15B] uppercase tracking-[0.22em] block mb-2">
               WHERE GEMSTONES BELONG
             </span>
-            <h2 className="font-['Cinzel',serif] text-xl sm:text-2xl lg:text-3xl font-bold text-[#1F2A24] uppercase tracking-wider">
+            <h2 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-[#1F2A24] uppercase tracking-wider">
               Signature Applications
             </h2>
             <div className="w-10 h-1 bg-[#C5A15B] rounded-full mx-auto mt-3" />
@@ -525,7 +453,7 @@ export default function SemiPreciousPage() {
               <AnimDiv key={i} delay={i * 80}>
                 <div className="bg-[#F7F4EB] rounded-2xl border border-black/6 p-6 hover:border-[#C5A15B]/50 hover:shadow-md transition-all duration-300">
                   <span className="text-3xl block mb-3">{uc.icon}</span>
-                  <h3 className="font-['Cinzel',serif] text-sm font-bold text-[#1F2A24] uppercase tracking-wider mb-2">
+                  <h3 className="font-heading text-sm font-bold text-[#1F2A24] uppercase tracking-wider mb-2">
                     {uc.title}
                   </h3>
                   <p className="text-xs text-[#6B7C73] leading-relaxed">{uc.desc}</p>
@@ -552,7 +480,7 @@ export default function SemiPreciousPage() {
                     <ShieldCheck className="w-3.5 h-3.5" />
                     <span>Authentic Gemstone Sourcing &bull; Custom Bespoke Orders</span>
                   </div>
-                  <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-wider text-white mb-3">
+                  <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-wider text-white mb-3">
                     Commission Your Gemstone Installation
                   </h2>
                   <p className="text-xs sm:text-sm text-white/75 max-w-xl leading-relaxed">
@@ -576,7 +504,7 @@ export default function SemiPreciousPage() {
                     href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com%2C%20I%20would%20like%20to%20request%20a%20Semi-Precious%20Gemstone%20sample%20box%20and%20quotation."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-[#C5A15B] hover:bg-[#d4b06a] text-[#123D32] font-bold text-xs uppercase tracking-wider shadow-lg transition-all active:scale-95"
+                    className="flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-[#C5A15B] hover:bg-[#d4b574] text-[#123D32] font-bold text-xs uppercase tracking-wider shadow-lg transition-all active:scale-95"
                   >
                     <WhatsAppIcon className="w-4 h-4 fill-[#123D32]" size={16} />
                     <span>WhatsApp Us Now</span>
@@ -615,7 +543,7 @@ export default function SemiPreciousPage() {
         >
           <div className="fixed inset-0 bg-black/80 backdrop-blur-md" />
           <div
-            className="relative z-10 w-full max-w-2xl bg-[#1F2A24] rounded-3xl shadow-2xl overflow-hidden max-h-[92vh] flex flex-col border border-[#C5A15B]/30"
+            className="relative z-10 w-full max-w-2xl bg-forest-deep rounded-3xl shadow-2xl overflow-hidden max-h-[92vh] flex flex-col border border-[#C5A15B]/30"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal image header */}
@@ -644,7 +572,7 @@ export default function SemiPreciousPage() {
                 <span className="text-[9px] uppercase font-bold text-[#C5A15B] tracking-widest block mb-1">
                   {activeModal.category} &bull; {activeModal.color}
                 </span>
-                <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold leading-tight">
+                <h3 className="font-heading text-xl sm:text-2xl font-bold leading-tight">
                   {activeModal.name}
                 </h3>
                 <p className="text-xs text-white/70 mt-0.5">{activeModal.subtitle}</p>
@@ -660,7 +588,7 @@ export default function SemiPreciousPage() {
                   href={`https://wa.me/919414945457?text=${encodeURIComponent(activeModal.waMsg)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-full bg-[#C5A15B] hover:bg-[#d4b06a] text-[#123D32] font-bold text-xs uppercase tracking-wider transition-all active:scale-95 cursor-pointer"
+                  className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-full bg-[#C5A15B] hover:bg-[#d4b574] text-[#123D32] font-bold text-xs uppercase tracking-wider transition-all active:scale-95 cursor-pointer"
                 >
                   <WhatsAppIcon className="w-4 h-4 fill-[#123D32]" size={16} />
                   Enquire on WhatsApp

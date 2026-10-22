@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import AnimDiv from "@/components/ui/AnimDiv";
 import Image from "next/image";
 import {
   LuPhone as Phone,
@@ -23,37 +24,6 @@ import {
 } from "react-icons/lu";
 import WhatsAppIcon from "./WhatsAppIcon";
 
-function AnimDiv({
-  children,
-  className = "",
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) {
-          setTimeout(() => el.classList.add("gcl-visible"), delay);
-          obs.unobserve(el);
-        }
-      },
-      { threshold: 0.06 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [delay]);
-  return (
-    <div ref={ref} className={`gcl-animate ${className}`}>
-      {children}
-    </div>
-  );
-}
 
 export default function ContactSection() {
   const [form, setForm] = useState({
@@ -128,14 +98,14 @@ export default function ContactSection() {
         <AnimDiv delay={0} className="relative z-10 max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-0.5 sm:py-1 rounded-full bg-[#C5A15B]/15 border border-[#C5A15B]/30 mb-2 sm:mb-3">
             <Sparkles className="w-3 h-3 text-[#C5A15B]" />
-            <span className="font-['Cinzel',serif] text-[9.5px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.22em] sm:tracking-[0.25em] uppercase">
+            <span className="font-heading text-[9.5px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.22em] sm:tracking-[0.25em] uppercase">
               GET IN TOUCH
             </span>
           </div>
-          <h2 className="font-['Cinzel',serif] font-bold text-white uppercase tracking-[0.08em] leading-tight text-2xl sm:text-4xl lg:text-5xl">
+          <h2 className="font-heading font-bold text-white uppercase tracking-[0.08em] leading-tight text-2xl sm:text-4xl lg:text-5xl">
             Let&apos;s Build With Stone
           </h2>
-          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/70 tracking-wider uppercase mt-2 sm:mt-3">
+          <p className="font-body text-xs sm:text-sm text-white/70 tracking-wider uppercase mt-2 sm:mt-3">
             Connect for stone inquiries, tenders, export supplies &amp; architectural collaborations.
           </p>
         </AnimDiv>
@@ -146,11 +116,11 @@ export default function ContactSection() {
         <AnimDiv className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-black/8 mb-6 sm:mb-8">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#C5A15B]" />
-            <span className="font-['Cinzel',serif] text-[9.5px] sm:text-xs font-bold tracking-[0.16em] text-[#1F2A24] uppercase">
+            <span className="font-heading text-[9.5px] sm:text-xs font-bold tracking-[0.16em] text-[#1F2A24] uppercase">
               DHOLPURESTONES.COM
             </span>
           </div>
-          <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest">
+          <span className="font-heading text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest">
             08
           </span>
         </AnimDiv>
@@ -163,18 +133,18 @@ export default function ContactSection() {
           <AnimDiv delay={40} className="text-center max-w-3xl mx-auto mb-6 sm:mb-10">
             <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-[#C5A15B]/10 border border-[#C5A15B]/30 mb-2.5 shadow-2xs">
               <ShieldCheck className="w-3.5 h-3.5 text-[#C5A15B]" />
-              <span className="font-['Cinzel',serif] text-[9.5px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase">
+              <span className="font-heading text-[9.5px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.2em] uppercase">
                 Official Identification &bull; Estd. 1953
               </span>
             </div>
 
-            <h3 className="font-['Cinzel',serif] text-xl sm:text-3xl lg:text-4xl font-bold text-[#1F2A24] uppercase tracking-wide">
+            <h3 className="font-heading text-xl sm:text-3xl lg:text-4xl font-bold text-[#1F2A24] uppercase tracking-wide">
               Company Credentials
             </h3>
 
             <div className="w-20 h-1 bg-gradient-to-r from-transparent via-[#C5A15B] to-transparent rounded-full mx-auto my-3" />
 
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] max-w-2xl mx-auto leading-relaxed">
+            <p className="font-body text-xs sm:text-sm text-[#6B7C73] max-w-2xl mx-auto leading-relaxed">
               Official statutory lineage incorporating <span className="font-semibold text-[#1F2A24]">Saroj Stone Industries</span> (Pioneer Entity Estd. 1953) and <span className="font-semibold text-[#1F2A24]">Garg Corporation Ltd.</span> (Govt. Awarded Director Arvind Garg), operating proprietary Dholpur quarries, automated CNC hubs, and turnkey global export infrastructure.
             </p>
           </AnimDiv>
@@ -188,7 +158,7 @@ export default function ContactSection() {
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#C5A15B] via-[#C5A15B] to-[#123D32]" />
 
                 {/* Header Banner */}
-                <div className="bg-gradient-to-r from-[#123D32] via-[#123D32] to-[#0A261F] text-white p-5 sm:p-6 flex items-center justify-between border-b border-[#C5A15B]/20">
+                <div className="bg-gradient-to-r from-[#123D32] via-[#123D32] to-[#0B2A22] text-white p-5 sm:p-6 flex items-center justify-between border-b border-[#C5A15B]/20">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-[#C5A15B]/20 border border-[#C5A15B]/40 flex items-center justify-center shrink-0 shadow-inner">
                       <Building2 className="w-5 h-5 text-[#C5A15B]" />
@@ -197,7 +167,7 @@ export default function ContactSection() {
                       <span className="text-[9px] uppercase font-bold tracking-[0.2em] text-[#C5A15B] block">
                         FLAGSHIP CONTRACTING &bull; EXPORTS
                       </span>
-                      <h4 className="font-['Cinzel',serif] text-base sm:text-lg font-bold text-white uppercase tracking-wider">
+                      <h4 className="font-heading text-base sm:text-lg font-bold text-white uppercase tracking-wider">
                         Garg Corporation Ltd.
                       </h4>
                     </div>
@@ -264,7 +234,7 @@ export default function ContactSection() {
                         <span className="text-[9px] uppercase font-bold tracking-widest text-[#6B7C73] block">
                           MANAGING LEADERSHIP
                         </span>
-                        <span className="font-['Cinzel',serif] text-sm font-bold text-[#1F2A24] block">
+                        <span className="font-heading text-sm font-bold text-[#1F2A24] block">
                           Mr. Arvind Garg
                         </span>
                         <span className="text-[10px] text-[#123D32] font-semibold">
@@ -371,7 +341,7 @@ export default function ContactSection() {
                       <span className="text-[9px] uppercase font-bold tracking-[0.2em] text-[#C5A15B] block">
                         FOUNDATIONAL QUARRY HERITAGE &bull; ESTD. 1953
                       </span>
-                      <h4 className="font-['Cinzel',serif] text-base sm:text-lg font-bold text-white uppercase tracking-wider">
+                      <h4 className="font-heading text-base sm:text-lg font-bold text-white uppercase tracking-wider">
                         Saroj Stone Industries
                       </h4>
                     </div>
@@ -436,7 +406,7 @@ export default function ContactSection() {
                       <span className="text-[9px] uppercase font-bold tracking-widest text-[#6B7C73] block">
                         LEGACY RECOGNITION
                       </span>
-                      <span className="font-['Cinzel',serif] text-sm font-bold text-[#1F2A24] block">
+                      <span className="font-heading text-sm font-bold text-[#1F2A24] block">
                         The Pioneer Company of Natural Stone
                       </span>
                       <span className="text-[10px] text-[#C5A15B] font-semibold">
@@ -504,7 +474,7 @@ export default function ContactSection() {
               <div className="bg-white rounded-2xl p-4 border border-black/8 shadow-xs hover:border-[#C5A15B]/50 transition-colors">
                 <div className="flex items-center gap-2 mb-1.5">
                   <Award className="w-4 h-4 text-[#C5A15B]" />
-                  <span className="font-['Cinzel',serif] text-xs font-bold text-[#1F2A24] uppercase">
+                  <span className="font-heading text-xs font-bold text-[#1F2A24] uppercase">
                     Govt. &amp; Intl. Honors
                   </span>
                 </div>
@@ -516,7 +486,7 @@ export default function ContactSection() {
               <div className="bg-white rounded-2xl p-4 border border-black/8 shadow-xs hover:border-[#C5A15B]/50 transition-colors">
                 <div className="flex items-center gap-2 mb-1.5">
                   <Clock className="w-4 h-4 text-[#C5A15B]" />
-                  <span className="font-['Cinzel',serif] text-xs font-bold text-[#1F2A24] uppercase">
+                  <span className="font-heading text-xs font-bold text-[#1F2A24] uppercase">
                     Estd. 1953
                   </span>
                 </div>
@@ -528,7 +498,7 @@ export default function ContactSection() {
               <div className="bg-white rounded-2xl p-4 border border-black/8 shadow-xs hover:border-[#C5A15B]/50 transition-colors">
                 <div className="flex items-center gap-2 mb-1.5">
                   <FileCheck className="w-4 h-4 text-[#C5A15B]" />
-                  <span className="font-['Cinzel',serif] text-xs font-bold text-[#1F2A24] uppercase">
+                  <span className="font-heading text-xs font-bold text-[#1F2A24] uppercase">
                     IS:3620 Certified
                   </span>
                 </div>
@@ -540,7 +510,7 @@ export default function ContactSection() {
               <div className="bg-white rounded-2xl p-4 border border-black/8 shadow-xs hover:border-[#C5A15B]/50 transition-colors">
                 <div className="flex items-center gap-2 mb-1.5">
                   <Globe className="w-4 h-4 text-[#C5A15B]" />
-                  <span className="font-['Cinzel',serif] text-xs font-bold text-[#1F2A24] uppercase">
+                  <span className="font-heading text-xs font-bold text-[#1F2A24] uppercase">
                     Global Export
                   </span>
                 </div>
@@ -561,7 +531,7 @@ export default function ContactSection() {
                 <span className="text-[9.5px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-[#C5A15B] block mb-1">
                   Direct Communications
                 </span>
-                <h3 className="font-['Cinzel',serif] text-lg sm:text-2xl font-bold text-[#1F2A24] uppercase tracking-wider mb-4 sm:mb-6">
+                <h3 className="font-heading text-lg sm:text-2xl font-bold text-[#1F2A24] uppercase tracking-wider mb-4 sm:mb-6">
                   Garg Corporation Ltd.
                 </h3>
 
@@ -650,7 +620,7 @@ export default function ContactSection() {
                 <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-[#C5A15B] block mb-1">
                   Instant Smartphone Scan
                 </span>
-                <h4 className="font-['Cinzel',serif] text-xs sm:text-base font-bold uppercase tracking-wider text-[#1F2A24] mb-3">
+                <h4 className="font-heading text-xs sm:text-base font-bold uppercase tracking-wider text-[#1F2A24] mb-3">
                   Scan To Connect
                 </h4>
 
@@ -668,7 +638,7 @@ export default function ContactSection() {
                   href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20connect%20regarding%20natural%20stone%20products"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all active:scale-95"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#25D366] hover:bg-[#1fb957] text-white text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all active:scale-95"
                 >
                   <WhatsAppIcon className="w-4 h-4 fill-white" size={16} />
                   <span>Start WhatsApp Chat</span>
@@ -688,7 +658,7 @@ export default function ContactSection() {
               <span className="text-[9.5px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-[#C5A15B] block mb-1">
                 Project Sourcing &bull; Architecture &bull; Contracting
               </span>
-              <h3 className="font-['Cinzel',serif] text-lg sm:text-2xl font-bold text-[#1F2A24] uppercase tracking-wide mb-1">
+              <h3 className="font-heading text-lg sm:text-2xl font-bold text-[#1F2A24] uppercase tracking-wide mb-1">
                 Send Project Inquiry
               </h3>
               <p className="text-xs text-[#6B7C73] leading-relaxed">
@@ -701,7 +671,7 @@ export default function ContactSection() {
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center">
                   <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <h4 className="font-['Cinzel',serif] text-sm sm:text-lg font-bold text-[#1F2A24] uppercase">
+                <h4 className="font-heading text-sm sm:text-lg font-bold text-[#1F2A24] uppercase">
                   Inquiry Transmitted Successfully
                 </h4>
                 <p className="text-xs text-[#6B7C73] max-w-sm mx-auto leading-relaxed">
@@ -821,7 +791,7 @@ export default function ContactSection() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm uppercase tracking-wider font-bold py-3 sm:py-3.5 px-7 sm:px-8 rounded-full bg-[#123D32] hover:bg-[#0A261F] disabled:opacity-60 text-white shadow-lg hover:shadow-xl transition-all active:scale-95 border border-[#C5A15B]/30 cursor-pointer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 font-body text-xs sm:text-sm uppercase tracking-wider font-bold py-3 sm:py-3.5 px-7 sm:px-8 rounded-full bg-[#123D32] hover:bg-[#0B2A22] disabled:opacity-60 text-white shadow-lg hover:shadow-xl transition-all active:scale-95 border border-[#C5A15B]/30 cursor-pointer"
                   >
                     <span>{isSubmitting ? "Submitting Inquiry..." : "Submit Inquiry"}</span>
                     <Send className={`w-3.5 h-3.5 ${isSubmitting ? "animate-pulse" : ""}`} />
@@ -843,7 +813,7 @@ export default function ContactSection() {
                     GEOGRAPHICAL DISPATCH &amp; QUARRY WORKS
                   </span>
                 </div>
-                <h3 className="font-['Cinzel',serif] text-lg sm:text-2xl font-bold text-[#1F2A24] uppercase tracking-wide">
+                <h3 className="font-heading text-lg sm:text-2xl font-bold text-[#1F2A24] uppercase tracking-wide">
                   Dholpur Quarry Works &amp; Factory Site
                 </h3>
                 <p className="text-xs text-[#6B7C73] mt-1 max-w-xl">
@@ -855,7 +825,7 @@ export default function ContactSection() {
                   href="https://www.google.com/maps/dir/?api=1&destination=26.5492,77.2917"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#123D32] hover:bg-[#0A261F] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-sm"
+                  className="inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#123D32] hover:bg-[#0B2A22] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-sm"
                 >
                   <Compass className="w-3.5 h-3.5 text-[#C5A15B]" />
                   <span>Get Driving Directions</span>
@@ -900,10 +870,10 @@ export default function ContactSection() {
         {/* 6. Authentic Bottom Banner */}
         <AnimDiv delay={300}>
           <div className="bg-[#123D32] rounded-2xl p-6 sm:p-8 text-center border border-white/8">
-            <h4 className="font-['Cinzel',serif] text-sm sm:text-lg font-bold text-[#C5A15B] tracking-[0.18em] uppercase">
+            <h4 className="font-heading text-sm sm:text-lg font-bold text-[#C5A15B] tracking-[0.18em] uppercase">
               Natural Stones Across The Globe
             </h4>
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[10px] sm:text-xs text-white/70 uppercase tracking-widest mt-1.5">
+            <p className="font-body text-[10px] sm:text-xs text-white/70 uppercase tracking-widest mt-1.5">
               Mines Owner &bull; Manufacturer &bull; Exporter &bull; Contractor
             </p>
           </div>
@@ -926,14 +896,14 @@ export default function ContactSection() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="bg-gradient-to-r from-[#123D32] via-[#123D32] to-[#0A261F] text-white p-3.5 sm:p-5 flex items-center justify-between border-b border-[#C5A15B]/30 sticky top-0 z-20">
+            <div className="bg-gradient-to-r from-[#123D32] via-[#123D32] to-[#0B2A22] text-white p-3.5 sm:p-5 flex items-center justify-between border-b border-[#C5A15B]/30 sticky top-0 z-20">
               <div className="flex items-center gap-2 sm:gap-2.5">
                 <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-[#C5A15B]" />
                 <div>
                   <span className="text-[8.5px] sm:text-[9px] uppercase font-bold tracking-[0.2em] text-[#C5A15B] block">
                     AUTHENTIC VISITING CARD &bull; ARCHIVAL DOSSIER
                   </span>
-                  <h4 id="card-modal-title" className="font-['Cinzel',serif] text-xs sm:text-base font-bold text-white uppercase tracking-wider">
+                  <h4 id="card-modal-title" className="font-heading text-xs sm:text-base font-bold text-white uppercase tracking-wider">
                     {previewCard.title}
                   </h4>
                 </div>
@@ -988,7 +958,7 @@ export default function ContactSection() {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-all active:scale-95"
+                  className="flex-1 py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl bg-[#25D366] hover:bg-[#1fb957] text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-all active:scale-95"
                 >
                   <WhatsAppIcon className="w-4 h-4 fill-white" size={16} />
                   <span>Connect on WhatsApp</span>

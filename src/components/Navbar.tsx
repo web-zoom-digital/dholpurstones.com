@@ -1,785 +1,562 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
 import {
-  LuMail as Mail,
-  LuPhone as Phone,
   LuMenu as Menu,
   LuX as X,
-  LuAward as Award,
-  LuLandmark as Landmark,
   LuChevronDown as ChevronDown,
-  LuChevronRight as ChevronRight,
   LuArrowRight as ArrowRight,
+  LuMountain as Mountain,
   LuLayers as Layers,
   LuTreePine as TreePine,
-  LuBuilding2 as Building2,
-  LuShieldCheck as ShieldCheck,
-  LuMountain as Mountain,
-  LuBookOpen as BookOpen,
-  LuCalendar as Calendar,
-  LuCpu as Cpu,
-  LuCamera as Camera,
-  LuPlay as Play,
-  LuFileText as FileText,
+  LuHammer as Hammer,
   LuGem as Gem,
-  LuPalette as Palette,
-  LuSparkles as Sparkles
+  LuCrown as Crown,
+  LuMail as Mail,
+  LuMapPin as MapPin,
 } from "react-icons/lu";
 import WhatsAppIcon from "./WhatsAppIcon";
+import { categories, waLink, EMAIL, type CategoryId } from "@/data/catalog";
 
-interface NavChild {
+const categoryIcons: Record<CategoryId, React.ComponentType<{ className?: string }>> = {
+  sandstone: Mountain,
+  marble: Layers,
+  "farmhouse-gardens": TreePine,
+  "stone-articles": Hammer,
+  "semi-precious": Gem,
+  "exclusive-imported": Crown,
+};
+
+interface NavLink {
   label: string;
   href: string;
-  desc: string;
-  icon: React.ComponentType<{ className?: string }>;
-  badge?: string;
+  desc?: string;
 }
 
 interface NavItem {
   label: string;
   href?: string;
-  headerTag?: string;
-  footerNote?: { text: string; href: string };
-  isGrid?: boolean;
-  children?: NavChild[];
+  children?: NavLink[];
+  mega?: boolean;
 }
+
+const navItems: NavItem[] = [
+  { label: "Home", href: "/" },
+  { label: "Products", href: "/products", mega: true },
+  { label: "Farm House & Gardens", href: "/farmhouse-gardens" },
+  { label: "Projects", href: "/projects" },
+  {
+    label: "Company",
+    children: [
+      { label: "About Us", href: "/about", desc: "Our story since 1953" },
+      { label: "Our Strength", href: "/about#strength", desc: "Mines, factory and export reach" },
+      { label: "Why Choose Us", href: "/about#why-choose", desc: "Direct quarry advantage" },
+    ],
+  },
+  {
+    label: "Resources",
+    children: [
+      { label: "Blog & Guides", href: "/blog", desc: "Stone selection and design guides" },
+      { label: "Quality Process", href: "/resources#quality", desc: "Testing and certification" },
+      { label: "Packaging & Machinery", href: "/resources#packaging", desc: "Export crating and CNC" },
+      { label: "Exhibitions", href: "/resources#exhibition", desc: "Trade shows we attend" },
+      { label: "Gallery", href: "/gallery", desc: "Photos and videos" },
+    ],
+  },
+  { label: "Contact", href: "/contact" },
+];
+
+const waHeader = waLink("Hello Dholpurestones.com, I would like to inquire about natural stone.");
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [mobileExpanded, setMobileExpanded] = useState<Record<string, boolean>>({
-    Company: false,
-    Products: false,
-    Resources: false,
-    Gallery: false,
-  });
-
-  const navRef = useRef<HTMLElement>(null);
-  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const lastMouseEnterTimeRef = useRef<number>(0);
-  const clickLockedRef = useRef<string | null>(null);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [mobileSection, setMobileSection] = useState<string | null>("Products");
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const onScroll = () => {
-      const scrolled = window.scrollY > 20;
-      setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev));
-    };
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Click outside listener to close dropdowns
+  // Close menus whenever the route changes (state reset during render, per React docs)
+  const [lastPath, setLastPath] = useState(pathname);
+  if (lastPath !== pathname) {
+    setLastPath(pathname);
+    setOpenMenu(null);
+    setMobileOpen(false);
+  }
+
   useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (navRef.current && !navRef.current.contains(e.target as Node)) {
-        setOpenDropdown(null);
-        clickLockedRef.current = null;
+    const onDown = (e: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) setOpenMenu(null);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpenMenu(null);
+        setMobileOpen(false);
       }
     };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
   }, []);
 
-  // Prevent background scroll when mobile drawer is open
   useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
   }, [mobileOpen]);
 
-  const navItems: NavItem[] = [
-    { label: "Home", href: "/" },
-    { label: "Farm House & Gardens", href: "/farmhouse-gardens" },
-    {
-      label: "Products",
-      headerTag: "NATURAL SANDSTONE & PRODUCTS DIRECTORY",
-      // footerNote: {
-      //   text: "Need custom sizes or 3D CNC profiling? WhatsApp our Stone Desk",
-      //   href: "https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20am%20inquiring%20about%20custom%20stone%20products",
-      // },
-      isGrid: true,
-      children: [
-        {
-          label: "Front Elevation",
-          href: "/#elevation",
-          desc: "300+ Bespoke classical & modern designs",
-          icon: Building2,
-          badge: "300+ Designs",
-        },
-        {
-          label: "Farm House & Gardens",
-          href: "/farmhouse-gardens",
-          desc: "Patios, pool coping & carved gazebos",
-          icon: TreePine,
-          badge: "Specialty",
-        },
-        {
-          label: "Sandstone",
-          href: "/sandstone",
-          desc: "Agra Red, Dholpur Pink, Beige & Mint varieties",
-          icon: Mountain,
-          badge: "Direct Quarry",
-        },
-        {
-          label: "Stone Articles & Sculptures",
-          href: "/articles",
-          desc: "Hand-carved peacocks, lanterns & jalis",
-          icon: Gem,
-          badge: "Sikandra",
-        },
-        {
-          label: "White Series – Dholpur Color",
-          href: "/products/white-series-dolphur-color",
-          desc: "Luminous white marble & crystalline stone series",
-          icon: Sparkles,
-          badge: "Collection",
-        },
-        {
-          label: "Semi Precious Stone",
-          href: "/semi-precious",
-          desc: "Agate, Lapis Lazuli, Tiger's Eye & Jasper slabs",
-          icon: Sparkles,
-          badge: "Exclusive",
-        },
-        {
-          label: "Precious Gem Surface",
-          href: "/precious-gem-surface",
-          desc: "Bespoke backlit gemstone surfaces & luxury slabs",
-          icon: Gem,
-          badge: "Gallery",
-        },
-      ],
-    },
-    { label: "Projects", href: "/projects" },
-    {
-      label: "Company",
-      headerTag: "HERITAGE & QUARRY OPERATIONS",
-      // footerNote: {
-      //   text: "Dholpur, Sikandra & Kishangarh mining hubs • Estd. 1953",
-      //   href: "/about",
-      // },
-      children: [
-        {
-          label: "About Us",
-          href: "/about",
-          desc: "70+ Years lineage since 1953 & founder vision",
-          icon: Building2,
-        },
-        {
-          label: "Govt. & Intl. Honors",
-          href: "/#international-excellence",
-          desc: "Awarded by Govt. of India & global nominations",
-          icon: Award,
-          badge: "Awarded",
-        },
-        {
-          label: "Infrastructure",
-          href: "/about#strength",
-          desc: "Automated multi-wire saws & processing yards",
-          icon: Cpu,
-        },
-        {
-          label: "Why Choose Us",
-          href: "/about#why-choose",
-          desc: "Direct quarry concessionaire advantages",
-          icon: ShieldCheck,
-        },
-        {
-          label: "Our Mines",
-          href: "/about#mines",
-          desc: "Active Dholpur & Bari quarry strata",
-          icon: Mountain,
-          badge: "Proprietary",
-        },
-      ],
-    },
-    {
-      label: "Resources",
-      headerTag: "TECHNICAL DOSSIERS & PUBLICATIONS",
-      // footerNote: {
-      //   text: "Explore all 20 architectural masterclasses on our blog",
-      //   href: "/blog",
-      // },
-      children: [
-        {
-          label: "Blog",
-          href: "/blog",
-          desc: "20 in-depth architectural guides & reports",
-          icon: BookOpen,
-          badge: "20 Guides",
-        },
-        {
-          label: "Quality Process",
-          href: "/resources#quality",
-          desc: "IS:3620 & ASTM C616 geotechnical test data",
-          icon: ShieldCheck,
-          badge: "IS:3620",
-        },
-        {
-          label: "Exhibition",
-          href: "/resources#exhibition",
-          desc: "STONA, Marmomac & Big 5 Dubai presence",
-          icon: Calendar,
-        },
-        {
-          label: "Packaging and Machinery",
-          href: "/resources#packaging",
-          desc: "ISPM-15 export crating & 8-axis CNC profiling",
-          icon: Cpu,
-        },
-      ],
-    },
-    {
-      label: "Gallery",
-      headerTag: "VISUAL MEDIA ARCHIVES",
-      // footerNote: { 
-      //   text: "View 4K visual documentation of quarry benches & projects",
-      //   href: "/gallery",
-      // },
-      children: [
-        {
-          label: "Photo Gallery",
-          href: "/gallery#photo",
-          desc: "High-resolution quarry & architecture archive",
-          icon: Camera,
-        },
-        {
-          label: "Media Gallery",
-          href: "/gallery#media",
-          desc: "Press coverage, certificates & awards",
-          icon: FileText,
-          badge: "Press",
-        },
-        {
-          label: "Video Gallery",
-          href: "/gallery#video",
-          desc: "Artisan carving & automated factory operations",
-          icon: Play,
-          badge: "Watch",
-        },
-      ],
-    },
-    { label: "Contact us", href: "/contact" },
-  ];
+  const enter = useCallback((label: string) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setOpenMenu(label);
+  }, []);
 
-  // Smooth scroll to hash on page load/navigation
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.location.hash) {
-      const id = window.location.hash.replace("#", "");
-      const timer = setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 250);
-      return () => clearTimeout(timer);
-    }
-  }, [pathname]);
+  const leave = useCallback(() => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setOpenMenu(null), 160);
+  }, []);
 
-  // Mouse hover handlers with delay buffer
-  const handleMouseEnter = (label: string) => {
-    // eslint-disable-next-line react-hooks/purity
-    lastMouseEnterTimeRef.current = Date.now();
-    if (dropdownTimeoutRef.current) {
-      clearTimeout(dropdownTimeoutRef.current);
-    }
-    setOpenDropdown(label);
-  };
-
-  const handleMouseLeave = () => {
-    if (clickLockedRef.current) return;
-    dropdownTimeoutRef.current = setTimeout(() => {
-      setOpenDropdown(null);
-    }, 250);
-  };
-
-  // Toggle on click — locks dropdown open so clicking never accidentally hides options
-  const handleDropdownClick = (e: React.MouseEvent, label: string) => {
-    e.stopPropagation();
-    if (dropdownTimeoutRef.current) {
-      clearTimeout(dropdownTimeoutRef.current);
-    }
-    // eslint-disable-next-line react-hooks/purity
-    const timeSinceEnter = Date.now() - lastMouseEnterTimeRef.current;
-
-    if (openDropdown === label && clickLockedRef.current === label && timeSinceEnter > 450) {
-      setOpenDropdown(null);
-      clickLockedRef.current = null;
-    } else {
-      setOpenDropdown(label);
-      clickLockedRef.current = label;
-    }
-  };
-
-  // Smooth scroll handler for anchor links
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    setOpenDropdown(null);
-    clickLockedRef.current = null;
+  // Same-page hash links need a manual nudge so tabbed pages react
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    setOpenMenu(null);
     setMobileOpen(false);
-
-    if (href.includes("#")) {
-      const [path, hash] = href.split("#");
-      const currentPath = pathname === "" ? "/" : pathname;
-      const targetPath = path === "" ? "/" : path;
-
-      if (currentPath === targetPath) {
-        e.preventDefault();
-        const el = document.getElementById(hash);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth" });
-          window.history.pushState(null, "", `#${hash}`);
-          window.dispatchEvent(new Event("hashchange"));
-        }
-      }
+    if (!href.includes("#")) return;
+    const [path, hash] = href.split("#");
+    if ((path || "/") === pathname) {
+      e.preventDefault();
+      document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+      window.history.pushState(null, "", `#${hash}`);
+      window.dispatchEvent(new Event("hashchange"));
     }
   };
 
-  const toggleMobileSubmenu = (label: string) => {
-    setMobileExpanded((prev) => ({ ...prev, [label]: !prev[label] }));
-  };
-
-  const isNavActive = (item: NavItem): boolean => {
-    if (item.href) {
-      if (item.href === "/" && pathname === "/") return true;
-      if (item.href !== "/" && !item.href.startsWith("/#") && pathname === item.href) return true;
-      if (item.href !== "/" && !item.href.startsWith("/#") && pathname.startsWith(item.href)) return true;
+  const isActive = (item: NavItem) => {
+    if (item.href === "/") return pathname === "/";
+    if (item.mega) {
+      return (
+        pathname.startsWith("/products") ||
+        categories.some((c) => pathname.startsWith(c.href) && c.id !== "farmhouse-gardens")
+      );
     }
-    if (item.children) {
-      return item.children.some((c) => {
-        const basePath = c.href.split("#")[0];
-        if (!basePath || basePath === "/") return false;
-        return pathname === basePath || pathname.startsWith(basePath);
-      });
-    }
-    return false;
+    if (item.href) return pathname.startsWith(item.href);
+    return !!item.children?.some((c) => pathname.startsWith(c.href.split("#")[0]));
   };
 
   return (
     <>
-      {/* 1. Top Utility Bar (Desktop & Tablet) */}
-      <div className="bg-[#123D32] text-white/80 py-2 px-3 sm:px-6 relative z-50 border-b border-white/8 text-[11px] sm:text-xs">
-        <div className="max-w-[1400px] mx-auto flex items-center justify-between gap-2">
-          {/* Heritage Tag */}
-          <div className="flex items-center gap-1.5 text-[#C5A15B] font-bold tracking-wider uppercase truncate">
-            <Landmark className="w-3.5 h-3.5 shrink-0 text-[#C5A15B]" />
-            <span className="hidden xs:inline">ESTD. 1953 &bull;</span> DHOLPURESTONES
-          </div>
-
-          {/* Contact Details */}
-          <div className="flex items-center gap-3 sm:gap-5 shrink-0">
+      {/* ───────────── Top utility bar ───────────── */}
+      <div className="relative z-[60] bg-forest-deep text-white/80">
+        <div className="container-x flex items-center justify-center lg:justify-between gap-4 py-2 text-[11px] sm:text-xs">
+          <p className="whitespace-nowrap text-center font-semibold uppercase tracking-[0.1em] text-gold sm:tracking-[0.16em]">
+            Estd. 1953
+            <span className="mx-1.5 text-white/30">•</span>
+            <span className="text-white/80">Mine Owner</span>
+            <span className="mx-1.5 hidden text-white/30 sm:inline">•</span>
+            <span className="hidden text-white/80 sm:inline">Manufacturer</span>
+            <span className="mx-1.5 text-white/30">•</span>
+            <span className="text-white/80">Exporter</span>
+          </p>
+          <div className="hidden lg:flex items-center gap-6">
+            <span className="flex items-center gap-1.5">
+              <MapPin className="h-3.5 w-3.5 text-gold" />
+              Dholpur, Rajasthan, India
+            </span>
             <a
-              href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20inquire%20about%20natural%20stone"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-[#C5A15B] font-semibold hover:text-[#F7F4EB] transition-colors"
+              href={`mailto:${EMAIL}`}
+              className="flex items-center gap-1.5 hover:text-gold transition-colors"
             >
-              <WhatsAppIcon className="w-4 h-4 shrink-0 fill-[#C5A15B]" size={16} />
-              <span>+91 94149 45457</span>
-            </a>
-
-            <a
-              href="tel:+919057355232"
-              className="hidden sm:flex items-center gap-1.5 text-white/80 hover:text-[#C5A15B] transition-colors"
-            >
-              <Phone className="w-3 h-3 text-[#C5A15B] shrink-0" />
-              <span>+91 90573 55232</span>
-            </a>
-
-            <a
-              href="mailto:gargcorporationltd@gmail.com"
-              className="hidden md:flex items-center gap-1.5 text-white/70 hover:text-[#C5A15B] transition-colors"
-            >
-              <Mail className="w-3.5 h-3.5 text-[#C5A15B] shrink-0" />
-              <span>gargcorporationltd@gmail.com</span>
+              <Mail className="h-3.5 w-3.5 text-gold" />
+              {EMAIL}
             </a>
           </div>
         </div>
       </div>
 
-      {/* 2. Main Sticky Navigation Bar (Fixed padding to prevent scroll jitter/bounce) */}
+      {/* ───────────── Main header ───────────── */}
       <header
-        style={{ overflow: "visible" }}
-        className={`sticky top-0 w-full z-[100] bg-white/98 backdrop-blur-md border-b transition-shadow duration-300 py-2.5 sm:py-3.5 overflow-visible ${
-          isScrolled
-            ? "shadow-[0_4px_24px_rgba(0,0,0,0.08)] border-black/10"
-            : "border-black/6 shadow-2xs"
+        ref={headerRef}
+        className={`sticky top-0 z-[100] w-full border-b backdrop-blur-xl transition-all duration-300 ${
+          scrolled
+            ? "bg-white/92 border-black/10 shadow-[0_10px_30px_-18px_rgba(18,61,50,0.35)]"
+            : "bg-white/96 border-black/[0.06]"
         }`}
       >
-        <div style={{ overflow: "visible" }} className="max-w-[1400px] mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4 overflow-visible">
-          {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-2 sm:gap-2.5 shrink-0 group">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-[#123D32] border border-[#C5A15B]/80 flex items-center justify-center shadow-md transition-transform group-hover:scale-105 shrink-0">
-              <span className="font-['Cinzel',serif] text-xs sm:text-base font-extrabold text-[#C5A15B]">
-                DS
-              </span>
-            </div>
-            <div className="flex flex-col leading-tight min-w-0">
-              <span className="font-['Cinzel',serif] text-xs sm:text-lg font-bold text-[#1F2A24] uppercase tracking-[0.06em] group-hover:text-[#C5A15B] transition-colors whitespace-nowrap">
+        <div className="container-x relative flex items-center justify-between gap-4 py-2.5 lg:py-3">
+          {/* Brand */}
+          <Link href="/" className="group flex items-center gap-2.5 shrink-0" aria-label="Dholpurestones home">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-forest border border-gold/70 shadow-md transition-transform duration-300 group-hover:scale-105 group-hover:rotate-[-4deg]">
+              <span className="font-heading text-sm font-extrabold text-gold">DS</span>
+            </span>
+            <span className="flex flex-col leading-tight">
+              <span className="font-heading text-[15px] sm:text-lg font-bold uppercase tracking-[0.07em] text-ink group-hover:text-forest-soft transition-colors">
                 Dholpurestones
               </span>
-              <span className="text-[7.5px] sm:text-[9.5px] text-[#6B7C73] uppercase tracking-[0.12em] sm:tracking-[0.14em] font-semibold whitespace-nowrap">
+              <span className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.16em] text-muted">
                 Natural Stone &bull; Since 1953
               </span>
-            </div>
+            </span>
           </Link>
 
-          {/* Desktop Navigation Links with Bulletproof Hover and Click Support */}
-          <nav ref={navRef} style={{ overflow: "visible" }} className="hidden lg:flex items-center gap-3.5 xl:gap-6 overflow-visible">
+          {/* Desktop navigation */}
+          <nav className="hidden lg:flex items-center gap-1" aria-label="Primary">
             {navItems.map((item) => {
-              const active = isNavActive(item);
-              const isDropdownOpen = openDropdown === item.label;
+              const active = isActive(item);
+              const open = openMenu === item.label;
+              const base =
+                "relative inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 xl:px-3.5 py-2 text-[13px] xl:text-[13.5px] font-semibold transition-colors";
+              const tone = active || open ? "text-forest" : "text-ink/80 hover:text-forest";
 
-              if (item.children) {
+              if (item.mega || item.children) {
                 return (
                   <div
                     key={item.label}
-                    style={{ overflow: "visible" }}
-                    className="relative py-1 overflow-visible"
-                    onMouseEnter={() => handleMouseEnter(item.label)}
-                    onMouseLeave={handleMouseLeave}
+                    className={item.mega ? "" : "relative"}
+                    onMouseEnter={() => enter(item.label)}
+                    onMouseLeave={leave}
                   >
                     <button
                       type="button"
-                      onClick={(e) => handleDropdownClick(e, item.label)}
-                      className={`inline-flex items-center gap-1.5 font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-bold tracking-tight transition-all cursor-pointer py-1.5 px-3 rounded-full ${
-                        active || isDropdownOpen
-                          ? "text-[#123D32] bg-[#C5A15B]/20 border border-[#C5A15B]/60 shadow-2xs"
-                          : "text-[#1F2A24] hover:text-[#C5A15B] hover:bg-[#F7F4EB]"
-                      }`}
+                      className={`${base} ${tone}`}
                       aria-haspopup="true"
-                      aria-expanded={isDropdownOpen}
+                      aria-expanded={open}
+                      onClick={() => setOpenMenu(open ? null : item.label)}
                     >
-                      <span>{item.label}</span>
+                      {(active || open) && (
+                        <motion.span
+                          layoutId="nav-pill"
+                          className="absolute inset-0 rounded-full bg-gold/20 ring-1 ring-gold/50"
+                          transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                        />
+                      )}
+                      <span className="relative">{item.label}</span>
                       <ChevronDown
-                        className={`w-4 h-4 transition-transform duration-200 ${
-                          isDropdownOpen ? "rotate-180 text-[#C5A15B]" : "text-[#1F2A24]/60"
-                        }`}
+                        className={`relative h-3.5 w-3.5 transition-transform duration-200 ${open ? "rotate-180 text-gold-deep" : "text-ink/50"}`}
                       />
                     </button>
 
-                    {/* Dropdown Menu Box with invisible bridge to prevent losing hover */}
-                    {isDropdownOpen && (
-                      <div
-                        className={`absolute top-full pt-2 z-[150] animate-in fade-in slide-in-from-top-1.5 duration-200 overflow-visible ${
-                          item.label === "Gallery"
-                            ? "right-0"
-                            : item.label === "Resources"
-                            ? "left-1/2 -translate-x-1/2"
-                            : "left-0"
-                        } ${item.isGrid ? "w-[620px]" : "w-[380px]"}`}
-                        onMouseEnter={() => handleMouseEnter(item.label)}
-                        onMouseLeave={handleMouseLeave}
-                      >
-                        <div className="bg-white/98 backdrop-blur-xl rounded-2xl shadow-[0_24px_60px_-10px_rgba(13,19,17,0.22),0_8px_24px_-4px_rgba(194,155,56,0.18)] border border-[#C5A15B]/35 ring-1 ring-black/5 overflow-hidden flex flex-col">
-                          {/* Top Royal Accent Line */}
-                          <div className="h-[3px] w-full bg-gradient-to-r from-[#123D32] via-[#C5A15B] to-[#123D32]" />
-
-                          {/* Category Header Strip */}
-                          {item.headerTag && (
-                            <div className="px-4 py-2.5 bg-gradient-to-r from-[#F7F4EB] via-white to-[#F7F4EB] border-b border-black/6 flex items-center justify-between">
-                              <span className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.14em] text-[#123D32]">
-                                <Landmark className="w-3 h-3 text-[#C5A15B]" />
-                                {item.headerTag}
-                              </span>
-                              <span className="text-[10px] font-bold text-[#6B7C73] uppercase tracking-wider">
-                                {item.children.length} Options
-                              </span>
-                            </div>
-                          )}
-
-                          {/* Items Grid or List */}
-                          <div
-                            className={
-                              item.isGrid
-                                ? "grid grid-cols-2 gap-1.5 p-2.5 bg-[#F7F4EB]/50"
-                                : "flex flex-col space-y-1 p-2 bg-[#F7F4EB]/50"
-                            }
-                          >
-                            {item.children.map((sub) => {
-                              const IconComponent = sub.icon;
-                              return (
-                                <Link
-                                  key={sub.label}
-                                  href={sub.href}
-                                  onClick={(e) => handleNavClick(e, sub.href)}
-                                  className="group flex items-start gap-3 p-2.5 rounded-xl border border-transparent hover:border-[#C5A15B]/40 hover:bg-white hover:shadow-sm transition-all duration-150 text-left"
-                                >
-                                  {/* Icon Tile */}
-                                  <div className="w-9 h-9 rounded-lg bg-[#123D32] text-[#C5A15B] border border-[#C5A15B]/30 flex items-center justify-center shrink-0 shadow-xs group-hover:bg-[#C5A15B] group-hover:text-[#123D32] group-hover:scale-105 transition-all duration-200 mt-0.5">
-                                    <IconComponent className="w-4 h-4 transition-transform group-hover:scale-110" />
-                                  </div>
-
-                                  {/* Content Info */}
-                                  <div className="flex-1 min-w-0">
-                                    <div className="flex items-center gap-1.5 flex-wrap">
-                                      <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[13px] font-bold text-[#1F2A24] group-hover:text-[#123D32] transition-colors leading-tight">
-                                        {sub.label}
+                    <AnimatePresence>
+                      {open && item.mega && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 6 }}
+                          transition={{ duration: 0.18 }}
+                          className="absolute left-1/2 top-full z-[150] w-[min(940px,calc(100vw-3rem))] -translate-x-1/2 pt-3"
+                        >
+                          <div className="overflow-hidden rounded-3xl border border-gold/30 bg-white shadow-[0_36px_80px_-24px_rgba(11,42,34,0.45)]">
+                            <div className="h-1 bg-gradient-to-r from-forest via-gold to-forest" />
+                            <div className="grid grid-cols-3 gap-x-2 gap-y-1 p-5">
+                              {categories.map((cat) => {
+                                const Icon = categoryIcons[cat.id];
+                                const subs = cat.subs.slice(0, 4);
+                                return (
+                                  <div key={cat.id} className="rounded-2xl p-3 transition-colors hover:bg-ivory">
+                                    <Link
+                                      href={cat.href}
+                                      onClick={(e) => handleLinkClick(e, cat.href)}
+                                      className="group/cat flex items-center gap-3"
+                                    >
+                                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-forest text-gold transition-colors group-hover/cat:bg-gold group-hover/cat:text-forest">
+                                        <Icon className="h-[18px] w-[18px]" />
                                       </span>
-                                      {sub.badge && (
-                                        <span className="text-[9px] font-extrabold uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-[#C5A15B]/15 text-[#123D32] border border-[#C5A15B]/40 shrink-0 group-hover:bg-[#123D32] group-hover:text-white transition-colors">
-                                          {sub.badge}
-                                        </span>
+                                      <span className="font-heading text-[13px] font-bold uppercase tracking-wide text-ink leading-tight group-hover/cat:text-forest-soft">
+                                        {cat.name}
+                                      </span>
+                                    </Link>
+                                    <ul className="mt-2.5 space-y-0.5 pl-[3.25rem]">
+                                      {subs.map((sub) => (
+                                        <li key={sub.id}>
+                                          <Link
+                                            href={sub.href}
+                                            onClick={(e) => handleLinkClick(e, sub.href)}
+                                            className="block py-0.5 text-[13px] text-muted transition-colors hover:text-forest hover:translate-x-0.5"
+                                          >
+                                            {sub.name}
+                                          </Link>
+                                        </li>
+                                      ))}
+                                      {cat.subs.length > subs.length && (
+                                        <li>
+                                          <Link
+                                            href={cat.href}
+                                            className="block py-0.5 text-[12px] font-semibold text-gold-deep hover:text-forest"
+                                          >
+                                            +{cat.subs.length - subs.length} more
+                                          </Link>
+                                        </li>
                                       )}
-                                    </div>
-                                    <p className="text-[11px] text-[#6B7C73] group-hover:text-[#6B7C73] leading-snug mt-0.5 line-clamp-1">
-                                      {sub.desc}
-                                    </p>
+                                    </ul>
                                   </div>
-
-                                  {/* Micro chevron arrow */}
-                                  <ChevronRight className="w-3.5 h-3.5 text-[#C5A15B]/40 group-hover:text-[#123D32] group-hover:translate-x-0.5 transition-all shrink-0 self-center opacity-0 group-hover:opacity-100" />
-                                </Link>
-                              );
-                            })}
+                                );
+                              })}
+                            </div>
+                            <div className="flex items-center justify-between gap-4 border-t border-black/[0.06] bg-forest px-6 py-3.5">
+                              <p className="text-[13px] text-white/80">
+                                Need a custom size or finish? <span className="text-gold font-semibold">We cut to order.</span>
+                              </p>
+                              <Link
+                                href="/products"
+                                className="group/all inline-flex items-center gap-1.5 text-[13px] font-bold text-gold hover:text-white transition-colors"
+                              >
+                                View full catalogue
+                                <ArrowRight className="h-4 w-4 transition-transform group-hover/all:translate-x-1" />
+                              </Link>
+                            </div>
                           </div>
+                        </motion.div>
+                      )}
 
-                          {/* Advisory / Direct Link Footer Strip */}
-                          {item.footerNote && (
-                            <Link
-                              href={item.footerNote.href}
-                              onClick={(e) => handleNavClick(e, item.footerNote!.href)}
-                              className="px-4 py-2.5 bg-[#123D32] hover:bg-[#1E5A46] text-white/90 border-t border-[#C5A15B]/30 flex items-center justify-between gap-3 text-[11px] transition-colors group/foot"
-                            >
-                              <div className="flex items-center gap-2 truncate">
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#C5A15B] animate-pulse shrink-0" />
-                                <span className="text-[#F7F4EB] font-medium truncate group-hover/foot:text-[#C5A15B] transition-colors">
-                                  {item.footerNote.text}
+                      {open && item.children && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 6 }}
+                          transition={{ duration: 0.18 }}
+                          className="absolute left-1/2 top-full z-[150] w-[300px] -translate-x-1/2 pt-3"
+                        >
+                          <div className="overflow-hidden rounded-2xl border border-gold/30 bg-white p-2 shadow-[0_30px_60px_-22px_rgba(11,42,34,0.45)]">
+                            {item.children.map((child) => (
+                              <Link
+                                key={child.label}
+                                href={child.href}
+                                onClick={(e) => handleLinkClick(e, child.href)}
+                                className="group/item flex items-center justify-between gap-3 rounded-xl px-3.5 py-2.5 transition-colors hover:bg-ivory"
+                              >
+                                <span>
+                                  <span className="block text-[13.5px] font-semibold text-ink group-hover/item:text-forest">
+                                    {child.label}
+                                  </span>
+                                  {child.desc && <span className="block text-xs text-muted">{child.desc}</span>}
                                 </span>
-                              </div>
-                              <ArrowRight className="w-3.5 h-3.5 text-[#C5A15B] shrink-0 group-hover/foot:translate-x-1 transition-transform" />
-                            </Link>
-                          )}
-                        </div>
-                      </div>
-                    )}
+                                <ArrowRight className="h-4 w-4 text-gold opacity-0 -translate-x-1 transition-all group-hover/item:opacity-100 group-hover/item:translate-x-0" />
+                              </Link>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 );
               }
 
-              // Direct link
               return (
                 <Link
                   key={item.label}
-                  href={item.href || "/"}
-                  onClick={(e) => handleNavClick(e, item.href || "/")}
-                  className={`font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-bold tracking-tight transition-all py-1.5 px-3 rounded-full flex items-center gap-1.5 shrink-0 ${
-                    item.label === "Farm House & Gardens"
-                      ? "bg-[#123D32]/10 text-[#123D32] border border-[#123D32]/30 hover:bg-[#123D32] hover:text-white shadow-2xs"
-                      : active
-                      ? "text-[#123D32] bg-[#C5A15B]/20 border border-[#C5A15B]/60 shadow-2xs"
-                      : "text-[#1F2A24] hover:text-[#C5A15B] hover:bg-[#F7F4EB]"
-                  }`}
+                  href={item.href!}
+                  onClick={(e) => handleLinkClick(e, item.href!)}
+                  className={`${base} ${tone}`}
                 >
-                  {item.label === "Farm House & Gardens" && (
-                    <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
+                  {active && (
+                    <motion.span
+                      layoutId="nav-pill"
+                      className="absolute inset-0 rounded-full bg-gold/20 ring-1 ring-gold/50"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
                   )}
-                  <span>{item.label}</span>
+                  <span className="relative">{item.label}</span>
                 </Link>
               );
             })}
           </nav>
 
-          {/* Right Action Buttons */}
-          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
-            {/* WhatsApp CTA Styled in Website's Royal Gold Theme */}
-            <a
-              href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20connect%20regarding%20natural%20stone%20projects"
+          {/* Right actions */}
+          <div className="flex items-center gap-2.5">
+            <motion.a
+              href={waHeader}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 sm:gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-xs font-bold tracking-wider uppercase px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#C5A15B] hover:bg-[#C5A15B] text-[#123D32] transition-all duration-300 shadow-[0_4px_16px_rgba(194,155,56,0.32)] hover:shadow-[0_6px_22px_rgba(194,155,56,0.5)] border border-[#C5A15B] active:scale-95 whitespace-nowrap shrink-0 group"
+              whileTap={{ scale: 0.95 }}
+              whileHover={{ y: -2 }}
+              className="hidden xl:inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-[13px] font-bold text-forest shadow-[0_8px_22px_-8px_rgba(197,161,91,0.8)]"
             >
-              <WhatsAppIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-[#123D32] shrink-0 transition-transform group-hover:scale-110" size={16} />
-              <span className="hidden sm:inline">WhatsApp Chat</span>
-              <span className="sm:hidden text-[11px]">Chat</span>
-            </a>
+              <WhatsAppIcon className="h-4 w-4 fill-forest" size={16} />
+              Get a Quote
+            </motion.a>
 
-            {/* Mobile Hamburger Button */}
             <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 rounded-xl bg-black/5 hover:bg-black/10 text-[#1F2A24] transition-colors focus:outline-none focus:ring-2 focus:ring-[#C5A15B]"
-              aria-label="Toggle Navigation Menu"
+              type="button"
+              onClick={() => setMobileOpen(true)}
+              className="lg:hidden flex h-11 w-11 items-center justify-center rounded-2xl bg-forest text-gold shadow-md active:scale-95 transition-transform"
+              aria-label="Open menu"
             >
-              {mobileOpen ? <X className="w-5 h-5 text-[#C5A15B]" /> : <Menu className="w-5 h-5" />}
+              <Menu className="h-5 w-5" />
             </button>
           </div>
         </div>
       </header>
 
-      {/* 3. Mobile Navigation Drawer with Accordion Submenus */}
-      {mobileOpen && (
-        <div className="fixed inset-0 z-[200] lg:hidden flex animate-fade-in">
-          {/* Backdrop */}
-          <div
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
-            onClick={() => setMobileOpen(false)}
-          />
+      {/* ───────────── Mobile drawer ───────────── */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            className="fixed inset-0 z-[200] lg:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <div className="absolute inset-0 bg-forest-deep/70 backdrop-blur-sm" onClick={() => setMobileOpen(false)} />
 
-          {/* Drawer Content */}
-          <div className="relative ml-auto w-full max-w-xs bg-[#F7F4EB] h-full shadow-2xl flex flex-col z-10 border-l border-black/10">
-            {/* Drawer Header */}
-            <div className="p-4 bg-[#123D32] text-white flex items-center justify-between border-b border-white/10">
-              <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg bg-[#1F2A24] border border-[#C5A15B] flex items-center justify-center">
-                  <span className="font-['Cinzel',serif] text-xs font-bold text-[#C5A15B]">DS</span>
-                </div>
-                <div>
-                  <span className="font-['Cinzel',serif] text-sm font-bold text-white tracking-wider block">
-                    DHOLPURESTONES
+            <motion.aside
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", stiffness: 320, damping: 34 }}
+              className="absolute right-0 top-0 flex h-full w-[88%] max-w-sm flex-col rounded-l-[2rem] bg-ivory shadow-2xl"
+            >
+              <div className="flex items-center justify-between rounded-tl-[2rem] bg-forest px-5 py-4">
+                <div className="flex items-center gap-2.5">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-gold/70 bg-forest-deep">
+                    <span className="font-heading text-sm font-extrabold text-gold">DS</span>
                   </span>
-                  <span className="text-[9px] text-[#C5A15B] uppercase tracking-widest font-semibold">
-                    ESTD. 1953
+                  <span className="leading-tight">
+                    <span className="block font-heading text-[15px] font-bold uppercase tracking-wider text-white">
+                      Dholpurestones
+                    </span>
+                    <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+                      Estd. 1953
+                    </span>
                   </span>
                 </div>
+                <button
+                  type="button"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white active:scale-90 transition-transform"
+                  aria-label="Close menu"
+                >
+                  <X className="h-5 w-5" />
+                </button>
               </div>
-              <button
-                onClick={() => setMobileOpen(false)}
-                className="p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
-                aria-label="Close menu"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
 
-            {/* Nav Links with Expandable Accordions */}
-            <nav className="flex-1 overflow-y-auto p-4 space-y-2">
-              {navItems.map((item) => {
-                const active = isNavActive(item);
+              <nav className="flex-1 overflow-y-auto overscroll-contain px-4 py-4 space-y-2" aria-label="Mobile">
+                {navItems.map((item) => {
+                  const active = isActive(item);
+                  const hasSub = item.mega || item.children;
+                  const expanded = mobileSection === item.label;
 
-                if (item.children) {
-                  const isExpanded = mobileExpanded[item.label] ?? false;
-                  return (
-                    <div key={item.label} className="bg-white rounded-xl border border-black/6 overflow-hidden">
-                      <button
-                        type="button"
-                        onClick={() => toggleMobileSubmenu(item.label)}
-                        className={`w-full flex items-center justify-between p-3.5 text-[14.5px] font-bold text-left transition-colors ${
-                          active ? "text-[#C5A15B] bg-[#123D32]" : "text-[#1F2A24]"
+                  if (!hasSub) {
+                    return (
+                      <Link
+                        key={item.label}
+                        href={item.href!}
+                        onClick={(e) => handleLinkClick(e, item.href!)}
+                        className={`flex items-center justify-between rounded-2xl px-4 py-3.5 text-[15px] font-bold transition-colors ${
+                          active ? "bg-forest text-gold" : "bg-white text-ink border border-black/[0.06]"
                         }`}
                       >
-                        <span>{item.label}</span>
+                        {item.label}
+                        <ArrowRight className={`h-4 w-4 ${active ? "text-gold" : "text-gold-deep"}`} />
+                      </Link>
+                    );
+                  }
+
+                  return (
+                    <div key={item.label} className="overflow-hidden rounded-2xl border border-black/[0.06] bg-white">
+                      <button
+                        type="button"
+                        onClick={() => setMobileSection(expanded ? null : item.label)}
+                        className={`flex w-full items-center justify-between px-4 py-3.5 text-[15px] font-bold ${
+                          active ? "text-forest" : "text-ink"
+                        }`}
+                        aria-expanded={expanded}
+                      >
+                        {item.label}
                         <ChevronDown
-                          className={`w-4 h-4 transition-transform duration-200 ${
-                            isExpanded ? "rotate-180 text-[#C5A15B]" : "text-[#1F2A24]/60"
-                          }`}
+                          className={`h-4 w-4 transition-transform duration-200 ${expanded ? "rotate-180 text-gold-deep" : "text-ink/50"}`}
                         />
                       </button>
-
-                      {isExpanded && (
-                        <div className="bg-[#F7F4EB] border-t border-black/8 p-2.5 space-y-1.5">
-                          {item.headerTag && (
-                            <div className="px-2 pt-1 pb-1 flex items-center justify-between text-[9.5px] font-extrabold uppercase tracking-widest text-[#123D32]">
-                              <span className="flex items-center gap-1.5">
-                                <Landmark className="w-3 h-3 text-[#C5A15B]" />
-                                {item.headerTag}
-                              </span>
-                              <span className="text-[#6B7C73] font-bold">{item.children.length}</span>
-                            </div>
-                          )}
-                          {item.children.map((sub) => {
-                            const IconComponent = sub.icon;
-                            return (
-                              <Link
-                                key={sub.label}
-                                href={sub.href}
-                                onClick={(e) => handleNavClick(e, sub.href)}
-                                className="flex items-start gap-2.5 p-2.5 rounded-xl bg-white border border-black/5 hover:border-[#C5A15B]/40 hover:bg-[#C5A15B]/10 transition-all text-left shadow-2xs group"
-                              >
-                                <div className="w-7 h-7 rounded-lg bg-[#123D32] text-[#C5A15B] flex items-center justify-center shrink-0 border border-[#C5A15B]/30 mt-0.5 group-hover:bg-[#C5A15B] group-hover:text-[#123D32] transition-colors">
-                                  <IconComponent className="w-3.5 h-3.5" />
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                  <div className="flex items-center gap-1.5 flex-wrap">
-                                    <span className="text-[13px] font-bold text-[#1F2A24] group-hover:text-[#123D32] transition-colors leading-tight">
-                                      {sub.label}
+                      <AnimatePresence initial={false}>
+                        {expanded && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.25 }}
+                            className="overflow-hidden"
+                          >
+                            {item.mega ? (
+                              <div className="grid grid-cols-2 gap-2 px-3 pb-3">
+                                {categories.map((cat) => (
+                                  <Link
+                                    key={cat.id}
+                                    href={cat.href}
+                                    onClick={(e) => handleLinkClick(e, cat.href)}
+                                    className="group relative block overflow-hidden rounded-2xl aspect-[4/3] bg-forest active:scale-[0.97] transition-transform"
+                                  >
+                                    <Image
+                                      src={cat.image}
+                                      alt=""
+                                      fill
+                                      sizes="160px"
+                                      className="object-cover"
+                                    />
+                                    <span className="absolute inset-0 bg-gradient-to-t from-forest-deep/90 via-forest-deep/30 to-transparent" />
+                                    <span className="absolute inset-x-0 bottom-0 p-2.5 text-[12px] font-bold leading-tight text-white">
+                                      {cat.name}
                                     </span>
-                                    {sub.badge && (
-                                      <span className="text-[8.5px] font-extrabold uppercase tracking-wider px-1.5 py-0.2 rounded-full bg-[#C5A15B]/20 text-[#123D32] border border-[#C5A15B]/40 shrink-0">
-                                        {sub.badge}
-                                      </span>
-                                    )}
-                                  </div>
-                                  <p className="text-[10.5px] text-[#6B7C73] leading-snug mt-0.5 line-clamp-1">
-                                    {sub.desc}
-                                  </p>
-                                </div>
-                                <ChevronRight className="w-3.5 h-3.5 text-[#C5A15B]/60 shrink-0 ml-auto self-center" />
-                              </Link>
-                            );
-                          })}
-                          {/* {item.footerNote && (
-                            <Link
-                              href={item.footerNote.href}
-                              onClick={(e) => handleNavClick(e, item.footerNote!.href)}
-                              className="flex items-center justify-between p-2 rounded-lg bg-[#123D32] text-[#F7F4EB] text-[10.5px] font-semibold border border-[#C5A15B]/40 hover:text-[#C5A15B] transition-colors mt-1"
-                            >
-                              <span className="truncate">{item.footerNote.text}</span>
-                              <ArrowRight className="w-3 h-3 text-[#C5A15B] shrink-0 ml-1" />
-                            </Link>
-                          )} */}
-                        </div>
-                      )}
+                                  </Link>
+                                ))}
+                              </div>
+                            ) : (
+                              <ul className="px-2 pb-2">
+                                {item.children!.map((child) => (
+                                  <li key={child.label}>
+                                    <Link
+                                      href={child.href}
+                                      onClick={(e) => handleLinkClick(e, child.href)}
+                                      className="flex items-center justify-between rounded-xl px-3 py-2.5 text-[14px] font-medium text-ink/85 active:bg-ivory"
+                                    >
+                                      {child.label}
+                                      <ArrowRight className="h-3.5 w-3.5 text-gold-deep" />
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   );
-                }
+                })}
+              </nav>
 
-                return (
-                  <Link
-                    key={item.label}
-                    href={item.href || "/"}
-                    onClick={(e) => handleNavClick(e, item.href || "/")}
-                    className={`flex items-center justify-between p-3.5 rounded-xl text-[14.5px] font-bold transition-all border ${
-                      item.label === "Farm House & Gardens"
-                        ? "bg-[#123D32]/10 text-[#123D32] border-[#123D32]/30"
-                        : active
-                        ? "text-[#C5A15B] bg-[#123D32] border-[#C5A15B]/40"
-                        : "text-[#1F2A24] bg-white border-black/6 hover:text-[#C5A15B]"
-                    }`}
-                  >
-                    <span>{item.label}</span>
-                    {item.label === "Farm House & Gardens" && (
-                      <span className="text-[9px] bg-[#123D32] text-white px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
-                        SPECIALTY
-                      </span>
-                    )}
-                  </Link>
-                );
-              })}
-            </nav>
-
-            {/* Drawer Footer CTA */}
-            <div className="p-4 bg-white border-t border-black/8 space-y-2.5">
-              <a
-                href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20to%20connect%20regarding%20natural%20stone%20projects"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full py-3.5 px-4 rounded-full bg-[#C5A15B] hover:bg-[#C5A15B] text-[#123D32] text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all active:scale-95 border border-[#C5A15B]"
-              >
-                <WhatsAppIcon className="w-4 h-4 fill-[#123D32]" size={16} />
-                <span>Chat On WhatsApp</span>
-              </a>
-              <div className="text-[10px] text-center text-[#6B7C73] flex items-center justify-center gap-2 pt-1">
-                <a href="tel:+919414945457" className="hover:text-[#C5A15B] font-semibold">
-                  WA: +91 94149 45457
+              <div className="space-y-2.5 border-t border-black/[0.08] bg-white px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-4">
+                <a
+                  href={waHeader}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] py-3.5 text-sm font-bold text-white shadow-lg active:scale-[0.97] transition-transform"
+                >
+                  <WhatsAppIcon className="h-[18px] w-[18px] fill-white" size={18} />
+                  Chat on WhatsApp
                 </a>
-                <span>&bull;</span>
-                <a href="tel:+919057355232" className="hover:text-[#C5A15B] font-semibold">
-                  Call: +91 90573 55232
+                <a
+                  href={`mailto:${EMAIL}`}
+                  className="flex w-full items-center justify-center gap-2 rounded-full border border-forest/25 py-3 text-[13px] font-semibold text-forest"
+                >
+                  <Mail className="h-4 w-4 text-gold-deep" />
+                  {EMAIL}
                 </a>
               </div>
-            </div>
-          </div>
-        </div>
-      )}
+            </motion.aside>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

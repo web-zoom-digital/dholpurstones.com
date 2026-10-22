@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef, useMemo } from "react";
+import AnimDiv from "@/components/ui/AnimDiv";
 import Image from "next/image";
 import {
   LuX as X,
@@ -18,37 +19,6 @@ import {
 } from "react-icons/lu";
 import WhatsAppIcon from "./WhatsAppIcon";
 
-function AnimDiv({
-  children,
-  className = "",
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) {
-          setTimeout(() => el.classList.add("gcl-visible"), delay);
-          obs.unobserve(el);
-        }
-      },
-      { threshold: 0.08 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [delay]);
-  return (
-    <div ref={ref} className={`gcl-animate ${className}`}>
-      {children}
-    </div>
-  );
-}
 
 export interface SignatureProject {
   id: string;
@@ -279,7 +249,7 @@ function SpotlightProjectCard({
           </div>
 
           {/* Giant Watermark Project Index */}
-          <div className="absolute top-1 right-2.5 sm:right-3 font-['Cinzel',serif] text-4xl sm:text-5xl font-black text-white/30 select-none pointer-events-none z-10 group-hover:text-[#C5A15B]/50 transition-colors">
+          <div className="absolute top-1 right-2.5 sm:right-3 font-heading text-4xl sm:text-5xl font-black text-white/30 select-none pointer-events-none z-10 group-hover:text-[#C5A15B]/50 transition-colors">
             {project.number}
           </div>
 
@@ -301,11 +271,11 @@ function SpotlightProjectCard({
         {/* Card Content */}
         <div className="p-3.5 sm:p-5 md:p-6 flex flex-col flex-1 justify-between relative z-20">
           <div>
-            <h3 className="font-['Cinzel',serif] text-sm sm:text-base md:text-lg font-bold text-[#1F2A24] uppercase tracking-wider mb-1 group-hover:text-[#123D32] transition-colors leading-snug">
+            <h3 className="font-heading text-sm sm:text-base md:text-lg font-bold text-[#1F2A24] uppercase tracking-wider mb-1 group-hover:text-[#123D32] transition-colors leading-snug">
               {project.title}
             </h3>
 
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] sm:text-xs text-[#C5A15B] font-semibold mb-2.5">
+            <p className="font-body text-[11px] sm:text-xs text-[#C5A15B] font-semibold mb-2.5">
               {project.subtitle}
             </p>
 
@@ -337,7 +307,7 @@ function SpotlightProjectCard({
             {/* Dynamic Card Tab Content */}
             <div className="min-h-[72px]">
               {activeCardTab === "scope" && (
-                <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs text-[#6B7C73] leading-relaxed line-clamp-3">
+                <p className="font-body text-xs text-[#6B7C73] leading-relaxed line-clamp-3">
                   {project.scope}
                 </p>
               )}
@@ -465,7 +435,7 @@ export default function OurSignatureProjects() {
         <AnimDiv className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-black/8 mb-6 sm:mb-8">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#C5A15B] animate-pulse" />
-            <span className="font-['Cinzel',serif] text-[9.5px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.18em] text-[#1F2A24] uppercase">
+            <span className="font-heading text-[9.5px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.18em] text-[#1F2A24] uppercase">
               DHOLPURESTONES.COM &bull; ARCHITECTURAL SHOWCASE
             </span>
           </div>
@@ -501,7 +471,7 @@ export default function OurSignatureProjects() {
               </button>
             </div>
 
-            <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest">
+            <span className="font-heading text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest">
               08
             </span>
           </div>
@@ -514,11 +484,11 @@ export default function OurSignatureProjects() {
               <Compass className="w-3 h-3 sm:w-3.5 sm:h-3.5 animate-spin-slow" />
               <span>Featured Projects: Demonstrating Our Expertise</span>
             </div>
-            <h2 className="font-['Cinzel',serif] text-xl sm:text-3xl lg:text-5xl font-bold text-[#1F2A24] uppercase tracking-wide mb-2 sm:mb-3 leading-snug">
+            <h2 className="font-heading text-xl sm:text-3xl lg:text-5xl font-bold text-[#1F2A24] uppercase tracking-wide mb-2 sm:mb-3 leading-snug">
               Our Signature Projects
             </h2>
             <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#C5A15B] via-[#C5A15B] to-transparent rounded-full mb-3 sm:mb-4" />
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] leading-relaxed">
+            <p className="font-body text-xs sm:text-sm text-[#6B7C73] leading-relaxed">
               From palatial private estates and monumental temples to royal heritage resorts and triple-height hotel atriums. Explore landmark architectural stone installations engineered with our own quarry strata and master carving craftsmanship.
             </p>
           </AnimDiv>
@@ -526,7 +496,7 @@ export default function OurSignatureProjects() {
           {/* Key Metric Highlights with Gilded Accents */}
           <AnimDiv delay={100} className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 shrink-0 w-full lg:w-auto">
             <div className="bg-[#F7F4EB] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-4 py-2 sm:py-2.5 shadow-xs hover:border-[#C5A15B]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-xs sm:text-xl font-bold text-[#1F2A24]">
+              <span className="block font-heading text-xs sm:text-xl font-bold text-[#1F2A24]">
                 70+ Years
               </span>
               <span className="text-[8.5px] sm:text-[9px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
@@ -534,7 +504,7 @@ export default function OurSignatureProjects() {
               </span>
             </div>
             <div className="bg-[#F7F4EB] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-4 py-2 sm:py-2.5 shadow-xs hover:border-[#C5A15B]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-xs sm:text-xl font-bold text-[#C5A15B]">
+              <span className="block font-heading text-xs sm:text-xl font-bold text-[#C5A15B]">
                 300+ Designs
               </span>
               <span className="text-[8.5px] sm:text-[9px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
@@ -542,7 +512,7 @@ export default function OurSignatureProjects() {
               </span>
             </div>
             <div className="bg-[#F7F4EB] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-4 py-2 sm:py-2.5 shadow-xs hover:border-[#C5A15B]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-xs sm:text-xl font-bold text-[#123D32]">
+              <span className="block font-heading text-xs sm:text-xl font-bold text-[#123D32]">
                 Intl. Nominee
               </span>
               <span className="text-[8.5px] sm:text-[9px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
@@ -550,7 +520,7 @@ export default function OurSignatureProjects() {
               </span>
             </div>
             <div className="bg-[#F7F4EB] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-4 py-2 sm:py-2.5 shadow-xs hover:border-[#C5A15B]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-xs sm:text-xl font-bold text-[#1F2A24]">
+              <span className="block font-heading text-xs sm:text-xl font-bold text-[#1F2A24]">
                 500+
               </span>
               <span className="text-[8.5px] sm:text-[9px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
@@ -624,7 +594,7 @@ export default function OurSignatureProjects() {
           <AnimDiv delay={180} className="mb-12 sm:mb-16">
             <div className="bg-[#F7F4EB] rounded-3xl overflow-hidden border border-black/8 shadow-2xl p-4 sm:p-8 relative">
               {/* Giant Watermark Background Number */}
-              <div className="absolute top-2 right-6 font-['Cinzel',serif] text-8xl font-black text-black/[0.04] select-none pointer-events-none">
+              <div className="absolute top-2 right-6 font-heading text-8xl font-black text-black/[0.04] select-none pointer-events-none">
                 {activeSlideProject.number}
               </div>
 
@@ -688,15 +658,15 @@ export default function OurSignatureProjects() {
                       </div>
                     </div>
 
-                    <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold text-[#1F2A24] uppercase tracking-wider mb-2">
+                    <h3 className="font-heading text-xl sm:text-2xl font-bold text-[#1F2A24] uppercase tracking-wider mb-2">
                       {activeSlideProject.title}
                     </h3>
 
-                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold text-[#C5A15B] mb-4">
+                    <p className="font-body text-xs font-semibold text-[#C5A15B] mb-4">
                       {activeSlideProject.subtitle}
                     </p>
 
-                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] leading-relaxed mb-5">
+                    <p className="font-body text-xs sm:text-sm text-[#6B7C73] leading-relaxed mb-5">
                       {activeSlideProject.details}
                     </p>
 
@@ -739,7 +709,7 @@ export default function OurSignatureProjects() {
                       href={`https://wa.me/919414945457?text=${encodeURIComponent(activeSlideProject.waMsg)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-xs font-bold text-[#123D32] bg-[#25D366] hover:bg-[#20ba59] hover:text-white uppercase px-5 py-3 rounded-full transition-all shadow-md"
+                      className="inline-flex items-center gap-2 text-xs font-bold text-[#123D32] bg-[#25D366] hover:bg-[#1fb957] hover:text-white uppercase px-5 py-3 rounded-full transition-all shadow-md"
                     >
                       <WhatsAppIcon className="w-4 h-4 fill-current" size={16} />
                       <span>WhatsApp Quote</span>
@@ -786,7 +756,7 @@ export default function OurSignatureProjects() {
             ADVANCED MOTION GRAPHIC CALLOUT: Turnkey Landmark Project Partnership
             ========================================================================= */}
         <AnimDiv delay={300}>
-          <div className="bg-gradient-to-br from-[#123D32] via-[#123D32] to-[#0A261F] rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border border-[#C5A15B]/40 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-5 sm:gap-6 relative overflow-hidden text-white group">
+          <div className="bg-gradient-to-br from-[#123D32] via-[#123D32] to-[#0B2A22] rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border border-[#C5A15B]/40 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-5 sm:gap-6 relative overflow-hidden text-white group">
             {/* Ambient Background Gold Beam Sweep */}
             <div className="absolute -inset-full bg-gradient-to-r from-transparent via-[#C5A15B]/15 to-transparent animate-beam-sweep pointer-events-none" />
 
@@ -797,10 +767,10 @@ export default function OurSignatureProjects() {
                 <Award className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#C5A15B]" />
                 <span>Turnkey Architectural Execution</span>
               </div>
-              <h3 className="font-['Cinzel',serif] text-lg sm:text-2xl lg:text-3xl font-bold text-white uppercase tracking-wider mb-2">
+              <h3 className="font-heading text-lg sm:text-2xl lg:text-3xl font-bold text-white uppercase tracking-wider mb-2">
                 Have An Ambitious Landmark Project?
               </h3>
-              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/80 leading-relaxed">
+              <p className="font-body text-xs sm:text-sm text-white/80 leading-relaxed">
                 We collaborate directly with leading architects, royal developers, and institutions for end-to-end stone quarrying, CNC bespoke carving, dry-joint engineering, and global on-site installation.
               </p>
             </div>
@@ -818,7 +788,7 @@ export default function OurSignatureProjects() {
 
               <a
                 href="#contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center font-['Plus_Jakarta_Sans',sans-serif] text-xs font-bold uppercase tracking-wider px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all duration-300 active:scale-95 shadow-md"
+                className="w-full sm:w-auto inline-flex items-center justify-center font-body text-xs font-bold uppercase tracking-wider px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all duration-300 active:scale-95 shadow-md"
               >
                 <span>Request Project Proposal</span>
               </a>
@@ -845,7 +815,7 @@ export default function OurSignatureProjects() {
             <button
               type="button"
               onClick={() => setActiveModal(null)}
-              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/60 hover:bg-[#1F2A24] text-white flex items-center justify-center transition-colors shadow-lg cursor-pointer"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/60 hover:bg-forest-deep text-white flex items-center justify-center transition-colors shadow-lg cursor-pointer"
               aria-label="Close dialog"
             >
               <X className="w-4 h-4" />
@@ -879,14 +849,14 @@ export default function OurSignatureProjects() {
 
             {/* Modal Content */}
             <div className="p-4 sm:p-7 md:p-8">
-              <h3 className="font-['Cinzel',serif] text-lg sm:text-2xl lg:text-3xl font-bold text-[#1F2A24] uppercase tracking-wider mb-1">
+              <h3 className="font-heading text-lg sm:text-2xl lg:text-3xl font-bold text-[#1F2A24] uppercase tracking-wider mb-1">
                 {activeModal.title}
               </h3>
-              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#C5A15B] font-semibold tracking-wide mb-3 sm:mb-4">
+              <p className="font-body text-xs sm:text-sm text-[#C5A15B] font-semibold tracking-wide mb-3 sm:mb-4">
                 {activeModal.subtitle}
               </p>
 
-              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] leading-relaxed mb-4 sm:mb-6">
+              <p className="font-body text-xs sm:text-sm text-[#6B7C73] leading-relaxed mb-4 sm:mb-6">
                 {activeModal.details}
               </p>
 
@@ -933,7 +903,7 @@ export default function OurSignatureProjects() {
                   href={`https://wa.me/919414945457?text=${encodeURIComponent(activeModal.waMsg)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs uppercase px-6 sm:px-7 py-3 sm:py-3.5 rounded-full transition-all shadow-md active:scale-95"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1fb957] text-white font-bold text-xs uppercase px-6 sm:px-7 py-3 sm:py-3.5 rounded-full transition-all shadow-md active:scale-95"
                 >
                   <WhatsAppIcon className="w-4 h-4 fill-white" size={16} />
                   <span>Inquire About This Project</span>

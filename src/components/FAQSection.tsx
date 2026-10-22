@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo, useRef, useEffect } from "react";
+import AnimDiv from "@/components/ui/AnimDiv";
 import {
   LuChevronDown as ChevronDown,
   LuSparkles as Sparkles,
@@ -15,37 +16,6 @@ import {
 } from "react-icons/lu";
 import WhatsAppIcon from "./WhatsAppIcon";
 
-function AnimDiv({
-  children,
-  className = "",
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) {
-          setTimeout(() => el.classList.add("gcl-visible"), delay);
-          obs.unobserve(el);
-        }
-      },
-      { threshold: 0.08 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [delay]);
-  return (
-    <div ref={ref} className={`gcl-animate ${className}`}>
-      {children}
-    </div>
-  );
-}
 
 export interface FAQItem {
   id: string;
@@ -217,7 +187,7 @@ export default function FAQSection() {
             <div className="flex items-start gap-2.5 sm:gap-3.5">
               {/* Number Index */}
               <div
-                className={`w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl flex items-center justify-center font-['Cinzel',serif] text-[10px] sm:text-xs font-bold shrink-0 transition-colors shadow-2xs ${isOpen
+                className={`w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl flex items-center justify-center font-heading text-[10px] sm:text-xs font-bold shrink-0 transition-colors shadow-2xs ${isOpen
                     ? "bg-[#123D32] text-white"
                     : "bg-[#F7F4EB] text-[#C5A15B] group-hover:bg-[#123D32] group-hover:text-white"
                   }`}
@@ -230,7 +200,7 @@ export default function FAQSection() {
                   <Sparkles className="w-2.5 h-2.5 text-[#C5A15B]" />
                   <span>{faq.categoryLabel}</span>
                 </div>
-                <h4 className="font-['Cinzel',serif] text-xs sm:text-base font-bold text-[#1F2A24] uppercase tracking-wide leading-snug group-hover:text-[#123D32] transition-colors">
+                <h4 className="font-heading text-xs sm:text-base font-bold text-[#1F2A24] uppercase tracking-wide leading-snug group-hover:text-[#123D32] transition-colors">
                   {faq.q}
                 </h4>
               </div>
@@ -249,7 +219,7 @@ export default function FAQSection() {
           {/* Expandable Accordion Body */}
           {isOpen && (
             <div className="px-4 sm:px-6 pb-4 sm:pb-6 pt-1 border-t border-black/6 animate-fadeIn">
-              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] leading-relaxed mb-3 sm:mb-4">
+              <p className="font-body text-xs sm:text-sm text-[#6B7C73] leading-relaxed mb-3 sm:mb-4">
                 {faq.a}
               </p>
 
@@ -335,11 +305,11 @@ export default function FAQSection() {
         <AnimDiv className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-black/8 mb-6 sm:mb-8">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#C5A15B] animate-pulse" />
-            <span className="font-['Cinzel',serif] text-[9.5px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.18em] text-[#1F2A24] uppercase">
+            <span className="font-heading text-[9.5px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.18em] text-[#1F2A24] uppercase">
               DHOLPURESTONES.COM &bull; KNOWLEDGE BASE &bull; ESTD. 1953
             </span>
           </div>
-          <span className="font-['Cinzel',serif] text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest">
+          <span className="font-heading text-xs sm:text-sm font-bold text-[#C5A15B] tracking-widest">
             AEO / 09
           </span>
         </AnimDiv>
@@ -351,14 +321,14 @@ export default function FAQSection() {
               <Compass className="w-3 h-3 sm:w-3.5 sm:h-3.5 animate-spin-slow" />
               <span>Verified Corporate Knowledge &amp; AEO Architecture</span>
             </div>
-            <h2 className="font-['Cinzel',serif] text-xl sm:text-3xl lg:text-5xl font-bold text-[#1F2A24] uppercase tracking-wide mb-1.5 sm:mb-2 leading-snug">
+            <h2 className="font-heading text-xl sm:text-3xl lg:text-5xl font-bold text-[#1F2A24] uppercase tracking-wide mb-1.5 sm:mb-2 leading-snug">
               Frequently Asked Questions
             </h2>
-            <h3 className="font-['Cinzel',serif] text-base sm:text-2xl lg:text-3xl font-bold text-[#C5A15B] uppercase tracking-wider mb-2.5 sm:mb-3">
+            <h3 className="font-heading text-base sm:text-2xl lg:text-3xl font-bold text-[#C5A15B] uppercase tracking-wider mb-2.5 sm:mb-3">
               Company Knowledge &amp; Inquiries
             </h3>
             <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#C5A15B] via-[#C5A15B] to-transparent rounded-full mb-3 sm:mb-4" />
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] leading-relaxed">
+            <p className="font-body text-xs sm:text-sm text-[#6B7C73] leading-relaxed">
               Transparent, verified insights into our quarry concessions, geotechnical lab certifications, monumental landmark executions, and turnkey export logistics.
             </p>
           </AnimDiv>
@@ -366,7 +336,7 @@ export default function FAQSection() {
           {/* Key Metric Highlights with Gilded Accents */}
           <AnimDiv delay={100} className="grid grid-cols-3 gap-2 sm:gap-4 shrink-0 w-full lg:w-auto">
             <div className="bg-[#F7F4EB] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2 sm:py-3 shadow-xs hover:border-[#C5A15B]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-xs sm:text-2xl font-bold text-[#1F2A24]">
+              <span className="block font-heading text-xs sm:text-2xl font-bold text-[#1F2A24]">
                 70+ Years
               </span>
               <span className="text-[8.5px] sm:text-[10px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
@@ -374,7 +344,7 @@ export default function FAQSection() {
               </span>
             </div>
             <div className="bg-[#F7F4EB] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2 sm:py-3 shadow-xs hover:border-[#C5A15B]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-xs sm:text-2xl font-bold text-[#1F2A24]">
+              <span className="block font-heading text-xs sm:text-2xl font-bold text-[#1F2A24]">
                 100% Direct
               </span>
               <span className="text-[8.5px] sm:text-[10px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
@@ -382,7 +352,7 @@ export default function FAQSection() {
               </span>
             </div>
             <div className="bg-[#F7F4EB] border border-black/8 rounded-xl sm:rounded-2xl px-2.5 sm:px-5 py-2 sm:py-3 shadow-xs hover:border-[#C5A15B]/60 transition-colors text-center sm:text-left">
-              <span className="block font-['Cinzel',serif] text-xs sm:text-2xl font-bold text-[#1F2A24]">
+              <span className="block font-heading text-xs sm:text-2xl font-bold text-[#1F2A24]">
                 50+ Temples
               </span>
               <span className="text-[8.5px] sm:text-[10px] text-[#6B7C73] font-semibold uppercase tracking-wider block">
@@ -463,7 +433,7 @@ export default function FAQSection() {
         {filteredFaqs.length === 0 ? (
           <div className="text-center py-12 bg-[#F7F4EB] rounded-3xl border border-black/8 p-8 mb-12">
             <HelpCircle className="w-10 h-10 text-[#C5A15B] mx-auto mb-3" />
-            <h4 className="font-['Cinzel',serif] text-base font-bold text-[#1F2A24] uppercase mb-1">
+            <h4 className="font-heading text-base font-bold text-[#1F2A24] uppercase mb-1">
               No matching inquiries found
             </h4>
             <p className="text-xs text-[#6B7C73]">
@@ -502,7 +472,7 @@ export default function FAQSection() {
             ADVANCED MOTION GRAPHIC CALLOUT: Direct Architectural Consultation
             ========================================================================= */}
         <AnimDiv delay={250}>
-          <div className="bg-gradient-to-br from-[#123D32] via-[#123D32] to-[#0A261F] rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border border-[#C5A15B]/40 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-5 sm:gap-6 relative overflow-hidden text-white group">
+          <div className="bg-gradient-to-br from-[#123D32] via-[#123D32] to-[#0B2A22] rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border border-[#C5A15B]/40 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-5 sm:gap-6 relative overflow-hidden text-white group">
             {/* Ambient Background Gold Beam Sweep */}
             <div className="absolute -inset-full bg-gradient-to-r from-transparent via-[#C5A15B]/15 to-transparent animate-beam-sweep pointer-events-none" />
             <div className="absolute -right-10 -bottom-10 w-72 h-72 bg-[#C5A15B]/20 rounded-full blur-3xl pointer-events-none" />
@@ -512,10 +482,10 @@ export default function FAQSection() {
                 <Flame className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#C5A15B]" />
                 <span>Architectural Tenders &bull; BOQ Engineering</span>
               </div>
-              <h3 className="font-['Cinzel',serif] text-lg sm:text-2xl lg:text-3xl font-bold text-white uppercase tracking-wider mb-2">
+              <h3 className="font-heading text-lg sm:text-2xl lg:text-3xl font-bold text-white uppercase tracking-wider mb-2">
                 Have a Custom Architectural Specification or Tender?
               </h3>
-              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/80 leading-relaxed">
+              <p className="font-body text-xs sm:text-sm text-white/80 leading-relaxed">
                 Connect directly with director Arvind Garg (Awarded by Govt. of India &bull; Nominated for International Award for Business Excellence). We provide custom CAD drafting, IS:3620 laboratory certificates, and quarry-direct wholesale pricing.
               </p>
             </div>
@@ -533,7 +503,7 @@ export default function FAQSection() {
 
               <a
                 href="#contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center font-['Plus_Jakarta_Sans',sans-serif] text-xs font-bold uppercase tracking-wider px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all duration-300 active:scale-95 shadow-md"
+                className="w-full sm:w-auto inline-flex items-center justify-center font-body text-xs font-bold uppercase tracking-wider px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all duration-300 active:scale-95 shadow-md"
               >
                 <span>View Contact Details</span>
               </a>
@@ -544,7 +514,7 @@ export default function FAQSection() {
         {/* Running Bottom Bar */}
         <div className="mt-8 pt-4 border-t border-black/8 flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] sm:text-[11px] font-semibold text-[#6B7C73] uppercase tracking-wider text-center sm:text-left">
           <span>Natural Sandstones &bull; Mines &bull; Manufacturing &bull; Export &bull; Contracting</span>
-          <span className="font-['Cinzel',serif] text-[#1F2A24]">DHOLPURESTONES.COM</span>
+          <span className="font-heading text-[#1F2A24]">DHOLPURESTONES.COM</span>
         </div>
       </div>
 

@@ -1,10 +1,10 @@
 import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
+import PageHero from "@/components/ui/PageHero";
 import Navbar from "@/components/Navbar";
-import AboutUs from "@/components/AboutUs";
-import OurStrength from "@/components/OurStrength";
-import WhyChooseUs from "@/components/WhyChooseUs";
+import WhyUs from "@/components/home/WhyUs";
+import StrengthGrid from "@/components/about/StrengthGrid";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import {
@@ -50,42 +50,30 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Breadcrumb Header */}
-      <section className="bg-[#123D32] text-white py-10 sm:py-14 border-b border-white/10 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A15B]/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-xs text-white/60 mb-4" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-[#C5A15B] flex items-center gap-1 transition-colors">
-              <HomeIcon className="w-3.5 h-3.5" />
-              <span>Home</span>
-            </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-white/40" />
-            <span className="text-[#C5A15B] font-semibold">About Us</span>
-          </nav>
-
-          <h1 className="font-['Cinzel',serif] text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wider text-white">
-            Heritage, Quarrying &amp; Infrastructure
-          </h1>
-          <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/70 max-w-2xl mt-3 leading-relaxed">
-            The pioneer name in natural stone since 1953. Awarded by the Government of India for 300+ front elevation designs in sandstone and nominated for the prestigious International Award for Business Excellence. Operating continuous proprietary quarry concessions in Dholpur, Rajasthan with global export capabilities.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Our Story"
+        title="Heritage, Quarrying &"
+        accent="Infrastructure"
+        description="The pioneer name in natural stone since 1953 — awarded by the Government of India for 300+ front elevation designs and nominated for an International Award for Business Excellence."
+        image="/assets/quarry_mining_operations.jpg"
+        crumbs={[{ label: "About Us" }]}
+      />
 
       {/* Core About Components */}
-      <AboutUs />
-      <OurStrength />
-      <WhyChooseUs />
+      <div id="why-choose">
+        <WhyUs />
+      </div>
+      <StrengthGrid />
 
       {/* Bottom CTA Bar */}
-      <section className="bg-[#1F2A24] text-white py-12 border-t border-[#C5A15B]/20">
+      <section className="bg-forest-deep text-white py-12 border-t border-[#C5A15B]/20">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <div className="inline-flex items-center gap-2 text-[#C5A15B] text-xs font-bold uppercase tracking-wider mb-1">
               <ShieldCheck className="w-4 h-4" />
               <span>Direct Quarry Extraction &bull; Factory Quotation</span>
             </div>
-            <h3 className="font-['Cinzel',serif] text-xl sm:text-2xl font-bold">
+            <h3 className="font-heading text-xl sm:text-2xl font-bold">
               Looking for Authentic Dholpur Sandstone Supply?
             </h3>
             <p className="text-xs sm:text-sm text-white/70 mt-1 max-w-xl">

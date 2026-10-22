@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Cinzel, Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import MobileStickyBar from "@/components/MobileStickyBar";
+import MobileBottomNav from "@/components/MobileBottomNav";
 
 const cinzel = Cinzel({
   subsets: ["latin"],
@@ -13,7 +13,7 @@ const cinzel = Cinzel({
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-jakarta",
   display: "swap",
   weight: ["300", "400", "500", "600", "700", "800"],
 });
@@ -369,7 +369,7 @@ export default function RootLayout({
         />
 
         {children}
-        <MobileStickyBar />
+        <MobileBottomNav />
       </body>
     </html>
   );

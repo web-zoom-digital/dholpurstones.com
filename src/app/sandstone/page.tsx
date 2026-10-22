@@ -1,8 +1,11 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import AnimDiv from "@/components/ui/AnimDiv";
 import Image from "next/image";
 import Link from "next/link";
+import PageHero from "@/components/ui/PageHero";
+import Button from "@/components/ui/Button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -24,37 +27,6 @@ import {
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 /* ─── Animation Helper ──────────────────────────────────────────────────── */
-function AnimDiv({
-  children,
-  className = "",
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) {
-          setTimeout(() => el.classList.add("gcl-visible"), delay);
-          obs.unobserve(el);
-        }
-      },
-      { threshold: 0.08 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [delay]);
-  return (
-    <div ref={ref} className={`gcl-animate ${className}`}>
-      {children}
-    </div>
-  );
-}
 
 /* ─── Sandstone Data (Images from /public/sandstone) ─────────────────────── */
 const sandstoneList = [
@@ -146,33 +118,33 @@ const sandstoneList = [
       "Hello Dholpurestones.com, I am inquiring about Dholpur Beige Sandstone slabs and tiles.",
   },
   {
-    id: "mint-sandstone",
-    name: "Mint Sandstone",
-    categoryLabel: "NATURAL RIVEN & PAVING",
-    provenance: "Rajasthan Quartzite Belt",
-    image: "/sandstone/mint-sandstone.jpeg",
-    color: "Pale Mint Green & Ivory Tint",
+    id: "dholpur-chocolate",
+    name: "Dholpur Chocolate Sandstone",
+    categoryLabel: "RICH EARTHY BROWN",
+    provenance: "Dholpur Quarry Basin",
+    image: "/assets/products/dholpur_chocolate_teakwood.jpg",
+    color: "Deep Chocolate Brown with Teak-Wood Graining",
     shortDesc:
-      "Luminous pale green and ivory-tinted quartzitic sandstone with natural ripple patterns. Naturally cool underfoot and non-slip for pool decks and garden terraces.",
+      "Dense chocolate-brown sandstone with natural teak-wood graining. A bold, warm choice for feature walls, cladding, paving and landscape accents.",
     longDesc:
-      "Mint Sandstone is a fresh, luminous natural stone exhibiting gentle mint green, ivory, and soft buff sedimentations. Revered worldwide by landscape architects, its naturally riven, textured surface delivers high slip-resistance when wet while remaining pleasantly cool under scorching sun. The prime choice for luxury swimming pool surrounds, open garden terraces, gazebo walkways, and courtyard paving.",
+      "Dholpur Chocolate Sandstone is prized for its deep brown tone and flowing wood-like banding, which gives every slab a unique character. Quarried in the Dholpur belt, it is dense, hard-wearing and naturally weather resistant. It pairs beautifully with Dholpur Beige and Agra Red in elevations and is a favourite for accent walls, pool surrounds and garden pathways.",
     specs: [
-      { label: "Stone Type", value: "Quartzitic Sedimentary Sandstone" },
-      { label: "Compressive Strength", value: "96.0 MPa (Dry) / 90.0 MPa (Wet)" },
-      { label: "Water Absorption", value: "< 1.10% by weight" },
-      { label: "Density", value: "2.60 g/cm³" },
-      { label: "Standard Finishes", value: "Natural Riven, Calibrated Sawn, Tumbled, Bullnosed" },
-      { label: "Thickness Range", value: "22mm Calibrated, 30mm, 40mm, Pool Coping Profiles" },
-      { label: "Recommended Uses", value: "Pool Decks, Garden Pathways, Patio Paving, Terrace Courtyards" },
+      { label: "Stone Type", value: "Siliceous Sandstone" },
+      { label: "Compressive Strength", value: "90.0 MPa (Dry) / 83.0 MPa (Wet)" },
+      { label: "Water Absorption", value: "< 1.20% by weight" },
+      { label: "Density", value: "2.58 g/cm³" },
+      { label: "Standard Finishes", value: "Sawn, Honed, Natural Split, Brushed" },
+      { label: "Thickness Range", value: "20mm, 30mm, 40mm, 50mm & Custom Blocks" },
+      { label: "Recommended Uses", value: "Feature Walls, Cladding, Paving, Pool Surrounds, Accents" },
     ],
     highlights: [
-      "Natural anti-slip surface rating (R11 equivalent) for wet areas",
-      "Stays comfortably cool under bare feet even in hot summer sun",
-      "Gentle natural ripple veining brings organic warmth to landscapes",
-      "Available in matched bullnose coping units for pool edges",
+      "Distinctive teak-wood graining — no two slabs look alike",
+      "Dense, hard-wearing and weather resistant",
+      "Pairs well with Dholpur Beige and Agra Red",
+      "Available as tiles, slabs, blocks and cut-to-size pieces",
     ],
     waMsg:
-      "Hello Dholpurestones.com, I am inquiring about Mint Sandstone for outdoor pool and patio paving.",
+      "Hello Dholpurestones.com, I am inquiring about Dholpur Chocolate Sandstone for my project.",
   },
 ];
 
@@ -198,95 +170,22 @@ export default function SandstonePage() {
       {/* ═══════════════════════════════════════════════════════════════
           HERO SECTION (Centered & Full Window Size)
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden">
-        {/* Hero Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/sandstone/agra-red-sandstone.jpeg"
-            alt="Natural Sandstone Collection – Dholpurestones"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-          {/* Overlay for pristine text legibility */}
-          <div className="absolute inset-0 bg-black/55 bg-gradient-to-t from-[#0D1A14]/95 via-[#0D1A14]/50 to-[#0D1A14]/40" />
-        </div>
-
-        {/* Ambient floating particles */}
-        <div className="absolute top-20 left-20 w-3 h-3 rounded-full bg-[#C5A15B]/40 animate-pulse" />
-        <div
-          className="absolute top-40 right-32 w-2 h-2 rounded-full bg-[#C5A15B]/30 animate-pulse"
-          style={{ animationDelay: "0.8s" }}
-        />
-        <div
-          className="absolute bottom-48 right-16 w-4 h-4 rounded-full bg-[#C5A15B]/20 animate-pulse"
-          style={{ animationDelay: "1.4s" }}
-        />
-
-        {/* Centered Hero Content */}
-        <div className="relative z-10 max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col items-center text-center">
-          
-
-          {/* Category Pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C5A15B]/20 border border-[#C5A15B]/40 backdrop-blur-sm mb-5">
-            <Mountain className="w-3.5 h-3.5 text-[#C5A15B]" />
-            <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-[0.22em] uppercase">
-              MINE TO SITE &bull; AUTHENTIC RAJASTHAN QUARRIES
-            </span>
-          </div>
-
-          <h1 className="font-['Cinzel',serif] text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-wide text-white mb-5 leading-[1.1] text-center">
-            Natural Sandstone<br />
-            <span className="text-[#C5A15B]">Collection</span>
-          </h1>
-
-          <div className="w-14 h-1 bg-[#C5A15B] rounded-full mx-auto mb-6" />
-
-          <p className="font-['EB_Garamond',serif] text-lg sm:text-2xl text-white/85 max-w-3xl leading-relaxed mb-8 font-medium text-center mx-auto">
-            Direct quarry extraction from Dholpur, Agra, and Bansi Paharpur. Certified natural sandstone engineered for monumental elevations, luxury farmhouses, sacred temples, and designer landscapes since 1953.
-          </p>
-
-          {/* Stat Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
-            {[
-              { val: "4", label: "Quarry Varieties" },
-              { val: "300+", label: "Elevation Designs" },
-              { val: "1953", label: "Legacy Estd." },
-              { val: "100%", label: "Natural Stone" },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2"
-              >
-                <span className="font-['Cinzel',serif] text-base font-bold text-[#C5A15B]">
-                  {stat.val}
-                </span>
-                <span className="text-[11px] text-white/70 font-semibold uppercase tracking-wider">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA Link to Scroll down */}
-          <div className="mt-8">
-            <a
-              href="#varieties"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#C5A15B] hover:bg-[#d4b06a] text-[#123D32] font-bold text-xs uppercase tracking-wider shadow-[0_6px_24px_rgba(197,161,91,0.35)] hover:shadow-[0_10px_30px_rgba(197,161,91,0.5)] transition-all duration-300 active:scale-95"
-            >
-              <span>Explore All Varieties</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-        </div>
-
-        {/* Bottom Curve Separator */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-16 bg-[#F7F4EB]"
-          style={{ clipPath: "ellipse(55% 100% at 50% 100%)" }}
-        />
-      </section>
+      <PageHero
+        eyebrow="Mine To Site"
+        title="Dholpur"
+        accent="Sandstone"
+        description="Four signature colours — Agra Red, Dholpur Beige, Dholpur Pink and Dholpur Chocolate — quarried from our own mines in Dholpur, Rajasthan."
+        image="/sandstone/agra-red-sandstone.jpeg"
+        crumbs={[{ label: "Products", href: "/products" }, { label: "Sandstone" }]}
+        stats={[
+          { value: "4", label: "Colours" },
+          { value: "300+", label: "Elevation designs" },
+          { value: "1953", label: "Since" },
+        ]}
+      >
+        <Button href="#varieties" variant="gold" size="lg">Explore Colours</Button>
+        <Button href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20would%20like%20a%20quote%20for%20sandstone." variant="outline-light" size="lg">Get a Quote</Button>
+      </PageHero>
 
       {/* ═══════════════════════════════════════════════════════════════
           SANDSTONE VARIETIES GRID SECTION
@@ -299,11 +198,11 @@ export default function SandstonePage() {
             <span className="text-[10px] sm:text-xs font-bold text-[#C5A15B] uppercase tracking-[0.2em] block mb-2">
               QUARRY-DIRECT INVENTORY
             </span>
-            <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-wide text-[#1F2A24] leading-tight mb-3">
+            <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-wide text-[#1F2A24] leading-tight mb-3">
               Our Natural Sandstone Varieties
             </h2>
             <div className="w-12 h-1 bg-[#C5A15B] rounded-full mx-auto mb-4" />
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] leading-relaxed max-w-2xl mx-auto">
+            <p className="font-body text-xs sm:text-sm text-[#6B7C73] leading-relaxed max-w-2xl mx-auto">
               Each stone is sourced directly from certified quarries, precision-calibrated in our factories, and shipped worldwide in seaworthy packaging. Click any stone for full technical specifications.
             </p>
           </AnimDiv>
@@ -314,8 +213,9 @@ export default function SandstonePage() {
           {sandstoneList.map((stone, i) => (
             <AnimDiv key={stone.id} delay={i * 80}>
               <div
+                id={stone.id}
                 onClick={() => setActiveModal(stone)}
-                className="group bg-white rounded-2xl overflow-hidden border border-black/8 hover:border-[#C5A15B]/70 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-full cursor-pointer"
+                className="group bg-white rounded-2xl overflow-hidden border border-black/8 hover:border-[#C5A15B]/70 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-full cursor-pointer scroll-mt-32"
               >
                 <div>
                   {/* Image Container with Zoom & Provenance Badge */}
@@ -330,7 +230,7 @@ export default function SandstonePage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-20 transition-opacity" />
 
                     {/* Category Label Pill */}
-                    <span className="absolute top-3 left-3 bg-[#123D32] text-white font-['Cinzel',serif] text-[9.5px] font-bold tracking-wider px-2.5 py-1 rounded-md shadow-md">
+                    <span className="absolute top-3 left-3 bg-[#123D32] text-white font-heading text-[9.5px] font-bold tracking-wider px-2.5 py-1 rounded-md shadow-md">
                       {stone.categoryLabel}
                     </span>
 
@@ -346,11 +246,11 @@ export default function SandstonePage() {
                       {stone.provenance}
                     </span>
 
-                    <h3 className="font-['Cinzel',serif] text-base sm:text-lg font-bold text-[#1F2A24] uppercase tracking-wide group-hover:text-[#123D32] transition-colors leading-snug mb-2">
+                    <h3 className="font-heading text-base sm:text-lg font-bold text-[#1F2A24] uppercase tracking-wide group-hover:text-[#123D32] transition-colors leading-snug mb-2">
                       {stone.name}
                     </h3>
 
-                    <p className="text-xs text-[#6B7C73] leading-relaxed line-clamp-3 font-['Plus_Jakarta_Sans',sans-serif]">
+                    <p className="text-xs text-[#6B7C73] leading-relaxed line-clamp-3 font-body">
                       {stone.shortDesc}
                     </p>
                   </div>
@@ -381,11 +281,11 @@ export default function SandstonePage() {
             <span className="text-[10px] sm:text-xs font-bold text-[#C5A15B] uppercase tracking-[0.2em] block mb-2">
               THE DHOLPURESTONES ADVANTAGE
             </span>
-            <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl font-bold uppercase tracking-wide text-[#1F2A24]">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold uppercase tracking-wide text-[#1F2A24]">
               Direct Mining &amp; Export Grade Standards
             </h2>
             <div className="w-12 h-1 bg-[#C5A15B] rounded-full mx-auto my-3" />
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73]">
+            <p className="font-body text-xs sm:text-sm text-[#6B7C73]">
               Unlike middlemen, we control extraction, sawing, calibrating, hand-chiseling and crating end-to-end.
             </p>
           </AnimDiv>
@@ -415,10 +315,10 @@ export default function SandstonePage() {
                     <div className="w-11 h-11 rounded-xl bg-[#123D32] text-[#C5A15B] flex items-center justify-center mb-4 shadow-sm">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <h3 className="font-['Cinzel',serif] text-sm sm:text-base font-bold text-[#1F2A24] uppercase tracking-wider mb-2">
+                    <h3 className="font-heading text-sm sm:text-base font-bold text-[#1F2A24] uppercase tracking-wider mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-xs text-[#6B7C73] leading-relaxed font-['Plus_Jakarta_Sans',sans-serif]">
+                    <p className="text-xs text-[#6B7C73] leading-relaxed font-body">
                       {feature.desc}
                     </p>
                   </div>
@@ -438,14 +338,14 @@ export default function SandstonePage() {
           <AnimDiv>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 mb-4">
               <Sparkles className="w-3.5 h-3.5 text-[#C5A15B]" />
-              <span className="font-['Cinzel',serif] text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-widest uppercase">
+              <span className="font-heading text-[10px] sm:text-xs font-bold text-[#C5A15B] tracking-widest uppercase">
                 ARCHITECTURAL SPECIFICATIONS &amp; BOQ
               </span>
             </div>
-            <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-wide text-white mb-4">
+            <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-wide text-white mb-4">
               Need Slabs, Calibrated Tiles, or Hand-Carved Articles?
             </h2>
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-white/70 leading-relaxed mb-8">
+            <p className="font-body text-xs sm:text-sm text-white/70 leading-relaxed mb-8">
               Share your project drawings, bill of quantities (BOQ), or target stone shades directly with our quarry management desk. Sample boxes dispatched via air courier.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
@@ -453,7 +353,7 @@ export default function SandstonePage() {
                 href="https://wa.me/919414945457?text=Hello%20Dholpurestones.com,%20I%20am%20inquiring%20about%20Natural%20Sandstone%20varieties."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#C5A15B] hover:bg-[#d4b06a] text-[#123D32] font-bold text-xs uppercase tracking-wider shadow-lg transition-all active:scale-95"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#C5A15B] hover:bg-[#d4b574] text-[#123D32] font-bold text-xs uppercase tracking-wider shadow-lg transition-all active:scale-95"
               >
                 <WhatsAppIcon className="w-4 h-4 fill-[#123D32]" size={16} />
                 <span>WhatsApp Quarry Desk</span>
@@ -486,7 +386,7 @@ export default function SandstonePage() {
             <div className="sticky top-0 bg-white/95 backdrop-blur-md px-5 sm:px-8 py-4 border-b border-black/8 flex items-center justify-between z-20">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#C5A15B]" />
-                <span className="font-['Cinzel',serif] text-xs font-bold uppercase tracking-wider text-[#123D32]">
+                <span className="font-heading text-xs font-bold uppercase tracking-wider text-[#123D32]">
                   {activeModal.categoryLabel} &bull; DHOLPURESTONES
                 </span>
               </div>
@@ -521,7 +421,7 @@ export default function SandstonePage() {
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#6B7C73] block mb-1">
                     Provenance / Source
                   </span>
-                  <p className="font-['Cinzel',serif] text-xs font-bold text-[#1F2A24]">
+                  <p className="font-heading text-xs font-bold text-[#1F2A24]">
                     {activeModal.provenance}
                   </p>
                 </div>
@@ -529,16 +429,16 @@ export default function SandstonePage() {
 
               {/* Right Column: Specs & Highlights */}
               <div className="md:col-span-7">
-                <h2 className="font-['Cinzel',serif] text-2xl sm:text-3xl font-bold uppercase tracking-wide text-[#1F2A24] mb-2">
+                <h2 className="font-heading text-2xl sm:text-3xl font-bold uppercase tracking-wide text-[#1F2A24] mb-2">
                   {activeModal.name}
                 </h2>
 
-                <p className="font-['Plus_Jakarta_Sans',sans-serif] text-xs sm:text-sm text-[#6B7C73] leading-relaxed mb-6">
+                <p className="font-body text-xs sm:text-sm text-[#6B7C73] leading-relaxed mb-6">
                   {activeModal.longDesc}
                 </p>
 
                 {/* Technical Specifications Table */}
-                <h4 className="font-['Cinzel',serif] text-xs font-bold uppercase tracking-wider text-[#123D32] mb-3 flex items-center gap-1.5">
+                <h4 className="font-heading text-xs font-bold uppercase tracking-wider text-[#123D32] mb-3 flex items-center gap-1.5">
                   <FileText className="w-3.5 h-3.5 text-[#C5A15B]" />
                   <span>Technical Data &amp; BOQ Parameters</span>
                 </h4>
@@ -552,7 +452,7 @@ export default function SandstonePage() {
                 </div>
 
                 {/* Key Highlights */}
-                <h4 className="font-['Cinzel',serif] text-xs font-bold uppercase tracking-wider text-[#123D32] mb-3">
+                <h4 className="font-heading text-xs font-bold uppercase tracking-wider text-[#123D32] mb-3">
                   Quarry Highlights
                 </h4>
                 <ul className="space-y-1.5 mb-6 text-xs text-[#1F2A24]/80">

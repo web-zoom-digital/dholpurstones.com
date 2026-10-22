@@ -3,30 +3,44 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import {
-  LuPhone as Phone,
   LuMail as Mail,
   LuMapPin as MapPin,
-  LuCircleCheck as CheckCircle2,
+  LuPhone as Phone,
+  LuCircleCheck as Check,
+  LuArrowRight as ArrowRight,
 } from "react-icons/lu";
-import {
-  FaFacebookF as FacebookIcon,
-  FaInstagram as InstagramIcon,
-  FaXTwitter as TwitterIcon,
-  FaYoutube as YoutubeIcon,
-  FaLinkedinIn as LinkedinIcon,
-} from "react-icons/fa6";
+import WhatsAppIcon from "./WhatsAppIcon";
+import { categories, EMAIL, PHONE_PRIMARY, PHONE_SECONDARY, waLink } from "@/data/catalog";
+
+const company = [
+  { label: "About Us", href: "/about" },
+  { label: "Projects", href: "/projects" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Blog & Guides", href: "/blog" },
+  { label: "Contact", href: "/contact" },
+];
+
+const support = [
+  { label: "Quality Process", href: "/resources#quality" },
+  { label: "Packaging & Machinery", href: "/resources#packaging" },
+  { label: "Exhibitions", href: "/resources#exhibition" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms" },
+  { label: "Sitemap", href: "/sitemap" },
+];
+
+const linkCls = "inline-block py-1 text-[14px] text-white/70 transition-all hover:translate-x-1 hover:text-gold";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
-  const [isSubscribing, setIsSubscribing] = useState(false);
-  const [subError, setSubError] = useState<string | null>(null);
+  const [state, setState] = useState<"idle" | "sending" | "done">("idle");
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubscribe = async (e: React.FormEvent) => {
+  const subscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) return;
-    setIsSubscribing(true);
-    setSubError(null);
+    setState("sending");
+    setError(null);
     try {
       const res = await fetch("/api/newsletter", {
         method: "POST",
@@ -35,344 +49,150 @@ export default function Footer() {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Subscription failed");
-      setSubscribed(true);
+      setState("done");
       setEmail("");
-      setTimeout(() => setSubscribed(false), 5000);
-    } catch (err: unknown) {
-      setSubError(err instanceof Error ? err.message : "Unable to subscribe");
-    } finally {
-      setIsSubscribing(false);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Unable to subscribe");
+      setState("idle");
     }
   };
 
   return (
-    <footer className="bg-[#123D32] text-white border-t border-white/10 relative overflow-hidden font-['Plus_Jakarta_Sans',sans-serif]">
-      {/* 1. TOP SECTION: 4 COLUMNS (Products, Quick Links, Useful Links, Newsletter) */}
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8 sm:pt-12 sm:pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
-          {/* Column 1: Our Products */}
-          <div>
-            <h3 className="text-white text-sm sm:text-base lg:text-lg font-bold tracking-wide mb-2.5 sm:mb-4">
-              Our Products
-            </h3>
-            <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-[13px] text-white/70">
-              <li>
-                <Link href="/products" className="hover:text-[#C5A15B] transition-colors">
-                  Agra Red Stone
-                </Link>
-              </li>
-              <li>
-                <Link href="/sandstone" className="hover:text-[#C5A15B] transition-colors">
-                  Natural Sandstone Collection
-                </Link>
-              </li>
-              <li>
-                <Link href="/sandstone" className="hover:text-[#C5A15B] transition-colors">
-                  Dholpur Beige &amp; Pink Stone
-                </Link>
-              </li>
-              <li>
-                <Link href="/sandstone" className="hover:text-[#C5A15B] transition-colors">
-                  Agra Red &amp; Mint Sandstone
-                </Link>
-              </li>
-              <li>
-                <Link href="/products/white-series-dolphur-color" className="hover:text-[#C5A15B] transition-colors">
-                  White Series – Dholpur Color
-                </Link>
-              </li>
-              <li>
-                <Link href="/semi-precious" className="hover:text-[#C5A15B] transition-colors">
-                  Semi Precious Stone
-                </Link>
-              </li>
-              <li>
-                <Link href="/articles" className="hover:text-[#C5A15B] transition-colors">
-                  Hand-Carved Sculptures &amp; Articles
-                </Link>
-              </li>
-            </ul>
-          </div>
+    <footer className="bg-forest-deep text-white">
+      <div className="container-x pt-14 pb-8 sm:pt-20">
+        <div className="grid gap-10 lg:grid-cols-12">
+          {/* Brand */}
+          <div className="lg:col-span-4">
+            <Link href="/" className="inline-flex items-center gap-3">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-gold/70 bg-forest">
+                <span className="font-heading text-sm font-extrabold text-gold">DS</span>
+              </span>
+              <span className="leading-tight">
+                <span className="block font-heading text-lg font-bold uppercase tracking-[0.08em]">Dholpurestones</span>
+                <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+                  Natural Stone &bull; Since 1953
+                </span>
+              </span>
+            </Link>
+            <p className="mt-5 max-w-sm text-[14px] leading-relaxed text-white/65">
+              Mine owner, manufacturer, exporter and contractor of sandstone, marble and semi-precious stones — three generations of craft from Dholpur, Rajasthan.
+            </p>
 
-          {/* Column 2: Quick Links */}
-          <div>
-            <h3 className="text-white text-sm sm:text-base lg:text-lg font-bold tracking-wide mb-2.5 sm:mb-4">
-              Quick Links
-            </h3>
-            <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-[13px] text-white/70">
-              <li>
-                <Link href="/about" className="hover:text-[#C5A15B] transition-colors">
-                  About Us
-                </Link>
+            <ul className="mt-6 space-y-3 text-[14px]">
+              <li className="flex gap-3">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                <span className="text-white/75">
+                  B P Garg &amp; Sons, Near RAC line, Mothiyapura Road, Dholpur 328026, Rajasthan
+                </span>
               </li>
-              <li>
-                <Link href="/products" className="hover:text-[#C5A15B] transition-colors">
-                  Our Products
-                </Link>
+              <li className="flex gap-3">
+                <WhatsAppIcon className="mt-0.5 h-4 w-4 shrink-0 fill-[#25D366]" size={16} />
+                <a
+                  href={waLink("Hello Dholpurestones.com, I would like to inquire about natural stone.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/75 transition-colors hover:text-gold"
+                >
+                  {PHONE_PRIMARY} (WhatsApp)
+                </a>
               </li>
-              <li>
-                <Link href="/farmhouse-gardens" className="hover:text-[#C5A15B] transition-colors">
-                  Farm House &amp; Gardens
-                </Link>
+              <li className="flex gap-3">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                <a href="tel:+919057355232" className="text-white/75 transition-colors hover:text-gold">
+                  {PHONE_SECONDARY}
+                </a>
               </li>
-              <li>
-                <Link href="/articles" className="hover:text-[#C5A15B] transition-colors">
-                  Stone Articles &amp; Sculptures
-                </Link>
-              </li>
-              <li>
-                <Link href="/projects" className="hover:text-[#C5A15B] transition-colors">
-                  Signature Projects
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-[#C5A15B] transition-colors">
-                  Our Mines &amp; Quarries
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 3: Useful Links & Legal */}
-          <div>
-            <h3 className="text-white text-sm sm:text-base lg:text-lg font-bold tracking-wide mb-2.5 sm:mb-4">
-              Useful Links
-            </h3>
-            <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-[13px] text-white/70">
-              <li>
-                <Link href="/about" className="hover:text-[#C5A15B] transition-colors">
-                  Corporate Lineage &amp; Heritage
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-[#C5A15B] font-medium hover:underline">
-                  Contact &amp; Works Address
-                </Link>
-              </li>
-              <li>
-                <Link href="/products" className="hover:text-[#C5A15B] transition-colors">
-                  Natural Stone Collection
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-[#C5A15B] transition-colors">
-                  Verified FAQs &amp; Inquiries
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy-policy" className="hover:text-[#C5A15B] transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="hover:text-[#C5A15B] transition-colors">
-                  Terms &amp; Conditions
-                </Link>
-              </li>
-              <li>
-                <Link href="/sitemap" className="hover:text-[#C5A15B] transition-colors">
-                  HTML Sitemap
-                </Link>
-              </li>
-              <li>
-                <a href="/llms.txt" target="_blank" rel="noopener noreferrer" className="hover:text-[#C5A15B] transition-colors text-[11px] text-[#C5A15B] font-mono">
-                  AI Context (/llms.txt)
+              <li className="flex gap-3">
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                <a href={`mailto:${EMAIL}`} className="break-all text-white/75 transition-colors hover:text-gold">
+                  {EMAIL}
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 4: Newsletter */}
-          <div>
-            <h3 className="text-white text-sm sm:text-base lg:text-lg font-bold tracking-wide mb-2 sm:mb-3">
-              Sign up for our newsletter
-            </h3>
-            <p className="text-xs sm:text-[13px] text-white/70 leading-relaxed mb-3 sm:mb-4">
-              Join our architectural stone community—subscribe for quarterly quarry updates, export schedules &amp; technical reports!
-            </p>
+          {/* Link columns */}
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-5">
+            <div>
+              <h3 className="font-heading text-[13px] font-bold uppercase tracking-[0.14em] text-gold">Collections</h3>
+              <ul className="mt-3">
+                {categories.map((c) => (
+                  <li key={c.id}>
+                    <Link href={c.href} className={linkCls}>
+                      {c.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-heading text-[13px] font-bold uppercase tracking-[0.14em] text-gold">Company</h3>
+              <ul className="mt-3">
+                {company.map((l) => (
+                  <li key={l.href}>
+                    <Link href={l.href} className={linkCls}>
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="col-span-2 sm:col-span-1">
+              <h3 className="font-heading text-[13px] font-bold uppercase tracking-[0.14em] text-gold">Support</h3>
+              <ul className="mt-3 grid grid-cols-2 sm:block">
+                {support.map((l) => (
+                  <li key={l.href}>
+                    <Link href={l.href} className={linkCls}>
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
 
-            <form onSubmit={handleSubscribe} className="space-y-2">
-              <div className="flex flex-col sm:flex-row items-stretch gap-2">
+          {/* Newsletter */}
+          <div className="lg:col-span-3">
+            <h3 className="font-heading text-[13px] font-bold uppercase tracking-[0.14em] text-gold">Stay Updated</h3>
+            <p className="mt-3 text-[14px] leading-relaxed text-white/65">
+              New stone arrivals, project stories and export updates — a few emails a year.
+            </p>
+            <form onSubmit={subscribe} className="mt-4">
+              <div className="flex overflow-hidden rounded-full border border-white/15 bg-white/[0.07] focus-within:border-gold">
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your email"
-                  className="w-full bg-white text-[#1F2A24] placeholder:text-gray-400 text-base sm:text-sm px-3.5 py-2 sm:py-2.5 rounded-md outline-none focus:ring-2 focus:ring-[#C5A15B] transition-all"
+                  className="min-w-0 flex-1 bg-transparent px-4 py-3 text-[15px] text-white outline-none placeholder:text-white/45"
                 />
                 <button
                   type="submit"
-                  disabled={isSubscribing}
-                  className="shrink-0 bg-[#C5A15B] hover:bg-[#C5A15B] disabled:opacity-60 text-[#123D32] font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-md transition-all active:scale-95 shadow-md cursor-pointer"
+                  disabled={state === "sending"}
+                  className="m-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold text-forest transition-transform active:scale-90 disabled:opacity-60"
+                  aria-label="Subscribe"
                 >
-                  {isSubscribing ? "..." : "Subscribe"}
+                  <ArrowRight className="h-4 w-4" />
                 </button>
               </div>
-
-              {subError && (
-                <div className="text-red-400 text-xs pt-1 font-medium">
-                  {subError}
-                </div>
-              )}
-
-              {subscribed && (
-                <div className="flex items-center gap-1.5 text-[#25D366] text-xs font-semibold pt-1">
-                  <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
-                  <span>Thank you! You have successfully subscribed.</span>
-                </div>
+              {error && <p className="mt-2 text-xs text-[#ffb4a6]">{error}</p>}
+              {state === "done" && (
+                <p className="mt-2 flex items-center gap-1.5 text-xs text-[#7dedaa]">
+                  <Check className="h-3.5 w-3.5" />
+                  Thank you — you&apos;re subscribed.
+                </p>
               )}
             </form>
           </div>
         </div>
-      </div>
 
-      {/* 2. MIDDLE CONTACT & SOCIAL BAR */}
-      <div className="border-t border-white/10">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-7">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-8 items-center">
-            {/* Phone */}
-            <div className="lg:col-span-3 flex items-start gap-2.5 sm:gap-3">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#C5A15B]/40 bg-[#1E5A46] flex items-center justify-center shrink-0 mt-0.5 text-[#C5A15B]">
-                <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              </div>
-              <div className="text-xs sm:text-[13px] leading-snug">
-                <span className="text-[#C5A15B] font-bold tracking-wider uppercase text-[10px] sm:text-[11px] block mb-0.5">
-                  Have a Questions?
-                </span>
-                <a
-                  href="tel:+919414945457"
-                  className="text-white hover:text-[#C5A15B] font-semibold block transition-colors"
-                >
-                  +91 94149 45457 <span className="text-[10px] text-[#25D366] font-normal">(WhatsApp)</span>
-                </a>
-                <a
-                  href="tel:+919057355232"
-                  className="text-white/85 hover:text-[#C5A15B] font-medium block transition-colors mt-0.5"
-                >
-                  +91 90573 55232
-                </a>
-              </div>
-            </div>
-
-            {/* Email */}
-            <div className="lg:col-span-3 flex items-start gap-2.5 sm:gap-3">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#C5A15B]/40 bg-[#1E5A46] flex items-center justify-center shrink-0 mt-0.5 text-[#C5A15B]">
-                <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              </div>
-              <div className="text-xs sm:text-[13px] leading-snug">
-                <span className="text-[#C5A15B] font-bold tracking-wider uppercase text-[10px] sm:text-[11px] block mb-0.5">
-                  Contact us at
-                </span>
-                <a
-                  href="mailto:gargcorporationltd@gmail.com"
-                  className="text-white hover:text-[#C5A15B] font-medium block truncate transition-colors"
-                >
-                  gargcorporationltd@gmail.com
-                </a>
-              </div>
-            </div>
-
-            {/* Location */}
-            <div className="lg:col-span-3 flex items-start gap-2.5 sm:gap-3">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#C5A15B]/40 bg-[#1E5A46] flex items-center justify-center shrink-0 mt-0.5 text-[#C5A15B]">
-                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              </div>
-              <div className="text-xs sm:text-[13px] leading-snug">
-                <span className="text-[#C5A15B] font-bold tracking-wider uppercase text-[10px] sm:text-[11px] block mb-0.5">
-                  We are located at
-                </span>
-                <p className="text-white font-semibold text-xs sm:text-[13px]">
-                  B P Garg &amp; Sons
-                </p>
-                <p className="text-white/80 text-[10.5px] sm:text-xs leading-relaxed">
-                  Near RAC line, Mothiyapura road, Dholpur 328026, Raj. INDIA
-                </p>
-              </div>
-            </div>
-
-            {/* Vertical Divider & Social Icons */}
-            <div className="lg:col-span-3 flex items-center lg:justify-end gap-4 sm:gap-5 pt-3 sm:pt-4 lg:pt-0 border-t lg:border-t-0 lg:border-l border-white/10 lg:pl-6">
-              <div>
-                <span className="text-[#C5A15B] font-bold tracking-wider uppercase text-[10px] sm:text-[11px] block mb-1.5 sm:mb-2">
-                  Follow Us On
-                </span>
-                <div className="flex items-center gap-2 sm:gap-2.5">
-                  <a
-                    href="https://facebook.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Facebook"
-                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-[#123D32] hover:bg-[#C5A15B] hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm"
-                  >
-                    <FacebookIcon className="w-4 h-4" />
-                  </a>
-
-                  <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram"
-                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-[#123D32] hover:bg-[#C5A15B] hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm"
-                  >
-                    <InstagramIcon className="w-4 h-4" />
-                  </a>
-
-                  <a
-                    href="https://twitter.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Twitter"
-                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-[#123D32] hover:bg-[#C5A15B] hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm"
-                  >
-                    <TwitterIcon className="w-4 h-4" />
-                  </a>
-
-                  <a
-                    href="https://youtube.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="YouTube"
-                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-[#123D32] hover:bg-[#C5A15B] hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm"
-                  >
-                    <YoutubeIcon className="w-4 h-4" />
-                  </a>
-
-                  <a
-                    href="https://linkedin.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-[#123D32] hover:bg-[#C5A15B] hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm"
-                  >
-                    <LinkedinIcon className="w-4 h-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* 3. BOTTOM COPYRIGHT SUB-BAR */}
-      <div className="bg-[#123D32] border-t border-white/5 py-3.5 px-4 text-center">
-        <div className="max-w-[1280px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] sm:text-xs text-white/60 tracking-wide">
+        <div className="mt-12 flex flex-col items-center justify-between gap-2 border-t border-white/10 pt-6 text-center text-[12.5px] text-white/50 sm:flex-row sm:text-left">
           <p>
-            Copyright &copy; 2026 | All Rights Reserved | Dholpurestones.com (Garg Corporation Ltd. &amp; Dholpur Stone Company)
+            &copy; {new Date().getFullYear()} Dholpurestones.com &mdash; B P Garg &amp; Sons / Garg Corporation Ltd. All
+            rights reserved.
           </p>
-          <div className="flex items-center gap-3 font-medium">
-            <Link href="/sitemap" className="hover:text-[#C5A15B] transition-colors">
-              HTML Sitemap
-            </Link>
-            <span>&bull;</span>
-            <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-[#C5A15B] transition-colors">
-              XML Sitemap
-            </a>
-            <span>&bull;</span>
-            <a href="/llms.txt" target="_blank" rel="noopener noreferrer" className="hover:text-[#C5A15B] transition-colors font-mono text-[10px] text-[#C5A15B]">
-              LLMs.txt
-            </a>
-          </div>
+          <p>Awarded by Govt. of India &bull; Estd. 1953</p>
         </div>
       </div>
     </footer>
