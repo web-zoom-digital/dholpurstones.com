@@ -15,7 +15,7 @@ export const generalFaqs: Faq[] = [
   },
   {
     q: "Which stones does Dholpurstones supply?",
-    a: "Dholpur sandstone (Agra Red, Dholpur Beige, Dholpur Pink and Dholpur Chocolate), beige, white and grey marble, semi-precious gemstone slabs, hand-carved sandstone articles, plus exclusive imported marble and precious gem surfaces.",
+    a: "Dholpur sandstone (Agra Red, Dholpur Beige, Dholpur Pink and Dholpur Chocolate), beige, white and grey marble, semi-precious gemstone slabs, hand-carved sandstone articles, plus exclusive imported marble.",
   },
   {
     q: "Do you own the mines?",
@@ -53,7 +53,7 @@ export const sandstoneFaqs: Faq[] = [
 export const marbleFaqs: Faq[] = [
   {
     q: "Which marble colours do you offer?",
-    a: "Three collections: Beige marble (such as Botticino and Elmali Beige), White marble (such as Statuario, Carrara and Arabescato) and Grey marble (such as Pearl White, Blue Wave and Venatino).",
+    a: "Three collections: Beige marble (such as Botticino and Michael Angelo), White marble (such as Statuario, Carrara and Arabescato) and Grey marble (such as Pearl White, Blue Wave and Venatino).",
   },
   {
     q: "Is marble suitable for outdoor use?",

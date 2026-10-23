@@ -2,6 +2,8 @@ import React from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
+import ContactActions from "@/components/ui/ContactActions";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -14,27 +16,25 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import VarietyGrid from "@/components/ui/VarietyGrid";
 import Button from "@/components/ui/Button";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
-import { exoticMarbleVarieties, marbleSubs, waLink } from "@/data/catalog";
+import { exoticMarbleVarieties, marbleSubs, semiPreciousSubs, waLink } from "@/data/catalog";
 import { marbleFaqs, exportFaqs } from "@/data/faqs";
-import { preciousGemProducts } from "@/data/preciousGemData";
 import { breadcrumbLd, faqLd, itemListLd } from "@/lib/schema";
 import { LuArrowRight as ArrowRight } from "react-icons/lu";
 
 export const metadata: Metadata = {
-  title: "Exclusive & Imported Marble – Beige, White, Grey, Exotic Marble & Gem Surfaces",
+  title: "Exclusive & Imported Marble – Beige, White, Grey, Exotic Marble & Semi-Precious Stones",
   description:
-    "All our marble in one place: exclusive beige, white and grey marble, imported exotic marble (Calacatta Viola, Bianco Fire, Golden Michael) and precious gem surfaces — from Dholpurstones.com.",
-  keywords: ["exclusive marble", "imported marble India", "white marble", "beige marble", "grey marble", "Statuario marble", "Botticino marble", "precious gem surfaces"],
+    "All our marble in one place: exclusive beige, white and grey marble, imported exotic marble (Calacatta Viola, Bianco Fire, Golden Michael) and semi-precious stones. — from Dholpurstones.com.",
+  keywords: ["exclusive marble", "imported marble India", "white marble", "beige marble", "grey marble", "Statuario marble", "Botticino marble", "semi-precious stones"],
   alternates: { canonical: "/exclusive-imported" },
   openGraph: {
     title: "Exclusive & Imported Marble | Dholpurstones.com",
-    description: "Beige, white and grey marble, imported exotic slabs and precious gem surfaces.",
+    description: "Beige, white and grey marble, imported exotic slabs and semi-precious stones.",
     url: "/exclusive-imported",
     images: [{ url: "/assets/garg/luxurious_marble_lobby_vignettes.jpg", width: 1024, height: 576, alt: "Exclusive marble lobby" }],
   },
 };
 
-const gems = preciousGemProducts.slice(0, 8);
 const surfaces = ["bg-ivory", "bg-white", "bg-ivory"];
 
 export default function ExclusiveImportedPage() {
@@ -45,7 +45,7 @@ export default function ExclusiveImportedPage() {
         eyebrow="Marble & Imports"
         title="Exclusive &"
         accent="Imported"
-        description="All our marble in one place — beige, white and grey — plus imported exotic slabs and precious gem surfaces, sourced and made to order."
+        description="All our marble in one place — beige, white and grey — plus imported exotic slabs and semi-precious stones., sourced and made to order."
         image="/assets/garg/luxurious_marble_lobby_vignettes.jpg"
         crumbs={[{ label: "Products", href: "/products" }, { label: "Exclusive & Imported" }]}
         stats={[
@@ -54,15 +54,14 @@ export default function ExclusiveImportedPage() {
           { value: "Custom", label: "Cut to size" },
         ]}
       >
-        <Button href="#beige-marble" variant="gold" size="lg">Explore Marble</Button>
-        <Button href={waLink("Hello Dholpurstones.com, I would like a quote for marble.")} variant="outline-light" size="lg">Get a Quote</Button>
+        <ContactActions cta="Exclusive hero" topic="exclusive / imported marble" size="lg" layout="row" className="sm:justify-start" />
       </PageHero>
 
       <SubNav
         items={[
           ...marbleSubs.map((m) => ({ id: m.id, label: m.name })),
           { id: "imported-marble", label: "Imported Exotic" },
-          { id: "gem-surfaces", label: "Gem Surfaces" },
+          { id: "semi-precious", label: "Semi-Precious" },
         ]}
       />
 
@@ -94,22 +93,22 @@ export default function ExclusiveImportedPage() {
         </div>
       </section>
 
-      <section id="gem-surfaces" className="section-y scroll-mt-28 bg-ivory">
+      <section id="semi-precious" className="section-y scroll-mt-28 bg-ivory">
         <div className="container-x">
           <SectionHeader
-            eyebrow="Exclusive"
-            title="Precious Gem Surfaces"
-            subtitle="Backlit gemstone slabs, tabletops, basins and décor — each piece crafted to order."
+            eyebrow="Natural Gemstones"
+            title="Semi-Precious Stones"
+            subtitle="Agate, lapis lazuli, jasper and tiger's eye — slabs and feature panels that glow when backlit."
           />
-          <Stagger className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 lg:grid-cols-4">
-            {gems.map((g) => (
+          <Stagger className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3">
+            {semiPreciousSubs.map((g) => (
               <StaggerItem key={g.id}>
                 <Link
-                  href="/precious-gem-surface"
+                  href="/semi-precious"
                   className="group block overflow-hidden rounded-[1.25rem] border border-black/[0.06] bg-white shadow-[0_8px_26px_-16px_rgba(18,61,50,0.3)] transition-all hover:-translate-y-1.5 hover:border-gold/50 hover:shadow-[0_22px_44px_-18px_rgba(18,61,50,0.35)]"
                 >
                   <div className="relative aspect-[10/7] overflow-hidden bg-forest">
-                    <Image src={g.coverImage} alt={g.name} fill sizes="(max-width: 640px) 50vw, 25vw" className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]" />
+                    <Image src={g.image} alt={`${g.name} semi-precious stone`} fill sizes="(max-width: 640px) 50vw, 33vw" className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]" />
                   </div>
                   <h3 className="px-3.5 py-3 font-heading text-[12.5px] font-bold uppercase tracking-wide text-ink sm:text-[13.5px]">{g.name}</h3>
                 </Link>
@@ -117,8 +116,8 @@ export default function ExclusiveImportedPage() {
             ))}
           </Stagger>
           <Reveal className="mt-9 flex justify-center">
-            <Button href="/precious-gem-surface" variant="forest" size="lg">
-              View All {preciousGemProducts.length} Gem Surfaces
+            <Button href="/semi-precious" variant="forest" size="lg">
+              View All Semi-Precious Stones
               <ArrowRight className="h-4 w-4" />
             </Button>
           </Reveal>

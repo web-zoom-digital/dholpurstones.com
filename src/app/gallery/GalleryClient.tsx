@@ -481,8 +481,8 @@ export default function GalleryClient() {
         <div className="container-x relative">
           <SectionHeader
             eyebrow="Design Inspiration"
-            title="Gemstone Surfaces In Interiors"
-            subtitle="Feature walls, bars, tabletops and vanities in agate, quartz, malachite, jasper and more."
+            title="Semi-Precious Stones In Interiors"
+            subtitle="Feature walls, bars, tabletops and vanities in agate, quartz, malachite, jasper and more — tap any photo to see it larger."
           />
           <PhotoGallery photos={gemstoneInteriorPhotos} />
         </div>

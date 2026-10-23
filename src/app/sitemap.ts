@@ -13,7 +13,6 @@ const pages: { path: string; priority: number; freq: MetadataRoute.Sitemap[numbe
   { path: "/articles", priority: 0.9, freq: "weekly" },
   { path: "/semi-precious", priority: 0.85, freq: "weekly" },
   { path: "/exclusive-imported", priority: 0.85, freq: "weekly" },
-  { path: "/precious-gem-surface", priority: 0.8, freq: "monthly" },
   { path: "/exclusive-imported/white-marble", priority: 0.8, freq: "monthly" },
   { path: "/projects", priority: 0.9, freq: "monthly" },
   { path: "/about", priority: 0.85, freq: "monthly" },

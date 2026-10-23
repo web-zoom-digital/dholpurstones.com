@@ -3,13 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import SectionHeader from "../ui/SectionHeader";
 import { Reveal } from "../ui/Reveal";
-import { exoticMarbleVarieties, marbleSubs } from "@/data/catalog";
-import { preciousGemProducts } from "@/data/preciousGemData";
+import { exoticMarbleVarieties, marbleSubs, semiPreciousSubs } from "@/data/catalog";
 import { LuArrowRight as ArrowRight } from "react-icons/lu";
-
-const gemThumbs = ["malachite", "lapiz-lazuli", "labradorite"]
-  .map((id) => preciousGemProducts.find((p) => p.id === id))
-  .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
 const cards = [
   {
@@ -31,13 +26,13 @@ const cards = [
     cta: "Explore Imported Marble",
   },
   {
-    id: "gem",
-    href: "/precious-gem-surface",
-    title: "Precious Gem Surfaces",
-    note: "Backlit gemstone slabs, tabletops, basins and décor — each piece made to order.",
-    image: "/precious-gem-surface/page_062_BLACK_OBSIDIAN_image_02.jpeg",
-    thumbs: gemThumbs.map((g) => ({ name: g.name, image: g.coverImage })),
-    cta: "Explore Gem Surfaces",
+    id: "semi-precious",
+    href: "/semi-precious",
+    title: "Semi-Precious Stones",
+    note: "Agate, lapis lazuli, jasper and tiger's eye slabs and feature panels that glow when backlit.",
+    image: "/semi-precious/blue-agate.jpeg",
+    thumbs: semiPreciousSubs.slice(1, 4).map((s) => ({ name: s.name, image: s.image })),
+    cta: "Explore Semi-Precious",
   },
 ];
 
@@ -52,7 +47,7 @@ export default function ExclusiveSection() {
           tone="dark"
           eyebrow="Marble & Imports"
           title="Exclusive & Imported"
-          subtitle="All our marble, imported exotic slabs and precious gem surfaces — in one place."
+          subtitle="All our marble, imported exotic slabs and semi-precious stones — in one place."
         />
         <div className="grid gap-5 md:grid-cols-3">
           {cards.map((c, i) => (

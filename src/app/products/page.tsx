@@ -8,6 +8,8 @@ import { breadcrumbLd, itemListLd, faqLd } from "@/lib/schema";
 import FaqSection from "@/components/FaqSection";
 import { generalFaqs } from "@/data/faqs";
 
+import WhatsAppIcon from "@/components/WhatsAppIcon";
+import ContactActions from "@/components/ui/ContactActions";
 import Navbar from "@/components/Navbar";
 import StoneTechnicalSpecsTable from "@/components/StoneTechnicalSpecsTable";
 import Footer from "@/components/Footer";
@@ -56,13 +58,7 @@ export default function ProductsPage() {
         image="/assets/hero-quarry.jpg"
         crumbs={[{ label: "Products" }]}
       >
-        <Button
-          href={waLink("Hello Dholpurstones.com, I would like a quote for natural stone.")}
-          variant="gold"
-          size="lg"
-        >
-          Get a Quote
-        </Button>
+        <ContactActions cta="Products hero" topic="natural stone" size="lg" layout="row" className="sm:justify-start" />
       </PageHero>
 
       <section className="section-y bg-ivory">

@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { LuMessageCircle as MessageCircle } from "react-icons/lu";
+import WhatsAppIcon from "../WhatsAppIcon";
 import { Stagger, StaggerItem } from "./Reveal";
 import { waLink } from "@/data/catalog";
 
@@ -40,8 +40,8 @@ export default function VarietyGrid({ items, kind }: { items: Variety[]; kind: s
               <h3 className="font-heading text-[12.5px] font-bold uppercase leading-snug tracking-wide text-ink sm:text-[13.5px]">
                 {v.name}
               </h3>
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#25D366]/12 text-[#1a9c4b] transition-colors group-hover:bg-[#25D366] group-hover:text-white">
-                <MessageCircle className="h-3.5 w-3.5" />
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white shadow-md transition-transform group-hover:scale-110">
+                <WhatsAppIcon className="h-[18px] w-[18px] fill-white" size={18} />
               </span>
             </div>
           </motion.a>

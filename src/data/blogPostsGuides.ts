@@ -706,7 +706,7 @@ export const LEAD_GUIDE_POSTS: BlogPost[] = [
         },
       ],
       conclusion:
-        "Gemstone panels turn a wall or counter into art. See our semi-precious and precious gem surface collections, or send your dimensions for a quote.",
+        "Gemstone panels turn a wall or counter into art. See our semi-precious stone collection, or send your dimensions for a quote.",
     },
   }),
 

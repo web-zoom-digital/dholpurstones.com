@@ -17,6 +17,7 @@ import {
   LuCrown as Crown,
   LuMail as Mail,
   LuMapPin as MapPin,
+  LuMessageSquareText,
 } from "react-icons/lu";
 import WhatsAppIcon from "./WhatsAppIcon";
 import EnquiryButton from "./ui/EnquiryButton";
@@ -387,7 +388,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2.5">
             <span className="hidden xl:block">
               <EnquiryButton variant="gold" cta="Header quote button">
-                <WhatsAppIcon className="h-4 w-4 fill-forest" size={16} />
+                <LuMessageSquareText className="h-4 w-4" />
                 Get a Quote
               </EnquiryButton>
             </span>

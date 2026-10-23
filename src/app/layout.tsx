@@ -159,7 +159,6 @@ const jsonLdData = {
           "Farm House & Garden Stonework",
           "Hand-Carved Stone Articles",
           "Semi-Precious Stones",
-          "Precious Gem Surfaces",
         ].map((n) => ({ "@type": "Offer", itemOffered: { "@type": "Product", name: n } })),
       },
     },

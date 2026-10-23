@@ -83,8 +83,7 @@ export const marbleSubs: (SubCategory & { varieties: MarbleVariety[] })[] = [
     image: "/assets/garg/botticino_marble.jpg",
     href: "/exclusive-imported#beige-marble",
     varieties: [
-      { name: "Botticino Classico", image: "/assets/garg/botticino_marble.jpg" },
-      { name: "Elmali Beige", image: "/assets/garg/elmali_beige.jpg" },
+      { name: "Botticino", image: "/assets/garg/botticino_marble.jpg" },
       { name: "Michael Angelo", image: "/white-series-dolphur-color/michael-angelo.png" },
       { name: "Monte Picasso", image: "/white-series-dolphur-color/monte-picasso.png" },
       { name: "Sapphire White", image: "/white-series-dolphur-color/sapphire-white.png" },
@@ -278,11 +277,11 @@ export const exclusiveSubs: SubCategory[] = [
     href: "/exclusive-imported#imported-marble",
   },
   {
-    id: "gem-surface",
-    name: "Precious Gem Surfaces",
-    note: "Backlit gemstone slabs, tabletops, basins and décor.",
-    image: "/precious-gem-surface/page_062_BLACK_OBSIDIAN_image_02.jpeg",
-    href: "/precious-gem-surface",
+    id: "semi-precious",
+    name: "Semi-Precious Stones",
+    note: "Agate, lapis lazuli, jasper and tiger's eye slabs and feature panels.",
+    image: "/semi-precious/blue-agate.jpeg",
+    href: "/semi-precious",
   },
 ];
 
@@ -339,7 +338,7 @@ export const categories: Category[] = [
     id: "exclusive-imported",
     name: "Exclusive & Imported",
     href: "/exclusive-imported",
-    blurb: "All our marble — beige, white and grey — plus imported exotic slabs and precious gem surfaces.",
+    blurb: "All our marble — beige, white and grey — plus imported exotic slabs and semi-precious stones.",
     image: "/white-series-dolphur-color/statuario.png",
     badge: "Marble & Imports",
     subs: exclusiveSubs,

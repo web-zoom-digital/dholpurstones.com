@@ -52,6 +52,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/precious-gem-surface",
+        destination: "/semi-precious",
+        permanent: true,
+      },
+      {
         source: "/marble",
         destination: "/exclusive-imported",
         permanent: true,
