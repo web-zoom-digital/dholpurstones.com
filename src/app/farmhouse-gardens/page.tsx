@@ -71,8 +71,13 @@ export default function FarmHouseGardensPage() {
 
       <PageHero
         eyebrow="Our Speciality"
-        title="Farm House &"
-        accent="Garden Stonework"
+        title={
+          <>
+            <span className="block">Luxry Farm House,</span>
+            <span>Resort & Garden</span>
+          </>
+        }
+        accent="Stonework"
         description="Turnkey natural-stone work for farm houses, estates and gardens — driveways, patios, pool decks, chhatris, lantern posts, steps and fountains."
         image="/assets/landscaping/landscape_pool_coping.jpg"
         crumbs={[{ label: "Farm House & Gardens" }]}

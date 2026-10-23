@@ -38,6 +38,7 @@ interface NavLink {
 }
 
 interface NavItem {
+  
   label: string;
   href?: string;
   children?: NavLink[];
@@ -47,7 +48,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Products", href: "/products", mega: true },
-  { label: "Farm House & Gardens", href: "/farmhouse-gardens" },
+  { label: "Luxry Farm House & Gardens", href: "/farmhouse-gardens" },
   { label: "Projects", href: "/projects" },
   {
     label: "Company",

@@ -13,8 +13,8 @@ interface Crumb {
 
 interface PageHeroProps {
   eyebrow: string;
-  title: string;
-  accent?: string;
+  title: React.ReactNode;
+  accent?: React.ReactNode;
   description: string;
   image: string;
   crumbs: Crumb[];

@@ -15,6 +15,7 @@ export interface CatalogItem {
   badge: string;
   /** Small gold line above the title, e.g. origin or material. */
   meta?: string;
+  categoryGroup?: string;
   subtitle?: string;
   image: string;
   desc: string;
@@ -28,12 +29,19 @@ export default function CatalogGrid({
   items,
   ctaPrefix,
   cols = "sm:grid-cols-2 lg:grid-cols-3",
+  filterCategories,
 }: {
   items: CatalogItem[];
   ctaPrefix: string;
   cols?: string;
+  filterCategories?: string[];
 }) {
   const [active, setActive] = useState<CatalogItem | null>(null);
+  const [selectedCat, setSelectedCat] = useState<string>("All");
+
+  const visibleItems = selectedCat === "All"
+    ? items
+    : items.filter((it) => it.categoryGroup === selectedCat || it.badge.toLowerCase().includes(selectedCat.toLowerCase()) || (it.meta && it.meta.toLowerCase().includes(selectedCat.toLowerCase())));
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setActive(null);
@@ -50,8 +58,36 @@ export default function CatalogGrid({
 
   return (
     <>
-      <Stagger className={`grid grid-cols-1 gap-5 sm:gap-6 ${cols}`}>
-        {items.map((it) => (
+      {filterCategories && filterCategories.length > 0 && (
+        <div className="mb-10 flex flex-wrap items-center justify-center gap-2">
+          {["All", ...filterCategories].map((cat) => {
+            const count = cat === "All"
+              ? items.length
+              : items.filter((it) => it.categoryGroup === cat || it.badge.toLowerCase().includes(cat.toLowerCase()) || (it.meta && it.meta.toLowerCase().includes(cat.toLowerCase()))).length;
+            const isSelected = selectedCat === cat;
+            return (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => setSelectedCat(cat)}
+                className={`flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
+                  isSelected
+                    ? "bg-forest text-gold shadow-md ring-2 ring-gold/40 scale-105"
+                    : "bg-white/90 text-ink/75 hover:bg-white hover:text-ink border border-black/5 hover:border-gold/40 shadow-sm"
+                }`}
+              >
+                <span>{cat}</span>
+                <span className={`text-[10px] rounded-full px-1.5 py-0.5 ${isSelected ? "bg-gold/25 text-gold font-extrabold" : "bg-black/5 text-muted"}`}>
+                  {count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      )}
+
+      <Stagger key={selectedCat} className={`grid grid-cols-1 gap-5 sm:gap-6 ${cols}`}>
+        {visibleItems.map((it) => (
           <StaggerItem key={it.id}>
             <article
               id={it.id}
