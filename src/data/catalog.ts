@@ -116,14 +116,12 @@ export const marbleSubs: (SubCategory & { varieties: MarbleVariety[] })[] = [
     image: "/white-series-dolphur-color/blue-wave.png",
     href: "/exclusive-imported#grey-marble",
     varieties: [
-      { name: "Pearl White", image: "/white-series-dolphur-color/pearl-white.png" },
+      { name: "Coastal White", image: "/white-series-dolphur-color/coastal-white.png" },
       { name: "Blue Wave", image: "/white-series-dolphur-color/blue-wave.png" },
       { name: "Brown Statuario", image: "/white-series-dolphur-color/brown-statuario.png" },
       { name: "Bianco Acropolis", image: "/white-series-dolphur-color/bianco-acropolis.png" },
-      { name: "Volakas Haemus", image: "/white-series-dolphur-color/volakas-haemus.png" },
-      { name: "Venatino White", image: "/white-series-dolphur-color/venatino-white.png" },
-      { name: "Lasa White", image: "/white-series-dolphur-color/lasa-white.png" },
-      { name: "Guangxi White", image: "/white-series-dolphur-color/guangxi-white.png" },
+      { name: "Pearl White", image: "/white-series-dolphur-color/pearl-white.png" },
+      { name: "Venatino", image: "/white-series-dolphur-color/venatino-white.png" },
     ],
   },
 ];
@@ -289,11 +287,9 @@ export const exoticMarbleVarieties: MarbleVariety[] = [
   { name: "Calacatta Viola", image: "/white-series-dolphur-color/calacatta-viola.png" },
   { name: "Bianco Fire", image: "/white-series-dolphur-color/bianco-fire.png" },
   { name: "Golden Michael", image: "/white-series-dolphur-color/golden-michael.png" },
-  { name: "Coastal White", image: "/white-series-dolphur-color/coastal-white.png" },
   { name: "Golden Spider", image: "/white-series-dolphur-color/golden-spider.png" },
   { name: "Lilac White", image: "/white-series-dolphur-color/lilac-white.png" },
   { name: "Golden Macaubus", image: "/white-series-dolphur-color/golden-macaubus.png" },
-  { name: "Blue Wave", image: "/white-series-dolphur-color/blue-wave.png" },
 ];
 
 /* ───────────────────────── Master category list ───────────────────────── */
