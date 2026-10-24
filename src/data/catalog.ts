@@ -182,28 +182,39 @@ export const gardenSubs: SubCategory[] = [
     id: "lanterns",
     name: "Garden Lanterns & Lamp Posts",
     note: "Carved jali lamp posts that light paths, lawns and entrances.",
-    image: "/garden-stonework/sandstone-lantern-lamp-post-lawn.jpg",
+    image: "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.25 PM (1).jpeg",
     href: "/farmhouse-gardens",
   },
   {
     id: "fountains",
     name: "Water Fountains",
     note: "Carved bowl and pot fountains that anchor courtyards and gardens.",
-    image: "/garden-stonework/sandstone-bowl-water-fountains.jpg",
+    image: "/garden-stonework/WhatsApp Image 2026-10-23 at 6.01.43 PM.jpeg",
     href: "/farmhouse-gardens",
   },
 ];
 
 /** Every farm house & garden photo, used by the gallery on /farmhouse-gardens. */
 export const gardenGallery: { src: string; alt: string }[] = [
-  { src: "/garden-stonework/carved-sandstone-chhatri-pavilion.jpg", alt: "Hand-carved sandstone chhatri pavilion with arched brackets and fluted columns" },
+  { src: "/garden-stonework/WhatsApp Image 2026-10-23 at 6.01.43 PM.jpeg", alt: "Grand hand-carved sandstone sphere and elephant water fountain with multi-tier radial pool on luxury farmhouse estate lawn" },
+  { src: "/garden-stonework/WhatsApp Image 2026-10-23 at 6.01.43 PM (1).jpeg", alt: "Artisanal sandstone floating sphere fountain with carved royal elephant spouts in courtyard garden" },
+  { src: "/garden-stonework/WhatsApp Image 2026-10-23 at 6.01.44 PM.jpeg", alt: "Carved sandstone floating sphere fountain with radial orb water spouts on country estate grounds" },
+  { src: "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.33 PM (1).jpeg", alt: "Monumental illuminated royal palace tiered water fountain with swans and elephants" },
+  { src: "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.34 PM.jpeg", alt: "Hand-carved sandstone peacock pair flanking lotus-pedestal water fountain" },
+  { src: "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.25 PM (1).jpeg", alt: "Hand-carved illuminated sandstone garden lantern lamp post with pierced floral jali" },
+  { src: "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.25 PM.jpeg", alt: "Hand-carved floral sandstone ornamental garden planter and urn" },
+  { src: "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.29 PM.jpeg", alt: "Hand-carved royal guardian lion sandstone statue on ornate floral plinth" },
+  { src: "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.29 PM (1).jpeg", alt: "Monolithic hand-carved royal caparisoned elephant sandstone sculpture" },
+  { src: "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.35 PM.jpeg", alt: "Hand-carved majestic sandstone stallion horse statue for estate forecourts" },
+  { src: "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.33 PM.jpeg", alt: "3D high-relief seven running horses stone mural wall panel" },
+  // { src: "/garden-stonework/carved-sandstone-chhatri-pavilion.jpg", alt: "Hand-carved sandstone chhatri pavilion with arched brackets and fluted columns" },
   { src: "/garden-stonework/sandstone-bowl-water-fountains.jpg", alt: "Sandstone bowl water fountains in a lawn garden" },
   { src: "/garden-stonework/sandstone-pot-water-fountain.jpg", alt: "Sandstone pot and pillar water fountain in a garden" },
   { src: "/garden-stonework/sandstone-lantern-lamp-post-lawn.jpg", alt: "Carved sandstone lantern lamp post on a garden lawn" },
-  { src: "/garden-stonework/lotus-sandstone-lantern-post.jpg", alt: "Lotus-carved sandstone lantern post with jali panel" },
-  { src: "/garden-stonework/red-sandstone-lantern-posts-pathway.jpg", alt: "Red sandstone jali lantern posts along a garden pathway" },
-  { src: "/garden-stonework/marble-lantern-lamp-post.jpg", alt: "White stone lantern lamp post beside a garden planter" },
-  { src: "/garden-stonework/fluted-sandstone-column.jpg", alt: "Fluted sandstone column with carved capital" },
+  // { src: "/garden-stonework/lotus-sandstone-lantern-post.jpg", alt: "Lotus-carved sandstone lantern post with jali panel" },
+  // { src: "/garden-stonework/red-sandstone-lantern-posts-pathway.jpg", alt: "Red sandstone jali lantern posts along a garden pathway" },
+  // { src: "/garden-stonework/marble-lantern-lamp-post.jpg", alt: "White stone lantern lamp post beside a garden planter" },
+  // { src: "/garden-stonework/fluted-sandstone-column.jpg", alt: "Fluted sandstone column with carved capital" },
   { src: "/assets/landscaping/landscape_pool_coping.jpg", alt: "Sandstone pool coping and deck beside a farm house pool" },
   { src: "/assets/landscaping/landscape_cobblestone_driveway.jpg", alt: "Cobblestone sandstone driveway and portico of a farm house" },
   { src: "/assets/landscaping/landscape_patio_paving.jpg", alt: "Sandstone patio paving and lawn terrace" },
@@ -216,61 +227,180 @@ export const articleSubs: SubCategory[] = [
     id: "peacock",
     name: "Peacock Sculptures",
     note: "Hand-carved peacock pairs for gardens, gates and entrances.",
-    image: "/stone-articles/carved-sandstone-peacock-pair.jpg",
+    image: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.32 PM (2).jpeg",
     href: "/articles",
   },
   {
     id: "elephant",
     name: "Elephant Statues",
     note: "Caparisoned elephants carved from a single sandstone block.",
-    image: "/stone-articles/carved-sandstone-elephant.jpg",
+    image: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.10.02 PM.jpeg",
     href: "/articles",
   },
   {
-    id: "statues",
-    name: "Figure Statues",
+    id: "guard",
+    name: "Rajasthani Guard Statues",
     note: "Traditional Rajasthani figures carved in sandstone.",
-    image: "/stone-articles/sandstone-soldier-statue.jpg",
+    image: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.40 PM.jpeg",
     href: "/articles",
   },
   {
     id: "mandir",
     name: "Temple Mandirs",
     note: "Carved jali mandirs and shrines in natural stone.",
-    image: "/stone-articles/carved-sandstone-temple-mandir.jpg",
+    image: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.31 PM.jpeg",
     href: "/articles",
   },
   {
     id: "jali-lamps",
     name: "Jali Lamps & Urns",
     note: "Pierced-jali lamps and urns, including Om and floral patterns.",
-    image: "/stone-articles/om-jali-sandstone-lamp.jpg",
+    image: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.31 PM (1).jpeg",
     href: "/articles",
   },
   {
     id: "lion",
     name: "Guardian Lions",
     note: "Regal lion statues on carved plinths for gates and portals.",
-    image: "/stone-articles/user_lion_clean.jpg",
+    image: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.22 PM.jpeg",
     href: "/articles",
   },
 ];
 
-/** Every hand-carved article photo, used by the gallery on /articles. */
+/** Every hand-carved article photo from stone-article-manmade, used by the gallery on /articles. */
 export const articleGallery: { src: string; alt: string }[] = [
-  { src: "/stone-articles/carved-sandstone-peacock-pair.jpg", alt: "Pair of hand-carved sandstone peacock sculptures on carved plinths" },
-  { src: "/stone-articles/carved-sandstone-elephant.jpg", alt: "Hand-carved sandstone elephant with decorated headpiece" },
-  { src: "/stone-articles/sandstone-soldier-statue.jpg", alt: "Sandstone statue of a Rajasthani guard holding a staff" },
-  { src: "/stone-articles/carved-sandstone-temple-mandir.jpg", alt: "Carved sandstone temple mandir with jali walls and lotus columns" },
-  { src: "/stone-articles/om-jali-sandstone-lamp.jpg", alt: "Sandstone jali lamp with Om symbol cut-outs" },
-  { src: "/stone-articles/pink-sandstone-jali-urn-lamp.jpg", alt: "Pink sandstone jali urn lamp with lid" },
-  { src: "/stone-articles/user_lion_clean.jpg", alt: "Sandstone guardian lion sculpture on carved plinth" },
-  { src: "/garden-stonework/sandstone-lantern-lamp-post-lawn.jpg", alt: "Carved sandstone lantern lamp post" },
-  { src: "/garden-stonework/lotus-sandstone-lantern-post.jpg", alt: "Lotus-carved sandstone lantern post" },
-  { src: "/garden-stonework/red-sandstone-lantern-posts-pathway.jpg", alt: "Red sandstone jali lantern posts" },
-  { src: "/garden-stonework/sandstone-pot-water-fountain.jpg", alt: "Sandstone pot water fountain" },
-  { src: "/garden-stonework/fluted-sandstone-column.jpg", alt: "Fluted sandstone column with carved capital" },
-  { src: "/stone-articles/horse_marble_image.jpeg", alt: "Galloping horses relief panel carved in stone" },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.31 PM.jpeg",
+    alt: "Hand-carved natural Dholpur sandstone temple mandir with jali screens and stepped shikhara",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.32 PM (2).jpeg",
+    alt: "Pair of hand-carved heritage filigree sandstone peacock sculptures on carved pedestals",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.31 PM (1).jpeg",
+    alt: "Monumental lotus-fluted sandstone garden lantern post on estate lawn with gazebo",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.22 PM.jpeg",
+    alt: "Reclining royal guardian lion sculpture hand-chiseled in solid Dholpur sandstone",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.10.02 PM.jpeg",
+    alt: "Matched caparisoned gateway elephant statue carved from dense sandstone with ornate hauda",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.10.02 PM (1).jpeg",
+    alt: "Matched gateway pair left-facing hand-carved sandstone elephant statue on solid plinth",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.40 PM.jpeg",
+    alt: "Traditional Rajasthani royal guard statue with staff, pleated attire and turban",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.37 PM.jpeg",
+    alt: "Sandstone chhatri garden pavilion with fluted columns, cusped arches and stepped pyramid roof",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.32 PM (1).jpeg",
+    alt: "Square sandstone jali lamp with pierced sacred Om symbol and slotted light vents",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.38 PM.jpeg",
+    alt: "Pink sandstone jali urn lamp with woven openwork pattern and domed finial lid",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.25 PM.jpeg",
+    alt: "Four monumental fluted sandstone garden lantern posts with pagoda roof caps",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.32 PM.jpeg",
+    alt: "Red sandstone jali lantern posts installed along estate paved promenade walkway",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.36 PM.jpeg",
+    alt: "Monumental hand-carved sandstone elephant sculpture in workshop atelier",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.42 PM.jpeg",
+    alt: "Blooming lotus petal carved white marble bowl urn on tiered fluted pedestal column",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.09.50 PM (1).jpeg",
+    alt: "Hand-crafted natural sandstone round garden dining table set with curved carved benches",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.36 PM (1).jpeg",
+    alt: "Solid sandstone round garden table with circular bench seating set",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.23 PM.jpeg",
+    alt: "Trio of hand-carved natural sandstone peacock statuettes on raised display plinths",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.09.53 PM.jpeg",
+    alt: "Grand Pegasus winged horse estate water fountain with multi-tier cascades and circular stone pool",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.09.57 PM.jpeg",
+    alt: "Monumental 3-tier hand-carved white marble acanthus leaf cascade fountain",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.09.51 PM.jpeg",
+    alt: "Classical 4-tier scalloped white marble water fountain in quatrefoil curb basin",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.09.54 PM.jpeg",
+    alt: "Classical 4-tier white stone cascade fountain on estate lawn",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.09.55 PM.jpeg",
+    alt: "Palatial multi-tier white stone water fountain in resort garden surround",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.09.56 PM.jpeg",
+    alt: "Classical tiered marble cascade fountain with arching water jets in deep curb basin",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.09.59 PM.jpeg",
+    alt: "2-tier fluted white stone fountain with ribbed pedestal and circular stone curb basin",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.09.51 PM (1).jpeg",
+    alt: "3-tier scalloped white marble fountain with background sandstone wall feature",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.10.01 PM.jpeg",
+    alt: "Museum-grade Radha Krishna divine couple high-relief hand-carved stone mural panel",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.10.01 PM (1).jpeg",
+    alt: "Sacred Gada, Trishul and Damru stone wall relief mural with devotional Chaupai inscription",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.09.50 PM.jpeg",
+    alt: "Contemporary white marble abstract organic sculpture with fluid ribbon curves",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.10.03 PM.jpeg",
+    alt: "Modern abstract stone vortex ring and biomorphic sculptures hand-polished in atelier",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.10.04 PM.jpeg",
+    alt: "Modern architectural slate cascade waterfall wall unit with 7 stepped spillway bowls",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.39 PM.jpeg",
+    alt: "Hand-fluted sandstone gate pillar finial lamp with decorative slotted light windows",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.24 PM (1).jpeg",
+    alt: "Fine pierced hexagonal geometric red sandstone jali screen lattice",
+  },
+  {
+    src: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.24 PM.jpeg",
+    alt: "Hand-carved architectural sandstone floral relief lattice panel",
+  },
 ];
 
 /* ───────────────────────── Semi-Precious ───────────────────────── */

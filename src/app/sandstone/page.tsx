@@ -117,7 +117,7 @@ const sandstoneList = [
     name: "Dholpur Chocolate Sandstone",
     categoryLabel: "RICH EARTHY BROWN",
     provenance: "Dholpur Quarry Basin",
-    image: "/assets/products/dholpur_chocolate_teakwood.jpg",
+    image: "/assets/products/dholpur_chocolate_teakwood.jpeg",
     color: "Deep Chocolate Brown with Teak-Wood Graining",
     shortDesc:
       "Dense chocolate-brown sandstone with natural teak-wood graining. A bold, warm choice for feature walls, cladding, paving and landscape accents.",

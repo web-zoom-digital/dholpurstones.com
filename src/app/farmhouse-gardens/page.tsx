@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import CtaBand from "@/components/ui/CtaBand";
 import JsonLd from "@/components/JsonLd";
@@ -15,6 +16,7 @@ import Navbar from "@/components/Navbar";
 import PageHero from "@/components/ui/PageHero";
 import Button from "@/components/ui/Button";
 import LandscapingSolutions from "@/components/LandscapingSolutions";
+import GardenVideoShowcase from "@/components/GardenVideoShowcase";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import {
@@ -73,7 +75,7 @@ export default function FarmHouseGardensPage() {
         eyebrow="Our Speciality"
         title={
           <>
-            <span className="block">Luxry Farm House,</span>
+            <span className="block">Luxury Farm House,</span>
             <span>Resort & Garden</span>
           </>
         }
@@ -96,6 +98,108 @@ export default function FarmHouseGardensPage() {
 
       {/* Garden & farm house work — landscape photography only */}
       <LandscapingSolutions />
+
+      {/* Live Stone Fountains & Water Cascades in Motion - Video Showcase Section */}
+      <GardenVideoShowcase />
+
+      {/* Featured Masterpiece Section: The Grand Elephant & Sphere Water Fountain */}
+      {/* <section className="section-y relative overflow-hidden bg-white border-y border-[#123D32]/10">
+        <div className="container-x">
+          <div className="overflow-hidden rounded-[2rem] border border-[#123D32]/15 bg-gradient-to-br from-[#FAF8F2] via-white to-[#F5EFE1] p-6 shadow-xl sm:p-10 lg:p-12">
+            <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
+              <div className="lg:col-span-7">
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-stone-200/80 shadow-2xl">
+                  <Image
+                    src="/garden-stonework/WhatsApp Image 2026-10-23 at 6.01.43 PM.jpeg"
+                    alt="Grand Hand-Carved Sandstone Sphere & Elephant Water Fountain in Farm House Lawn"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 60vw"
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between rounded-xl bg-[#123D32]/90 px-4 py-2.5 backdrop-blur sm:bottom-4 sm:left-4 sm:right-4">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-[#C5A15B] sm:text-sm">
+                      Masterpiece Quarry & Atelier Work
+                    </p>
+                    <span className="text-[11px] font-medium text-white/90 sm:text-xs">
+                      Natural Dholpur Beige Sandstone
+                    </span>
+                  </div>
+                </div>
+
+                <div className="mt-4 grid grid-cols-3 gap-3">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-xl border-2 border-[#C5A15B] shadow-sm">
+                    <Image
+                      src="/garden-stonework/WhatsApp Image 2026-10-23 at 6.01.43 PM.jpeg"
+                      alt="Multi-Tier Elephant Basin Fountain"
+                      fill
+                      sizes="33vw"
+                      className="object-cover"
+                    />
+                    <span className="absolute bottom-1 inset-x-1 rounded bg-black/60 px-1 py-0.5 text-center text-[10px] font-medium text-white">Tiered Basin</span>
+                  </div>
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-stone-200 shadow-sm transition hover:border-[#C5A15B]">
+                    <Image
+                      src="/garden-stonework/WhatsApp Image 2026-10-23 at 6.01.43 PM (1).jpeg"
+                      alt="Pedestal Floating Sphere Fountain"
+                      fill
+                      sizes="33vw"
+                      className="object-cover"
+                    />
+                    <span className="absolute bottom-1 inset-x-1 rounded bg-black/60 px-1 py-0.5 text-center text-[10px] font-medium text-white">Pedestal Sphere</span>
+                  </div>
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-stone-200 shadow-sm transition hover:border-[#C5A15B]">
+                    <Image
+                      src="/garden-stonework/WhatsApp Image 2026-10-23 at 6.01.44 PM.jpeg"
+                      alt="Radial Orb Fountain Jets"
+                      fill
+                      sizes="33vw"
+                      className="object-cover"
+                    />
+                    <span className="absolute bottom-1 inset-x-1 rounded bg-black/60 px-1 py-0.5 text-center text-[10px] font-medium text-white">Radial Orbs</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col justify-center lg:col-span-5">
+                <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-[#C5A15B]/40 bg-[#C5A15B]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#9E782F]">
+                  <Sparkles className="h-3.5 w-3.5" /> Featured Estate Landmark
+                </span>
+                <h2 className="mt-3 font-heading text-2xl font-bold uppercase tracking-tight text-[#1F2A24] sm:text-3xl lg:text-4xl">
+                  Grand Sphere & Elephant Water Fountain
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-[#1F2A24]/80 sm:text-base">
+                  Artisanal centerpiece fountain sculpted from pure Dholpur sandstone. Combines a precision-turned polished floating sphere, concentric tiered spillway basins, and hand-sculpted royal elephant spouts that create a melodious water cascade.
+                </p>
+
+                <div className="mt-5 space-y-2.5">
+                  <div className="flex items-start gap-2.5 text-xs text-[#1F2A24]/85 sm:text-sm">
+                    <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#C5A15B]" />
+                    <span><strong>100% Hand-Chiseled Stone:</strong> Authentic Shilpa Shastra elephant sculptures with hauda relief</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 text-xs text-[#1F2A24]/85 sm:text-sm">
+                    <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#C5A15B]" />
+                    <span><strong>Concealed Pre-Plumbing:</strong> Internal channels ready for brass water nozzles & pumps</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 text-xs text-[#1F2A24]/85 sm:text-sm">
+                    <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#C5A15B]" />
+                    <span><strong>Bespoke Dimensions:</strong> Diameters from 10 ft to 25 ft tailored to your lawn layout</span>
+                  </div>
+                </div>
+
+                <div className="mt-7 flex flex-wrap gap-3">
+                  <ContactActions
+                    cta="Farmhouse fountain showcase"
+                    topic="grand elephant sphere water fountain"
+                    size="md"
+                    layout="row"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> */}
 
       <section id="garden-gallery" className="section-y relative overflow-hidden bg-ivory pattern-dots">
         <div className="container-x">

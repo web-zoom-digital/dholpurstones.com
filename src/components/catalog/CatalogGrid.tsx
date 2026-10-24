@@ -104,7 +104,7 @@ export default function CatalogGrid({
                   alt={it.name}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+                  className="transition-transform duration-700 ease-out group-hover:scale-[1.06]"
                 />
                 <span className="absolute inset-0 bg-gradient-to-t from-forest-deep/50 via-transparent to-transparent" />
                 <span className="absolute left-3 top-3 rounded-full bg-forest-deep/80 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-gold backdrop-blur">

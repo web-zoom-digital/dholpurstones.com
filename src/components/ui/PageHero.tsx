@@ -43,7 +43,7 @@ export default function PageHero({
         animate={{ scale: 1 }}
         transition={{ duration: 2, ease: "easeOut" }}
       >
-        <Image src={image} alt="" fill priority sizes="100vw" className="object-cover object-center" />
+        <Image src={image} alt="" fill priority sizes="100vw" className="object-center" />
       </motion.div>
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-forest-deep/80 via-forest-deep/70 to-forest-deep/95" />
 

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: "Dholpurstones.com",
     images: [
       {
-        url: "/stone-articles/temple_sanctum_pillars.jpg",
+        url: "/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.32 PM (2).jpeg",
         width: 1200,
         height: 630,
         alt: "Hand-Carved Sandstone Sculptures & Artisans at Sikandra Ateliers",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Hand-Carved Sandstone Sculptures | Dholpurstones",
     description: "Monolithic peacocks, regal lanterns, and sacred temple carvings from Rajasthan quarries.",
-    images: ["/stone-articles/temple_sanctum_pillars.jpg"],
+    images: ["/stone-article-manmade/WhatsApp Image 2026-10-24 at 12.06.32 PM (2).jpeg"],
   },
 };
 
