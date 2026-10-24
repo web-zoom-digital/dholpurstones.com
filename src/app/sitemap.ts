@@ -9,6 +9,7 @@ const pages: { path: string; priority: number; freq: MetadataRoute.Sitemap[numbe
   { path: "", priority: 1.0, freq: "weekly" },
   { path: "/products", priority: 0.95, freq: "weekly" },
   { path: "/sandstone", priority: 0.95, freq: "weekly" },
+  { path: "/wall-cladding", priority: 0.95, freq: "weekly" },
   { path: "/farmhouse-gardens", priority: 0.95, freq: "weekly" },
   { path: "/articles", priority: 0.9, freq: "weekly" },
   { path: "/semi-precious", priority: 0.85, freq: "weekly" },

@@ -23,7 +23,7 @@ const tabs = [
     href: "/products",
     icon: Grid,
     match: (p: string) =>
-      ["/products", "/sandstone", "/farmhouse-gardens", "/articles", "/semi-precious", "/exclusive-imported"].some((r) => p.startsWith(r)),
+      ["/products", "/sandstone", "/wall-cladding", "/farmhouse-gardens", "/articles", "/semi-precious", "/exclusive-imported"].some((r) => p.startsWith(r)),
   },
   null, // WhatsApp FAB slot
   { label: "Call", href: "tel:+919057355232", icon: Phone, match: () => false },

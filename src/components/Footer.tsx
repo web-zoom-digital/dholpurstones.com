@@ -96,12 +96,7 @@ export default function Footer() {
                   {PHONE_PRIMARY} (WhatsApp)
                 </a>
               </li>
-              <li className="flex gap-3">
-                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                <a href="tel:+919057355232" className="text-white/75 transition-colors hover:text-gold">
-                  {PHONE_SECONDARY}
-                </a>
-              </li>
+              
               <li className="flex gap-3">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                 <a href={`mailto:${EMAIL}`} className="break-all text-white/75 transition-colors hover:text-gold">
@@ -119,7 +114,7 @@ export default function Footer() {
                 {categories.map((c) => (
                   <li key={c.id}>
                     <Link href={c.href} className={linkCls}>
-                      {c.name}
+                      {c.footerName ?? c.name}
                     </Link>
                   </li>
                 ))}

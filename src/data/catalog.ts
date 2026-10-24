@@ -22,6 +22,7 @@ export interface SubCategory {
 
 export type CategoryId =
   | "sandstone"
+  | "wall-cladding"
   | "farmhouse-gardens"
   | "stone-articles"
   | "semi-precious"
@@ -30,6 +31,7 @@ export type CategoryId =
 export interface Category {
   id: CategoryId;
   name: string;
+  footerName?: string;
   href: string;
   blurb: string;
   image: string;
@@ -64,8 +66,205 @@ export const sandstoneSubs: SubCategory[] = [
     id: "dholpur-chocolate",
     name: "Dholpur Chocolate",
     note: "Rich brown stone with natural teak-wood graining.",
-    image: "/assets/products/dholpur_chocolate_teakwood.jpg",
+    image: "/assets/products/dholpur_chocolate_teakwood.jpeg",
     href: "/sandstone#dholpur-chocolate",
+  },
+  {
+    id: "dholpur-mint",
+    name: "Dholpur Mint",
+    note: "Luminous white-mint stone with high solar reflectance for elevations and pool surrounds.",
+    image: "/sandstone/dholpur-mint-sandstone.jpeg",
+    href: "/sandstone#dholpur-mint",
+  },
+  {
+    id: "sandstone-finishes",
+    name: "Sandstone Finishes",
+    note: "Honed, shot-blasted, bush-hammered, fluted, chiseled and antique tumbled textures.",
+    image: "/sandstone/sandstone-finish.jpeg",
+    href: "/sandstone#sandstone-finishes",
+  },
+];
+
+/* ───────────────────────── Wall Cladding ───────────────────────── */
+export const wallCladdingSubs: SubCategory[] = [
+  {
+    id: "dholpur-beige-rockface",
+    name: "Beige Rockface Brick",
+    note: "Hand-chiseled split rockface bricks with beveled margins for exterior elevations.",
+    image: "/wall-cladding/dholpur-beige-rockface-brick.jpeg",
+    href: "/wall-cladding#dholpur-beige-rockface",
+  },
+  {
+    id: "fluted-cnc-panels",
+    name: "CNC Fluted & Grooved Panels",
+    note: "Architectural linear fluting and geometric reliefs carved in golden teakwood stone.",
+    image: "/wall-cladding/fluted-cnc-sandstone-panel.jpeg",
+    href: "/wall-cladding#fluted-cnc-panels",
+  },
+  {
+    id: "dual-tone-mosaic",
+    name: "Dual-Tone Mosaic Cladding",
+    note: "Alternating Dholpur Beige & Agra Red stone square tiles on fiberglass mesh backing.",
+    image: "/wall-cladding/dual-tone-checkered-mosaic.jpeg",
+    href: "/wall-cladding#dual-tone-mosaic",
+  },
+  {
+    id: "dholpur-white-ashlar",
+    name: "White & Mint Ashlar",
+    note: "Pristine white-mint natural split stone ashlar blocks for palatial facades.",
+    image: "/wall-cladding/dholpur-white-mint-ashlar.jpeg",
+    href: "/wall-cladding#dholpur-white-ashlar",
+  },
+  {
+    id: "teakwood-stepped-ledgestone",
+    name: "Teakwood Ledgestone",
+    note: "Multi-depth natural split teakwood sandstone strips creating rich shadow lines.",
+    image: "/wall-cladding/teakwood-stepped-ledgestone.jpeg",
+    href: "/wall-cladding#teakwood-stepped-ledgestone",
+  },
+  {
+    id: "calibrated-honed-tiles",
+    name: "Calibrated Honed Tiles",
+    note: "Ultra-smooth precision sawn and honed tiles for contemporary architectural cladding.",
+    image: "/wall-cladding/honed-calibrated-wall-tiles.jpeg",
+    href: "/wall-cladding#calibrated-honed-tiles",
+  },
+  {
+    id: "linear-grooved-facade",
+    name: "Linear Grooved Panels",
+    note: "Architectural horizontal shadow grooves and stepped relief channels.",
+    image: "/wall-cladding/linear-grooved-facade-cladding.jpeg",
+    href: "/wall-cladding#linear-grooved-facade",
+  },
+  {
+    id: "fine-strip-rockface",
+    name: "Fine Strip Rockface",
+    note: "Slender hand-split rockface strips creating dramatic tactile light and shadow.",
+    image: "/wall-cladding/fine-strip-rockface-cladding.jpeg",
+    href: "/wall-cladding#fine-strip-rockface",
+  },
+  {
+    id: "cnc-textured-grid-panel",
+    name: "CNC Textured Relief Panels",
+    note: "3D sculpted geometric relief panels creating high-impact tactile stone feature walls.",
+    image: "/wall-cladding/cnc-textured-grid-panel.jpeg",
+    href: "/wall-cladding#cnc-textured-grid-panel",
+  },
+  {
+    id: "dual-tone-split-brick",
+    name: "Dual-Tone Split Brick",
+    note: "Alternating Agra Red & Dholpur Beige split-face architectural walling bricks.",
+    image: "/wall-cladding/dual-tone-split-brick.jpeg",
+    href: "/wall-cladding#dual-tone-split-brick",
+  },
+  {
+    id: "hand-chiseled-elevation-facade",
+    name: "Hand-Chiseled Facade Stone",
+    note: "Traditional palace-grade hand-chiseled blocks with clean perimeter margins.",
+    image: "/wall-cladding/hand-chiseled-elevation-facade.jpeg",
+    href: "/wall-cladding#hand-chiseled-elevation-facade",
+  },
+  {
+    id: "multicolor-strip-cladding",
+    name: "Multicolor Rustic Strips",
+    note: "Natural mineral-veined rainbow sandstone strips for cascades and landscape walls.",
+    image: "/wall-cladding/multicolor-strip-cladding.jpeg",
+    href: "/wall-cladding#multicolor-strip-cladding",
+  },
+  {
+    id: "natural-split-strip-tiles",
+    name: "Calibrated Split Strip Tiles",
+    note: "Lightweight calibrated split stone strips for rapid adhesive elevation cladding.",
+    image: "/wall-cladding/natural-split-strip-tiles.jpeg",
+    href: "/wall-cladding#natural-split-strip-tiles",
+  },
+];
+
+/** Every natural stone wall cladding installation and texture photo, used by the gallery on /wall-cladding. */
+export const wallCladdingGallery: { src: string; alt: string }[] = [
+  {
+    src: "/wall-cladding/dholpur-beige-rockface-brick.jpeg",
+    alt: "Dholpur beige natural split rockface brick wall cladding with beveled edges",
+  },
+  {
+    src: "/wall-cladding/fluted-cnc-sandstone-panel.jpeg",
+    alt: "Precision multi-axis CNC fluted and grooved teakwood sandstone architectural feature panel",
+  },
+  {
+    src: "/wall-cladding/dholpur-white-mint-ashlar.jpeg",
+    alt: "Pristine white mint sandstone natural split ashlar cladding in running bond layout",
+  },
+  {
+    src: "/wall-cladding/dual-tone-checkered-mosaic.jpeg",
+    alt: "Dual-tone Agra red and Dholpur beige 3D checkered stone mosaic on fiberglass mesh",
+  },
+  {
+    src: "/wall-cladding/teakwood-stepped-ledgestone.jpeg",
+    alt: "Teakwood natural split stepped ledgestone strip panel with interlocking Z-profile",
+  },
+  {
+    src: "/wall-cladding/honed-calibrated-wall-tiles.jpeg",
+    alt: "Smooth diamond-honed calibrated pink and beige sandstone wall tiles",
+  },
+  {
+    src: "/wall-cladding/linear-grooved-facade-cladding.jpeg",
+    alt: "Exterior facade linear grooved strip cladding with stepped key accents in Dholpur sandstone",
+  },
+  {
+    src: "/wall-cladding/fine-strip-rockface-cladding.jpeg",
+    alt: "Fine strip natural rockface sandstone ledgestone wall elevation cladding",
+  },
+  {
+    src: "/wall-cladding/cnc-textured-grid-panel.jpeg",
+    alt: "CNC textured geometric grid and chiseled relief panel in beige sandstone",
+  },
+  {
+    src: "/wall-cladding/dual-tone-split-brick.jpeg",
+    alt: "Alternating natural split red and beige sandstone elevation cladding bricks",
+  },
+  {
+    src: "/wall-cladding/hand-chiseled-elevation-facade.jpeg",
+    alt: "Hand-chiseled Dholpur beige sandstone front elevation facade wall with border courses",
+  },
+  {
+    src: "/wall-cladding/multicolor-strip-cladding.jpeg",
+    alt: "Multicolor sandstone linear strip cladding with rockface bands and contrasting accents",
+  },
+  {
+    src: "/wall-cladding/natural-split-strip-tiles.jpeg",
+    alt: "Calibrated natural split sandstone strip tiles for exterior architectural walling",
+  },
+  {
+    src: "/wall-cladding/WhatsApp Image 2026-10-24 at 4.43.53 PM (1).jpeg",
+    alt: "Hand-chiseled rustic sandstone cladding tile texture",
+  },
+  {
+    src: "/wall-cladding/WhatsApp Image 2026-10-24 at 4.43.54 PM (2).jpeg",
+    alt: "Fine-grain natural split stone elevation tile",
+  },
+  {
+    src: "/wall-cladding/WhatsApp Image 2026-10-24 at 4.43.50 PM (1).jpeg",
+    alt: "Natural sandstone rockface elevation block",
+  },
+  {
+    src: "/wall-cladding/WhatsApp Image 2026-10-24 at 4.43.52 PM.jpeg",
+    alt: "Textured sandstone border trim",
+  },
+  {
+    src: "/wall-cladding/WhatsApp Image 2026-10-24 at 4.43.53 PM.jpeg",
+    alt: "Chiseled split face stone sample",
+  },
+  {
+    src: "/wall-cladding/WhatsApp Image 2026-10-24 at 4.43.51 PM.jpeg",
+    alt: "Natural sandstone rockface split sample block",
+  },
+  {
+    src: "/wall-cladding/WhatsApp Image 2026-10-24 at 4.43.51 PM (1).jpeg",
+    alt: "Carved architectural stone profile sample",
+  },
+  {
+    src: "/wall-cladding/WhatsApp Image 2026-10-24 at 4.43.52 PM (2).jpeg",
+    alt: "Fine textured sandstone margin sample",
   },
 ];
 
@@ -450,14 +649,24 @@ export const categories: Category[] = [
     id: "sandstone",
     name: "Sandstone",
     href: "/sandstone",
-    blurb: "Mine-direct Dholpur sandstone in four signature colours.",
+    blurb: "Mine-direct Dholpur sandstone in five signature colours.",
     image: "/sandstone/agra-red-sandstone.jpeg",
     badge: "Our Own Mines",
     subs: sandstoneSubs,
   },
   {
+    id: "wall-cladding",
+    name: "Wall Cladding",
+    href: "/wall-cladding",
+    blurb: "Natural split rockface, fluted CNC panels, stepped ledgestone and mesh-mounted stone mosaics for interior & exterior elevations.",
+    image: "/wall-cladding/dholpur-beige-rockface-brick.jpeg",
+    badge: "Architectural Cladding",
+    subs: wallCladdingSubs,
+  },
+  {
     id: "farmhouse-gardens",
     name: "Farm House & Gardens",
+    footerName: "Luxry Farm House, Resort and Garden",
     href: "/farmhouse-gardens",
     blurb: "Driveways, patios, pool decks, gazebos and fountains in stone.",
     image: "/assets/landscaping/landscape_pool_coping.jpg",
@@ -485,6 +694,7 @@ export const categories: Category[] = [
   {
     id: "exclusive-imported",
     name: "Exclusive & Imported",
+    footerName: "Exclusive & Imported Marble",
     href: "/exclusive-imported",
     blurb: "All our marble — beige, white and grey — plus imported exotic slabs and semi-precious stones.",
     image: "/white-series-dolphur-color/statuario.png",

@@ -5,31 +5,20 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   LuPlay as Play,
-  LuPause as Pause,
-  LuMaximize2 as Maximize,
   LuX as CloseIcon,
   LuChevronLeft as Left,
   LuChevronRight as Right,
-  LuSparkles as Sparkles,
-  LuShieldCheck as ShieldCheck,
   LuClock as Clock,
-  LuCheck as Check,
-  LuVolume2 as VolumeUp,
-  LuVolumeX as VolumeMute,
-  LuPhone as Phone,
 } from "react-icons/lu";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { gardenVideos, videoCategories, type GardenVideo } from "@/data/gardenVideos";
+import { gardenVideos, videoCategories } from "@/data/gardenVideos";
+import { waLink } from "@/data/catalog";
 
 export default function GardenVideoShowcase() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
-  const [selectedVideo, setSelectedVideo] = useState<GardenVideo>(gardenVideos[0]);
   const [modalVideoIndex, setModalVideoIndex] = useState<number | null>(null);
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [isMuted, setIsMuted] = useState<boolean>(true);
 
-  const mainVideoRef = useRef<HTMLVideoElement | null>(null);
   const modalVideoRef = useRef<HTMLVideoElement | null>(null);
 
   // Filter videos based on category
@@ -37,24 +26,6 @@ export default function GardenVideoShowcase() {
     activeCategory === "all"
       ? gardenVideos
       : gardenVideos.filter((v) => v.category === activeCategory);
-
-  // Synchronize main video play/pause
-  const toggleMainPlay = () => {
-    if (!mainVideoRef.current) return;
-    if (mainVideoRef.current.paused) {
-      mainVideoRef.current.play().catch(() => {});
-      setIsPlaying(true);
-    } else {
-      mainVideoRef.current.pause();
-      setIsPlaying(false);
-    }
-  };
-
-  const toggleMainMute = () => {
-    if (!mainVideoRef.current) return;
-    mainVideoRef.current.muted = !mainVideoRef.current.muted;
-    setIsMuted(mainVideoRef.current.muted);
-  };
 
   // Keyboard navigation for full-screen modal
   const handleModalNavigate = useCallback(
@@ -82,12 +53,14 @@ export default function GardenVideoShowcase() {
     };
   }, [modalVideoIndex, handleModalNavigate]);
 
+  // Attempt auto-playback when modal video opens/changes
   useEffect(() => {
-    if (mainVideoRef.current) {
-      mainVideoRef.current.load();
-      setIsPlaying(false);
+    if (modalVideoIndex !== null && modalVideoRef.current) {
+      modalVideoRef.current.play().catch(() => {
+        // Fallback handled by native video controls
+      });
     }
-  }, [selectedVideo]);
+  }, [modalVideoIndex]);
 
   const modalVideo = modalVideoIndex !== null ? gardenVideos[modalVideoIndex] : null;
 
@@ -112,21 +85,10 @@ export default function GardenVideoShowcase() {
           title="Live Water Fountains & Cascades in Motion"
           subtitle="Real-world water flow demonstrations of our hand-sculpted sandstone fountains, illuminated rain curtains, and architectural waterfalls — filmed live at our Sikandra ateliers and client farm house installations."
         />
-
-        
-        <div className="mb-14 overflow-hidden rounded-[2rem] transition-all duration-500">
-          <div className="grid items-center gap-0 lg:grid-cols-12">
-            <div className="relative bg-black lg:col-span-7 xl:col-span-8">
-              
-            </div>
-          </div>
-        </div>
-
-        
-
+        {/* Video Grid */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-5">
           {filteredVideos.map((video, idx) => {
-            const isSelected = selectedVideo.id === video.id;
+            const globalIdx = gardenVideos.findIndex((v) => v.id === video.id);
             return (
               <motion.div
                 key={video.id}
@@ -134,23 +96,13 @@ export default function GardenVideoShowcase() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: (idx % 4) * 0.05 }}
-                className={`group relative flex flex-col justify-between overflow-hidden rounded-2xl border bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
-                  isSelected
-                    ? "border-[#C5A15B] ring-2 ring-[#C5A15B]/50 shadow-md"
-                    : "border-[#123D32]/10 hover:border-[#123D32]/30"
-                }`}
+                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[#123D32]/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#C5A15B] hover:shadow-xl"
               >
                 {/* Poster & Play Overlay */}
                 <div
                   className="relative aspect-[4/3] w-full cursor-pointer overflow-hidden bg-black"
-                  onClick={() => {
-                    setSelectedVideo(video);
-                    // scroll slightly to spotlight on mobile
-                    if (window.innerWidth < 1024) {
-                      const spotlight = document.getElementById("stone-videos");
-                      spotlight?.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
+                  onClick={() => setModalVideoIndex(globalIdx !== -1 ? globalIdx : idx)}
+                  title={`Click to play ${video.title}`}
                 >
                   <Image
                     src={video.posterSrc}
@@ -159,8 +111,6 @@ export default function GardenVideoShowcase() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="transition-transform duration-500 ease-out group-hover:scale-105"
                   />
-
-                  {/* Gradient bottom overlay */}
 
                   {/* Badges on poster */}
                   <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5">
@@ -177,26 +127,20 @@ export default function GardenVideoShowcase() {
                   </div>
 
                   {/* Center Play Button Icon */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span
-                      className={`flex h-11 w-11 items-center justify-center rounded-full shadow-lg backdrop-blur-sm transition-transform duration-300 group-hover:scale-110 ${
-                        isSelected
-                          ? "bg-[#C5A15B] text-[#123D32] ring-2 ring-white"
-                          : "bg-white/90 text-[#123D32] group-hover:bg-[#C5A15B]"
-                      }`}
-                    >
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition group-hover:bg-black/40">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-[#123D32] shadow-xl backdrop-blur-sm transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#C5A15B]">
                       <Play className="ml-0.5 h-5 w-5 fill-current" />
                     </span>
                   </div>
-
-                  {/* Active playing indicator */}
-                  
                 </div>
 
                 {/* Content */}
                 <div className="flex flex-1 flex-col justify-between p-4">
                   <div>
-                    <h5 className="font-heading text-sm font-bold uppercase tracking-tight text-[#1F2A24] line-clamp-1 group-hover:text-[#123D32]">
+                    <h5
+                      onClick={() => setModalVideoIndex(globalIdx !== -1 ? globalIdx : idx)}
+                      className="cursor-pointer font-heading text-sm font-bold uppercase tracking-tight text-[#1F2A24] line-clamp-1 hover:text-[#C5A15B]"
+                    >
                       {video.title}
                     </h5>
                     <p className="mt-1 text-[11px] font-medium text-[#C5A15B] uppercase tracking-wider">
@@ -207,7 +151,26 @@ export default function GardenVideoShowcase() {
                     </p>
                   </div>
 
-                  
+                  <div className="mt-4 flex items-center justify-between gap-2 border-t border-[#123D32]/10 pt-3">
+                    <button
+                      type="button"
+                      onClick={() => setModalVideoIndex(globalIdx !== -1 ? globalIdx : idx)}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#123D32] transition hover:text-[#C5A15B]"
+                    >
+                      <Play className="h-3.5 w-3.5 fill-current" />
+                      <span>Play Video</span>
+                    </button>
+
+                    <a
+                      href={waLink(video.waMsg)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-[11px] font-medium text-[#25D366] hover:underline"
+                    >
+                      <WhatsAppIcon className="h-3.5 w-3.5" />
+                      <span>Inquire</span>
+                    </a>
+                  </div>
                 </div>
               </motion.div>
             );
@@ -215,7 +178,7 @@ export default function GardenVideoShowcase() {
         </div>
       </div>
 
-      {/* Fullscreen Cinematic Video Lightbox Modal */}
+      {/* Fullscreen Video Popup Lightbox Modal */}
       <AnimatePresence>
         {modalVideo && (
           <motion.div
@@ -225,7 +188,7 @@ export default function GardenVideoShowcase() {
             exit={{ opacity: 0 }}
             role="dialog"
             aria-modal="true"
-            aria-label="Video theater player"
+            aria-label="Video theater player popup"
             onClick={() => setModalVideoIndex(null)}
           >
             {/* Top Close Button */}
@@ -233,7 +196,7 @@ export default function GardenVideoShowcase() {
               type="button"
               onClick={() => setModalVideoIndex(null)}
               className="absolute right-4 top-4 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-[#C5A15B] hover:text-[#123D32]"
-              aria-label="Close theater"
+              aria-label="Close video popup"
             >
               <CloseIcon className="h-6 w-6" />
             </button>
@@ -264,13 +227,13 @@ export default function GardenVideoShowcase() {
               <Right className="h-6 w-6" />
             </button>
 
-            {/* Modal Dialog Content Container */}
+            {/* Popup Dialog Content Container */}
             <div
               className="relative max-h-[92vh] w-full max-w-4xl overflow-hidden rounded-3xl border border-white/15 bg-[#0F1E19] shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Responsive Video Container */}
-              <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-black">
+              <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-black flex items-center justify-center">
                 <video
                   ref={modalVideoRef}
                   key={modalVideo.videoSrc}
@@ -279,11 +242,12 @@ export default function GardenVideoShowcase() {
                   controls
                   autoPlay
                   playsInline
+                  preload="auto"
                   className="h-full w-full object-contain"
                 />
               </div>
 
-              {/* Modal Metadata & CTA Bar */}
+              {/* Popup Metadata & CTA Bar */}
               <div className="flex flex-col justify-between gap-4 bg-gradient-to-b from-[#0F1E19] to-[#071310] p-4 sm:p-6 sm:flex-row sm:items-center">
                 <div className="max-w-xl">
                   <div className="flex items-center gap-2">
@@ -305,9 +269,7 @@ export default function GardenVideoShowcase() {
 
                 <div className="flex flex-wrap items-center gap-3">
                   <a
-                    href={`https://wa.me/919414034432?text=${encodeURIComponent(
-                      modalVideo.waMsg
-                    )}`}
+                    href={waLink(modalVideo.waMsg)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-lg transition hover:bg-[#1EBE5D]"
@@ -318,13 +280,10 @@ export default function GardenVideoShowcase() {
 
                   <button
                     type="button"
-                    onClick={() => {
-                      setSelectedVideo(modalVideo);
-                      setModalVideoIndex(null);
-                    }}
+                    onClick={() => setModalVideoIndex(null)}
                     className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-xs sm:text-sm font-bold text-white transition hover:bg-white hover:text-[#123D32]"
                   >
-                    <span>Set in Page View</span>
+                    <span>Close</span>
                   </button>
                 </div>
               </div>

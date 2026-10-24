@@ -31,6 +31,12 @@ const sandstoneList = [
     categoryLabel: "HERITAGE MUGHAL STONE",
     provenance: "Agra & Dholpur Quarry Basin",
     image: "/sandstone/agra-red-sandstone.jpeg",
+    images: [
+      "/sandstone/agra-red-sandstone.jpeg",
+      "/sandstone/dholpur-red-sandstone-2.jpeg",
+      "/sandstone/dholpur-red-sandstone-3.jpeg",
+      "/sandstone/dholpur-red-sandstone-4.jpeg",
+    ],
     color: "Terracotta Crimson Red",
     shortDesc:
       "Iconic iron-rich ferric quartz sandstone renowned for historic fort monuments, monumental elevation facades, and extreme weather resilience.",
@@ -60,6 +66,13 @@ const sandstoneList = [
     categoryLabel: "SACRED TEMPLE STONE",
     provenance: "Bansi Paharpur & Dholpur Mines",
     image: "/sandstone/dholpur-pink-sandstone.jpeg",
+    images: [
+      "/sandstone/dholpur-pink-sandstone.jpeg",
+      "/sandstone/dholpur-pink-sandstone-2.jpeg",
+      "/sandstone/dholpur-pink-sandstone-3.jpeg",
+      "/sandstone/dholpur-pink-sandstone-4.jpeg",
+      "/sandstone/dholpur-pink-sandstone-5.jpeg",
+    ],
     color: "Soft Blush Pink & Coral",
     shortDesc:
       "Sacred blush-pink siliceous stone with fine uniform graining, celebrated worldwide for iconic temple architecture, carved jalis, and palatial villas.",
@@ -89,6 +102,11 @@ const sandstoneList = [
     categoryLabel: "BUFF CREAM ARCHITECTURAL",
     provenance: "Dholpur Quarry Headquarters",
     image: "/sandstone/dolpur-beige-sandstone.jpeg",
+    images: [
+      "/sandstone/dolpur-beige-sandstone.jpeg",
+      "/sandstone/dolpur-beige-sandstone-2.jpeg",
+      "/sandstone/dolpur-beige-sandstone-3.jpeg",
+    ],
     color: "Buff Cream & Warm Beige",
     shortDesc:
       "Siliceous buff cream and beige sandstone with subtle natural vein accents. The gold-standard stone for luxury villa elevations, farmhouses, and colonnades.",
@@ -118,6 +136,11 @@ const sandstoneList = [
     categoryLabel: "RICH EARTHY BROWN",
     provenance: "Dholpur Quarry Basin",
     image: "/assets/products/dholpur_chocolate_teakwood.jpeg",
+    images: [
+      "/assets/products/dholpur_chocolate_teakwood.jpeg",
+      "/assets/products/dholpur_chocolate_slabs.jpeg",
+      "/assets/products/dholpur_chocolate_tile.jpeg",
+    ],
     color: "Deep Chocolate Brown with Teak-Wood Graining",
     shortDesc:
       "Dense chocolate-brown sandstone with natural teak-wood graining. A bold, warm choice for feature walls, cladding, paving and landscape accents.",
@@ -141,6 +164,76 @@ const sandstoneList = [
     waMsg:
       "Hello Dholpurstones.com, I am inquiring about Dholpur Chocolate Sandstone for my project.",
   },
+  {
+    id: "dholpur-mint",
+    name: "Dholpur Mint Sandstone",
+    categoryLabel: "LUMINOUS WHITE-MINT QUARTZ",
+    provenance: "Dholpur White-Mint Quarry Seam",
+    image: "/sandstone/dholpur-mint-sandstone.jpeg",
+    images: [
+      "/sandstone/dholpur-mint-sandstone.jpeg",
+      "/sandstone/dholpur-mint-sandstone-2.jpeg",
+      "/sandstone/dholpur-mint-sandstone-3.jpeg",
+      "/sandstone/dholpur-mint-sandstone-4.jpeg",
+      "/sandstone/mint-sandstone.jpeg",
+    ],
+    color: "Luminous Mint White & Pale Cream",
+    shortDesc:
+      "Pristine white-mint quartzitic sandstone with subtle greenish-cream undertones. Renowned for reflective architectural elevations, luxury pool decks, and sun-lit courtyards.",
+    longDesc:
+      "Dholpur Mint Sandstone is prized for its naturally bright, luminous off-white and delicate mint-cream tones. Mined from specialized fine-grained siliceous beds in Dholpur, it features an exceptionally high Solar Reflectance Index (SRI), keeping exterior wall cladding and outdoor paving pleasantly cool even under peak summer sunlight. Highly dense, uniform in texture, and naturally resistant to fungal staining, it is an international favorite for neoclassical facades, luxury farm house patios, pool coping, and modern stone jalis.",
+    specs: [
+      { label: "Stone Type", value: "Siliceous Quartzitic Sandstone" },
+      { label: "Compressive Strength", value: "96.0 MPa (Dry) / 88.0 MPa (Wet)" },
+      { label: "Water Absorption", value: "< 1.10% by weight" },
+      { label: "Density", value: "2.60 g/cm³" },
+      { label: "Standard Finishes", value: "Natural Split, Sawn, Honed, Shot-Blasted, Bush-Hammered" },
+      { label: "Thickness Range", value: "20mm, 25mm, 30mm, 40mm, 50mm, Raw Gangsaw Slabs & Blocks" },
+      { label: "Recommended Uses", value: "Front Elevations, Pool Decks, Patios, Jali Screens, Column Cladding" },
+    ],
+    highlights: [
+      "Distinctive luminous white-mint tone with high solar reflectance (SRI)",
+      "Extremely low water absorption prevents efflorescence and mildew",
+      "Available in honed, sawn, shot-blasted, and natural cleft finishes",
+      "Gangsaw calibrated slabs, project tiles, and custom CNC work direct from mines",
+    ],
+    waMsg:
+      "Hello Dholpurstones.com, I am inquiring about Dholpur Mint Sandstone for my project.",
+  },
+  {
+    id: "sandstone-finishes",
+    name: "Sandstone Finishes",
+    categoryLabel: "FACTORY SURFACE TREATMENTS",
+    provenance: "Dholpur Processing & Finishing Unit",
+    image: "/sandstone/sandstone-finish.jpeg",
+    images: [
+      "/sandstone/sandstone-finish.jpeg",
+      "/sandstone/sandstone-finish-2.jpeg",
+      "/sandstone/sandstone-finish-3.jpeg",
+    ],
+    color: "Honed, Polished, Fluted, Blasted & Chiseled",
+    shortDesc:
+      "Comprehensive factory finishes — Honed Matte, Sparkling Polished, Shot-Blasted, Bush-Hammered, Fluted Reeded, Chiseled and Antique Tumbled for bespoke architectural specifications.",
+    longDesc:
+      "Every architectural design demands an exacting stone surface tactile finish. At Dholpurstones.com, we process all five signature sandstone colours through advanced finishing lines: diamond honing for satin-smooth interior floors, shot-blasting and thermal flame treatments for slip-resistant pool decks, multi-groove CNC fluting for dramatic vertical wall elevations, chiseled rockface for palatial boundary pillars, and antique tumbling for rustic heritage courtyards. Custom sample boards available for architects and specifiers.",
+    specs: [
+      { label: "Surface Finishes", value: "Honed, Polished, Shot-Blasted, Bush-Hammered, Fluted Reeded, Chiseled, Tumbled" },
+      { label: "Slip Resistance", value: "R10 to R13 (Engineered for wet pool surrounds & walkways)" },
+      { label: "Processing Technology", value: "Multi-Head Calibrators, Thermal Line, CNC Routers & Shot-Blaster" },
+      { label: "Applicable Stones", value: "Agra Red, Dholpur Beige, Dholpur Pink, Dholpur Mint & Chocolate" },
+      { label: "Thickness Range", value: "18mm, 20mm, 25mm, 30mm, 40mm, 50mm & Custom Blocks" },
+      { label: "Standard Sizes", value: "300x300mm, 600x300mm, 600x600mm, 900x600mm, 1200x600mm" },
+      { label: "Recommended Uses", value: "Interior Flooring, Exterior Facades, Pool Decks, Steps, Colonnades" },
+    ],
+    highlights: [
+      "Custom finish sample display boards available for architects & builders",
+      "Anti-skid bush-hammered and shot-blasted textures for wet areas",
+      "Precision multi-axis CNC linear fluting and grooved elevation finishes",
+      "Automated calibration guarantees uniform thickness across all tiles",
+    ],
+    waMsg:
+      "Hello Dholpurstones.com, I am inquiring about Sandstone Finishes and sample boards for my project.",
+  },
 ];
 
 
@@ -151,6 +244,7 @@ const items: CatalogItem[] = sandstoneList.map((s) => ({
   meta: s.provenance,
   subtitle: s.color,
   image: s.image,
+  images: (s as any).images || [s.image],
   desc: s.longDesc,
   specs: s.specs,
   highlights: s.highlights,
@@ -171,7 +265,7 @@ export default function SandstonePage() {
         eyebrow="Mine To Site"
         title="Dholpur"
         accent="Sandstone"
-        description="Four signature colours — Agra Red, Dholpur Beige, Dholpur Pink and Dholpur Chocolate — quarried from our own mines in Dholpur, Rajasthan."
+        description="Five signature colours — Agra Red, Dholpur Beige, Dholpur Pink, Dholpur Chocolate and Dholpur Mint — plus specialized architectural finishes, quarried from our own mines in Dholpur, Rajasthan."
         image="/sandstone/agra-red-sandstone.jpeg"
         crumbs={[{ label: "Products", href: "/products" }, { label: "Sandstone" }]}
       >
@@ -180,7 +274,7 @@ export default function SandstonePage() {
 
       <FeatureStrip
         items={[
-          { icon: Palette, title: "4 Colours", text: "Red, beige, pink and chocolate" },
+          { icon: Palette, title: "5 Colours", text: "Red, beige, pink, chocolate & mint" },
           { icon: Award, title: "300+ Designs", text: "Govt. of India awarded" },
           { icon: Mountain, title: "Own Mines", text: "Quarried at source since 1953" },
           { icon: ShieldCheck, title: "100% Natural", text: "Dense, durable, weather resistant" },
@@ -191,10 +285,10 @@ export default function SandstonePage() {
         <div className="container-x relative">
           <SectionHeader
             eyebrow="Quarry-Direct Inventory"
-            title="Our Sandstone Colours"
-            subtitle="Tap a colour for specifications — then enquire, WhatsApp or call us for samples and pricing."
+            title="Our Sandstone Colours & Finishes"
+            subtitle="Tap any colour or finish for specifications — then explore high-resolution photos in the full-screen slider, or message us on WhatsApp for samples and factory pricing."
           />
-          <CatalogGrid items={items} ctaPrefix="Sandstone" cols="sm:grid-cols-2" />
+          <CatalogGrid items={items} ctaPrefix="Sandstone" cols="sm:grid-cols-2 lg:grid-cols-3" />
         </div>
       </section>
 

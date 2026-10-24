@@ -22,16 +22,16 @@ import { categories, waLink } from "@/data/catalog";
 import { LuArrowRight as ArrowRight } from "react-icons/lu";
 
 export const metadata: Metadata = {
-  title: "Products – Sandstone, Marble, Stone Articles, Semi-Precious & Imported Stones",
+  title: "Products – Sandstone, Wall Cladding, Marble, Stone Articles & Exotic Stones",
   description:
-    "Explore Dholpurstones.com collections: Dholpur sandstone (Agra Red, Beige, Pink, Chocolate), beige, white and grey marble, farm house & garden stonework, hand-carved stone articles, semi-precious stones and exclusive imported stones.",
+    "Explore Dholpurstones.com collections: Dholpur sandstone, natural stone wall cladding, beige, white and grey marble, farm house & garden stonework, hand-carved stone articles, semi-precious stones and exclusive imported stones.",
   alternates: {
     canonical: "/products",
   },
   openGraph: {
-    title: "Natural Stone Products & Collections",
+    title: "Natural Stone Products & Architectural Collections",
     description:
-      "Sandstone, marble, garden stonework, stone articles, semi-precious and imported stones — direct from the mine owner.",
+      "Sandstone, architectural wall cladding, marble, garden stonework, stone articles, semi-precious and imported stones — direct from the mine owner.",
     url: "/products",
     siteName: "Dholpurstones.com",
     images: [
@@ -54,7 +54,7 @@ export default function ProductsPage() {
         eyebrow="Mine To Export"
         title="Our Products &"
         accent="Collections"
-        description="Five collections, one trusted source. Choose a category to see colours, varieties and details."
+        description="Six handcrafted natural stone collections, one trusted source. Choose a category to see colours, varieties and details."
         image="/assets/hero-quarry.jpg"
         crumbs={[{ label: "Products" }]}
       >

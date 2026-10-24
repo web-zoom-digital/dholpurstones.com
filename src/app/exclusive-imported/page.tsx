@@ -44,7 +44,7 @@ export default function ExclusiveImportedPage() {
       <PageHero
         eyebrow="Marble & Imports"
         title="Exclusive &"
-        accent="Imported"
+        accent="Imported Marble"
         description="All our marble in one place — beige, white and grey — plus imported exotic slabs and semi-precious stones., sourced and made to order."
         image="/assets/garg/luxurious_marble_lobby_vignettes.jpg"
         crumbs={[{ label: "Products", href: "/products" }, { label: "Exclusive & Imported" }]}

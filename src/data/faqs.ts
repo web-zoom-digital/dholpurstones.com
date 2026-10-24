@@ -34,7 +34,7 @@ export const generalFaqs: Faq[] = [
 export const sandstoneFaqs: Faq[] = [
   {
     q: "What colours of Dholpur sandstone are available?",
-    a: "Four signature colours: Agra Red (deep terracotta), Dholpur Beige (warm buff-cream), Dholpur Pink (blush pink, temple grade) and Dholpur Chocolate (rich brown with wood-like graining).",
+    a: "Five signature colours: Agra Red (deep terracotta), Dholpur Beige (warm buff-cream), Dholpur Pink (blush pink, temple grade), Dholpur Chocolate (rich brown with wood-like graining), and Dholpur Mint (luminous white-mint, high SRI).",
   },
   {
     q: "What is sandstone used for?",
@@ -47,6 +47,25 @@ export const sandstoneFaqs: Faq[] = [
   {
     q: "How is the price of sandstone decided?",
     a: "Price depends on the colour, thickness, finish, size, quantity and delivery location. Send us your requirement and we will quote directly from the mine, with no middleman margin.",
+  },
+];
+
+export const wallCladdingFaqs: Faq[] = [
+  {
+    q: "What types of natural stone wall cladding do you manufacture?",
+    a: "We manufacture rockface split brick cladding, CNC fluted & grooved panels, stepped ledgestone strips, dual-tone checkered mosaic tiles (mesh-backed), and calibrated honed tiles in Dholpur Beige, White/Mint, Pink, Agra Red and Teakwood sandstone.",
+  },
+  {
+    q: "Is Dholpur stone wall cladding suitable for exterior elevations?",
+    a: "Yes. Dholpur natural sandstone is 100% weather-resistant, UV-immune, frost-proof, and does not crack, fade, or effloresce in high heat, heavy rains, or coastal humidity. It has endured for centuries on iconic Indian monuments.",
+  },
+  {
+    q: "How is natural stone wall cladding installed?",
+    a: "Cladding tiles up to 25mm thickness are fixed using high-performance polymer-modified stone adhesive or cement-sand mortar with mechanical clamps/ties for heights above 10 feet. Mesh-backed mosaic sheets install rapidly like modular tiles.",
+  },
+  {
+    q: "Can I order custom panel sizes, textures and CNC grooves?",
+    a: "Yes. As direct quarry owners and manufacturers equipped with multi-axis CNC routers and gangsaw cutters, we customize thickness (15mm to 40mm), panel lengths, edge bevels, fluting pitch, and textures according to your architectural CAD drawings.",
   },
 ];
 

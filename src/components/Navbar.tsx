@@ -15,6 +15,7 @@ import {
   LuHammer as Hammer,
   LuGem as Gem,
   LuCrown as Crown,
+  LuLayers as Layers,
   LuMail as Mail,
   LuMapPin as MapPin,
   LuMessageSquareText,
@@ -25,6 +26,7 @@ import { categories, waLink, EMAIL, type CategoryId } from "@/data/catalog";
 
 const categoryIcons: Record<CategoryId, React.ComponentType<{ className?: string }>> = {
   sandstone: Mountain,
+  "wall-cladding": Layers,
   "farmhouse-gardens": TreePine,
   "stone-articles": Hammer,
   "semi-precious": Gem,
@@ -305,12 +307,14 @@ export default function Navbar() {
                                   </div>
                                 );
                               })}
-                              <div className="flex flex-col justify-center rounded-2xl bg-forest p-4 text-white bg-stone-grain">
-                                <p className="font-heading text-[13px] font-bold uppercase tracking-wide">Not sure what to choose?</p>
-                                <p className="mt-1.5 text-[13px] text-white/75">Tell us your project — we recommend the right stone.</p>
+                              <div className="col-span-3 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl bg-forest p-4 text-white bg-stone-grain mt-1.5">
+                                <div>
+                                  <p className="font-heading text-[13px] font-bold uppercase tracking-wide">Not sure what to choose?</p>
+                                  <p className="mt-1 text-[13px] text-white/75">Tell us your project requirements — we recommend the right natural stone &amp; finishes.</p>
+                                </div>
                                 <Link
                                   href="/contact"
-                                  className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-gold px-4 py-2 text-[12.5px] font-bold text-forest"
+                                  className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-gold px-4 py-2 text-[12.5px] font-bold text-forest transition-colors hover:bg-gold-light"
                                 >
                                   Get free advice <ArrowRight className="h-3.5 w-3.5" />
                                 </Link>
