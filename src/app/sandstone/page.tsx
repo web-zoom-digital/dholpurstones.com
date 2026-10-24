@@ -165,10 +165,10 @@ const sandstoneList = [
       "Hello Dholpurstones.com, I am inquiring about Dholpur Chocolate Sandstone for my project.",
   },
   {
-    id: "dholpur-mint",
-    name: "Dholpur Mint Sandstone",
+    id: "mint-sandstone",
+    name: "Mint Sandstone",
     categoryLabel: "LUMINOUS WHITE-MINT QUARTZ",
-    provenance: "Dholpur White-Mint Quarry Seam",
+    provenance: "White-Mint Quarry Seam",
     image: "/sandstone/dholpur-mint-sandstone.jpeg",
     images: [
       "/sandstone/dholpur-mint-sandstone.jpeg",
@@ -181,7 +181,7 @@ const sandstoneList = [
     shortDesc:
       "Pristine white-mint quartzitic sandstone with subtle greenish-cream undertones. Renowned for reflective architectural elevations, luxury pool decks, and sun-lit courtyards.",
     longDesc:
-      "Dholpur Mint Sandstone is prized for its naturally bright, luminous off-white and delicate mint-cream tones. Mined from specialized fine-grained siliceous beds in Dholpur, it features an exceptionally high Solar Reflectance Index (SRI), keeping exterior wall cladding and outdoor paving pleasantly cool even under peak summer sunlight. Highly dense, uniform in texture, and naturally resistant to fungal staining, it is an international favorite for neoclassical facades, luxury farm house patios, pool coping, and modern stone jalis.",
+      "Mint Sandstone is prized for its naturally bright, luminous off-white and delicate mint-cream tones. Mined from specialized fine-grained siliceous beds, it features an exceptionally high Solar Reflectance Index (SRI), keeping exterior wall cladding and outdoor paving pleasantly cool even under peak summer sunlight. Highly dense, uniform in texture, and naturally resistant to fungal staining, it is an international favorite for neoclassical facades, luxury farm house patios, pool coping, and modern stone jalis.",
     specs: [
       { label: "Stone Type", value: "Siliceous Quartzitic Sandstone" },
       { label: "Compressive Strength", value: "96.0 MPa (Dry) / 88.0 MPa (Wet)" },
@@ -198,7 +198,7 @@ const sandstoneList = [
       "Gangsaw calibrated slabs, project tiles, and custom CNC work direct from mines",
     ],
     waMsg:
-      "Hello Dholpurstones.com, I am inquiring about Dholpur Mint Sandstone for my project.",
+      "Hello Dholpurstones.com, I am inquiring about Mint Sandstone for my project.",
   },
   {
     id: "sandstone-finishes",
@@ -220,7 +220,7 @@ const sandstoneList = [
       { label: "Surface Finishes", value: "Honed, Polished, Shot-Blasted, Bush-Hammered, Fluted Reeded, Chiseled, Tumbled" },
       { label: "Slip Resistance", value: "R10 to R13 (Engineered for wet pool surrounds & walkways)" },
       { label: "Processing Technology", value: "Multi-Head Calibrators, Thermal Line, CNC Routers & Shot-Blaster" },
-      { label: "Applicable Stones", value: "Agra Red, Dholpur Beige, Dholpur Pink, Dholpur Mint & Chocolate" },
+      { label: "Applicable Stones", value: "Agra Red, Dholpur Beige, Dholpur Pink, Mint Sandstone & Chocolate" },
       { label: "Thickness Range", value: "18mm, 20mm, 25mm, 30mm, 40mm, 50mm & Custom Blocks" },
       { label: "Standard Sizes", value: "300x300mm, 600x300mm, 600x600mm, 900x600mm, 1200x600mm" },
       { label: "Recommended Uses", value: "Interior Flooring, Exterior Facades, Pool Decks, Steps, Colonnades" },
@@ -265,7 +265,7 @@ export default function SandstonePage() {
         eyebrow="Mine To Site"
         title="Dholpur"
         accent="Sandstone"
-        description="Five signature colours — Agra Red, Dholpur Beige, Dholpur Pink, Dholpur Chocolate and Dholpur Mint — plus specialized architectural finishes, quarried from our own mines in Dholpur, Rajasthan."
+        description="Five signature colours — Agra Red, Dholpur Beige, Dholpur Pink, Dholpur Chocolate and Mint Sandstone — plus specialized architectural finishes, quarried from our own mines in Dholpur, Rajasthan."
         image="/sandstone/agra-red-sandstone.jpeg"
         crumbs={[{ label: "Products", href: "/products" }, { label: "Sandstone" }]}
       >

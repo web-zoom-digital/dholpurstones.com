@@ -34,7 +34,7 @@ export const generalFaqs: Faq[] = [
 export const sandstoneFaqs: Faq[] = [
   {
     q: "What colours of Dholpur sandstone are available?",
-    a: "Five signature colours: Agra Red (deep terracotta), Dholpur Beige (warm buff-cream), Dholpur Pink (blush pink, temple grade), Dholpur Chocolate (rich brown with wood-like graining), and Dholpur Mint (luminous white-mint, high SRI).",
+    a: "Five signature colours: Agra Red (deep terracotta), Dholpur Beige (warm buff-cream), Dholpur Pink (blush pink, temple grade), Dholpur Chocolate (rich brown with wood-like graining), and Mint Sandstone (luminous white-mint, high SRI).",
   },
   {
     q: "What is sandstone used for?",

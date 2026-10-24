@@ -70,11 +70,11 @@ export const sandstoneSubs: SubCategory[] = [
     href: "/sandstone#dholpur-chocolate",
   },
   {
-    id: "dholpur-mint",
-    name: "Dholpur Mint",
+    id: "mint-sandstone",
+    name: "Mint Sandstone",
     note: "Luminous white-mint stone with high solar reflectance for elevations and pool surrounds.",
     image: "/sandstone/dholpur-mint-sandstone.jpeg",
-    href: "/sandstone#dholpur-mint",
+    href: "/sandstone#mint-sandstone",
   },
   {
     id: "sandstone-finishes",
