@@ -347,55 +347,58 @@ export const marbleSubs: (SubCategory & { varieties: MarbleVariety[] })[] = [
   },
 ];
 
-/* ───────────────────────── Farm House & Gardens ───────────────────────── */
+/* ───────────────────────── Luxury Farm House & Gardens ───────────────────────── */
 export const gardenSubs: SubCategory[] = [
   {
     id: "driveways",
     name: "Portico & Driveways",
-    note: "Hand-split cobble driveways and grand entrance courts.",
+    note: "Hand-split cobble driveways and grand entrance courts for luxury farm houses.",
     image: "/assets/landscaping/landscape_cobblestone_driveway.jpg",
     href: "/farmhouse-gardens",
   },
   {
     id: "patios",
     name: "Patios & Lawn Paving",
-    note: "Cool-underfoot sandstone terraces for farm house living.",
+    note: "Cool-underfoot sandstone terraces for luxury farm house living.",
     image: "/assets/landscaping/landscape_patio_paving.jpg",
     href: "/farmhouse-gardens",
   },
   {
     id: "pool",
     name: "Pool Coping & Decks",
-    note: "Non-slip, heat-reflective stone around the water.",
+    note: "Non-slip, heat-reflective stone around luxury farm house pools.",
     image: "/assets/landscaping/landscape_pool_coping.jpg",
     href: "/farmhouse-gardens",
   },
   {
     id: "gazebo",
     name: "Chhatris & Gazebos",
-    note: "Hand-carved sandstone chhatris and pavilions for the lawn.",
+    note: "Hand-carved sandstone chhatris and pavilions for luxury estate lawns.",
     image: "/garden-stonework/carved-sandstone-chhatri-pavilion.jpg",
     href: "/farmhouse-gardens",
   },
   {
     id: "lanterns",
     name: "Garden Lanterns & Lamp Posts",
-    note: "Carved jali lamp posts that light paths, lawns and entrances.",
-    image: "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.25 PM (1).jpeg",
+    note: "Carved jali lamp posts that light luxury paths, lawns and entrances.",
+    image: "/garden-stonework/luxury-farmhouse-pathway-lamp-post.jpg",
     href: "/farmhouse-gardens",
   },
   {
     id: "fountains",
-    name: "Water Fountains",
-    note: "Carved bowl and pot fountains that anchor courtyards and gardens.",
-    image: "/garden-stonework/WhatsApp Image 2026-10-23 at 6.01.43 PM.jpeg",
+    name: "Tiered Water Fountains",
+    note: "Grand tiered marble and sandstone fountains that anchor estate courtyards and gardens.",
+    image: "/garden-stonework/luxury-farmhouse-tiered-water-fountain.jpg",
     href: "/farmhouse-gardens",
   },
 ];
 
-/** Every farm house & garden photo, used by the gallery on /farmhouse-gardens. */
+/** Every luxury farm house & garden photo, used by the gallery on /farmhouse-gardens. */
 export const gardenGallery: { src: string; alt: string }[] = [
-  { src: "/garden-stonework/WhatsApp Image 2026-10-23 at 6.01.43 PM.jpeg", alt: "Grand hand-carved sandstone sphere and elephant water fountain with multi-tier radial pool on luxury farmhouse estate lawn" },
+  { src: "/garden-stonework/luxury-farmhouse-pathway-lamp-post.jpg", alt: "Illuminated hand-carved natural stone pathway lantern lamp post at dusk in luxury farm house estate grounds" },
+  { src: "/garden-stonework/luxury-farmhouse-stone-birdbath.jpg", alt: "Hand-carved pink sandstone bird bath basin with sculpted songbirds and leaf relief pedestal in lush green luxury farm house lawn" },
+  { src: "/garden-stonework/luxury-farmhouse-tiered-water-fountain.jpg", alt: "Grand multi-tiered white marble water cascade fountain in landscaped luxury farm house garden" },
+  { src: "/garden-stonework/WhatsApp Image 2026-10-23 at 6.01.43 PM.jpeg", alt: "Grand hand-carved sandstone sphere and elephant water fountain with multi-tier radial pool on luxury farm house estate lawn" },
   { src: "/garden-stonework/WhatsApp Image 2026-10-23 at 6.01.43 PM (1).jpeg", alt: "Artisanal sandstone floating sphere fountain with carved royal elephant spouts in courtyard garden" },
   { src: "/garden-stonework/WhatsApp Image 2026-10-23 at 6.01.44 PM.jpeg", alt: "Carved sandstone floating sphere fountain with radial orb water spouts on country estate grounds" },
   { src: "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.33 PM (1).jpeg", alt: "Monumental illuminated royal palace tiered water fountain with swans and elephants" },
@@ -406,17 +409,9 @@ export const gardenGallery: { src: string; alt: string }[] = [
   { src: "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.29 PM (1).jpeg", alt: "Monolithic hand-carved royal caparisoned elephant sandstone sculpture" },
   { src: "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.35 PM.jpeg", alt: "Hand-carved majestic sandstone stallion horse statue for estate forecourts" },
   { src: "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.33 PM.jpeg", alt: "3D high-relief seven running horses stone mural wall panel" },
-  // { src: "/garden-stonework/carved-sandstone-chhatri-pavilion.jpg", alt: "Hand-carved sandstone chhatri pavilion with arched brackets and fluted columns" },
-  // { src: "/garden-stonework/sandstone-bowl-water-fountains.jpg", alt: "Sandstone bowl water fountains in a lawn garden" },
-  // { src: "/garden-stonework/sandstone-pot-water-fountain.jpg", alt: "Sandstone pot and pillar water fountain in a garden" },
-  // { src: "/garden-stonework/sandstone-lantern-lamp-post-lawn.jpg", alt: "Carved sandstone lantern lamp post on a garden lawn" },
-  // { src: "/garden-stonework/lotus-sandstone-lantern-post.jpg", alt: "Lotus-carved sandstone lantern post with jali panel" },
-  // { src: "/garden-stonework/red-sandstone-lantern-posts-pathway.jpg", alt: "Red sandstone jali lantern posts along a garden pathway" },
-  // { src: "/garden-stonework/marble-lantern-lamp-post.jpg", alt: "White stone lantern lamp post beside a garden planter" },
-  // { src: "/garden-stonework/fluted-sandstone-column.jpg", alt: "Fluted sandstone column with carved capital" },
-  { src: "/assets/landscaping/landscape_pool_coping.jpg", alt: "Sandstone pool coping and deck beside a farm house pool" },
-  { src: "/assets/landscaping/landscape_cobblestone_driveway.jpg", alt: "Cobblestone sandstone driveway and portico of a farm house" },
-  { src: "/assets/landscaping/landscape_patio_paving.jpg", alt: "Sandstone patio paving and lawn terrace" },
+  { src: "/assets/landscaping/landscape_pool_coping.jpg", alt: "Sandstone pool coping and deck beside a luxury farm house pool" },
+  { src: "/assets/landscaping/landscape_cobblestone_driveway.jpg", alt: "Cobblestone sandstone driveway and portico of a luxury farm house" },
+  { src: "/assets/landscaping/landscape_patio_paving.jpg", alt: "Sandstone patio paving and luxury lawn terrace" },
   { src: "/assets/landscaping/landscape_steps_walling.jpg", alt: "Terraced garden with sandstone steps and retaining walls" },
 ];
 
@@ -665,8 +660,8 @@ export const categories: Category[] = [
   },
   {
     id: "farmhouse-gardens",
-    name: "Farm House & Gardens",
-    footerName: "Luxry Farm House, Resort and Garden",
+    name: "Luxury Farm House & Gardens",
+    footerName: "Luxury Farm House, Resort and Garden",
     href: "/farmhouse-gardens",
     blurb: "Driveways, patios, pool decks, gazebos and fountains in stone.",
     image: "/assets/landscaping/landscape_pool_coping.jpg",

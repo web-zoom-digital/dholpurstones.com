@@ -86,11 +86,11 @@ export const marbleFaqs: Faq[] = [
 
 export const gardenFaqs: Faq[] = [
   {
-    q: "Which stone is best for a farm house driveway or patio?",
+    q: "Which stone is best for a luxury farm house driveway or patio?",
     a: "Dholpur sandstone is a popular choice — it is hard-wearing, naturally slip-resistant and stays cooler than many other surfaces. Hand-split cobbles suit driveways, while sawn or riven tiles suit patios and walkways.",
   },
   {
-    q: "What farm house and garden work do you do?",
+    q: "What luxury farm house and garden work do you do?",
     a: "Driveways and porticos, patios and lawn paving, pool coping and decks, carved gazebos and chhatris, steps and retaining walls, and water fountains — supplied in natural stone.",
   },
   {

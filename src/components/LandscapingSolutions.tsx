@@ -18,6 +18,9 @@ interface LandscapeItem {
   tag: string;
   subtitle: string;
   image: string;
+  images?: string[];
+  imagePosition?: string;
+  imageFit?: "cover" | "contain";
   provenance: string;
   desc: string;
   idealFor: string;
@@ -36,7 +39,7 @@ const landscapeSolutions: LandscapeItem[] = [
     image: "/assets/landscaping/landscape_cobblestone_driveway.jpg",
     provenance: "Direct Dholpur Sandstone Strata",
     desc: "Engineered specifically for heavy vehicular traffic — from luxury SUVs to estate service vehicles. Hand-dressed natural sandstone cobblestones laid in fan, herringbone, or linear patterns, creating an aristocratic European manor or royal haveli arrival experience.",
-    idealFor: "Estate Driveways, Farm House Porticos, Luxury Hotel Forecourts, Valet Courtyards",
+    idealFor: "Estate Driveways, Luxury Farm House Porticos, Luxury Hotel Forecourts, Valet Courtyards",
     specs: [
       { label: "Standard Formats", value: "100x100x50mm, 140x140x60mm & 100x200mm" },
       { label: "Crushing Strength", value: "68–72 MPa (Extreme Axle Load Bearing)" },
@@ -84,7 +87,7 @@ const landscapeSolutions: LandscapeItem[] = [
     image: "/assets/landscaping/landscape_pool_coping.jpg",
     provenance: "Dholpur White & Sandstone Stratum",
     desc: "Engineered stone pool surrounds crafted with smoothly rounded bullnose or modern drop-face edges. Completely non-porous and resistant to chlorinated or saline swimming pool water, providing barefoot safety and royal aesthetics.",
-    idealFor: "Resort Infinity Pools, Farmhouse Plunges, Spa Wellness Decks, Seaside Villas",
+    idealFor: "Resort Infinity Pools, Luxury Farm House Plunges, Spa Wellness Decks, Seaside Villas",
     specs: [
       { label: "Edge Profiles", value: "Full Bullnose, Half Bullnose, Drop-Face / Rebated" },
       { label: "Water Absorption", value: "< 1.15% (Ultra-Dense Siliceous Sandstone)" },
@@ -126,38 +129,50 @@ const landscapeSolutions: LandscapeItem[] = [
   {
     id: "water-fountains",
     category: "fountains",
-    title: "Grand Sphere & Elephant Water Fountains",
+    title: "Grand Tiered & Cascading Estate Water Fountains",
     tag: "Master Artisan Centerpieces",
-    subtitle: "Rotating Polished Sandstone Spheres & Elephant Water Cascades",
-    image: "/garden-stonework/WhatsApp Image 2026-10-23 at 6.01.43 PM.jpeg",
+    subtitle: "Tiered Cascading Marble & Sandstone Water Fountains",
+    image: "/garden-stonework/luxury-farmhouse-tiered-water-fountain.jpg",
+    images: [
+      "/garden-stonework/luxury-farmhouse-tiered-water-fountain.jpg",
+      "/garden-stonework/WhatsApp Image 2026-10-23 at 6.01.43 PM.jpeg",
+      "/garden-stonework/WhatsApp Image 2026-10-23 at 6.01.43 PM (1).jpeg",
+      "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.33 PM (1).jpeg",
+      "/garden-stonework/WhatsApp Image 2026-10-23 at 6.01.44 PM.jpeg",
+    ],
     provenance: "Sikandra Heritage Sculpting Ateliers & Dholpur Quarries",
-    desc: "Monumental natural sandstone centerpiece fountain featuring a monolithic polished stone sphere, multi-tiered concentric spillway basins, and precision hand-carved royal elephant spouts. Pre-drilled with concealed internal conduits, creating an acoustic water focal point for prestigious estates.",
-    idealFor: "Palatial Courtyards, Estate Driveway Rotundas, Civic Plazas, Luxury Hotel Entrances",
+    desc: "Monumental natural marble and sandstone centerpiece fountains featuring multi-tiered cascading water spillways, hand-sculpted fluted scalloped basins, rotating polished stone spheres, and precision-carved royal elephant water spouts. Pre-plumbed with concealed internal conduits, creating an acoustic water focal point for prestigious luxury farm house estates.",
+    idealFor: "Palatial Courtyards, Estate Driveway Rotundas, Luxury Farm House Lawns, Luxury Hotel Entrances",
     specs: [
       { label: "Crafting Technique", value: "100% Hand Sculpted & Chiseled Monoliths" },
       { label: "Dimensions", value: "Diameters from 8ft to 25ft; Heights up to 18ft" },
+      { label: "Materials", value: "A-Grade Makrana White Marble, Dholpur Pink & Beige Sandstone" },
       { label: "Conduits", value: "Concealed Integrated Copper/PVC Core Plumbing" },
-      { label: "Stone Quality", value: "A-Grade Uniform Fine-Grained Dholpur Pink & Beige" },
     ],
     features: [
-      "Central polished sandstone floating sphere with perimeter water jets",
-      "Hand-chiseled elephant trunk spouts arching into a tiered circular stone pool",
+      "Multi-tier cascading scalloped basins with central high-pressure water plume",
+      "Central polished floating sphere with perimeter acoustic water jets",
+      "Hand-chiseled elephant trunk and floral spouts arching into tiered stone pools",
       "Modular inter-locking ring construction for effortless on-site assembly",
-      "Direct quarry master artisans can execute custom drawings or CAD 3D files",
     ],
-    waMsg: "Hello Dholpurstones.com, I would like to inquire about Hand-Carved Sandstone Water Fountains & Garden Basins.",
+    waMsg: "Hello Dholpurstones.com, I would like to inquire about Hand-Carved Water Fountains & Tiered Cascades for a luxury farm house project.",
   },
-
   {
     id: "garden-lanterns",
     category: "lanterns",
     title: "Illuminated Garden Lanterns & Lamp Posts",
     tag: "Pathway & Lawn Lighting",
     subtitle: "Pierced Floral Jali Sandstone Lanterns with Ambient Evening Glow",
-    image: "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.25 PM (1).jpeg",
+    image: "/garden-stonework/luxury-farmhouse-pathway-lamp-post.jpg",
+    images: [
+      "/garden-stonework/luxury-farmhouse-pathway-lamp-post.jpg",
+      "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.25 PM (1).jpeg",
+      "/garden-stonework/sandstone-lantern-lamp-post-lawn.jpg",
+      "/garden-stonework/red-sandstone-lantern-posts-pathway.jpg",
+    ],
     provenance: "Sikandra Ateliers & Dholpur",
-    desc: "Hand-carved sandstone lantern posts with pierced jali panels, lotus-carved shafts and finial tops, made to line driveways, pathways, lawns and entrances. Each post is cut to your height and fitted for an internal LED lamp that casts warm geometric patterns across lawns and flagstones.",
-    idealFor: "Farm House Pathways, Driveway Edges, Lawn Borders, Entrance Gates, Resort Gardens",
+    desc: "Hand-carved sandstone lantern posts with pierced jali panels, lotus-carved shafts and finial tops, made to line luxury farm house driveways, pathways, lawns and entrances. Each post is cut to your height and fitted for an internal LED lamp that casts warm geometric patterns across lawns and flagstones.",
+    idealFor: "Luxury Farm House Pathways, Driveway Edges, Lawn Borders, Entrance Gates, Resort Gardens",
     specs: [
       { label: "Stone Options", value: "Dholpur Beige, Agra Red, Dholpur Pink" },
       { label: "Heights", value: "Made to order — share your requirement (2.5ft to 7ft)" },
@@ -165,12 +180,12 @@ const landscapeSolutions: LandscapeItem[] = [
       { label: "Finish", value: "Hand-chiselled and honed" },
     ],
     features: [
-      "Carved by hand in matching sets for a uniform pathway illumination",
+      "Carved by hand in matching sets for a uniform luxury pathway illumination",
       "Pierced jali panel lets lamp light glow softly with delicate shadow play after dusk",
       "Natural sandstone weathers gracefully outdoors through monsoons and summer heat",
       "Custom heights, patterns and stone colours available to match architecture",
     ],
-    waMsg: "Hello Dholpurstones.com, I would like to inquire about Carved Garden Lanterns & Lamp Posts for my farm house / garden.",
+    waMsg: "Hello Dholpurstones.com, I would like to inquire about Carved Garden Lanterns & Lamp Posts for my luxury farm house / garden.",
   },
   {
     id: "estate-sculptures",
@@ -180,8 +195,8 @@ const landscapeSolutions: LandscapeItem[] = [
     subtitle: "Guardian Lions, Caparisoned Elephants & Galloping Stallions",
     image: "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.29 PM.jpeg",
     provenance: "Generational Sikandra Master Sculptors & Dholpur Leases",
-    desc: "Monumental natural sandstone sculptures hand-chiseled from single blocks to guard farm house gateways, flank carriage drives, and crown expansive lawns. Features majestic roaring guardian lions on ornate pedestals, royal caparisoned elephants with ornamental hauda relief, and powerful galloping stallions.",
-    idealFor: "Estate Entrance Portals, Driveway Rotundas, Farm House Lawns, Palace Forecourts",
+    desc: "Monumental natural sandstone sculptures hand-chiseled from single blocks to guard luxury farm house gateways, flank carriage drives, and crown expansive lawns. Features majestic roaring guardian lions on ornate pedestals, royal caparisoned elephants with ornamental hauda relief, and powerful galloping stallions.",
+    idealFor: "Estate Entrance Portals, Driveway Rotundas, Luxury Farm House Lawns, Palace Forecourts",
     specs: [
       { label: "Stone Origin", value: "A-Grade Uniform Fine Dholpur Beige & Pink" },
       { label: "Carving Detail", value: "100% Hand-Sculpted Shilpa Shastra Anatomy" },
@@ -194,7 +209,7 @@ const landscapeSolutions: LandscapeItem[] = [
       "Integrated monolithic carved plinths with decorative lotus and floral friezes",
       "Bespoke commissioned sizing available to match your site architectural drawings",
     ],
-    waMsg: "Hello Dholpurstones.com, I would like to inquire about Hand-Carved Royal Animal Statues & Guardian Sculptures for a farm house project.",
+    waMsg: "Hello Dholpurstones.com, I would like to inquire about Hand-Carved Royal Animal Statues & Guardian Sculptures for a luxury farm house project.",
   },
   {
     id: "garden-accents",
@@ -202,23 +217,30 @@ const landscapeSolutions: LandscapeItem[] = [
     title: "Carved Planters, Peacock Basins & Stone Murals",
     tag: "Artisanal Landscape Accents",
     subtitle: "Deep-Relief Ornamental Urns, Peacock Fountains & 3D Wall Reliefs",
-    image: "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.34 PM.jpeg",
+    image: "/garden-stonework/luxury-farmhouse-stone-birdbath-4x3.jpg",
+    images: [
+      "/garden-stonework/luxury-farmhouse-stone-birdbath-4x3.jpg",
+      "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.34 PM.jpeg",
+      "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.25 PM.jpeg",
+      "/garden-stonework/WhatsApp Image 2026-10-24 at 12.06.33 PM.jpeg",
+    ],
     provenance: "Sikandra Heritage Ateliers",
-    desc: "Architectural decorative stonework designed to elevate country estates and resort courtyards. Features heavy fluted urn planters with deep acanthus leaf carvings, regal paired peacock stone fountains, and 3D high-relief Running Horses stone mural wall panels.",
+    desc: "Architectural decorative stonework designed to elevate country estates and resort courtyards. Features hand-carved stone bird baths with resting songbirds, heavy fluted urn planters with deep acanthus leaf carvings, regal paired peacock stone fountains, and 3D high-relief Running Horses stone mural wall panels.",
     idealFor: "Verandah Walkways, Terrace Lawns, Courtyard Accent Walls, Poolside Planters",
     specs: [
-      { label: "Formats", value: "Pedestal Urns, Fountain Basins & Framed Wall Murals" },
+      { label: "Formats", value: "Bird Baths, Pedestal Urns, Fountain Basins & Framed Wall Murals" },
       { label: "Finish", value: "Fine Honed, Hand-Chiseled Bas-Relief & Vintage Patina" },
       { label: "Maintenance", value: "Zero Maintenance, Naturally Algae & Frost Resistant" },
       { label: "Customization", value: "Custom Inscriptions, Family Crests & Sizing" },
     ],
     features: [
+      "Artisanal hand-carved stone bird baths with sculpted resting songbirds and fluted pedestal",
       "Deep hand-chiseled floral relief urns that thrive in outdoor heat and rain",
       "Carved peacock pair fountains with lotus pedestals creating soothing water sounds",
       "Museum-grade 3D stone murals compatible with flush recessed architectural backlighting",
       "Delivered securely packed in ISPM-15 wooden seaworthy export crates",
     ],
-    waMsg: "Hello Dholpurstones.com, I would like to inquire about Carved Stone Planters, Peacock Basins & Wall Murals for an estate garden.",
+    waMsg: "Hello Dholpurstones.com, I would like to inquire about Carved Stone Bird Baths, Planters, Peacock Basins & Wall Murals for an estate garden.",
   },
 ];
 
@@ -246,7 +268,7 @@ const stakeholderPillars = [
     ],
   },
   {
-    title: "For Estate Owners & Landscapers",
+    title: "For Luxury Estate Owners & Landscapers",
     icon: Sun,
     badge: "Lasting Luxury",
     desc: "Natural sandstone stays cool under summer heat, is non-slip during rains, and develops a richer antique patina year after year.",
@@ -265,6 +287,9 @@ const items: CatalogItem[] = landscapeSolutions.map((l) => ({
   badge: l.tag,
   meta: l.subtitle,
   image: l.image,
+  images: l.images && l.images.length > 0 ? l.images : [l.image],
+  imagePosition: l.imagePosition,
+  imageFit: l.imageFit,
   desc: `${l.desc} Ideal for: ${l.idealFor}.`,
   specs: l.specs,
   highlights: l.features,
@@ -278,10 +303,10 @@ export default function LandscapingSolutions() {
         <div className="container-x relative">
           <SectionHeader
             eyebrow="Our Speciality"
-            title="Farm House & Garden Stonework"
+            title="Luxury Farm House & Garden Stonework"
             subtitle="Driveways, patios, pool decks, steps, chhatris, lantern posts and fountains — tap any item for details, then enquire, WhatsApp or call us."
           />
-          <CatalogGrid items={items} ctaPrefix="Farm house & garden" />
+          <CatalogGrid items={items} ctaPrefix="Luxury farm house & garden" />
         </div>
       </section>
 

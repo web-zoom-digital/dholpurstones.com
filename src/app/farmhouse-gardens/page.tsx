@@ -34,7 +34,7 @@ import {
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export const metadata: Metadata = {
-  title: "Farm House & Garden Stonework – Driveways, Patios, Pool Decks, Gazebos",
+  title: "Luxury Farm House & Garden Stonework – Driveways, Patios, Pool Decks, Gazebos",
   description:
     "Turnkey Natural Sandstone Solutions for Luxury Farm Houses, Private Country Estates, and Designer Garden Landscapes. Over 300+ front elevation designs in sandstone awarded by Govt. of India & nominated for International Award for Business Excellence. Cobblestone carriage driveways, monumental entrance gates, carved gazebos, and poolside coping direct from Dholpur quarries.",
   alternates: {
@@ -80,11 +80,11 @@ export default function FarmHouseGardensPage() {
           </>
         }
         accent="Stonework"
-        description="Turnkey natural-stone work for farm houses, estates and gardens — driveways, patios, pool decks, chhatris, lantern posts, steps and fountains."
+        description="Turnkey natural-stone work for luxury farm houses, estates and gardens — driveways, patios, pool decks, chhatris, lantern posts, steps and fountains."
         image="/assets/landscaping/landscape_pool_coping.jpg"
-        crumbs={[{ label: "Farm House & Gardens" }]}
+        crumbs={[{ label: "Luxury Farm House & Gardens" }]}
       >
-        <ContactActions cta="Farmhouse hero" topic="farm house and garden stonework" size="lg" layout="row" className="sm:justify-start" />
+        <ContactActions cta="Farmhouse hero" topic="luxury farm house and garden stonework" size="lg" layout="row" className="sm:justify-start" />
       </PageHero>
 
       <FeatureStrip
@@ -205,16 +205,16 @@ export default function FarmHouseGardensPage() {
         <div className="container-x">
           <SectionHeader
             eyebrow="Our Work"
-            title="Farm House & Garden Stone Gallery"
+            title="Luxury Farm House & Garden Stone Gallery"
             subtitle="Chhatris, fountains, lantern posts, columns, driveways and pool decks — tap any photo to view it full size."
           />
           <PhotoGallery photos={gardenGallery} />
         </div>
       </section>
 
-      <FaqSection faqs={gardenFaqs} title="Farm House & Garden Questions" tone="white" />
-      <CtaBand title="Planning A Farm House Or Garden?" text="Share your layout and areas — we recommend stone, finishes and quantities, and quote the full job." topic="farm house and garden stonework" cta="Farmhouse bottom band" />
-      <JsonLd data={[breadcrumbLd([{ name: "Farm House & Gardens", path: "/farmhouse-gardens" }]), itemListLd("Farm house & garden stonework", gardenSubs.map((g) => ({ name: g.name, description: g.note, image: g.image }))), faqLd(gardenFaqs)]} />
+      <FaqSection faqs={gardenFaqs} title="Luxury Farm House & Garden Questions" tone="white" />
+      <CtaBand title="Planning A Luxury Farm House Or Garden?" text="Share your layout and areas — we recommend stone, finishes and quantities, and quote the full job." topic="luxury farm house and garden stonework" cta="Farmhouse bottom band" />
+      <JsonLd data={[breadcrumbLd([{ name: "Luxury Farm House & Gardens", path: "/farmhouse-gardens" }]), itemListLd("Luxury farm house & garden stonework", gardenSubs.map((g) => ({ name: g.name, description: g.note, image: g.image }))), faqLd(gardenFaqs)]} />
 
       {/* Farmhouse & Landscaping Schema */}
       <script
@@ -246,7 +246,7 @@ export default function FarmHouseGardensPage() {
                   {
                     "@type": "ListItem",
                     "position": 2,
-                    "name": "Farm House & Gardens",
+                    "name": "Luxury Farm House & Gardens",
                     "item": "https://www.dholpurstones.com/farmhouse-gardens"
                   }
                 ]
@@ -254,7 +254,7 @@ export default function FarmHouseGardensPage() {
               {
                 "@type": "HowTo",
                 "name": "How to Plan & Execute a Luxury Farm House Natural Sandstone Elevation & Landscape",
-                "description": "Step-by-step architectural workflow for sourcing certified Dholpur sandstone, custom CNC fabrication, and installing monolithic farm house porticos and cobblestone driveways.",
+                "description": "Step-by-step architectural workflow for sourcing certified Dholpur sandstone, custom CNC fabrication, and installing monolithic luxury farm house porticos and cobblestone driveways.",
                 "totalTime": "P3W",
                 "step": [
                   {
@@ -289,7 +289,7 @@ export default function FarmHouseGardensPage() {
                     "@type": "HowToStep",
                     "position": 5,
                     "name": "Turnkey On-Site Installation Guidance",
-                    "text": "Delivery directly to your farm house estate with interlocking layout plans and recommendations for non-staining adhesive mortars.",
+                    "text": "Delivery directly to your luxury farm house estate with interlocking layout plans and recommendations for non-staining adhesive mortars.",
                     "url": "https://www.dholpurstones.com/farmhouse-gardens#installation"
                   }
                 ]

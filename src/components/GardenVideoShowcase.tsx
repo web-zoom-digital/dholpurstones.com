@@ -83,7 +83,7 @@ export default function GardenVideoShowcase() {
         <SectionHeader
           eyebrow="Craftsmanship In Motion"
           title="Live Water Fountains & Cascades in Motion"
-          subtitle="Real-world water flow demonstrations of our hand-sculpted sandstone fountains, illuminated rain curtains, and architectural waterfalls — filmed live at our Sikandra ateliers and client farm house installations."
+          subtitle="Real-world water flow demonstrations of our hand-sculpted sandstone fountains, illuminated rain curtains, and architectural waterfalls — filmed live at our Sikandra ateliers and client luxury farm house installations."
         />
         {/* Video Grid */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-5">

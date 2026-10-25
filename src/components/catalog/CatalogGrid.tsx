@@ -27,6 +27,8 @@ export interface CatalogItem {
   subtitle?: string;
   image: string;
   images?: string[];
+  imagePosition?: string;
+  imageFit?: "cover" | "contain";
   desc: string;
   specs: { label: string; value: string }[];
   highlights: string[];
@@ -80,7 +82,11 @@ function CatalogCardImage({
             alt={it.name}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+            className={`transition-transform duration-700 ease-out group-hover:scale-[1.06] ${
+              it.imageFit === "contain"
+                ? "object-contain p-2"
+                : `object-cover ${it.imagePosition || "object-center"}`
+            }`}
           />
         </motion.div>
       </AnimatePresence>
