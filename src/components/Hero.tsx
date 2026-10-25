@@ -58,13 +58,15 @@ export default function Hero() {
 
       <div className="container-x flex min-h-[calc(100svh-7.5rem)] flex-col justify-end pb-24 pt-16 sm:min-h-[600px] sm:justify-center sm:pb-32 lg:min-h-[680px]">
         <div className="mx-auto flex max-w-xl flex-col items-center text-center sm:mx-0 sm:max-w-2xl sm:items-start sm:text-left">
-          <motion.span
+          <motion.div
             {...rise(0.1)}
-            className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-forest-deep/60 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-gold backdrop-blur-md"
+            className="inline-flex flex-wrap items-center justify-center sm:justify-start gap-2"
           >
-            <Award className="h-3.5 w-3.5" />
-            Awarded by Govt. of India
-          </motion.span>
+            <span className="relative inline-flex items-center gap-2.5 rounded-full border border-gold/70 bg-gradient-to-r from-gold/25 via-forest-deep/90 to-gold/25 px-4 py-2 sm:px-5 sm:py-2.5 text-[11px] sm:text-[12.5px] md:text-[13px] font-heading font-black uppercase tracking-[0.16em] sm:tracking-[0.18em] text-[#F8E2AC] shadow-[0_0_30px_rgba(232,201,135,0.35)] backdrop-blur-md ring-1 ring-gold/40">
+              <Award className="h-4 w-4 sm:h-5 sm:w-5 text-gold shrink-0 drop-shadow" />
+              <span>NOMINATE TO INTERNATIONAL AWARD FOR BUSINESS EXCELLENCE</span>
+            </span>
+          </motion.div>
 
           <motion.h1
             {...rise(0.2)}

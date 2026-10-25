@@ -57,7 +57,7 @@ export default function WhyUs() {
               align="left"
               eyebrow="About Dholpurstones"
               title="Three Generations of Stone"
-              subtitle="Awarded by the Government of India for 300+ sandstone front elevation designs and nominated for an International Award for Business Excellence. We handle everything from mining to finished installation."
+              subtitle="Awarded by the Government of India for 300+ sandstone front elevation designs & NOMINATE TO INTERNATIONAL AWARD FOR BUSINESS EXCELLENCE. We handle everything from mining to finished installation."
               className="!mb-7"
             />
             <Stagger className="grid gap-3.5 sm:grid-cols-2">
